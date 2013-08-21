@@ -1,11 +1,6 @@
 Welcome!
 ========
-Welcome to Zephir, a middle level language focused on the creation of C-extensions for PHP.
-Our mission is to give you an advanced tool for creating extensions in an easier way.
-
-What is Zephir?
-----------------
-Zephir is an open source, language designed to ease the creation and mainteniance of c-extensions for PHP 5.
+Welcome to Zephir, a high level/domain specific language focused on the creation of C-extensions for PHP.
 
 Table of Contents
 -----------------
@@ -13,7 +8,9 @@ Table of Contents
 .. toctree::
    :maxdepth: 3
 
-   reference/intro
    reference/motivation
+   reference/intro
+   reference/tutorial
+   reference/language
    reference/install
    reference/license

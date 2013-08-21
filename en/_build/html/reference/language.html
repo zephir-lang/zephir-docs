@@ -6,7 +6,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; Zephir 0.2.0a documentation</title>
+    <title>Basic Syntax &mdash; Zephir 0.2.0a documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Zephir 0.2.0a documentation" href="../index.html" />
-    <link rel="next" title="License" href="license.html" />
+    <link rel="next" title="Installation" href="install.html" />
     <link rel="prev" title="Tutorial" href="tutorial.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="license.html" title="License"
+          <a href="install.html" title="Installation"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="tutorial.html" title="Tutorial"
@@ -56,13 +56,23 @@
                   <input type="hidden" name="selected_facets" value="project:">
                 </form>
             </div>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Basic Syntax</a><ul>
+<li><a class="reference internal" href="#file-and-directory-structure">File and Directory structure</a></li>
+<li><a class="reference internal" href="#instruction-separation">Instruction separation</a></li>
+<li><a class="reference internal" href="#comments">Comments</a></li>
+</ul>
+</li>
+</ul>
+
             <h4>Previous topic</h4>
             <p class="topless"><a href="tutorial.html" title="previous chapter">&lt; Tutorial</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="license.html" title="next chapter">License &gt;</a></p>
+            <p class="topless"><a href="install.html" title="next chapter">Installation &gt;</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/reference/install.txt" rel="nofollow">Show Source</a></li>
+              <li><a href="../_sources/reference/language.txt" rel="nofollow">Show Source</a></li>
             </ul>
         </td>
           <td class="second-box" valign="top">
@@ -71,10 +81,57 @@
                   <div class="bodywrapper">
                     <div class="body" >
                       
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>PHP extensions require a slightly different installation method to a traditional php-based library or framework.
-You can either download a binary package for the system of your choice or build it from the sources.</p>
+  <div class="section" id="basic-syntax">
+<h1>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="file-and-directory-structure">
+<h2>File and Directory structure<a class="headerlink" href="#file-and-directory-structure" title="Permalink to this headline">¶</a></h2>
+<p>In PHP, you can place code in any file without a specific structure. In Zephir every file must contain
+a class (and just one class). Every class must have a namespace and the directory structure must match
+the names of classes and namespaces used.</p>
+<p>For example given the following structure the classes in each file must be:</p>
+<div class="highlight-sh"><div class="highlight"><pre>mylibrary/
+        router/
+                exception.zep <span class="c"># MyLibrary\Router\Exception</span>
+        router.zep <span class="c"># MyLibrary\Router</span>
+</pre></div>
+</div>
+<p>Class in mylibrary/router.zep:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">namespace MyLibrary;</span>
+
+<span class="x">class Router</span>
+<span class="x">{</span>
+
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>Class in mylibrary/router/exception.zep:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">namespace MyLibrary\Router;</span>
+
+<span class="x">class Router extends Exception</span>
+<span class="x">{</span>
+
+<span class="x">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="instruction-separation">
+<h2>Instruction separation<a class="headerlink" href="#instruction-separation" title="Permalink to this headline">¶</a></h2>
+<p>As in C or PHP, Zephir requires instructions to be terminated with a semicolon at the end of each statement.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">echo</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Zephir supports only supports &#8216;C&#8217;/&#8217;C++&#8217;, these are one line comments with // and multi line comments with /* ... */:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">//this is one line comment</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * multi-line comment</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -91,7 +148,7 @@ You can either download a binary package for the system of your choice or build 
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="license.html" title="License"
+          <a href="install.html" title="Installation"
              >next</a> |</li>
         <li class="right" >
           <a href="tutorial.html" title="Tutorial"
@@ -103,7 +160,7 @@ You can either download a binary package for the system of your choice or build 
           <p>Zephir Language is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">Zephir License</a>.</p>
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Aug 20, 2013.
+             Last updated on Aug 21, 2013.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>
