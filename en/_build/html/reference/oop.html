@@ -56,6 +56,15 @@
                   <input type="hidden" name="selected_facets" value="project:">
                 </form>
             </div>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Classes and Objects</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+</ul>
+
             <h4>Previous topic</h4>
             <p class="topless"><a href="arrays.html" title="previous chapter">&lt; Arrays</a></p>
             <h4>Next topic</h4>
@@ -73,6 +82,51 @@
                       
   <div class="section" id="classes-and-objects">
 <h1>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">¶</a></h1>
+<p>Zephir promotes object-oriented programming, this is why you can only export methods
+and classes in extensions, also you will see that most of the time, runtime errors raise
+exceptions instead of fatal errors or warnings.</p>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<p>Every Zephir file must implement a class or an interface (and just once). A class structure
+is very similar to a PHP class:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * This is a sample class</span>
+<span class="cm"> */</span>
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<p>Methods implements the usual visibility modifiers available in PHP:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">myPublicMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+
+    <span class="kr">protected</span> <span class="kd">function</span> <span class="nx">myProtectedMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+
+    <span class="kr">private</span> <span class="kd">function</span> <span class="nx">myPrivateMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

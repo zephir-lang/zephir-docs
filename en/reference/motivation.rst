@@ -93,7 +93,7 @@ possible.
 
 Conclusion
 ----------
-Zephir was not created to replace PHP or C, instead of this, we think it is a complement to it,
+Zephir was not created to replace PHP or C, instead of this, we think it is a complement to them,
 allowing developers to venture into code compilation and static typing.
 Zephir is precisely an attempt to join good things from the C and PHP worlds, looking for oportunities
 to make their applications faster.

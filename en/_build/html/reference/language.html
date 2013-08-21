@@ -59,9 +59,10 @@
             <h3><a href="../index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference internal" href="#">Basic Syntax</a><ul>
-<li><a class="reference internal" href="#file-and-directory-structure">File and Directory structure</a></li>
+<li><a class="reference internal" href="#organizing-code-in-files-and-namespaces">Organizing Code in Files and Namespaces</a></li>
 <li><a class="reference internal" href="#instruction-separation">Instruction separation</a></li>
 <li><a class="reference internal" href="#comments">Comments</a></li>
+<li><a class="reference internal" href="#variable-declarations">Variable Declarations</a></li>
 </ul>
 </li>
 </ul>
@@ -85,8 +86,8 @@
 <h1>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, we’ll discuss organization of files and namespaces, variable declarations,
 miscellaneous syntax conventions, and a few other concepts.</p>
-<div class="section" id="file-and-directory-structure">
-<h2>File and Directory structure<a class="headerlink" href="#file-and-directory-structure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="organizing-code-in-files-and-namespaces">
+<h2>Organizing Code in Files and Namespaces<a class="headerlink" href="#organizing-code-in-files-and-namespaces" title="Permalink to this headline">¶</a></h2>
 <p>In PHP, you can place code in any file without a specific structure. In Zephir every file must contain
 a class (and just one class). Every class must have a namespace and the directory structure must match
 the names of classes and namespaces used.</p>
@@ -115,6 +116,7 @@ the names of classes and namespaces used.</p>
 <span class="x">}</span>
 </pre></div>
 </div>
+<p>Zephir will raise a compiler exception if a file or class is not located at the expected file or viceversa.</p>
 </div>
 <div class="section" id="instruction-separation">
 <h2>Instruction separation<a class="headerlink" href="#instruction-separation" title="Permalink to this headline">¶</a></h2>
@@ -127,11 +129,36 @@ You can use semicolons to separate statements and expressions, as in Java, C/C++
 <div class="section" id="comments">
 <h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
 <p>Zephir supports &#8216;C&#8217;/&#8217;C++&#8217; comments, these are one line comments with // and multi line comments with /* ... */:</p>
-<div class="highlight-c"><div class="highlight"><pre><span class="c1">//this is one line comment</span>
+<div class="highlight-c"><div class="highlight"><pre><span class="c1">// this is one line comment</span>
 
-<span class="cm">/*</span>
+<span class="cm">/**</span>
 <span class="cm"> * multi-line comment</span>
 <span class="cm"> */</span>
+</pre></div>
+</div>
+<p>In most languages comments are simply text ignored by the compiler/interpreter. In Zephir,
+multi-line comments are also used as docblocks and they&#8217;re exported to the generated code,
+so they&#8217;re part of the language!.</p>
+<p>The compiler would throw an exception if a docblock is not located where is expected.</p>
+</div>
+<div class="section" id="variable-declarations">
+<h2>Variable Declarations<a class="headerlink" href="#variable-declarations" title="Permalink to this headline">¶</a></h2>
+<p>In Zephir, all variables used in a given scope must be declared, this process gives important information
+to the compiler to perform optimizations and validations:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Declaring variables for the same type in the same instruction</span>
+<span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">c</span><span class="p">;</span>
+
+<span class="c1">//Declaring each variable in different lines</span>
+<span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">b</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">c</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Variables can optionally have an initial compatible default value, you can assign a new value to a variable
+as often as you want:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Declaring variables with default values</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="kr">int</span> <span class="nx">d</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="nx">bool</span> <span class="nx">some</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>

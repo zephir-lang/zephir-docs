@@ -77,7 +77,9 @@ to store them:
 
 Float/Double
 ^^^^^^^^^^^^
-Floating point numbers (also known as "floats", "doubles", or "real numbers"). The size of a float is
+Floating-point numbers (also known as "floats", "doubles", or "real numbers").
+Floating-point literals are expressions with zero or more digits, followed by a period (.),
+followed by zero or more digits. The size of a float is
 platform-dependent, although a maximum of ~1.8e308 with a
 precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
