@@ -147,14 +147,14 @@ The syntax to define arrays is slightly different than in PHP:
     let myArray = [1, 2, 3];
 
     //Double colon must be used to define hashes' keys
-    let myHash = ['first': 1, 'second': 2, 'third': 3];
+    let myHash = ["first": 1, "second": 2, "third": 3];
 
 Only long and string values can be used as keys:
 
 .. code-block:: javascript
 
     let myHash = [0: "first", 1: true, 2: null];
-    let myHash = ['first': 7.0, 'second': "some string", 'third': false];
+    let myHash = ["first": 7.0, "second": "some string", "third": false];
 
 Objects
 ^^^^^^^
@@ -244,5 +244,54 @@ may represent loss of data:
 
     let a = 2147483648,
         b = a, // possible loss of data
+
+Long/Unsigned Long
+^^^^^^^^^^^^^^^^^^
+Long variables are twice bigger than integer variables, thus they can store bigger numbers,
+As integers values assigned to long variables are automatically casted to this type:
+
+.. code-block:: javascript
+
+    long a;
+
+    let a = 50,
+        a = -70,
+        a = 100.25, // automatically casted to 100
+        a = null, // automatically casted to 0
+        a = false, // automatically casted to 0
+        a = "hello"; // throws a compiler exception
+
+Unsigned longs are like longs but they aren't signed, this means you can't store
+negative numbers in these sort of variables:
+
+.. code-block:: javascript
+
+    let a = 50,
+        a = -70, // automatically casted to 70
+        a = 100.25, // automatically casted to 100
+        a = null, // automatically casted to 0
+        a = false, // automatically casted to 0
+        a = "hello"; // throws a compiler exception
+
+Unsigned longs are twice bigger than standard longs, assign unsigned longs to longs
+may represent loss of data:
+
+.. code-block:: javascript
+
+    ulong a, long b;
+
+    let a = 4294967296,
+        b = a, // possible loss of data
+
+Char/Unsigned Char
+^^^^^^^^^^^^^^^^^^
+Char variables are the smallest addressable unit of the machine that can contain basic character set.
+Every 'char' variable represents every character in a string:
+
+.. code-block:: javascript
+
+    char ch, string name = "peter";
+
+    let ch = name[2]; // stores 't'
 
 .. _`PHP manual`: http://www.php.net/manual/en/language.types.php

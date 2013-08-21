@@ -69,6 +69,8 @@
 <li><a class="reference internal" href="#static-types">Static Types</a><ul>
 <li><a class="reference internal" href="#id1">Boolean</a></li>
 <li><a class="reference internal" href="#integer-unsigned-integer">Integer/Unsigned Integer</a></li>
+<li><a class="reference internal" href="#long-unsigned-long">Long/Unsigned Long</a></li>
+<li><a class="reference internal" href="#char-unsigned-char">Char/Unsigned Char</a></li>
 </ul>
 </li>
 </ul>
@@ -245,12 +247,12 @@ multidimensional arrays are also possible.</p>
 <span class="kd">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
 
 <span class="c1">//Double colon must be used to define hashes&#39; keys</span>
-<span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;third&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;third&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>Only long and string values can be used as keys:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">2</span><span class="o">:</span> <span class="kc">null</span><span class="p">];</span>
-<span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="o">:</span> <span class="mf">7.0</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="o">:</span> <span class="s2">&quot;some string&quot;</span><span class="p">,</span> <span class="s1">&#39;third&#39;</span><span class="o">:</span> <span class="kc">false</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="o">:</span> <span class="mf">7.0</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="o">:</span> <span class="s2">&quot;some string&quot;</span><span class="p">,</span> <span class="s2">&quot;third&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -349,6 +351,49 @@ may represent loss of data:</p>
 
 <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2147483648</span><span class="p">,</span>
     <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">,</span> <span class="c1">// possible loss of data</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="long-unsigned-long">
+<h3>Long/Unsigned Long<a class="headerlink" href="#long-unsigned-long" title="Permalink to this headline">¶</a></h3>
+<p>Long variables are twice bigger than integer variables, thus they can store bigger numbers,
+As integers values assigned to long variables are automatically casted to this type:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kr">long</span> <span class="nx">a</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mf">100.25</span><span class="p">,</span> <span class="c1">// automatically casted to 100</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+<p>Unsigned longs are like longs but they aren&#8217;t signed, this means you can&#8217;t store
+negative numbers in these sort of variables:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="c1">// automatically casted to 70</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mf">100.25</span><span class="p">,</span> <span class="c1">// automatically casted to 100</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+<p>Unsigned longs are twice bigger than standard longs, assign unsigned longs to longs
+may represent loss of data:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">ulong</span> <span class="nx">a</span><span class="p">,</span> <span class="kr">long</span> <span class="nx">b</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">4294967296</span><span class="p">,</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">,</span> <span class="c1">// possible loss of data</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="char-unsigned-char">
+<h3>Char/Unsigned Char<a class="headerlink" href="#char-unsigned-char" title="Permalink to this headline">¶</a></h3>
+<p>Char variables are the smallest addressable unit of the machine that can contain basic character set.
+Every &#8216;char&#8217; variable represents every character in a string:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kr">char</span> <span class="nx">ch</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;peter&quot;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">ch</span> <span class="o">=</span> <span class="nx">name</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// stores &#39;t&#39;</span>
 </pre></div>
 </div>
 </div>

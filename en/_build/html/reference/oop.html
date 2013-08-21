@@ -271,20 +271,20 @@ Class constants are exported to the PHP extension allowing them to be used from 
 </pre></div>
 </div>
 <p>Class constants can be accessed using the class name and the static operator (::):</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">namespace Test;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
 
-<span class="x">class MyClass</span>
-<span class="x">{</span>
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
 
-<span class="x">    const MYCONSTANT1 = false;</span>
-<span class="x">    const MYCONSTANT2 = 1.0;</span>
+    <span class="kr">const</span> <span class="nx">MYCONSTANT1</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">MYCONSTANT2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
 
-<span class="x">    public function someMethod()</span>
-<span class="x">    {</span>
-<span class="x">        return Test\MyClass::MYCONSTANT1;</span>
-<span class="x">    }</span>
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">someMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">MyClass</span><span class="o">::</span><span class="nx">MYCONSTANT1</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="x">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

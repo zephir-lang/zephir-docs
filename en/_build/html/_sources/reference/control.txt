@@ -26,3 +26,11 @@ Parentheses in the evaluated expression are optional:
 
 Loops
 -----
+'while' denotes a loop that iterates as long as its given condition evaluates as true:
+
+.. code-block:: javascript
+
+	let counter = 5;
+	while counter {
+	    let counter -= 1;
+	}
