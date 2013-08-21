@@ -5,9 +5,6 @@ body, html {margin: 0; padding:0; height: 100%;}
 body {background: #fff; color: #000000; font: 16px/20px Ubuntu, sans-serif; min-width: 990px;}
 
 a {color:#118f9e; }
-a:hover {color: #000;}
-a:visited {color:#767676; }
-
 
 .link-green {color: #118a65;}
 
@@ -303,19 +300,3 @@ ul.footer-links-list {margin:0;}
 
 .donate-wrap {margin: 10px 0; padding: 15px 0; border-color:#525252; border-width:1px; border-style: solid none; font-size: 18px; line-height: 24px; font-weight: bold; text-align: center;}
 .donate-wrap .button {margin: 0 10px;}
-
-.social-links {padding: 10px 0 20px; text-align: center;}
-
-.social-link {display: inline-block; width: 44px; height: 44px; text-align: left; text-indent: -9999px; overflow: hidden; background: url('../_static/social-links.png'); }
-
-.social-link.tw {background-position: 0 0;}
-.social-link.tw:hover {background-position: 0 -44px;}
-
-.social-link.fb {background-position: -44px 0;}
-.social-link.fb:hover {background-position: -44px -44px;}
-
-.social-link.gp {background-position: -88px 0;}
-.social-link.gp:hover {background-position: -88px -44px;}
-
-.social-link.vm {background-position: -132px 0;}
-.social-link.vm:hover {background-position: -132px -44px;}

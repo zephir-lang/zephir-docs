@@ -24,7 +24,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="top" title="Zephir 0.2.0a documentation" href="../index.html" /> 
+    <link rel="top" title="Zephir 0.2.0a documentation" href="../index.html" />
+    <link rel="next" title="Installation" href="install.html" />
+    <link rel="prev" title="Basic Syntax" href="language.html" /> 
   </head>
   <body>
     <div id="wrapper">
@@ -33,6 +35,12 @@
         <li class="right" >
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="language.html" title="Basic Syntax"
+             accesskey="P">previous</a> |</li>
         <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
         <li><a href="../index.html">Zephir 0.2.0a documentation</a> &raquo;</li> 
       </ul>
@@ -48,6 +56,18 @@
                   <input type="hidden" name="selected_facets" value="project:">
                 </form>
             </div>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Types</a><ul>
+<li><a class="reference internal" href="#dynamic-types">Dynamic Types</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="language.html" title="previous chapter">&lt; Basic Syntax</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="install.html" title="next chapter">Installation &gt;</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="../_sources/reference/types.txt" rel="nofollow">Show Source</a></li>
@@ -61,6 +81,46 @@
                       
   <div class="section" id="types">
 <h1>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dynamic-types">
+<h2>Dynamic Types<a class="headerlink" href="#dynamic-types" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic variables are exactly like the ones in PHP, they support eight types:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Type</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>boolean</td>
+<td>A boolean expresses a truth value. It can be either &#8216;true&#8217; or &#8216;false&#8217;.</td>
+</tr>
+<tr class="row-odd"><td>integer</td>
+<td>Integer numbers in base 10. The size of an integer is platform-dependent.</td>
+</tr>
+<tr class="row-even"><td>float/double</td>
+<td>Floating point numbers. The size of a float is platform-dependent.</td>
+</tr>
+<tr class="row-odd"><td>string</td>
+<td>A string is series of characters, where a character is the same as a byte.</td>
+</tr>
+<tr class="row-even"><td>array</td>
+<td>An array is an ordered map. A map is a type that associates values to keys</td>
+</tr>
+<tr class="row-odd"><td>object</td>
+<td>Object abstraction like in PHP</td>
+</tr>
+<tr class="row-even"><td>resource</td>
+<td>A resource holds a reference to an external resource</td>
+</tr>
+<tr class="row-odd"><td>null</td>
+<td>The special NULL value represents a variable with no value</td>
+</tr>
+</tbody>
+</table>
+<p>Check more info about these types in the <a class="reference external" href="http://www.php.net/manual/en/language.types.php">PHP manual</a></p>
+</div>
 </div>
 
 
@@ -75,7 +135,13 @@
       <ul>
         <li class="right" >
           <a href="../genindex.html" title="General Index"
-             >index</a></li> 
+             >index</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="language.html" title="Basic Syntax"
+             >previous</a> |</li> 
       </ul>
     </div>
         <div id="footer">

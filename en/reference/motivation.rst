@@ -7,7 +7,9 @@ These common components are libraries/frameworks or a combination of them. Once 
 change, being the foundation of the application they must be highly functional and also very fast.
 
 Gettting fast and robust libraries can be complicated due to high levels of abstraction that are
-typically implemented on them.
+typically implemented on them. Given the condition that base libraries or frameworks rarely change,
+there is an opportunity to build extensions that provide this functionality taking advantage of the
+compilation improving performance and resource consumption.
 
 With Zephir you can implement object-oriented libraries/frameworks/applications that can be used from
 PHP gaining important seconds that can make your application faster while improving the user experience.

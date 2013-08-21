@@ -153,7 +153,9 @@ Parentheses in control flow statements are optional, you can also use them if yo
     }
 
 PHP only works with dynamic variables, methods always return dynamic variables, this means that if a static
-variable is returned, in the PHP side, you will receive a dynamic variable anyway that can be used in PHP code.
+variable is returned, in the PHP side, you will get a dynamic variable that can be used in PHP code.
+Note that memory was automatically managed by the compiler, so you don't need to allocate or free
+memory like in C, working in a similar way than PHP.
 
 
 .. _zaefire: http://translate.google.com/#en/en/zaefire
