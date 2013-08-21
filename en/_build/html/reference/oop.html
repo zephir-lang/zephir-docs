@@ -60,11 +60,14 @@
             <ul>
 <li><a class="reference internal" href="#">Classes and Objects</a><ul>
 <li><a class="reference internal" href="#classes">Classes</a></li>
-<li><a class="reference internal" href="#methods">Methods</a></li>
+<li><a class="reference internal" href="#methods">Methods</a><ul>
 <li><a class="reference internal" href="#public-visibility">Public Visibility</a></li>
 <li><a class="reference internal" href="#protected-visibility">Protected Visibility</a></li>
 <li><a class="reference internal" href="#private-visibility">Private Visibility</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#properties">Properties</a></li>
+<li><a class="reference internal" href="#class-constants">Class Constants</a></li>
 </ul>
 </li>
 </ul>
@@ -180,27 +183,28 @@ a visibility modifier is mandatory in Zephir:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
 <div class="section" id="public-visibility">
-<h2>Public Visibility<a class="headerlink" href="#public-visibility" title="Permalink to this headline">¶</a></h2>
+<h3>Public Visibility<a class="headerlink" href="#public-visibility" title="Permalink to this headline">¶</a></h3>
 <p>Methods marked as &#8220;public&#8221; are exported to the PHP extension, this means that public methods
 are visible to the PHP code as well to the extension itself.</p>
 </div>
 <div class="section" id="protected-visibility">
-<h2>Protected Visibility<a class="headerlink" href="#protected-visibility" title="Permalink to this headline">¶</a></h2>
+<h3>Protected Visibility<a class="headerlink" href="#protected-visibility" title="Permalink to this headline">¶</a></h3>
 <p>Methods marked as &#8220;protected&#8221; are exported to the PHP extension, this means that protected methods
 are visible to the PHP code as well to the extension itself. However, protected methods can only
 be called in the scope of the class or in classes that inherit them.</p>
 </div>
 <div class="section" id="private-visibility">
-<h2>Private Visibility<a class="headerlink" href="#private-visibility" title="Permalink to this headline">¶</a></h2>
+<h3>Private Visibility<a class="headerlink" href="#private-visibility" title="Permalink to this headline">¶</a></h3>
 <p>Methods marked as &#8220;private&#8221; are not exported to the PHP extension, this means that private methods
 are only visible to the class where they&#8217;re implemented.</p>
+</div>
 </div>
 <div class="section" id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
 <p>Class member variables are called &#8220;properties&#8221;. By default, they act as PHP properties.
-Properties implements the usual visibility modifiers available in PHP, explicity set
+Properties are exported to the PHP extension and are visibles from PHP code.
+Properties implement the usual visibility modifiers available in PHP, explicity set
 a visibility modifier is mandatory in Zephir:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
 
@@ -227,13 +231,57 @@ a visibility modifier is mandatory in Zephir:</p>
 
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">setMyProperty</span><span class="p">(</span><span class="nx">myProperty</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span> <span class="o">=</span> <span class="nx">myProperty</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span> <span class="o">=</span> <span class="nx">myProperty</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">getMyProperty</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span><span class="p">;</span>
     <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Properties can have literal compatible default values. These values must be able to be evaluated at
+compile time and must not depend on run-time information in order to be evaluated:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+
+    <span class="kr">protected</span> <span class="nx">myProperty1</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="kr">protected</span> <span class="nx">myProperty2</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="kr">protected</span> <span class="nx">myProperty3</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+    <span class="kr">protected</span> <span class="nx">myProperty4</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kr">protected</span> <span class="nx">myProperty5</span> <span class="o">=</span> <span class="s2">&quot;my value&quot;</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="class-constants">
+<h2>Class Constants<a class="headerlink" href="#class-constants" title="Permalink to this headline">¶</a></h2>
+<p>Class may contain class constants that remain the same and unchangeable once the extension is compiled.
+Class constants are exported to the PHP extension allowing them to be used from PHP.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+
+    <span class="kr">const</span> <span class="nx">MYCONSTANT1</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">MYCONSTANT2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Class constants can be accessed using the class name and the static</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+
+    <span class="kr">const</span> <span class="nx">MYCONSTANT1</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">MYCONSTANT2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
 
 <span class="p">}</span>
 </pre></div>

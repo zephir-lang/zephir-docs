@@ -144,7 +144,8 @@ so they&#8217;re part of the language!.</p>
 <div class="section" id="variable-declarations">
 <h2>Variable Declarations<a class="headerlink" href="#variable-declarations" title="Permalink to this headline">¶</a></h2>
 <p>In Zephir, all variables used in a given scope must be declared, this process gives important information
-to the compiler to perform optimizations and validations:</p>
+to the compiler to perform optimizations and validations. Variables must be unique identifiers and they cannot be
+reserved words:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Declaring variables for the same type in the same instruction</span>
 <span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">c</span><span class="p">;</span>
 

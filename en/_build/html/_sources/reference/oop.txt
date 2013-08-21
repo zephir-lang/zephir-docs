@@ -5,7 +5,7 @@ and classes in extensions, also you will see that most of the time, runtime erro
 exceptions instead of fatal errors or warnings.
 
 Classes
-^^^^^^^
+-------
 Every Zephir file must implement a class or an interface (and just once). A class structure
 is very similar to a PHP class:
 
@@ -22,7 +22,7 @@ is very similar to a PHP class:
     }
 
 Methods
-^^^^^^^
+-------
 Methods implements the usual visibility modifiers available in PHP, explicity set
 a visibility modifier is mandatory in Zephir:
 
@@ -117,9 +117,10 @@ Methods marked as "private" are not exported to the PHP extension, this means th
 are only visible to the class where they're implemented.
 
 Properties
-^^^^^^^^^^
+----------
 Class member variables are called "properties". By default, they act as PHP properties.
-Properties implements the usual visibility modifiers available in PHP, explicity set
+Properties are exported to the PHP extension and are visibles from PHP code.
+Properties implement the usual visibility modifiers available in PHP, explicity set
 a visibility modifier is mandatory in Zephir:
 
 .. code-block:: javascript
@@ -151,7 +152,7 @@ Within class methods non-static properties may be accessed by using -> (Object O
 
         public function setMyProperty(myProperty)
         {
-            this->myProperty = myProperty;
+            let this->myProperty = myProperty;
         }
 
         public function getMyProperty()
@@ -161,3 +162,51 @@ Within class methods non-static properties may be accessed by using -> (Object O
 
     }
 
+Properties can have literal compatible default values. These values must be able to be evaluated at
+compile time and must not depend on run-time information in order to be evaluated:
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    class MyClass
+    {
+
+        protected myProperty1 = null;
+        protected myProperty2 = false;
+        protected myProperty3 = 2.0;
+        protected myProperty4 = 5;
+        protected myProperty5 = "my value";
+
+    }
+
+Class Constants
+---------------
+Class may contain class constants that remain the same and unchangeable once the extension is compiled.
+Class constants are exported to the PHP extension allowing them to be used from PHP.
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    class MyClass
+    {
+
+        const MYCONSTANT1 = false;
+        const MYCONSTANT2 = 1.0;
+
+    }
+
+Class constants can be accessed using the class name and the static
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    class MyClass
+    {
+
+        const MYCONSTANT1 = false;
+        const MYCONSTANT2 = 1.0;
+
+    }

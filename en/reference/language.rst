@@ -72,7 +72,8 @@ The compiler would throw an exception if a docblock is not located where is expe
 Variable Declarations
 ---------------------
 In Zephir, all variables used in a given scope must be declared, this process gives important information
-to the compiler to perform optimizations and validations:
+to the compiler to perform optimizations and validations. Variables must be unique identifiers and they cannot be
+reserved words:
 
 .. code-block:: javascript
 
