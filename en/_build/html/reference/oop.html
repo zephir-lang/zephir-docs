@@ -20,9 +20,6 @@
         HAS_SOURCE:  true
       };
     </script>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Zephir 0.2.0a documentation" href="../index.html" />
     <link rel="next" title="Control Structures" href="control.html" />
@@ -49,24 +46,24 @@
       <table width="90%" align="center">
         <tr>
       <td class="primary-box" width="25%" valign="top">
-            <div id="searchbox" style="">
+            <!--<div id="searchbox" style="">
                 <form class="search" action="http://readthedocs.org/search/project/" method="get">
                   <input type="search" name="q" size="15" placeholder="Search">
                   <input type="submit" value="Go">
                   <input type="hidden" name="selected_facets" value="project:">
                 </form>
-            </div>
+            </div>-->
             <h3><a href="../index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference internal" href="#">Classes and Objects</a><ul>
 <li><a class="reference internal" href="#classes">Classes</a></li>
-<li><a class="reference internal" href="#methods">Methods</a><ul>
+<li><a class="reference internal" href="#implementing-methods">Implementing Methods</a><ul>
 <li><a class="reference internal" href="#public-visibility">Public Visibility</a></li>
 <li><a class="reference internal" href="#protected-visibility">Protected Visibility</a></li>
 <li><a class="reference internal" href="#private-visibility">Private Visibility</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#properties">Properties</a></li>
+<li><a class="reference internal" href="#implementing-properties">Implementing Properties</a></li>
 <li><a class="reference internal" href="#class-constants">Class Constants</a></li>
 </ul>
 </li>
@@ -108,10 +105,9 @@ is very similar to a PHP class:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<p>Methods implements the usual visibility modifiers available in PHP, explicity set
-a visibility modifier is mandatory in Zephir:</p>
+<div class="section" id="implementing-methods">
+<h2>Implementing Methods<a class="headerlink" href="#implementing-methods" title="Permalink to this headline">¶</a></h2>
+<p>Methods implements the usual visibility modifiers available in PHP, explicity set a visibility modifier is mandatory in Zephir:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">MyClass</span>
@@ -200,8 +196,8 @@ be called in the scope of the class or in classes that inherit them.</p>
 are only visible to the class where they&#8217;re implemented.</p>
 </div>
 </div>
-<div class="section" id="properties">
-<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="implementing-properties">
+<h2>Implementing Properties<a class="headerlink" href="#implementing-properties" title="Permalink to this headline">¶</a></h2>
 <p>Class member variables are called &#8220;properties&#8221;. By default, they act as PHP properties.
 Properties are exported to the PHP extension and are visibles from PHP code.
 Properties implement the usual visibility modifiers available in PHP, explicity set

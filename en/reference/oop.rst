@@ -21,11 +21,9 @@ is very similar to a PHP class:
 
     }
 
-
-Methods
--------
-Methods implements the usual visibility modifiers available in PHP, explicity set
-a visibility modifier is mandatory in Zephir:
+Implementing Methods
+--------------------
+Methods implements the usual visibility modifiers available in PHP, explicity set a visibility modifier is mandatory in Zephir:
 
 .. code-block:: javascript
 
@@ -117,8 +115,8 @@ Private Visibility
 Methods marked as "private" are not exported to the PHP extension, this means that private methods
 are only visible to the class where they're implemented.
 
-Properties
-----------
+Implementing Properties
+-----------------------
 Class member variables are called "properties". By default, they act as PHP properties.
 Properties are exported to the PHP extension and are visibles from PHP code.
 Properties implement the usual visibility modifiers available in PHP, explicity set

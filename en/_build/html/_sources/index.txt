@@ -1,6 +1,8 @@
 Welcome!
 ========
-Welcome to Zephir, a high level/domain specific language focused on the creation of C-extensions for PHP.
+Welcome to Zephir, a high level/dynamic/static/domain specific language
+designed to ease the creation of C-extensions for PHP with a focus on
+type safety and memory safety.
 
 Table of Contents
 -----------------
