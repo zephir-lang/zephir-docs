@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Zephir 0.2.0a documentation" href="../index.html" />
-    <link rel="next" title="Installation" href="install.html" />
+    <link rel="next" title="Arrays" href="arrays.html" />
     <link rel="prev" title="Basic Syntax" href="language.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="install.html" title="Installation"
+          <a href="arrays.html" title="Arrays"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="language.html" title="Basic Syntax"
@@ -65,7 +65,8 @@
 <li><a class="reference internal" href="#integer-overflow">Integer overflow</a></li>
 <li><a class="reference internal" href="#float-double">Float/Double</a></li>
 <li><a class="reference internal" href="#string">String</a></li>
-<li><a class="reference internal" href="#usage-example">Usage Example</a></li>
+<li><a class="reference internal" href="#array">Array</a></li>
+<li><a class="reference internal" href="#objects">Objects</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#static-types">Static Types</a></li>
@@ -76,7 +77,7 @@
             <h4>Previous topic</h4>
             <p class="topless"><a href="language.html" title="previous chapter">&lt; Basic Syntax</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="install.html" title="next chapter">Installation &gt;</a></p>
+            <p class="topless"><a href="arrays.html" title="next chapter">Arrays &gt;</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="../_sources/reference/types.txt" rel="nofollow">Show Source</a></li>
@@ -95,7 +96,21 @@ its behavior:</p>
 <div class="section" id="dynamic-type">
 <h2>Dynamic Type<a class="headerlink" href="#dynamic-type" title="Permalink to this headline">¶</a></h2>
 <p>Dynamic variables are exactly like the ones in PHP, they can be assigned and reassigned to
-different types without restriction. They can have eight types:</p>
+different types without restriction.</p>
+<p>A dynamic variable must be declared with the keyword &#8216;var&#8217;, the behavior is nearly the same as in PHP:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">;</span>
+
+<span class="c1">// Initialize variables</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// Change their values</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="s2">&quot;140&quot;</span><span class="p">;</span>
+
+<span class="c1">// Perform operations between them</span>
+<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>They can have eight types:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -188,19 +203,19 @@ for chars.</p>
 <tr class="row-odd"><td>Sequence</td>
 <td>Description</td>
 </tr>
-<tr class="row-even"><td>t</td>
+<tr class="row-even"><td>\t</td>
 <td>Horizontal tab</td>
 </tr>
-<tr class="row-odd"><td>n</td>
+<tr class="row-odd"><td>\n</td>
 <td>Line feed</td>
 </tr>
-<tr class="row-even"><td>r</td>
+<tr class="row-even"><td>\r</td>
 <td>Carriage return</td>
 </tr>
-<tr class="row-odd"><td>\</td>
+<tr class="row-odd"><td>\ \</td>
 <td>Backslash</td>
 </tr>
-<tr class="row-even"><td>&#8220;</td>
+<tr class="row-even"><td>\&#8221;</td>
 <td>double-quote</td>
 </tr>
 </tbody>
@@ -212,23 +227,35 @@ for chars.</p>
 <p>In Zephir, strings don&#8217;t support variable parsing like in PHP, you can use concatenation instead:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;peter&quot;</span><span class="p">;</span>
 
-<span class="nx">echo</span> <span class="s2">&quot;hello: &quot;</span> <span class="p">.</span> <span class="nx">peter</span><span class="p">;</span>
+<span class="nx">echo</span> <span class="s2">&quot;hello: &quot;</span> <span class="p">.</span> <span class="nx">name</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="usage-example">
-<h3>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h3>
-<p>A dynamic variable must be declared with the keyword &#8216;var&#8217;, the behavior is nearly the same as in PHP:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">;</span>
+<div class="section" id="array">
+<h3>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h3>
+<p>The array implementation in Zephir is basically the same as in PHP: Ordered maps optimized for
+several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map),
+dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and
+multidimensional arrays are also possible.</p>
+<p>The syntax to define arrays is slightly different than in PHP:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Square braces must be used to define arrays</span>
+<span class="kd">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
 
-<span class="c1">// Initialize variables</span>
-<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-
-<span class="c1">// Change their values</span>
-<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="s2">&quot;140&quot;</span><span class="p">;</span>
-
-<span class="c1">// Perform operations between them</span>
-<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="c1">//Double colon must be used to define hashes&#39; keys</span>
+<span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;third&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Only long and string values can be used as keys:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">2</span><span class="o">:</span> <span class="kc">null</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="o">:</span> <span class="mf">7.0</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="o">:</span> <span class="s2">&quot;some string&quot;</span><span class="p">,</span> <span class="s1">&#39;third&#39;</span><span class="o">:</span> <span class="kc">false</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="objects">
+<h3>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
+<p>Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">stdClass</span><span class="p">(),</span>
+    <span class="nx">myObject</span><span class="o">-&gt;</span><span class="nx">someProperty</span> <span class="o">=</span> <span class="s2">&quot;my value&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -293,7 +320,7 @@ the compiler to do a better optimization job. The following types are supported:
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="install.html" title="Installation"
+          <a href="arrays.html" title="Arrays"
              >next</a> |</li>
         <li class="right" >
           <a href="language.html" title="Basic Syntax"

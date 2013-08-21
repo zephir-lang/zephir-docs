@@ -13,5 +13,7 @@ Table of Contents
    reference/tutorial
    reference/language
    reference/types
+   reference/arrays
+   reference/oop
    reference/install
    reference/license

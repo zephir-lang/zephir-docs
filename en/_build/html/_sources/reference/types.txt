@@ -6,7 +6,24 @@ its behavior:
 Dynamic Type
 ------------
 Dynamic variables are exactly like the ones in PHP, they can be assigned and reassigned to
-different types without restriction. They can have eight types:
+different types without restriction.
+
+A dynamic variable must be declared with the keyword 'var', the behavior is nearly the same as in PHP:
+
+.. code-block:: javascript
+
+    var a, b, c;
+
+    // Initialize variables
+    let a = "hello", b = false;
+
+    // Change their values
+    let a = 10, b = "140";
+
+    // Perform operations between them
+    let c = a + b;
+
+They can have eight types:
 
 +---------------+---------------------------------------------------------------------------+
 | Type          | Description                                                               |
@@ -89,15 +106,15 @@ The following escape sequences are supported in strings:
 +---------------+---------------------------------------------------------------------------+
 | Sequence      | Description                                                               |
 +---------------+---------------------------------------------------------------------------+
-| \t            | Horizontal tab                                                            |
+| \\t           | Horizontal tab                                                            |
 +---------------+---------------------------------------------------------------------------+
-| \n            | Line feed                                                                 |
+| \\n           | Line feed                                                                 |
 +---------------+---------------------------------------------------------------------------+
-| \r            | Carriage return                                                           |
+| \\r           | Carriage return                                                           |
 +---------------+---------------------------------------------------------------------------+
-| \\            | Backslash                                                                 |
+| \\ \\         | Backslash                                                                 |
 +---------------+---------------------------------------------------------------------------+
-| \"            | double-quote                                                              |
+| \\"           | double-quote                                                              |
 +---------------+---------------------------------------------------------------------------+
 
 .. code-block:: javascript
@@ -111,24 +128,40 @@ In Zephir, strings don't support variable parsing like in PHP, you can use conca
 
     var name = "peter";
 
-    echo "hello: " . peter;
+    echo "hello: " . name;
 
-Usage Example
-^^^^^^^^^^^^^
-A dynamic variable must be declared with the keyword 'var', the behavior is nearly the same as in PHP:
+Array
+^^^^^
+The array implementation in Zephir is basically the same as in PHP: Ordered maps optimized for
+several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map),
+dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and
+multidimensional arrays are also possible.
+
+The syntax to define arrays is slightly different than in PHP:
 
 .. code-block:: javascript
 
-    var a, b, c;
+    //Square braces must be used to define arrays
+    let myArray = [1, 2, 3];
 
-    // Initialize variables
-    let a = "hello", b = false;
+    //Double colon must be used to define hashes' keys
+    let myHash = ['first': 1, 'second': 2, 'third': 3];
 
-    // Change their values
-    let a = 10, b = "140";
+Only long and string values can be used as keys:
 
-    // Perform operations between them
-    let c = a + b;
+.. code-block:: javascript
+
+    let myHash = [0: "first", 1: true, 2: null];
+    let myHash = ['first': 7.0, 'second': "some string", 'third': false];
+
+Objects
+^^^^^^^
+Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+
+.. code-block:: javascript
+
+    let myObject = new stdClass(),
+        myObject->someProperty = "my value";
 
 Static Types
 ------------
@@ -157,8 +190,6 @@ the compiler to do a better optimization job. The following types are supported:
 +------------------+---------------------------------------------------------------------------------+
 | string           | A string is series of characters, where a character is the same as a byte.      |
 +------------------+---------------------------------------------------------------------------------+
-
-
 
 
 .. _`PHP manual`: http://www.php.net/manual/en/language.types.php

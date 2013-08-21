@@ -112,7 +112,7 @@ The following escape sequences are supported in strings:
 +---------------+---------------------------------------------------------------------------+
 | \\r           | Carriage return                                                           |
 +---------------+---------------------------------------------------------------------------+
-| \\\\          | Backslash                                                                 |
+| \\ \\         | Backslash                                                                 |
 +---------------+---------------------------------------------------------------------------+
 | \\"           | double-quote                                                              |
 +---------------+---------------------------------------------------------------------------+
@@ -153,6 +153,15 @@ Only long and string values can be used as keys:
 
     let myHash = [0: "first", 1: true, 2: null];
     let myHash = ['first': 7.0, 'second': "some string", 'third': false];
+
+Objects
+^^^^^^^
+Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+
+.. code-block:: javascript
+
+    let myObject = new stdClass(),
+        myObject->someProperty = "my value";
 
 Static Types
 ------------
