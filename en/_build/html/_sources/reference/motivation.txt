@@ -24,7 +24,7 @@ Zend Engine.
 
 PHP is hosting Zephir, so they obviously have a lot of similarities, however, they have
 important differences that give Zephir its own personality. For example, Zephir is more strict
-and it could be make you less productive due to the compilation step.
+and it could be make you less productive compared to PHP due to the compilation step.
 
 If You Are a C Programmer...
 ----------------------------
@@ -32,7 +32,7 @@ C is one of the most powerful and popular languages ever created. In fact, PHP i
 which is one of the reasons why PHP extensions are available for it. C gives you the freedom to
 manage memory, use low level types and even inline assembly routines.
 
-However, developing big applications in C can take much longer than expected compared to PHP
+However, developing big applications in C can take much longer than expected compared to PHP or Zephir
 and some errors can be tricky to find if you aren't an experienced developer.
 
 Zephir was designed to be safe, so it doesn't implement pointers or manual memory management, so

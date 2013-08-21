@@ -12,5 +12,6 @@ Table of Contents
    reference/intro
    reference/tutorial
    reference/language
+   reference/types
    reference/install
    reference/license

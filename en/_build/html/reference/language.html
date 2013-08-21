@@ -83,6 +83,8 @@
                       
   <div class="section" id="basic-syntax">
 <h1>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, we’ll discuss organization of files and namespaces, variable declarations,
+miscellaneous syntax conventions, and a few other concepts.</p>
 <div class="section" id="file-and-directory-structure">
 <h2>File and Directory structure<a class="headerlink" href="#file-and-directory-structure" title="Permalink to this headline">¶</a></h2>
 <p>In PHP, you can place code in any file without a specific structure. In Zephir every file must contain
@@ -96,12 +98,12 @@ the names of classes and namespaces used.</p>
 </pre></div>
 </div>
 <p>Class in mylibrary/router.zep:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">namespace MyLibrary;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
-<span class="x">class Router</span>
-<span class="x">{</span>
+<span class="kr">class</span> <span class="nx">Router</span>
+<span class="p">{</span>
 
-<span class="x">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Class in mylibrary/router/exception.zep:</p>
@@ -116,14 +118,15 @@ the names of classes and namespaces used.</p>
 </div>
 <div class="section" id="instruction-separation">
 <h2>Instruction separation<a class="headerlink" href="#instruction-separation" title="Permalink to this headline">¶</a></h2>
-<p>As in C or PHP, Zephir requires instructions to be terminated with a semicolon at the end of each statement.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">echo</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<p>You may have already noticed that there were very few semicolons in the code examples in the previous chapter.
+You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">myObject</span><span class="o">-&gt;</span><span class="nx">myMethod</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="nx">echo</span> <span class="s2">&quot;world&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="comments">
 <h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
-<p>Zephir supports only supports &#8216;C&#8217;/&#8217;C++&#8217;, these are one line comments with // and multi line comments with /* ... */:</p>
+<p>Zephir supports &#8216;C&#8217;/&#8217;C++&#8217; comments, these are one line comments with // and multi line comments with /* ... */:</p>
 <div class="highlight-c"><div class="highlight"><pre><span class="c1">//this is one line comment</span>
 
 <span class="cm">/*</span>
@@ -131,6 +134,7 @@ the names of classes and namespaces used.</p>
 <span class="cm"> */</span>
 </pre></div>
 </div>
+<p>You might wonder why you don’t need parentheses (...) around the evaluated expressions</p>
 </div>
 </div>
 

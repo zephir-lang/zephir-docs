@@ -145,6 +145,8 @@ the array:
 
 Parentheses in control flow statements are optional, you can also use them if you feel more confortable.
 
+.. code-block:: javascript
+
     while i < length {
         echo typeof myArray[i], "\n";
         let i++;
