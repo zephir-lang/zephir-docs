@@ -200,7 +200,7 @@ When the value of a variable needs to be changed, the keyword &#8216;let&#8217; 
 </div>
 <p>By default, arrays are dynamical like in PHP, it may contain values of different types.
 Functions from the PHP userland can be called in Zephir code, in the example the function &#8216;count&#8217;
-was called, the compiler can do optimizations like avoid this call because it already knows the size of
+was called, the compiler can performs optimizations like avoid this call because it already knows the size of
 the array:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/* Count the array into a &#39;int&#39; variable */</span>
 <span class="kd">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
