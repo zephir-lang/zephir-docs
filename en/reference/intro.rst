@@ -17,53 +17,141 @@ so code out of a class is not allowed. Also a namespace is required:
 
 .. code-block:: javascript
 
-	namespace Test;
+    namespace Test;
 
-	/**
-	 * This is a sample class
-	 */
-	class Hello
-	{
-		/**
-		 * This is a sample method
-		 */
-		public function say()
-		{
-			echo "Hello World!";
-		}
-	}
+    /**
+     * This is a sample class
+     */
+    class Hello
+    {
+        /**
+         * This is a sample method
+         */
+        public function say()
+        {
+            echo "Hello World!";
+        }
+    }
 
 Once this class is compiled it produce the following code that is transparently compiled by gcc/clang/vc++:
 
 .. code-block:: c
 
-	#ifdef HAVE_CONFIG_H
-	#include "config.h"
-	#endif
+    #ifdef HAVE_CONFIG_H
+    #include "config.h"
+    #endif
 
-	#include "php.h"
-	#include "php_test.h"
-	#include "test.h"
+    #include "php.h"
+    #include "php_test.h"
+    #include "test.h"
 
-	#include "kernel/main.h"
+    #include "kernel/main.h"
 
-	/**
-	 * This is a sample class
-	 */
-	ZEPHIR_INIT_CLASS(Test_Hello) {
-		ZEPHIR_REGISTER_CLASS(Test, Hello, hello, test_hello_method_entry, 0);
-		return SUCCESS;
-	}
+    /**
+     * This is a sample class
+     */
+    ZEPHIR_INIT_CLASS(Test_Hello) {
+        ZEPHIR_REGISTER_CLASS(Test, Hello, hello, test_hello_method_entry, 0);
+        return SUCCESS;
+    }
 
-	/**
-	 * This is a sample method
-	 */
-	PHP_METHOD(Test_Hello, say) {
-		php_printf("%s", "Hello World!");
-	}
+    /**
+     * This is a sample method
+     */
+    PHP_METHOD(Test_Hello, say) {
+        php_printf("%s", "Hello World!");
+    }
 
 Actually, it is not expected that a developer that use Zephir must understand or know C,
 however if you have any experience with compilers, php internals or the C language itself,
 it would provide a more clear sceneario to the developer when working with Zephir.
+
+A Taste of Zephir
+-----------------
+In the following examples, we’ll describe just enough of the details so you understand what’s going on.
+The goal is to give you a sense of what programming in Zephir is like. We’ll explore the details of the
+features in subsequent chapters.
+
+The following example is very simple it implements a class and a method with an small program that checks
+the types of an array
+
+Let’s examine the code in detail, so we can begin to learn Zephir syntax.
+There are a lot of details in just a few lines of code! We’ll explain the general ideas here:
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    /**
+     * MyTest (test/mytest.zep)
+     */
+    class MyTest
+    {
+        public function someMethod()
+        {
+            /* Variables must be declared */
+            var myArray;
+            int i = 0, length;
+
+            /* Create an array */
+            let myArray = ["hello", 0, 100.25, false, null];
+
+            /* Count the array into a 'int' variable */
+            let length = count(myArray);
+
+            /* Print value types */
+            while i < length {
+                echo typeof myArray[i], "\n";
+                let i++;
+            }
+
+            return myArray;
+        }
+    }
+
+In the method, the first lines use the 'var' and 'int' keywords are used to declare a variables in a local scope.
+Every variable used in a method must be declared with its respective type. This declaration is not optional,
+it helps the compiler to report you about mistyped variables or about the use of variables out of their scope
+which usually ends in runtime errors.
+
+Dynamic variables are declared with the keyword 'var'. These variables can be assigned and reassigned
+to different types. On the other hand, we have 'i' and 'length' integer static typed variables
+that can only have values ​​of this type in the entire program execution.
+
+Compared to PHP you don't require a dollar sign ($) in front of variables.
+
+By the way, that’s a comment on the first line (with the name of the source file for the code example).
+Zephir follows the same comment conventions as Java, C#, C++, etc.
+A //comment goes to the end of a line, while a /* comment \*/ can cross line boundaries.
+
+Variables are by default inmutable, this means that Zephir expects that most variables stand
+unchanged. Variables that maintain their initial value can be optimized up by the compiler to static constants.
+When the value of a variable needs to be changed, the keyword 'let' must be used:
+
+.. code-block:: javascript
+
+    /* Create an array */
+    let myArray = ["hello", 0, 100.25, false, null];
+
+By default, arrays are dynamical like in PHP, it may contain values of different types.
+Functions from the PHP userland can be called in Zephir code, in the example the function 'count'
+was called, the compiler can do optimizations like avoid this call because it already knows the size of
+the array:
+
+.. code-block:: javascript
+
+    /* Count the array into a 'int' variable */
+    let length = count(myArray);
+
+Parentheses in control flow statements are optional, you can also use them if you feel more confortable.
+
+    while i < length {
+        echo typeof myArray[i], "\n";
+        let i++;
+    }
+
+PHP only works with dynamic variables, methods always return dynamic variables, this means that if a static
+variable is returned, in the PHP side, you will receive a dynamic variable anyway that can be used in PHP code.
+
 
 .. _zaefire: http://translate.google.com/#en/en/zaefire
