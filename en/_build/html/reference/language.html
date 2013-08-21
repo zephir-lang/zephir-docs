@@ -63,6 +63,9 @@
 <li><a class="reference internal" href="#instruction-separation">Instruction separation</a></li>
 <li><a class="reference internal" href="#comments">Comments</a></li>
 <li><a class="reference internal" href="#variable-declarations">Variable Declarations</a></li>
+<li><a class="reference internal" href="#variable-scope">Variable Scope</a></li>
+<li><a class="reference internal" href="#super-globals">Super Globals</a></li>
+<li><a class="reference internal" href="#local-symbol-table">Local Symbol Table</a></li>
 </ul>
 </li>
 </ul>
@@ -145,7 +148,7 @@ so they&#8217;re part of the language!.</p>
 <h2>Variable Declarations<a class="headerlink" href="#variable-declarations" title="Permalink to this headline">¶</a></h2>
 <p>In Zephir, all variables used in a given scope must be declared, this process gives important information
 to the compiler to perform optimizations and validations. Variables must be unique identifiers and they cannot be
-reserved words:</p>
+reserved words.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Declaring variables for the same type in the same instruction</span>
 <span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">c</span><span class="p">;</span>
 
@@ -162,6 +165,60 @@ as often as you want:</p>
 <span class="kr">int</span> <span class="nx">d</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="nx">bool</span> <span class="nx">some</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>Variable names are case-sensitive, the following variables are different:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Different variables</span>
+<span class="kd">var</span> <span class="nx">somevalue</span><span class="p">,</span> <span class="nx">someValue</span><span class="p">,</span> <span class="nx">SomeValue</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-scope">
+<h2>Variable Scope<a class="headerlink" href="#variable-scope" title="Permalink to this headline">¶</a></h2>
+<p>All variables declared are locally scoped to the method where they were declared:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">someMethod1</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kr">int</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">someMethod2</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kr">int</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="super-globals">
+<h2>Super Globals<a class="headerlink" href="#super-globals" title="Permalink to this headline">¶</a></h2>
+<p>Zephir doesn&#8217;t support global variables, accessing global variables from the PHP userland is not allowed.
+However, you can access the PHP&#8217;s super-globals as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Getting a value from _POST</span>
+<span class="kd">let</span> <span class="nx">price</span> <span class="o">=</span> <span class="nx">_POST</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">];</span>
+
+<span class="c1">//Read a value from _SERVER</span>
+<span class="kd">let</span> <span class="nx">requestMethod</span> <span class="o">=</span> <span class="nx">_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="local-symbol-table">
+<h2>Local Symbol Table<a class="headerlink" href="#local-symbol-table" title="Permalink to this headline">¶</a></h2>
+<p>Every method or context in PHP has a symbol table that allows to write variables in a very dynamical
+way:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$b</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$$a</span><span class="p">;</span> <span class="c1">// prints 100</span>
+</pre></div>
+</div>
+<p>Zephir does not implement this feature since all variables are compiled</p>
 </div>
 </div>
 

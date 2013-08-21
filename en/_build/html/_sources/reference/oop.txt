@@ -197,9 +197,9 @@ Class constants are exported to the PHP extension allowing them to be used from 
 
     }
 
-Class constants can be accessed using the class name and the static
+Class constants can be accessed using the class name and the static operator (::):
 
-.. code-block:: javascript
+.. code-block:: php
 
     namespace Test;
 
@@ -208,5 +208,10 @@ Class constants can be accessed using the class name and the static
 
         const MYCONSTANT1 = false;
         const MYCONSTANT2 = 1.0;
+
+        public function someMethod()
+        {
+            return Test\MyClass::MYCONSTANT1;
+        }
 
     }

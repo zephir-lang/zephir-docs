@@ -56,6 +56,16 @@
                   <input type="hidden" name="selected_facets" value="project:">
                 </form>
             </div>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Arrays</a><ul>
+<li><a class="reference internal" href="#creating-arrays">Creating Arrays</a></li>
+<li><a class="reference internal" href="#updating-arrays">Updating arrays</a></li>
+<li><a class="reference internal" href="#reading-elements-from-arrays">Reading elements from arrays</a></li>
+</ul>
+</li>
+</ul>
+
             <h4>Previous topic</h4>
             <p class="topless"><a href="types.html" title="previous chapter">&lt; Types</a></p>
             <h4>Next topic</h4>
@@ -73,6 +83,58 @@
                       
   <div class="section" id="arrays">
 <h1>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h1>
+<p>Array manipulation in Zephir provides a way to use PHP <a class="reference external" href="http://www.php.net/manual/en/language.types.array.php">arrays</a>.
+An array is an implementation of a <a class="reference external" href="http://en.wikipedia.org/wiki/Hash_table">hash table</a></p>
+<div class="section" id="creating-arrays">
+<h2>Creating Arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">¶</a></h2>
+<p>An array is created enclosing their elements in square brackets:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Creating an empty array</span>
+<span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="c1">//Creating an array with elements</span>
+<span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+
+<span class="c1">//Creating an array with elements of different types</span>
+<span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">true</span><span class="p">];</span>
+
+<span class="c1">//A multidimensional array</span>
+<span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]];</span>
+</pre></div>
+</div>
+<p>As PHP, hashes or dictionaries are supported:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Creating a hash with string keys</span>
+<span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">];</span>
+
+<span class="c1">//Creating a hash with numeric keys</span>
+<span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">];</span>
+
+<span class="c1">//Creating a hash with mixed string and numeric keys</span>
+<span class="kd">let</span> <span class="nx">elements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="o">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="o">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="updating-arrays">
+<h2>Updating arrays<a class="headerlink" href="#updating-arrays" title="Permalink to this headline">¶</a></h2>
+<p>Arrays are updated in the same way as PHP using square brackets:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Updating an array with a string key</span>
+<span class="kd">let</span> <span class="nx">elements</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span><span class="p">;</span>
+
+<span class="c1">//Updating an array with a numeric key</span>
+<span class="kd">let</span> <span class="nx">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reading-elements-from-arrays">
+<h2>Reading elements from arrays<a class="headerlink" href="#reading-elements-from-arrays" title="Permalink to this headline">¶</a></h2>
+<p>Is possible to read array elements as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Getting an element using the string key &quot;foo&quot;</span>
+<span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">];</span>
+
+<span class="c1">//Getting an element using the numeric key 0</span>
+<span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

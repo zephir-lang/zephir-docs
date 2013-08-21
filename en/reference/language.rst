@@ -73,7 +73,7 @@ Variable Declarations
 ---------------------
 In Zephir, all variables used in a given scope must be declared, this process gives important information
 to the compiler to perform optimizations and validations. Variables must be unique identifiers and they cannot be
-reserved words:
+reserved words.
 
 .. code-block:: javascript
 
@@ -94,3 +94,62 @@ as often as you want:
 	var a = "hello", b = 0, c = 1.0;
 	int d = 50; bool some = true;
 
+Variable names are case-sensitive, the following variables are different:
+
+.. code-block:: javascript
+
+	//Different variables
+	var somevalue, someValue, SomeValue;
+
+Variable Scope
+--------------
+All variables declared are locally scoped to the method where they were declared:
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    class MyClass
+    {
+
+        public function someMethod1()
+        {
+            int a = 1, b = 2;
+            return a + b;
+        }
+
+        public function someMethod2()
+        {
+            int a = 3, b = 4;
+            return a + b;
+        }
+
+    }
+
+Super Globals
+-------------
+Zephir doesn't support global variables, accessing global variables from the PHP userland is not allowed.
+However, you can access the PHP's super-globals as follows:
+
+.. code-block:: javascript
+
+	//Getting a value from _POST
+	let price = _POST['price'];
+
+	//Read a value from _SERVER
+	let requestMethod = _SERVER['REQUEST_METHOD'];
+
+Local Symbol Table
+------------------
+Every method or context in PHP has a symbol table that allows to write variables in a very dynamical
+way:
+
+.. code-block:: php
+
+	<?php
+
+	$b = 100;
+	$a = "b";
+	echo $$a; // prints 100
+
+Zephir does not implement this feature since all variables are compiled
