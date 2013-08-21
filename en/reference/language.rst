@@ -60,6 +60,3 @@ Zephir supports 'C'/'C++' comments, these are one line comments with // and mult
 	/*
 	 * multi-line comment
 	 */
-
-
-You might wonder why you don’t need parentheses (...) around the evaluated expressions

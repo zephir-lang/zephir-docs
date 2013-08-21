@@ -135,7 +135,7 @@ When the value of a variable needs to be changed, the keyword 'let' must be used
 
 By default, arrays are dynamical like in PHP, it may contain values of different types.
 Functions from the PHP userland can be called in Zephir code, in the example the function 'count'
-was called, the compiler can do optimizations like avoid this call because it already knows the size of
+was called, the compiler can performs optimizations like avoid this call because it already knows the size of
 the array:
 
 .. code-block:: javascript
@@ -156,6 +156,5 @@ PHP only works with dynamic variables, methods always return dynamic variables, 
 variable is returned, in the PHP side, you will get a dynamic variable that can be used in PHP code.
 Note that memory was automatically managed by the compiler, so you don't need to allocate or free
 memory like in C, working in a similar way than PHP.
-
 
 .. _zaefire: http://translate.google.com/#en/en/zaefire
