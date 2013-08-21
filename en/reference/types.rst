@@ -132,8 +132,8 @@ In Zephir, strings don't support variable parsing like in PHP, you can use conca
 
     echo "hello: " . name;
 
-Array
-^^^^^
+Arrays
+^^^^^^
 The array implementation in Zephir is basically the same as in PHP: Ordered maps optimized for
 several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map),
 dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and
@@ -193,5 +193,56 @@ the compiler to do a better optimization job. The following types are supported:
 | string           | A string is series of characters, where a character is the same as a byte.      |
 +------------------+---------------------------------------------------------------------------------+
 
+Boolean
+^^^^^^^
+A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior
+static boolean types remain boolean (true or false) no mater what value is assigned to them:
+
+.. code-block:: javascript
+
+    boolean a;
+
+    let a = true,
+        a = 100, // automatically casted to true
+        a = null, // automatically casted to false
+        a = "hello"; // throws a compiler exception
+
+Integer/Unsigned Integer
+^^^^^^^^^^^^^^^^^^^^^^^^
+Integer values are like the integer member in dynamic values. Values assigned to integer variables
+remain integer:
+
+.. code-block:: javascript
+
+    int a;
+
+    let a = 50,
+        a = -70,
+        a = 100.25, // automatically casted to 100
+        a = null, // automatically casted to 0
+        a = false, // automatically casted to 0
+        a = "hello"; // throws a compiler exception
+
+Unsigned integers are like integers but they don't have sign, this means you can't store
+negative numbers in these sort of variables:
+
+.. code-block:: javascript
+
+    let a = 50,
+        a = -70, // automatically casted to 70
+        a = 100.25, // automatically casted to 100
+        a = null, // automatically casted to 0
+        a = false, // automatically casted to 0
+        a = "hello"; // throws a compiler exception
+
+Unsigned integers are twice bigger than standard integers, assign unsigned integers to integers
+may represent loss of data:
+
+.. code-block:: javascript
+
+    uint a, int b;
+
+    let a = 2147483648,
+        b = a, // possible loss of data
 
 .. _`PHP manual`: http://www.php.net/manual/en/language.types.php

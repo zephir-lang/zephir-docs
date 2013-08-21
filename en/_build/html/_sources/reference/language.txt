@@ -92,3 +92,4 @@ as often as you want:
 	//Declaring variables with default values
 	var a = "hello", b = 0, c = 1.0;
 	int d = 50; bool some = true;
+

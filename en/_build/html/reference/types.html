@@ -65,11 +65,15 @@
 <li><a class="reference internal" href="#integer-overflow">Integer overflow</a></li>
 <li><a class="reference internal" href="#float-double">Float/Double</a></li>
 <li><a class="reference internal" href="#string">String</a></li>
-<li><a class="reference internal" href="#array">Array</a></li>
+<li><a class="reference internal" href="#arrays">Arrays</a></li>
 <li><a class="reference internal" href="#objects">Objects</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#static-types">Static Types</a></li>
+<li><a class="reference internal" href="#static-types">Static Types</a><ul>
+<li><a class="reference internal" href="#id1">Boolean</a></li>
+<li><a class="reference internal" href="#integer-unsigned-integer">Integer/Unsigned Integer</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -233,8 +237,8 @@ for chars.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="array">
-<h3>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="arrays">
+<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h3>
 <p>The array implementation in Zephir is basically the same as in PHP: Ordered maps optimized for
 several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map),
 dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and
@@ -305,6 +309,52 @@ the compiler to do a better optimization job. The following types are supported:
 </tr>
 </tbody>
 </table>
+<div class="section" id="id1">
+<h3>Boolean<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>A boolean expresses a truth value. It can be either &#8216;true&#8217; or &#8216;false&#8217;. Contrary to the dynamic behavior
+static boolean types remain boolean (true or false) no mater what value is assigned to them:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kr">boolean</span> <span class="nx">a</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">// automatically casted to true</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to false</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integer-unsigned-integer">
+<h3>Integer/Unsigned Integer<a class="headerlink" href="#integer-unsigned-integer" title="Permalink to this headline">¶</a></h3>
+<p>Integer values are like the integer member in dynamic values. Values assigned to integer variables
+remain integer:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kr">int</span> <span class="nx">a</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mf">100.25</span><span class="p">,</span> <span class="c1">// automatically casted to 100</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+<p>Unsigned integers are like integers but they don&#8217;t have sign, this means you can&#8217;t store
+negative numbers in these sort of variables:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="c1">// automatically casted to 70</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mf">100.25</span><span class="p">,</span> <span class="c1">// automatically casted to 100</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+<p>Unsigned integers are twice bigger than standard integers, assign unsigned integers to integers
+may represent loss of data:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">uint</span> <span class="nx">a</span><span class="p">,</span> <span class="kr">int</span> <span class="nx">b</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2147483648</span><span class="p">,</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">,</span> <span class="c1">// possible loss of data</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
