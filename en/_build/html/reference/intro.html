@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hello World! &mdash; Zephir 0.2.0a documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2.0a',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/docs.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Zephir 0.2.0a documentation" href="../index.html" />
+    <link rel="next" title="Our motivation" href="motivation.html" />
+    <link rel="prev" title="Welcome!" href="../index.html" /> 
+  </head>
+  <body>
+    <div id="wrapper">
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="motivation.html" title="Our motivation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
+        <li><a href="../index.html">Zephir 0.2.0a documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="90%" align="center">
+        <tr>
+      <td class="primary-box" width="25%" valign="top">
+            <div id="searchbox" style="">
+                <form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="15" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>
+            </div>
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="../index.html" title="previous chapter">&lt; Welcome!</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="motivation.html" title="next chapter">Our motivation &gt;</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/reference/intro.txt" rel="nofollow">Show Source</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="hello-world">
+<h1>Hello World!<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
+<p>Code in Zephir must be placed in classes, Zephir is intended to create object-oriented libraries/frameworks:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * This is a sample class</span>
+<span class="cm"> */</span>
+<span class="kr">class</span> <span class="nx">Hello</span>
+<span class="p">{</span>
+        <span class="cm">/**</span>
+<span class="cm">         * This is a sample method</span>
+<span class="cm">         */</span>
+        <span class="kr">public</span> <span class="kd">function</span> <span class="nx">say</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nx">echo</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Once this class is compiled it produce the following code:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">#ifdef HAVE_CONFIG_H</span>
+<span class="cp">#include &quot;config.h&quot;</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#include &quot;php.h&quot;</span>
+<span class="cp">#include &quot;php_test.h&quot;</span>
+<span class="cp">#include &quot;test.h&quot;</span>
+
+<span class="cp">#include &quot;kernel/main.h&quot;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * This is a sample class</span>
+<span class="cm"> */</span>
+<span class="n">ZEPHIR_INIT_CLASS</span><span class="p">(</span><span class="n">Test_Hello</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ZEPHIR_REGISTER_CLASS</span><span class="p">(</span><span class="n">Test</span><span class="p">,</span> <span class="n">Hello</span><span class="p">,</span> <span class="n">hello</span><span class="p">,</span> <span class="n">test_hello_method_entry</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">SUCCESS</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * This is a sample method</span>
+<span class="cm"> */</span>
+<span class="n">PHP_METHOD</span><span class="p">(</span><span class="n">Test_Hello</span><span class="p">,</span> <span class="n">say</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="motivation.html" title="Our motivation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome!"
+             >previous</a> |</li> 
+      </ul>
+    </div>
+        <div id="footer">
+
+          <p>Found a typo or an error? Want to improve this document? The documentation sources are available on <a href="http://github.com/phalcon/zephir-docs">Github</a></p>
+          <p>Need support or have questions? Check our <a href="http://zephir-lang.com/support">Support Page</a></p>
+
+          <p>Zephir Language is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">new BSD license</a>.</p>
+          <p>Except where otherwise noted, content on this site is licensed under the
+            <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
+             Last updated on Jul 24, 2013.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+          <p>
+             &copy; Copyright 2013, Zephir Team.
+          </p>
+
+        </div>
+
+    </div>
+  </body>
+</html>
