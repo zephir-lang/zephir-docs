@@ -46,6 +46,15 @@ Arrays are updated in the same way as PHP using square brackets:
 	//Updating an array with a numeric key
 	let elements[0] = "bar";
 
+Appending elements
+------------------
+Elements can be appended at the end of the array as follows:
+
+.. code-block:: javascript
+
+	//Append an element to the array
+	let elements[] = "bar";
+
 Reading elements from arrays
 ----------------------------
 Is possible to read array elements as follows:

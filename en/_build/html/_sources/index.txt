@@ -15,5 +15,6 @@ Table of Contents
    reference/types
    reference/arrays
    reference/oop
+   reference/control
    reference/install
    reference/license

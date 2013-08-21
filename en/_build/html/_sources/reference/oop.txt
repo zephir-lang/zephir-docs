@@ -21,6 +21,7 @@ is very similar to a PHP class:
 
     }
 
+
 Methods
 -------
 Methods implements the usual visibility modifiers available in PHP, explicity set
@@ -215,3 +216,4 @@ Class constants can be accessed using the class name and the static operator (::
         }
 
     }
+

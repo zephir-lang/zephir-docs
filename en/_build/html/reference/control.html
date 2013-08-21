@@ -6,7 +6,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; Zephir 0.2.0a documentation</title>
+    <title>Control Structures &mdash; Zephir 0.2.0a documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="../_static/docs.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Zephir 0.2.0a documentation" href="../index.html" />
-    <link rel="next" title="License" href="license.html" />
-    <link rel="prev" title="Control Structures" href="control.html" /> 
+    <link rel="next" title="Installation" href="install.html" />
+    <link rel="prev" title="Classes and Objects" href="oop.html" /> 
   </head>
   <body>
     <div id="wrapper">
@@ -36,10 +36,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="license.html" title="License"
+          <a href="install.html" title="Installation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="control.html" title="Control Structures"
+          <a href="oop.html" title="Classes and Objects"
              accesskey="P">previous</a> |</li>
         <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
         <li><a href="../index.html">Zephir 0.2.0a documentation</a> &raquo;</li> 
@@ -56,13 +56,20 @@
                   <input type="hidden" name="selected_facets" value="project:">
                 </form>
             </div>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Control Structures</a></li>
+<li><a class="reference internal" href="#conditionals">Conditionals</a></li>
+<li><a class="reference internal" href="#loops">Loops</a></li>
+</ul>
+
             <h4>Previous topic</h4>
-            <p class="topless"><a href="control.html" title="previous chapter">&lt; Control Structures</a></p>
+            <p class="topless"><a href="oop.html" title="previous chapter">&lt; Classes and Objects</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="license.html" title="next chapter">License &gt;</a></p>
+            <p class="topless"><a href="install.html" title="next chapter">Installation &gt;</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/reference/install.txt" rel="nofollow">Show Source</a></li>
+              <li><a href="../_sources/reference/control.txt" rel="nofollow">Show Source</a></li>
             </ul>
         </td>
           <td class="second-box" valign="top">
@@ -71,10 +78,31 @@
                   <div class="bodywrapper">
                     <div class="body" >
                       
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>PHP extensions require a slightly different installation method to a traditional php-based library or framework.
-You can either download a binary package for the system of your choice or build it from the sources.</p>
+  <div class="section" id="control-structures">
+<h1>Control Structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h1>
+<p>Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.</p>
+</div>
+<div class="section" id="conditionals">
+<h1>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h1>
+<p>&#8216;if&#8217; statements evaluates an expression executing this trace if the evaluation is true.
+Braces are compulsory, an &#8216;if&#8217; can have an optional &#8216;else&#8217; clause, and multiple &#8216;if&#8217;/&#8217;else&#8217;
+constructs can be chained together:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="kc">false</span> <span class="p">{</span>
+    <span class="nx">echo</span> <span class="s2">&quot;false?&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="kc">true</span> <span class="p">{</span>
+    <span class="nx">echo</span> <span class="s2">&quot;true!&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">echo</span> <span class="s2">&quot;neither true nor false&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Parentheses in the evaluated expression are optional:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -91,10 +119,10 @@ You can either download a binary package for the system of your choice or build 
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="license.html" title="License"
+          <a href="install.html" title="Installation"
              >next</a> |</li>
         <li class="right" >
-          <a href="control.html" title="Control Structures"
+          <a href="oop.html" title="Classes and Objects"
              >previous</a> |</li> 
       </ul>
     </div>
