@@ -23,7 +23,8 @@ is very similar to a PHP class:
 
 Implementing Methods
 --------------------
-Methods implements the usual visibility modifiers available in PHP, explicity set a visibility modifier is mandatory in Zephir:
+The "function" keyword introduces a method. Methods implements the usual visibility modifiers available
+in PHP, explicity set a visibility modifier is mandatory in Zephir:
 
 .. code-block:: javascript
 

@@ -57,7 +57,10 @@
             <ul>
 <li><a class="reference internal" href="#">Control Structures</a><ul>
 <li><a class="reference internal" href="#conditionals">Conditionals</a></li>
-<li><a class="reference internal" href="#loops">Loops</a></li>
+<li><a class="reference internal" href="#loops">Loops</a><ul>
+<li><a class="reference internal" href="#for-loop">For Loop</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -107,6 +110,62 @@ constructs can be chained together:</p>
     <span class="kd">let</span> <span class="nx">counter</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+<p>In addition to &#8216;while&#8217;, &#8216;loop&#8217; can be used to create infinite loops:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="nx">loop</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">n</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">if</span> <span class="nx">n</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
+    <span class="nx">echo</span> <span class="nx">x</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="for-loop">
+<h3>For Loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">¶</a></h3>
+<p>A &#8216;for&#8217; is a control structure that allows to traverse arrays or strings:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">for</span> <span class="nx">item</span> <span class="k">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="p">{</span>
+    <span class="nx">echo</span> <span class="nx">item</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Keys in hashes can be obtained in the following way:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="o">:</span> <span class="mi">4</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">items</span> <span class="p">{</span>
+    <span class="nx">echo</span> <span class="nx">key</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A &#8216;for&#8217; loop can also be instructed to traverse an array or string in reverse order:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">reverse</span> <span class="nx">items</span> <span class="p">{</span>
+    <span class="nx">echo</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A &#8216;for&#8217; can be used to traverse string variables:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">string</span> <span class="nx">language</span> <span class="o">=</span> <span class="s2">&quot;zephir&quot;</span><span class="p">,</span> <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nx">language</span> <span class="p">{</span>
+    <span class="nx">echo</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="nx">ch</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In reverse order:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">string</span> <span class="nx">language</span> <span class="o">=</span> <span class="s2">&quot;zephir&quot;</span><span class="p">,</span> <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nx">reverse</span> <span class="nx">language</span> <span class="p">{</span>
+    <span class="nx">echo</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="nx">ch</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A standard &#8216;for&#8217; that traverses a range of integer values can be written as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="nx">echo</span> <span class="nx">i</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
