@@ -100,6 +100,7 @@ A standard 'for' that traverses a range of integer values can be written as foll
 
 .. code-block:: javascript
 
-    for i in range(1, 10)
+    for i in range(1, 10) {
         echo i, "\n";
     }
+

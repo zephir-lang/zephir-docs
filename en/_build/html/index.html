@@ -52,6 +52,8 @@
             <h3><a href="#">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference internal" href="#">Welcome!</a><ul>
+<li><a class="reference internal" href="#some-features">Some features</a></li>
+<li><a class="reference internal" href="#a-small-taste">A small taste</a></li>
 <li><a class="reference internal" href="#table-of-contents">Table of Contents</a><ul>
 </ul>
 </li>
@@ -74,9 +76,65 @@
                       
   <div class="section" id="welcome">
 <h1>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to Zephir, a high level/dynamic/static/domain specific language
-designed to ease the creation of C-extensions for PHP with a focus on
-type safety and memory safety.</p>
+<p>Welcome to Zephir, an open source, high level/domain specific language
+designed to ease the creation and maintainability of extensions for PHP
+with a focus on type safety and memory safety.</p>
+<div class="section" id="some-features">
+<h2>Some features<a class="headerlink" href="#some-features" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Feature</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>Type system</td>
+<td>dynamic/static</td>
+</tr>
+<tr class="row-odd"><td>Memory safety</td>
+<td>pointers or direct memory managament aren&#8217;t allowed</td>
+</tr>
+<tr class="row-even"><td>Compilation model</td>
+<td>ahead of time</td>
+</tr>
+<tr class="row-odd"><td>Memory model</td>
+<td>task-local garbage collection</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="a-small-taste">
+<h2>A small taste<a class="headerlink" href="#a-small-taste" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Filter</span>
+<span class="cm"> */</span>
+<span class="kr">class</span> <span class="nx">Filter</span>
+<span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Filters a string returning its alpha characters</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param string str</span>
+<span class="cm">     */</span>
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">alpha</span><span class="p">(</span><span class="nx">string</span> <span class="nx">str</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span> <span class="nx">string</span> <span class="nx">filtered</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nx">str</span> <span class="p">{</span>
+           <span class="k">if</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;a&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;A&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span> <span class="p">{</span>
+              <span class="kd">let</span> <span class="nx">filtered</span> <span class="p">.</span><span class="o">=</span> <span class="nx">ch</span><span class="p">;</span>
+           <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nx">filtered</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -185,7 +243,7 @@ type safety and memory safety.</p>
           <p>Zephir Language is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">Zephir License</a>.</p>
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Aug 21, 2013.
+             Last updated on Aug 22, 2013.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>
