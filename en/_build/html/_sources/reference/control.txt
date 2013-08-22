@@ -4,6 +4,9 @@ Zephir implements a simplified set of control structures present in similar lang
 
 Conditionals
 ------------
+
+If Statement
+^^^^^^^^^^^^
 'if' statements evaluates an expression executing this trace if the evaluation is true.
 Braces are compulsory, an 'if' can have an optional 'else' clause, and multiple 'if'/'else'
 constructs can be chained together:
@@ -24,8 +27,31 @@ Parentheses in the evaluated expression are optional:
 
     if a < 0 { return -1; } else if a > 0 { return 1; }
 
+Switch Statement
+^^^^^^^^^^^^^^^^
+A 'switch' evalutes an expression against a series of predefined values executing the corresponding
+'case' block or falling back to the 'default' block case:
+
+.. code-block:: javascript
+
+    switch count(items) {
+        case 1:
+        case 3:
+            echo 'odd items';
+            break;
+        case 2:
+        case 4:
+            echo 'even items';
+            break;
+        default:
+            echo 'unknown items';
+    }
+
 Loops
 -----
+
+While Statement
+^^^^^^^^^^^^^^^
 'while' denotes a loop that iterates as long as its given condition evaluates as true:
 
 .. code-block:: javascript
@@ -35,6 +61,8 @@ Loops
         let counter -= 1;
     }
 
+Loop Statement
+^^^^^^^^^^^^^^
 In addition to 'while', 'loop' can be used to create infinite loops:
 
 .. code-block:: javascript
@@ -46,8 +74,8 @@ In addition to 'while', 'loop' can be used to create infinite loops:
         echo x, "\n";
     }
 
-For Loop
-^^^^^^^^
+For Statement
+^^^^^^^^^^^^^
 A 'for' is a control structure that allows to traverse arrays or strings:
 
 .. code-block:: javascript
@@ -104,3 +132,43 @@ A standard 'for' that traverses a range of integer values can be written as foll
         echo i, "\n";
     }
 
+Break Statement
+^^^^^^^^^^^^^^^
+'break' ends execution of the current 'while', 'for' or 'loop' statements:
+
+.. code-block:: javascript
+
+    for item in ['a', 'b', 'c', 'd'] {
+        if item == 'c' {
+            break; // exit the for
+        }
+        echo item, "\n";
+    }
+
+Continue Statement
+^^^^^^^^^^^^^^^^^^
+'continue' is used within looping structures to skip the rest of the current loop iteration and
+continue execution at the condition evaluation and then the beginning of the next iteration.
+
+.. code-block:: javascript
+
+    let a = 5;
+    while a > 0 {
+        let a--;
+        if a == 3 {
+            continue;
+        }
+        echo a, "\n";
+    }
+
+Require
+-------
+The 'require' statement dynamically includes and evaluates a specified PHP file. Note that included files
+via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allows to
+include other zephir files in runtime.
+
+.. code-block:: javascript
+
+    if file_exists(path) {
+        require path;
+    }

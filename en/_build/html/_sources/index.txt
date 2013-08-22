@@ -59,6 +59,7 @@ Table of Contents
    reference/tutorial
    reference/language
    reference/types
+   reference/operators
    reference/arrays
    reference/oop
    reference/control

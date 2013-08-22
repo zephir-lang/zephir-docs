@@ -195,7 +195,7 @@ When the value of a variable needs to be changed, the keyword &#8216;let&#8217; 
 <span class="kd">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">100.25</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
 </pre></div>
 </div>
-<p>By default, arrays are dynamical like in PHP, it may contain values of different types.
+<p>By default, arrays are dynamical like in PHP, they may contain values of different types.
 Functions from the PHP userland can be called in Zephir code, in the example the function &#8216;count&#8217;
 was called, the compiler can performs optimizations like avoid this call because it already knows the size of
 the array:</p>
@@ -212,7 +212,7 @@ the array:</p>
 </div>
 <p>PHP only works with dynamic variables, methods always return dynamic variables, this means that if a
 static typed variable is returned, in the PHP side, you will get a dynamic variable that can be used
-in PHP code. Note that memory was automatically managed by the compiler, so you don&#8217;t need to allocate or free
+in PHP code. Note that memory is automatically managed by the compiler, so you don&#8217;t need to allocate or free
 memory like in C, working in a similar way than PHP.</p>
 </div>
 </div>

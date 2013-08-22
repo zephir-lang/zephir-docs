@@ -150,7 +150,7 @@ Within class methods non-static properties may be accessed by using -> (Object O
 
         protected myProperty;
 
-        public function setMyProperty(myProperty)
+        public function setMyProperty(var myProperty)
         {
             let this->myProperty = myProperty;
         }
