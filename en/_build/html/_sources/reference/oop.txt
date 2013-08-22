@@ -259,3 +259,25 @@ Static methods must be called using the static operator (::):
         }
 
     }
+
+You can call methods in a dynamic manner as follows:
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    class MyClass
+    {
+        protected adapter;
+
+        public function setAdapter(var adapter)
+        {
+            let this->adapter = adapter;
+        }
+
+        public function someMethod(var methodName)
+        {
+            return $this->adapter->{methodName}();
+        }
+
+    }

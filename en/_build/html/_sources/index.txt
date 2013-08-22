@@ -78,3 +78,6 @@ Table of Contents
    reference/functions
    reference/install
    reference/license
+
+.. index::
+	single: index; index

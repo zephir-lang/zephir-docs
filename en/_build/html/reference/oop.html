@@ -330,6 +330,26 @@ Class constants are exported to the PHP extension allowing them to be used from 
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>You can call methods in a dynamic manner as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+    <span class="kr">protected</span> <span class="nx">adapter</span><span class="p">;</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">setAdapter</span><span class="p">(</span><span class="kd">var</span> <span class="nx">adapter</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">adapter</span> <span class="o">=</span> <span class="nx">adapter</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">someMethod</span><span class="p">(</span><span class="kd">var</span> <span class="nx">methodName</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">adapter</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">methodName</span><span class="p">}();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 

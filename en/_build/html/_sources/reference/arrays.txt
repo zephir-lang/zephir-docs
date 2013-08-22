@@ -1,7 +1,7 @@
 Arrays
 ======
 Array manipulation in Zephir provides a way to use PHP arrays_.
-An array is an implementation of a `hash table`_
+An array is an implementation of a `hash table`_.
 
 Creating Arrays
 ---------------
