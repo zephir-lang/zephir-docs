@@ -6,7 +6,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; Zephir 0.2.0a documentation</title>
+    <title>Functions &mdash; Zephir 0.2.0a documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -22,7 +22,7 @@
     </script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="Zephir 0.2.0a documentation" href="../index.html" />
-    <link rel="next" title="License" href="license.html" />
+    <link rel="next" title="Installation" href="install.html" />
     <link rel="prev" title="Control Structures" href="control.html" /> 
   </head>
   <body>
@@ -33,7 +33,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="license.html" title="License"
+          <a href="install.html" title="Installation"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="control.html" title="Control Structures"
@@ -56,10 +56,10 @@
             <h4>Previous topic</h4>
             <p class="topless"><a href="control.html" title="previous chapter">&lt; Control Structures</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="license.html" title="next chapter">License &gt;</a></p>
+            <p class="topless"><a href="install.html" title="next chapter">Installation &gt;</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/reference/install.txt" rel="nofollow">Show Source</a></li>
+              <li><a href="../_sources/reference/functions.txt" rel="nofollow">Show Source</a></li>
             </ul>
         </td>
           <td class="second-box" valign="top">
@@ -68,10 +68,26 @@
                   <div class="bodywrapper">
                     <div class="body" >
                       
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>PHP extensions require a slightly different installation method to a traditional php-based library or framework.
-You can either download a binary package for the system of your choice or build it from the sources.</p>
+  <div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>PHP has a rich library of functions you can use in your extensions.
+To call a PHP function you can just refer its name in the Zephir code:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kd">var</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -88,7 +104,7 @@ You can either download a binary package for the system of your choice or build 
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="license.html" title="License"
+          <a href="install.html" title="Installation"
              >next</a> |</li>
         <li class="right" >
           <a href="control.html" title="Control Structures"

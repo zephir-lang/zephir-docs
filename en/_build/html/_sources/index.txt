@@ -8,8 +8,6 @@ Some features
 -------------
 
 +-------------------+-----------------------------------------------------+
-| Feature           | Description                                         |
-+-------------------+-----------------------------------------------------+
 | Type system       | dynamic/static                                      |
 +-------------------+-----------------------------------------------------+
 | Memory safety     | pointers or direct memory managament aren't allowed |
@@ -64,5 +62,6 @@ Table of Contents
    reference/arrays
    reference/oop
    reference/control
+   reference/functions
    reference/install
    reference/license

@@ -216,3 +216,46 @@ Class constants can be accessed using the class name and the static operator (::
 
     }
 
+Calling Methods
+---------------
+Methods can be called using the object operator (->) as in PHP:
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    class MyClass
+    {
+
+        protected function _someHiddenMethod(a, b)
+        {
+            return a - b;
+        }
+
+        public function someMethod(c, d)
+        {
+            return this->_someHiddenMethod(c, d);
+        }
+
+    }
+
+Static methods must be called using the static operator (::):
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    class MyClass
+    {
+
+        protected static function _someHiddenMethod(a, b)
+        {
+            return a - b;
+        }
+
+        public static function someMethod(c, d)
+        {
+            return self::someHiddenMethod(c, d);
+        }
+
+    }

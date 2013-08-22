@@ -65,6 +65,7 @@
 </li>
 <li><a class="reference internal" href="#implementing-properties">Implementing Properties</a></li>
 <li><a class="reference internal" href="#class-constants">Class Constants</a></li>
+<li><a class="reference internal" href="#calling-methods">Calling Methods</a></li>
 </ul>
 </li>
 </ul>
@@ -289,6 +290,47 @@ Class constants are exported to the PHP extension allowing them to be used from 
 </pre></div>
 </div>
 </div>
+<div class="section" id="calling-methods">
+<h2>Calling Methods<a class="headerlink" href="#calling-methods" title="Permalink to this headline">¶</a></h2>
+<p>Methods can be called using the object operator (-&gt;) as in PHP:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+
+    <span class="kr">protected</span> <span class="kd">function</span> <span class="nx">_someHiddenMethod</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">someMethod</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">_someHiddenMethod</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Static methods must be called using the static operator (::):</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+
+    <span class="kr">protected</span> <span class="kr">static</span> <span class="kd">function</span> <span class="nx">_someHiddenMethod</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kr">static</span> <span class="kd">function</span> <span class="nx">someMethod</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="o">::</span><span class="nx">someHiddenMethod</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -314,10 +356,9 @@ Class constants are exported to the PHP extension allowing them to be used from 
     </div>
         <div id="footer">
 
-          <p>Zephir Language is released under the <a href="https://github.com/phalcon/cphalcon/blob/master/docs/LICENSE.md">Zephir License</a>.</p>
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Aug 21, 2013.
+             Last updated on Aug 22, 2013.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>
