@@ -108,7 +108,7 @@ A 'for' can be used to traverse string variables:
 
 .. code-block:: javascript
 
-    string language = "zephir", char ch;
+    string language = "zephir"; char ch;
 
     for ch in language {
         echo "[", ch "]";
@@ -118,7 +118,7 @@ In reverse order:
 
 .. code-block:: javascript
 
-    string language = "zephir", char ch;
+    string language = "zephir"; char ch;
 
     for ch in reverse language {
         echo "[", ch "]";

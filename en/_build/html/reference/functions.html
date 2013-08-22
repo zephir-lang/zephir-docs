@@ -6,7 +6,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Functions &mdash; Zephir 0.2.0a documentation</title>
+    <title>Calling Functions &mdash; Zephir 0.2.0a documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
@@ -68,10 +68,10 @@
                   <div class="bodywrapper">
                     <div class="body" >
                       
-  <div class="section" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="calling-functions">
+<h1>Calling Functions<a class="headerlink" href="#calling-functions" title="Permalink to this headline">¶</a></h1>
 <p>PHP has a rich library of functions you can use in your extensions.
-To call a PHP function you can just refer its name in the Zephir code:</p>
+To call a PHP function you can just refer its name in the Zephir code.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
@@ -83,6 +83,83 @@ To call a PHP function you can just refer its name in the Zephir code:</p>
             <span class="k">return</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can call also functions that are expected to exist in the PHP userland but they
+aren&#8217;t built in with PHP:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kd">var</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="nx">function_exists</span><span class="p">(</span><span class="s2">&quot;my_custom_encoder&quot;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">my_custom_encoder</span><span class="p">(</span><span class="nx">$text</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
+variable as parameter, some temporary dynamic variable will be used as bridge in order to call them:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="c1">// an implicit dynamic variable is created to</span>
+            <span class="c1">// pass the static typed &#39;text&#39; as parameter</span>
+            <span class="k">return</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Similarly, functions return dynamic values ​​that cannot be directly assigned to static
+variables without the appropriate cast:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">string</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+            <span class="k">return</span> <span class="s1">&#39;(&#39;</span> <span class="p">.</span> <span class="nx">encoded</span> <span class="p">.</span> <span class="s1">&#39;)&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sometimes, we would need to call functions in a dynamic way, you can call them as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kd">var</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span><span class="nx">callback</span><span class="p">}(</span><span class="nx">text</span><span class="p">);</span>
     <span class="p">}</span>
 
 <span class="p">}</span>

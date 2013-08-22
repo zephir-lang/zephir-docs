@@ -57,6 +57,7 @@
             <ul>
 <li><a class="reference internal" href="#">Operators</a><ul>
 <li><a class="reference internal" href="#arithmetic-operators">Arithmetic Operators</a></li>
+<li><a class="reference internal" href="#comparison-operators">Comparison Operators</a></li>
 </ul>
 </li>
 </ul>
@@ -94,7 +95,7 @@
 <tr class="row-even"><td>Negation</td>
 <td>-a</td>
 </tr>
-<tr class="row-odd"><td>Adition</td>
+<tr class="row-odd"><td>Addition</td>
 <td>a + b</td>
 </tr>
 <tr class="row-even"><td>Substraction</td>
@@ -106,8 +107,62 @@
 <tr class="row-even"><td>Division</td>
 <td>a / b</td>
 </tr>
+<tr class="row-odd"><td>Modulus</td>
+<td>a % b</td>
+</tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="comparison-operators">
+<h2>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">¶</a></h2>
+<p>Comparison operators depend on the type of variables compared, for example, if both
+compared operands are dynamic variables the behavior is the same as in PHP:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="25%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>a == b</td>
+<td>Equal</td>
+<td>TRUE if a is equal to b after type juggling.</td>
+</tr>
+<tr class="row-even"><td>a === b</td>
+<td>Identical</td>
+<td>TRUE if a is equal to b, and they are of the same type.</td>
+</tr>
+<tr class="row-odd"><td>a != b</td>
+<td>Not equal</td>
+<td>TRUE if a is not equal to b after type juggling.</td>
+</tr>
+<tr class="row-even"><td>a &lt;&gt; b</td>
+<td>Not equal</td>
+<td>TRUE if a is not equal to b after type juggling.</td>
+</tr>
+<tr class="row-odd"><td>a !== b</td>
+<td>Not identical</td>
+<td>TRUE if a is not equal to b, or they are not of the same type.</td>
+</tr>
+<tr class="row-even"><td>a &lt; b</td>
+<td>Less than</td>
+<td>TRUE if a is strictly less than b.</td>
+</tr>
+<tr class="row-odd"><td>a &gt; b</td>
+<td>Greater than</td>
+<td>TRUE if a is strictly greater than b.</td>
+</tr>
+<tr class="row-even"><td>a &lt;= b</td>
+<td>Less than or equal to</td>
+<td>TRUE if a is less than or equal to b.</td>
+</tr>
+<tr class="row-odd"><td>a &gt;= b</td>
+<td>Greater than or equal to</td>
+<td>TRUE if a is greater than or equal to b.</td>
+</tr>
+</tbody>
+</table>
+<p>Learn more about comparison of dynamic variables in the <a class="reference external" href="http://www.php.net/manual/en/language.operators.comparison.php">php manual</a>.</p>
 </div>
 </div>
 

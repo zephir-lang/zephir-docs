@@ -81,6 +81,7 @@ designed to ease the creation and maintainability of extensions for PHP
 with a focus on type safety and memory safety.</p>
 <div class="section" id="some-features">
 <h2>Some features<a class="headerlink" href="#some-features" title="Permalink to this headline">¶</a></h2>
+<p>Zephir&#8217;s main features are:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="26%" />
@@ -104,6 +105,8 @@ with a focus on type safety and memory safety.</p>
 </div>
 <div class="section" id="a-small-taste">
 <h2>A small taste<a class="headerlink" href="#a-small-taste" title="Permalink to this headline">¶</a></h2>
+<p>The following code registers a class with a method that filters variables returning its
+alphabetic characters:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="cm">/**</span>
@@ -118,7 +121,7 @@ with a focus on type safety and memory safety.</p>
 <span class="cm">     */</span>
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">alpha</span><span class="p">(</span><span class="nx">string</span> <span class="nx">str</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span> <span class="nx">string</span> <span class="nx">filtered</span><span class="p">;</span>
+        <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span> <span class="nx">string</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 
         <span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nx">str</span> <span class="p">{</span>
            <span class="k">if</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;a&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;A&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span> <span class="p">{</span>
@@ -129,6 +132,13 @@ with a focus on type safety and memory safety.</p>
         <span class="k">return</span> <span class="nx">filtered</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+<p>The class can be used from PHP as follows:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyLibrary\Filter</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">alpha</span><span class="p">(</span><span class="s2">&quot;01he</span><span class="si">$l</span><span class="s2">.lo?/1&quot;</span><span class="p">);</span> <span class="c1">// prints hello</span>
 </pre></div>
 </div>
 </div>
@@ -182,6 +192,7 @@ with a focus on type safety and memory safety.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference/operators.html">Operators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="reference/operators.html#arithmetic-operators">Arithmetic Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/operators.html#comparison-operators">Comparison Operators</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference/arrays.html">Arrays</a><ul>
@@ -221,7 +232,7 @@ with a focus on type safety and memory safety.</p>
 <li class="toctree-l2"><a class="reference internal" href="reference/control.html#require">Require</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reference/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/functions.html">Calling Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference/license.html">License</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="reference/license.html#the-zephirlang-license-1-0">The ZephirLang License 1.0</a></li>

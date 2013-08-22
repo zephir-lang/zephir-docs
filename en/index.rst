@@ -6,6 +6,7 @@ with a focus on type safety and memory safety.
 
 Some features
 -------------
+Zephir's main features are:
 
 +-------------------+-----------------------------------------------------+
 | Type system       | dynamic/static                                      |
@@ -19,6 +20,8 @@ Some features
 
 A small taste
 -------------
+The following code registers a class with a method that filters variables returning its
+alphabetic characters:
 
 .. code-block:: javascript
 
@@ -36,7 +39,7 @@ A small taste
          */
         public function alpha(string str)
         {
-            char ch; string filtered;
+            char ch; string filtered = "";
 
             for ch in str {
                if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
@@ -47,6 +50,15 @@ A small taste
             return filtered;
         }
     }
+
+The class can be used from PHP as follows:
+
+.. code-block:: php
+
+  <?php
+
+  $filter = new MyLibrary\Filter();
+  echo $filter->alpha("01he$l.lo?/1"); // prints hello
 
 Table of Contents
 -----------------
