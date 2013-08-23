@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Calling Functions &mdash; Zephir 0.2.0a documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.2.0a',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Zephir 0.2.0a documentation" href="index.html" />
+    <link rel="next" title="Installation" href="install.html" />
+    <link rel="prev" title="Control Structures" href="control.html" /> 
+  </head>
+  <body>
+    <div id="wrapper">
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="control.html" title="Control Structures"
+             accesskey="P">previous</a> |</li>
+        <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
+        <li><a href="index.html">Zephir 0.2.0a documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="90%" align="center">
+        <tr>
+      <td class="primary-box" width="25%" valign="top">
+            <!--<div id="searchbox" style="">
+                <form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="15" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>
+            </div>-->
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="control.html" title="previous chapter">&lt; Control Structures</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="install.html" title="next chapter">Installation &gt;</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/functions.txt" rel="nofollow">Show Source</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="calling-functions">
+<h1>Calling Functions<a class="headerlink" href="#calling-functions" title="Permalink to this headline">¶</a></h1>
+<p>PHP has a rich library of functions you can use in your extensions.
+To call a PHP function you can just refer its name in the Zephir code.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kd">var</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can call also functions that are expected to exist in the PHP userland but they
+aren&#8217;t built in with PHP:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kd">var</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="nx">function_exists</span><span class="p">(</span><span class="s2">&quot;my_custom_encoder&quot;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">my_custom_encoder</span><span class="p">(</span><span class="nx">$text</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
+variable as parameter, some temporary dynamic variable will be used as bridge in order to call them:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="c1">// an implicit dynamic variable is created to</span>
+            <span class="c1">// pass the static typed &#39;text&#39; as parameter</span>
+            <span class="k">return</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Similarly, functions return dynamic values that cannot be directly assigned to static
+variables without the appropriate cast:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">string</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="nx">let</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+            <span class="k">return</span> <span class="s1">&#39;(&#39;</span> <span class="p">.</span> <span class="nx">encoded</span> <span class="p">.</span> <span class="s1">&#39;)&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Sometimes, we would need to call functions in a dynamic way, you can call them as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Encoder</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kd">var</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span><span class="nx">callback</span><span class="p">}(</span><span class="nx">text</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="install.html" title="Installation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="control.html" title="Control Structures"
+             >previous</a> |</li> 
+      </ul>
+    </div>
+        <div id="footer">
+
+          <p>Zephir Language is a non-profit open source project. Please donate. </p>
+          <p>Except where otherwise noted, content on this site is licensed under the
+            <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
+             Last updated on Aug 23, 2013.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+          <p>
+             &copy; Copyright 2013, Zephir Team.
+          </p>
+
+        </div>
+
+    </div>
+  </body>
+</html>

@@ -2,7 +2,7 @@ Welcome!
 ========
 Welcome to Zephir, an open source, high level/domain specific language
 designed to ease the creation and maintainability of extensions for PHP
-with a focus on type safety and memory safety.
+with a focus on type and memory safety.
 
 Some features
 -------------
@@ -60,24 +60,23 @@ The class can be used from PHP as follows:
   $filter = new MyLibrary\Filter();
   echo $filter->alpha("01he$l.lo?/1"); // prints hello
 
-Table of Contents
------------------
+
 
 .. toctree::
    :maxdepth: 3
 
-   reference/motivation
-   reference/intro
-   reference/tutorial
-   reference/language
-   reference/types
-   reference/operators
-   reference/arrays
-   reference/oop
-   reference/control
-   reference/functions
-   reference/install
-   reference/license
+   motivation
+   intro
+   tutorial
+   language
+   types
+   operators
+   arrays
+   oop
+   control
+   functions
+   install
+   license
 
 .. index::
-	single: index; index
+  single: index; index
