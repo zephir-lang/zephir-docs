@@ -6,7 +6,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome! &mdash; Zephir 0.2.0a documentation</title>
+    <title>Zephir Language &mdash; Zephir 0.2.0a documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -22,7 +22,7 @@
     </script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="top" title="Zephir 0.2.0a documentation" href="#" />
-    <link rel="next" title="Why Zephir?" href="motivation.html" /> 
+    <link rel="next" title="Welcome" href="welcome.html" /> 
   </head>
   <body>
     <div id="wrapper">
@@ -32,7 +32,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="motivation.html" title="Why Zephir?"
+          <a href="welcome.html" title="Welcome"
              accesskey="N">next</a> |</li>
         <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
         <li><a href="#">Zephir 0.2.0a documentation</a> &raquo;</li> 
@@ -51,9 +51,8 @@
             </div>-->
             <h3><a href="#">Table Of Contents</a></h3>
             <ul>
-<li><a class="reference internal" href="#">Welcome!</a><ul>
-<li><a class="reference internal" href="#some-features">Some features</a></li>
-<li><a class="reference internal" href="#a-small-taste">A small taste</a><ul>
+<li><a class="reference internal" href="#">Zephir Language</a><ul>
+<li><a class="reference internal" href="#reference">Reference</a><ul>
 </ul>
 </li>
 </ul>
@@ -61,7 +60,7 @@
 </ul>
 
             <h4>Next topic</h4>
-            <p class="topless"><a href="motivation.html" title="next chapter">Why Zephir? &gt;</a></p>
+            <p class="topless"><a href="welcome.html" title="next chapter">Welcome &gt;</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="_sources/index.txt" rel="nofollow">Show Source</a></li>
@@ -73,75 +72,17 @@
                   <div class="bodywrapper">
                     <div class="body" >
                       
-  <div class="section" id="welcome">
-<h1>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to Zephir, an open source, high level/domain specific language
-designed to ease the creation and maintainability of extensions for PHP
-with a focus on type and memory safety.</p>
-<div class="section" id="some-features">
-<h2>Some features<a class="headerlink" href="#some-features" title="Permalink to this headline">¶</a></h2>
-<p>Zephir&#8217;s main features are:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="26%" />
-<col width="74%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Type system</td>
-<td>dynamic/static</td>
-</tr>
-<tr class="row-even"><td>Memory safety</td>
-<td>pointers or direct memory managament aren&#8217;t allowed</td>
-</tr>
-<tr class="row-odd"><td>Compilation model</td>
-<td>ahead of time</td>
-</tr>
-<tr class="row-even"><td>Memory model</td>
-<td>task-local garbage collection</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="a-small-taste">
-<h2>A small taste<a class="headerlink" href="#a-small-taste" title="Permalink to this headline">¶</a></h2>
-<p>The following code registers a class with a method that filters variables returning its
-alphabetic characters:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * Filter</span>
-<span class="cm"> */</span>
-<span class="kr">class</span> <span class="nx">Filter</span>
-<span class="p">{</span>
-    <span class="cm">/**</span>
-<span class="cm">     * Filters a string returning its alpha characters</span>
-<span class="cm">     *</span>
-<span class="cm">     * @param string str</span>
-<span class="cm">     */</span>
-    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">alpha</span><span class="p">(</span><span class="nx">string</span> <span class="nx">str</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span> <span class="nx">string</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-
-        <span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nx">str</span> <span class="p">{</span>
-           <span class="k">if</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;a&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;A&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nx">let</span> <span class="nx">filtered</span> <span class="p">.</span><span class="o">=</span> <span class="nx">ch</span><span class="p">;</span>
-           <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="k">return</span> <span class="nx">filtered</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The class can be used from PHP as follows:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-
-<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyLibrary\Filter</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">alpha</span><span class="p">(</span><span class="s2">&quot;01he</span><span class="si">$l</span><span class="s2">.lo?/1&quot;</span><span class="p">);</span> <span class="c1">// prints hello</span>
-</pre></div>
-</div>
+  <div class="section" id="zephir-language">
+<h1>Zephir Language<a class="headerlink" href="#zephir-language" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="welcome.html#some-features">Some features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="welcome.html#a-small-taste">A small taste</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="motivation.html">Why Zephir?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="motivation.html#if-you-are-a-php-programmer">If You Are a PHP Programmer...</a></li>
 <li class="toctree-l2"><a class="reference internal" href="motivation.html#if-you-are-a-c-programmer">If You Are a C Programmer...</a></li>
@@ -253,7 +194,7 @@ alphabetic characters:</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="motivation.html" title="Why Zephir?"
+          <a href="welcome.html" title="Welcome"
              >next</a> |</li> 
       </ul>
     </div>
