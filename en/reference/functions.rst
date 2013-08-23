@@ -66,7 +66,7 @@ variable as parameter, some temporary dynamic variable will be used as bridge in
 
     }
 
-Similarly, functions return dynamic values ​​that cannot be directly assigned to static
+Similarly, functions return dynamic values that cannot be directly assigned to static
 variables without the appropriate cast:
 
 .. code-block:: javascript

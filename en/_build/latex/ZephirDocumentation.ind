@@ -1,0 +1,8 @@
+\begin{theindex}
+\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+
+  \bigletter I
+  \item index
+    \subitem index, \hyperpage{29}
+
+\end{theindex}
