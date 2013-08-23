@@ -116,7 +116,7 @@ which usually ends in runtime errors.
 
 Dynamic variables are declared with the keyword 'var'. These variables can be assigned and reassigned
 to different types. On the other hand, we have 'i' and 'length' integer static typed variables
-that can only have values ​​of this type in the entire program execution.
+that can only have values of this type in the entire program execution.
 
 Compared to PHP you don't require a dollar sign ($) in front of variables.
 
