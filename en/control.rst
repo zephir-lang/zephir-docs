@@ -164,7 +164,7 @@ continue execution at the condition evaluation and then the beginning of the nex
 Require
 -------
 The 'require' statement dynamically includes and evaluates a specified PHP file. Note that included files
-via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allows to
+via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allow to
 include other zephir files in runtime.
 
 .. code-block:: javascript
