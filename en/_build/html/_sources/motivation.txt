@@ -92,6 +92,21 @@ found in runtime.
 Zephir is both statically and dynamically typed allowing you to take advantage from both sides where
 possible.
 
+Compilation Scheme
+------------------
+Zephir offers native code generation (currently via compilation to C), a compiler like gcc/clang/vc++
+optimizes and compiles the code down to machine code. The following graph shows how the process works:
+
+.. figure:: _static/img/scheme.png
+    :align: center
+
+In addition to the ones provided by Zephir, Over time, compilers have been implemented
+and matured a number of optimizations that improve the performance of compiled applications:
+
+* `GCC optimizations <http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html>`_
+* `LLVM passes <http://llvm.org/docs/Passes.html>`_
+* `Visual C/C++ optimizations <http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx>`_
+
 Conclusion
 ----------
 Zephir was not created to replace PHP or C, instead of this, we think it is a complement to them,
