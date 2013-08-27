@@ -13,7 +13,7 @@
 
 
 \title{Zephir Documentation}
-\date{August 23, 2013}
+\date{August 26, 2013}
 \release{0.2.0a}
 \author{Zephir Team}
 \newcommand{\sphinxlogo}{}
@@ -294,6 +294,31 @@ found in runtime.
 
 Zephir is both statically and dynamically typed allowing you to take advantage from both sides where
 possible.
+
+
+\subsection{Compilation Scheme}
+\label{motivation:compilation-scheme}
+Zephir offers native code generation (currently via compilation to C), a compiler like gcc/clang/vc++
+optimizes and compiles the code down to machine code. The following graph shows how the process works:
+\begin{figure}[htbp]
+\centering
+
+\includegraphics{scheme.png}
+\end{figure}
+
+In addition to the ones provided by Zephir, Over time, compilers have been implemented
+and matured a number of optimizations that improve the performance of compiled applications:
+\begin{itemize}
+\item {} 
+\href{http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html}{GCC optimizations}
+
+\item {} 
+\href{http://llvm.org/docs/Passes.html}{LLVM passes}
+
+\item {} 
+\href{http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx}{Visual C/C++ optimizations}
+
+\end{itemize}
 
 
 \subsection{Conclusion}
@@ -1702,7 +1727,7 @@ continue execution at the condition evaluation and then the beginning of the nex
 \subsection{Require}
 \label{control:require}
 The `require' statement dynamically includes and evaluates a specified PHP file. Note that included files
-via Zephir are interpreted by Zend Engine as normal PHP files. `require' does not allows to
+via Zephir are interpreted by Zend Engine as normal PHP files. `require' does not allow to
 include other zephir files in runtime.
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -1875,6 +1900,14 @@ The ZephirLang Team can be contacted via Email \href{mailto:team@zephir-lang.com
 
 For more information on the ZephirLang project,
 please see \textless{}\href{http://www.zephir-lang.com}{http://www.zephir-lang.com}\textgreater{}.
+
+
+\chapter{Other Formats}
+\label{index:other-formats}\begin{itemize}
+\item {} 
+\href{https://github.com/phalcon/zephir-docs/blob/master/en/\_build/latex/ZephirDocumentation.pdf?raw=true}{PDF}
+
+\end{itemize}
 
 \index{index!index}
 

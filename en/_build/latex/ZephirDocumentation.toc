@@ -8,63 +8,65 @@
 \contentsline {subsection}{\numberline {1.2.2}If You Are a C Programmer...}{2}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}Compilation vs Interpretation}{3}{subsection.1.2.3}
 \contentsline {subsection}{\numberline {1.2.4}Statically Typed Versus Dynamically Typed Languages}{3}{subsection.1.2.4}
-\contentsline {subsection}{\numberline {1.2.5}Conclusion}{3}{subsection.1.2.5}
-\contentsline {section}{\numberline {1.3}Introducing Zephir}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.2.5}Compilation Scheme}{3}{subsection.1.2.5}
+\contentsline {subsection}{\numberline {1.2.6}Conclusion}{4}{subsection.1.2.6}
+\contentsline {section}{\numberline {1.3}Introducing Zephir}{4}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Hello World!}{4}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}A Taste of Zephir}{5}{subsection.1.3.2}
 \contentsline {section}{\numberline {1.4}Tutorial}{6}{section.1.4}
-\contentsline {section}{\numberline {1.5}Basic Syntax}{6}{section.1.5}
-\contentsline {subsection}{\numberline {1.5.1}Organizing Code in Files and Namespaces}{6}{subsection.1.5.1}
+\contentsline {section}{\numberline {1.5}Basic Syntax}{7}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Organizing Code in Files and Namespaces}{7}{subsection.1.5.1}
 \contentsline {subsection}{\numberline {1.5.2}Instruction separation}{7}{subsection.1.5.2}
 \contentsline {subsection}{\numberline {1.5.3}Comments}{7}{subsection.1.5.3}
-\contentsline {subsection}{\numberline {1.5.4}Variable Declarations}{7}{subsection.1.5.4}
+\contentsline {subsection}{\numberline {1.5.4}Variable Declarations}{8}{subsection.1.5.4}
 \contentsline {subsection}{\numberline {1.5.5}Variable Scope}{8}{subsection.1.5.5}
-\contentsline {subsection}{\numberline {1.5.6}Super Globals}{8}{subsection.1.5.6}
-\contentsline {subsection}{\numberline {1.5.7}Local Symbol Table}{8}{subsection.1.5.7}
+\contentsline {subsection}{\numberline {1.5.6}Super Globals}{9}{subsection.1.5.6}
+\contentsline {subsection}{\numberline {1.5.7}Local Symbol Table}{9}{subsection.1.5.7}
 \contentsline {section}{\numberline {1.6}Types}{9}{section.1.6}
 \contentsline {subsection}{\numberline {1.6.1}Dynamic Type}{9}{subsection.1.6.1}
-\contentsline {subsubsection}{Boolean}{9}{subsubsection*.3}
-\contentsline {subsubsection}{Integer}{9}{subsubsection*.4}
-\contentsline {subsubsection}{Integer overflow}{9}{subsubsection*.5}
+\contentsline {subsubsection}{Boolean}{10}{subsubsection*.3}
+\contentsline {subsubsection}{Integer}{10}{subsubsection*.4}
+\contentsline {subsubsection}{Integer overflow}{10}{subsubsection*.5}
 \contentsline {subsubsection}{Float/Double}{10}{subsubsection*.6}
 \contentsline {subsubsection}{String}{10}{subsubsection*.7}
-\contentsline {subsubsection}{Arrays}{10}{subsubsection*.8}
+\contentsline {subsubsection}{Arrays}{11}{subsubsection*.8}
 \contentsline {subsubsection}{Objects}{11}{subsubsection*.9}
 \contentsline {subsection}{\numberline {1.6.2}Static Types}{11}{subsection.1.6.2}
-\contentsline {subsubsection}{Boolean}{11}{subsubsection*.10}
-\contentsline {subsubsection}{Integer/Unsigned Integer}{11}{subsubsection*.11}
-\contentsline {subsubsection}{Long/Unsigned Long}{12}{subsubsection*.12}
-\contentsline {subsubsection}{Char/Unsigned Char}{12}{subsubsection*.13}
+\contentsline {subsubsection}{Boolean}{12}{subsubsection*.10}
+\contentsline {subsubsection}{Integer/Unsigned Integer}{12}{subsubsection*.11}
+\contentsline {subsubsection}{Long/Unsigned Long}{13}{subsubsection*.12}
+\contentsline {subsubsection}{Char/Unsigned Char}{13}{subsubsection*.13}
 \contentsline {section}{\numberline {1.7}Operators}{13}{section.1.7}
 \contentsline {subsection}{\numberline {1.7.1}Arithmetic Operators}{13}{subsection.1.7.1}
-\contentsline {subsection}{\numberline {1.7.2}Comparison Operators}{13}{subsection.1.7.2}
-\contentsline {section}{\numberline {1.8}Arrays}{13}{section.1.8}
-\contentsline {subsection}{\numberline {1.8.1}Creating Arrays}{13}{subsection.1.8.1}
-\contentsline {subsection}{\numberline {1.8.2}Updating arrays}{14}{subsection.1.8.2}
-\contentsline {subsection}{\numberline {1.8.3}Appending elements}{14}{subsection.1.8.3}
-\contentsline {subsection}{\numberline {1.8.4}Reading elements from arrays}{14}{subsection.1.8.4}
-\contentsline {section}{\numberline {1.9}Classes and Objects}{14}{section.1.9}
-\contentsline {subsection}{\numberline {1.9.1}Classes}{14}{subsection.1.9.1}
-\contentsline {subsection}{\numberline {1.9.2}Implementing Methods}{15}{subsection.1.9.2}
-\contentsline {subsubsection}{Public Visibility}{16}{subsubsection*.14}
-\contentsline {subsubsection}{Protected Visibility}{16}{subsubsection*.15}
-\contentsline {subsubsection}{Private Visibility}{16}{subsubsection*.16}
-\contentsline {subsection}{\numberline {1.9.3}Implementing Properties}{16}{subsection.1.9.3}
-\contentsline {subsection}{\numberline {1.9.4}Class Constants}{17}{subsection.1.9.4}
-\contentsline {subsection}{\numberline {1.9.5}Calling Methods}{18}{subsection.1.9.5}
-\contentsline {section}{\numberline {1.10}Control Structures}{19}{section.1.10}
-\contentsline {subsection}{\numberline {1.10.1}Conditionals}{19}{subsection.1.10.1}
-\contentsline {subsubsection}{If Statement}{19}{subsubsection*.17}
-\contentsline {subsubsection}{Switch Statement}{19}{subsubsection*.18}
-\contentsline {subsection}{\numberline {1.10.2}Loops}{20}{subsection.1.10.2}
-\contentsline {subsubsection}{While Statement}{20}{subsubsection*.19}
-\contentsline {subsubsection}{Loop Statement}{20}{subsubsection*.20}
-\contentsline {subsubsection}{For Statement}{20}{subsubsection*.21}
-\contentsline {subsubsection}{Break Statement}{21}{subsubsection*.22}
-\contentsline {subsubsection}{Continue Statement}{21}{subsubsection*.23}
+\contentsline {subsection}{\numberline {1.7.2}Comparison Operators}{14}{subsection.1.7.2}
+\contentsline {section}{\numberline {1.8}Arrays}{14}{section.1.8}
+\contentsline {subsection}{\numberline {1.8.1}Creating Arrays}{14}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.2}Updating arrays}{15}{subsection.1.8.2}
+\contentsline {subsection}{\numberline {1.8.3}Appending elements}{15}{subsection.1.8.3}
+\contentsline {subsection}{\numberline {1.8.4}Reading elements from arrays}{15}{subsection.1.8.4}
+\contentsline {section}{\numberline {1.9}Classes and Objects}{15}{section.1.9}
+\contentsline {subsection}{\numberline {1.9.1}Classes}{15}{subsection.1.9.1}
+\contentsline {subsection}{\numberline {1.9.2}Implementing Methods}{16}{subsection.1.9.2}
+\contentsline {subsubsection}{Public Visibility}{17}{subsubsection*.14}
+\contentsline {subsubsection}{Protected Visibility}{17}{subsubsection*.15}
+\contentsline {subsubsection}{Private Visibility}{17}{subsubsection*.16}
+\contentsline {subsection}{\numberline {1.9.3}Implementing Properties}{17}{subsection.1.9.3}
+\contentsline {subsection}{\numberline {1.9.4}Class Constants}{18}{subsection.1.9.4}
+\contentsline {subsection}{\numberline {1.9.5}Calling Methods}{19}{subsection.1.9.5}
+\contentsline {section}{\numberline {1.10}Control Structures}{20}{section.1.10}
+\contentsline {subsection}{\numberline {1.10.1}Conditionals}{20}{subsection.1.10.1}
+\contentsline {subsubsection}{If Statement}{20}{subsubsection*.17}
+\contentsline {subsubsection}{Switch Statement}{20}{subsubsection*.18}
+\contentsline {subsection}{\numberline {1.10.2}Loops}{21}{subsection.1.10.2}
+\contentsline {subsubsection}{While Statement}{21}{subsubsection*.19}
+\contentsline {subsubsection}{Loop Statement}{21}{subsubsection*.20}
+\contentsline {subsubsection}{For Statement}{21}{subsubsection*.21}
+\contentsline {subsubsection}{Break Statement}{22}{subsubsection*.22}
+\contentsline {subsubsection}{Continue Statement}{22}{subsubsection*.23}
 \contentsline {subsection}{\numberline {1.10.3}Require}{22}{subsection.1.10.3}
 \contentsline {section}{\numberline {1.11}Calling Functions}{22}{section.1.11}
-\contentsline {section}{\numberline {1.12}Installation}{23}{section.1.12}
+\contentsline {section}{\numberline {1.12}Installation}{24}{section.1.12}
 \contentsline {section}{\numberline {1.13}License}{24}{section.1.13}
 \contentsline {subsection}{\numberline {1.13.1}The ZephirLang License 1.0}{24}{subsection.1.13.1}
-\contentsline {chapter}{Index}{25}{section*.24}
+\contentsline {chapter}{\numberline {2}Other Formats}{27}{chapter.2}
+\contentsline {chapter}{Index}{29}{section*.24}
