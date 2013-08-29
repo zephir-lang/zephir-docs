@@ -11,7 +11,7 @@ Zephir's main features are:
 +-------------------+-----------------------------------------------------+
 | Type system       | dynamic/static                                      |
 +-------------------+-----------------------------------------------------+
-| Memory safety     | pointers or direct memory managament aren't allowed |
+| Memory safety     | pointers or direct memory management aren't allowed |
 +-------------------+-----------------------------------------------------+
 | Compilation model | ahead of time                                       |
 +-------------------+-----------------------------------------------------+
