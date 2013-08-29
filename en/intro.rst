@@ -9,7 +9,7 @@ pronunciation should be zephyr, the creators of Zephir actually pronounce it zae
 
 Hello World!
 ------------
-Every language has its own "Hello World!", in Zephir this introductory example showcase some important
+Every language has its own "Hello World!" sample, in Zephir this introductory example showcase some important
 features of this language.
 
 Code in Zephir must be placed in classes, Zephir is intended to create object-oriented libraries/frameworks,
@@ -62,7 +62,7 @@ Once this class is compiled it produce the following code that is transparently 
         php_printf("%s", "Hello World!");
     }
 
-Actually, it is not expected that a developer that use Zephir must understand or know C,
+Actually, it is not expected that a developer that uses Zephir must know or even understand C,
 however if you have any experience with compilers, php internals or the C language itself,
 it would provide a more clear sceneario to the developer when working with Zephir.
 
@@ -72,7 +72,7 @@ In the following examples, we’ll describe just enough of the details so you un
 The goal is to give you a sense of what programming in Zephir is like. We’ll explore the details of the
 features in subsequent chapters.
 
-The following example is very simple it implements a class and a method with an small program that checks
+The following example is very simple, it implements a class and a method with an small program that checks
 the types of an array
 
 Let’s examine the code in detail, so we can begin to learn Zephir syntax.
@@ -118,13 +118,12 @@ Dynamic variables are declared with the keyword 'var'. These variables can be as
 to different types. On the other hand, we have 'i' and 'length' integer static typed variables
 that can only have values of this type in the entire program execution.
 
-Compared to PHP you don't require a dollar sign ($) in front of variables.
+In contrast with PHP you are not required to put a dollar sign ($) in front of variable names.
 
-By the way, that’s a comment on the first line (with the name of the source file for the code example).
 Zephir follows the same comment conventions as Java, C#, C++, etc.
 A //comment goes to the end of a line, while a /* comment \*/ can cross line boundaries.
 
-Variables are by default inmutable, this means that Zephir expects that most variables stand
+Variables are by default inmutable, this means that Zephir expects that most variables stay
 unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants.
 When the value of a variable needs to be changed, the keyword 'let' must be used:
 
@@ -133,7 +132,7 @@ When the value of a variable needs to be changed, the keyword 'let' must be used
     /* Create an array */
     let myArray = ["hello", 0, 100.25, false, null];
 
-By default, arrays are dynamical like in PHP, they may contain values of different types.
+By default, arrays are dynamic like in PHP, they may contain values of different types.
 Functions from the PHP userland can be called in Zephir code, in the example the function 'count'
 was called, the compiler can performs optimizations like avoid this call because it already knows the size of
 the array:
