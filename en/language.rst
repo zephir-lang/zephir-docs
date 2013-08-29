@@ -1,6 +1,6 @@
 Basic Syntax
 ============
-In this chapter, we’ll discuss organization of files and namespaces, variable declarations,
+In this chapter, we’ll discuss the organization of files and namespaces, variable declarations,
 miscellaneous syntax conventions, and a few other concepts.
 
 Organizing Code in Files and Namespaces
@@ -9,7 +9,7 @@ In PHP, you can place code in any file without a specific structure. In Zephir e
 a class (and just one class). Every class must have a namespace and the directory structure must match
 the names of classes and namespaces used.
 
-For example given the following structure the classes in each file must be:
+For example given the following structure, the classes in each file must be:
 
 .. code-block:: sh
 
@@ -40,7 +40,7 @@ Class in mylibrary/router/exception.zep:
 
 	}
 
-Zephir will raise a compiler exception if a file or class is not located at the expected file or viceversa.
+Zephir will raise a compiler exception if a file or class is not located at the expected file or vice versa.
 
 Instruction separation
 ----------------------
@@ -141,7 +141,7 @@ However, you can access the PHP's super-globals as follows:
 
 Local Symbol Table
 ------------------
-Every method or context in PHP has a symbol table that allows to write variables in a very dynamical
+Every method or context in PHP has a symbol table that allows to write variables in a very dynamic
 way:
 
 .. code-block:: php
@@ -153,5 +153,5 @@ way:
 	echo $$a; // prints 100
 
 Zephir does not implement this feature since all variables are compiled down to low level variables,
-and there is no way to know which variables do exist in a specific context.
+and there is no way to know which variables exist in a specific context.
 
