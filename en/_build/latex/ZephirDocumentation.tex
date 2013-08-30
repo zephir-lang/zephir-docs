@@ -13,7 +13,7 @@
 
 
 \title{Zephir Documentation}
-\date{August 26, 2013}
+\date{August 29, 2013}
 \release{0.2.0a}
 \author{Zephir Team}
 \newcommand{\sphinxlogo}{}
@@ -139,7 +139,7 @@ dynamic/static
 
 Memory safety
  & 
-pointers or direct memory managament aren't allowed
+pointers or direct memory management aren't allowed
 \\\hline
 
 Compilation model
@@ -341,7 +341,7 @@ pronunciation should be zephyr, the creators of Zephir actually pronounce it \hr
 
 \subsection{Hello World!}
 \label{intro:hello-world}
-Every language has its own ``Hello World!'', in Zephir this introductory example showcase some important
+Every language has its own ``Hello World!'' sample, in Zephir this introductory example showcase some important
 features of this language.
 
 Code in Zephir must be placed in classes, Zephir is intended to create object-oriented libraries/frameworks,
@@ -394,7 +394,7 @@ Once this class is compiled it produce the following code that is transparently 
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
-Actually, it is not expected that a developer that use Zephir must understand or know C,
+Actually, it is not expected that a developer that uses Zephir must know or even understand C,
 however if you have any experience with compilers, php internals or the C language itself,
 it would provide a more clear sceneario to the developer when working with Zephir.
 
@@ -405,7 +405,7 @@ In the following examples, we’ll describe just enough of the details so you un
 The goal is to give you a sense of what programming in Zephir is like. We’ll explore the details of the
 features in subsequent chapters.
 
-The following example is very simple it implements a class and a method with an small program that checks
+The following example is very simple, it implements a class and a method with an small program that checks
 the types of an array
 
 Let’s examine the code in detail, so we can begin to learn Zephir syntax.
@@ -451,13 +451,12 @@ Dynamic variables are declared with the keyword `var'. These variables can be as
 to different types. On the other hand, we have `i' and `length' integer static typed variables
 that can only have values of this type in the entire program execution.
 
-Compared to PHP you don't require a dollar sign (\$) in front of variables.
+In contrast with PHP you are not required to put a dollar sign (\$) in front of variable names.
 
-By the way, that’s a comment on the first line (with the name of the source file for the code example).
 Zephir follows the same comment conventions as Java, C\#, C++, etc.
 A //comment goes to the end of a line, while a /* comment */ can cross line boundaries.
 
-Variables are by default inmutable, this means that Zephir expects that most variables stand
+Variables are by default inmutable, this means that Zephir expects that most variables stay
 unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants.
 When the value of a variable needs to be changed, the keyword `let' must be used:
 
@@ -466,7 +465,7 @@ When the value of a variable needs to be changed, the keyword `let' must be used
 \PYG{n+nx}{let} \PYG{n+nx}{myArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"hello"}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{k+kc}{false}\PYG{p}{,} \PYG{k+kc}{null}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
-By default, arrays are dynamical like in PHP, they may contain values of different types.
+By default, arrays are dynamic like in PHP, they may contain values of different types.
 Functions from the PHP userland can be called in Zephir code, in the example the function `count'
 was called, the compiler can performs optimizations like avoid this call because it already knows the size of
 the array:
@@ -503,7 +502,7 @@ similar features in Zephir, as well as many features that are new or different.
 
 \section{Basic Syntax}
 \label{language::doc}\label{language:basic-syntax}
-In this chapter, we’ll discuss organization of files and namespaces, variable declarations,
+In this chapter, we’ll discuss the organization of files and namespaces, variable declarations,
 miscellaneous syntax conventions, and a few other concepts.
 
 
@@ -513,7 +512,7 @@ In PHP, you can place code in any file without a specific structure. In Zephir e
 a class (and just one class). Every class must have a namespace and the directory structure must match
 the names of classes and namespaces used.
 
-For example given the following structure the classes in each file must be:
+For example given the following structure, the classes in each file must be:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 mylibrary/
@@ -544,7 +543,7 @@ Class in mylibrary/router/exception.zep:
 \PYG{x}{\PYGZcb{}}
 \end{Verbatim}
 
-Zephir will raise a compiler exception if a file or class is not located at the expected file or viceversa.
+Zephir will raise a compiler exception if a file or class is not located at the expected file or vice versa.
 
 
 \subsection{Instruction separation}
@@ -651,7 +650,7 @@ However, you can access the PHP's super-globals as follows:
 
 \subsection{Local Symbol Table}
 \label{language:local-symbol-table}
-Every method or context in PHP has a symbol table that allows to write variables in a very dynamical
+Every method or context in PHP has a symbol table that allows to write variables in a very dynamic
 way:
 
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -663,7 +662,7 @@ way:
 \end{Verbatim}
 
 Zephir does not implement this feature since all variables are compiled down to low level variables,
-and there is no way to know which variables do exist in a specific context.
+and there is no way to know which variables exist in a specific context.
 
 
 \section{Types}
