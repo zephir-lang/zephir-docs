@@ -32,7 +32,7 @@ As PHP, hashes or dictionaries are supported:
 	let elements = [4: "bar", 8: "foo"];
 
 	//Creating a hash with mixed string and numeric keys
-	let elements = [4: "bar", 8: "foo"];
+	let elements = [4: "bar", "foo": 8];
 
 Updating arrays
 ---------------
