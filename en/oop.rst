@@ -255,7 +255,7 @@ Static methods must be called using the static operator (::):
 
         public static function someMethod(c, d)
         {
-            return self::someHiddenMethod(c, d);
+            return self::_someHiddenMethod(c, d);
         }
 
     }
