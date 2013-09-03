@@ -13,7 +13,7 @@
 
 
 \title{Zephir Documentation}
-\date{August 29, 2013}
+\date{September 03, 2013}
 \release{0.2.0a}
 \author{Zephir Team}
 \newcommand{\sphinxlogo}{}
@@ -1219,7 +1219,7 @@ As PHP, hashes or dictionaries are supported:
 \PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{o}{:} \PYG{l+s+s2}{"foo"}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//Creating a hash with mixed string and numeric keys}
-\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{o}{:} \PYG{l+s+s2}{"foo"}\PYG{p}{]}\PYG{p}{;}
+\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+s+s2}{"foo"}\PYG{o}{:} \PYG{l+m+mi}{8}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1523,7 +1523,7 @@ Static methods must be called using the static operator (::):
 
     \PYG{k+kr}{public} \PYG{k+kr}{static} \PYG{k+kd}{function} \PYG{n+nx}{someMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{return} \PYG{n+nx}{self}\PYG{o}{:}\PYG{o}{:}\PYG{n+nx}{someHiddenMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}\PYG{p}{;}
+        \PYG{k}{return} \PYG{n+nx}{self}\PYG{o}{:}\PYG{o}{:}\PYG{n+nx}{\PYGZus{}someHiddenMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
 \PYG{p}{\PYGZcb{}}
