@@ -9,11 +9,11 @@ pronunciation should be zephyr, the creators of Zephir actually pronounce it zae
 
 Hello World!
 ------------
-Every language has its own "Hello World!" sample, in Zephir this introductory example showcase some important
+Every language has its own "Hello World!" sample, in Zephir this introductory example showcases some important
 features of this language.
 
-Code in Zephir must be placed in classes, Zephir is intended to create object-oriented libraries/frameworks,
-so code out of a class is not allowed. Also a namespace is required:
+Code in Zephir must be placed in classes. This language is intended to create object-oriented libraries/frameworks,
+so code out of a class is not allowed. Also, a namespace is required:
 
 .. code-block:: javascript
 
@@ -63,16 +63,16 @@ Once this class is compiled it produce the following code that is transparently 
     }
 
 Actually, it is not expected that a developer that uses Zephir must know or even understand C,
-however if you have any experience with compilers, php internals or the C language itself,
+however, if you have any experience with compilers, php internals or the C language itself,
 it would provide a more clear sceneario to the developer when working with Zephir.
 
 A Taste of Zephir
 -----------------
-In the following examples, we’ll describe just enough of the details so you understand what’s going on.
+In the following examples, we’ll describe just enough of the details, so you understand what’s going on.
 The goal is to give you a sense of what programming in Zephir is like. We’ll explore the details of the
 features in subsequent chapters.
 
-The following example is very simple, it implements a class and a method with an small program that checks
+The following example is very simple, it implements a class and a method with a small program that checks
 the types of an array
 
 Let’s examine the code in detail, so we can begin to learn Zephir syntax.
@@ -109,7 +109,7 @@ There are a lot of details in just a few lines of code! We’ll explain the gene
         }
     }
 
-In the method, the first lines use the 'var' and 'int' keywords are used to declare a variables in a local scope.
+In the method, the first lines use the 'var' and 'int' keywords are used to declare a variable in the local scope.
 Every variable used in a method must be declared with its respective type. This declaration is not optional,
 it helps the compiler to report you about mistyped variables or about the use of variables out of their scope
 which usually ends in runtime errors.
@@ -118,14 +118,14 @@ Dynamic variables are declared with the keyword 'var'. These variables can be as
 to different types. On the other hand, we have 'i' and 'length' integer static typed variables
 that can only have values of this type in the entire program execution.
 
-In contrast with PHP you are not required to put a dollar sign ($) in front of variable names.
+In contrast with PHP, you are not required to put a dollar sign ($) in front of variable names.
 
 Zephir follows the same comment conventions as Java, C#, C++, etc.
 A //comment goes to the end of a line, while a /* comment \*/ can cross line boundaries.
 
-Variables are by default inmutable, this means that Zephir expects that most variables stay
+Variables are by default immutable, this means that Zephir expects that most variables stay
 unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants.
-When the value of a variable needs to be changed, the keyword 'let' must be used:
+When the variable value needs to be changed, the keyword 'let' must be used:
 
 .. code-block:: javascript
 

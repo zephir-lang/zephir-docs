@@ -1,7 +1,7 @@
 Calling Functions
 -----------------
 PHP has a rich library of functions you can use in your extensions.
-To call a PHP function you can just refer its name in the Zephir code.
+To call a PHP function, you can just refer its name in the Zephir code.
 
 .. code-block:: javascript
 
@@ -21,7 +21,7 @@ To call a PHP function you can just refer its name in the Zephir code.
     }
 
 You can call also functions that are expected to exist in the PHP userland but they
-aren't built in with PHP:
+aren't built-in with PHP:
 
 .. code-block:: javascript
 
@@ -45,7 +45,7 @@ aren't built in with PHP:
     }
 
 Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
-variable as parameter, some temporary dynamic variable will be used as bridge in order to call them:
+variable as a parameter, some temporary dynamic variable will be used as a bridge in order to call them:
 
 .. code-block:: javascript
 

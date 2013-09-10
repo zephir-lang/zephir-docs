@@ -5,11 +5,11 @@ miscellaneous syntax conventions, and a few other concepts.
 
 Organizing Code in Files and Namespaces
 ---------------------------------------
-In PHP, you can place code in any file without a specific structure. In Zephir every file must contain
+In PHP, you can place the code in any file without a specific structure. In Zephir, every file must contain
 a class (and just one class). Every class must have a namespace and the directory structure must match
 the names of classes and namespaces used.
 
-For example given the following structure, the classes in each file must be:
+For example, given the following structure, the classes in each file must be:
 
 .. code-block:: sh
 
@@ -63,16 +63,16 @@ Zephir supports 'C'/'C++' comments, these are one line comments with // and mult
 	 * multi-line comment
 	 */
 
-In most languages comments are simply text ignored by the compiler/interpreter. In Zephir,
-multi-line comments are also used as docblocks and they're exported to the generated code,
+In most languages, comments are simply text ignored by the compiler/interpreter. In Zephir,
+multi-line comments are also used as docblocks, and they're exported to the generated code,
 so they're part of the language!.
 
-The compiler would throw an exception if a docblock is not located where is expected.
+If a docblock is not located where is expected, the compiler will throw an exception.
 
 Variable Declarations
 ---------------------
-In Zephir, all variables used in a given scope must be declared, this process gives important information
-to the compiler to perform optimizations and validations. Variables must be unique identifiers and they cannot be
+In Zephir, all variables used in a given scope must be declared. This process gives important information
+to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be
 reserved words.
 
 .. code-block:: javascript
@@ -152,6 +152,15 @@ way:
 	$a = "b";
 	echo $$a; // prints 100
 
-Zephir does not implement this feature since all variables are compiled down to low level variables,
-and there is no way to know which variables exist in a specific context.
+Zephir does not implement this feature since all variables are compiled down to low level variables
+and there is no way to know which variables do exist in a specific context. If you want to create
+a variable in the current PHP symbol table, you can use the following syntax:
 
+.. code-block:: javascript
+
+	//Set variable $name in PHP
+	let {"name"} = "hello";
+
+	//Set variable $price in PHP
+	let name = "price";
+	let {name} = 10.2;

@@ -86,10 +86,10 @@ PHP developers.</p>
 pronunciation should be zephyr, the creators of Zephir actually pronounce it <a class="reference external" href="http://translate.google.com/#en/en/zaefire">zaefire</a>.</p>
 <div class="section" id="hello-world">
 <h2>Hello World!<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
-<p>Every language has its own &#8220;Hello World!&#8221; sample, in Zephir this introductory example showcase some important
+<p>Every language has its own &#8220;Hello World!&#8221; sample, in Zephir this introductory example showcases some important
 features of this language.</p>
-<p>Code in Zephir must be placed in classes, Zephir is intended to create object-oriented libraries/frameworks,
-so code out of a class is not allowed. Also a namespace is required:</p>
+<p>Code in Zephir must be placed in classes. This language is intended to create object-oriented libraries/frameworks,
+so code out of a class is not allowed. Also, a namespace is required:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
 
 <span class="cm">/**</span>
@@ -135,15 +135,15 @@ so code out of a class is not allowed. Also a namespace is required:</p>
 </pre></div>
 </div>
 <p>Actually, it is not expected that a developer that uses Zephir must know or even understand C,
-however if you have any experience with compilers, php internals or the C language itself,
+however, if you have any experience with compilers, php internals or the C language itself,
 it would provide a more clear sceneario to the developer when working with Zephir.</p>
 </div>
 <div class="section" id="a-taste-of-zephir">
 <h2>A Taste of Zephir<a class="headerlink" href="#a-taste-of-zephir" title="Permalink to this headline">¶</a></h2>
-<p>In the following examples, we’ll describe just enough of the details so you understand what’s going on.
+<p>In the following examples, we’ll describe just enough of the details, so you understand what’s going on.
 The goal is to give you a sense of what programming in Zephir is like. We’ll explore the details of the
 features in subsequent chapters.</p>
-<p>The following example is very simple, it implements a class and a method with an small program that checks
+<p>The following example is very simple, it implements a class and a method with a small program that checks
 the types of an array</p>
 <p>Let’s examine the code in detail, so we can begin to learn Zephir syntax.
 There are a lot of details in just a few lines of code! We’ll explain the general ideas here:</p>
@@ -161,15 +161,15 @@ There are a lot of details in just a few lines of code! We’ll explain the gene
         <span class="kr">int</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">length</span><span class="p">;</span>
 
         <span class="cm">/* Create an array */</span>
-        <span class="nx">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">100.25</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
+        <span class="kd">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">100.25</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
 
         <span class="cm">/* Count the array into a &#39;int&#39; variable */</span>
-        <span class="nx">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
 
         <span class="cm">/* Print value types */</span>
         <span class="k">while</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span> <span class="p">{</span>
             <span class="nx">echo</span> <span class="k">typeof</span> <span class="nx">myArray</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
-            <span class="nx">let</span> <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="kd">let</span> <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="k">return</span> <span class="nx">myArray</span><span class="p">;</span>
@@ -177,21 +177,21 @@ There are a lot of details in just a few lines of code! We’ll explain the gene
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In the method, the first lines use the &#8216;var&#8217; and &#8216;int&#8217; keywords are used to declare a variables in a local scope.
+<p>In the method, the first lines use the &#8216;var&#8217; and &#8216;int&#8217; keywords are used to declare a variable in the local scope.
 Every variable used in a method must be declared with its respective type. This declaration is not optional,
 it helps the compiler to report you about mistyped variables or about the use of variables out of their scope
 which usually ends in runtime errors.</p>
 <p>Dynamic variables are declared with the keyword &#8216;var&#8217;. These variables can be assigned and reassigned
 to different types. On the other hand, we have &#8216;i&#8217; and &#8216;length&#8217; integer static typed variables
 that can only have values of this type in the entire program execution.</p>
-<p>In contrast with PHP you are not required to put a dollar sign ($) in front of variable names.</p>
+<p>In contrast with PHP, you are not required to put a dollar sign ($) in front of variable names.</p>
 <p>Zephir follows the same comment conventions as Java, C#, C++, etc.
 A //comment goes to the end of a line, while a /* comment */ can cross line boundaries.</p>
-<p>Variables are by default inmutable, this means that Zephir expects that most variables stay
+<p>Variables are by default immutable, this means that Zephir expects that most variables stay
 unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants.
-When the value of a variable needs to be changed, the keyword &#8216;let&#8217; must be used:</p>
+When the variable value needs to be changed, the keyword &#8216;let&#8217; must be used:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/* Create an array */</span>
-<span class="nx">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">100.25</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">100.25</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>By default, arrays are dynamic like in PHP, they may contain values of different types.
@@ -199,13 +199,13 @@ Functions from the PHP userland can be called in Zephir code, in the example the
 was called, the compiler can performs optimizations like avoid this call because it already knows the size of
 the array:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/* Count the array into a &#39;int&#39; variable */</span>
-<span class="nx">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Parentheses in control flow statements are optional, you can also use them if you feel more confortable.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">while</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="k">typeof</span> <span class="nx">myArray</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
-    <span class="nx">let</span> <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -242,7 +242,7 @@ memory like in C, working in a similar way than PHP.</p>
           <p>Zephir Language is a non-profit open source project. Please donate. </p>
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Aug 29, 2013.
+             Last updated on Sep 09, 2013.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>

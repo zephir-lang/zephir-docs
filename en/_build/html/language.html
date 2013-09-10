@@ -88,10 +88,10 @@
 miscellaneous syntax conventions, and a few other concepts.</p>
 <div class="section" id="organizing-code-in-files-and-namespaces">
 <h2>Organizing Code in Files and Namespaces<a class="headerlink" href="#organizing-code-in-files-and-namespaces" title="Permalink to this headline">¶</a></h2>
-<p>In PHP, you can place code in any file without a specific structure. In Zephir every file must contain
+<p>In PHP, you can place the code in any file without a specific structure. In Zephir, every file must contain
 a class (and just one class). Every class must have a namespace and the directory structure must match
 the names of classes and namespaces used.</p>
-<p>For example given the following structure, the classes in each file must be:</p>
+<p>For example, given the following structure, the classes in each file must be:</p>
 <div class="highlight-sh"><div class="highlight"><pre>mylibrary/
         router/
                 exception.zep <span class="c"># MyLibrary\Router\Exception</span>
@@ -136,15 +136,15 @@ You can use semicolons to separate statements and expressions, as in Java, C/C++
 <span class="cm"> */</span>
 </pre></div>
 </div>
-<p>In most languages comments are simply text ignored by the compiler/interpreter. In Zephir,
-multi-line comments are also used as docblocks and they&#8217;re exported to the generated code,
+<p>In most languages, comments are simply text ignored by the compiler/interpreter. In Zephir,
+multi-line comments are also used as docblocks, and they&#8217;re exported to the generated code,
 so they&#8217;re part of the language!.</p>
-<p>The compiler would throw an exception if a docblock is not located where is expected.</p>
+<p>If a docblock is not located where is expected, the compiler will throw an exception.</p>
 </div>
 <div class="section" id="variable-declarations">
 <h2>Variable Declarations<a class="headerlink" href="#variable-declarations" title="Permalink to this headline">¶</a></h2>
-<p>In Zephir, all variables used in a given scope must be declared, this process gives important information
-to the compiler to perform optimizations and validations. Variables must be unique identifiers and they cannot be
+<p>In Zephir, all variables used in a given scope must be declared. This process gives important information
+to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be
 reserved words.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Declaring variables for the same type in the same instruction</span>
 <span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">c</span><span class="p">;</span>
@@ -197,10 +197,10 @@ as often as you want:</p>
 <p>Zephir doesn&#8217;t support global variables, accessing global variables from the PHP userland is not allowed.
 However, you can access the PHP&#8217;s super-globals as follows:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Getting a value from _POST</span>
-<span class="nx">let</span> <span class="nx">price</span> <span class="o">=</span> <span class="nx">_POST</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">price</span> <span class="o">=</span> <span class="nx">_POST</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">];</span>
 
 <span class="c1">//Read a value from _SERVER</span>
-<span class="nx">let</span> <span class="nx">requestMethod</span> <span class="o">=</span> <span class="nx">_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">requestMethod</span> <span class="o">=</span> <span class="nx">_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -215,8 +215,17 @@ way:</p>
 <span class="k">echo</span> <span class="nv">$$a</span><span class="p">;</span> <span class="c1">// prints 100</span>
 </pre></div>
 </div>
-<p>Zephir does not implement this feature since all variables are compiled down to low level variables,
-and there is no way to know which variables exist in a specific context.</p>
+<p>Zephir does not implement this feature since all variables are compiled down to low level variables
+and there is no way to know which variables do exist in a specific context. If you want to create
+a variable in the current PHP symbol table, you can use the following syntax:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Set variable $name in PHP</span>
+<span class="kd">let</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">}</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+
+<span class="c1">//Set variable $price in PHP</span>
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;price&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="p">{</span><span class="nx">name</span><span class="p">}</span> <span class="o">=</span> <span class="mf">10.2</span><span class="p">;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -246,7 +255,7 @@ and there is no way to know which variables exist in a specific context.</p>
           <p>Zephir Language is a non-profit open source project. Please donate. </p>
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Aug 29, 2013.
+             Last updated on Sep 09, 2013.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>

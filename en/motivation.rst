@@ -7,12 +7,12 @@ Every PHP application is based on a set of common components that are also base 
 These common components are libraries/frameworks or a combination of them. Once installed, frameworks rarely
 change, being the foundation of the application they must be highly functional and also very fast.
 
-Gettting fast and robust libraries can be complicated due to high levels of abstraction that are
+Getting fast and robust libraries can be complicated due to high levels of abstraction that are
 typically implemented on them. Given the condition that base libraries or frameworks rarely change,
 there is an opportunity to build extensions that provide this functionality taking advantage of the
 compilation improving performance and resource consumption.
 
-With Zephir you can implement object-oriented libraries/frameworks/applications that can be used from
+With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from
 PHP gaining important seconds that can make your application faster while improving the user experience.
 
 If You Are a PHP Programmer...
@@ -22,11 +22,11 @@ Dynamically typed and interpreted languages like PHP offer very high productivit
 
 Since version 4 and then 5, PHP is based on the Zend Engine implementation. This is a virtual machine
 that executes the PHP code from its bytecode representation. Zend Engine is almost present in every
-PHP installation in the world. With Zephir you can create extensions for PHP running under the
+PHP installation in the world, with Zephir, you can create extensions for PHP running under the
 Zend Engine.
 
-PHP is hosting Zephir, so they obviously have a lot of similarities, however, they have
-important differences that give Zephir its own personality. For example, Zephir is more strict
+PHP is hosting Zephir, so they obviously have a lot of similarities, however; they have
+important differences that give Zephir its own personality. For example, Zephir is more strict,
 and it could be make you less productive compared to PHP due to the compilation step.
 
 If You Are a C Programmer...
@@ -43,15 +43,15 @@ if you're a C programmer, you will feel Zephir less powerful but more friendly t
 
 Compilation vs Interpretation
 -----------------------------
-Compilation usually slows the development down, you will need a bit more of patience to make your
-code compiled before see it running. Moreover, the interpretation tends to reduce the performance
-in favor of productivity. In some cases there is no any noticeable difference between the speed of the
+Compilation usually slows the development down; you will need a bit more of patience to make your code
+compiled before running it. Moreover, the interpretation tends to reduce the performance in favor of
+productivity. In some cases, there is no any noticeable difference between the speed of the
 interpreted and compiled code.
 
-Zephir requires compilation of your code, however the functionality is used from PHP that is interpreted.
+Zephir requires compilation of your code, however, the functionality is used from PHP that is interpreted.
 
-Once the code is compiled is not necessary to do so, however, interpreted code is interpreted
-each time it is run. A developer can decide which parts of your application should be in Zephir and which not.
+Once the code is compiled is not necessary to do so, however, interpreted code is interpreted each time
+it is run. A developer can decide which parts of your application should be in Zephir and which not.
 
 Statically Typed Versus Dynamically Typed Languages
 ---------------------------------------------------
@@ -111,6 +111,6 @@ Conclusion
 ----------
 Zephir was not created to replace PHP or C, instead of this, we think it is a complement to them,
 allowing developers to venture into code compilation and static typing.
-Zephir is precisely an attempt to join good things from the C and PHP worlds, looking for oportunities
-to make their applications faster.
+Zephir is precisely an attempt to join good things from the C and PHP worlds,
+looking for opportunities to make their applications faster.
 

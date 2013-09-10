@@ -71,7 +71,7 @@
   <div class="section" id="calling-functions">
 <h1>Calling Functions<a class="headerlink" href="#calling-functions" title="Permalink to this headline">¶</a></h1>
 <p>PHP has a rich library of functions you can use in your extensions.
-To call a PHP function you can just refer its name in the Zephir code.</p>
+To call a PHP function, you can just refer its name in the Zephir code.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
@@ -89,7 +89,7 @@ To call a PHP function you can just refer its name in the Zephir code.</p>
 </pre></div>
 </div>
 <p>You can call also functions that are expected to exist in the PHP userland but they
-aren&#8217;t built in with PHP:</p>
+aren&#8217;t built-in with PHP:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
@@ -111,7 +111,7 @@ aren&#8217;t built in with PHP:</p>
 </pre></div>
 </div>
 <p>Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
-variable as parameter, some temporary dynamic variable will be used as bridge in order to call them:</p>
+variable as a parameter, some temporary dynamic variable will be used as a bridge in order to call them:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
@@ -142,7 +142,7 @@ variables without the appropriate cast:</p>
         <span class="nx">string</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 
         <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
-            <span class="nx">let</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
             <span class="k">return</span> <span class="s1">&#39;(&#39;</span> <span class="p">.</span> <span class="nx">encoded</span> <span class="p">.</span> <span class="s1">&#39;)&#39;</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
@@ -193,7 +193,7 @@ variables without the appropriate cast:</p>
           <p>Zephir Language is a non-profit open source project. Please donate. </p>
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Sep 03, 2013.
+             Last updated on Sep 09, 2013.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>

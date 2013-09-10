@@ -8,7 +8,7 @@ Conditionals
 If Statement
 ^^^^^^^^^^^^
 'if' statements evaluates an expression executing this trace if the evaluation is true.
-Braces are compulsory, an 'if' can have an optional 'else' clause, and multiple 'if'/'else'
+Braces are compulsory, an 'if' can have an optional 'else' clause, multiple 'if'/'else'
 constructs can be chained together:
 
 .. code-block:: javascript
@@ -29,7 +29,7 @@ Parentheses in the evaluated expression are optional:
 
 Switch Statement
 ^^^^^^^^^^^^^^^^
-A 'switch' evalutes an expression against a series of predefined values executing the corresponding
+A 'switch' evalutes an expression against a series of predefined literal values executing the corresponding
 'case' block or falling back to the 'default' block case:
 
 .. code-block:: javascript

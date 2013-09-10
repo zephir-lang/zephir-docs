@@ -97,7 +97,7 @@
 <div class="section" id="if-statement">
 <h3>If Statement<a class="headerlink" href="#if-statement" title="Permalink to this headline">¶</a></h3>
 <p>&#8216;if&#8217; statements evaluates an expression executing this trace if the evaluation is true.
-Braces are compulsory, an &#8216;if&#8217; can have an optional &#8216;else&#8217; clause, and multiple &#8216;if&#8217;/&#8217;else&#8217;
+Braces are compulsory, an &#8216;if&#8217; can have an optional &#8216;else&#8217; clause, multiple &#8216;if&#8217;/&#8217;else&#8217;
 constructs can be chained together:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="kc">false</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="s2">&quot;false?&quot;</span><span class="p">;</span>
@@ -115,7 +115,7 @@ constructs can be chained together:</p>
 </div>
 <div class="section" id="switch-statement">
 <h3>Switch Statement<a class="headerlink" href="#switch-statement" title="Permalink to this headline">¶</a></h3>
-<p>A &#8216;switch&#8217; evalutes an expression against a series of predefined values executing the corresponding
+<p>A &#8216;switch&#8217; evalutes an expression against a series of predefined literal values executing the corresponding
 &#8216;case&#8217; block or falling back to the &#8216;default&#8217; block case:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">switch</span> <span class="nx">count</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
@@ -138,9 +138,9 @@ constructs can be chained together:</p>
 <div class="section" id="while-statement">
 <h3>While Statement<a class="headerlink" href="#while-statement" title="Permalink to this headline">¶</a></h3>
 <p>&#8216;while&#8217; denotes a loop that iterates as long as its given condition evaluates as true:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="k">while</span> <span class="nx">counter</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">counter</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">counter</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -148,9 +148,9 @@ constructs can be chained together:</p>
 <div class="section" id="loop-statement">
 <h3>Loop Statement<a class="headerlink" href="#loop-statement" title="Permalink to this headline">¶</a></h3>
 <p>In addition to &#8216;while&#8217;, &#8216;loop&#8217; can be used to create infinite loops:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
 <span class="nx">loop</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">n</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">n</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="k">if</span> <span class="nx">n</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
     <span class="nx">echo</span> <span class="nx">x</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -166,7 +166,7 @@ constructs can be chained together:</p>
 </pre></div>
 </div>
 <p>Keys in hashes can be obtained in the following way:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="o">:</span> <span class="mi">4</span><span class="p">];</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="o">:</span> <span class="mi">4</span><span class="p">];</span>
 
 <span class="k">for</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">items</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="nx">key</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
@@ -174,7 +174,7 @@ constructs can be chained together:</p>
 </pre></div>
 </div>
 <p>A &#8216;for&#8217; loop can also be instructed to traverse an array or string in reverse order:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 
 <span class="k">for</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">reverse</span> <span class="nx">items</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
@@ -220,9 +220,9 @@ constructs can be chained together:</p>
 <h3>Continue Statement<a class="headerlink" href="#continue-statement" title="Permalink to this headline">¶</a></h3>
 <p>&#8216;continue&#8217; is used within looping structures to skip the rest of the current loop iteration and
 continue execution at the condition evaluation and then the beginning of the next iteration.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="k">while</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">a</span><span class="o">--</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">a</span><span class="o">--</span><span class="p">;</span>
     <span class="k">if</span> <span class="nx">a</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
         <span class="k">continue</span><span class="p">;</span>
     <span class="p">}</span>
@@ -271,7 +271,7 @@ include other zephir files in runtime.</p>
           <p>Zephir Language is a non-profit open source project. Please donate. </p>
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Sep 03, 2013.
+             Last updated on Sep 09, 2013.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>
