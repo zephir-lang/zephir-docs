@@ -15,17 +15,19 @@ constructs can be chained together:
 
     if false {
         echo "false?";
-    } else if true {
-        echo "true!";
     } else {
-        echo "neither true nor false";
+        if true {
+            echo "true!";
+        } else {
+            echo "neither true nor false";
+        }
     }
 
 Parentheses in the evaluated expression are optional:
 
 .. code-block:: javascript
 
-    if a < 0 { return -1; } else if a > 0 { return 1; }
+    if a < 0 { return -1; } else { if a > 0 { return 1; } }
 
 Switch Statement
 ^^^^^^^^^^^^^^^^
@@ -163,8 +165,8 @@ continue execution at the condition evaluation and then the beginning of the nex
 
 Require
 -------
-The 'require' statement dynamically includes and evaluates a specified PHP file. Note that included files
-via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allow to
+The 'require' statement dynamically includes and evaluates a specified PHP file. Note that files
+included via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allow to
 include other zephir files in runtime.
 
 .. code-block:: javascript

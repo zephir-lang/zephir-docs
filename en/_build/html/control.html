@@ -101,15 +101,17 @@ Braces are compulsory, an &#8216;if&#8217; can have an optional &#8216;else&#821
 constructs can be chained together:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="kc">false</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="s2">&quot;false?&quot;</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="kc">true</span> <span class="p">{</span>
-    <span class="nx">echo</span> <span class="s2">&quot;true!&quot;</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">echo</span> <span class="s2">&quot;neither true nor false&quot;</span><span class="p">;</span>
+    <span class="k">if</span> <span class="kc">true</span> <span class="p">{</span>
+        <span class="nx">echo</span> <span class="s2">&quot;true!&quot;</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">echo</span> <span class="s2">&quot;neither true nor false&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Parentheses in the evaluated expression are optional:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="k">if</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -234,8 +236,8 @@ continue execution at the condition evaluation and then the beginning of the nex
 </div>
 <div class="section" id="require">
 <h2>Require<a class="headerlink" href="#require" title="Permalink to this headline">¶</a></h2>
-<p>The &#8216;require&#8217; statement dynamically includes and evaluates a specified PHP file. Note that included files
-via Zephir are interpreted by Zend Engine as normal PHP files. &#8216;require&#8217; does not allow to
+<p>The &#8216;require&#8217; statement dynamically includes and evaluates a specified PHP file. Note that files
+included via Zephir are interpreted by Zend Engine as normal PHP files. &#8216;require&#8217; does not allow to
 include other zephir files in runtime.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="nx">file_exists</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">require</span> <span class="nx">path</span><span class="p">;</span>
@@ -271,7 +273,7 @@ include other zephir files in runtime.</p>
           <p>Zephir Language is a non-profit open source project. Please donate. </p>
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Sep 09, 2013.
+             Last updated on Oct 04, 2013.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>
