@@ -45,7 +45,7 @@ If everything is well, you should see the following help in your screen:
 Extension Skeleton
 ------------------
 The first thing we have to do is generate an extension skeleton, this will provide to our extension the basic
-structure we need to create a Zephir extension. In our case, we're going to create an extension called "utils":
+structure we need to start working. In our case, we're going to create an extension called "utils":
 
 .. code-block:: bash
 
@@ -59,7 +59,7 @@ After this, a directory called "utils" is created on the current working directo
        ext/
        utils/
 
-Directory "ext" will contain the code that is going to be used by the compiler to produce the extension.
+The directory "ext/" (inside utils) contains the code that is going to be used by the compiler to produce the extension.
 The another directory created is "utils", this directory has the same as our extension. We will place Zephir code
 in this directory.
 

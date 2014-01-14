@@ -123,7 +123,7 @@ Available commands:
 <div class="section" id="extension-skeleton">
 <h2>Extension Skeleton<a class="headerlink" href="#extension-skeleton" title="Permalink to this headline">¶</a></h2>
 <p>The first thing we have to do is generate an extension skeleton, this will provide to our extension the basic
-structure we need to create a Zephir extension. In our case, we&#8217;re going to create an extension called &#8220;utils&#8221;:</p>
+structure we need to start working. In our case, we&#8217;re going to create an extension called &#8220;utils&#8221;:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>zephir init utils
 </pre></div>
 </div>
@@ -133,7 +133,7 @@ structure we need to create a Zephir extension. In our case, we&#8217;re going t
    utils/
 </pre></div>
 </div>
-<p>Directory &#8220;ext&#8221; will contain the code that is going to be used by the compiler to produce the extension.
+<p>The directory &#8220;ext/&#8221; (inside utils) contains the code that is going to be used by the compiler to produce the extension.
 The another directory created is &#8220;utils&#8221;, this directory has the same as our extension. We will place Zephir code
 in this directory.</p>
 <p>We need to change the working directory to &#8220;utils&#8221; to start compiling our code:</p>
