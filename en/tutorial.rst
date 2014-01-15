@@ -94,7 +94,7 @@ The code for this class must be placed in "utils/utils/greeting.zep":
 
         public static function say()
         {
-            echo "hello world!";
+            return "hello world!";
         }
 
     }
