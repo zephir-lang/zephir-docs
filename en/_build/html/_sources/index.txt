@@ -10,6 +10,7 @@ Reference
    welcome
    motivation
    intro
+   install
    tutorial
    language
    types
@@ -17,8 +18,7 @@ Reference
    arrays
    oop
    control
-   functions
-   install
+   functions   
    license
 
 Other Formats
