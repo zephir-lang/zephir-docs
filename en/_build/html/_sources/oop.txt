@@ -180,6 +180,55 @@ compile time and must not depend on run-time information in order to be evaluate
 
     }
 
+Updating Properties
+-------------------
+Properties can be updated by accesing them using the '->' operator:
+
+.. code-block:: javascript
+
+    let this->myProperty = 100;
+
+Zephir checks that properties do exist when a program is accesing them, if a property is not declared you will get a compiler exception:
+
+.. code-block:: php
+
+    CompilerException: Property '_optionsx' is not defined on class '_optionsx' in /Users/scott/cphalcon/phalcon/cache/backend.zep on line 62
+
+          this->_optionsx = options;
+          ------------^    
+
+If you want to avoid this compiler validation or just create a property dynamically, you can enclose the property name using string quotes:
+
+.. code-block:: javascript
+
+    let this->{"myProperty"} = 100;
+
+You can also use a simple variable to update a property, the property name will be taken from the variable:
+
+.. code-block:: javascript
+
+    let someProperty = "myProperty";
+    let this->{someProperty} = 100;
+
+Reading Properties
+------------------
+Properties can be read by accesing them using the '->' operator:    
+
+.. code-block:: javascript
+
+    echo this->myProperty;
+
+As when updating, properties can be dynamically read this way:
+
+.. code-block:: javascript
+
+    //Avoid compiler check or read a dynamic user defined property
+    echo this->{"myProperty"};
+
+    //Read using a variable name
+    let someProperty = "myProperty";
+    echo this->{someProperty}
+
 Class Constants
 ---------------
 Class may contain class constants that remain the same and unchangeable once the extension is compiled.
@@ -277,7 +326,115 @@ You can call methods in a dynamic manner as follows:
 
         public function someMethod(var methodName)
         {
-            return $this->adapter->{methodName}();
+            return this->adapter->{methodName}();
         }
 
     }
+
+Getter/Setter shortcuts
+-----------------------
+Like in C#, you can use get/set/toString shortcuts in Zephir, this feature allows to easily write setters and getters for properties without explictly 
+implementing those methods as such.
+
+For example, without shortcuts we could find code like:
+
+.. code-block:: javascript
+
+    namespace Test;
+
+    class MyClass
+    {
+        protected myProperty;
+
+        protected someProperty = 10;
+
+        public function setMyProperty(myProperty)
+        {
+            this->myProperty = myProperty;
+        }
+
+        public function getMyProperty()
+        {
+            return this->myProperty;
+        }
+
+        public function setSomeProperty(someProperty)
+        {
+            this->someProperty = someProperty;
+        }
+
+        public function getSomeProperty()
+        {
+            return this->someProperty;
+        }
+
+        public function __toString()
+        {
+            return this->myProperty;
+        }
+
+     }
+
+You can write the same code using shortcuts as follows:
+
+.. code-block:: javascript
+
+    namespace App;
+
+    class MyClass
+    {
+        protected myProperty {
+            set, get, toString
+        };
+
+        protected someProperty = 10 {
+            set, get
+        }
+
+    }
+
+When the code is compiled those methods are exported as real methods but you don’t have to write them one by one.
+
+Return Type Hints
+-----------------
+Mthods in classes and interfaces can have return type hints, these will provide useful extra information to the compiler 
+to inform you about errors in your application. Consider the following example:
+
+.. code-block:: php
+
+    namespace App;
+
+    class MyClass
+    {
+        public function getSomeData() -> string
+        {
+            // this will throw a compiler exception
+            // since the returned value (boolean) does not match
+            // the expected returned type string
+            return false; 
+        }
+
+        public function getSomeOther() -> <App\MyInterface>
+        {
+            // this will throw a compiler exception
+            // if the returned object does not implement
+            // the expected interface App\MyInterface
+            return new App\MyObject;    
+        }
+
+        public function process()
+        {
+            var myObject;
+
+            // the type-hint will tell the compiler that 
+            // myObject is an instance of a class
+            // that implement App\MyInterface
+            let myObject = this->getSomeOther();
+
+            // the compiler will check if App\MyInterface
+            // implements a method called "someMethod"
+            echo myObject->someMethod();
+        }
+
+    }
+

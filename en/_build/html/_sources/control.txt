@@ -26,7 +26,7 @@ constructs can be chained together:
 Parentheses in the evaluated expression are optional:
 
 .. code-block:: javascript
-
+    
     if a < 0 { return -1; } else { if a > 0 { return 1; } }
 
 Switch Statement
@@ -39,14 +39,14 @@ A 'switch' evalutes an expression against a series of predefined literal values 
     switch count(items) {
         case 1:
         case 3:
-            echo 'odd items';
+            echo "odd items";
             break;
         case 2:
         case 4:
-            echo 'even items';
+            echo "even items";
             break;
         default:
-            echo 'unknown items';
+            echo "unknown items";
     }
 
 Loops
@@ -82,7 +82,7 @@ A 'for' is a control structure that allows to traverse arrays or strings:
 
 .. code-block:: javascript
 
-    for item in ['a', 'b', 'c', 'd'] {
+    for item in ["a", "b", "c", "d"] {
         echo item, "\n";
     }
 
@@ -90,10 +90,10 @@ Keys in hashes can be obtained in the following way:
 
 .. code-block:: javascript
 
-    let items = ['a': 1, 'b': 2, 'c': 3, 'd': 4];
+    let items = ["a": 1, "b": 2, "c": 3, "d": 4];
 
     for key, value in items {
-        echo key, ' ', value, "\n";
+        echo key, " ", value, "\n";
     }
 
 A 'for' loop can also be instructed to traverse an array or string in reverse order:
@@ -140,8 +140,8 @@ Break Statement
 
 .. code-block:: javascript
 
-    for item in ['a', 'b', 'c', 'd'] {
-        if item == 'c' {
+    for item in ["a", "b", "c", "d"] {
+        if item == "c" {
             break; // exit the for
         }
         echo item, "\n";

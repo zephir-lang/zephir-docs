@@ -63,8 +63,12 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#implementing-properties">Implementing Properties</a></li>
+<li><a class="reference internal" href="#updating-properties">Updating Properties</a></li>
+<li><a class="reference internal" href="#reading-properties">Reading Properties</a></li>
 <li><a class="reference internal" href="#class-constants">Class Constants</a></li>
 <li><a class="reference internal" href="#calling-methods">Calling Methods</a></li>
+<li><a class="reference internal" href="#getter-setter-shortcuts">Getter/Setter shortcuts</a></li>
+<li><a class="reference internal" href="#return-type-hints">Return Type Hints</a></li>
 </ul>
 </li>
 </ul>
@@ -256,6 +260,45 @@ compile time and must not depend on run-time information in order to be evaluate
 </pre></div>
 </div>
 </div>
+<div class="section" id="updating-properties">
+<h2>Updating Properties<a class="headerlink" href="#updating-properties" title="Permalink to this headline">¶</a></h2>
+<p>Properties can be updated by accesing them using the &#8216;-&gt;&#8217; operator:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Zephir checks that properties do exist when a program is accesing them, if a property is not declared you will get a compiler exception:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">CompilerException: Property &#39;_optionsx&#39; is not defined on class &#39;_optionsx&#39; in /Users/scott/cphalcon/phalcon/cache/backend.zep on line 62</span>
+
+<span class="x">      this-&gt;_optionsx = options;</span>
+<span class="x">      ------------^</span>
+</pre></div>
+</div>
+<p>If you want to avoid this compiler validation or just create a property dynamically, you can enclose the property name using string quotes:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="s2">&quot;myProperty&quot;</span><span class="p">}</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>You can also use a simple variable to update a property, the property name will be taken from the variable:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">someProperty</span> <span class="o">=</span> <span class="s2">&quot;myProperty&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">someProperty</span><span class="p">}</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reading-properties">
+<h2>Reading Properties<a class="headerlink" href="#reading-properties" title="Permalink to this headline">¶</a></h2>
+<p>Properties can be read by accesing them using the &#8216;-&gt;&#8217; operator:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">echo</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>As when updating, properties can be dynamically read this way:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Avoid compiler check or read a dynamic user defined property</span>
+<span class="nx">echo</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="s2">&quot;myProperty&quot;</span><span class="p">};</span>
+
+<span class="c1">//Read using a variable name</span>
+<span class="kd">let</span> <span class="nx">someProperty</span> <span class="o">=</span> <span class="s2">&quot;myProperty&quot;</span><span class="p">;</span>
+<span class="nx">echo</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">someProperty</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="class-constants">
 <h2>Class Constants<a class="headerlink" href="#class-constants" title="Permalink to this headline">¶</a></h2>
 <p>Class may contain class constants that remain the same and unchangeable once the extension is compiled.
@@ -343,10 +386,111 @@ Class constants are exported to the PHP extension allowing them to be used from 
 
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">someMethod</span><span class="p">(</span><span class="kd">var</span> <span class="nx">methodName</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">adapter</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">methodName</span><span class="p">}();</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">adapter</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">methodName</span><span class="p">}();</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getter-setter-shortcuts">
+<h2>Getter/Setter shortcuts<a class="headerlink" href="#getter-setter-shortcuts" title="Permalink to this headline">¶</a></h2>
+<p>Like in C#, you can use get/set/toString shortcuts in Zephir, this feature allows to easily write setters and getters for properties without explictly
+implementing those methods as such.</p>
+<p>For example, without shortcuts we could find code like:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+    <span class="kr">protected</span> <span class="nx">myProperty</span><span class="p">;</span>
+
+    <span class="kr">protected</span> <span class="nx">someProperty</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">setMyProperty</span><span class="p">(</span><span class="nx">myProperty</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span> <span class="o">=</span> <span class="nx">myProperty</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">getMyProperty</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">setSomeProperty</span><span class="p">(</span><span class="nx">someProperty</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="nx">someProperty</span> <span class="o">=</span> <span class="nx">someProperty</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">getSomeProperty</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">someProperty</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">__toString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span><span class="p">;</span>
+    <span class="p">}</span>
+
+ <span class="p">}</span>
+</pre></div>
+</div>
+<p>You can write the same code using shortcuts as follows:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">App</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyClass</span>
+<span class="p">{</span>
+    <span class="kr">protected</span> <span class="nx">myProperty</span> <span class="p">{</span>
+        <span class="nx">set</span><span class="p">,</span> <span class="nx">get</span><span class="p">,</span> <span class="nx">toString</span>
+    <span class="p">};</span>
+
+    <span class="kr">protected</span> <span class="nx">someProperty</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">{</span>
+        <span class="nx">set</span><span class="p">,</span> <span class="nx">get</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When the code is compiled those methods are exported as real methods but you don’t have to write them one by one.</p>
+</div>
+<div class="section" id="return-type-hints">
+<h2>Return Type Hints<a class="headerlink" href="#return-type-hints" title="Permalink to this headline">¶</a></h2>
+<p>Mthods in classes and interfaces can have return type hints, these will provide useful extra information to the compiler
+to inform you about errors in your application. Consider the following example:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">namespace App;</span>
+
+<span class="x">class MyClass</span>
+<span class="x">{</span>
+<span class="x">    public function getSomeData() -&gt; string</span>
+<span class="x">    {</span>
+<span class="x">        // this will throw a compiler exception</span>
+<span class="x">        // since the returned value (boolean) does not match</span>
+<span class="x">        // the expected returned type string</span>
+<span class="x">        return false;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function getSomeOther() -&gt; &lt;App\MyInterface&gt;</span>
+<span class="x">    {</span>
+<span class="x">        // this will throw a compiler exception</span>
+<span class="x">        // if the returned object does not implement</span>
+<span class="x">        // the expected interface App\MyInterface</span>
+<span class="x">        return new App\MyObject;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function process()</span>
+<span class="x">    {</span>
+<span class="x">        var myObject;</span>
+
+<span class="x">        // the type-hint will tell the compiler that</span>
+<span class="x">        // myObject is an instance of a class</span>
+<span class="x">        // that implement App\MyInterface</span>
+<span class="x">        let myObject = this-&gt;getSomeOther();</span>
+
+<span class="x">        // the compiler will check if App\MyInterface</span>
+<span class="x">        // implements a method called &quot;someMethod&quot;</span>
+<span class="x">        echo myObject-&gt;someMethod();</span>
+<span class="x">    }</span>
+
+<span class="x">}</span>
 </pre></div>
 </div>
 </div>
@@ -379,7 +523,7 @@ Class constants are exported to the PHP extension allowing them to be used from 
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 14, 2014.
+             Last updated on Jan 15, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>

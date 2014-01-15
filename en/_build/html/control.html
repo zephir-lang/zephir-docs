@@ -121,14 +121,14 @@ constructs can be chained together:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">switch</span> <span class="nx">count</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
     <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
-        <span class="nx">echo</span> <span class="s1">&#39;odd items&#39;</span><span class="p">;</span>
+        <span class="nx">echo</span> <span class="s2">&quot;odd items&quot;</span><span class="p">;</span>
         <span class="k">break</span><span class="p">;</span>
     <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
     <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
-        <span class="nx">echo</span> <span class="s1">&#39;even items&#39;</span><span class="p">;</span>
+        <span class="nx">echo</span> <span class="s2">&quot;even items&quot;</span><span class="p">;</span>
         <span class="k">break</span><span class="p">;</span>
     <span class="k">default</span><span class="o">:</span>
-        <span class="nx">echo</span> <span class="s1">&#39;unknown items&#39;</span><span class="p">;</span>
+        <span class="nx">echo</span> <span class="s2">&quot;unknown items&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -161,16 +161,16 @@ constructs can be chained together:</p>
 <div class="section" id="for-statement">
 <h3>For Statement<a class="headerlink" href="#for-statement" title="Permalink to this headline">¶</a></h3>
 <p>A &#8216;for&#8217; is a control structure that allows to traverse arrays or strings:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">for</span> <span class="nx">item</span> <span class="k">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">for</span> <span class="nx">item</span> <span class="k">in</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="nx">item</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Keys in hashes can be obtained in the following way:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="o">:</span> <span class="mi">4</span><span class="p">];</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">];</span>
 
 <span class="k">for</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">items</span> <span class="p">{</span>
-    <span class="nx">echo</span> <span class="nx">key</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+    <span class="nx">echo</span> <span class="nx">key</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -208,8 +208,8 @@ constructs can be chained together:</p>
 <div class="section" id="break-statement">
 <h3>Break Statement<a class="headerlink" href="#break-statement" title="Permalink to this headline">¶</a></h3>
 <p>&#8216;break&#8217; ends execution of the current &#8216;while&#8217;, &#8216;for&#8217; or &#8216;loop&#8217; statements:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">for</span> <span class="nx">item</span> <span class="k">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="nx">item</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span> <span class="p">{</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">for</span> <span class="nx">item</span> <span class="k">in</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">item</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span> <span class="p">{</span>
         <span class="k">break</span><span class="p">;</span> <span class="c1">// exit the for</span>
     <span class="p">}</span>
     <span class="nx">echo</span> <span class="nx">item</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
@@ -273,7 +273,7 @@ include other zephir files in runtime.</p>
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 14, 2014.
+             Last updated on Jan 15, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>
