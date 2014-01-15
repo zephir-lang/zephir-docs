@@ -134,10 +134,10 @@ However, you can access the PHP's super-globals as follows:
 .. code-block:: javascript
 
 	//Getting a value from _POST
-	let price = _POST['price'];
+	let price = _POST["price"];
 
 	//Read a value from _SERVER
-	let requestMethod = _SERVER['REQUEST_METHOD'];
+	let requestMethod = _SERVER["REQUEST_METHOD"];
 
 Local Symbol Table
 ------------------

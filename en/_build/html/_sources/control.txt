@@ -174,3 +174,31 @@ include other zephir files in runtime.
     if file_exists(path) {
         require path;
     }
+
+Let
+---
+'Let' statement is used to mutate variables, properties and arrays. Variables are by default inmutable and this instruction makes them mutable:
+
+.. code-block:: javascript
+
+    let name = "Tony";           // simple variable
+    let this->name = "Tony";     // object property
+    let data["name"] = "Tony";   // array index
+    let self::_name = "Tony";    // static property
+
+Also this instruction must be used to increment/decrement variables:
+
+.. code-block:: javascript
+
+    let number++;
+    let number--;
+    let this->number++;
+    let this->number--;
+
+Multiple mutations can be performed in a single 'let' operation:
+
+.. code-block:: javascript
+
+    let price = 1.00, realPrice = price, status = false;
+
+

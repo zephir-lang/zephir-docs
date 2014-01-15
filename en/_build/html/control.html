@@ -69,6 +69,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#require">Require</a></li>
+<li><a class="reference internal" href="#let">Let</a></li>
 </ul>
 </li>
 </ul>
@@ -241,6 +242,27 @@ include other zephir files in runtime.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="nx">file_exists</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">require</span> <span class="nx">path</span><span class="p">;</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="let">
+<h2>Let<a class="headerlink" href="#let" title="Permalink to this headline">¶</a></h2>
+<p>&#8216;Let&#8217; statement is used to mutate variables, properties and arrays. Variables are by default inmutable and this instruction makes them mutable:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>           <span class="c1">// simple variable</span>
+<span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>     <span class="c1">// object property</span>
+<span class="kd">let</span> <span class="nx">data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>   <span class="c1">// array index</span>
+<span class="kd">let</span> <span class="nx">self</span><span class="o">::</span><span class="nx">_name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>    <span class="c1">// static property</span>
+</pre></div>
+</div>
+<p>Also this instruction must be used to increment/decrement variables:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">number</span><span class="o">++</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">number</span><span class="o">--</span><span class="p">;</span>
+<span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">++</span><span class="p">;</span>
+<span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">--</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Multiple mutations can be performed in a single &#8216;let&#8217; operation:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">price</span> <span class="o">=</span> <span class="mf">1.00</span><span class="p">,</span> <span class="nx">realPrice</span> <span class="o">=</span> <span class="nx">price</span><span class="p">,</span> <span class="nx">status</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>

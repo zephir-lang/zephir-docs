@@ -244,6 +244,12 @@ The complete method can be tested as before:
     $f = new Utils\Filter();
     echo $f->alpha("$he$02l3'121lo."); // prints "hello"
 
+In the following screencast you can watch how to create the extension explained in this tutorial:
+
+.. raw:: html
+
+   <div align="center"><iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
 Conclusion
 ----------
 This is a very simple tutorial and as you can see, it’s easy to start building extensions using Zephir.
