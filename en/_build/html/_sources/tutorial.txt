@@ -1,6 +1,6 @@
 Tutorial
 ========
-Zephir and this book are intended for PHP developers which wants to create C-extensions with a lower
+Zephir and this book are intended for PHP developers which want to create C-extensions with a lower
 complexity.
 
 We assume that you are experienced in one or more other programming languages. We draw parallels to features
@@ -105,8 +105,8 @@ Now, we need to tell Zephir that our project must be compiled and the extension 
 
     $ zephir build
 
-Initially, and just for the first time, a set of internal commands are executed producing the code and configurations
-necessary to export this class to the PHP extension, if everything goes well you will see the following message at the end
+Initially, and only for the first time, a number of internal commands are executed producing the necessary code and configurations
+to export this class to the PHP extension, if everything goes well you will see the following message at the end
 of the output:
 
 .. code-block:: php
@@ -213,7 +213,7 @@ You will see:
     l
     o
 
-Checking every character in the string is straightforward, we could now just create another string with the right
+Checking every character in the string is straightforward, we now just could create another string with the right
 filtered characters:
 
 .. code-block:: javascript
