@@ -107,6 +107,13 @@ and matured a number of optimizations that improve the performance of compiled a
 * `LLVM passes <http://llvm.org/docs/Passes.html>`_
 * `Visual C/C++ optimizations <http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx>`_
 
+Code Protection
+---------------
+In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located 
+in the I/O bound (quite likely) of the application rather than compute/memory bound.
+However, compiling code could also bring some level of intelectual protection to your application.
+With Zephir, producing binaries you also get the ability to hide the code behind users or customers.
+
 Conclusion
 ----------
 Zephir was not created to replace PHP or C, instead of this, we think it is a complement to them,

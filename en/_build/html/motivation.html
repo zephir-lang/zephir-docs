@@ -61,6 +61,7 @@
 <li><a class="reference internal" href="#compilation-vs-interpretation">Compilation vs Interpretation</a></li>
 <li><a class="reference internal" href="#statically-typed-versus-dynamically-typed-languages">Statically Typed Versus Dynamically Typed Languages</a></li>
 <li><a class="reference internal" href="#compilation-scheme">Compilation Scheme</a></li>
+<li><a class="reference internal" href="#code-protection">Code Protection</a></li>
 <li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
@@ -170,6 +171,13 @@ and matured a number of optimizations that improve the performance of compiled a
 <li><a class="reference external" href="http://llvm.org/docs/Passes.html">LLVM passes</a></li>
 <li><a class="reference external" href="http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx">Visual C/C++ optimizations</a></li>
 </ul>
+</div>
+<div class="section" id="code-protection">
+<h2>Code Protection<a class="headerlink" href="#code-protection" title="Permalink to this headline">¶</a></h2>
+<p>In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located
+in the I/O bound (quite likely) of the application rather than compute/memory bound.
+However, compiling code could also bring some level of intelectual protection to your application.
+With Zephir, producing binaries you also get the ability to hide the code behind users or customers.</p>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>

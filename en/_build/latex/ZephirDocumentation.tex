@@ -321,6 +321,14 @@ and matured a number of optimizations that improve the performance of compiled a
 \end{itemize}
 
 
+\subsection{Code Protection}
+\label{motivation:code-protection}
+In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located
+in the I/O bound (quite likely) of the application rather than compute/memory bound.
+However, compiling code could also bring some level of intelectual protection to your application.
+With Zephir, producing binaries you also get the ability to hide the code behind users or customers.
+
+
 \subsection{Conclusion}
 \label{motivation:conclusion}
 Zephir was not created to replace PHP or C, instead of this, we think it is a complement to them,
@@ -500,10 +508,19 @@ To install Zephir, please follow these steps:
 To build a PHP extension and use Zephir you need the following requirements:
 \begin{itemize}
 \item {} 
-gcc \textgreater{}= 4.4/clang \textgreater{}= 3.x/vc++ 9
+gcc \textgreater{}= 4.x/clang \textgreater{}= 3.x/vc++ 9
+
+\item {} 
+re2c 0.13 or later
 
 \item {} 
 gnu make 3.81 or later
+
+\item {} 
+autoconf 2.31 or later
+
+\item {} 
+automake 1.14 or later
 
 \item {} 
 php development headers and tools
@@ -2343,10 +2360,10 @@ include other zephir files in runtime.
 Also this instruction must be used to increment/decrement variables:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{number}\PYG{o}{++}\PYG{p}{;}
-\PYG{n+nx}{let} \PYG{n+nx}{number}\PYG{o}{--}\PYG{p}{;}
-\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{number}\PYG{o}{++}\PYG{p}{;}
-\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{number}\PYG{o}{--}\PYG{p}{;}
+\PYG{n+nx}{let} \PYG{n+nx}{number}\PYG{o}{++}\PYG{p}{;}           \PYG{c+c1}{// increment simple variable}
+\PYG{n+nx}{let} \PYG{n+nx}{number}\PYG{o}{--}\PYG{p}{;}           \PYG{c+c1}{// decrement simple variable}
+\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{number}\PYG{o}{++}\PYG{p}{;}     \PYG{c+c1}{// increment object property}
+\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{number}\PYG{o}{--}\PYG{p}{;}     \PYG{c+c1}{// decrement object property}
 \end{Verbatim}
 
 Multiple mutations can be performed in a single `let' operation:

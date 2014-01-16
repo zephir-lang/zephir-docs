@@ -9,21 +9,22 @@
 \contentsline {subsection}{\numberline {1.2.3}Compilation vs Interpretation}{3}{subsection.1.2.3}
 \contentsline {subsection}{\numberline {1.2.4}Statically Typed Versus Dynamically Typed Languages}{3}{subsection.1.2.4}
 \contentsline {subsection}{\numberline {1.2.5}Compilation Scheme}{3}{subsection.1.2.5}
-\contentsline {subsection}{\numberline {1.2.6}Conclusion}{4}{subsection.1.2.6}
+\contentsline {subsection}{\numberline {1.2.6}Code Protection}{4}{subsection.1.2.6}
+\contentsline {subsection}{\numberline {1.2.7}Conclusion}{4}{subsection.1.2.7}
 \contentsline {section}{\numberline {1.3}Introducing Zephir}{4}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Hello World!}{4}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}A Taste of Zephir}{5}{subsection.1.3.2}
-\contentsline {section}{\numberline {1.4}Installation}{6}{section.1.4}
+\contentsline {section}{\numberline {1.4}Installation}{7}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Prerequisites}{7}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Installing Zephir}{7}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Testing Installation}{7}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.3}Testing Installation}{8}{subsection.1.4.3}
 \contentsline {section}{\numberline {1.5}Tutorial}{8}{section.1.5}
 \contentsline {subsection}{\numberline {1.5.1}Checking Installation}{8}{subsection.1.5.1}
-\contentsline {subsection}{\numberline {1.5.2}Extension Skeleton}{8}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.2}Extension Skeleton}{9}{subsection.1.5.2}
 \contentsline {subsection}{\numberline {1.5.3}Adding our first class}{9}{subsection.1.5.3}
-\contentsline {subsection}{\numberline {1.5.4}Initial Testing}{9}{subsection.1.5.4}
+\contentsline {subsection}{\numberline {1.5.4}Initial Testing}{10}{subsection.1.5.4}
 \contentsline {subsection}{\numberline {1.5.5}A useful class}{10}{subsection.1.5.5}
-\contentsline {subsection}{\numberline {1.5.6}Conclusion}{11}{subsection.1.5.6}
+\contentsline {subsection}{\numberline {1.5.6}Conclusion}{12}{subsection.1.5.6}
 \contentsline {section}{\numberline {1.6}Basic Syntax}{12}{section.1.6}
 \contentsline {subsection}{\numberline {1.6.1}Organizing Code in Files and Namespaces}{12}{subsection.1.6.1}
 \contentsline {subsection}{\numberline {1.6.2}Instruction separation}{12}{subsection.1.6.2}
@@ -38,10 +39,10 @@
 \contentsline {subsubsection}{Integer}{15}{subsubsection*.4}
 \contentsline {subsubsection}{Integer overflow}{15}{subsubsection*.5}
 \contentsline {subsubsection}{Float/Double}{15}{subsubsection*.6}
-\contentsline {subsubsection}{String}{15}{subsubsection*.7}
+\contentsline {subsubsection}{String}{16}{subsubsection*.7}
 \contentsline {subsubsection}{Arrays}{16}{subsubsection*.8}
 \contentsline {subsubsection}{Objects}{16}{subsubsection*.9}
-\contentsline {subsection}{\numberline {1.7.2}Static Types}{16}{subsection.1.7.2}
+\contentsline {subsection}{\numberline {1.7.2}Static Types}{17}{subsection.1.7.2}
 \contentsline {subsubsection}{Boolean}{17}{subsubsection*.10}
 \contentsline {subsubsection}{Integer/Unsigned Integer}{17}{subsubsection*.11}
 \contentsline {subsubsection}{Long/Unsigned Long}{18}{subsubsection*.12}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.8.22)  16 JAN 2014 13:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.8.22)  16 JAN 2014 13:53
 entering extended mode
  %&-line parsing enabled.
 **ZephirDocumentation.tex
@@ -916,10 +916,10 @@ Chapter 2.
 
 ]) (./ZephirDocumentation.aux) ) 
 Here is how much of TeX's memory you used:
- 8176 strings out of 493848
- 111281 string characters out of 1152823
- 202461 words of memory out of 3000000
- 11120 multiletter control sequences out of 15000+50000
+ 8178 strings out of 493848
+ 111325 string characters out of 1152823
+ 202512 words of memory out of 3000000
+ 11121 multiletter control sequences out of 15000+50000
  55811 words of font info for 63 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  45i,12n,45p,409b,383s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -931,9 +931,9 @@ etic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvbo8a.pfb>
 </usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf
 -texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1
 /urw/times/utmr8a.pfb>
-Output written on ZephirDocumentation.pdf (43 pages, 224381 bytes).
+Output written on ZephirDocumentation.pdf (43 pages, 224800 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 134 named destinations out of 1000 (max. 500000)
+ 423 PDF objects out of 1000 (max. 8388607)
+ 135 named destinations out of 1000 (max. 500000)
  142 words of extra memory for PDF output out of 10000 (max. 10000000)
 

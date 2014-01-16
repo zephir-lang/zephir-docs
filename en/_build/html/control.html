@@ -256,10 +256,10 @@ include other zephir files in runtime.</p>
 </pre></div>
 </div>
 <p>Also this instruction must be used to increment/decrement variables:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">number</span><span class="o">++</span><span class="p">;</span>
-<span class="nx">let</span> <span class="nx">number</span><span class="o">--</span><span class="p">;</span>
-<span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">++</span><span class="p">;</span>
-<span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">--</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">number</span><span class="o">++</span><span class="p">;</span>           <span class="c1">// increment simple variable</span>
+<span class="nx">let</span> <span class="nx">number</span><span class="o">--</span><span class="p">;</span>           <span class="c1">// decrement simple variable</span>
+<span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">++</span><span class="p">;</span>     <span class="c1">// increment object property</span>
+<span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">--</span><span class="p">;</span>     <span class="c1">// decrement object property</span>
 </pre></div>
 </div>
 <p>Multiple mutations can be performed in a single &#8216;let&#8217; operation:</p>
