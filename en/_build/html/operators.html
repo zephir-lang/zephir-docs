@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="_static/docs.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
+        URL_ROOT:    '',
         VERSION:     '0.3.0',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
@@ -175,13 +176,13 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 <p>The following operators are supported:</p>
 <div class="section" id="empty">
 <h3>Empty<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h3>
-<p>This operators check if an expression is empty. &#8216;Empty&#8217; means the expression is null, an empty string or an empty array:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<p>This operator allows to check whether an expression is empty. &#8216;Empty&#8217; means the expression is null, is an empty string or an empty array:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 <span class="k">if</span> <span class="nx">empty</span> <span class="nx">someVar</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="s2">&quot;is empty!&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<span class="nx">let</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
 <span class="k">if</span> <span class="o">!</span><span class="nx">emptyVar</span> <span class="nx">someVar</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="s2">&quot;is not empty!&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -190,8 +191,8 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 </div>
 <div class="section" id="isset">
 <h3>Isset<a class="headerlink" href="#isset" title="Permalink to this headline">¶</a></h3>
-<p>This checks if a property or index is defined in an array or object:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">someArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">];</span>
+<p>This operator checks whether a property or index has been defined in an array or object:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">someArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">];</span>
 <span class="k">if</span> <span class="nx">isset</span> <span class="nx">someArray</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="p">{</span> <span class="c1">// check if the array has an index &quot;b&quot;</span>
     <span class="nx">echo</span> <span class="s2">&quot;yes, it has an index &#39;b&#39;\n&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -224,7 +225,7 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 <div class="section" id="type-hints">
 <h3>Type Hints<a class="headerlink" href="#type-hints" title="Permalink to this headline">¶</a></h3>
 <p>Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyObject</span><span class="p">();</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyObject</span><span class="p">();</span>
 
 <span class="c1">// Zephir checks if &quot;myMethod&quot; is implemented on MyObject</span>
 <span class="nx">o</span><span class="o">-&gt;</span><span class="nx">myMethod</span><span class="p">();</span>
@@ -234,7 +235,7 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 A “type hint” tells the compiler which class is related to a dynamic variable allowing the compiler to perform more compilation checks:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// Tell the compiler that &quot;o&quot;</span>
 <span class="c1">// is an instance of class MyClass</span>
-<span class="kd">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">MyClass</span><span class="o">&gt;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">_myObject</span><span class="p">;</span>
+<span class="nx">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">MyClass</span><span class="o">&gt;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">_myObject</span><span class="p">;</span>
 <span class="nx">o</span><span class="o">-&gt;</span><span class="nx">myMethod</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -269,8 +270,8 @@ A “type hint” tells the compiler which class is related to a dynamic variabl
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 15, 2014.
-            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
+             Last updated on Jan 16, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>
              &copy; Copyright 2013-2014, Zephir Team.

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="_static/docs.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
+        URL_ROOT:    '',
         VERSION:     '0.3.0',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
@@ -232,7 +233,7 @@ a visibility modifier is mandatory in Zephir:</p>
 
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">setMyProperty</span><span class="p">(</span><span class="kd">var</span> <span class="nx">myProperty</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span> <span class="o">=</span> <span class="nx">myProperty</span><span class="p">;</span>
+        <span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span> <span class="o">=</span> <span class="nx">myProperty</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">getMyProperty</span><span class="p">()</span>
@@ -263,7 +264,7 @@ compile time and must not depend on run-time information in order to be evaluate
 <div class="section" id="updating-properties">
 <h2>Updating Properties<a class="headerlink" href="#updating-properties" title="Permalink to this headline">¶</a></h2>
 <p>Properties can be updated by accesing them using the &#8216;-&gt;&#8217; operator:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">myProperty</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Zephir checks that properties do exist when a program is accesing them, if a property is not declared you will get a compiler exception:</p>
@@ -274,12 +275,12 @@ compile time and must not depend on run-time information in order to be evaluate
 </pre></div>
 </div>
 <p>If you want to avoid this compiler validation or just create a property dynamically, you can enclose the property name using string quotes:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="s2">&quot;myProperty&quot;</span><span class="p">}</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="s2">&quot;myProperty&quot;</span><span class="p">}</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>You can also use a simple variable to update a property, the property name will be taken from the variable:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">someProperty</span> <span class="o">=</span> <span class="s2">&quot;myProperty&quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">someProperty</span><span class="p">}</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">someProperty</span> <span class="o">=</span> <span class="s2">&quot;myProperty&quot;</span><span class="p">;</span>
+<span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">someProperty</span><span class="p">}</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -294,7 +295,7 @@ compile time and must not depend on run-time information in order to be evaluate
 <span class="nx">echo</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="s2">&quot;myProperty&quot;</span><span class="p">};</span>
 
 <span class="c1">//Read using a variable name</span>
-<span class="kd">let</span> <span class="nx">someProperty</span> <span class="o">=</span> <span class="s2">&quot;myProperty&quot;</span><span class="p">;</span>
+<span class="nx">let</span> <span class="nx">someProperty</span> <span class="o">=</span> <span class="s2">&quot;myProperty&quot;</span><span class="p">;</span>
 <span class="nx">echo</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">someProperty</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -381,7 +382,7 @@ Class constants are exported to the PHP extension allowing them to be used from 
 
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">setAdapter</span><span class="p">(</span><span class="kd">var</span> <span class="nx">adapter</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">adapter</span> <span class="o">=</span> <span class="nx">adapter</span><span class="p">;</span>
+        <span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">adapter</span> <span class="o">=</span> <span class="nx">adapter</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">someMethod</span><span class="p">(</span><span class="kd">var</span> <span class="nx">methodName</span><span class="p">)</span>
@@ -523,8 +524,8 @@ to inform you about errors in your application. Consider the following example:<
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 15, 2014.
-            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
+             Last updated on Jan 16, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>
              &copy; Copyright 2013-2014, Zephir Team.
