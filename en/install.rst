@@ -7,8 +7,11 @@ Prerequisites
 
 To build a PHP extension and use Zephir you need the following requirements:
 
-* gcc >= 4.4/clang >= 3.x/vc++ 9
+* gcc >= 4.x/clang >= 3.x/vc++ 9
+* re2c 0.13 or later
 * gnu make 3.81 or later
+* autoconf 2.31 or later 
+* automake 1.14 or later
 * php development headers and tools
 
 Since Zephir is written in PHP you need to have installed a recent version of PHP and it must be available in your console:

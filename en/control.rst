@@ -190,10 +190,10 @@ Also this instruction must be used to increment/decrement variables:
 
 .. code-block:: javascript
 
-    let number++;
-    let number--;
-    let this->number++;
-    let this->number--;
+    let number++;           // increment simple variable
+    let number--;           // decrement simple variable
+    let this->number++;     // increment object property
+    let this->number--;     // decrement object property
 
 Multiple mutations can be performed in a single 'let' operation:
 
