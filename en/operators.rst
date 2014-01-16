@@ -55,7 +55,7 @@ The following operators are supported:
 
 Empty
 ^^^^^
-This operators check if an expression is empty. 'Empty' means the expression is null, an empty string or an empty array:
+This operator allows to check whether an expression is empty. 'Empty' means the expression is null, is an empty string or an empty array:
 
 .. code-block:: javascript
 
@@ -71,7 +71,7 @@ This operators check if an expression is empty. 'Empty' means the expression is 
 
 Isset
 ^^^^^
-This checks if a property or index is defined in an array or object:
+This operator checks whether a property or index has been defined in an array or object:
 
 .. code-block:: javascript
 
