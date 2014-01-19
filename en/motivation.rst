@@ -1,4 +1,3 @@
-===========
 Why Zephir?
 ===========
 Today’s PHP applications must balance a number of concerns including stability, performance and functionality.
@@ -109,10 +108,10 @@ and matured a number of optimizations that improve the performance of compiled a
 
 Code Protection
 ---------------
-In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located 
-in the I/O bound (quite likely) of the application rather than compute/memory bound.
+In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located
+in the I/O bound of the application (quite likely) rather than compute/memory bound.
 However, compiling code could also bring some level of intelectual protection to your application.
-With Zephir, producing binaries you also get the ability to hide the code behind users or customers.
+With Zephir, producing native binaries, you also get the ability to hide the code to users or customers.
 
 Conclusion
 ----------

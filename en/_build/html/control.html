@@ -141,9 +141,9 @@ constructs can be chained together:</p>
 <div class="section" id="while-statement">
 <h3>While Statement<a class="headerlink" href="#while-statement" title="Permalink to this headline">¶</a></h3>
 <p>&#8216;while&#8217; denotes a loop that iterates as long as its given condition evaluates as true:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="k">while</span> <span class="nx">counter</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">counter</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">counter</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -151,9 +151,9 @@ constructs can be chained together:</p>
 <div class="section" id="loop-statement">
 <h3>Loop Statement<a class="headerlink" href="#loop-statement" title="Permalink to this headline">¶</a></h3>
 <p>In addition to &#8216;while&#8217;, &#8216;loop&#8217; can be used to create infinite loops:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
 <span class="nx">loop</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">n</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">n</span> <span class="o">-=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="k">if</span> <span class="nx">n</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="k">break</span><span class="p">;</span> <span class="p">}</span>
     <span class="nx">echo</span> <span class="nx">x</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -169,7 +169,7 @@ constructs can be chained together:</p>
 </pre></div>
 </div>
 <p>Keys in hashes can be obtained in the following way:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">];</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">];</span>
 
 <span class="k">for</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">items</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="nx">key</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
@@ -177,7 +177,7 @@ constructs can be chained together:</p>
 </pre></div>
 </div>
 <p>A &#8216;for&#8217; loop can also be instructed to traverse an array or string in reverse order:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 
 <span class="k">for</span> <span class="nx">value</span> <span class="k">in</span> <span class="nx">reverse</span> <span class="nx">items</span> <span class="p">{</span>
     <span class="nx">echo</span> <span class="nx">value</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
@@ -223,9 +223,9 @@ constructs can be chained together:</p>
 <h3>Continue Statement<a class="headerlink" href="#continue-statement" title="Permalink to this headline">¶</a></h3>
 <p>&#8216;continue&#8217; is used within looping structures to skip the rest of the current loop iteration and
 continue execution at the condition evaluation and then the beginning of the next iteration.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="k">while</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-    <span class="nx">let</span> <span class="nx">a</span><span class="o">--</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">a</span><span class="o">--</span><span class="p">;</span>
     <span class="k">if</span> <span class="nx">a</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
         <span class="k">continue</span><span class="p">;</span>
     <span class="p">}</span>
@@ -249,21 +249,21 @@ include other zephir files in runtime.</p>
 <div class="section" id="let">
 <h2>Let<a class="headerlink" href="#let" title="Permalink to this headline">¶</a></h2>
 <p>&#8216;Let&#8217; statement is used to mutate variables, properties and arrays. Variables are by default inmutable and this instruction makes them mutable:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>           <span class="c1">// simple variable</span>
-<span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>     <span class="c1">// object property</span>
-<span class="nx">let</span> <span class="nx">data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>   <span class="c1">// array index</span>
-<span class="nx">let</span> <span class="nx">self</span><span class="o">::</span><span class="nx">_name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>    <span class="c1">// static property</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>           <span class="c1">// simple variable</span>
+<span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>     <span class="c1">// object property</span>
+<span class="kd">let</span> <span class="nx">data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>   <span class="c1">// array index</span>
+<span class="kd">let</span> <span class="nx">self</span><span class="o">::</span><span class="nx">_name</span> <span class="o">=</span> <span class="s2">&quot;Tony&quot;</span><span class="p">;</span>    <span class="c1">// static property</span>
 </pre></div>
 </div>
 <p>Also this instruction must be used to increment/decrement variables:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">number</span><span class="o">++</span><span class="p">;</span>           <span class="c1">// increment simple variable</span>
-<span class="nx">let</span> <span class="nx">number</span><span class="o">--</span><span class="p">;</span>           <span class="c1">// decrement simple variable</span>
-<span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">++</span><span class="p">;</span>     <span class="c1">// increment object property</span>
-<span class="nx">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">--</span><span class="p">;</span>     <span class="c1">// decrement object property</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">number</span><span class="o">++</span><span class="p">;</span>           <span class="c1">// increment simple variable</span>
+<span class="kd">let</span> <span class="nx">number</span><span class="o">--</span><span class="p">;</span>           <span class="c1">// decrement simple variable</span>
+<span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">++</span><span class="p">;</span>     <span class="c1">// increment object property</span>
+<span class="kd">let</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">number</span><span class="o">--</span><span class="p">;</span>     <span class="c1">// decrement object property</span>
 </pre></div>
 </div>
 <p>Multiple mutations can be performed in a single &#8216;let&#8217; operation:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">let</span> <span class="nx">price</span> <span class="o">=</span> <span class="mf">1.00</span><span class="p">,</span> <span class="nx">realPrice</span> <span class="o">=</span> <span class="nx">price</span><span class="p">,</span> <span class="nx">status</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">price</span> <span class="o">=</span> <span class="mf">1.00</span><span class="p">,</span> <span class="nx">realPrice</span> <span class="o">=</span> <span class="nx">price</span><span class="p">,</span> <span class="nx">status</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -296,7 +296,7 @@ include other zephir files in runtime.</p>
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 16, 2014.
+             Last updated on Jan 18, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>

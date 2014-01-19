@@ -197,10 +197,10 @@ as often as you want:</p>
 <p>Zephir doesn&#8217;t support global variables, accessing global variables from the PHP userland is not allowed.
 However, you can access the PHP&#8217;s super-globals as follows:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Getting a value from _POST</span>
-<span class="nx">let</span> <span class="nx">price</span> <span class="o">=</span> <span class="nx">_POST</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">price</span> <span class="o">=</span> <span class="nx">_POST</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">];</span>
 
 <span class="c1">//Read a value from _SERVER</span>
-<span class="nx">let</span> <span class="nx">requestMethod</span> <span class="o">=</span> <span class="nx">_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">requestMethod</span> <span class="o">=</span> <span class="nx">_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -219,11 +219,11 @@ way:</p>
 and there is no way to know which variables do exist in a specific context. If you want to create
 a variable in the current PHP symbol table, you can use the following syntax:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//Set variable $name in PHP</span>
-<span class="nx">let</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">}</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">}</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
 
 <span class="c1">//Set variable $price in PHP</span>
-<span class="nx">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;price&quot;</span><span class="p">;</span>
-<span class="nx">let</span> <span class="p">{</span><span class="nx">name</span><span class="p">}</span> <span class="o">=</span> <span class="mf">10.2</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;price&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="p">{</span><span class="nx">name</span><span class="p">}</span> <span class="o">=</span> <span class="mf">10.2</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -256,7 +256,7 @@ a variable in the current PHP symbol table, you can use the following syntax:</p
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 16, 2014.
+             Last updated on Jan 18, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
 
           <p>

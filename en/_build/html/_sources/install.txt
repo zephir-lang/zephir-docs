@@ -10,9 +10,13 @@ To build a PHP extension and use Zephir you need the following requirements:
 * gcc >= 4.x/clang >= 3.x/vc++ 9
 * re2c 0.13 or later
 * gnu make 3.81 or later
-* autoconf 2.31 or later 
+* autoconf 2.31 or later
 * automake 1.14 or later
 * php development headers and tools
+
+If you're using Ubuntu, you can install the required packages this way:
+
+
 
 Since Zephir is written in PHP you need to have installed a recent version of PHP and it must be available in your console:
 
@@ -46,8 +50,7 @@ Json-C is required by the Zephir parser to process the code, you can install it 
 	$ cd json-c
 	$ sh autogen.sh
 	$ ./configure
-	$ make
-	$ make install
+	$ make && sudo make install
 
 The Zephir compiler currently must be cloned from Github:
 
@@ -60,13 +63,7 @@ Run the Zephir installer (this compiles/creates the parser):
 .. code-block:: bash
 
 	$ cd zephir
-	$ ./install
-
-Add the "bin" directory	to your PATH enviroment variable:
-
-.. code-block:: bash
-
-	$ export PATH=$PATH:/path/to/zephir/bin
+	$ ./install -c
 
 Testing Installation
 --------------------
