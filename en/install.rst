@@ -16,7 +16,10 @@ To build a PHP extension and use Zephir you need the following requirements:
 
 If you're using Ubuntu, you can install the required packages this way:
 
+.. code-block:: bash
 
+	$ sudo apt-get update
+	$ sudo apt-get install git gcc make re2c php5 php5-dev libpcre3-dev
 
 Since Zephir is written in PHP you need to have installed a recent version of PHP and it must be available in your console:
 
