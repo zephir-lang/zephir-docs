@@ -163,7 +163,7 @@ There are a lot of details in just a few lines of code! We’ll explain the gene
         <span class="kd">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">100.25</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
 
         <span class="cm">/* Count the array into a &#39;int&#39; variable */</span>
-        <span class="kd">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
+        <span class="kd">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
 
         <span class="cm">/* Print value types */</span>
         <span class="k">while</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span> <span class="p">{</span>
@@ -198,7 +198,7 @@ Functions from the PHP userland can be called in Zephir code, in the example the
 was called, the compiler can performs optimizations like avoid this call because it already knows the size of
 the array:</p>
 <div class="highlight-zephir"><div class="highlight"><pre><span class="cm">/* Count the array into a &#39;int&#39; variable */</span>
-<span class="kd">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nx">myArray</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Parentheses in control flow statements are optional, you can also use them if you feel more confortable.</p>
