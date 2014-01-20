@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="_static/docs.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '0.3.0',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
@@ -153,14 +152,14 @@ our first class to the extension.</p>
 and check that everything is well. So our first class will be called &#8220;Utils\Greeting&#8221; and it contains a method
 printing &#8220;hello world!&#8221;.</p>
 <p>The code for this class must be placed in &#8220;utils/utils/greeting.zep&#8221;:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Utils</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Utils</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Greeting</span>
 <span class="p">{</span>
 
     <span class="kr">public</span> <span class="kr">static</span> <span class="kd">function</span> <span class="nx">say</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nx">echo</span> <span class="s2">&quot;hello world!&quot;</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="s2">&quot;hello world!&quot;</span><span class="p">;</span>
     <span class="p">}</span>
 
 <span class="p">}</span>
@@ -218,7 +217,7 @@ just created:</p>
 <p>The first useful class we are going to add to this extension will provide filtering facilities to users.
 This class is called &#8220;Utils\Filter&#8221; and its code must be placed in &#8220;utils/utils/filter.zep&#8221;:</p>
 <p>A basic skeleton to this class is the following:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Utils</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Utils</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Filter</span>
 <span class="p">{</span>
@@ -229,17 +228,17 @@ This class is called &#8220;Utils\Filter&#8221; and its code must be placed in &
 <p>The class contains filtering methods that help users to filter unwanted caracters from strings.
 The first method is called &#8220;alpha&#8221; and its purpose is to filter only those characters that are ascii basic letters.
 To begin, we are just going to traverse the string printing every byte to the standard output:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">Utils</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Utils</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Filter</span>
 <span class="p">{</span>
 
-    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">alpha</span><span class="p">(</span><span class="nx">string</span> <span class="nx">str</span><span class="p">)</span>
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">alpha</span><span class="p">(</span><span class="kr">string</span> <span class="nx">str</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span>
 
         <span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nx">str</span> <span class="p">{</span>
-            <span class="nx">echo</span> <span class="nx">ch</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
+            <span class="k">echo</span> <span class="nx">ch</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">;</span>
         <span class="p">}</span>
 
     <span class="p">}</span>
@@ -264,12 +263,12 @@ o
 </div>
 <p>Checking every character in the string is straightforward, we now just could create another string with the right
 filtered characters:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kr">class</span> <span class="nx">Filter</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">class</span> <span class="nx">Filter</span>
 <span class="p">{</span>
 
-    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">alpha</span><span class="p">(</span><span class="nx">string</span> <span class="nx">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">string</span>
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">alpha</span><span class="p">(</span><span class="kr">string</span> <span class="nx">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kr">string</span>
     <span class="p">{</span>
-        <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span> <span class="nx">string</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+        <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span> <span class="kr">string</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 
         <span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nx">str</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;a&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;A&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span> <span class="p">{</span>
@@ -325,8 +324,8 @@ We invite you to continue reading the manual so that you can discover additional
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 18, 2014.
-            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+             Last updated on Jan 20, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>
              &copy; Copyright 2013-2014, Zephir Team.

@@ -7,7 +7,7 @@ Creating Arrays
 ---------------
 An array is created enclosing their elements in square brackets:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Creating an empty array
 	let elements = [];
@@ -23,7 +23,7 @@ An array is created enclosing their elements in square brackets:
 
 As PHP, hashes or dictionaries are supported:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Creating a hash with string keys
 	let elements = ["foo": "bar", "bar": "foo"];
@@ -38,7 +38,7 @@ Updating arrays
 ---------------
 Arrays are updated in the same way as PHP using square brackets:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Updating an array with a string key
 	let elements["foo"] = "bar";
@@ -50,7 +50,7 @@ Appending elements
 ------------------
 Elements can be appended at the end of the array as follows:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Append an element to the array
 	let elements[] = "bar";
@@ -59,7 +59,7 @@ Reading elements from arrays
 ----------------------------
 Is possible to read array elements as follows:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Getting an element using the string key "foo"
 	let foo = elements["foo"];

@@ -67,7 +67,7 @@ In dynamic typing, the type is bound to the value, not the variable. So, a varia
 to a value of a type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of
 a dynamic typed language:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	var a = 0;
 	a = "hello"; // allowed

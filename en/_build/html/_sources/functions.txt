@@ -3,7 +3,7 @@ Calling Functions
 PHP has a rich library of functions you can use in your extensions.
 To call a PHP function, you can just refer its name in the Zephir code.
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace MyLibrary;
 
@@ -23,7 +23,7 @@ To call a PHP function, you can just refer its name in the Zephir code.
 You can call also functions that are expected to exist in the PHP userland but they
 aren't built-in with PHP:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace MyLibrary;
 
@@ -47,7 +47,7 @@ aren't built-in with PHP:
 Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
 variable as a parameter, some temporary dynamic variable will be used as a bridge in order to call them:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace MyLibrary;
 
@@ -69,7 +69,7 @@ variable as a parameter, some temporary dynamic variable will be used as a bridg
 Similarly, functions return dynamic values that cannot be directly assigned to static
 variables without the appropriate cast:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace MyLibrary;
 
@@ -91,7 +91,7 @@ variables without the appropriate cast:
 
 Sometimes, we would need to call functions in a dynamic way, you can call them as follows:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace MyLibrary;
 
@@ -108,7 +108,7 @@ Sometimes, we would need to call functions in a dynamic way, you can call them a
 Using optimizers
 ----------------
 Most common functions in Zephir use internal optimizers. An 'optimizer' works like an interceptor for function calls.
-An 'optimizer' replaces the call for the function in the PHP userland by direct C-calls which are faster and have a lower 
+An 'optimizer' replaces the call for the function in the PHP userland by direct C-calls which are faster and have a lower
 overhead improving performance.
 
 To create an optimizer you have to create a class in the 'optimizers' directory, the following convention must be used:
@@ -127,7 +127,7 @@ This is the basic structure for an 'optimizer':
 
     class CalculatePiOptimizer extends OptimizerAbstract
     {
-        
+
         public function optimize(array $expression, Call $call, CompilationContext $context)
         {
             //...
@@ -138,7 +138,7 @@ This is the basic structure for an 'optimizer':
 Implementation of optimizers highly depends on the kind of code you want to generate. In our example, we're going to replace the call to this
 function by a call to a c-function. In Zephir, the code used to call this function is:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let pi = calculate_pi(1000);
 
@@ -212,7 +212,7 @@ Code returned by these methods is valid C-code that can be used in the code prin
 
     <?php
 
-    //Generate the C-code    
+    //Generate the C-code
     return new CompiledExpression('double', 'calculate_pi( ' . $resolvedParams[0] . ')', $expression);
 
 All optimizers must return a CompiledExpression instance, this will tell the compiler the type returned by the code and its related C-code.

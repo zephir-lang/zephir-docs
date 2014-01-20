@@ -23,7 +23,7 @@ A small taste
 The following code registers a class with a method that filters variables returning its
 alphabetic characters:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace MyLibrary;
 

@@ -20,7 +20,7 @@ For example, given the following structure, the classes in each file must be:
 
 Class in mylibrary/router.zep:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	namespace MyLibrary;
 
@@ -31,7 +31,7 @@ Class in mylibrary/router.zep:
 
 Class in mylibrary/router/exception.zep:
 
-.. code-block:: php
+.. code-block:: zephir
 
 	namespace MyLibrary\Router;
 
@@ -47,7 +47,7 @@ Instruction separation
 You may have already noticed that there were very few semicolons in the code examples in the previous chapter.
 You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	myObject->myMethod(1, 2, 3); echo "world";
 
@@ -75,7 +75,7 @@ In Zephir, all variables used in a given scope must be declared. This process gi
 to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be
 reserved words.
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Declaring variables for the same type	in the same instruction
 	var a, b c;
@@ -88,7 +88,7 @@ reserved words.
 Variables can optionally have an initial compatible default value, you can assign a new value to a variable
 as often as you want:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Declaring variables with default values
 	var a = "hello", b = 0, c = 1.0;
@@ -96,7 +96,7 @@ as often as you want:
 
 Variable names are case-sensitive, the following variables are different:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Different variables
 	var somevalue, someValue, SomeValue;
@@ -105,7 +105,7 @@ Variable Scope
 --------------
 All variables declared are locally scoped to the method where they were declared:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -131,7 +131,7 @@ Super Globals
 Zephir doesn't support global variables, accessing global variables from the PHP userland is not allowed.
 However, you can access the PHP's super-globals as follows:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Getting a value from _POST
 	let price = _POST["price"];
@@ -156,7 +156,7 @@ Zephir does not implement this feature since all variables are compiled down to 
 and there is no way to know which variables do exist in a specific context. If you want to create
 a variable in the current PHP symbol table, you can use the following syntax:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
 	//Set variable $name in PHP
 	let {"name"} = "hello";

@@ -11,7 +11,7 @@ If Statement
 Braces are compulsory, an 'if' can have an optional 'else' clause, multiple 'if'/'else'
 constructs can be chained together:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     if false {
         echo "false?";
@@ -25,8 +25,8 @@ constructs can be chained together:
 
 Parentheses in the evaluated expression are optional:
 
-.. code-block:: javascript
-    
+.. code-block:: zephir
+
     if a < 0 { return -1; } else { if a > 0 { return 1; } }
 
 Switch Statement
@@ -34,7 +34,7 @@ Switch Statement
 A 'switch' evalutes an expression against a series of predefined literal values executing the corresponding
 'case' block or falling back to the 'default' block case:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     switch count(items) {
         case 1:
@@ -56,7 +56,7 @@ While Statement
 ^^^^^^^^^^^^^^^
 'while' denotes a loop that iterates as long as its given condition evaluates as true:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let counter = 5;
     while counter {
@@ -67,7 +67,7 @@ Loop Statement
 ^^^^^^^^^^^^^^
 In addition to 'while', 'loop' can be used to create infinite loops:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let n = 40;
     loop {
@@ -80,7 +80,7 @@ For Statement
 ^^^^^^^^^^^^^
 A 'for' is a control structure that allows to traverse arrays or strings:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     for item in ["a", "b", "c", "d"] {
         echo item, "\n";
@@ -88,7 +88,7 @@ A 'for' is a control structure that allows to traverse arrays or strings:
 
 Keys in hashes can be obtained in the following way:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let items = ["a": 1, "b": 2, "c": 3, "d": 4];
 
@@ -98,7 +98,7 @@ Keys in hashes can be obtained in the following way:
 
 A 'for' loop can also be instructed to traverse an array or string in reverse order:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let items = [1, 2, 3, 4, 5];
 
@@ -108,7 +108,7 @@ A 'for' loop can also be instructed to traverse an array or string in reverse or
 
 A 'for' can be used to traverse string variables:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     string language = "zephir"; char ch;
 
@@ -118,7 +118,7 @@ A 'for' can be used to traverse string variables:
 
 In reverse order:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     string language = "zephir"; char ch;
 
@@ -128,7 +128,7 @@ In reverse order:
 
 A standard 'for' that traverses a range of integer values can be written as follows:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     for i in range(1, 10) {
         echo i, "\n";
@@ -138,7 +138,7 @@ Break Statement
 ^^^^^^^^^^^^^^^
 'break' ends execution of the current 'while', 'for' or 'loop' statements:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     for item in ["a", "b", "c", "d"] {
         if item == "c" {
@@ -152,7 +152,7 @@ Continue Statement
 'continue' is used within looping structures to skip the rest of the current loop iteration and
 continue execution at the condition evaluation and then the beginning of the next iteration.
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let a = 5;
     while a > 0 {
@@ -169,7 +169,7 @@ The 'require' statement dynamically includes and evaluates a specified PHP file.
 included via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allow to
 include other zephir files in runtime.
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     if file_exists(path) {
         require path;
@@ -179,7 +179,7 @@ Let
 ---
 'Let' statement is used to mutate variables, properties and arrays. Variables are by default inmutable and this instruction makes them mutable:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let name = "Tony";           // simple variable
     let this->name = "Tony";     // object property
@@ -188,7 +188,7 @@ Let
 
 Also this instruction must be used to increment/decrement variables:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let number++;           // increment simple variable
     let number--;           // decrement simple variable
@@ -197,7 +197,7 @@ Also this instruction must be used to increment/decrement variables:
 
 Multiple mutations can be performed in a single 'let' operation:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let price = 1.00, realPrice = price, status = false;
 

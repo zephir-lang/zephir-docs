@@ -15,7 +15,7 @@ features of this language.
 Code in Zephir must be placed in classes. This language is intended to create object-oriented libraries/frameworks,
 so code out of a class is not allowed. Also, a namespace is required:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -78,7 +78,7 @@ the types of an array
 Let’s examine the code in detail, so we can begin to learn Zephir syntax.
 There are a lot of details in just a few lines of code! We’ll explain the general ideas here:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -127,7 +127,7 @@ Variables are by default immutable, this means that Zephir expects that most var
 unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants.
 When the variable value needs to be changed, the keyword 'let' must be used:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     /* Create an array */
     let myArray = ["hello", 0, 100.25, false, null];
@@ -137,14 +137,14 @@ Functions from the PHP userland can be called in Zephir code, in the example the
 was called, the compiler can performs optimizations like avoid this call because it already knows the size of
 the array:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     /* Count the array into a 'int' variable */
     let length = count(myArray);
 
 Parentheses in control flow statements are optional, you can also use them if you feel more confortable.
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     while i < length {
         echo typeof myArray[i], "\n";

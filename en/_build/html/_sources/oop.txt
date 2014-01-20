@@ -9,7 +9,7 @@ Classes
 Every Zephir file must implement a class or an interface (and just once). A class structure
 is very similar to a PHP class:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -26,7 +26,7 @@ Implementing Methods
 The "function" keyword introduces a method. Methods implements the usual visibility modifiers available
 in PHP, explicity set a visibility modifier is mandatory in Zephir:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -51,7 +51,7 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
 
 Methods can receive required and optional parameters:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -123,7 +123,7 @@ Properties are exported to the PHP extension and are visibles from PHP code.
 Properties implement the usual visibility modifiers available in PHP, explicity set
 a visibility modifier is mandatory in Zephir:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -141,7 +141,7 @@ a visibility modifier is mandatory in Zephir:
 Within class methods non-static properties may be accessed by using -> (Object Operator): this->property
 (where property is the name of the property):
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -165,7 +165,7 @@ Within class methods non-static properties may be accessed by using -> (Object O
 Properties can have literal compatible default values. These values must be able to be evaluated at
 compile time and must not depend on run-time information in order to be evaluated:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -184,7 +184,7 @@ Updating Properties
 -------------------
 Properties can be updated by accesing them using the '->' operator:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let this->myProperty = 100;
 
@@ -195,32 +195,32 @@ Zephir checks that properties do exist when a program is accesing them, if a pro
     CompilerException: Property '_optionsx' is not defined on class '_optionsx' in /Users/scott/cphalcon/phalcon/cache/backend.zep on line 62
 
           this->_optionsx = options;
-          ------------^    
+          ------------^
 
 If you want to avoid this compiler validation or just create a property dynamically, you can enclose the property name using string quotes:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let this->{"myProperty"} = 100;
 
 You can also use a simple variable to update a property, the property name will be taken from the variable:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let someProperty = "myProperty";
     let this->{someProperty} = 100;
 
 Reading Properties
 ------------------
-Properties can be read by accesing them using the '->' operator:    
+Properties can be read by accesing them using the '->' operator:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     echo this->myProperty;
 
 As when updating, properties can be dynamically read this way:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     //Avoid compiler check or read a dynamic user defined property
     echo this->{"myProperty"};
@@ -234,7 +234,7 @@ Class Constants
 Class may contain class constants that remain the same and unchangeable once the extension is compiled.
 Class constants are exported to the PHP extension allowing them to be used from PHP.
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -248,7 +248,7 @@ Class constants are exported to the PHP extension allowing them to be used from 
 
 Class constants can be accessed using the class name and the static operator (::):
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -269,7 +269,7 @@ Calling Methods
 ---------------
 Methods can be called using the object operator (->) as in PHP:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -290,7 +290,7 @@ Methods can be called using the object operator (->) as in PHP:
 
 Static methods must be called using the static operator (::):
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -311,7 +311,7 @@ Static methods must be called using the static operator (::):
 
 You can call methods in a dynamic manner as follows:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -333,12 +333,12 @@ You can call methods in a dynamic manner as follows:
 
 Getter/Setter shortcuts
 -----------------------
-Like in C#, you can use get/set/toString shortcuts in Zephir, this feature allows to easily write setters and getters for properties without explictly 
+Like in C#, you can use get/set/toString shortcuts in Zephir, this feature allows to easily write setters and getters for properties without explictly
 implementing those methods as such.
 
 For example, without shortcuts we could find code like:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Test;
 
@@ -377,7 +377,7 @@ For example, without shortcuts we could find code like:
 
 You can write the same code using shortcuts as follows:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace App;
 
@@ -397,10 +397,10 @@ When the code is compiled those methods are exported as real methods but you don
 
 Return Type Hints
 -----------------
-Mthods in classes and interfaces can have return type hints, these will provide useful extra information to the compiler 
+Mthods in classes and interfaces can have return type hints, these will provide useful extra information to the compiler
 to inform you about errors in your application. Consider the following example:
 
-.. code-block:: php
+.. code-block:: zephir
 
     namespace App;
 
@@ -411,7 +411,7 @@ to inform you about errors in your application. Consider the following example:
             // this will throw a compiler exception
             // since the returned value (boolean) does not match
             // the expected returned type string
-            return false; 
+            return false;
         }
 
         public function getSomeOther() -> <App\MyInterface>
@@ -419,14 +419,14 @@ to inform you about errors in your application. Consider the following example:
             // this will throw a compiler exception
             // if the returned object does not implement
             // the expected interface App\MyInterface
-            return new App\MyObject;    
+            return new App\MyObject;
         }
 
         public function process()
         {
             var myObject;
 
-            // the type-hint will tell the compiler that 
+            // the type-hint will tell the compiler that
             // myObject is an instance of a class
             // that implement App\MyInterface
             let myObject = this->getSomeOther();
@@ -437,4 +437,23 @@ to inform you about errors in your application. Consider the following example:
         }
 
     }
+
+Return Type: Void
+-----------------
+
+Methods can also be marked as ‘void’. This means that a method is not allowed to return any data:
+
+.. code-block:: zephir
+
+    public function setConnection(connection) -> void
+    {
+        let this->_connection = connection;
+    }
+
+Why is this useful? Because the compiler can detect if the program is expecting a returning value from these methods and produce a compiler exception:
+
+.. code-block:: zephir
+
+    let myDb = db->setConnection(connection);
+    myDb->execute("SELECT * FROM robots"); // this will produce an exception
 

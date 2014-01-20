@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="_static/docs.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '0.3.0',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
@@ -78,7 +77,7 @@
 <h1>Calling Functions<a class="headerlink" href="#calling-functions" title="Permalink to this headline">¶</a></h1>
 <p>PHP has a rich library of functions you can use in your extensions.
 To call a PHP function, you can just refer its name in the Zephir code.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
 <span class="p">{</span>
@@ -96,7 +95,7 @@ To call a PHP function, you can just refer its name in the Zephir code.</p>
 </div>
 <p>You can call also functions that are expected to exist in the PHP userland but they
 aren&#8217;t built-in with PHP:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
 <span class="p">{</span>
@@ -118,12 +117,12 @@ aren&#8217;t built-in with PHP:</p>
 </div>
 <p>Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
 variable as a parameter, some temporary dynamic variable will be used as a bridge in order to call them:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
 <span class="p">{</span>
 
-    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kr">string</span> <span class="nx">text</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
             <span class="c1">// an implicit dynamic variable is created to</span>
@@ -138,17 +137,17 @@ variable as a parameter, some temporary dynamic variable will be used as a bridg
 </div>
 <p>Similarly, functions return dynamic values that cannot be directly assigned to static
 variables without the appropriate cast:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
 <span class="p">{</span>
 
-    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kr">string</span> <span class="nx">text</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nx">string</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+        <span class="kr">string</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 
         <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
-            <span class="kd">let</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+            <span class="kd">let</span> <span class="nx">encoded</span> <span class="o">=</span> <span class="p">(</span><span class="kr">string</span><span class="p">)</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
             <span class="k">return</span> <span class="s1">&#39;(&#39;</span> <span class="p">.</span> <span class="nx">encoded</span> <span class="p">.</span> <span class="s1">&#39;)&#39;</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
@@ -158,12 +157,12 @@ variables without the appropriate cast:</p>
 </pre></div>
 </div>
 <p>Sometimes, we would need to call functions in a dynamic way, you can call them as follows:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">Encoder</span>
 <span class="p">{</span>
 
-    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kd">var</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">text</span><span class="p">)</span>
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">encode</span><span class="p">(</span><span class="kd">var</span> <span class="nx">callback</span><span class="p">,</span> <span class="kr">string</span> <span class="nx">text</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span><span class="nx">callback</span><span class="p">}(</span><span class="nx">text</span><span class="p">);</span>
     <span class="p">}</span>
@@ -216,7 +215,7 @@ overhead improving performance.</p>
 </div>
 <p>Implementation of optimizers highly depends on the kind of code you want to generate. In our example, we&#8217;re going to replace the call to this
 function by a call to a c-function. In Zephir, the code used to call this function is:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="nx">calculate_pi</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="nx">calculate_pi</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>So, the optimizer will expect just one parameter, we have to validate that to avoid problems later:</p>
@@ -347,8 +346,8 @@ passed, Zephir will need to allocate memory for constants passed and you have to
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 18, 2014.
-            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+             Last updated on Jan 20, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>
              &copy; Copyright 2013-2014, Zephir Team.

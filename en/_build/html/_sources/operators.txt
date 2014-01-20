@@ -57,23 +57,23 @@ Empty
 ^^^^^
 This operator allows to check whether an expression is empty. 'Empty' means the expression is null, is an empty string or an empty array:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let someVar = "";
     if empty someVar {
         echo "is empty!";
-    } 
+    }
 
     let someVar = "hello";
-    if !emptyVar someVar {
+    if !empty someVar {
         echo "is not empty!";
-    } 
+    }
 
 Isset
 ^^^^^
 This operator checks whether a property or index has been defined in an array or object:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let someArray = ["a": 1, "b": 2, "c": 3];
     if isset someArray["b"] { // check if the array has an index "b"
@@ -82,9 +82,9 @@ This operator checks whether a property or index has been defined in an array or
 
 Using 'isset' as return expression:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
-    return isset this->{someProperty};  
+    return isset this->{someProperty};
 
 Fetch
 ^^^^^
@@ -101,33 +101,64 @@ Fetch
 
 In Zephir, you can write the same code as:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     if fetch value, myArray[key] {
         echo value;
     }
 
-'Fetch' only returns true if the 'key' is a valid item in the array, only in that case, 'value' is populated. 
+'Fetch' only returns true if the 'key' is a valid item in the array, only in that case, 'value' is populated.
 
 Type Hints
 ^^^^^^^^^^
 Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let o = new MyObject();
 
     // Zephir checks if "myMethod" is implemented on MyObject
-    o->myMethod(); 
+    o->myMethod();
 
-However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object so Zephir can not produce errors reports effectively. 
-A “type hint” tells the compiler which class is related to a dynamic variable allowing the compiler to perform more compilation checks:
+However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object so Zephir can not produce errors reports effectively.
+A type hint tells the compiler which class is related to a dynamic variable allowing the compiler to perform more compilation checks:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     // Tell the compiler that "o"
     // is an instance of class MyClass
-    let o = <MyClass> this->_myObject; 
-    o->myMethod();    
+    let o = <MyClass> this->_myObject;
+    o->myMethod();
+
+Branch Prediction Hints
+^^^^^^^^^^^^^^^^^^^^^^^
+What is branch prediction? Check this `article out`_. In environments where performance is very important, it may be useful to introduce these hints.
+
+Consider the following example:
+
+.. code-block:: zephir
+
+    let allPaths = [];
+    for path in this->_paths {
+        if path->isAllowed() == false {
+            throw new App\Exception("error!!");
+        } else {
+            let allPaths[] = path;
+        }
+    }
+
+The authors of the above code, know in advance that the condition that throws the exception is unlikely to happen. This means that 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
+
+.. code-block:: zephir
+
+    let allPaths = [];
+    for path in this->_paths {
+        if unlikely path->isAllowed() == false {
+            throw new App\Exception("error!!");
+        } else {
+            let allPaths[] = path;
+        }
+    }
 
 .. _`php manual`: http://www.php.net/manual/en/language.operators.comparison.php
+.. _`article out`: http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/

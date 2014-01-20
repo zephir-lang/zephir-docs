@@ -707,7 +707,7 @@ blockquote {
 .highlight .m { color: #e5786d} /* Literal.Number */
 .highlight .s { color: #95e454;} /* Literal.String */
 .highlight .na { color: #cae682} /* Name.Attribute */
-.highlight .nb { color: #f6f3e8} /* Name.Builtin */
+.highlight .nb { color: #E0D75A} /* Name.Builtin */
 .highlight .nc { color: #f6f3e8} /* Name.Class */
 .highlight .no { color: #e5786d} /* Name.Constant */
 .highlight .nd { color: #f6f3e8} /* Name.Decorator */

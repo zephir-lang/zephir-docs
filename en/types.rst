@@ -10,7 +10,7 @@ different types without restriction.
 
 A dynamic variable must be declared with the keyword 'var', the behavior is nearly the same as in PHP:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     var a, b, c;
 
@@ -51,7 +51,7 @@ Boolean
 ^^^^^^^
 A boolean expresses a truth value. It can be either 'true' or 'false':
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     var a = false, b = true;
 
@@ -61,7 +61,7 @@ Integer numbers. The size of an integer is platform-dependent, although a maximu
 billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18.
 PHP does not support unsigned integers so Zephir has this restriction too:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     var a = 5, b = 10050;
 
@@ -71,7 +71,7 @@ Contrary to PHP, Zephir does not automatically checks for integer overflows, lik
 doing operations that may return a big number you can use types such as 'unsigned long' or 'float'
 to store them:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     unsigned long my_number = 2147483648;
 
@@ -83,7 +83,7 @@ followed by zero or more digits. The size of a float is
 platform-dependent, although a maximum of ~1.8e308 with a
 precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     var number = 5.0, b = 0.014;
 
@@ -96,7 +96,7 @@ String
 A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports
 a 256-character set, and hence does not offer native Unicode support.
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     var today = "friday";
 
@@ -119,14 +119,14 @@ The following escape sequences are supported in strings:
 | \\"           | double-quote                                                              |
 +---------------+---------------------------------------------------------------------------+
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     var today = "\tfriday\n\r",
         tomorrow = "\tsaturday";
 
 In Zephir, strings don't support variable parsing like in PHP, you can use concatenation instead:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     var name = "peter";
 
@@ -141,7 +141,7 @@ multidimensional arrays are also possible.
 
 The syntax to define arrays is slightly different than in PHP:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     //Square braces must be used to define arrays
     let myArray = [1, 2, 3];
@@ -151,7 +151,7 @@ The syntax to define arrays is slightly different than in PHP:
 
 Only long and string values can be used as keys:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let myHash = [0: "first", 1: true, 2: null];
     let myHash = ["first": 7.0, "second": "some string", "third": false];
@@ -160,7 +160,7 @@ Objects
 ^^^^^^^
 Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let myObject = new stdClass(),
         myObject->someProperty = "my value";
@@ -198,7 +198,7 @@ Boolean
 A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior
 static boolean types remain boolean (true or false) no mater what value is assigned to them:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     boolean a;
 
@@ -212,7 +212,7 @@ Integer/Unsigned Integer
 Integer values are like the integer member in dynamic values. Values assigned to integer variables
 remain integer:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     int a;
 
@@ -226,7 +226,7 @@ remain integer:
 Unsigned integers are like integers but they don't have sign, this means you can't store
 negative numbers in these sort of variables:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let a = 50,
         a = -70, // automatically casted to 70
@@ -238,7 +238,7 @@ negative numbers in these sort of variables:
 Unsigned integers are twice bigger than standard integers, assign unsigned integers to integers
 may represent loss of data:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     uint a, int b;
 
@@ -250,7 +250,7 @@ Long/Unsigned Long
 Long variables are twice bigger than integer variables, thus they can store bigger numbers,
 As integers values assigned to long variables are automatically casted to this type:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     long a;
 
@@ -264,7 +264,7 @@ As integers values assigned to long variables are automatically casted to this t
 Unsigned longs are like longs but they aren't signed, this means you can't store
 negative numbers in these sort of variables:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     let a = 50,
         a = -70, // automatically casted to 70
@@ -276,7 +276,7 @@ negative numbers in these sort of variables:
 Unsigned longs are twice bigger than standard longs, assign unsigned longs to longs
 may represent loss of data:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     ulong a, long b;
 
@@ -288,7 +288,7 @@ Char/Unsigned Char
 Char variables are the smallest addressable unit of the machine that can contain basic character set.
 Every 'char' variable represents every character in a string:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     char ch, string name = "peter";
 

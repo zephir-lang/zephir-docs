@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="_static/docs.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '0.3.0',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
@@ -63,6 +62,7 @@
 <li><a class="reference internal" href="#isset">Isset</a></li>
 <li><a class="reference internal" href="#fetch">Fetch</a></li>
 <li><a class="reference internal" href="#type-hints">Type Hints</a></li>
+<li><a class="reference internal" href="#branch-prediction-hints">Branch Prediction Hints</a></li>
 </ul>
 </li>
 </ul>
@@ -177,14 +177,14 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 <div class="section" id="empty">
 <h3>Empty<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h3>
 <p>This operator allows to check whether an expression is empty. &#8216;Empty&#8217; means the expression is null, is an empty string or an empty array:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-<span class="k">if</span> <span class="nx">empty</span> <span class="nx">someVar</span> <span class="p">{</span>
-    <span class="nx">echo</span> <span class="s2">&quot;is empty!&quot;</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="k">if</span> <span class="k">empty</span> <span class="nx">someVar</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;is empty!&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">let</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
-<span class="k">if</span> <span class="o">!</span><span class="nx">emptyVar</span> <span class="nx">someVar</span> <span class="p">{</span>
-    <span class="nx">echo</span> <span class="s2">&quot;is not empty!&quot;</span><span class="p">;</span>
+<span class="k">if</span> <span class="o">!</span><span class="k">empty</span> <span class="nx">someVar</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;is not empty!&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -192,14 +192,14 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 <div class="section" id="isset">
 <h3>Isset<a class="headerlink" href="#isset" title="Permalink to this headline">¶</a></h3>
 <p>This operator checks whether a property or index has been defined in an array or object:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">someArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">];</span>
-<span class="k">if</span> <span class="nx">isset</span> <span class="nx">someArray</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="p">{</span> <span class="c1">// check if the array has an index &quot;b&quot;</span>
-    <span class="nx">echo</span> <span class="s2">&quot;yes, it has an index &#39;b&#39;\n&quot;</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">someArray</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">];</span>
+<span class="k">if</span> <span class="k">isset</span> <span class="nx">someArray</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="p">{</span> <span class="c1">// check if the array has an index &quot;b&quot;</span>
+    <span class="k">echo</span> <span class="s2">&quot;yes, it has an index &#39;b&#39;\n&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Using &#8216;isset&#8217; as return expression:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">return</span> <span class="nx">isset</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">someProperty</span><span class="p">};</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">return</span> <span class="k">isset</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">someProperty</span><span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -215,8 +215,8 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 </pre></div>
 </div>
 <p>In Zephir, you can write the same code as:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="nx">fetch</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">myArray</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="p">{</span>
-    <span class="nx">echo</span> <span class="nx">value</span><span class="p">;</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">if</span> <span class="k">fetch</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">myArray</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nx">value</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -225,18 +225,44 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 <div class="section" id="type-hints">
 <h3>Type Hints<a class="headerlink" href="#type-hints" title="Permalink to this headline">¶</a></h3>
 <p>Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyObject</span><span class="p">();</span>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyObject</span><span class="p">();</span>
 
 <span class="c1">// Zephir checks if &quot;myMethod&quot; is implemented on MyObject</span>
 <span class="nx">o</span><span class="o">-&gt;</span><span class="nx">myMethod</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object so Zephir can not produce errors reports effectively.
-A “type hint” tells the compiler which class is related to a dynamic variable allowing the compiler to perform more compilation checks:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// Tell the compiler that &quot;o&quot;</span>
+A type hint tells the compiler which class is related to a dynamic variable allowing the compiler to perform more compilation checks:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="c1">// Tell the compiler that &quot;o&quot;</span>
 <span class="c1">// is an instance of class MyClass</span>
 <span class="kd">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">MyClass</span><span class="o">&gt;</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">_myObject</span><span class="p">;</span>
 <span class="nx">o</span><span class="o">-&gt;</span><span class="nx">myMethod</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="branch-prediction-hints">
+<h3>Branch Prediction Hints<a class="headerlink" href="#branch-prediction-hints" title="Permalink to this headline">¶</a></h3>
+<p>What is branch prediction? Check this <a class="reference external" href="http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/">article out</a>. In environments where performance is very important, it may be useful to introduce these hints.</p>
+<p>Consider the following example:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">allPaths</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="nx">path</span> <span class="k">in</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">_paths</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">path</span><span class="o">-&gt;</span><span class="nx">isAllowed</span><span class="p">()</span> <span class="o">==</span> <span class="kc">false</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">App\Exception</span><span class="p">(</span><span class="s2">&quot;error!!&quot;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">allPaths</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The authors of the above code, know in advance that the condition that throws the exception is unlikely to happen. This means that 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">allPaths</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="nx">path</span> <span class="k">in</span> <span class="k">this</span><span class="o">-&gt;</span><span class="nx">_paths</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">unlikely</span> <span class="nx">path</span><span class="o">-&gt;</span><span class="nx">isAllowed</span><span class="p">()</span> <span class="o">==</span> <span class="kc">false</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">App\Exception</span><span class="p">(</span><span class="s2">&quot;error!!&quot;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">allPaths</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -270,8 +296,8 @@ A “type hint” tells the compiler which class is related to a dynamic variabl
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 18, 2014.
-            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+             Last updated on Jan 20, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>
              &copy; Copyright 2013-2014, Zephir Team.

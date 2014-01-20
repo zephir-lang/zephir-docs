@@ -85,7 +85,7 @@ printing "hello world!".
 
 The code for this class must be placed in "utils/utils/greeting.zep":
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Utils;
 
@@ -162,7 +162,7 @@ This class is called "Utils\\Filter" and its code must be placed in "utils/utils
 
 A basic skeleton to this class is the following:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Utils;
 
@@ -175,7 +175,7 @@ The class contains filtering methods that help users to filter unwanted caracter
 The first method is called "alpha" and its purpose is to filter only those characters that are ascii basic letters.
 To begin, we are just going to traverse the string printing every byte to the standard output:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     namespace Utils;
 
@@ -216,7 +216,7 @@ You will see:
 Checking every character in the string is straightforward, we now just could create another string with the right
 filtered characters:
 
-.. code-block:: javascript
+.. code-block:: zephir
 
     class Filter
     {
