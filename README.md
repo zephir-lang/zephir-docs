@@ -9,3 +9,6 @@ documentation yourselves.
 
 The documentation language is reStructuredText (http://sphinx.pocoo.org/rest.html)
 
+You need to install the Zephir Lexer for Pygments if 
+you want to generate the documentation: (https://github.com/phalcon/zephir-lexer)
+
