@@ -55,38 +55,40 @@
 \contentsline {subsubsection}{Isset}{19}{subsubsection*.15}
 \contentsline {subsubsection}{Fetch}{20}{subsubsection*.16}
 \contentsline {subsubsection}{Type Hints}{20}{subsubsection*.17}
-\contentsline {section}{\numberline {1.9}Arrays}{20}{section.1.9}
-\contentsline {subsection}{\numberline {1.9.1}Creating Arrays}{20}{subsection.1.9.1}
+\contentsline {subsubsection}{Branch Prediction Hints}{20}{subsubsection*.18}
+\contentsline {section}{\numberline {1.9}Arrays}{21}{section.1.9}
+\contentsline {subsection}{\numberline {1.9.1}Creating Arrays}{21}{subsection.1.9.1}
 \contentsline {subsection}{\numberline {1.9.2}Updating arrays}{21}{subsection.1.9.2}
-\contentsline {subsection}{\numberline {1.9.3}Appending elements}{21}{subsection.1.9.3}
-\contentsline {subsection}{\numberline {1.9.4}Reading elements from arrays}{21}{subsection.1.9.4}
-\contentsline {section}{\numberline {1.10}Classes and Objects}{21}{section.1.10}
+\contentsline {subsection}{\numberline {1.9.3}Appending elements}{22}{subsection.1.9.3}
+\contentsline {subsection}{\numberline {1.9.4}Reading elements from arrays}{22}{subsection.1.9.4}
+\contentsline {section}{\numberline {1.10}Classes and Objects}{22}{section.1.10}
 \contentsline {subsection}{\numberline {1.10.1}Classes}{22}{subsection.1.10.1}
 \contentsline {subsection}{\numberline {1.10.2}Implementing Methods}{22}{subsection.1.10.2}
-\contentsline {subsubsection}{Public Visibility}{23}{subsubsection*.18}
-\contentsline {subsubsection}{Protected Visibility}{23}{subsubsection*.19}
-\contentsline {subsubsection}{Private Visibility}{23}{subsubsection*.20}
-\contentsline {subsection}{\numberline {1.10.3}Implementing Properties}{23}{subsection.1.10.3}
-\contentsline {subsection}{\numberline {1.10.4}Updating Properties}{24}{subsection.1.10.4}
+\contentsline {subsubsection}{Public Visibility}{24}{subsubsection*.19}
+\contentsline {subsubsection}{Protected Visibility}{24}{subsubsection*.20}
+\contentsline {subsubsection}{Private Visibility}{24}{subsubsection*.21}
+\contentsline {subsection}{\numberline {1.10.3}Implementing Properties}{24}{subsection.1.10.3}
+\contentsline {subsection}{\numberline {1.10.4}Updating Properties}{25}{subsection.1.10.4}
 \contentsline {subsection}{\numberline {1.10.5}Reading Properties}{25}{subsection.1.10.5}
-\contentsline {subsection}{\numberline {1.10.6}Class Constants}{25}{subsection.1.10.6}
+\contentsline {subsection}{\numberline {1.10.6}Class Constants}{26}{subsection.1.10.6}
 \contentsline {subsection}{\numberline {1.10.7}Calling Methods}{26}{subsection.1.10.7}
 \contentsline {subsection}{\numberline {1.10.8}Getter/Setter shortcuts}{27}{subsection.1.10.8}
 \contentsline {subsection}{\numberline {1.10.9}Return Type Hints}{28}{subsection.1.10.9}
+\contentsline {subsection}{\numberline {1.10.10}Return Type: Void}{29}{subsection.1.10.10}
 \contentsline {section}{\numberline {1.11}Control Structures}{29}{section.1.11}
 \contentsline {subsection}{\numberline {1.11.1}Conditionals}{29}{subsection.1.11.1}
-\contentsline {subsubsection}{If Statement}{29}{subsubsection*.21}
-\contentsline {subsubsection}{Switch Statement}{29}{subsubsection*.22}
-\contentsline {subsection}{\numberline {1.11.2}Loops}{29}{subsection.1.11.2}
-\contentsline {subsubsection}{While Statement}{29}{subsubsection*.23}
-\contentsline {subsubsection}{Loop Statement}{30}{subsubsection*.24}
-\contentsline {subsubsection}{For Statement}{30}{subsubsection*.25}
-\contentsline {subsubsection}{Break Statement}{31}{subsubsection*.26}
-\contentsline {subsubsection}{Continue Statement}{31}{subsubsection*.27}
-\contentsline {subsection}{\numberline {1.11.3}Require}{31}{subsection.1.11.3}
-\contentsline {subsection}{\numberline {1.11.4}Let}{31}{subsection.1.11.4}
+\contentsline {subsubsection}{If Statement}{29}{subsubsection*.22}
+\contentsline {subsubsection}{Switch Statement}{30}{subsubsection*.23}
+\contentsline {subsection}{\numberline {1.11.2}Loops}{30}{subsection.1.11.2}
+\contentsline {subsubsection}{While Statement}{30}{subsubsection*.24}
+\contentsline {subsubsection}{Loop Statement}{30}{subsubsection*.25}
+\contentsline {subsubsection}{For Statement}{31}{subsubsection*.26}
+\contentsline {subsubsection}{Break Statement}{31}{subsubsection*.27}
+\contentsline {subsubsection}{Continue Statement}{32}{subsubsection*.28}
+\contentsline {subsection}{\numberline {1.11.3}Require}{32}{subsection.1.11.3}
+\contentsline {subsection}{\numberline {1.11.4}Let}{32}{subsection.1.11.4}
 \contentsline {section}{\numberline {1.12}Calling Functions}{32}{section.1.12}
-\contentsline {section}{\numberline {1.13}Using optimizers}{33}{section.1.13}
-\contentsline {section}{\numberline {1.14}License}{35}{section.1.14}
-\contentsline {chapter}{\numberline {2}Other Formats}{37}{chapter.2}
-\contentsline {chapter}{Index}{39}{section*.28}
+\contentsline {section}{\numberline {1.13}Using optimizers}{34}{section.1.13}
+\contentsline {section}{\numberline {1.14}License}{36}{section.1.14}
+\contentsline {chapter}{\numberline {2}Other Formats}{39}{chapter.2}
+\contentsline {chapter}{Index}{41}{section*.29}

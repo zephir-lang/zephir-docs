@@ -13,7 +13,7 @@
 
 
 \title{Zephir Documentation}
-\date{January 16, 2014}
+\date{January 24, 2014}
 \release{0.3.0}
 \author{Zephir Team}
 \newcommand{\sphinxlogo}{}
@@ -161,7 +161,7 @@ The following code registers a class with a method that filters variables return
 alphabetic characters:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
 
 \PYG{c+cm}{/**}
 \PYG{c+cm}{ * Filter}
@@ -173,13 +173,13 @@ alphabetic characters:
 \PYG{c+cm}{     *}
 \PYG{c+cm}{     * @param string str}
 \PYG{c+cm}{     */}
-    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{alpha}\PYG{p}{(}\PYG{n+nx}{string} \PYG{n+nx}{str}\PYG{p}{)}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{alpha}\PYG{p}{(}\PYG{k+kr}{string} \PYG{n+nx}{str}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;} \PYG{n+nx}{string} \PYG{n+nx}{filtered} \PYG{o}{=} \PYG{l+s+s2}{""}\PYG{p}{;}
+        \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;} \PYG{k+kr}{string} \PYG{n+nx}{filtered} \PYG{o}{=} \PYG{l+s+s2}{""}\PYG{p}{;}
 
         \PYG{k}{for} \PYG{n+nx}{ch} \PYG{k}{in} \PYG{n+nx}{str} \PYG{p}{\PYGZob{}}
            \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{ch} \PYG{o}{\textgreater{}=} \PYG{l+s+s1}{'a'} \PYG{o}{\&\&} \PYG{n+nx}{ch} \PYG{o}{\textless{}=} \PYG{l+s+s1}{'z'}\PYG{p}{)} \PYG{o}{\textbar{}\textbar{}} \PYG{p}{(}\PYG{n+nx}{ch} \PYG{o}{\textgreater{}=} \PYG{l+s+s1}{'A'} \PYG{o}{\&\&} \PYG{n+nx}{ch} \PYG{o}{\textless{}=} \PYG{l+s+s1}{'Z'}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-              \PYG{n+nx}{let} \PYG{n+nx}{filtered} \PYG{p}{.}\PYG{o}{=} \PYG{n+nx}{ch}\PYG{p}{;}
+              \PYG{k+kd}{let} \PYG{n+nx}{filtered} \PYG{p}{.}\PYG{o}{=} \PYG{n+nx}{ch}\PYG{p}{;}
            \PYG{p}{\PYGZcb{}}
         \PYG{p}{\PYGZcb{}}
 
@@ -324,9 +324,9 @@ and matured a number of optimizations that improve the performance of compiled a
 \subsection{Code Protection}
 \label{motivation:code-protection}
 In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located
-in the I/O bound (quite likely) of the application rather than compute/memory bound.
+in the I/O bound of the application (quite likely) rather than compute/memory bound.
 However, compiling code could also bring some level of intelectual protection to your application.
-With Zephir, producing binaries you also get the ability to hide the code behind users or customers.
+With Zephir, producing native binaries, you also get the ability to hide the code to users or customers.
 
 
 \subsection{Conclusion}
@@ -356,7 +356,7 @@ Code in Zephir must be placed in classes. This language is intended to create ob
 so code out of a class is not allowed. Also, a namespace is required:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{c+cm}{/**}
 \PYG{c+cm}{ * This is a sample class}
@@ -368,7 +368,7 @@ so code out of a class is not allowed. Also, a namespace is required:
 \PYG{c+cm}{     */}
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{say}\PYG{p}{(}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{echo} \PYG{l+s+s2}{"Hello World!"}\PYG{p}{;}
+        \PYG{k}{echo} \PYG{l+s+s2}{"Hello World!"}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
@@ -420,7 +420,7 @@ Let’s examine the code in detail, so we can begin to learn Zephir syntax.
 There are a lot of details in just a few lines of code! We’ll explain the general ideas here:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{c+cm}{/**}
 \PYG{c+cm}{ * MyTest (test/mytest.zep)}
@@ -434,15 +434,15 @@ There are a lot of details in just a few lines of code! We’ll explain the gene
         \PYG{k+kr}{int} \PYG{n+nx}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nx}{length}\PYG{p}{;}
 
         \PYG{c+cm}{/* Create an array */}
-        \PYG{n+nx}{let} \PYG{n+nx}{myArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"hello"}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{k+kc}{false}\PYG{p}{,} \PYG{k+kc}{null}\PYG{p}{]}\PYG{p}{;}
+        \PYG{k+kd}{let} \PYG{n+nx}{myArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"hello"}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{k+kc}{false}\PYG{p}{,} \PYG{k+kc}{null}\PYG{p}{]}\PYG{p}{;}
 
         \PYG{c+cm}{/* Count the array into a 'int' variable */}
-        \PYG{n+nx}{let} \PYG{n+nx}{length} \PYG{o}{=} \PYG{n+nx}{count}\PYG{p}{(}\PYG{n+nx}{myArray}\PYG{p}{)}\PYG{p}{;}
+        \PYG{k+kd}{let} \PYG{n+nx}{length} \PYG{o}{=} \PYG{n+nb}{count}\PYG{p}{(}\PYG{n+nx}{myArray}\PYG{p}{)}\PYG{p}{;}
 
         \PYG{c+cm}{/* Print value types */}
         \PYG{k}{while} \PYG{n+nx}{i} \PYG{o}{\textless{}} \PYG{n+nx}{length} \PYG{p}{\PYGZob{}}
-            \PYG{n+nx}{echo} \PYG{k}{typeof} \PYG{n+nx}{myArray}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
-            \PYG{n+nx}{let} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{;}
+            \PYG{k}{echo} \PYG{k}{typeof} \PYG{n+nx}{myArray}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+            \PYG{k+kd}{let} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
 
         \PYG{k}{return} \PYG{n+nx}{myArray}\PYG{p}{;}
@@ -470,7 +470,7 @@ When the variable value needs to be changed, the keyword `let' must be used:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+cm}{/* Create an array */}
-\PYG{n+nx}{let} \PYG{n+nx}{myArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"hello"}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{k+kc}{false}\PYG{p}{,} \PYG{k+kc}{null}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{myArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"hello"}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{k+kc}{false}\PYG{p}{,} \PYG{k+kc}{null}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
 By default, arrays are dynamic like in PHP, they may contain values of different types.
@@ -480,15 +480,15 @@ the array:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+cm}{/* Count the array into a 'int' variable */}
-\PYG{n+nx}{let} \PYG{n+nx}{length} \PYG{o}{=} \PYG{n+nx}{count}\PYG{p}{(}\PYG{n+nx}{myArray}\PYG{p}{)}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{length} \PYG{o}{=} \PYG{n+nb}{count}\PYG{p}{(}\PYG{n+nx}{myArray}\PYG{p}{)}\PYG{p}{;}
 \end{Verbatim}
 
 Parentheses in control flow statements are optional, you can also use them if you feel more confortable.
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{while} \PYG{n+nx}{i} \PYG{o}{\textless{}} \PYG{n+nx}{length} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{k}{typeof} \PYG{n+nx}{myArray}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
-    \PYG{n+nx}{let} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{;}
+    \PYG{k}{echo} \PYG{k}{typeof} \PYG{n+nx}{myArray}\PYG{p}{[}\PYG{n+nx}{i}\PYG{p}{]}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{i}\PYG{o}{++}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -508,7 +508,7 @@ To install Zephir, please follow these steps:
 To build a PHP extension and use Zephir you need the following requirements:
 \begin{itemize}
 \item {} 
-gcc \textgreater{}= 4.x/clang \textgreater{}= 3.x/vc++ 9
+gcc \textgreater{}= 4.x/clang \textgreater{}= 3.x
 
 \item {} 
 re2c 0.13 or later
@@ -523,9 +523,19 @@ autoconf 2.31 or later
 automake 1.14 or later
 
 \item {} 
+libpcre3
+
+\item {} 
 php development headers and tools
 
 \end{itemize}
+
+If you're using Ubuntu, you can install the required packages this way:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nv}{\PYGZdl{} }sudo apt-get update
+\PYG{n+nv}{\PYGZdl{} }sudo apt-get install git gcc make re2c php5 php5-dev libpcre3-dev
+\end{Verbatim}
 
 Since Zephir is written in PHP you need to have installed a recent version of PHP and it must be available in your console:
 
@@ -559,8 +569,7 @@ Json-C is required by the Zephir parser to process the code, you can install it 
 \PYG{n+nv}{\PYGZdl{} }\PYG{n+nb}{cd }json-c
 \PYG{n+nv}{\PYGZdl{} }sh autogen.sh
 \PYG{n+nv}{\PYGZdl{} }./configure
-\PYG{n+nv}{\PYGZdl{} }make
-\PYG{n+nv}{\PYGZdl{} }make install
+\PYG{n+nv}{\PYGZdl{} }make \PYG{o}{\&\&} sudo make install
 \end{Verbatim}
 
 The Zephir compiler currently must be cloned from Github:
@@ -573,13 +582,7 @@ Run the Zephir installer (this compiles/creates the parser):
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{n+nv}{\PYGZdl{} }\PYG{n+nb}{cd }zephir
-\PYG{n+nv}{\PYGZdl{} }./install
-\end{Verbatim}
-
-Add the ``bin'' directory to your PATH enviroment variable:
-
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nv}{\PYGZdl{} }\PYG{n+nb}{export }\PYG{n+nv}{PATH}\PYG{o}{=}\PYG{n+nv}{\PYGZdl{}PATH}:/path/to/zephir/bin
+\PYG{n+nv}{\PYGZdl{} }./install -c
 \end{Verbatim}
 
 
@@ -683,14 +686,14 @@ printing ``hello world!''.
 The code for this class must be placed in ``utils/utils/greeting.zep'':
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Utils}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Utils}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Greeting}
 \PYG{p}{\PYGZob{}}
 
     \PYG{k+kr}{public} \PYG{k+kr}{static} \PYG{k+kd}{function} \PYG{n+nx}{say}\PYG{p}{(}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{echo} \PYG{l+s+s2}{"hello world!"}\PYG{p}{;}
+        \PYG{k}{echo} \PYG{l+s+s2}{"hello world!"}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
 \PYG{p}{\PYGZcb{}}
@@ -762,7 +765,7 @@ This class is called ``Utils\textbackslash{}Filter'' and its code must be placed
 A basic skeleton to this class is the following:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Utils}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Utils}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Filter}
 \PYG{p}{\PYGZob{}}
@@ -775,17 +778,17 @@ The first method is called ``alpha'' and its purpose is to filter only those cha
 To begin, we are just going to traverse the string printing every byte to the standard output:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Utils}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Utils}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Filter}
 \PYG{p}{\PYGZob{}}
 
-    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{alpha}\PYG{p}{(}\PYG{n+nx}{string} \PYG{n+nx}{str}\PYG{p}{)}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{alpha}\PYG{p}{(}\PYG{k+kr}{string} \PYG{n+nx}{str}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
         \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;}
 
         \PYG{k}{for} \PYG{n+nx}{ch} \PYG{k}{in} \PYG{n+nx}{str} \PYG{p}{\PYGZob{}}
-            \PYG{n+nx}{echo} \PYG{n+nx}{ch}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+            \PYG{k}{echo} \PYG{n+nx}{ch}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
 
     \PYG{p}{\PYGZcb{}}
@@ -819,13 +822,13 @@ filtered characters:
 \PYG{k+kr}{class} \PYG{n+nx}{Filter}
 \PYG{p}{\PYGZob{}}
 
-    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{alpha}\PYG{p}{(}\PYG{n+nx}{string} \PYG{n+nx}{str}\PYG{p}{)} \PYG{o}{-}\PYG{o}{\textgreater{}} \PYG{n+nx}{string}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{alpha}\PYG{p}{(}\PYG{k+kr}{string} \PYG{n+nx}{str}\PYG{p}{)} \PYG{o}{-\textgreater{}} \PYG{k+kr}{string}
     \PYG{p}{\PYGZob{}}
-        \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;} \PYG{n+nx}{string} \PYG{n+nx}{filtered} \PYG{o}{=} \PYG{l+s+s2}{""}\PYG{p}{;}
+        \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;} \PYG{k+kr}{string} \PYG{n+nx}{filtered} \PYG{o}{=} \PYG{l+s+s2}{""}\PYG{p}{;}
 
         \PYG{k}{for} \PYG{n+nx}{ch} \PYG{k}{in} \PYG{n+nx}{str} \PYG{p}{\PYGZob{}}
             \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{ch} \PYG{o}{\textgreater{}=} \PYG{l+s+s1}{'a'} \PYG{o}{\&\&} \PYG{n+nx}{ch} \PYG{o}{\textless{}=} \PYG{l+s+s1}{'z'}\PYG{p}{)} \PYG{o}{\textbar{}\textbar{}} \PYG{p}{(}\PYG{n+nx}{ch} \PYG{o}{\textgreater{}=} \PYG{l+s+s1}{'A'} \PYG{o}{\&\&} \PYG{n+nx}{ch} \PYG{o}{\textless{}=} \PYG{l+s+s1}{'Z'}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-                \PYG{n+nx}{let} \PYG{n+nx}{filtered} \PYG{p}{.}\PYG{o}{=} \PYG{n+nx}{ch}\PYG{p}{;}
+                \PYG{k+kd}{let} \PYG{n+nx}{filtered} \PYG{p}{.}\PYG{o}{=} \PYG{n+nx}{ch}\PYG{p}{;}
             \PYG{p}{\PYGZcb{}}
         \PYG{p}{\PYGZcb{}}
 
@@ -876,7 +879,7 @@ mylibrary/
 Class in mylibrary/router.zep:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Router}
 \PYG{p}{\PYGZob{}}
@@ -887,12 +890,12 @@ Class in mylibrary/router.zep:
 Class in mylibrary/router/exception.zep:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{x}{namespace MyLibrary\PYGZbs{}Router;}
+\PYG{k}{namespace} \PYG{n+nx}{MyLibrary\PYGZbs{}Router}\PYG{p}{;}
 
-\PYG{x}{class Router extends Exception}
-\PYG{x}{\PYGZob{}}
+\PYG{k+kr}{class} \PYG{n+nx}{Router} \PYG{k}{extends} \PYG{n+nx}{Exception}
+\PYG{p}{\PYGZob{}}
 
-\PYG{x}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 Zephir will raise a compiler exception if a file or class is not located at the expected file or vice versa.
@@ -904,7 +907,7 @@ You may have already noticed that there were very few semicolons in the code exa
 You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{myObject}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myMethod}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{;} \PYG{n+nx}{echo} \PYG{l+s+s2}{"world"}\PYG{p}{;}
+\PYG{n+nx}{myObject}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myMethod}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{;} \PYG{k}{echo} \PYG{l+s+s2}{"world"}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -949,7 +952,7 @@ as often as you want:
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Declaring variables with default values}
 \PYG{k+kd}{var} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+s+s2}{"hello"}\PYG{p}{,} \PYG{n+nx}{b} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nx}{c} \PYG{o}{=} \PYG{l+m+mf}{1.0}\PYG{p}{;}
-\PYG{k+kr}{int} \PYG{n+nx}{d} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{;} \PYG{n+nx}{bool} \PYG{n+nx}{some} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
+\PYG{k+kr}{int} \PYG{n+nx}{d} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{;} \PYG{k+kr}{bool} \PYG{n+nx}{some} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{;}
 \end{Verbatim}
 
 Variable names are case-sensitive, the following variables are different:
@@ -965,7 +968,7 @@ Variable names are case-sensitive, the following variables are different:
 All variables declared are locally scoped to the method where they were declared:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -993,10 +996,10 @@ However, you can access the PHP's super-globals as follows:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Getting a value from \PYGZus{}POST}
-\PYG{n+nx}{let} \PYG{n+nx}{price} \PYG{o}{=} \PYG{n+nx}{\PYGZus{}POST}\PYG{p}{[}\PYG{l+s+s2}{"price"}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{price} \PYG{o}{=} \PYG{n+nb}{\PYGZus{}POST}\PYG{p}{[}\PYG{l+s+s2}{"price"}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//Read a value from \PYGZus{}SERVER}
-\PYG{n+nx}{let} \PYG{n+nx}{requestMethod} \PYG{o}{=} \PYG{n+nx}{\PYGZus{}SERVER}\PYG{p}{[}\PYG{l+s+s2}{"REQUEST\PYGZus{}METHOD"}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{requestMethod} \PYG{o}{=} \PYG{n+nb}{\PYGZus{}SERVER}\PYG{p}{[}\PYG{l+s+s2}{"REQUEST\PYGZus{}METHOD"}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1019,11 +1022,11 @@ a variable in the current PHP symbol table, you can use the following syntax:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Set variable \PYGZdl{}name in PHP}
-\PYG{n+nx}{let} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{"name"}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+s+s2}{"hello"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{"name"}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+s+s2}{"hello"}\PYG{p}{;}
 
 \PYG{c+c1}{//Set variable \PYGZdl{}price in PHP}
-\PYG{n+nx}{let} \PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"price"}\PYG{p}{;}
-\PYG{n+nx}{let} \PYG{p}{\PYGZob{}}\PYG{n+nx}{name}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+m+mf}{10.2}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"price"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{p}{\PYGZob{}}\PYG{n+nx}{name}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+m+mf}{10.2}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1044,13 +1047,13 @@ A dynamic variable must be declared with the keyword `var', the behavior is near
 \PYG{k+kd}{var} \PYG{n+nx}{a}\PYG{p}{,} \PYG{n+nx}{b}\PYG{p}{,} \PYG{n+nx}{c}\PYG{p}{;}
 
 \PYG{c+c1}{// Initialize variables}
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+s+s2}{"hello"}\PYG{p}{,} \PYG{n+nx}{b} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+s+s2}{"hello"}\PYG{p}{,} \PYG{n+nx}{b} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
 
 \PYG{c+c1}{// Change their values}
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n+nx}{b} \PYG{o}{=} \PYG{l+s+s2}{"140"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n+nx}{b} \PYG{o}{=} \PYG{l+s+s2}{"140"}\PYG{p}{;}
 
 \PYG{c+c1}{// Perform operations between them}
-\PYG{n+nx}{let} \PYG{n+nx}{c} \PYG{o}{=} \PYG{n+nx}{a} \PYG{o}{+} \PYG{n+nx}{b}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{c} \PYG{o}{=} \PYG{n+nx}{a} \PYG{o}{+} \PYG{n+nx}{b}\PYG{p}{;}
 \end{Verbatim}
 
 They can have eight types:
@@ -1135,7 +1138,7 @@ doing operations that may return a big number you can use types such as `unsigne
 to store them:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{unsigned} \PYG{k+kr}{long} \PYG{n+nx}{my\PYGZus{}number} \PYG{o}{=} \PYG{l+m+mi}{2147483648}\PYG{p}{;}
+\PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n+nx}{my\PYGZus{}number} \PYG{o}{=} \PYG{l+m+mi}{2147483648}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1215,7 +1218,7 @@ In Zephir, strings don't support variable parsing like in PHP, you can use conca
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k+kd}{var} \PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"peter"}\PYG{p}{;}
 
-\PYG{n+nx}{echo} \PYG{l+s+s2}{"hello: "} \PYG{p}{.} \PYG{n+nx}{name}\PYG{p}{;}
+\PYG{k}{echo} \PYG{l+s+s2}{"hello: "} \PYG{p}{.} \PYG{n+nx}{name}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1230,17 +1233,17 @@ The syntax to define arrays is slightly different than in PHP:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Square braces must be used to define arrays}
-\PYG{n+nx}{let} \PYG{n+nx}{myArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{myArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//Double colon must be used to define hashes' keys}
-\PYG{n+nx}{let} \PYG{n+nx}{myHash} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"first"}\PYG{o}{:} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s2}{"second"}\PYG{o}{:} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+s2}{"third"}\PYG{o}{:} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{myHash} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"first"}\PYG{o}{:} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s2}{"second"}\PYG{o}{:} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+s2}{"third"}\PYG{o}{:} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
 Only long and string values can be used as keys:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{myHash} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{o}{:} \PYG{l+s+s2}{"first"}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{o}{:} \PYG{k+kc}{true}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{:} \PYG{k+kc}{null}\PYG{p}{]}\PYG{p}{;}
-\PYG{n+nx}{let} \PYG{n+nx}{myHash} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"first"}\PYG{o}{:} \PYG{l+m+mf}{7.0}\PYG{p}{,} \PYG{l+s+s2}{"second"}\PYG{o}{:} \PYG{l+s+s2}{"some string"}\PYG{p}{,} \PYG{l+s+s2}{"third"}\PYG{o}{:} \PYG{k+kc}{false}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{myHash} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{o}{:} \PYG{l+s+s2}{"first"}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{o}{:} \PYG{k+kc}{true}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{o}{:} \PYG{k+kc}{null}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{myHash} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"first"}\PYG{o}{:} \PYG{l+m+mf}{7.0}\PYG{p}{,} \PYG{l+s+s2}{"second"}\PYG{o}{:} \PYG{l+s+s2}{"some string"}\PYG{p}{,} \PYG{l+s+s2}{"third"}\PYG{o}{:} \PYG{k+kc}{false}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1249,8 +1252,8 @@ Only long and string values can be used as keys:
 Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{myObject} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{stdClass}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,}
-    \PYG{n+nx}{myObject}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{someProperty} \PYG{o}{=} \PYG{l+s+s2}{"my value"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{myObject} \PYG{o}{=} \PYG{k}{new} \PYG{n+nb}{stdClass}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,}
+    \PYG{n+nx}{myObject}\PYG{o}{-\textgreater{}}\PYG{n+nx}{someProperty} \PYG{o}{=} \PYG{l+s+s2}{"my value"}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1324,7 +1327,7 @@ static boolean types remain boolean (true or false) no mater what value is assig
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k+kr}{boolean} \PYG{n+nx}{a}\PYG{p}{;}
 
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{,}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{,}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{c+c1}{// automatically casted to true}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{,} \PYG{c+c1}{// automatically casted to false}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+s+s2}{"hello"}\PYG{p}{;} \PYG{c+c1}{// throws a compiler exception}
@@ -1339,7 +1342,7 @@ remain integer:
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k+kr}{int} \PYG{n+nx}{a}\PYG{p}{;}
 
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{,}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{,}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{o}{-}\PYG{l+m+mi}{70}\PYG{p}{,}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 100}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 0}
@@ -1351,7 +1354,7 @@ Unsigned integers are like integers but they don't have sign, this means you can
 negative numbers in these sort of variables:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{,}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{,}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{o}{-}\PYG{l+m+mi}{70}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 70}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 100}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 0}
@@ -1365,7 +1368,7 @@ may represent loss of data:
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{n+nx}{uint} \PYG{n+nx}{a}\PYG{p}{,} \PYG{k+kr}{int} \PYG{n+nx}{b}\PYG{p}{;}
 
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{2147483648}\PYG{p}{,}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{2147483648}\PYG{p}{,}
     \PYG{n+nx}{b} \PYG{o}{=} \PYG{n+nx}{a}\PYG{p}{,} \PYG{c+c1}{// possible loss of data}
 \end{Verbatim}
 
@@ -1378,7 +1381,7 @@ As integers values assigned to long variables are automatically casted to this t
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k+kr}{long} \PYG{n+nx}{a}\PYG{p}{;}
 
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{,}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{,}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{o}{-}\PYG{l+m+mi}{70}\PYG{p}{,}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 100}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 0}
@@ -1390,7 +1393,7 @@ Unsigned longs are like longs but they aren't signed, this means you can't store
 negative numbers in these sort of variables:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{,}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{50}\PYG{p}{,}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{o}{-}\PYG{l+m+mi}{70}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 70}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mf}{100.25}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 100}
     \PYG{n+nx}{a} \PYG{o}{=} \PYG{k+kc}{null}\PYG{p}{,} \PYG{c+c1}{// automatically casted to 0}
@@ -1402,9 +1405,9 @@ Unsigned longs are twice bigger than standard longs, assign unsigned longs to lo
 may represent loss of data:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{ulong} \PYG{n+nx}{a}\PYG{p}{,} \PYG{k+kr}{long} \PYG{n+nx}{b}\PYG{p}{;}
+\PYG{k+kr}{ulong} \PYG{n+nx}{a}\PYG{p}{,} \PYG{k+kr}{long} \PYG{n+nx}{b}\PYG{p}{;}
 
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{4294967296}\PYG{p}{,}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{4294967296}\PYG{p}{,}
     \PYG{n+nx}{b} \PYG{o}{=} \PYG{n+nx}{a}\PYG{p}{,} \PYG{c+c1}{// possible loss of data}
 \end{Verbatim}
 
@@ -1415,9 +1418,9 @@ Char variables are the smallest addressable unit of the machine that can contain
 Every `char' variable represents every character in a string:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{,} \PYG{n+nx}{string} \PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"peter"}\PYG{p}{;}
+\PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{,} \PYG{k+kr}{string} \PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"peter"}\PYG{p}{;}
 
-\PYG{n+nx}{let} \PYG{n+nx}{ch} \PYG{o}{=} \PYG{n+nx}{name}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{;} \PYG{c+c1}{// stores 't'}
+\PYG{k+kd}{let} \PYG{n+nx}{ch} \PYG{o}{=} \PYG{n+nx}{name}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{;} \PYG{c+c1}{// stores 't'}
 \end{Verbatim}
 
 
@@ -1557,14 +1560,14 @@ The following operators are supported:
 This operator allows to check whether an expression is empty. `Empty' means the expression is null, is an empty string or an empty array:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{someVar} \PYG{o}{=} \PYG{l+s+s2}{""}\PYG{p}{;}
-\PYG{k}{if} \PYG{n+nx}{empty} \PYG{n+nx}{someVar} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{l+s+s2}{"is empty!"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{someVar} \PYG{o}{=} \PYG{l+s+s2}{""}\PYG{p}{;}
+\PYG{k}{if} \PYG{k}{empty} \PYG{n+nx}{someVar} \PYG{p}{\PYGZob{}}
+    \PYG{k}{echo} \PYG{l+s+s2}{"is empty!"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 
-\PYG{n+nx}{let} \PYG{n+nx}{someVar} \PYG{o}{=} \PYG{l+s+s2}{"hello"}\PYG{p}{;}
-\PYG{k}{if} \PYG{o}{!}\PYG{n+nx}{emptyVar} \PYG{n+nx}{someVar} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{l+s+s2}{"is not empty!"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{someVar} \PYG{o}{=} \PYG{l+s+s2}{"hello"}\PYG{p}{;}
+\PYG{k}{if} \PYG{o}{!}\PYG{k}{empty} \PYG{n+nx}{someVar} \PYG{p}{\PYGZob{}}
+    \PYG{k}{echo} \PYG{l+s+s2}{"is not empty!"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -1574,16 +1577,16 @@ This operator allows to check whether an expression is empty. `Empty' means the 
 This operator checks whether a property or index has been defined in an array or object:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{someArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"a"}\PYG{o}{:} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s2}{"b"}\PYG{o}{:} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+s2}{"c"}\PYG{o}{:} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{;}
-\PYG{k}{if} \PYG{n+nx}{isset} \PYG{n+nx}{someArray}\PYG{p}{[}\PYG{l+s+s2}{"b"}\PYG{p}{]} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// check if the array has an index "b"}
-    \PYG{n+nx}{echo} \PYG{l+s+s2}{"yes, it has an index 'b'\PYGZbs{}n"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{someArray} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"a"}\PYG{o}{:} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s2}{"b"}\PYG{o}{:} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+s2}{"c"}\PYG{o}{:} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{;}
+\PYG{k}{if} \PYG{k}{isset} \PYG{n+nx}{someArray}\PYG{p}{[}\PYG{l+s+s2}{"b"}\PYG{p}{]} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// check if the array has an index "b"}
+    \PYG{k}{echo} \PYG{l+s+s2}{"yes, it has an index 'b'\PYGZbs{}n"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 Using `isset' as return expression:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{return} \PYG{n+nx}{isset} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{n+nx}{someProperty}\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\PYG{k}{return} \PYG{k}{isset} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{n+nx}{someProperty}\PYG{p}{\PYGZcb{}}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1603,8 +1606,8 @@ Using `isset' as return expression:
 In Zephir, you can write the same code as:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{if} \PYG{n+nx}{fetch} \PYG{n+nx}{value}\PYG{p}{,} \PYG{n+nx}{myArray}\PYG{p}{[}\PYG{n+nx}{key}\PYG{p}{]} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{n+nx}{value}\PYG{p}{;}
+\PYG{k}{if} \PYG{k}{fetch} \PYG{n+nx}{value}\PYG{p}{,} \PYG{n+nx}{myArray}\PYG{p}{[}\PYG{n+nx}{key}\PYG{p}{]} \PYG{p}{\PYGZob{}}
+    \PYG{k}{echo} \PYG{n+nx}{value}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -1616,25 +1619,56 @@ In Zephir, you can write the same code as:
 Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{o} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{MyObject}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{o} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{MyObject}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
 
 \PYG{c+c1}{// Zephir checks if "myMethod" is implemented on MyObject}
-\PYG{n+nx}{o}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myMethod}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nx}{o}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myMethod}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
 \end{Verbatim}
 
 However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object so Zephir can not produce errors reports effectively.
-A “type hint” tells the compiler which class is related to a dynamic variable allowing the compiler to perform more compilation checks:
+A type hint tells the compiler which class is related to a dynamic variable allowing the compiler to perform more compilation checks:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{// Tell the compiler that "o"}
 \PYG{c+c1}{// is an instance of class MyClass}
-\PYG{n+nx}{let} \PYG{n+nx}{o} \PYG{o}{=} \PYG{o}{\textless{}}\PYG{n+nx}{MyClass}\PYG{o}{\textgreater{}} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{\PYGZus{}myObject}\PYG{p}{;}
-\PYG{n+nx}{o}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myMethod}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{o} \PYG{o}{=} \PYG{o}{\textless{}}\PYG{n+nx}{MyClass}\PYG{o}{\textgreater{}} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{\PYGZus{}myObject}\PYG{p}{;}
+\PYG{n+nx}{o}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myMethod}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\end{Verbatim}
+
+
+\subsubsection{Branch Prediction Hints}
+\label{operators:branch-prediction-hints}
+What is branch prediction? Check this \href{http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/}{article out}. In environments where performance is very important, it may be useful to introduce these hints.
+
+Consider the following example:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{let} \PYG{n+nx}{allPaths} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}\PYG{p}{;}
+\PYG{k}{for} \PYG{n+nx}{path} \PYG{k}{in} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{\PYGZus{}paths} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{n+nx}{path}\PYG{o}{-\textgreater{}}\PYG{n+nx}{isAllowed}\PYG{p}{(}\PYG{p}{)} \PYG{o}{==} \PYG{k+kc}{false} \PYG{p}{\PYGZob{}}
+        \PYG{k}{throw} \PYG{k}{new} \PYG{n+nx}{App\PYGZbs{}Exception}\PYG{p}{(}\PYG{l+s+s2}{"error!!"}\PYG{p}{)}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{let} \PYG{n+nx}{allPaths}\PYG{p}{[}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{path}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+The authors of the above code, know in advance that the condition that throws the exception is unlikely to happen. This means that 99.9\% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{let} \PYG{n+nx}{allPaths} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}\PYG{p}{;}
+\PYG{k}{for} \PYG{n+nx}{path} \PYG{k}{in} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{\PYGZus{}paths} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{k}{unlikely} \PYG{n+nx}{path}\PYG{o}{-\textgreater{}}\PYG{n+nx}{isAllowed}\PYG{p}{(}\PYG{p}{)} \PYG{o}{==} \PYG{k+kc}{false} \PYG{p}{\PYGZob{}}
+        \PYG{k}{throw} \PYG{k}{new} \PYG{n+nx}{App\PYGZbs{}Exception}\PYG{p}{(}\PYG{l+s+s2}{"error!!"}\PYG{p}{)}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{let} \PYG{n+nx}{allPaths}\PYG{p}{[}\PYG{p}{]} \PYG{o}{=} \PYG{n+nx}{path}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 
 \section{Arrays}
-\label{arrays:arrays}\label{arrays:php-manual}\label{arrays::doc}
+\label{arrays:arrays}\label{arrays::doc}\label{arrays:article-out}
 Array manipulation in Zephir provides a way to use PHP \href{http://www.php.net/manual/en/language.types.array.php}{arrays}.
 An array is an implementation of a \href{http://en.wikipedia.org/wiki/Hash\_table}{hash table}.
 
@@ -1645,29 +1679,29 @@ An array is created enclosing their elements in square brackets:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Creating an empty array}
-\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//Creating an array with elements}
-\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//Creating an array with elements of different types}
-\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"first"}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{k+kc}{true}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"first"}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{k+kc}{true}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//A multidimensional array}
-\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
 As PHP, hashes or dictionaries are supported:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Creating a hash with string keys}
-\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"foo"}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+s+s2}{"bar"}\PYG{o}{:} \PYG{l+s+s2}{"foo"}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"foo"}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+s+s2}{"bar"}\PYG{o}{:} \PYG{l+s+s2}{"foo"}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//Creating a hash with numeric keys}
-\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{o}{:} \PYG{l+s+s2}{"foo"}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{o}{:} \PYG{l+s+s2}{"foo"}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//Creating a hash with mixed string and numeric keys}
-\PYG{n+nx}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+s+s2}{"foo"}\PYG{o}{:} \PYG{l+m+mi}{8}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{4}\PYG{o}{:} \PYG{l+s+s2}{"bar"}\PYG{p}{,} \PYG{l+s+s2}{"foo"}\PYG{o}{:} \PYG{l+m+mi}{8}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1677,10 +1711,10 @@ Arrays are updated in the same way as PHP using square brackets:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Updating an array with a string key}
-\PYG{n+nx}{let} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s2}{"foo"}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{"bar"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s2}{"foo"}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{"bar"}\PYG{p}{;}
 
 \PYG{c+c1}{//Updating an array with a numeric key}
-\PYG{n+nx}{let} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{"bar"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{"bar"}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1690,7 +1724,7 @@ Elements can be appended at the end of the array as follows:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Append an element to the array}
-\PYG{n+nx}{let} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{"bar"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{"bar"}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1700,10 +1734,10 @@ Is possible to read array elements as follows:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Getting an element using the string key "foo"}
-\PYG{n+nx}{let} \PYG{n+nx}{foo} \PYG{o}{=} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s2}{"foo"}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{foo} \PYG{o}{=} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+s+s2}{"foo"}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{c+c1}{//Getting an element using the numeric key 0}
-\PYG{n+nx}{let} \PYG{n+nx}{foo} \PYG{o}{=} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{foo} \PYG{o}{=} \PYG{n+nx}{elements}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1720,7 +1754,7 @@ Every Zephir file must implement a class or an interface (and just once). A clas
 is very similar to a PHP class:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{c+cm}{/**}
 \PYG{c+cm}{ * This is a sample class}
@@ -1738,7 +1772,7 @@ The ``function'' keyword introduces a method. Methods implements the usual visib
 in PHP, explicity set a visibility modifier is mandatory in Zephir:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -1763,7 +1797,7 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
 Methods can receive required and optional parameters:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -1839,7 +1873,7 @@ Properties implement the usual visibility modifiers available in PHP, explicity 
 a visibility modifier is mandatory in Zephir:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -1857,7 +1891,7 @@ Within class methods non-static properties may be accessed by using -\textgreate
 (where property is the name of the property):
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -1866,12 +1900,12 @@ Within class methods non-static properties may be accessed by using -\textgreate
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{setMyProperty}\PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{myProperty}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myProperty} \PYG{o}{=} \PYG{n+nx}{myProperty}\PYG{p}{;}
+        \PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myProperty} \PYG{o}{=} \PYG{n+nx}{myProperty}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{getMyProperty}\PYG{p}{(}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myProperty}\PYG{p}{;}
+        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myProperty}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
 \PYG{p}{\PYGZcb{}}
@@ -1881,7 +1915,7 @@ Properties can have literal compatible default values. These values must be able
 compile time and must not depend on run-time information in order to be evaluated:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -1901,7 +1935,7 @@ compile time and must not depend on run-time information in order to be evaluate
 Properties can be updated by accesing them using the `-\textgreater{}' operator:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myProperty} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myProperty} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{;}
 \end{Verbatim}
 
 Zephir checks that properties do exist when a program is accesing them, if a property is not declared you will get a compiler exception:
@@ -1916,14 +1950,14 @@ Zephir checks that properties do exist when a program is accesing them, if a pro
 If you want to avoid this compiler validation or just create a property dynamically, you can enclose the property name using string quotes:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{"myProperty"}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{"myProperty"}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{;}
 \end{Verbatim}
 
 You can also use a simple variable to update a property, the property name will be taken from the variable:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{someProperty} \PYG{o}{=} \PYG{l+s+s2}{"myProperty"}\PYG{p}{;}
-\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{n+nx}{someProperty}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{someProperty} \PYG{o}{=} \PYG{l+s+s2}{"myProperty"}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{n+nx}{someProperty}\PYG{p}{\PYGZcb{}} \PYG{o}{=} \PYG{l+m+mi}{100}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -1932,18 +1966,18 @@ You can also use a simple variable to update a property, the property name will 
 Properties can be read by accesing them using the `-\textgreater{}' operator:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{echo} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myProperty}\PYG{p}{;}
+\PYG{k}{echo} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myProperty}\PYG{p}{;}
 \end{Verbatim}
 
 As when updating, properties can be dynamically read this way:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{c+c1}{//Avoid compiler check or read a dynamic user defined property}
-\PYG{n+nx}{echo} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{"myProperty"}\PYG{p}{\PYGZcb{}}\PYG{p}{;}
+\PYG{k}{echo} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{"myProperty"}\PYG{p}{\PYGZcb{}}\PYG{p}{;}
 
 \PYG{c+c1}{//Read using a variable name}
-\PYG{n+nx}{let} \PYG{n+nx}{someProperty} \PYG{o}{=} \PYG{l+s+s2}{"myProperty"}\PYG{p}{;}
-\PYG{n+nx}{echo} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{n+nx}{someProperty}\PYG{p}{\PYGZcb{}}
+\PYG{k+kd}{let} \PYG{n+nx}{someProperty} \PYG{o}{=} \PYG{l+s+s2}{"myProperty"}\PYG{p}{;}
+\PYG{k}{echo} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{n+nx}{someProperty}\PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 
@@ -1953,7 +1987,7 @@ Class may contain class constants that remain the same and unchangeable once the
 Class constants are exported to the PHP extension allowing them to be used from PHP.
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -1967,7 +2001,7 @@ Class constants are exported to the PHP extension allowing them to be used from 
 Class constants can be accessed using the class name and the static operator (::):
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -1989,7 +2023,7 @@ Class constants can be accessed using the class name and the static operator (::
 Methods can be called using the object operator (-\textgreater{}) as in PHP:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -2001,7 +2035,7 @@ Methods can be called using the object operator (-\textgreater{}) as in PHP:
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{someMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{\PYGZus{}someHiddenMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}\PYG{p}{;}
+        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{\PYGZus{}someHiddenMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
 \PYG{p}{\PYGZcb{}}
@@ -2010,7 +2044,7 @@ Methods can be called using the object operator (-\textgreater{}) as in PHP:
 Static methods must be called using the static operator (::):
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -2022,7 +2056,7 @@ Static methods must be called using the static operator (::):
 
     \PYG{k+kr}{public} \PYG{k+kr}{static} \PYG{k+kd}{function} \PYG{n+nx}{someMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{return} \PYG{n+nx}{self}\PYG{o}{:}\PYG{o}{:}\PYG{n+nx}{\PYGZus{}someHiddenMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}\PYG{p}{;}
+        \PYG{k}{return} \PYG{k+kr}{self}\PYG{o}{:}\PYG{o}{:}\PYG{n+nx}{\PYGZus{}someHiddenMethod}\PYG{p}{(}\PYG{n+nx}{c}\PYG{p}{,} \PYG{n+nx}{d}\PYG{p}{)}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
 \PYG{p}{\PYGZcb{}}
@@ -2031,7 +2065,7 @@ Static methods must be called using the static operator (::):
 You can call methods in a dynamic manner as follows:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -2039,12 +2073,12 @@ You can call methods in a dynamic manner as follows:
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{setAdapter}\PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{adapter}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{adapter} \PYG{o}{=} \PYG{n+nx}{adapter}\PYG{p}{;}
+        \PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{adapter} \PYG{o}{=} \PYG{n+nx}{adapter}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{someMethod}\PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{methodName}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{adapter}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{n+nx}{methodName}\PYG{p}{\PYGZcb{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{adapter}\PYG{o}{-\textgreater{}}\PYG{p}{\PYGZob{}}\PYG{n+nx}{methodName}\PYG{p}{\PYGZcb{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
 \PYG{p}{\PYGZcb{}}
@@ -2059,7 +2093,7 @@ implementing those methods as such.
 For example, without shortcuts we could find code like:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{Test}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -2069,27 +2103,27 @@ For example, without shortcuts we could find code like:
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{setMyProperty}\PYG{p}{(}\PYG{n+nx}{myProperty}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myProperty} \PYG{o}{=} \PYG{n+nx}{myProperty}\PYG{p}{;}
+        \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myProperty} \PYG{o}{=} \PYG{n+nx}{myProperty}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{getMyProperty}\PYG{p}{(}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myProperty}\PYG{p}{;}
+        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myProperty}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{setSomeProperty}\PYG{p}{(}\PYG{n+nx}{someProperty}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{someProperty} \PYG{o}{=} \PYG{n+nx}{someProperty}\PYG{p}{;}
+        \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{someProperty} \PYG{o}{=} \PYG{n+nx}{someProperty}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{getSomeProperty}\PYG{p}{(}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{someProperty}\PYG{p}{;}
+        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{someProperty}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
     \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{\PYGZus{}\PYGZus{}toString}\PYG{p}{(}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{myProperty}\PYG{p}{;}
+        \PYG{k}{return} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{myProperty}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 
  \PYG{p}{\PYGZcb{}}
@@ -2098,7 +2132,7 @@ For example, without shortcuts we could find code like:
 You can write the same code using shortcuts as follows:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{App}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{App}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{MyClass}
 \PYG{p}{\PYGZob{}}
@@ -2122,41 +2156,60 @@ Mthods in classes and interfaces can have return type hints, these will provide 
 to inform you about errors in your application. Consider the following example:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{x}{namespace App;}
+\PYG{k}{namespace} \PYG{n+nx}{App}\PYG{p}{;}
 
-\PYG{x}{class MyClass}
-\PYG{x}{\PYGZob{}}
-\PYG{x}{    public function getSomeData() -\textgreater{} string}
-\PYG{x}{    \PYGZob{}}
-\PYG{x}{        // this will throw a compiler exception}
-\PYG{x}{        // since the returned value (boolean) does not match}
-\PYG{x}{        // the expected returned type string}
-\PYG{x}{        return false;}
-\PYG{x}{    \PYGZcb{}}
+\PYG{k+kr}{class} \PYG{n+nx}{MyClass}
+\PYG{p}{\PYGZob{}}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{getSomeData}\PYG{p}{(}\PYG{p}{)} \PYG{o}{-\textgreater{}} \PYG{k+kr}{string}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// this will throw a compiler exception}
+        \PYG{c+c1}{// since the returned value (boolean) does not match}
+        \PYG{c+c1}{// the expected returned type string}
+        \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
 
-\PYG{x}{    public function getSomeOther() -\textgreater{} }\PYG{x}{\textless{}}\PYG{x}{App\PYGZbs{}MyInterface\textgreater{}}
-\PYG{x}{    \PYGZob{}}
-\PYG{x}{        // this will throw a compiler exception}
-\PYG{x}{        // if the returned object does not implement}
-\PYG{x}{        // the expected interface App\PYGZbs{}MyInterface}
-\PYG{x}{        return new App\PYGZbs{}MyObject;}
-\PYG{x}{    \PYGZcb{}}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{getSomeOther}\PYG{p}{(}\PYG{p}{)} \PYG{o}{-\textgreater{}} \PYG{o}{\textless{}}\PYG{n+nx}{App\PYGZbs{}MyInterface}\PYG{o}{\textgreater{}}
+    \PYG{p}{\PYGZob{}}
+        \PYG{c+c1}{// this will throw a compiler exception}
+        \PYG{c+c1}{// if the returned object does not implement}
+        \PYG{c+c1}{// the expected interface App\PYGZbs{}MyInterface}
+        \PYG{k}{return} \PYG{k}{new} \PYG{n+nx}{App\PYGZbs{}MyObject}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
 
-\PYG{x}{    public function process()}
-\PYG{x}{    \PYGZob{}}
-\PYG{x}{        var myObject;}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{process}\PYG{p}{(}\PYG{p}{)}
+    \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{var} \PYG{n+nx}{myObject}\PYG{p}{;}
 
-\PYG{x}{        // the type-hint will tell the compiler that}
-\PYG{x}{        // myObject is an instance of a class}
-\PYG{x}{        // that implement App\PYGZbs{}MyInterface}
-\PYG{x}{        let myObject = this-\textgreater{}getSomeOther();}
+        \PYG{c+c1}{// the type-hint will tell the compiler that}
+        \PYG{c+c1}{// myObject is an instance of a class}
+        \PYG{c+c1}{// that implement App\PYGZbs{}MyInterface}
+        \PYG{k+kd}{let} \PYG{n+nx}{myObject} \PYG{o}{=} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{getSomeOther}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
 
-\PYG{x}{        // the compiler will check if App\PYGZbs{}MyInterface}
-\PYG{x}{        // implements a method called "someMethod"}
-\PYG{x}{        echo myObject-\textgreater{}someMethod();}
-\PYG{x}{    \PYGZcb{}}
+        \PYG{c+c1}{// the compiler will check if App\PYGZbs{}MyInterface}
+        \PYG{c+c1}{// implements a method called "someMethod"}
+        \PYG{k}{echo} \PYG{n+nx}{myObject}\PYG{o}{-\textgreater{}}\PYG{n+nx}{someMethod}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
 
-\PYG{x}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+
+\subsection{Return Type: Void}
+\label{oop:return-type-void}
+Methods can also be marked as ‘void’. This means that a method is not allowed to return any data:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{setConnection}\PYG{p}{(}\PYG{n+nx}{connection}\PYG{p}{)} \PYG{o}{-\textgreater{}} \PYG{k}{void}
+\PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{\PYGZus{}connection} \PYG{o}{=} \PYG{n+nx}{connection}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+Why is this useful? Because the compiler can detect if the program is expecting a returning value from these methods and produce a compiler exception:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{let} \PYG{n+nx}{myDb} \PYG{o}{=} \PYG{n+nx}{db}\PYG{o}{-\textgreater{}}\PYG{n+nx}{setConnection}\PYG{p}{(}\PYG{n+nx}{connection}\PYG{p}{)}\PYG{p}{;}
+\PYG{n+nx}{myDb}\PYG{o}{-\textgreater{}}\PYG{n+nx}{execute}\PYG{p}{(}\PYG{l+s+s2}{"SELECT * FROM robots"}\PYG{p}{)}\PYG{p}{;} \PYG{c+c1}{// this will produce an exception}
 \end{Verbatim}
 
 
@@ -2176,12 +2229,12 @@ constructs can be chained together:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{if} \PYG{k+kc}{false} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{l+s+s2}{"false?"}\PYG{p}{;}
+    \PYG{k}{echo} \PYG{l+s+s2}{"false?"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
     \PYG{k}{if} \PYG{k+kc}{true} \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{echo} \PYG{l+s+s2}{"true!"}\PYG{p}{;}
+        \PYG{k}{echo} \PYG{l+s+s2}{"true!"}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{echo} \PYG{l+s+s2}{"neither true nor false"}\PYG{p}{;}
+        \PYG{k}{echo} \PYG{l+s+s2}{"neither true nor false"}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
@@ -2199,17 +2252,17 @@ A `switch' evalutes an expression against a series of predefined literal values 
 `case' block or falling back to the `default' block case:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{switch} \PYG{n+nx}{count}\PYG{p}{(}\PYG{n+nx}{items}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{k}{switch} \PYG{n+nb}{count}\PYG{p}{(}\PYG{n+nx}{items}\PYG{p}{)} \PYG{p}{\PYGZob{}}
     \PYG{k}{case} \PYG{l+m+mi}{1}\PYG{o}{:}
     \PYG{k}{case} \PYG{l+m+mi}{3}\PYG{o}{:}
-        \PYG{n+nx}{echo} \PYG{l+s+s2}{"odd items"}\PYG{p}{;}
+        \PYG{k}{echo} \PYG{l+s+s2}{"odd items"}\PYG{p}{;}
         \PYG{k}{break}\PYG{p}{;}
     \PYG{k}{case} \PYG{l+m+mi}{2}\PYG{o}{:}
     \PYG{k}{case} \PYG{l+m+mi}{4}\PYG{o}{:}
-        \PYG{n+nx}{echo} \PYG{l+s+s2}{"even items"}\PYG{p}{;}
+        \PYG{k}{echo} \PYG{l+s+s2}{"even items"}\PYG{p}{;}
         \PYG{k}{break}\PYG{p}{;}
     \PYG{k}{default}\PYG{o}{:}
-        \PYG{n+nx}{echo} \PYG{l+s+s2}{"unknown items"}\PYG{p}{;}
+        \PYG{k}{echo} \PYG{l+s+s2}{"unknown items"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -2222,9 +2275,9 @@ A `switch' evalutes an expression against a series of predefined literal values 
 `while' denotes a loop that iterates as long as its given condition evaluates as true:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{counter} \PYG{o}{=} \PYG{l+m+mi}{5}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{counter} \PYG{o}{=} \PYG{l+m+mi}{5}\PYG{p}{;}
 \PYG{k}{while} \PYG{n+nx}{counter} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{let} \PYG{n+nx}{counter} \PYG{o}{-=} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{counter} \PYG{o}{-=} \PYG{l+m+mi}{1}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -2234,11 +2287,11 @@ A `switch' evalutes an expression against a series of predefined literal values 
 In addition to `while', `loop' can be used to create infinite loops:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{n} \PYG{o}{=} \PYG{l+m+mi}{40}\PYG{p}{;}
-\PYG{n+nx}{loop} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{let} \PYG{n+nx}{n} \PYG{o}{-=} \PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{n} \PYG{o}{=} \PYG{l+m+mi}{40}\PYG{p}{;}
+\PYG{k}{loop} \PYG{p}{\PYGZob{}}
+    \PYG{k+kd}{let} \PYG{n+nx}{n} \PYG{o}{-=} \PYG{l+m+mi}{2}\PYG{p}{;}
     \PYG{k}{if} \PYG{n+nx}{n} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{5} \PYG{o}{==} \PYG{l+m+mi}{0} \PYG{p}{\PYGZob{}} \PYG{k}{break}\PYG{p}{;} \PYG{p}{\PYGZcb{}}
-    \PYG{n+nx}{echo} \PYG{n+nx}{x}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+    \PYG{k}{echo} \PYG{n+nx}{x}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -2249,55 +2302,55 @@ A `for' is a control structure that allows to traverse arrays or strings:
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{for} \PYG{n+nx}{item} \PYG{k}{in} \PYG{p}{[}\PYG{l+s+s2}{"a"}\PYG{p}{,} \PYG{l+s+s2}{"b"}\PYG{p}{,} \PYG{l+s+s2}{"c"}\PYG{p}{,} \PYG{l+s+s2}{"d"}\PYG{p}{]} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{n+nx}{item}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+    \PYG{k}{echo} \PYG{n+nx}{item}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 Keys in hashes can be obtained in the following way:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{items} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"a"}\PYG{o}{:} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s2}{"b"}\PYG{o}{:} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+s2}{"c"}\PYG{o}{:} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+s+s2}{"d"}\PYG{o}{:} \PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{items} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{"a"}\PYG{o}{:} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+s+s2}{"b"}\PYG{o}{:} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+s+s2}{"c"}\PYG{o}{:} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+s+s2}{"d"}\PYG{o}{:} \PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{;}
 
 \PYG{k}{for} \PYG{n+nx}{key}\PYG{p}{,} \PYG{n+nx}{value} \PYG{k}{in} \PYG{n+nx}{items} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{n+nx}{key}\PYG{p}{,} \PYG{l+s+s2}{" "}\PYG{p}{,} \PYG{n+nx}{value}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+    \PYG{k}{echo} \PYG{n+nx}{key}\PYG{p}{,} \PYG{l+s+s2}{" "}\PYG{p}{,} \PYG{n+nx}{value}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 A `for' loop can also be instructed to traverse an array or string in reverse order:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{items} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{items} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{;}
 
-\PYG{k}{for} \PYG{n+nx}{value} \PYG{k}{in} \PYG{n+nx}{reverse} \PYG{n+nx}{items} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{n+nx}{value}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+\PYG{k}{for} \PYG{n+nx}{value} \PYG{k}{in} \PYG{k+kr}{reverse} \PYG{n+nx}{items} \PYG{p}{\PYGZob{}}
+    \PYG{k}{echo} \PYG{n+nx}{value}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 A `for' can be used to traverse string variables:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{string} \PYG{n+nx}{language} \PYG{o}{=} \PYG{l+s+s2}{"zephir"}\PYG{p}{;} \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;}
+\PYG{k+kr}{string} \PYG{n+nx}{language} \PYG{o}{=} \PYG{l+s+s2}{"zephir"}\PYG{p}{;} \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;}
 
 \PYG{k}{for} \PYG{n+nx}{ch} \PYG{k}{in} \PYG{n+nx}{language} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{l+s+s2}{"["}\PYG{p}{,} \PYG{n+nx}{ch} \PYG{l+s+s2}{"]"}\PYG{p}{;}
+    \PYG{k}{echo} \PYG{l+s+s2}{"["}\PYG{p}{,} \PYG{n+nx}{ch} \PYG{l+s+s2}{"]"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 In reverse order:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{string} \PYG{n+nx}{language} \PYG{o}{=} \PYG{l+s+s2}{"zephir"}\PYG{p}{;} \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;}
+\PYG{k+kr}{string} \PYG{n+nx}{language} \PYG{o}{=} \PYG{l+s+s2}{"zephir"}\PYG{p}{;} \PYG{k+kr}{char} \PYG{n+nx}{ch}\PYG{p}{;}
 
-\PYG{k}{for} \PYG{n+nx}{ch} \PYG{k}{in} \PYG{n+nx}{reverse} \PYG{n+nx}{language} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{l+s+s2}{"["}\PYG{p}{,} \PYG{n+nx}{ch} \PYG{l+s+s2}{"]"}\PYG{p}{;}
+\PYG{k}{for} \PYG{n+nx}{ch} \PYG{k}{in} \PYG{k+kr}{reverse} \PYG{n+nx}{language} \PYG{p}{\PYGZob{}}
+    \PYG{k}{echo} \PYG{l+s+s2}{"["}\PYG{p}{,} \PYG{n+nx}{ch} \PYG{l+s+s2}{"]"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
 A standard `for' that traverses a range of integer values can be written as follows:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{for} \PYG{n+nx}{i} \PYG{k}{in} \PYG{n+nx}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{echo} \PYG{n+nx}{i}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+\PYG{k}{for} \PYG{n+nx}{i} \PYG{k}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{k}{echo} \PYG{n+nx}{i}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -2311,7 +2364,7 @@ A standard `for' that traverses a range of integer values can be written as foll
     \PYG{k}{if} \PYG{n+nx}{item} \PYG{o}{==} \PYG{l+s+s2}{"c"} \PYG{p}{\PYGZob{}}
         \PYG{k}{break}\PYG{p}{;} \PYG{c+c1}{// exit the for}
     \PYG{p}{\PYGZcb{}}
-    \PYG{n+nx}{echo} \PYG{n+nx}{item}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+    \PYG{k}{echo} \PYG{n+nx}{item}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -2322,13 +2375,13 @@ A standard `for' that traverses a range of integer values can be written as foll
 continue execution at the condition evaluation and then the beginning of the next iteration.
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{5}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{a} \PYG{o}{=} \PYG{l+m+mi}{5}\PYG{p}{;}
 \PYG{k}{while} \PYG{n+nx}{a} \PYG{o}{\textgreater{}} \PYG{l+m+mi}{0} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{let} \PYG{n+nx}{a}\PYG{o}{--}\PYG{p}{;}
+    \PYG{k+kd}{let} \PYG{n+nx}{a}\PYG{o}{--}\PYG{p}{;}
     \PYG{k}{if} \PYG{n+nx}{a} \PYG{o}{==} \PYG{l+m+mi}{3} \PYG{p}{\PYGZob{}}
         \PYG{k}{continue}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
-    \PYG{n+nx}{echo} \PYG{n+nx}{a}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
+    \PYG{k}{echo} \PYG{n+nx}{a}\PYG{p}{,} \PYG{l+s+s2}{"\PYGZbs{}n"}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -2341,7 +2394,7 @@ include other zephir files in runtime.
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{if} \PYG{n+nx}{file\PYGZus{}exists}\PYG{p}{(}\PYG{n+nx}{path}\PYG{p}{)} \PYG{p}{\PYGZob{}}
-    \PYG{n+nx}{require} \PYG{n+nx}{path}\PYG{p}{;}
+    \PYG{k}{require} \PYG{n+nx}{path}\PYG{p}{;}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
 
@@ -2351,25 +2404,25 @@ include other zephir files in runtime.
 `Let' statement is used to mutate variables, properties and arrays. Variables are by default inmutable and this instruction makes them mutable:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"Tony"}\PYG{p}{;}           \PYG{c+c1}{// simple variable}
-\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"Tony"}\PYG{p}{;}     \PYG{c+c1}{// object property}
-\PYG{n+nx}{let} \PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{"name"}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{"Tony"}\PYG{p}{;}   \PYG{c+c1}{// array index}
-\PYG{n+nx}{let} \PYG{n+nx}{self}\PYG{o}{:}\PYG{o}{:}\PYG{n+nx}{\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s2}{"Tony"}\PYG{p}{;}    \PYG{c+c1}{// static property}
+\PYG{k+kd}{let} \PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"Tony"}\PYG{p}{;}           \PYG{c+c1}{// simple variable}
+\PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{name} \PYG{o}{=} \PYG{l+s+s2}{"Tony"}\PYG{p}{;}     \PYG{c+c1}{// object property}
+\PYG{k+kd}{let} \PYG{n+nx}{data}\PYG{p}{[}\PYG{l+s+s2}{"name"}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s2}{"Tony"}\PYG{p}{;}   \PYG{c+c1}{// array index}
+\PYG{k+kd}{let} \PYG{k+kr}{self}\PYG{o}{:}\PYG{o}{:}\PYG{n+nx}{\PYGZus{}name} \PYG{o}{=} \PYG{l+s+s2}{"Tony"}\PYG{p}{;}    \PYG{c+c1}{// static property}
 \end{Verbatim}
 
 Also this instruction must be used to increment/decrement variables:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{number}\PYG{o}{++}\PYG{p}{;}           \PYG{c+c1}{// increment simple variable}
-\PYG{n+nx}{let} \PYG{n+nx}{number}\PYG{o}{--}\PYG{p}{;}           \PYG{c+c1}{// decrement simple variable}
-\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{number}\PYG{o}{++}\PYG{p}{;}     \PYG{c+c1}{// increment object property}
-\PYG{n+nx}{let} \PYG{k}{this}\PYG{o}{-}\PYG{o}{\textgreater{}}\PYG{n+nx}{number}\PYG{o}{--}\PYG{p}{;}     \PYG{c+c1}{// decrement object property}
+\PYG{k+kd}{let} \PYG{n+nx}{number}\PYG{o}{++}\PYG{p}{;}           \PYG{c+c1}{// increment simple variable}
+\PYG{k+kd}{let} \PYG{n+nx}{number}\PYG{o}{--}\PYG{p}{;}           \PYG{c+c1}{// decrement simple variable}
+\PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{number}\PYG{o}{++}\PYG{p}{;}     \PYG{c+c1}{// increment object property}
+\PYG{k+kd}{let} \PYG{k}{this}\PYG{o}{-\textgreater{}}\PYG{n+nx}{number}\PYG{o}{--}\PYG{p}{;}     \PYG{c+c1}{// decrement object property}
 \end{Verbatim}
 
 Multiple mutations can be performed in a single `let' operation:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{price} \PYG{o}{=} \PYG{l+m+mf}{1.00}\PYG{p}{,} \PYG{n+nx}{realPrice} \PYG{o}{=} \PYG{n+nx}{price}\PYG{p}{,} \PYG{n+nx}{status} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{price} \PYG{o}{=} \PYG{l+m+mf}{1.00}\PYG{p}{,} \PYG{n+nx}{realPrice} \PYG{o}{=} \PYG{n+nx}{price}\PYG{p}{,} \PYG{n+nx}{status} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{;}
 \end{Verbatim}
 
 
@@ -2379,7 +2432,7 @@ PHP has a rich library of functions you can use in your extensions.
 To call a PHP function, you can just refer its name in the Zephir code.
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Encoder}
 \PYG{p}{\PYGZob{}}
@@ -2399,7 +2452,7 @@ You can call also functions that are expected to exist in the PHP userland but t
 aren't built-in with PHP:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Encoder}
 \PYG{p}{\PYGZob{}}
@@ -2423,12 +2476,12 @@ Note that all PHP functions only receive and return dynamic variables, if you pa
 variable as a parameter, some temporary dynamic variable will be used as a bridge in order to call them:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Encoder}
 \PYG{p}{\PYGZob{}}
 
-    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{encode}\PYG{p}{(}\PYG{n+nx}{string} \PYG{n+nx}{text}\PYG{p}{)}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{encode}\PYG{p}{(}\PYG{k+kr}{string} \PYG{n+nx}{text}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
         \PYG{k}{if} \PYG{n+nx}{strlen}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{p}{\PYGZob{}}
             \PYG{c+c1}{// an implicit dynamic variable is created to}
@@ -2445,17 +2498,17 @@ Similarly, functions return dynamic values that cannot be directly assigned to s
 variables without the appropriate cast:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Encoder}
 \PYG{p}{\PYGZob{}}
 
-    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{encode}\PYG{p}{(}\PYG{n+nx}{string} \PYG{n+nx}{text}\PYG{p}{)}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{encode}\PYG{p}{(}\PYG{k+kr}{string} \PYG{n+nx}{text}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
-        \PYG{n+nx}{string} \PYG{n+nx}{encoded} \PYG{o}{=} \PYG{l+s+s2}{""}\PYG{p}{;}
+        \PYG{k+kr}{string} \PYG{n+nx}{encoded} \PYG{o}{=} \PYG{l+s+s2}{""}\PYG{p}{;}
 
         \PYG{k}{if} \PYG{n+nx}{strlen}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0} \PYG{p}{\PYGZob{}}
-            \PYG{n+nx}{let} \PYG{n+nx}{encoded} \PYG{o}{=} \PYG{p}{(}\PYG{n+nx}{string}\PYG{p}{)} \PYG{n+nx}{base64\PYGZus{}encode}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kd}{let} \PYG{n+nx}{encoded} \PYG{o}{=} \PYG{p}{(}\PYG{k+kr}{string}\PYG{p}{)} \PYG{n+nx}{base64\PYGZus{}encode}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{)}\PYG{p}{;}
             \PYG{k}{return} \PYG{l+s+s1}{'('} \PYG{p}{.} \PYG{n+nx}{encoded} \PYG{p}{.} \PYG{l+s+s1}{')'}\PYG{p}{;}
         \PYG{p}{\PYGZcb{}}
         \PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
@@ -2467,12 +2520,12 @@ variables without the appropriate cast:
 Sometimes, we would need to call functions in a dynamic way, you can call them as follows:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
+\PYG{k}{namespace} \PYG{n+nx}{MyLibrary}\PYG{p}{;}
 
 \PYG{k+kr}{class} \PYG{n+nx}{Encoder}
 \PYG{p}{\PYGZob{}}
 
-    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{encode}\PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{callback}\PYG{p}{,} \PYG{n+nx}{string} \PYG{n+nx}{text}\PYG{p}{)}
+    \PYG{k+kr}{public} \PYG{k+kd}{function} \PYG{n+nx}{encode}\PYG{p}{(}\PYG{k+kd}{var} \PYG{n+nx}{callback}\PYG{p}{,} \PYG{k+kr}{string} \PYG{n+nx}{text}\PYG{p}{)}
     \PYG{p}{\PYGZob{}}
         \PYG{k}{return} \PYG{p}{\PYGZob{}}\PYG{n+nx}{callback}\PYG{p}{\PYGZcb{}}\PYG{p}{(}\PYG{n+nx}{text}\PYG{p}{)}\PYG{p}{;}
     \PYG{p}{\PYGZcb{}}
@@ -2532,7 +2585,7 @@ Implementation of optimizers highly depends on the kind of code you want to gene
 function by a call to a c-function. In Zephir, the code used to call this function is:
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{let} \PYG{n+nx}{pi} \PYG{o}{=} \PYG{n+nx}{calculate\PYGZus{}pi}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{p}{;}
+\PYG{k+kd}{let} \PYG{n+nx}{pi} \PYG{o}{=} \PYG{n+nx}{calculate\PYGZus{}pi}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}\PYG{p}{;}
 \end{Verbatim}
 
 So, the optimizer will expect just one parameter, we have to validate that to avoid problems later:
