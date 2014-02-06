@@ -64,13 +64,14 @@
               s.parentNode.insertBefore(gcse, s);
             })();
           </script>
-          <h4>Search</h4>
           <gcse:search></gcse:search>
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference internal" href="#">Operators</a><ul>
 <li><a class="reference internal" href="#arithmetic-operators">Arithmetic Operators</a></li>
 <li><a class="reference internal" href="#comparison-operators">Comparison Operators</a></li>
+<li><a class="reference internal" href="#logical-operators">Logical Operators</a></li>
+<li><a class="reference internal" href="#bitwiser-operators">Bitwiser Operators</a></li>
 <li><a class="reference internal" href="#special-operators">Special Operators</a><ul>
 <li><a class="reference internal" href="#empty">Empty</a></li>
 <li><a class="reference internal" href="#isset">Isset</a></li>
@@ -183,6 +184,54 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="logical-operators">
+<h2>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">¶</a></h2>
+<p>The following operators are supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Operation</td>
+<td>Example</td>
+</tr>
+<tr class="row-even"><td>And</td>
+<td>a &amp;&amp; b</td>
+</tr>
+<tr class="row-odd"><td>Or</td>
+<td>a || b</td>
+</tr>
+<tr class="row-even"><td>Not</td>
+<td>!a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="bitwiser-operators">
+<h2>Bitwiser Operators<a class="headerlink" href="#bitwiser-operators" title="Permalink to this headline">¶</a></h2>
+<p>The following operators are supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Operation</td>
+<td>Example</td>
+</tr>
+<tr class="row-even"><td>Bitwise And</td>
+<td>a &amp; b</td>
+</tr>
+<tr class="row-odd"><td>Bitwise Or</td>
+<td>a | b</td>
+</tr>
+<tr class="row-even"><td>Bitwise Not</td>
+<td>~a</td>
+</tr>
+</tbody>
+</table>
 <p>Learn more about comparison of dynamic variables in the <a class="reference external" href="http://www.php.net/manual/en/language.operators.comparison.php">php manual</a>.</p>
 </div>
 <div class="section" id="special-operators">
@@ -216,6 +265,7 @@ compared operands are dynamic variables the behavior is the same as in PHP:</p>
 <div class="highlight-zephir"><div class="highlight"><pre><span class="k">return</span> <span class="k">isset</span> <span class="k">this</span><span class="o">-&gt;</span><span class="p">{</span><span class="nx">someProperty</span><span class="p">};</span>
 </pre></div>
 </div>
+<p>Note that &#8216;isset&#8217; in Zephir works more like PHP&#8217;s function <a class="reference external" href="http://www.php.net/manual/en/function.array-key-exists.php">array_key_exists</a>, &#8216;isset&#8217; in Zephir returns true even if the array index or property is null.</p>
 </div>
 <div class="section" id="fetch">
 <h3>Fetch<a class="headerlink" href="#fetch" title="Permalink to this headline">¶</a></h3>
@@ -310,7 +360,7 @@ A type hint tells the compiler which class is related to a dynamic variable allo
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 20, 2014.
+             Last updated on Feb 06, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>

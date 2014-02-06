@@ -106,7 +106,7 @@ Sometimes, we would need to call functions in a dynamic way, you can call them a
     }
 
 Using optimizers
-----------------
+^^^^^^^^^^^^^^^^
 Most common functions in Zephir use internal optimizers. An 'optimizer' works like an interceptor for function calls.
 An 'optimizer' replaces the call for the function in the PHP userland by direct C-calls which are faster and have a lower
 overhead improving performance.

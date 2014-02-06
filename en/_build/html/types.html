@@ -64,7 +64,6 @@
               s.parentNode.insertBefore(gcse, s);
             })();
           </script>
-          <h4>Search</h4>
           <gcse:search></gcse:search>
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
@@ -84,6 +83,7 @@
 <li><a class="reference internal" href="#integer-unsigned-integer">Integer/Unsigned Integer</a></li>
 <li><a class="reference internal" href="#long-unsigned-long">Long/Unsigned Long</a></li>
 <li><a class="reference internal" href="#char-unsigned-char">Char/Unsigned Char</a></li>
+<li><a class="reference internal" href="#id2">String</a></li>
 </ul>
 </li>
 </ul>
@@ -319,6 +319,9 @@ the compiler to do a better optimization job. The following types are supported:
 <tr class="row-even"><td>string</td>
 <td>A string is series of characters, where a character is the same as a byte.</td>
 </tr>
+<tr class="row-odd"><td>array</td>
+<td>An structure that can be used as hash, map, dictionary, collection, stack, etc.</td>
+</tr>
 </tbody>
 </table>
 <div class="section" id="id1">
@@ -407,6 +410,21 @@ Every &#8216;char&#8217; variable represents every character in a string:</p>
 <div class="highlight-zephir"><div class="highlight"><pre><span class="kr">char</span> <span class="nx">ch</span><span class="p">,</span> <span class="kr">string</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;peter&quot;</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">ch</span> <span class="o">=</span> <span class="nx">name</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// stores &#39;t&#39;</span>
+<span class="kd">let</span> <span class="nx">ch</span> <span class="o">=</span> <span class="s1">&#39;Z&#39;</span><span class="p">;</span> <span class="c1">// char literals must be enclosed in simple quotes</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>String<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set,
+and hence does not offer native Unicode support.</p>
+<p>When a variable is declared string it never changes its type:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">string</span> <span class="nx">a</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="c1">//string literals must be enclosed in double quotes</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="c1">// converted to string &quot;A&quot;</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// automatically casted to &quot;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -440,7 +458,7 @@ Every &#8216;char&#8217; variable represents every character in a string:</p>
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 20, 2014.
+             Last updated on Feb 06, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>

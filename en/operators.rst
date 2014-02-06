@@ -47,6 +47,34 @@ compared operands are dynamic variables the behavior is the same as in PHP:
 | a >= b   | Greater than or equal to | TRUE if a is greater than or equal to b.                         |
 +----------+--------------------------+------------------------------------------------------------------+
 
+Logical Operators
+-----------------
+The following operators are supported:
+
++-------------------+-----------------------------------------------------+
+| Operation         | Example                                             |
++-------------------+-----------------------------------------------------+
+| And               | a && b                                              |
++-------------------+-----------------------------------------------------+
+| Or                | a || b                                              |
++-------------------+-----------------------------------------------------+
+| Not               | !a                                                  |
++-------------------+-----------------------------------------------------+
+
+Bitwiser Operators
+------------------
+The following operators are supported:
+
++-------------------+-----------------------------------------------------+
+| Operation         | Example                                             |
++-------------------+-----------------------------------------------------+
+| Bitwise And       | a & b                                               |
++-------------------+-----------------------------------------------------+
+| Bitwise Or        | a | b                                               |
++-------------------+-----------------------------------------------------+
+| Bitwise Not       | ~a                                                  |
++-------------------+-----------------------------------------------------+
+
 Learn more about comparison of dynamic variables in the `php manual`_.
 
 Special Operators
@@ -85,6 +113,8 @@ Using 'isset' as return expression:
 .. code-block:: zephir
 
     return isset this->{someProperty};
+
+Note that 'isset' in Zephir works more like PHP's function array_key_exists_, 'isset' in Zephir returns true even if the array index or property is null.
 
 Fetch
 ^^^^^
@@ -160,5 +190,6 @@ The authors of the above code, know in advance that the condition that throws th
         }
     }
 
+.. _`array_key_exists`: http://www.php.net/manual/en/function.array-key-exists.php
 .. _`php manual`: http://www.php.net/manual/en/language.operators.comparison.php
 .. _`article out`: http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/

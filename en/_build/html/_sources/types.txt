@@ -192,6 +192,8 @@ the compiler to do a better optimization job. The following types are supported:
 +------------------+---------------------------------------------------------------------------------+
 | string           | A string is series of characters, where a character is the same as a byte.      |
 +------------------+---------------------------------------------------------------------------------+
+| array            | An structure that can be used as hash, map, dictionary, collection, stack, etc. |
++------------------+---------------------------------------------------------------------------------+
 
 Boolean
 ^^^^^^^
@@ -293,5 +295,24 @@ Every 'char' variable represents every character in a string:
     char ch, string name = "peter";
 
     let ch = name[2]; // stores 't'
+    let ch = 'Z'; // char literals must be enclosed in simple quotes
+
+String
+^^^^^^
+A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set,
+and hence does not offer native Unicode support.
+
+When a variable is declared string it never changes its type:
+
+.. code-block:: zephir
+
+    string a;
+
+    let a = "",
+        a = "hello", //string literals must be enclosed in double quotes
+        a = 'A', // converted to string "A"
+        a = null; // automatically casted to ""
+
+
 
 .. _`PHP manual`: http://www.php.net/manual/en/language.types.php

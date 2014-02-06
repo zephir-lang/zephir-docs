@@ -60,7 +60,6 @@
               s.parentNode.insertBefore(gcse, s);
             })();
           </script>
-          <h4>Search</h4>
           <gcse:search></gcse:search>
             <h3><a href="#">Table Of Contents</a></h3>
             <ul>
@@ -153,6 +152,7 @@
 <li class="toctree-l3"><a class="reference internal" href="types.html#integer-unsigned-integer">Integer/Unsigned Integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="types.html#long-unsigned-long">Long/Unsigned Long</a></li>
 <li class="toctree-l3"><a class="reference internal" href="types.html#char-unsigned-char">Char/Unsigned Char</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types.html#id2">String</a></li>
 </ul>
 </li>
 </ul>
@@ -160,6 +160,8 @@
 <li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="operators.html#arithmetic-operators">Arithmetic Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html#comparison-operators">Comparison Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#logical-operators">Logical Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#bitwiser-operators">Bitwiser Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html#special-operators">Special Operators</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="operators.html#empty">Empty</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operators.html#isset">Isset</a></li>
@@ -171,6 +173,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arrays.html">Arrays</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html#declaring-array-variables">Declaring Array Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arrays.html#creating-arrays">Creating Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arrays.html#updating-arrays">Updating arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arrays.html#appending-elements">Appending elements</a></li>
@@ -180,19 +183,28 @@
 <li class="toctree-l1"><a class="reference internal" href="oop.html">Classes and Objects</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="oop.html#classes">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="oop.html#implementing-methods">Implementing Methods</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="oop.html#public-visibility">Public Visibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oop.html#protected-visibility">Protected Visibility</a></li>
-<li class="toctree-l3"><a class="reference internal" href="oop.html#private-visibility">Private Visibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oop.html#supported-visibilities">Supported Visibilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oop.html#getter-setter-shortcuts">Getter/Setter shortcuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oop.html#return-type-hints">Return Type Hints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oop.html#return-type-void">Return Type: Void</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oop.html#strict-flexible-parameter-data-types">Strict/Flexible Parameter Data-Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oop.html#read-only-parameters">Read-Only Parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="oop.html#implementing-properties">Implementing Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oop.html#updating-properties">Updating Properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oop.html#reading-properties">Reading Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oop.html#implementing-properties">Implementing Properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="oop.html#updating-properties">Updating Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oop.html#reading-properties">Reading Properties</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="oop.html#class-constants">Class Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="oop.html#calling-methods">Calling Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oop.html#getter-setter-shortcuts">Getter/Setter shortcuts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oop.html#return-type-hints">Return Type Hints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="oop.html#return-type-void">Return Type: Void</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="builtin-methods.html">Built-In Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="builtin-methods.html#string">String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builtin-methods.html#array">Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builtin-methods.html#char">Char</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builtin-methods.html#integer">Integer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="control.html">Control Structures</a><ul>
@@ -213,8 +225,11 @@
 <li class="toctree-l2"><a class="reference internal" href="control.html#let">Let</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">Calling Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html#using-optimizers">Using optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Calling Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#using-optimizers">Using optimizers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="globals.html">Extension Globals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 </div>
@@ -251,7 +266,7 @@
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 20, 2014.
+             Last updated on Feb 06, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>

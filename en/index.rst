@@ -17,8 +17,10 @@ Reference
    operators
    arrays
    oop
+   builtin-methods
    control
-   functions   
+   functions
+   globals
    license
 
 Other Formats

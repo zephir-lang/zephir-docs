@@ -349,6 +349,7 @@ table.docutils th {
 table.docutils th {
     background: transparent;
     text-align: center;
+    font-weight: bold;
 }
 
 table.docutils tr {

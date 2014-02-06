@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Built-In Methods &mdash; Zephir 0.3.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Zephir 0.3.0 documentation" href="index.html" />
+    <link rel="next" title="Control Structures" href="control.html" />
+    <link rel="prev" title="Classes and Objects" href="oop.html" /> 
+  </head>
+  <body>
+    <div id="wrapper">
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="control.html" title="Control Structures"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="oop.html" title="Classes and Objects"
+             accesskey="P">previous</a> |</li>
+        <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
+        <li><a href="index.html">Zephir 0.3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="90%" align="center">
+        <tr>
+      <td class="primary-box" width="20%" valign="top">
+            <!--<div id="searchbox" style="">
+                <form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="15" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>
+            </div>-->
+            <script>
+            (function() {
+              var cx = '009733439235723428699:zsbvcqcfzwa';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                  '//www.google.com/cse/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:search></gcse:search>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Built-In Methods</a><ul>
+<li><a class="reference internal" href="#string">String</a></li>
+<li><a class="reference internal" href="#array">Array</a></li>
+<li><a class="reference internal" href="#char">Char</a></li>
+<li><a class="reference internal" href="#integer">Integer</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="oop.html" title="previous chapter">&lt; Classes and Objects</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="control.html" title="next chapter">Control Structures &gt;</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/builtin-methods.txt" rel="nofollow">Show Source</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="built-in-methods">
+<h1>Built-In Methods<a class="headerlink" href="#built-in-methods" title="Permalink to this headline">¶</a></h1>
+<p>As mentioned before, Zephir promotes object-oriented programming, variables related to static types can be also handled as objects.</p>
+<p>Compare these two methods:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">public</span> <span class="kd">function</span> <span class="nx">binaryToHex</span><span class="p">(</span><span class="kr">string</span><span class="o">!</span> <span class="nx">s</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kr">string</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">n</span><span class="p">;</span> <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">s</span><span class="p">))</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">sprintf</span><span class="p">(</span><span class="s2">&quot;%X&quot;</span><span class="p">,</span> <span class="nx">ch</span><span class="p">);</span>
+        <span class="k">if</span> <span class="nx">strlen</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">o</span> <span class="p">.</span><span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="p">.</span> <span class="nx">n</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">o</span> <span class="p">.</span><span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">o</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>And:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">public</span> <span class="kd">function</span> <span class="nx">binaryToHex</span><span class="p">(</span><span class="kr">string</span><span class="o">!</span> <span class="nx">s</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kr">string</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">n</span><span class="p">;</span> <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">s</span><span class="o">-&gt;</span><span class="nx">length</span><span class="p">())</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">ch</span><span class="o">-&gt;</span><span class="nx">toHex</span><span class="p">();</span>
+        <span class="k">if</span> <span class="nx">n</span><span class="o">-&gt;</span><span class="nx">length</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">o</span> <span class="p">.</span><span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="p">.</span> <span class="nx">n</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">o</span> <span class="p">.</span><span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">o</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables
+does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.</p>
+<div class="section" id="string">
+<h2>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
+<p>The following string built-in methods are available:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="34%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>OO</td>
+<td>Procedural</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>s-&gt;length()</td>
+<td>strlen(s)</td>
+<td>Get string length</td>
+</tr>
+<tr class="row-odd"><td>s-&gt;trim()</td>
+<td>trim(s)</td>
+<td>Strip whitespace (or other characters) from the beginning and end of a string</td>
+</tr>
+<tr class="row-even"><td>s-&gt;index(&#8220;foo&#8221;)</td>
+<td>strpos(s, &#8220;foo&#8221;)</td>
+<td>Find the position of the first occurrence of a substring in a string</td>
+</tr>
+<tr class="row-odd"><td>s-&gt;lower()</td>
+<td>strtolower(s)</td>
+<td>Make a string lowercase</td>
+</tr>
+<tr class="row-even"><td>s-&gt;upper()</td>
+<td>strtoupper(s)</td>
+<td>Make a string uppercase</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="array">
+<h2>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
+<p>The following array built-in methods are available:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="34%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>OO</td>
+<td>Procedural</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>a-&gt;join(&#8221; &#8221;)</td>
+<td>join(&#8221; &#8221;, a)</td>
+<td>Join array elements with a string</td>
+</tr>
+<tr class="row-odd"><td>a-&gt;reverse()</td>
+<td>array_reverse(a)</td>
+<td>Return an array with elements in reverse order</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="char">
+<h2>Char<a class="headerlink" href="#char" title="Permalink to this headline">¶</a></h2>
+<p>The following char built-in methods are available:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>OO</td>
+<td>Procedural</td>
+</tr>
+<tr class="row-even"><td>ch-&gt;toHex()</td>
+<td>sprintf(&#8220;%X&#8221;, ch)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="integer">
+<h2>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h2>
+<p>The following integer built-in methods are available:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>OO</td>
+<td>Procedural</td>
+</tr>
+<tr class="row-even"><td>i-&gt;abs()</td>
+<td>abs(i)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="control.html" title="Control Structures"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="oop.html" title="Classes and Objects"
+             >previous</a> |</li> 
+      </ul>
+    </div>
+        <div id="footer">
+
+          <p>Zephir Language is an open source project licensed under MIT license.</p>
+
+          <p>Except where otherwise noted, content on this site is licensed under the
+            <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
+             Last updated on Feb 06, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
+
+          <p>
+             &copy; Copyright 2013-2014, Zephir Team.
+          </p>
+
+        </div>
+
+    </div>
+  </body>
+</html>

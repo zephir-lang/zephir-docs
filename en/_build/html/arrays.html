@@ -64,11 +64,11 @@
               s.parentNode.insertBefore(gcse, s);
             })();
           </script>
-          <h4>Search</h4>
           <gcse:search></gcse:search>
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference internal" href="#">Arrays</a><ul>
+<li><a class="reference internal" href="#declaring-array-variables">Declaring Array Variables</a></li>
 <li><a class="reference internal" href="#creating-arrays">Creating Arrays</a></li>
 <li><a class="reference internal" href="#updating-arrays">Updating arrays</a></li>
 <li><a class="reference internal" href="#appending-elements">Appending elements</a></li>
@@ -96,6 +96,14 @@
 <h1>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h1>
 <p>Array manipulation in Zephir provides a way to use PHP <a class="reference external" href="http://www.php.net/manual/en/language.types.array.php">arrays</a>.
 An array is an implementation of a <a class="reference external" href="http://en.wikipedia.org/wiki/Hash_table">hash table</a>.</p>
+<div class="section" id="declaring-array-variables">
+<h2>Declaring Array Variables<a class="headerlink" href="#declaring-array-variables" title="Permalink to this headline">¶</a></h2>
+<p>Array variables can be declared using the keywords &#8216;var&#8217; or &#8216;array&#8217;:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// array variable, its type can be changed</span>
+<span class="nx">array</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// array variable, its type cannot be changed across execution</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="creating-arrays">
 <h2>Creating Arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">¶</a></h2>
 <p>An array is created enclosing their elements in square brackets:</p>
@@ -132,6 +140,10 @@ An array is an implementation of a <a class="reference external" href="http://en
 
 <span class="c1">//Updating an array with a numeric key</span>
 <span class="kd">let</span> <span class="nx">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span><span class="p">;</span>
+
+<span class="c1">//Updating multi-dimensional array</span>
+<span class="kd">let</span> <span class="nx">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;foo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">elements</span><span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -183,7 +195,7 @@ An array is an implementation of a <a class="reference external" href="http://en
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Jan 20, 2014.
+             Last updated on Feb 06, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>
