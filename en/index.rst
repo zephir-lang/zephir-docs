@@ -20,7 +20,10 @@ Reference
    builtin-methods
    control
    functions
+   optimizers
+   config
    globals
+   phpinfo
    license
 
 Other Formats

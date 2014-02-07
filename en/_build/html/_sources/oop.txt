@@ -320,7 +320,7 @@ Parameters marked with this attribute can be modified inside the method:
         }
     }
 
-When a parameter is read-only the compiler can make safe assumptions about further optimizations on these variables.
+When a parameter is declared as read-only the compiler can make safe assumptions and perform further optimizations over these variables.
 
 Implementing Properties
 -----------------------

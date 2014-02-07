@@ -5,7 +5,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Calling Functions &mdash; Zephir 0.3.0 documentation</title>
+    <title>Calling Functions &mdash; Zephir 0.3.2 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -13,15 +13,15 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.3.0',
+        VERSION:     '0.3.2',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Zephir 0.3.0 documentation" href="index.html" />
-    <link rel="next" title="Extension Globals" href="globals.html" />
+    <link rel="top" title="Zephir 0.3.2 documentation" href="index.html" />
+    <link rel="next" title="Custom optimizers" href="optimizers.html" />
     <link rel="prev" title="Control Structures" href="control.html" /> 
   </head>
   <body>
@@ -32,13 +32,13 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="globals.html" title="Extension Globals"
+          <a href="optimizers.html" title="Custom optimizers"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="control.html" title="Control Structures"
              accesskey="P">previous</a> |</li>
         <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
-        <li><a href="index.html">Zephir 0.3.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Zephir 0.3.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -65,18 +65,10 @@
             })();
           </script>
           <gcse:search></gcse:search>
-            <h3><a href="index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference internal" href="#">Calling Functions</a><ul>
-<li><a class="reference internal" href="#using-optimizers">Using optimizers</a></li>
-</ul>
-</li>
-</ul>
-
             <h4>Previous topic</h4>
             <p class="topless"><a href="control.html" title="previous chapter">&lt; Control Structures</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="globals.html" title="next chapter">Extension Globals &gt;</a></p>
+            <p class="topless"><a href="optimizers.html" title="next chapter">Custom optimizers &gt;</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="_sources/functions.txt" rel="nofollow">Show Source</a></li>
@@ -185,153 +177,6 @@ variables without the appropriate cast:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="using-optimizers">
-<h2>Using optimizers<a class="headerlink" href="#using-optimizers" title="Permalink to this headline">¶</a></h2>
-<p>Most common functions in Zephir use internal optimizers. An &#8216;optimizer&#8217; works like an interceptor for function calls.
-An &#8216;optimizer&#8217; replaces the call for the function in the PHP userland by direct C-calls which are faster and have a lower
-overhead improving performance.</p>
-<p>To create an optimizer you have to create a class in the &#8216;optimizers&#8217; directory, the following convention must be used:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="16%" />
-<col width="23%" />
-<col width="47%" />
-<col width="15%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function in Zephir</th>
-<th class="head">Optimizer Class Name</th>
-<th class="head">Optimizer Path</th>
-<th class="head">Function in C</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>calculate_pi</td>
-<td>CalculatePiOptimizer</td>
-<td>optimizers/CalculatePiOptimizer.php</td>
-<td>my_calculate_pi</td>
-</tr>
-</tbody>
-</table>
-<p>This is the basic structure for an &#8216;optimizer&#8217;:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-
-<span class="k">class</span> <span class="nc">CalculatePiOptimizer</span> <span class="k">extends</span> <span class="nx">OptimizerAbstract</span>
-<span class="p">{</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">optimize</span><span class="p">(</span><span class="k">array</span> <span class="nv">$expression</span><span class="p">,</span> <span class="nx">Call</span> <span class="nv">$call</span><span class="p">,</span> <span class="nx">CompilationContext</span> <span class="nv">$context</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">//...</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Implementation of optimizers highly depends on the kind of code you want to generate. In our example, we&#8217;re going to replace the call to this
-function by a call to a c-function. In Zephir, the code used to call this function is:</p>
-<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">pi</span> <span class="o">=</span> <span class="nx">calculate_pi</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>So, the optimizer will expect just one parameter, we have to validate that to avoid problems later:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-
-<span class="k">public</span> <span class="k">function</span> <span class="nf">optimize</span><span class="p">(</span><span class="k">array</span> <span class="nv">$expression</span><span class="p">,</span> <span class="nx">Call</span> <span class="nv">$call</span><span class="p">,</span> <span class="nx">CompilationContext</span> <span class="nv">$context</span><span class="p">)</span>
-<span class="p">{</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$expression</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">]))</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">CompilerException</span><span class="p">(</span><span class="s2">&quot;&#39;calculate_pi&#39; requires one parameter&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$expression</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">CompilerException</span><span class="p">(</span><span class="s2">&quot;&#39;calculate_pi&#39; requires one parameter&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">//...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>There are functions that are just called and they don&#8217;t return any value, our function returns a value that is the calculated PI value. So we need
-to be aware that the type of the variable used to received this calculated value is OK:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-
-<span class="k">public</span> <span class="k">function</span> <span class="nf">optimize</span><span class="p">(</span><span class="k">array</span> <span class="nv">$expression</span><span class="p">,</span> <span class="nx">Call</span> <span class="nv">$call</span><span class="p">,</span> <span class="nx">CompilationContext</span> <span class="nv">$context</span><span class="p">)</span>
-<span class="p">{</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$expression</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">]))</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">CompilerException</span><span class="p">(</span><span class="s2">&quot;&#39;calculate_pi&#39; requires one parameter&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$expression</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">CompilerException</span><span class="p">(</span><span class="s2">&quot;&#39;calculate_pi&#39; requires one parameter&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="sd">/**</span>
-<span class="sd">     * Process the expected symbol to be returned</span>
-<span class="sd">     */</span>
-    <span class="nv">$call</span><span class="o">-&gt;</span><span class="na">processExpectedReturn</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
-
-    <span class="nv">$symbolVariable</span> <span class="o">=</span> <span class="nv">$call</span><span class="o">-&gt;</span><span class="na">getSymbolVariable</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$symbolVariable</span><span class="o">-&gt;</span><span class="na">isNotDouble</span><span class="p">())</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">CompilerException</span><span class="p">(</span><span class="s2">&quot;Calculated PI values only can be stored in double variables&quot;</span><span class="p">,</span> <span class="nv">$expression</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">//...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>We&#8217;re checking if the value returned will be stored in a variable type &#8216;double&#8217;, if not a compiler exception is thrown.</p>
-<p>The next thing we need to do is process the parameters passed to the function:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-
-<span class="nv">$resolvedParams</span> <span class="o">=</span> <span class="nv">$call</span><span class="o">-&gt;</span><span class="na">getReadOnlyResolvedParams</span><span class="p">(</span><span class="nv">$expression</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">],</span> <span class="nv">$context</span><span class="p">,</span> <span class="nv">$expression</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>As a good practice with Zephir is important to create functions that don&#8217;t modify their parameters, if you are changing the parameters
-passed, Zephir will need to allocate memory for constants passed and you have to use getResolvedParams instead of getReadOnlyResolvedParams.</p>
-<p>Code returned by these methods is valid C-code that can be used in the code printer to generate the c-function call:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-
-<span class="c1">//Generate the C-code</span>
-<span class="k">return</span> <span class="k">new</span> <span class="nx">CompiledExpression</span><span class="p">(</span><span class="s1">&#39;double&#39;</span><span class="p">,</span> <span class="s1">&#39;calculate_pi( &#39;</span> <span class="o">.</span> <span class="nv">$resolvedParams</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="nv">$expression</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>All optimizers must return a CompiledExpression instance, this will tell the compiler the type returned by the code and its related C-code.</p>
-<p>The complete optimizer code is:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
-
-<span class="k">class</span> <span class="nc">CalculatePiOptimizer</span> <span class="k">extends</span> <span class="nx">OptimizerAbstract</span>
-<span class="p">{</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">optimize</span><span class="p">(</span><span class="k">array</span> <span class="nv">$expression</span><span class="p">,</span> <span class="nx">Call</span> <span class="nv">$call</span><span class="p">,</span> <span class="nx">CompilationContext</span> <span class="nv">$context</span><span class="p">)</span>
-    <span class="p">{</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$expression</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">]))</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">CompilerException</span><span class="p">(</span><span class="s2">&quot;&#39;calculate_pi&#39; requires one parameter&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$expression</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">CompilerException</span><span class="p">(</span><span class="s2">&quot;&#39;calculate_pi&#39; requires one parameter&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="sd">/**</span>
-<span class="sd">         * Process the expected symbol to be returned</span>
-<span class="sd">         */</span>
-        <span class="nv">$call</span><span class="o">-&gt;</span><span class="na">processExpectedReturn</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
-
-        <span class="nv">$symbolVariable</span> <span class="o">=</span> <span class="nv">$call</span><span class="o">-&gt;</span><span class="na">getSymbolVariable</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$symbolVariable</span><span class="o">-&gt;</span><span class="na">isNotDouble</span><span class="p">())</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">CompilerException</span><span class="p">(</span><span class="s2">&quot;Calculated PI values only can be stored in double variables&quot;</span><span class="p">,</span> <span class="nv">$expression</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="nv">$resolvedParams</span> <span class="o">=</span> <span class="nv">$call</span><span class="o">-&gt;</span><span class="na">getReadOnlyResolvedParams</span><span class="p">(</span><span class="nv">$expression</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">],</span> <span class="nv">$context</span><span class="p">,</span> <span class="nv">$expression</span><span class="p">);</span>
-
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">CompiledExpression</span><span class="p">(</span><span class="s1">&#39;double&#39;</span><span class="p">,</span> <span class="s1">&#39;my_calculate_pi( &#39;</span> <span class="o">.</span> <span class="nv">$resolvedParams</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="nv">$expression</span><span class="p">);</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
 </div>
 
 
@@ -348,7 +193,7 @@ passed, Zephir will need to allocate memory for constants passed and you have to
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="globals.html" title="Extension Globals"
+          <a href="optimizers.html" title="Custom optimizers"
              >next</a> |</li>
         <li class="right" >
           <a href="control.html" title="Control Structures"
@@ -361,7 +206,7 @@ passed, Zephir will need to allocate memory for constants passed and you have to
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Feb 06, 2014.
+             Last updated on Feb 07, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>

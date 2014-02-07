@@ -47,6 +47,20 @@ compared operands are dynamic variables the behavior is the same as in PHP:
 | a >= b   | Greater than or equal to | TRUE if a is greater than or equal to b.                         |
 +----------+--------------------------+------------------------------------------------------------------+
 
+Example:
+
+.. code-block:: zephir
+
+    if a == b {
+        return 0;
+    } else {
+        if a < b {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+
 Logical Operators
 -----------------
 The following operators are supported:
@@ -60,6 +74,15 @@ The following operators are supported:
 +-------------------+-----------------------------------------------------+
 | Not               | !a                                                  |
 +-------------------+-----------------------------------------------------+
+
+Example:
+
+.. code-block:: zephir
+
+    if a && b || !c {
+        return -1;
+    }
+    return 1;
 
 Bitwiser Operators
 ------------------
@@ -75,7 +98,23 @@ The following operators are supported:
 | Bitwise Not       | ~a                                                  |
 +-------------------+-----------------------------------------------------+
 
+Example:
+
+.. code-block:: zephir
+
+    if a & SOME_FLAG {
+        echo "has some flag";
+    }
+
 Learn more about comparison of dynamic variables in the `php manual`_.
+
+Ternary Operator
+----------------
+Zephir supports the ternary operator available in C or PHP:
+
+.. code-block:: zephir
+
+    let b = a == 1 ? "x" : "y"; // b is assigned with "x" if a is equals to 1 otherwise "y" is assigned as value
 
 Special Operators
 -----------------

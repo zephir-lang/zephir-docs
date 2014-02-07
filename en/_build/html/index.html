@@ -5,7 +5,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Zephir Language &mdash; Zephir 0.3.0 documentation</title>
+    <title>Zephir Language &mdash; Zephir 0.3.2 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -13,14 +13,14 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.3.0',
+        VERSION:     '0.3.2',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="Zephir 0.3.0 documentation" href="#" />
+    <link rel="top" title="Zephir 0.3.2 documentation" href="#" />
     <link rel="next" title="Welcome!" href="welcome.html" /> 
   </head>
   <body>
@@ -34,7 +34,7 @@
           <a href="welcome.html" title="Welcome!"
              accesskey="N">next</a> |</li>
         <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
-        <li><a href="#">Zephir 0.3.0 documentation</a> &raquo;</li> 
+        <li><a href="#">Zephir 0.3.2 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -162,6 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="operators.html#comparison-operators">Comparison Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html#logical-operators">Logical Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html#bitwiser-operators">Bitwiser Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operators.html#ternary-operator">Ternary Operator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operators.html#special-operators">Special Operators</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="operators.html#empty">Empty</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operators.html#isset">Isset</a></li>
@@ -225,11 +226,22 @@
 <li class="toctree-l2"><a class="reference internal" href="control.html#let">Let</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="functions.html">Calling Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#using-optimizers">Using optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Calling Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimizers.html">Custom optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#namespace">namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#name">name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#description">description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#author">author</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#version">version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#warnings">warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#optimizations">optimizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#globals">globals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#info">info</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="globals.html">Extension Globals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="phpinfo.html">Phpinfo information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 </div>
@@ -266,7 +278,7 @@
 
           <p>Except where otherwise noted, content on this site is licensed under the
             <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
-             Last updated on Feb 06, 2014.
+             Last updated on Feb 07, 2014.
             Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.
 
           <p>
