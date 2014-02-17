@@ -33,8 +33,7 @@ h2 {
     font-size: 24px;
     line-height: 24px;
     font-weight: 400;
-    margin: 25px 0 0;
-    margin-bottom: 10px;
+    margin: 25px 0 10px 0;
 }
 
 h3 {
@@ -55,9 +54,9 @@ h4 {
 }*/
 
 td.primary-box li {
-    padding: 0px;
+    padding: 0;
     line-height: 16px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     font-size: 14px;
 }
 
@@ -67,12 +66,12 @@ td.second-box li {
 
 td.second-box li.toctree-l1 {
     font-size: 14px;
-    margin: 0px;
+    margin: 0;
 }
 
 td.second-box li.toctree-l1 a {
     font-size: 14px;
-    margin-bottom: 0em;
+    margin-bottom: 0;
 }
 
 td.primary-box {
@@ -83,12 +82,12 @@ td.primary-box {
 }
 
 td.primary-box ul {
-    margin-left: 0px;
+    margin-left: 0;
     padding-left: 5px;
 }
 
 td.primary-box li {
-    margin-left: 0px;
+    margin-left: 0;
     padding-left: 5px;
 }
 
@@ -145,7 +144,7 @@ div.related a {
 
 div.related li.right {
     float: right;
-    padding-right: 0px;
+    padding-right: 0;
     list-style: none outside none;
     color: white;
     margin-right: 5px;
@@ -234,8 +233,8 @@ blockquote p {
 }*/
 
 p.topless {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 div.figure {
@@ -352,8 +351,8 @@ table.docutils th {
 }
 
 table.docutils tr {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 div#methods h2,
@@ -431,7 +430,7 @@ div#footer {
 
 div#footer p {
     display: block;
-    margin: 0px;
+    margin: 0;
     font-size: 12px;
 }
 
