@@ -6,7 +6,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Classes and Objects &mdash; Zephir 0.3.2 documentation</title>
+    <title>Классы и объекты &mdash; Zephir 0.3.2 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -68,10 +68,10 @@
           <gcse:search></gcse:search>
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
-<li><a class="reference internal" href="#">Classes and Objects</a><ul>
-<li><a class="reference internal" href="#classes">Classes</a></li>
-<li><a class="reference internal" href="#implementing-methods">Implementing Methods</a><ul>
-<li><a class="reference internal" href="#supported-visibilities">Supported Visibilities</a></li>
+<li><a class="reference internal" href="#">Классы и объекты</a><ul>
+<li><a class="reference internal" href="#id2">Классы</a></li>
+<li><a class="reference internal" href="#id3">Реализация методов</a><ul>
+<li><a class="reference internal" href="#id4">Поддерживаемые видимости метода (Инкапсуляция)</a></li>
 <li><a class="reference internal" href="#getter-setter-shortcuts">Getter/Setter shortcuts</a></li>
 <li><a class="reference internal" href="#return-type-hints">Return Type Hints</a></li>
 <li><a class="reference internal" href="#return-type-void">Return Type: Void</a></li>
@@ -105,19 +105,19 @@
                   <div class="bodywrapper">
                     <div class="body" >
                       
-  <div class="section" id="classes-and-objects">
-<h1>Classes and Objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>Классы и объекты<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Zephir promotes object-oriented programming, this is why you can only export methods
 and classes in extensions, also you will see that most of the time, runtime errors raise
 exceptions instead of fatal errors or warnings.</p>
-<div class="section" id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
-<p>Every Zephir file must implement a class or an interface (and just once). A class structure
-is very similar to a PHP class:</p>
+<div class="section" id="id2">
+<h2>Классы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Каждый файл в Zephir должны содержать класс или интерфейс (причем только один). Структура класса
+крайне схожа с структурой обьявления его в PHP:</p>
 <div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Test</span><span class="p">;</span>
 
 <span class="cm">/**</span>
-<span class="cm"> * This is a sample class</span>
+<span class="cm"> * Это пример класса</span>
 <span class="cm"> */</span>
 <span class="kr">class</span> <span class="nx">MyClass</span>
 <span class="p">{</span>
@@ -126,8 +126,8 @@ is very similar to a PHP class:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="implementing-methods">
-<h2>Implementing Methods<a class="headerlink" href="#implementing-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>Реализация методов<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>The &#8220;function&#8221; keyword introduces a method. Methods implements the usual visibility modifiers available
 in PHP, explicity set a visibility modifier is mandatory in Zephir:</p>
 <div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Test</span><span class="p">;</span>
@@ -152,14 +152,14 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Methods can receive required and optional parameters:</p>
+<p>Методы могут принимать как обязательные так и необязательные параметры:</p>
 <div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Test</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">MyClass</span>
 <span class="p">{</span>
 
     <span class="cm">/**</span>
-<span class="cm">     * All parameters are required</span>
+<span class="cm">     * Все параметры обязательные</span>
 <span class="cm">     */</span>
     <span class="kr">public</span> <span class="kd">function</span> <span class="nx">doSum1</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
     <span class="p">{</span>
@@ -201,8 +201,8 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="supported-visibilities">
-<h3>Supported Visibilities<a class="headerlink" href="#supported-visibilities" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Поддерживаемые видимости метода (Инкапсуляция)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Public: Methods marked as &#8220;public&#8221; are exported to the PHP extension, this means that public methods are visible to the PHP code as well to the extension itself.</li>
 <li>Protected: Methods marked as &#8220;protected&#8221; are exported to the PHP extension, this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.</li>

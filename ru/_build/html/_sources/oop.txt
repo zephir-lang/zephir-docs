@@ -1,27 +1,27 @@
-Classes and Objects
+Классы и объекты
 ===================
 Zephir promotes object-oriented programming, this is why you can only export methods
 and classes in extensions, also you will see that most of the time, runtime errors raise
 exceptions instead of fatal errors or warnings.
 
-Classes
+Классы
 -------
-Every Zephir file must implement a class or an interface (and just once). A class structure
-is very similar to a PHP class:
+Каждый файл в Zephir должны содержать класс или интерфейс (причем только один). Структура класса
+крайне схожа с структурой обьявления его в PHP:
 
 .. code-block:: zephir
 
     namespace Test;
 
     /**
-     * This is a sample class
+     * Это пример класса
      */
     class MyClass
     {
 
     }
 
-Implementing Methods
+Реализация методов
 --------------------
 The "function" keyword introduces a method. Methods implements the usual visibility modifiers available
 in PHP, explicity set a visibility modifier is mandatory in Zephir:
@@ -49,7 +49,7 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
         }
     }
 
-Methods can receive required and optional parameters:
+Методы могут принимать как обязательные так и необязательные параметры:
 
 .. code-block:: zephir
 
@@ -59,7 +59,7 @@ Methods can receive required and optional parameters:
     {
 
         /**
-         * All parameters are required
+         * Все параметры обязательные
          */
         public function doSum1(a, b)
         {
@@ -100,7 +100,7 @@ Methods can receive required and optional parameters:
 
     }
 
-Supported Visibilities
+Поддерживаемые видимости метода (Инкапсуляция)
 ^^^^^^^^^^^^^^^^^^^^^^
 
 * Public: Methods marked as "public" are exported to the PHP extension, this means that public methods are visible to the PHP code as well to the extension itself.

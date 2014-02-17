@@ -1,4 +1,4 @@
-Why Zephir?
+Почему Zephir?
 ===========
 Today’s PHP applications must balance a number of concerns including stability, performance and functionality.
 Every PHP application is based on a set of common components that are also base for most of the application.
@@ -14,7 +14,7 @@ compilation improving performance and resource consumption.
 With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from
 PHP gaining important seconds that can make your application faster while improving the user experience.
 
-If You Are a PHP Programmer...
+Если ты PHP программист...
 ------------------------------
 PHP is one of the most popular languages in use for the development of web applications.
 Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
@@ -28,7 +28,7 @@ PHP is hosting Zephir, so they obviously have a lot of similarities, however; th
 important differences that give Zephir its own personality. For example, Zephir is more strict,
 and it could be make you less productive compared to PHP due to the compilation step.
 
-If You Are a C Programmer...
+Если ты C программист...
 ----------------------------
 C is one of the most powerful and popular languages ever created. In fact, PHP is written in C,
 which is one of the reasons why PHP extensions are available for it. C gives you the freedom to

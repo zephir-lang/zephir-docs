@@ -6,7 +6,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Types &mdash; Zephir 0.3.2 documentation</title>
+    <title>Типы &mdash; Zephir 0.3.2 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
@@ -68,8 +68,8 @@
           <gcse:search></gcse:search>
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
-<li><a class="reference internal" href="#">Types</a><ul>
-<li><a class="reference internal" href="#dynamic-type">Dynamic Type</a><ul>
+<li><a class="reference internal" href="#">Типы</a><ul>
+<li><a class="reference internal" href="#id2">Динамический тип</a><ul>
 <li><a class="reference internal" href="#boolean">Boolean</a></li>
 <li><a class="reference internal" href="#integer">Integer</a></li>
 <li><a class="reference internal" href="#integer-overflow">Integer overflow</a></li>
@@ -80,11 +80,11 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#static-types">Static Types</a><ul>
-<li><a class="reference internal" href="#id1">Boolean</a></li>
+<li><a class="reference internal" href="#id3">Boolean</a></li>
 <li><a class="reference internal" href="#integer-unsigned-integer">Integer/Unsigned Integer</a></li>
 <li><a class="reference internal" href="#long-unsigned-long">Long/Unsigned Long</a></li>
 <li><a class="reference internal" href="#char-unsigned-char">Char/Unsigned Char</a></li>
-<li><a class="reference internal" href="#id2">String</a></li>
+<li><a class="reference internal" href="#id4">String</a></li>
 </ul>
 </li>
 </ul>
@@ -106,15 +106,15 @@
                   <div class="bodywrapper">
                     <div class="body" >
                       
-  <div class="section" id="types">
-<h1>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>Типы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Zephir is both dynamic and static typed. In this chapter we highlight the supported types and
 its behavior:</p>
-<div class="section" id="dynamic-type">
-<h2>Dynamic Type<a class="headerlink" href="#dynamic-type" title="Permalink to this headline">¶</a></h2>
-<p>Dynamic variables are exactly like the ones in PHP, they can be assigned and reassigned to
-different types without restriction.</p>
-<p>A dynamic variable must be declared with the keyword &#8216;var&#8217;, the behavior is nearly the same as in PHP:</p>
+<div class="section" id="id2">
+<h2>Динамический тип<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Динамические переменные точно так, как в PHP, они могут быть назначены и переназначены в
+различные типы без ограничений.</p>
+<p>Динамическая переменная должна быть объявлена с помощью служебного слова &#8216;var&#8217;, поведение с ней идентична как и PHP:</p>
 <div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">;</span>
 
 <span class="c1">// Initialize variables</span>
@@ -127,7 +127,7 @@ different types without restriction.</p>
 <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>They can have eight types:</p>
+<p>Всего существует 8 типов:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -325,8 +325,8 @@ the compiler to do a better optimization job. The following types are supported:
 </tr>
 </tbody>
 </table>
-<div class="section" id="id1">
-<h3>Boolean<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Boolean<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>A boolean expresses a truth value. It can be either &#8216;true&#8217; or &#8216;false&#8217;. Contrary to the dynamic behavior
 static boolean types remain boolean (true or false) no mater what value is assigned to them:</p>
 <div class="highlight-zephir"><div class="highlight"><pre><span class="kr">boolean</span> <span class="nx">a</span><span class="p">;</span>
@@ -415,8 +415,8 @@ Every &#8216;char&#8217; variable represents every character in a string:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>String<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>String<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set,
 and hence does not offer native Unicode support.</p>
 <p>When a variable is declared string it never changes its type:</p>

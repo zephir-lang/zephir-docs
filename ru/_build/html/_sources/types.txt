@@ -1,14 +1,14 @@
-Types
+Типы
 =====
 Zephir is both dynamic and static typed. In this chapter we highlight the supported types and
 its behavior:
 
-Dynamic Type
+Динамический тип
 ------------
-Dynamic variables are exactly like the ones in PHP, they can be assigned and reassigned to
-different types without restriction.
+Динамические переменные точно так, как в PHP, они могут быть назначены и переназначены в
+различные типы без ограничений.
 
-A dynamic variable must be declared with the keyword 'var', the behavior is nearly the same as in PHP:
+Динамическая переменная должна быть объявлена с помощью служебного слова 'var', поведение с ней идентична как и PHP:
 
 .. code-block:: zephir
 
@@ -23,7 +23,7 @@ A dynamic variable must be declared with the keyword 'var', the behavior is near
     // Perform operations between them
     let c = a + b;
 
-They can have eight types:
+Всего существует 8 типов:
 
 +---------------+---------------------------------------------------------------------------+
 | Type          | Description                                                               |
