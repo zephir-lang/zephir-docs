@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Extension Globals &mdash; Zephir 0.3.2 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Zephir 0.3.2 documentation" href="index.html" />
+    <link rel="next" title="Phpinfo() sections" href="phpinfo.html" />
+    <link rel="prev" title="Configuration File" href="config.html" /> 
+  </head>
+  <body>
+    <div id="wrapper">
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="phpinfo.html" title="Phpinfo() sections"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="Configuration File"
+             accesskey="P">previous</a> |</li>
+        <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
+        <li><a href="index.html">Zephir 0.3.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="90%" align="center">
+        <tr>
+      <td class="primary-box" width="20%" valign="top">
+            <!--<div id="searchbox" style="">
+                <form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="15" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>
+            </div>-->
+            <script>
+            (function() {
+              var cx = '009733439235723428699:zsbvcqcfzwa';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                  '//www.google.com/cse/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:search></gcse:search>
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="config.html" title="previous chapter">&lt; Configuration File</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="phpinfo.html" title="next chapter">Phpinfo() sections &gt;</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/globals.txt" rel="nofollow">Show Source</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="extension-globals">
+<h1>Extension Globals<a class="headerlink" href="#extension-globals" title="Permalink to this headline">¶</a></h1>
+<p>PHP extensions provide a way to define globals whihin an extension. Reading/Writing globals should be faster than any
+other global mechanisms (like static members). You can use extension globals to set up configuration options that change the behavior
+of your library.</p>
+<p>In Zephir, extension globals are restricted to simple scalar types like int/bool/double/char, etc. Complex types
+such as string/arrays/objects/resources aren&#8217;t allowed here.</p>
+<p>You can enable extension globals by adding the following structure to your config.json:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="s2">&quot;globals&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;allow_some_feature&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;number_times&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="mi">10</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;some_component.my_setting_1&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;some_component.my_setting_2&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="mi">100</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Each global has the following structure:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;&lt;global-name&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;some-valid-type&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">some</span><span class="o">-</span><span class="nx">compatible</span><span class="o">-</span><span class="k">default</span><span class="o">-</span><span class="nx">value</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Compound globals has the following structure:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="s2">&quot;&lt;namespace&gt;.&lt;global-name&gt;&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;some-valid-type&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;default&quot;</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">some</span><span class="o">-</span><span class="nx">compatible</span><span class="o">-</span><span class="k">default</span><span class="o">-</span><span class="nx">value</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Inside any method you can read/write extension globals using the built-in functions global_get/global_set:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="nx">global_set</span><span class="p">(</span><span class="s2">&quot;allow_some_feature&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">someFeature</span> <span class="o">=</span> <span class="nx">global_get</span><span class="p">(</span><span class="s2">&quot;allow_some_feature&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you want to change these globals from PHP a good option is enable a method aimed at this:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Test</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">MyOptions</span>
+<span class="p">{</span>
+
+    <span class="kr">public</span> <span class="kr">static</span> <span class="kd">function</span> <span class="nx">setOptions</span><span class="p">(</span><span class="nx">array</span> <span class="nx">options</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kr">boolean</span> <span class="nx">someOption</span><span class="p">,</span> <span class="nx">anotherOption</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="k">fetch</span> <span class="nx">someOption</span><span class="p">,</span> <span class="nx">options</span><span class="p">[</span><span class="s2">&quot;some_option&quot;</span><span class="p">]</span> <span class="p">{</span>
+            <span class="nx">globals_set</span><span class="p">(</span><span class="s2">&quot;some_option&quot;</span><span class="p">,</span> <span class="nx">someOption</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="k">fetch</span> <span class="nx">anotherOption</span><span class="p">,</span> <span class="nx">options</span><span class="p">[</span><span class="s2">&quot;another_option&quot;</span><span class="p">]</span> <span class="p">{</span>
+            <span class="nx">globals_set</span><span class="p">(</span><span class="s2">&quot;another_option&quot;</span><span class="p">,</span> <span class="nx">anotherOption</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Extension globals cannot be dinamically accessed since the C-code generated by global_get/global_set optimizers must be resolved
+at compilation time:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">myOption</span> <span class="o">=</span> <span class="s2">&quot;someOption&quot;</span><span class="p">;</span>
+
+<span class="c1">//will throw a compiler exception</span>
+<span class="kd">let</span> <span class="nx">someOption</span> <span class="o">=</span> <span class="nx">globals_get</span><span class="p">(</span><span class="nx">myOption</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="phpinfo.html" title="Phpinfo() sections"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="Configuration File"
+             >previous</a> |</li> 
+      </ul>
+    </div>
+        <div id="footer">
+
+          <p>Zephir Language is an open source project licensed under MIT license.</p>
+
+          <p>Except where otherwise noted, content on this site is licensed under the
+            <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
+             Last updated on Feb 17, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+          <p>
+             &copy; Copyright 2013-2014, Zephir Team.
+          </p>
+
+        </div>
+
+    </div>
+  </body>
+</html>

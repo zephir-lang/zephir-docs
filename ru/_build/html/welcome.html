@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome! &mdash; Zephir 0.3.2 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Zephir 0.3.2 documentation" href="index.html" />
+    <link rel="next" title="Why Zephir?" href="motivation.html" />
+    <link rel="prev" title="Zephir Language" href="index.html" /> 
+  </head>
+  <body>
+    <div id="wrapper">
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="motivation.html" title="Why Zephir?"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Zephir Language"
+             accesskey="P">previous</a> |</li>
+        <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
+        <li><a href="index.html">Zephir 0.3.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="90%" align="center">
+        <tr>
+      <td class="primary-box" width="20%" valign="top">
+            <!--<div id="searchbox" style="">
+                <form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="15" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>
+            </div>-->
+            <script>
+            (function() {
+              var cx = '009733439235723428699:zsbvcqcfzwa';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                  '//www.google.com/cse/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:search></gcse:search>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Welcome!</a><ul>
+<li><a class="reference internal" href="#some-features">Some features</a></li>
+<li><a class="reference internal" href="#a-small-taste">A small taste</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="index.html" title="previous chapter">&lt; Zephir Language</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="motivation.html" title="next chapter">Why Zephir? &gt;</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/welcome.txt" rel="nofollow">Show Source</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="welcome">
+<h1>Welcome!<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to Zephir, an open source, high-level/domain specific language
+designed to ease the creation and maintainability of extensions for PHP
+with a focus on type and memory safety.</p>
+<div class="section" id="some-features">
+<h2>Some features<a class="headerlink" href="#some-features" title="Permalink to this headline">¶</a></h2>
+<p>Zephir&#8217;s main features are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Type system</td>
+<td>dynamic/static</td>
+</tr>
+<tr class="row-even"><td>Memory safety</td>
+<td>pointers or direct memory management aren&#8217;t allowed</td>
+</tr>
+<tr class="row-odd"><td>Compilation model</td>
+<td>ahead of time</td>
+</tr>
+<tr class="row-even"><td>Memory model</td>
+<td>task-local garbage collection</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="a-small-taste">
+<h2>A small taste<a class="headerlink" href="#a-small-taste" title="Permalink to this headline">¶</a></h2>
+<p>The following code registers a class with a method that filters variables returning its
+alphabetic characters:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">MyLibrary</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Filter</span>
+<span class="cm"> */</span>
+<span class="kr">class</span> <span class="nx">Filter</span>
+<span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Filters a string returning its alpha characters</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param string str</span>
+<span class="cm">     */</span>
+    <span class="kr">public</span> <span class="kd">function</span> <span class="nx">alpha</span><span class="p">(</span><span class="kr">string</span> <span class="nx">str</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kr">char</span> <span class="nx">ch</span><span class="p">;</span> <span class="kr">string</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="nx">ch</span> <span class="k">in</span> <span class="nx">str</span> <span class="p">{</span>
+           <span class="k">if</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;a&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">ch</span> <span class="o">&gt;=</span> <span class="s1">&#39;A&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;Z&#39;</span><span class="p">)</span> <span class="p">{</span>
+              <span class="kd">let</span> <span class="nx">filtered</span> <span class="p">.</span><span class="o">=</span> <span class="nx">ch</span><span class="p">;</span>
+           <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nx">filtered</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The class can be used from PHP as follows:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyLibrary\Filter</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">alpha</span><span class="p">(</span><span class="s2">&quot;01he</span><span class="si">$l</span><span class="s2">.lo?/1&quot;</span><span class="p">);</span> <span class="c1">// prints hello</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="motivation.html" title="Why Zephir?"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Zephir Language"
+             >previous</a> |</li> 
+      </ul>
+    </div>
+        <div id="footer">
+
+          <p>Zephir Language is an open source project licensed under MIT license.</p>
+
+          <p>Except where otherwise noted, content on this site is licensed under the
+            <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
+             Last updated on Feb 17, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+          <p>
+             &copy; Copyright 2013-2014, Zephir Team.
+          </p>
+
+        </div>
+
+    </div>
+  </body>
+</html>

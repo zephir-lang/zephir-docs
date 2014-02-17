@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Types &mdash; Zephir 0.3.2 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Zephir 0.3.2 documentation" href="index.html" />
+    <link rel="next" title="Operators" href="operators.html" />
+    <link rel="prev" title="Basic Syntax" href="language.html" /> 
+  </head>
+  <body>
+    <div id="wrapper">
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="operators.html" title="Operators"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="language.html" title="Basic Syntax"
+             accesskey="P">previous</a> |</li>
+        <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
+        <li><a href="index.html">Zephir 0.3.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="90%" align="center">
+        <tr>
+      <td class="primary-box" width="20%" valign="top">
+            <!--<div id="searchbox" style="">
+                <form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="15" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>
+            </div>-->
+            <script>
+            (function() {
+              var cx = '009733439235723428699:zsbvcqcfzwa';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                  '//www.google.com/cse/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:search></gcse:search>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Types</a><ul>
+<li><a class="reference internal" href="#dynamic-type">Dynamic Type</a><ul>
+<li><a class="reference internal" href="#boolean">Boolean</a></li>
+<li><a class="reference internal" href="#integer">Integer</a></li>
+<li><a class="reference internal" href="#integer-overflow">Integer overflow</a></li>
+<li><a class="reference internal" href="#float-double">Float/Double</a></li>
+<li><a class="reference internal" href="#string">String</a></li>
+<li><a class="reference internal" href="#arrays">Arrays</a></li>
+<li><a class="reference internal" href="#objects">Objects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-types">Static Types</a><ul>
+<li><a class="reference internal" href="#id1">Boolean</a></li>
+<li><a class="reference internal" href="#integer-unsigned-integer">Integer/Unsigned Integer</a></li>
+<li><a class="reference internal" href="#long-unsigned-long">Long/Unsigned Long</a></li>
+<li><a class="reference internal" href="#char-unsigned-char">Char/Unsigned Char</a></li>
+<li><a class="reference internal" href="#id2">String</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="language.html" title="previous chapter">&lt; Basic Syntax</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="operators.html" title="next chapter">Operators &gt;</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/types.txt" rel="nofollow">Show Source</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="types">
+<h1>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h1>
+<p>Zephir is both dynamic and static typed. In this chapter we highlight the supported types and
+its behavior:</p>
+<div class="section" id="dynamic-type">
+<h2>Dynamic Type<a class="headerlink" href="#dynamic-type" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic variables are exactly like the ones in PHP, they can be assigned and reassigned to
+different types without restriction.</p>
+<p>A dynamic variable must be declared with the keyword &#8216;var&#8217;, the behavior is nearly the same as in PHP:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">;</span>
+
+<span class="c1">// Initialize variables</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// Change their values</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="s2">&quot;140&quot;</span><span class="p">;</span>
+
+<span class="c1">// Perform operations between them</span>
+<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>They can have eight types:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Type</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>boolean</td>
+<td>A boolean expresses a truth value. It can be either &#8216;true&#8217; or &#8216;false&#8217;.</td>
+</tr>
+<tr class="row-odd"><td>integer</td>
+<td>Integer numbers. The size of an integer is platform-dependent.</td>
+</tr>
+<tr class="row-even"><td>float/double</td>
+<td>Floating point numbers. The size of a float is platform-dependent.</td>
+</tr>
+<tr class="row-odd"><td>string</td>
+<td>A string is series of characters, where a character is the same as a byte.</td>
+</tr>
+<tr class="row-even"><td>array</td>
+<td>An array is an ordered map. A map is a type that associates values to keys</td>
+</tr>
+<tr class="row-odd"><td>object</td>
+<td>Object abstraction like in PHP</td>
+</tr>
+<tr class="row-even"><td>resource</td>
+<td>A resource holds a reference to an external resource</td>
+</tr>
+<tr class="row-odd"><td>null</td>
+<td>The special NULL value represents a variable with no value</td>
+</tr>
+</tbody>
+</table>
+<p>Check more info about these types in the <a class="reference external" href="http://www.php.net/manual/en/language.types.php">PHP manual</a></p>
+<div class="section" id="boolean">
+<h3>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h3>
+<p>A boolean expresses a truth value. It can be either &#8216;true&#8217; or &#8216;false&#8217;:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integer">
+<h3>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h3>
+<p>Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two
+billion is the usual value (that&#8217;s 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18.
+PHP does not support unsigned integers so Zephir has this restriction too:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10050</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integer-overflow">
+<h3>Integer overflow<a class="headerlink" href="#integer-overflow" title="Permalink to this headline">¶</a></h3>
+<p>Contrary to PHP, Zephir does not automatically checks for integer overflows, like in C if you are
+doing operations that may return a big number you can use types such as &#8216;unsigned long&#8217; or &#8216;float&#8217;
+to store them:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">unsigned</span> <span class="kr">long</span> <span class="nx">my_number</span> <span class="o">=</span> <span class="mi">2147483648</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="float-double">
+<h3>Float/Double<a class="headerlink" href="#float-double" title="Permalink to this headline">¶</a></h3>
+<p>Floating-point numbers (also known as &#8220;floats&#8221;, &#8220;doubles&#8221;, or &#8220;real numbers&#8221;).
+Floating-point literals are expressions with zero or more digits, followed by a period (.),
+followed by zero or more digits. The size of a float is
+platform-dependent, although a maximum of ~1.8e308 with a
+precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mf">0.014</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Floating point numbers have limited precision. Although it depends on the system,
+as PHP, Zephir uses the IEEE 754 double precision format, which will give a maximum
+relative error due to rounding in the order of 1.11e-16.</p>
+</div>
+<div class="section" id="string">
+<h3>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
+<p>A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports
+a 256-character set, and hence does not offer native Unicode support.</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">today</span> <span class="o">=</span> <span class="s2">&quot;friday&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In Zephir, string literals can only be specified using double quotes (like in C), single quotes are reserved
+for chars.</p>
+<p>The following escape sequences are supported in strings:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Sequence</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>\t</td>
+<td>Horizontal tab</td>
+</tr>
+<tr class="row-odd"><td>\n</td>
+<td>Line feed</td>
+</tr>
+<tr class="row-even"><td>\r</td>
+<td>Carriage return</td>
+</tr>
+<tr class="row-odd"><td>\ \</td>
+<td>Backslash</td>
+</tr>
+<tr class="row-even"><td>\&#8221;</td>
+<td>double-quote</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">today</span> <span class="o">=</span> <span class="s2">&quot;\tfriday\n\r&quot;</span><span class="p">,</span>
+    <span class="nx">tomorrow</span> <span class="o">=</span> <span class="s2">&quot;\tsaturday&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In Zephir, strings don&#8217;t support variable parsing like in PHP, you can use concatenation instead:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;peter&quot;</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="s2">&quot;hello: &quot;</span> <span class="p">.</span> <span class="nx">name</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="arrays">
+<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h3>
+<p>The array implementation in Zephir is basically the same as in PHP: Ordered maps optimized for
+several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map),
+dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and
+multidimensional arrays are also possible.</p>
+<p>The syntax to define arrays is slightly different than in PHP:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="c1">//Square braces must be used to define arrays</span>
+<span class="kd">let</span> <span class="nx">myArray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="c1">//Double colon must be used to define hashes&#39; keys</span>
+<span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;third&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Only long and string values can be used as keys:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="o">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="mi">2</span><span class="o">:</span> <span class="kc">null</span><span class="p">];</span>
+<span class="kd">let</span> <span class="nx">myHash</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="o">:</span> <span class="mf">7.0</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="o">:</span> <span class="s2">&quot;some string&quot;</span><span class="p">,</span> <span class="s2">&quot;third&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="objects">
+<h3>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
+<p>Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">myObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">stdClass</span><span class="p">(),</span>
+    <span class="nx">myObject</span><span class="o">-&gt;</span><span class="nx">someProperty</span> <span class="o">=</span> <span class="s2">&quot;my value&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="static-types">
+<h2>Static Types<a class="headerlink" href="#static-types" title="Permalink to this headline">¶</a></h2>
+<p>Static typing allows the developer to declare and use some variable types available in C.
+Variables can&#8217;t change their type once they&#8217;re declared as dynamic types. However, they allow
+the compiler to do a better optimization job. The following types are supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Type</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>boolean</td>
+<td>A boolean expresses a truth value. It can be either &#8216;true&#8217; or &#8216;false&#8217;.</td>
+</tr>
+<tr class="row-odd"><td>integer</td>
+<td>Signed integers. At least 16 bits in size.</td>
+</tr>
+<tr class="row-even"><td>unsigned integer</td>
+<td>Unsigned integers. At least 16 bits in size.</td>
+</tr>
+<tr class="row-odd"><td>char</td>
+<td>Smallest addressable unit of the machine that can contain basic character set.</td>
+</tr>
+<tr class="row-even"><td>unsigned char</td>
+<td>Same size as char, but guaranteed to be unsigned.</td>
+</tr>
+<tr class="row-odd"><td>long</td>
+<td>Long signed integer type. At least 32 bits in size.</td>
+</tr>
+<tr class="row-even"><td>unsigned long</td>
+<td>Same as long, but unsigned.</td>
+</tr>
+<tr class="row-odd"><td>float/double</td>
+<td>Double precision floating-point type. The size is platform-dependent.</td>
+</tr>
+<tr class="row-even"><td>string</td>
+<td>A string is series of characters, where a character is the same as a byte.</td>
+</tr>
+<tr class="row-odd"><td>array</td>
+<td>An structure that can be used as hash, map, dictionary, collection, stack, etc.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h3>Boolean<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>A boolean expresses a truth value. It can be either &#8216;true&#8217; or &#8216;false&#8217;. Contrary to the dynamic behavior
+static boolean types remain boolean (true or false) no mater what value is assigned to them:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">boolean</span> <span class="nx">a</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">// automatically casted to true</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to false</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integer-unsigned-integer">
+<h3>Integer/Unsigned Integer<a class="headerlink" href="#integer-unsigned-integer" title="Permalink to this headline">¶</a></h3>
+<p>Integer values are like the integer member in dynamic values. Values assigned to integer variables
+remain integer:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">int</span> <span class="nx">a</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mf">100.25</span><span class="p">,</span> <span class="c1">// automatically casted to 100</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+<p>Unsigned integers are like integers but they don&#8217;t have sign, this means you can&#8217;t store
+negative numbers in these sort of variables:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="c1">// automatically casted to 70</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mf">100.25</span><span class="p">,</span> <span class="c1">// automatically casted to 100</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+<p>Unsigned integers are twice bigger than standard integers, assign unsigned integers to integers
+may represent loss of data:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="nx">uint</span> <span class="nx">a</span><span class="p">,</span> <span class="kr">int</span> <span class="nx">b</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2147483648</span><span class="p">,</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">,</span> <span class="c1">// possible loss of data</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="long-unsigned-long">
+<h3>Long/Unsigned Long<a class="headerlink" href="#long-unsigned-long" title="Permalink to this headline">¶</a></h3>
+<p>Long variables are twice bigger than integer variables, thus they can store bigger numbers,
+As integers values assigned to long variables are automatically casted to this type:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">long</span> <span class="nx">a</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mf">100.25</span><span class="p">,</span> <span class="c1">// automatically casted to 100</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+<p>Unsigned longs are like longs but they aren&#8217;t signed, this means you can&#8217;t store
+negative numbers in these sort of variables:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="c1">// automatically casted to 70</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="mf">100.25</span><span class="p">,</span> <span class="c1">// automatically casted to 100</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// automatically casted to 0</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span> <span class="c1">// throws a compiler exception</span>
+</pre></div>
+</div>
+<p>Unsigned longs are twice bigger than standard longs, assign unsigned longs to longs
+may represent loss of data:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">ulong</span> <span class="nx">a</span><span class="p">,</span> <span class="kr">long</span> <span class="nx">b</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">4294967296</span><span class="p">,</span>
+    <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="p">,</span> <span class="c1">// possible loss of data</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="char-unsigned-char">
+<h3>Char/Unsigned Char<a class="headerlink" href="#char-unsigned-char" title="Permalink to this headline">¶</a></h3>
+<p>Char variables are the smallest addressable unit of the machine that can contain basic character set.
+Every &#8216;char&#8217; variable represents every character in a string:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">char</span> <span class="nx">ch</span><span class="p">,</span> <span class="kr">string</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;peter&quot;</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">ch</span> <span class="o">=</span> <span class="nx">name</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// stores &#39;t&#39;</span>
+<span class="kd">let</span> <span class="nx">ch</span> <span class="o">=</span> <span class="s1">&#39;Z&#39;</span><span class="p">;</span> <span class="c1">// char literals must be enclosed in simple quotes</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>String<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set,
+and hence does not offer native Unicode support.</p>
+<p>When a variable is declared string it never changes its type:</p>
+<div class="highlight-zephir"><div class="highlight"><pre><span class="kr">string</span> <span class="nx">a</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="c1">//string literals must be enclosed in double quotes</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="c1">// converted to string &quot;A&quot;</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// automatically casted to &quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="operators.html" title="Operators"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="language.html" title="Basic Syntax"
+             >previous</a> |</li> 
+      </ul>
+    </div>
+        <div id="footer">
+
+          <p>Zephir Language is an open source project licensed under MIT license.</p>
+
+          <p>Except where otherwise noted, content on this site is licensed under the
+            <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
+             Last updated on Feb 17, 2014.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+
+          <p>
+             &copy; Copyright 2013-2014, Zephir Team.
+          </p>
+
+        </div>
+
+    </div>
+  </body>
+</html>
