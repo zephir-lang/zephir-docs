@@ -1,53 +1,54 @@
-Operators
+Операторы
 =========
-Zephir's set of operators are similar to the ones PHP and also inherits some of their behaviors.
+Операторы в Zephir похожи на их аналоги в PHP и также себя ведут.
 
-Arithmetic Operators
+Арифметические операторы.
+------------------------
+Поддерживаемые операторы:
+
++-------------------+-----------------------------------------------------+
+| Оператор          | Пример                                              |
++-------------------+-----------------------------------------------------+
+| Приведение к      |                                                     |
+| отрицательному    | -a                                                  |
++-------------------+-----------------------------------------------------+
+| Сложение          | a + b                                               |
++-------------------+-----------------------------------------------------+
+| Вычитание         | a - b                                               |
++-------------------+-----------------------------------------------------+
+| Умножение         | a * b                                               |
++-------------------+-----------------------------------------------------+
+| Деление           | a / b                                               |
++-------------------+-----------------------------------------------------+
+| Модуль            | a % b                                               |
++-------------------+-----------------------------------------------------+
+
+Операторы сравнения
 --------------------
-The following operators are supported:
-
-+-------------------+-----------------------------------------------------+
-| Operation         | Example                                             |
-+-------------------+-----------------------------------------------------+
-| Negation          | -a                                                  |
-+-------------------+-----------------------------------------------------+
-| Addition          | a + b                                               |
-+-------------------+-----------------------------------------------------+
-| Substraction      | a - b                                               |
-+-------------------+-----------------------------------------------------+
-| Multiplication    | a * b                                               |
-+-------------------+-----------------------------------------------------+
-| Division          | a / b                                               |
-+-------------------+-----------------------------------------------------+
-| Modulus           | a % b                                               |
-+-------------------+-----------------------------------------------------+
-
-Comparison Operators
---------------------
-Comparison operators depend on the type of variables compared, for example, if both
-compared operands are dynamic variables the behavior is the same as in PHP:
+Операции сравнения зависят от типа сравниваемых переменных, например если оба
+операнда динамические (var), результат будет таким же как и в PHP:
 
 +----------+--------------------------+------------------------------------------------------------------+
-| a == b   | Equal                    | TRUE if a is equal to b after type juggling.                     |
+| a == b   | Равенство                | TRUE если a равно b после приведения типов.                      |
 +----------+--------------------------+------------------------------------------------------------------+
-| a === b  | Identical                | TRUE if a is equal to b, and they are of the same type.          |
+| a === b  | Идентичность             | TRUE если a равно b, и операнды одного типа.                     |
 +----------+--------------------------+------------------------------------------------------------------+
-| a != b   | Not equal                | TRUE if a is not equal to b after type juggling.                 |
+| a != b   | Не равны                 | TRUE если a не равно b после приведения типов.                   |
 +----------+--------------------------+------------------------------------------------------------------+
-| a <> b   | Not equal                | TRUE if a is not equal to b after type juggling.                 |
+| a <> b   | Не равны                 | TRUE если a не равно b после приведения типов.                   |
 +----------+--------------------------+------------------------------------------------------------------+
-| a !== b  | Not identical            | TRUE if a is not equal to b, or they are not of the same type.   |
+| a !== b  | Не идентичны             | TRUE если a не равно b, или операнды разных типов.               |
 +----------+--------------------------+------------------------------------------------------------------+
-| a < b    | Less than                | TRUE if a is strictly less than b.                               |
+| a < b    | Меньше                   | TRUE если a строго меньше b.                                     |
 +----------+--------------------------+------------------------------------------------------------------+
-| a > b    | Greater than             | TRUE if a is strictly greater than b.                            |
+| a > b    | Больше                   | TRUE если a строго больше b.                                     |
 +----------+--------------------------+------------------------------------------------------------------+
-| a <= b   | Less than or equal to    | TRUE if a is less than or equal to b.                            |
+| a <= b   | Меньше, или равно        | TRUE если a меньше, или равно b.                                 |
 +----------+--------------------------+------------------------------------------------------------------+
-| a >= b   | Greater than or equal to | TRUE if a is greater than or equal to b.                         |
+| a >= b   | Больше, или равно        | TRUE если a строго больше, или равно b.                          |
 +----------+--------------------------+------------------------------------------------------------------+
 
-Example:
+Пример:
 
 .. code-block:: zephir
 
@@ -61,21 +62,21 @@ Example:
         }
     }
 
-Logical Operators
------------------
-The following operators are supported:
+Логические опреаторы
+--------------------
+Поддерживаемые операторы:
 
 +-------------------+-----------------------------------------------------+
-| Operation         | Example                                             |
+| Операция          | Пример                                              |
 +-------------------+-----------------------------------------------------+
-| And               | a && b                                              |
+| И                 | a && b                                              |
 +-------------------+-----------------------------------------------------+
-| Or                | a || b                                              |
+| Или               | a || b                                              |
 +-------------------+-----------------------------------------------------+
-| Not               | !a                                                  |
+| Отрицание         | !a                                                  |
 +-------------------+-----------------------------------------------------+
 
-Example:
+Пример:
 
 .. code-block:: zephir
 
@@ -84,21 +85,21 @@ Example:
     }
     return 1;
 
-Bitwiser Operators
-------------------
-The following operators are supported:
+Побитовые операторы
+-------------------
+Поддерживаемые операторы:
 
-+-------------------+-----------------------------------------------------+
-| Operation         | Example                                             |
-+-------------------+-----------------------------------------------------+
-| Bitwise And       | a & b                                               |
-+-------------------+-----------------------------------------------------+
-| Bitwise Or        | a | b                                               |
-+-------------------+-----------------------------------------------------+
-| Bitwise Not       | ~a                                                  |
-+-------------------+-----------------------------------------------------+
++---------------------+------------------------------------------------------+
+| Операция            | Пример                                               |
++---------------------+------------------------------------------------------+
+| Побитовое И         | a & b                                                |
++---------------------+------------------------------------------------------+
+| Побитовое Или       | a | b                                                |
++---------------------+------------------------------------------------------+
+| Побитовое отрицание | ~a                                                   |
++---------------------+------------------------------------------------------+
 
-Example:
+Пример:
 
 .. code-block:: zephir
 
@@ -106,23 +107,26 @@ Example:
         echo "has some flag";
     }
 
-Learn more about comparison of dynamic variables in the `php manual`_.
+Вы узнаете больше о сравнении динамических переменных в `php документации`_.
 
-Ternary Operator
-----------------
-Zephir supports the ternary operator available in C or PHP:
+Тернарный оператор
+------------------
+Zephir поддерживает тернарный оператор, как в C или PHP.
 
 .. code-block:: zephir
 
-    let b = a == 1 ? "x" : "y"; // b is assigned with "x" if a is equals to 1 otherwise "y" is assigned as value
+    let b = a == 1 ? "x" : "y"; // в b будет присвоен "x", если a равно 1 в противном случае "y"
 
-Special Operators
------------------
-The following operators are supported:
+Специальные операторы
+---------------------
+Поддерживаемые операторы:
 
 Empty
 ^^^^^
-This operator allows to check whether an expression is empty. 'Empty' means the expression is null, is an empty string or an empty array:
+Empty позволяет узнать пусто ли выражение. Под 'пусто' подразумевается выражение возврашающее:
+ - null
+ - пустую строку
+ - пустой массив
 
 .. code-block:: zephir
 
@@ -138,26 +142,27 @@ This operator allows to check whether an expression is empty. 'Empty' means the 
 
 Isset
 ^^^^^
-This operator checks whether a property or index has been defined in an array or object:
+Проверяет, существует ли индекс у массива, или свойство у объекта:
 
 .. code-block:: zephir
 
     let someArray = ["a": 1, "b": 2, "c": 3];
-    if isset someArray["b"] { // check if the array has an index "b"
+    if isset someArray["b"] { // проверим, есть ли у массива индекс "b"
         echo "yes, it has an index 'b'\n";
     }
 
-Using 'isset' as return expression:
+Использование 'isset' возможно в return-конструкциях:
 
 .. code-block:: zephir
 
     return isset this->{someProperty};
 
-Note that 'isset' in Zephir works more like PHP's function array_key_exists_, 'isset' in Zephir returns true even if the array index or property is null.
+Учтите, что 'isset' в Zephir работает скорее как array_key_exists в PHP.
+То есть оператор вернет true даже если значение равно null.
 
 Fetch
 ^^^^^
-'Fetch' is an operator that reduce a common operation in PHP into a single instruction:
+Оператор 'fetch' создан для сокращения популярной в PHP конструкции:
 
 .. code-block:: php
 
@@ -168,7 +173,7 @@ Fetch
         echo $value;
     }
 
-In Zephir, you can write the same code as:
+В Zephir тот же код будет можно написать так:
 
 .. code-block:: zephir
 
@@ -176,7 +181,7 @@ In Zephir, you can write the same code as:
         echo value;
     }
 
-'Fetch' only returns true if the 'key' is a valid item in the array, only in that case, 'value' is populated.
+'Fetch' вернет true, если в массиве есть что-то по ключу 'key' и тогда в 'value' будет присвоенно значение.
 
 Type Hints
 ^^^^^^^^^^
@@ -230,5 +235,5 @@ The authors of the above code, know in advance that the condition that throws th
     }
 
 .. _`array_key_exists`: http://www.php.net/manual/en/function.array-key-exists.php
-.. _`php manual`: http://www.php.net/manual/en/language.operators.comparison.php
+.. _`php документации`: http://www.php.net/manual/en/language.operators.comparison.php
 .. _`article out`: http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/
