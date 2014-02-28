@@ -1,8 +1,8 @@
-Welcome!
+Добро пожаловать!
 ========
-Welcome to Zephir, an open source, high-level/domain specific language
-designed to ease the creation and maintainability of extensions for PHP
-with a focus on type and memory safety.
+Добро пожаловать в Zephir, с открытым исходным кодом, high-level/domain specific language
+предназначен для облегчения создания и сопровождения расширений для PHP
+с акцентом на тип и безопасносное выделение памяти.
 
 Some features
 -------------
