@@ -91,7 +91,7 @@ found in runtime.
 Zephir is both statically and dynamically typed allowing you to take advantage from both sides where
 possible.
 
-Compilation Scheme
+Схема Компиляция
 ------------------
 Zephir offers native code generation (currently via compilation to C), a compiler like gcc/clang/vc++
 optimizes and compiles the code down to machine code. The following graph shows how the process works:

@@ -9,11 +9,11 @@ pronunciation should be zephyr, the creators of Zephir actually pronounce it zae
 
 Hello World!
 ------------
-Every language has its own "Hello World!" sample, in Zephir this introductory example showcases some important
+Каждый язык имеет свой собственный "Hello World!" sample, in Zephir this introductory example showcases some important
 features of this language.
 
-Code in Zephir must be placed in classes. This language is intended to create object-oriented libraries/frameworks,
-so code out of a class is not allowed. Also, a namespace is required:
+Код в Zephir должны быть помещены в классы. Этот язык предназначен для создания объектно-ориентированных библиотек/фреймворков,
+поэтому использование кода без класса не допускается. Кроме того, пространство имен необходимо:
 
 .. code-block:: zephir
 
