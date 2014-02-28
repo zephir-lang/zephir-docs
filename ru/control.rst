@@ -1,4 +1,4 @@
-Control Structures
+Управляющие структуры
 ==================
 Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
 
