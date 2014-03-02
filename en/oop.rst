@@ -304,7 +304,7 @@ By specifying what parameters are strict and what must be flexible, a developer 
 Read-Only Parameters
 ^^^^^^^^^^^^^^^^^^^^
 Using the keyword 'const' you can mark parameters as read-only, this helps to respect `const-correctness <http://en.wikipedia.org/wiki/Const-correctness>`_.
-Parameters marked with this attribute can be modified inside the method:
+Parameters marked with this attribute cannot be modified inside the method:
 
 .. code-block:: zephir
 
