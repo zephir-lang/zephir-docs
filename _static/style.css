@@ -136,9 +136,9 @@ a.tab-link {color: #000;}
 .header-logo {display:block; float:left; padding:0 0 0 85px; margin: -4px 0 0; color: #000; font-size: 20px; line-height: 22px; text-transform: uppercase; text-decoration: none; position: relative;}
 a.header-logo {color: #000;}
 
-.logo-text {display: block; width:98px; height: 28px; overflow: hidden; text-indent: -9999px; background: url('../_static/logo-text.png'); }
+.logo-text {display: block; width:98px; height: 28px; overflow: hidden; text-indent: -9999px; background: url('logo-text.png'); }
 
-.header-logo:before {content: ''; display: block; width: 82px; height: 82px; background: url('../_static/logo.png') 0 0; position: absolute; top:-37px; left:0; }
+.header-logo:before {content: ''; display: block; width: 82px; height: 82px; background: url('logo.png') 0 0; position: absolute; top:-37px; left:0; }
 
 .header-right {width: 160px; float: right; margin-top: -7px;}
 
@@ -149,11 +149,11 @@ a.header-logo {color: #000;}
 .header-nav-link {color:#000; font-size: 16px; line-height: 18px;}
 a.header-nav-link {color:#000;}
 
-.header-line {min-width:980px; height: 87px; background: #5da49e url('../_static/header-line.jpg') 50% 0 no-repeat; margin: 0 0 20px; overflow: hidden;}
+.header-line {min-width:980px; height: 87px; background: #5da49e url('/header-line.jpg') 50% 0 no-repeat; margin: 0 0 20px; overflow: hidden;}
 
 .header-line-title {font-size:48px; line-height: 50px; padding: 20px 0; margin: 0; }
 
-.main-teaser {margin: 15px 0 45px; background: #5da49e url('../_static/bg.jpg') 50% 0 no-repeat; height: 694px; text-align: center; position: relative;}
+.main-teaser {margin: 15px 0 45px; background: #5da49e url('/bg.jpg') 50% 0 no-repeat; height: 694px; text-align: center; position: relative;}
 .main-teaser:after {
     content: ''; display: block; position: absolute; top:100%; left:50%; margin-left:-13px;
     border-width: 34px 26px; border-style: solid solid none; border-color: #5da49e transparent; border-color: #5da49e rgba(255,255,255,0);
@@ -188,7 +188,7 @@ a.header-nav-link {color:#000;}
 .green-block {background:#0ec281; color: #fff; padding: 30px 0;}
 
 
-.icon-large {display: inline-block; width: 130px; height: 130px; background: url('../_static/icons-large.png');}
+.icon-large {display: inline-block; width: 130px; height: 130px; background: url('e.png');}
 
 .icon-forum {background-position: 0 0;}
 .icon-so {background-position: -130px 0;}
@@ -238,7 +238,7 @@ a.services-block-link {color: #fff;}
     width: 100%; -moz-box-sizing: border-box;  -webkit-box-sizing: border-box;  box-sizing: border-box;
 }
 .search-button {
-    width: 20px; height: 20px; cursor: pointer; border: none; background: transparent url('../_static/search-button.png') 0 0; padding: 0; margin: 0;
+    width: 20px; height: 20px; cursor: pointer; border: none; background: transparent url('ton.png') 0 0; padding: 0; margin: 0;
     position: absolute; top:9px; right: 7px; text-indent: -9999px; overflow: hidden; text-align: left;
 }
 
