@@ -1,11 +1,11 @@
 Классы и объекты
-===================
+================
 Zephir promotes object-oriented programming, this is why you can only export methods
 and classes in extensions, also you will see that most of the time, runtime errors raise
 exceptions instead of fatal errors or warnings.
 
 Классы
--------
+------
 Каждый файл в Zephir должны содержать класс или интерфейс (причем только один). Структура класса
 крайне схожа с структурой обьявления его в PHP:
 
@@ -22,7 +22,7 @@ exceptions instead of fatal errors or warnings.
     }
 
 Реализация методов
---------------------
+------------------
 The "function" keyword introduces a method. Methods implements the usual visibility modifiers available
 in PHP, explicity set a visibility modifier is mandatory in Zephir:
 
@@ -101,7 +101,7 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
     }
 
 Поддерживаемые видимости метода (Инкапсуляция)
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Public: Methods marked as "public" are exported to the PHP extension, this means that public methods are visible to the PHP code as well to the extension itself.
 
@@ -167,7 +167,7 @@ You can write the same code using shortcuts as follows:
 
         protected someProperty = 10 {
             set, get
-        }
+        };
 
     }
 
@@ -304,7 +304,7 @@ By specifying what parameters are strict and what must be flexible, a developer 
 Read-Only Parameters
 ^^^^^^^^^^^^^^^^^^^^
 Using the keyword 'const' you can mark parameters as read-only, this helps to respect `const-correctness <http://en.wikipedia.org/wiki/Const-correctness>`_.
-Parameters marked with this attribute can be modified inside the method:
+Parameters marked with this attribute cannot be modified inside the method:
 
 .. code-block:: zephir
 
