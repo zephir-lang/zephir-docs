@@ -167,7 +167,7 @@ You can write the same code using shortcuts as follows:
 
         protected someProperty = 10 {
             set, get
-        }
+        };
 
     }
 
