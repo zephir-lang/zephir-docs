@@ -1,10 +1,10 @@
 Типы
-=====
+====
 Zephir is both dynamic and static typed. In this chapter we highlight the supported types and
 its behavior:
 
 Динамический тип
-------------
+----------------
 Динамические переменные точно так, как в PHP, они могут быть назначены и переназначены в
 различные типы без ограничений.
 

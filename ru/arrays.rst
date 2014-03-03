@@ -1,10 +1,10 @@
 Массивы
-======
+=======
 Array manipulation in Zephir provides a way to use PHP arrays_.
 An array is an implementation of a `hash table`_.
 
 Объявление переменных массива
--------------------------
+-----------------------------
 Array variables can be declared using the keywords 'var' or 'array':
 
 .. code-block:: zephir
@@ -13,7 +13,7 @@ Array variables can be declared using the keywords 'var' or 'array':
 	array b = []; // array variable, its type cannot be changed across execution
 
 Создание массивов
----------------
+-----------------
 An array is created enclosing their elements in square brackets:
 
 .. code-block:: zephir
