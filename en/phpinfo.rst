@@ -29,5 +29,5 @@ You can add more directives by adding the following configuration to the config.
 
 These information will be shown as follows:
 
-.. figure:: _static/img/info.png
+.. figure:: ../_static/img/info.png
     :align: center
