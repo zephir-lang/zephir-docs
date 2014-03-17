@@ -1,3 +1,5 @@
 .DS_Store
 .idea/
 nbproject/
+en/_build/
+ru/_build/
