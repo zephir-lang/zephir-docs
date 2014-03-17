@@ -21,6 +21,38 @@ is very similar to a PHP class:
 
     }
 
+Class Modifiers
+^^^^^^^^^^^^^^^
+The following class modifiers are supported:
+
+*Final*: If a class has this modifier it cannot be extended
+
+.. code-block:: zephir
+
+    namespace Test;
+
+    /**
+     * This class cannot be extended by another class
+     */
+    final class MyClass
+    {
+
+    }
+
+*Abstract*: If a class has this modifier it cannot be instantiated
+
+.. code-block:: zephir
+
+    namespace Test;
+
+    /**
+     * This class cannot be instantiated
+     */
+    abstract class MyClass
+    {
+
+    }
+
 Implementing Methods
 --------------------
 The "function" keyword introduces a method. Methods implements the usual visibility modifiers available
