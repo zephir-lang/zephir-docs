@@ -1,11 +1,11 @@
 Массивы
 =======
-Array manipulation in Zephir provides a way to use PHP arrays_.
-An array is an implementation of a `hash table`_.
+Работа с массивом в Zephir работает так же как и в PHP arrays_.
+Массивы реализованы через `hash table`_.
 
 Объявление переменных массива
 -----------------------------
-Array variables can be declared using the keywords 'var' or 'array':
+Переменная тип массив может быть обьявлена с помощью ключевых слов 'var' or 'array':
 
 .. code-block:: zephir
 
@@ -43,9 +43,9 @@ As PHP, hashes or dictionaries are supported:
 	//Creating a hash with mixed string and numeric keys
 	let elements = [4: "bar", "foo": 8];
 
-Updating arrays
----------------
-Arrays are updated in the same way as PHP using square brackets:
+Обновление массивов
+-------------------
+Массивы обновляются так же, как в PHP, используя квадратные скобки:
 
 .. code-block:: zephir
 
@@ -59,18 +59,18 @@ Arrays are updated in the same way as PHP using square brackets:
 	let elements[0]["foo"] = "bar";
 	let elements["foo"][0] = "bar";
 
-Appending elements
-------------------
-Elements can be appended at the end of the array as follows:
+Добавление элементов
+--------------------
+Элементы могут быть добавлены в конце массива следующим образом:
 
 .. code-block:: zephir
 
 	//Append an element to the array
 	let elements[] = "bar";
 
-Reading elements from arrays
+Чтение элементов из массивов
 ----------------------------
-Is possible to read array elements as follows:
+Можно прочитать элементы массива следующим образом:
 
 .. code-block:: zephir
 
