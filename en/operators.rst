@@ -184,6 +184,25 @@ In Zephir, you can write the same code as:
 
 'Fetch' only returns true if the 'key' is a valid item in the array, only in that case, 'value' is populated.
 
+Typeof
+^^^^^^
+This operator check variable type.
+'Typeof' could works like comparison operator:
+
+.. code-block:: zephir
+
+    if (typeof str == "string") { // or !=
+        echo str;
+    }
+
+Also typeof can works like PHP function 'gettype'.
+
+.. code-block:: zephir
+
+    return typeof str;
+    
+**Be careful**, if you want to check is object 'callable' you allways have to use 'typeof' as comparison operator.
+
 Type Hints
 ^^^^^^^^^^
 Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
