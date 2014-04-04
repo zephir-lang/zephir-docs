@@ -1,8 +1,7 @@
 Классы и объекты
 ================
-Zephir promotes object-oriented programming, this is why you can only export methods
-and classes in extensions, also you will see that most of the time, runtime errors raise
-exceptions instead of fatal errors or warnings.
+Zephir позволяет создавать только классы, однако также становится возможным использовать
+исключения, вмето фатальных ошибок, или предупреждений.
 
 Классы
 ------
@@ -23,8 +22,8 @@ exceptions instead of fatal errors or warnings.
 
 Реализация методов
 ------------------
-The "function" keyword introduces a method. Methods implements the usual visibility modifiers available
-in PHP, explicity set a visibility modifier is mandatory in Zephir:
+Ключевое слово "function" декларирует новый метод. Методы имеют те же модификаторы для разрешения
+видимости, что и PHP, однако Zephir требует явно его указывать.
 
 .. code-block:: zephir
 
@@ -67,7 +66,7 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
         }
 
         /**
-         * Just 'a' is required, 'b' is optional and it has a default value
+         * Обязателен только 'a', 'b' не обязателен и имеет значение по умолчанию
          */
         public function doSum2(a, b=3)
         {
@@ -75,7 +74,7 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
         }
 
         /**
-         * Both parameters are optional
+         * Оба параметра не обязательны
          */
         public function doSum3(a=1, b=2)
         {
@@ -83,7 +82,7 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
         }
 
         /**
-         * Parameters are required and their values must be integer
+         * Параметры обязательны, и они должны быть целочисленными
          */
         public function doSum4(int a, int b)
         {
@@ -91,7 +90,7 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
         }
 
         /**
-         * Static typed with default values
+         * Параметры обязательны, целочисленны и имеют значения по умолчанию
          */
         public function doSum4(int a=4, int b=2)
         {
@@ -103,18 +102,22 @@ in PHP, explicity set a visibility modifier is mandatory in Zephir:
 Поддерживаемые видимости метода (Инкапсуляция)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Public: Methods marked as "public" are exported to the PHP extension, this means that public methods are visible to the PHP code as well to the extension itself.
+* Открытый (public): Методы с модификатором "public" экспортируются в расширение,
+это значит, что этими методами можно пользоваться также, как и самому расширению.
 
-* Protected: Methods marked as "protected" are exported to the PHP extension, this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Защищенный (protected): Методы с модификатором "protected" экспортируются в расширение,
+это значит, что этими методами можно пользоваться также, как и самому расширению.
+Однако, защищенные методы могут быть вызваны либо внутри класса, либо наследником класса.
 
-* Private: Methods marked as "private" are not exported to the PHP extension, this means that private methods are only visible to the class where they're implemented.
+* Закрытый (private): Методы с модификатором "private" не экспортируются в расширение,
+это значит, что эти методы может использовать только класс, в котором метод реализован.
 
-Getter/Setter shortcuts
-^^^^^^^^^^^^^^^^^^^^^^^
-Like in C#, you can use get/set/toString shortcuts in Zephir, this feature allows to easily write setters and getters for properties without explictly
-implementing those methods as such.
+Сокращения для геттеров/сеттеров
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Как в C#, вы можете использовать сокращения для get/set/toString методов.
+Это значит, что вы можете создавать геттеры и сеттеры для свойств не явно.
 
-For example, without shortcuts we could find code like:
+Рассмотрим как выглядит код без сокращений:
 
 .. code-block:: zephir
 
@@ -153,7 +156,7 @@ For example, without shortcuts we could find code like:
 
      }
 
-You can write the same code using shortcuts as follows:
+Вы можете написать тот же код, используя сокращения:
 
 .. code-block:: zephir
 
@@ -171,12 +174,12 @@ You can write the same code using shortcuts as follows:
 
     }
 
-When the code is compiled those methods are exported as real methods but you don’t have to write them one by one.
+Zephir сгенерирует реальные методы, но вам не прийдется писать их самостоятельно.
 
-Return Type Hints
-^^^^^^^^^^^^^^^^^
-Methods in classes and interfaces can have return type hints, these will provide useful extra information to the compiler
-to inform you about errors in your application. Consider the following example:
+Тип возвращаемого значения
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Методы классов и интерфейсов могут объявлять тип возвращаемого значения.
+Это поможет компилятору подсказать вам о ошибках в расширении. Рассмотрим пример:
 
 .. code-block:: zephir
 
@@ -186,17 +189,17 @@ to inform you about errors in your application. Consider the following example:
     {
         public function getSomeData() -> string
         {
-            // this will throw a compiler exception
-            // since the returned value (boolean) does not match
-            // the expected returned type string
+            // здесь будет сгенерирована ошибка
+            // потому что возвращаемое значение (boolean)
+            // не соответсвует ранее объявленному типу
             return false;
         }
 
         public function getSomeOther() -> <App\MyInterface>
         {
-            // this will throw a compiler exception
-            // if the returned object does not implement
-            // the expected interface App\MyInterface
+            // здесь будет сгенерирована ошибка
+            // если возвращаемый объект не реализует
+            // ожидаемый компилитором интерфейс
             return new App\MyObject;
         }
 
@@ -216,7 +219,8 @@ to inform you about errors in your application. Consider the following example:
 
     }
 
-A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
+Метод может содержать более одного возвращаемого типа. Для объявления нескольких типов
+возвращаемых значений, разделите их оператором '|'.
 
 .. code-block:: zephir
 
@@ -234,9 +238,9 @@ A method can have more than one return type. When multiple types are defined, th
 
     }
 
-Return Type: Void
-^^^^^^^^^^^^^^^^^
-Methods can also be marked as ‘void’. This means that a method is not allowed to return any data:
+Возвращаемый тип: void
+^^^^^^^^^^^^^^^^^^^^^^
+Методы также могут быть помечены как 'void'. Это значит, что метод не можете вернуть ничего.
 
 .. code-block:: zephir
 
@@ -245,18 +249,18 @@ Methods can also be marked as ‘void’. This means that a method is not allowe
         let this->_connection = connection;
     }
 
-Why is this useful? Because the compiler can detect if the program is expecting a returning value from these methods and produce a compiler exception:
-
+Почему это полезно? Потому что если компилятор обнаружит, что программа
+использует возвращаемое значение, то сгенерирует исключение.
 .. code-block:: zephir
 
     let myDb = db->setConnection(connection);
-    myDb->execute("SELECT * FROM robots"); // this will produce an exception
+    myDb->execute("SELECT * FROM robots"); // тут сгенерируется исключение
 
-Strict/Flexible Parameter Data-Types
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible,
-this means that if a value with wrong (but compatible) data-type is passed, Zephir will try to transparently
-convert it to the expected one:
+Строгие/Приводимые Типы Параметров
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+В Zephir вы можете определить тип для каждого параметра в методе. По умолчанию все типизированные
+аргументы приводимы. Это зачит, что если значение не соответсвует ожидаемому типу,
+Zephir сгенерирует код для его приведения к ожидаемому.
 
 .. code-block:: zephir
 
@@ -265,7 +269,7 @@ convert it to the expected one:
         //...
     }
 
-Above method will work with the following calls:
+Этот метод будет работать так:
 
 .. code-block:: php
 
@@ -275,10 +279,10 @@ Above method will work with the following calls:
     $o->filterText("some text", null); // OK
     $o->filterText(null, true); // OK
     $o->filterText("some text", true); // OK
-    $o->filterText(array(1, 2, 3), true); // FAIL
+    $o->filterText(array(1, 2, 3), true); // Ошибка
 
-However, passing a wrong type could be often lead to bugs, a bad use of a specific API would produce unexpected results.
-You can disallow the automatic conversion by setting the parameter with a strict data-type:
+Однако, передача не правильного типа часто может вести к багам. Вы можете
+запретить автоматическое приведение, используя строгие типы:
 
 .. code-block:: zephir
 
@@ -287,24 +291,24 @@ You can disallow the automatic conversion by setting the parameter with a strict
         //...
     }
 
-Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
+Теперь большинство вызовов сгенерируют исключения благодяря неправильному переданному типу:
 
 .. code-block:: php
 
     <?php
 
-    $o->filterText(1111, 1); // FAIL
+    $o->filterText(1111, 1); // Ошибка
     $o->filterText("some text", null); // OK
-    $o->filterText(null, true); // FAIL
+    $o->filterText(null, true); // Ошибка
     $o->filterText("some text", true); // OK
-    $o->filterText(array(1, 2, 3), true); // FAIL
+    $o->filterText(array(1, 2, 3), true); // Ошибка
 
-By specifying what parameters are strict and what must be flexible, a developer can set the specific behavior he/she really wants.
+Определяя какие параметры строгие, а какие приводимые, вы можете контролировать поведение так, этого хочет.
 
-Read-Only Parameters
+Read-Only Параметры
 ^^^^^^^^^^^^^^^^^^^^
-Using the keyword 'const' you can mark parameters as read-only, this helps to respect `const-correctness <http://en.wikipedia.org/wiki/Const-correctness>`_.
-Parameters marked with this attribute cannot be modified inside the method:
+Используя ключевое слово 'const' вы можете объявить, что параметр только для чтения.
+Такие параметры не могут быть изменены внутри метода:
 
 .. code-block:: zephir
 
@@ -312,15 +316,15 @@ Parameters marked with this attribute cannot be modified inside the method:
 
     class MyClass
     {
-        // "a" is read-only
+        // "a" только для чтения
         public function getSomeData(const string a)
         {
-            // this will throw a compiler exception
+            // компилятор сгенерирует ошибку
             let a = "hello";
         }
     }
 
-When a parameter is declared as read-only the compiler can make safe assumptions and perform further optimizations over these variables.
+Когда параметр объявлен только для чтения, компилятор может безопасно создавать оптимизации над этими переменными.
 
 Implementing Properties
 -----------------------
