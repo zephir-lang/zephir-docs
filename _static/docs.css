@@ -19,6 +19,10 @@ li {
     line-height: 24px;
 }
 
+h1 {
+    font-weight: normal;
+}
+
 #nav-main {
     background-color: #2C2C2C;
     background-image: -moz-linear-gradient(center top , #333333, #222222);
@@ -104,14 +108,6 @@ td.second-box {
     text-align: left;
 }
 
-div.documentwrapper h1 {
-    font-size: 36px;
-    line-height: 38px;
-    font-weight: normal;
-    margin: 15px 0 10px;
-    padding: 0;
-}
-
 div.section {
     margin-top: 10px;
 }
@@ -125,8 +121,9 @@ a.headerlink {
 div.related {
     padding-top: 5px;
     padding-bottom: 15px;
-    height: 25px;
+    height: 45px;
     color: #f2f2f2;
+    box-shadow: 0 1px 2px rgba(199,206,209,0.6);
 }
 
 div.related li {
@@ -137,8 +134,8 @@ div.related li {
 }
 
 div.related a {
-    color: #000;
-    font-size: 17px;
+    color: #dadada;
+    font-size: 14px;
     text-decoration: none;
 }
 
@@ -392,11 +389,15 @@ div#footer a {
     text-decoration: underline;
 }
 
-div.highlight, blockquote {
+.highlight, blockquote {
     display: block;
     font-size: 17px;
     line-height: 18px;
     word-wrap: break-word;
+    padding: 10px;
+    border-left: 3px solid #0ec281;
+    background: #f2f2f2;
+    color: #000;
 }
 
 div.highlight {
@@ -613,8 +614,8 @@ blockquote {
 .highlight .p { color: #f6f3e8} /* Punctuation */
 .highlight .cm { color: #3a5c78; font-style: normal; } /* Comment.Multiline */
 .highlight .cp { color: #e5786d; } /* Comment.Preproc */
-.highlight .c1 { color: #99968b; } /* Comment.Single */
-.highlight .cs { color: #99968b; } /* Comment.Special */
+.highlight .c1 { color: #3a5c78; } /* Comment.Single */
+.highlight .cs { color: #3a5c78; } /* Comment.Special */
 .highlight .gd { color: #f6f3e8; } /* Generic.Deleted */
 .highlight .ge { color: #f6f3e8; } /* Generic.Emph */
 .highlight .gr { color: #f6f3e8; } /* Generic.Error */
@@ -644,7 +645,7 @@ blockquote {
 .highlight .nf { color: #cae682} /* Name.Function */
 .highlight .nl { color: #f6f3e8} /* Name.Label */
 .highlight .nn { color: #f6f3e8} /* Name.Namespace */
-.highlight .nx { color: #f6f3e8} /* Name.Other */
+.highlight .nx { color: rgb(184, 208, 224) } /* Name.Other */
 .highlight .py { color: #f6f3e8} /* Name.Property */
 .highlight .nt { color: #8ac6f2} /* Name.Tag */
 .highlight .nv { color: #cae682} /* Name.Variable */

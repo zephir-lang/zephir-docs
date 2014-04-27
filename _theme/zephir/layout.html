@@ -48,8 +48,7 @@
 {%- macro sidebar() %}
       {%- if not embedded %}{% if not theme_nosidebar|tobool %}
       <td class="primary-box" width="20%" valign="top">
-          {%- block sidebarlogo %}
-          {%- endblock %}
+          {%- block sidebarlogo %}{%- endblock %}
           {%- block sidebarsearch %}
           {%- if pagename != "search" %}
             <!--<div id="searchbox" style="">
@@ -120,8 +119,7 @@
     {%- endif %}
     <title>{{ title|striptags }}{{ titlesuffix }}</title>
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="{{ pathto('_static/style.css', 1) }}" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/docs.css', 1) }}" type="text/css" />
 
     {%- if not embedded %}
