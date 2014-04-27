@@ -24,6 +24,8 @@ Reference
    config
    globals
    phpinfo
+   optimizations
+   warnings
    license
 
 Other Formats

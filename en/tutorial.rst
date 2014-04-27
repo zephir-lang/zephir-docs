@@ -26,7 +26,7 @@ If everything is well, you should see the following help in your screen:
     /____/\___/ .___/_/ /_/_/_/
              /_/
 
-    Zephir version 0.3.0a
+    Zephir version 0.4.5a
 
     Usage:
         command [options]
@@ -242,7 +242,7 @@ The complete method can be tested as before:
     <?php
 
     $f = new Utils\Filter();
-    echo $f->alpha("$he$02l3'121lo."); // prints "hello"
+    echo $f->alpha("!he#02l3'121lo."); // prints "hello"
 
 In the following screencast you can watch how to create the extension explained in this tutorial:
 

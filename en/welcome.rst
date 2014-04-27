@@ -58,4 +58,4 @@ The class can be used from PHP as follows:
   <?php
 
   $filter = new MyLibrary\Filter();
-  echo $filter->alpha("01he$l.lo?/1"); // prints hello
+  echo $filter->alpha("01he#l.lo?/1"); // prints hello
