@@ -58,7 +58,7 @@
                   <input type="submit" value="Go">
                   <input type="hidden" name="selected_facets" value="project:{{ name }}">
                 </form>
-            </div>-->
+            </div>
             <script>
             (function() {
               var cx = '009733439235723428699:zsbvcqcfzwa';
@@ -71,7 +71,7 @@
               s.parentNode.insertBefore(gcse, s);
             })();
           </script>
-          <gcse:search></gcse:search>
+          <gcse:search></gcse:search>-->
 
           {%- endif %}
           {%- endblock %}
@@ -120,7 +120,7 @@
     {%- endif %}
     <title>{{ title|striptags }}{{ titlesuffix }}</title>
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300italic,400italic,500italic&amp;subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="{{ pathto('_static/style.css', 1) }}" type="text/css" />
     <link rel="stylesheet" href="{{ pathto('_static/docs.css', 1) }}" type="text/css" />
 
@@ -169,15 +169,15 @@
 {%- block extrahead %} {% endblock %}
   </head>
   <body>
-    <div id="wrapper">
+    <div>
 
       {%- block header %}{% endblock %}
 
-      {%- block relbar1 %}{{ relbar() }}{% endblock %}
+      {%- block relbar1 %}{{ relbar() }}{%- endblock -%}
 
       {%- block sidebar1 %} {# possible location for sidebar #} {% endblock %}
 
-      <table width="90%" align="center">
+      <table width="100%">
         <tr>
           {%- block sidebar2 %}{{ sidebar() }}{% endblock %}
           <td class="second-box" valign="top">
