@@ -62,7 +62,6 @@ td.primary-box li {
     line-height: 16px;
     margin-bottom: 0;
     font-size: 14px;
-    max-width: 180px;
 }
 
 td.second-box li {
@@ -85,6 +84,7 @@ td.primary-box {
     padding-top: 15px;
     text-align: left;
     background: #f0f2f4;
+    width: 220px;
 }
 
 td.primary-box ul {
@@ -135,7 +135,7 @@ div.related li {
 }
 
 div.related a {
-    color: #dadada;
+    color: rgb(126, 136, 139);
     font-size: 14px;
     text-decoration: none;
 }
@@ -209,10 +209,6 @@ div.figure {
 }
 
 .highlight .nb {
-    color: #EFDCBC;
-}
-
-.highlight .na {
     color: #EFDCBC;
 }
 
@@ -620,14 +616,14 @@ blockquote {
 .highlight .ld { color: #f6f3e8} /* Literal.Date */
 .highlight .m { color: #e5786d} /* Literal.Number */
 .highlight .s { color: #95e454;} /* Literal.String */
-.highlight .na { color: #cae682} /* Name.Attribute */
-.highlight .nb { color: #E0D75A} /* Name.Builtin */
+.highlight .na { color: rgb(255, 221, 51)} /* Name.Attribute */
+.highlight .nb { color: rgb(255, 221, 51)} /* Name.Builtin */
 .highlight .nc { color: #f6f3e8} /* Name.Class */
 .highlight .no { color: #e5786d} /* Name.Constant */
 .highlight .nd { color: #f6f3e8} /* Name.Decorator */
 .highlight .ni { color: #e7f6da} /* Name.Entity */
 .highlight .ne { color: #f6f3e8} /* Name.Exception */
-.highlight .nf { color: #cae682} /* Name.Function */
+.highlight .nf { color: rgb(255, 221, 51)} /* Name.Function */
 .highlight .nl { color: #f6f3e8} /* Name.Label */
 .highlight .nn { color: #f6f3e8} /* Name.Namespace */
 .highlight .nx { color: rgb(184, 208, 224) } /* Name.Other */
@@ -642,7 +638,7 @@ blockquote {
 .highlight .mo { color: #e5786d } /* Literal.Number.Oct */
 .highlight .sb { color: #95e454; } /* Literal.String.Backtick */
 .highlight .sc { color: #95e454; } /* Literal.String.Char */
-.highlight .sd { color: #99968b; } /* Literal.String.Doc */
+.highlight .sd { color: #3a5c78; font-style: normal; } /* Literal.String.Doc */
 .highlight .s2 { color: #f66; } /* Literal.String.Double */
 .highlight .se { color: #95e454; } /* Literal.String.Escape */
 .highlight .sh { color: #95e454; } /* Literal.String.Heredoc */

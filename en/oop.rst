@@ -430,7 +430,7 @@ Zephir checks that properties do exist when a program is accesing them, if a pro
 
 .. code-block:: php
 
-    CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/cphalcon/phalcon/cache/backend.zep on line 62
+    CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/utils/app/myclass.zep on line 62
 
           this->_optionsx = options;
           ------------^
