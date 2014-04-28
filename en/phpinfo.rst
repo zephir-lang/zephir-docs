@@ -1,6 +1,6 @@
 Phpinfo() sections
 ==================
-As most extensions, Zephir extensions are able to show information at the phpinfo() output.
+Like most extensions, Zephir extensions are able to show information at the phpinfo() output.
 These information is usually related to directives, enviroment data, etc.
 
 By default, every Zephir extension automatically adds a basic table to the phpinfo() output

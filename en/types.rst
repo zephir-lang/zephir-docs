@@ -67,7 +67,7 @@ PHP does not support unsigned integers so Zephir has this restriction too:
 
 Integer overflow
 ^^^^^^^^^^^^^^^^
-Contrary to PHP, Zephir does not automatically checks for integer overflows, like in C if you are
+Contrary to PHP, Zephir does not automatically check for integer overflows, like in C if you are
 doing operations that may return a big number you can use types such as 'unsigned long' or 'float'
 to store them:
 

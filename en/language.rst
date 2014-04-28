@@ -152,7 +152,7 @@ way:
 	$a = "b";
 	echo $$a; // prints 100
 
-Zephir does not implement this feature since all variables are compiled down to low level variables
+Zephir does not implement this feature since all variables are compiled down to low-level variables
 and there is no way to know which variables do exist in a specific context. If you want to create
 a variable in the current PHP symbol table, you can use the following syntax:
 
