@@ -615,7 +615,7 @@ blockquote {
 .highlight .kt { color: #cae682} /* Keyword.Type */
 .highlight .ld { color: #f6f3e8} /* Literal.Date */
 .highlight .m { color: #e5786d} /* Literal.Number */
-.highlight .s { color: #95e454;} /* Literal.String */
+.highlight .s { color: #f66;} /* Literal.String */
 .highlight .na { color: rgb(255, 221, 51)} /* Name.Attribute */
 .highlight .nb { color: rgb(255, 221, 51)} /* Name.Builtin */
 .highlight .nc { color: #f6f3e8} /* Name.Class */
