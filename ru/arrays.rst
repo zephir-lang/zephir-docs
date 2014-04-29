@@ -9,38 +9,38 @@
 
 .. code-block:: zephir
 
-	var a = []; // array variable, its type can be changed
-	array b = []; // array variable, its type cannot be changed across execution
+	var a = []; // массив, с возможностю переопределения типа
+	array b = []; // массив, без возможностю переопределения типа
 
 Создание массивов
 -----------------
-An array is created enclosing their elements in square brackets:
+Массив создается заключая его элементы в квадратные скобки:
 
 .. code-block:: zephir
 
-	//Creating an empty array
+	//Создание пустого массива
 	let elements = [];
 
-	//Creating an array with elements
+	//Создание массива с элементами
 	let elements = [1, 3, 4];
 
-	//Creating an array with elements of different types
+	//Создание массива с элементами разных типов
 	let elements = ["first", 2, true];
 
-	//A multidimensional array
+	//Создане многомерного массива
 	let elements = [[0, 1], [4, 5], [2, 3]];
 
-As PHP, hashes or dictionaries are supported:
+Как и в PHP, поддерживаются простые(списки) и ассоциативные массивы:
 
 .. code-block:: zephir
 
-	//Creating a hash with string keys
+	//Создание массива с строковыми ключами
 	let elements = ["foo": "bar", "bar": "foo"];
 
-	//Creating a hash with numeric keys
+	//Создание массива с числоовыми ключами
 	let elements = [4: "bar", 8: "foo"];
 
-	//Creating a hash with mixed string and numeric keys
+	//Создание массива со смешанными ключами, строковые и числовые
 	let elements = [4: "bar", "foo": 8];
 
 Обновление массивов
@@ -49,13 +49,13 @@ As PHP, hashes or dictionaries are supported:
 
 .. code-block:: zephir
 
-	//Updating an array with a string key
+	//Обновление массива с строковым ключем
 	let elements["foo"] = "bar";
 
-	//Updating an array with a numeric key
+	//Обновление массива с числовым ключем
 	let elements[0] = "bar";
 
-	//Updating multi-dimensional array
+	//Обновление многомерного массива
 	let elements[0]["foo"] = "bar";
 	let elements["foo"][0] = "bar";
 
@@ -65,7 +65,7 @@ As PHP, hashes or dictionaries are supported:
 
 .. code-block:: zephir
 
-	//Append an element to the array
+	//Добавление элемента в массив
 	let elements[] = "bar";
 
 Чтение элементов из массивов
@@ -74,10 +74,10 @@ As PHP, hashes or dictionaries are supported:
 
 .. code-block:: zephir
 
-	//Getting an element using the string key "foo"
+	//Получение элемента используя строковый ключ "foo"
 	let foo = elements["foo"];
 
-	//Getting an element using the numeric key 0
+	//Получение элемента используя числовой ключ 0
 	let foo = elements[0];
 
 .. _arrays: http://www.php.net/manual/en/language.types.array.php
