@@ -141,6 +141,11 @@ Supported Visibilities
 
 * Private: Methods marked as "private" are not exported to the PHP extension, this means that private methods are only visible to the class where they're implemented.
 
+Supported Modifiers
+^^^^^^^^^^^^^^^^^^^
+
+* Deprecated: Methods marked as "deprecated" throwing an E_DEPRECATED error when they are called.
+
 Getter/Setter shortcuts
 ^^^^^^^^^^^^^^^^^^^^^^^
 Like in C#, you can use get/set/toString shortcuts in Zephir, this feature allows to easily write setters and getters for properties without explictly
