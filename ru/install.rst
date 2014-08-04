@@ -22,7 +22,7 @@
 	$ sudo apt-get update
 	$ sudo apt-get install git gcc make re2c php5 php5-dev libpcre3-dev
 
-Поскольку Zephir написан для PHP необходимо установить последнюю версию PHP и она должна быть доступна в консоли:
+Поскольку Zephir написан на PHP необходимо установить последнюю версию PHP и она должна быть доступна в консоли:
 
 .. code-block:: bash
 
