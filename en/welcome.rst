@@ -36,6 +36,7 @@ alphabetic characters:
          * Filters a string returning its alpha characters
          *
          * @param string str
+         * @return string
          */
         public function alpha(string str)
         {

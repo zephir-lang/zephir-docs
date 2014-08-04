@@ -1,11 +1,11 @@
-Installation
+Установка
 ============
-To install Zephir, please follow these steps:
+Для установки Zephir, выполните следующие действия:
 
-Prerequisites
+Предпосылки
 -------------
 
-To build a PHP extension and use Zephir you need the following requirements:
+Чтобы скомпелировать расширение PHP и использовать Zephir вам нужно следующее:
 
 * gcc >= 4.x/clang >= 3.x
 * re2c 0.13 or later
@@ -15,14 +15,14 @@ To build a PHP extension and use Zephir you need the following requirements:
 * libpcre3
 * php development headers and tools
 
-If you're using Ubuntu, you can install the required packages this way:
+Если вы используете Ubuntu, вы можете установить необходимые пакеты следующим образом:
 
 .. code-block:: bash
 
 	$ sudo apt-get update
 	$ sudo apt-get install git gcc make re2c php5 php5-dev libpcre3-dev
 
-Since Zephir is written in PHP you need to have installed a recent version of PHP and it must be available in your console:
+Поскольку Zephir написан для PHP необходимо установить последнюю версию PHP и она должна быть доступна в консоли:
 
 .. code-block:: bash
 
@@ -41,12 +41,11 @@ Also, make sure you have also the PHP development libraries installed along with
 	Zend Module Api No:      20121212
 	Zend Extension Api No:   220121212
 
-You don't have to necessarely see the exact above output but it's important that these commands are available to start
-developing with Zephir.
+Вы не должны обязательно увидеть такой вывод, но важно, что эти команды доступны для начала разработки с Zephir.
 
-Installing Zephir
+Установка Zephir
 -----------------
-Json-C is required by the Zephir parser to process the code, you can install it this way:
+JSON-C обязателен для Zephir парсера, вы можете установить это следующим образом:
 
 .. code-block:: bash
 
@@ -56,22 +55,22 @@ Json-C is required by the Zephir parser to process the code, you can install it 
 	$ ./configure
 	$ make && sudo make install
 
-The Zephir compiler currently must be cloned from Github:
+Компилятор Zephir в настоящее время должен быть клонирован из Github:
 
 .. code-block:: bash
 
 	$ git clone https://github.com/phalcon/zephir
 
-Run the Zephir installer (this compiles/creates the parser):
+Запустите Zephir инсталлятор (это компилирует / создает парсер):
 
 .. code-block:: bash
 
 	$ cd zephir
 	$ ./install -c
 
-Testing Installation
+Проверка установки
 --------------------
-Check if Zephir is available from any directory by executing:
+Проверьте, доступен ли Zephir из любого каталога, выполнив:
 
 .. code-block:: bash
 
