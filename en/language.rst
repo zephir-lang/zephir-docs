@@ -35,7 +35,7 @@ Class in mylibrary/router/exception.zep:
 
 	namespace MyLibrary\Router;
 
-	class Router extends Exception
+	class Exception extends \Exception
 	{
 
 	}
@@ -78,7 +78,7 @@ reserved words.
 .. code-block:: zephir
 
 	//Declaring variables for the same type	in the same instruction
-	var a, b c;
+	var a, b, c;
 
 	//Declaring each variable in different lines
 	var a;
