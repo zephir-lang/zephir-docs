@@ -1,6 +1,6 @@
 Глобальные параметры рассширения
 --------------------------------
-PHP extensions provide a way to define globals whihin an extension. Reading/Writing globals should be faster than any
+PHP extensions provide a way to define globals within an extension. Reading/Writing globals should be faster than any
 other global mechanisms (like static members). You can use extension globals to set up configuration options that change the behavior
 of your library.
 
