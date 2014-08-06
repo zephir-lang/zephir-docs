@@ -113,7 +113,7 @@ A 'for' can be used to traverse string variables:
     string language = "zephir"; char ch;
 
     for ch in language {
-        echo "[", ch "]";
+        echo "[", ch ,"]";
     }
 
 In reverse order:
@@ -123,7 +123,7 @@ In reverse order:
     string language = "zephir"; char ch;
 
     for ch in reverse language {
-        echo "[", ch "]";
+        echo "[", ch ,"]";
     }
 
 A standard 'for' that traverses a range of integer values can be written as follows:
