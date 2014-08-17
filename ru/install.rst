@@ -56,6 +56,7 @@ Json-C необходим для работы парсера:
 
 .. code-block:: bash
 
+	$ git clone https://github.com/phalcon/json-c
 	$ cd json-c
 	$ sh autogen.sh
 	$ ./configure
