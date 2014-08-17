@@ -50,7 +50,7 @@ Json-C is required by the Zephir parser to process the code, you can install it 
 
 .. code-block:: bash
 
-	$ git clone https://github.com/json-c/json-c.git
+	$ git submodule update --init
 	$ cd json-c
 	$ sh autogen.sh
 	$ ./configure
