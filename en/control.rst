@@ -23,6 +23,20 @@ constructs can be chained together:
         }
     }
 
+'elseif' clauses are also available:
+
+.. code-block:: zephir
+
+    if a > 100 {
+        echo "to big";
+    } elseif a < 0 {
+        echo "to small";
+    } elseif a == 50 {
+        echo "perfect!";
+    } else {
+        echo "ok";
+    }
+
 Parentheses in the evaluated expression are optional:
 
 .. code-block:: zephir
