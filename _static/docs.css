@@ -585,7 +585,7 @@ blockquote {
 .highlight  { background: rgb(18, 27, 33); color: #f6f3e8}
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #99968b; font-style: italic} /* Comment */
-.highlight .err { color: #f6f3e8} /* Error */
+.highlight .err { color: #fff; border: none; } /* Error */
 .highlight .g { color: #f6f3e8} /* Generic */
 .highlight .k { color: #6abafb } /* Keyword */
 .highlight .l { color: #f6f3e8} /* Literal */

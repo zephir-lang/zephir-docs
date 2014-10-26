@@ -19,11 +19,13 @@ Reference
    oop
    builtin-methods
    control
+   exceptions
    functions
    optimizers
    config
    globals
    phpinfo
+   sa
    optimizations
    warnings
    license

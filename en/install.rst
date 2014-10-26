@@ -46,15 +46,6 @@ developing with Zephir.
 
 Installing Zephir
 -----------------
-Json-C is required by the Zephir parser to process the code, you can install it this way:
-
-.. code-block:: bash
-
-	$ git submodule update --init
-	$ cd json-c
-	$ sh autogen.sh
-	$ ./configure
-	$ make && sudo make install
 
 The Zephir compiler currently must be cloned from Github:
 
@@ -67,7 +58,10 @@ Run the Zephir installer (this compiles/creates the parser):
 .. code-block:: bash
 
 	$ cd zephir
+	$ ./install-json
 	$ ./install -c
+
+You can ommit the ./install-json step if you already have json-c installed
 
 Testing Installation
 --------------------

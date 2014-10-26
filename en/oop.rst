@@ -357,7 +357,8 @@ Parameters marked with this attribute cannot be modified inside the method:
         }
     }
 
-When a parameter is declared as read-only the compiler can make safe assumptions and perform further optimizations over these variables.
+When a parameter is declared as read-only the compiler can make safe assumptions and perform
+further optimizations over these variables.
 
 Implementing Properties
 -----------------------
@@ -573,3 +574,47 @@ You can call methods in a dynamic manner as follows:
         }
 
     }
+
+Parameters by Name
+^^^^^^^^^^^^^^^^^^
+Zephir supports call methods parameters by name or keyword arguments.
+Named parameters can be useful if you want to pass parameters in an arbitrary order,
+document the meaning of parameters or specify parameters in a more elegant way.
+
+Consider the following example, a class called “Image” has a method that receive four parameters:
+
+.. code-block:: zephir
+
+    namespace Test;
+
+    class Image
+    {
+        public function chop(width=600, height=400, x=0, y=0)
+        {
+            //...
+        }
+    }
+
+Using the standard way of calling methods:
+
+.. code-block:: zephir
+
+    i->chop(100); // width=100, height=400, x=0, y=0
+    i->chop(100, 50, 10, 20); // width=100, height=50, x=10, y=20
+
+Using named parameters you can:
+
+.. code-block:: zephir
+
+    i->chop(width: 100); // width=100, height=400, x=0, y=0
+    i->chop(height: 200); // width=600, height=200, x=0, y=0
+    i->chop(height: 200, width: 100); // width=100, height=200, x=0, y=0
+    i->chop(x: 20, y: 30); // width=600, height=400, x=20, y=30
+
+When the compiler (at compile time) does not know the correct order of these parameters
+they must be resolved at runtime, in this case there could be a minimum additional extra overhead:
+
+.. code-block:: zephir
+
+    let i = new {someClass}();
+    i->chop(y:30, x: 20);
