@@ -99,9 +99,9 @@ Methods can receive required and optional parameters:
         }
 
         /**
-         * Just 'a' is required, 'b' is optional and it has a default value
+         * Only 'a' is required, 'b' is optional and it has a default value
          */
-        public function doSum2(a, b=3)
+        public function doSum2(a, b = 3)
         {
             return a + b;
         }
@@ -109,7 +109,7 @@ Methods can receive required and optional parameters:
         /**
          * Both parameters are optional
          */
-        public function doSum3(a=1, b=2)
+        public function doSum3(a = 1, b = 2)
         {
             return a + b;
         }
@@ -125,11 +125,38 @@ Methods can receive required and optional parameters:
         /**
          * Static typed with default values
          */
-        public function doSum4(int a=4, int b=2)
+        public function doSum4(int a = 4, int b = 2)
         {
             return a + b;
         }
+    }
 
+Optional nullable parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Zephir ensures that the value of a variable remains of the type the variable was declared of.
+This assurance the compiler does when a variable has a null value makes Zephir convert the null
+value to the most approximate value:
+
+.. code-block:: zephir
+
+    public function foo(int a = null)
+    {
+        echo a; // if "a" is not passed it prints 0
+    }
+
+    public function foo(boolean a = null)
+    {
+        echo a; // if "a" is not passed it prints false
+    }
+
+    public function foo(string a = null)
+    {
+        echo a; // if "a" is not passed it prints an empty string
+    }
+
+    public function foo(array a = null)
+    {
+        var_dump(a); // if "a" is not passed it prints an empty array
     }
 
 Supported Visibilities
@@ -143,6 +170,8 @@ Supported Visibilities
 
 Supported Modifiers
 ^^^^^^^^^^^^^^^^^^^
+
+* Final: If a method has this modifier it cannot be overriden
 
 * Deprecated: Methods marked as "deprecated" throwing an E_DEPRECATED error when they are called.
 
@@ -261,14 +290,13 @@ A method can have more than one return type. When multiple types are defined, th
 
     class MyClass
     {
-        public function getSomeData(a) -> string|bool
+        public function getSomeData(a) -> string | bool
         {
             if a == false {
                 return false;
             }
             return "error";
         }
-
     }
 
 Return Type: Void
@@ -403,7 +431,6 @@ Within class methods non-static properties may be accessed by using -> (Object O
         {
             return this->myProperty;
         }
-
     }
 
 Properties can have literal compatible default values. These values must be able to be evaluated at
@@ -421,7 +448,6 @@ compile time and must not depend on run-time information in order to be evaluate
         protected myProperty3 = 2.0;
         protected myProperty4 = 5;
         protected myProperty5 = "my value";
-
     }
 
 Updating Properties
@@ -487,7 +513,6 @@ Class constants are exported to the PHP extension allowing them to be used from 
 
         const MYCONSTANT1 = false;
         const MYCONSTANT2 = 1.0;
-
     }
 
 Class constants can be accessed using the class name and the static operator (::):
@@ -506,7 +531,6 @@ Class constants can be accessed using the class name and the static operator (::
         {
             return MyClass::MYCONSTANT1;
         }
-
     }
 
 Calling Methods
@@ -529,7 +553,6 @@ Methods can be called using the object operator (->) as in PHP:
         {
             return this->_someHiddenMethod(c, d);
         }
-
     }
 
 Static methods must be called using the static operator (::):
@@ -550,7 +573,6 @@ Static methods must be called using the static operator (::):
         {
             return self::_someHiddenMethod(c, d);
         }
-
     }
 
 You can call methods in a dynamic manner as follows:
@@ -572,7 +594,6 @@ You can call methods in a dynamic manner as follows:
         {
             return this->adapter->{methodName}();
         }
-
     }
 
 Parameters by Name

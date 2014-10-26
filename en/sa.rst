@@ -32,15 +32,13 @@ is equal to 10, then it’s required to use the value of this variable but it co
 Zephir detects this and automatically initializes the variable to an empty string and generates
 a warning alerting the developer:
 
-.. code-block:: bash
+.. code-block:: html
 
 	Warning: Variable 'a' was assigned for the first time in conditional branch,
  	consider initialize it in its declaration in
 	/home/scott/test/test/utils.zep on 21 [conditional-initialization]
 
-.. code-block:: zephir
-
-     for c in a {
+		for c in a {
 
 Finding such errors is sometimes tricky, however static analysis helps the programmer
 to find bugs in advance.
