@@ -33,7 +33,7 @@ Reference
 Other Formats
 -------------
 
-* `PDF <https://github.com/phalcon/zephir-docs/blob/master/en/_build/latex/ZephirDocumentation.pdf?raw=true>`_
+* `PDF <https://github.com/phalcon/zephir-docs/raw/master/en/_build/latex/ZephirDocumentation.pdf>`_
 
 .. index::
   single: index; index

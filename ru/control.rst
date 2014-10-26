@@ -23,6 +23,21 @@ constructs can be chained together:
         }
     }
 
+Вы также можете использовать 'elseif':
+
+.. code-block:: zephir
+
+    if a > 100 {
+        echo "слишком много";
+    } elseif a < 0 {
+        echo "слишком мало";
+    } elseif a == 50 {
+        echo "идеально!";
+    } else {
+        echo "сойдет";
+    }
+
+
 Parentheses in the evaluated expression are optional:
 
 .. code-block:: zephir
