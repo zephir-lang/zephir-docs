@@ -1,4 +1,4 @@
-Zephir Language
+Zephir 语言
 ===============
 
 Reference
@@ -30,7 +30,7 @@ Reference
    warnings
    license
 
-Other Formats
+其他格式
 -------------
 
 * `PDF <https://github.com/phalcon/zephir-docs/raw/master/en/_build/latex/ZephirDocumentation.pdf>`_
