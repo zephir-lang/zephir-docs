@@ -1,4 +1,4 @@
-Exceptions
+异常
 ==========
 Zephir implements exceptions at a very low level providing a similar behavior like PHP
 but in compiled code.

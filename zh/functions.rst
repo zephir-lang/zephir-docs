@@ -1,7 +1,7 @@
-Calling Functions
+调用函数
 -----------------
-PHP has a rich library of functions you can use in your extensions.
-To call a PHP function, you can just refer its name in the Zephir code.
+你可以在你的扩展中使用PHP丰富的函数库。
+你可以参考下面的代码调用一个函数。
 
 .. code-block:: zephir
 

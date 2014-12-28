@@ -47,13 +47,13 @@ developing with Zephir.
 安装 Zephir
 -----------------
 
-The Zephir compiler currently must be cloned from Github:
+Zephir目前必须从Github克隆:
 
 .. code-block:: bash
 
 	$ git clone https://github.com/phalcon/zephir
 
-Run the Zephir installer (this compiles/creates the parser):
+执行Zephir安装 (this compiles/creates the parser):
 
 .. code-block:: bash
 
@@ -61,11 +61,11 @@ Run the Zephir installer (this compiles/creates the parser):
 	$ ./install-json
 	$ ./install -c
 
-You can ommit the ./install-json step if you already have json-c installed
+如果你已经安装了 json-c 你可以跳过 ./install-json 这一步
 
-检查 Installation
+检查安装
 --------------------
-Check if Zephir is available from any directory by executing:
+要检查zephir的安装，你可以在任意目录下执行:
 
 .. code-block:: bash
 

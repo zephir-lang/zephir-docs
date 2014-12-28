@@ -1,4 +1,4 @@
-Types
+类型
 =====
 Zephir is both dynamic and static typed. In this chapter we highlight the supported types and
 its behavior:

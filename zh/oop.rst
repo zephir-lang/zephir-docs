@@ -1,4 +1,4 @@
-Classes and Objects
+类和对象
 ===================
 Zephir promotes object-oriented programming, this is why you can only export methods
 and classes in extensions, also you will see that most of the time, runtime errors raise

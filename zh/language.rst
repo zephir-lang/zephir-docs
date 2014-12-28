@@ -1,4 +1,4 @@
-Basic Syntax
+基本语法
 ============
 In this chapter, we’ll discuss the organization of files and namespaces, variable declarations,
 miscellaneous syntax conventions, and a few other concepts.

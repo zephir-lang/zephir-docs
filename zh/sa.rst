@@ -1,4 +1,4 @@
-Static Analysis
+静态分析
 ===============
 Zephir's compiler provides static analysis of the compiled code.
 The idea behind this feature is to help the developer to find potential problems and
