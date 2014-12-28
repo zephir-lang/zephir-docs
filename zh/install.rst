@@ -2,10 +2,10 @@
 ============
 To install Zephir, please follow these steps:
 
-Prerequisites
+先决条件
 -------------
 
-To build a PHP extension and use Zephir you need the following requirements:
+建立一个PHP扩展和使用Zephir需要以下要求:
 
 * gcc >= 4.x/clang >= 3.x
 * re2c 0.13 or later
@@ -15,14 +15,14 @@ To build a PHP extension and use Zephir you need the following requirements:
 * libpcre3
 * php development headers and tools
 
-如果你使用 Ubuntu， you can install the required packages this way:
+如果你使用 Ubuntu， 你可以通过以下方式安装所需要的包:
 
 .. code-block:: bash
 
 	$ sudo apt-get update
 	$ sudo apt-get install git gcc make re2c php5 php5-json php5-dev libpcre3-dev
 
-Since Zephir is written in PHP you need to have installed a recent version of PHP and it must be available in your console:
+因为Zephir是用PHP编写的，所以你需要安装最新版本的PHP和控制台:
 
 .. code-block:: bash
 
@@ -31,7 +31,7 @@ Since Zephir is written in PHP you need to have installed a recent version of PH
 	Copyright (c) 1997-2013 The PHP Group
 	Zend Engine v2.5.0, Copyright (c) 1998-2013 Zend Technologies
 
-Also, make sure you have also the PHP development libraries installed along with your PHP installation:
+同时,确保你也一起安装了PHP开发库:
 
 .. code-block:: bash
 

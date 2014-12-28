@@ -1,4 +1,4 @@
-Welcome!
+欢迎!
 ========
 Welcome to Zephir, an open source, high-level/domain specific language
 designed to ease the creation and maintainability of extensions for PHP
@@ -6,7 +6,7 @@ with a focus on type and memory safety.
 
 Some features
 -------------
-Zephir's main features are:
+Zephir的主要特性:
 
 +-------------------+-----------------------------------------------------+
 | Type system       | dynamic/static                                      |
