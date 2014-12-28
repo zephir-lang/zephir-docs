@@ -1,4 +1,4 @@
-Configuration File
+配置文件
 ==================
 Every Zephir extension has a configuration file called config.json. This file is read by Zephir everytime you build or generate the extension and
 it allows the developer to modify the extension or compiler behavior.

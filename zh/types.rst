@@ -14,19 +14,19 @@ A dynamic variable must be declared with the keyword 'var', the behavior is near
 
     var a, b, c;
 
-    // Initialize variables
+    // 初始化变量
     let a = "hello", b = false;
 
-    // Change their values
+    // 改变变量的值
     let a = 10, b = "140";
 
-    // Perform operations between them
+    // 他们之间进行操作
     let c = a + b;
 
-They can have eight types:
+他们可以有八种类型:
 
 +---------------+---------------------------------------------------------------------------+
-| Type          | Description                                                               |
+| 类型           | 描述                                                                      |
 +---------------+---------------------------------------------------------------------------+
 | boolean       | A boolean expresses a truth value. It can be either 'true' or 'false'.    |
 +---------------+---------------------------------------------------------------------------+

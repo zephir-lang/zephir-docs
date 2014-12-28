@@ -1,4 +1,4 @@
-Installation
+安装
 ============
 To install Zephir, please follow these steps:
 
@@ -15,7 +15,7 @@ To build a PHP extension and use Zephir you need the following requirements:
 * libpcre3
 * php development headers and tools
 
-If you're using Ubuntu, you can install the required packages this way:
+如果你使用 Ubuntu， you can install the required packages this way:
 
 .. code-block:: bash
 
@@ -44,7 +44,7 @@ Also, make sure you have also the PHP development libraries installed along with
 You don't have to necessarely see the exact above output but it's important that these commands are available to start
 developing with Zephir.
 
-Installing Zephir
+安装 Zephir
 -----------------
 
 The Zephir compiler currently must be cloned from Github:
@@ -63,7 +63,7 @@ Run the Zephir installer (this compiles/creates the parser):
 
 You can ommit the ./install-json step if you already have json-c installed
 
-Testing Installation
+检查 Installation
 --------------------
 Check if Zephir is available from any directory by executing:
 

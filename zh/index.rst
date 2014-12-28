@@ -1,7 +1,7 @@
 Zephir 语言
 ===============
 
-Reference
+参考
 ---------
 
 .. toctree::

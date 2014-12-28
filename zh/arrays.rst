@@ -1,4 +1,4 @@
-Arrays
+数组
 ======
 Array manipulation in Zephir provides a way to use PHP arrays_.
 An array is an implementation of a `hash table`_.
@@ -12,7 +12,7 @@ Array variables can be declared using the keywords 'var' or 'array':
 	var a = []; // array variable, its type can be changed
 	array b = []; // array variable, its type cannot be changed across execution
 
-Creating Arrays
+创建数组
 ---------------
 An array is created enclosing their elements in square brackets:
 
@@ -43,7 +43,7 @@ As PHP, hashes or dictionaries are supported:
 	//Creating a hash with mixed string and numeric keys
 	let elements = [4: "bar", "foo": 8];
 
-Updating arrays
+更新数组
 ---------------
 Arrays are updated in the same way as PHP using square brackets:
 
