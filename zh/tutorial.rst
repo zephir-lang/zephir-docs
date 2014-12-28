@@ -1,4 +1,4 @@
-Tutorial
+教程
 ========
 Zephir and this book are intended for PHP developers which want to create C-extensions with a lower
 complexity.
@@ -7,7 +7,7 @@ We assume that you are experienced in one or more other programming languages. W
 in PHP, C, Javascript, and other languages. If you know any of these languages, we’ll point out
 similar features in Zephir, as well as many features that are new or different.
 
-Checking Installation
+检查安装
 ---------------------
 If you have successfully installed Zephir, you must be able to execute the following command in your console:
 
@@ -42,7 +42,7 @@ If everything is well, you should see the following help in your screen:
         install             Installs the extension (requires root password)
         version             Shows Zephir version
 
-Extension Skeleton
+扩展的骨架
 ------------------
 The first thing we have to do is generate an extension skeleton, this will provide to our extension the basic
 structure we need to start working. In our case, we're going to create an extension called "utils":
@@ -120,7 +120,7 @@ At the above step, it's likely that you would need to supply your root password 
 Finally, the extension must be added to the php.ini in order to be loaded by PHP. This is achieved
 by adding the initialization directive: extension=utils.so to it.
 
-Initial Testing
+初步测试
 ---------------
 Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
 
@@ -153,7 +153,7 @@ just created:
 
 Congratulations!, you have your first extension running on PHP.
 
-A useful class
+一个有用的类
 --------------
 The "hello world" class was fine to check if our enviroment was right, now, let's create some more useful classes.
 
@@ -250,7 +250,7 @@ In the following screencast you can watch how to create the extension explained 
 
    <div align="center"><iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
-Conclusion
+结论
 ----------
 This is a very simple tutorial and as you can see, it’s easy to start building extensions using Zephir.
 We invite you to continue reading the manual so that you can discover additional features offered by Zephir!

@@ -4,7 +4,7 @@ Zephir promotes object-oriented programming, this is why you can only export met
 and classes in extensions, also you will see that most of the time, runtime errors raise
 exceptions instead of fatal errors or warnings.
 
-Classes
+类
 -------
 Every Zephir file must implement a class or an interface (and just once). A class structure
 is very similar to a PHP class:
@@ -21,7 +21,7 @@ is very similar to a PHP class:
 
     }
 
-Class Modifiers
+类修饰符
 ^^^^^^^^^^^^^^^
 The following class modifiers are supported:
 

@@ -1,14 +1,14 @@
 类型
 =====
-Zephir is both dynamic and static typed. In this chapter we highlight the supported types and
+Zephir 是动态和静态类型的. In this chapter we highlight the supported types and
 its behavior:
 
-Dynamic Type
+动态类型
 ------------
-Dynamic variables are exactly like the ones in PHP, they can be assigned and reassigned to
+动态类型的变量和PHP中的完全一样, they can be assigned and reassigned to
 different types without restriction.
 
-A dynamic variable must be declared with the keyword 'var', the behavior is nearly the same as in PHP:
+动态类型变量必须使用关键字 'var' 声明, 该行为与PHP几乎是相同的:
 
 .. code-block:: zephir
 
@@ -26,7 +26,7 @@ A dynamic variable must be declared with the keyword 'var', the behavior is near
 他们可以有八种类型:
 
 +---------------+---------------------------------------------------------------------------+
-| 类型           | 描述                                                                      |
+| 类型          | 描述                                                                      |
 +---------------+---------------------------------------------------------------------------+
 | boolean       | A boolean expresses a truth value. It can be either 'true' or 'false'.    |
 +---------------+---------------------------------------------------------------------------+
@@ -47,7 +47,7 @@ A dynamic variable must be declared with the keyword 'var', the behavior is near
 
 Check more info about these types in the `PHP manual`_
 
-Boolean
+布尔
 ^^^^^^^
 A boolean expresses a truth value. It can be either 'true' or 'false':
 
@@ -55,7 +55,7 @@ A boolean expresses a truth value. It can be either 'true' or 'false':
 
     var a = false, b = true;
 
-Integer
+整型
 ^^^^^^^
 Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two
 billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18.
@@ -91,7 +91,7 @@ Floating point numbers have limited precision. Although it depends on the system
 as PHP, Zephir uses the IEEE 754 double precision format, which will give a maximum
 relative error due to rounding in the order of 1.11e-16.
 
-String
+字符串
 ^^^^^^
 A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports
 a 256-character set, and hence does not offer native Unicode support.
@@ -106,17 +106,17 @@ for chars.
 The following escape sequences are supported in strings:
 
 +---------------+---------------------------------------------------------------------------+
-| Sequence      | Description                                                               |
+| 序列          | 描述                                                                      |
 +---------------+---------------------------------------------------------------------------+
-| \\t           | Horizontal tab                                                            |
+| \\t           | 水平制表符                                                                |
 +---------------+---------------------------------------------------------------------------+
-| \\n           | Line feed                                                                 |
+| \\n           | 换行                                                                      |
 +---------------+---------------------------------------------------------------------------+
-| \\r           | Carriage return                                                           |
+| \\r           | 回车                                                                      |
 +---------------+---------------------------------------------------------------------------+
-| \\ \\         | Backslash                                                                 |
+| \\ \\         | 反斜杠                                                                    |
 +---------------+---------------------------------------------------------------------------+
-| \\"           | double-quote                                                              |
+| \\"           | 双引号                                                                    |
 +---------------+---------------------------------------------------------------------------+
 
 .. code-block:: zephir
@@ -132,7 +132,7 @@ In Zephir, strings don't support variable parsing like in PHP, you can use conca
 
     echo "hello: " . name;
 
-Arrays
+数组
 ^^^^^^
 The array implementation in Zephir is basically the same as in PHP: Ordered maps optimized for
 several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map),
@@ -156,16 +156,16 @@ Only long and string values can be used as keys:
     let myHash = [0: "first", 1: true, 2: null];
     let myHash = ["first": 7.0, "second": "some string", "third": false];
 
-Objects
+对象
 ^^^^^^^
-Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+Zephir 允许实例化, 操作, 调用方法, 读取类常量, etc from PHP objects:
 
 .. code-block:: zephir
 
     let myObject = new stdClass(),
         myObject->someProperty = "my value";
 
-Static Types
+静态类型
 ------------
 Static typing allows the developer to declare and use some variable types available in C.
 Variables can't change their type once they're declared as dynamic types. However, they allow
@@ -195,7 +195,7 @@ the compiler to do a better optimization job. The following types are supported:
 | array            | An structure that can be used as hash, map, dictionary, collection, stack, etc. |
 +------------------+---------------------------------------------------------------------------------+
 
-Boolean
+布尔
 ^^^^^^^
 A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior
 static boolean types remain boolean (true or false) no mater what value is assigned to them:

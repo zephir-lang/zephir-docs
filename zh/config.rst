@@ -1,9 +1,9 @@
 配置文件
 ==================
-Every Zephir extension has a configuration file called config.json. This file is read by Zephir everytime you build or generate the extension and
-it allows the developer to modify the extension or compiler behavior.
+每一个Zephir扩展都有一个配置文件叫做 config.json。 Zephir在每次建立或生成扩展时将读取该文件。
+他允许开发人员修改扩展或编译器的行为。
 
-This file use `JSON <http://en.wikipedia.org/wiki/JSON>`_ as configuration format which is very known and friendly:
+该文件使用 `JSON <http://en.wikipedia.org/wiki/JSON>`_ 配置格式是非常简单和友好的:
 
 .. code-block:: json
 
@@ -19,9 +19,9 @@ Settings defined in this file override any factory default setting provided by Z
 
 The following settings are supported:
 
-namespace
+命名空间
 ^^^^^^^^^
-The namespace of the extension, it must be a simple identifier respecting the regular expression: [a-zA-Z0-9\_]+:
+扩展的命名空间, it must be a simple identifier respecting the regular expression: [a-zA-Z0-9\_]+:
 
 .. code-block:: json
 
@@ -29,9 +29,9 @@ The namespace of the extension, it must be a simple identifier respecting the re
         "namespace": "test"
     }
 
-name
+名称
 ^^^^
-Extension name, only can contain ascii characters:
+扩展的名称，只能包含ASCII字符:
 
 .. code-block:: json
 
@@ -39,9 +39,9 @@ Extension name, only can contain ascii characters:
         "namespace": "test"
     }
 
-description
+描述
 ^^^^^^^^^^^
-Extension description, any text describing your extension:
+扩展的描述, any text describing your extension:
 
 .. code-block:: json
 
@@ -49,7 +49,7 @@ Extension description, any text describing your extension:
         "description": "My amazing extension"
     }
 
-author
+作者
 ^^^^^^
 Company, developer, institution, etc. that have developed the extension:
 
@@ -59,9 +59,9 @@ Company, developer, institution, etc. that have developed the extension:
         "author": "Tony Hawk"
     }
 
-version
+版本
 ^^^^^^^
-Extension version, must follow the regular expression: [0-9]+\.[0-9]+\.[0-9]+:
+扩展的版本, 必须遵循正则表达式: [0-9]+\.[0-9]+\.[0-9]+:
 
 .. code-block:: json
 
@@ -69,9 +69,9 @@ Extension version, must follow the regular expression: [0-9]+\.[0-9]+\.[0-9]+:
         "version": "1.2.0"
     }
 
-warnings
+警告
 ^^^^^^^^
-Compiler warnings enabled or disabled in the current project:
+当前项目启用或禁用编译器警告:
 
 .. code-block:: json
 
@@ -86,7 +86,7 @@ Compiler warnings enabled or disabled in the current project:
         }
     }
 
-optimizations
+优化
 ^^^^^^^^^^^^^
 Compiler optimizations enabled or disabled in the current project:
 
@@ -100,7 +100,7 @@ Compiler optimizations enabled or disabled in the current project:
         }
     }
 
-globals
+全局
 ^^^^^^^
 Extension globals available. Check the :doc:`extension globals <globals>` chapter for more information.
 
@@ -118,9 +118,9 @@ Extension globals available. Check the :doc:`extension globals <globals>` chapte
             }
     }
 
-info
+信息
 ^^^^
-phpinfo() sections. Check the :doc:`phpinfo() <phpinfo>` chapter for more information.
+phpinfo() 部分 检查 :doc:`phpinfo() <phpinfo>` 更多的信息。
 
 .. code-block:: json
 
