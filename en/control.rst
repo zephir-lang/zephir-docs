@@ -191,7 +191,7 @@ include other zephir files in runtime.
 
 Let
 ---
-'Let' statement is used to mutate variables, properties and arrays. Variables are by default inmutable and this instruction makes them mutable:
+'Let' statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable:
 
 .. code-block:: zephir
 
