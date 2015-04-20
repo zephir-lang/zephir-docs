@@ -42,3 +42,22 @@ a warning alerting the developer:
 
 Finding such errors is sometimes tricky, however static analysis helps the programmer
 to find bugs in advance.
+
+Dead Code Elimination
+^^^^^^^^^^^^^^^^^^^^^
+Zephir informs the developer about unreacheable branches in the code and performs
+dead code elimination which means eliminate all those code from the generated binary as
+this cannot be executed:
+
+.. code-block:: zephir
+
+	class Utils
+	{
+ 		public function someMethod(b)
+ 		{
+   			if false {
+				// This is never executed
+				echo "hello";
+			}
+		}
+	}

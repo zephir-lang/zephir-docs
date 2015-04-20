@@ -313,6 +313,4 @@ When a variable is declared string it never changes its type:
         a = 'A', // converted to string "A"
         a = null; // automatically casted to ""
 
-
-
 .. _`PHP manual`: http://www.php.net/manual/en/language.types.php

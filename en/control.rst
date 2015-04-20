@@ -51,7 +51,7 @@ A 'switch' evalutes an expression against a series of predefined literal values 
 .. code-block:: zephir
 
     switch count(items) {
-    
+
         case 1:
         case 3:
             echo "odd items";
@@ -149,6 +149,16 @@ A standard 'for' that traverses a range of integer values can be written as foll
 
     for i in range(1, 10) {
         echo i, "\n";
+    }
+
+To avoid warnings about unused variables you can use in 'for' statements anonymous variables,
+by replacing a variable name with the placeholder "_":
+
+.. code-block:: zephir
+
+    // Use the key but ignore the value
+    for key, _ in data {
+        echo key, "\n";
     }
 
 Break Statement

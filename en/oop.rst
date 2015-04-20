@@ -610,7 +610,7 @@ Consider the following example, a class called “Image” has a method that rec
 
     class Image
     {
-        public function chop(width=600, height=400, x=0, y=0)
+        public function chop(width = 600, height = 400, x = 0, y = 0)
         {
             //...
         }

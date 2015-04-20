@@ -110,7 +110,6 @@ This optimization replaces values at class constants in compile time:
 		{
 			return self::SOME_CONSTANT;
 		}
-
 	}
 
 Is transformed into:
@@ -126,11 +125,9 @@ Is transformed into:
 		{
 			return 100;
 		}
-
 	}
 
 call-gatherer-pass
 ^^^^^^^^^^^^^^^^^^
 This pass counts how many times a function or method is called within the same method.
 This allow the compiler to introduce inline caches to avoid method or function lookups.
-
