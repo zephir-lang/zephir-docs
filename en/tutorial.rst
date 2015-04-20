@@ -198,9 +198,7 @@ To begin, we are just going to traverse the string printing every byte to the st
             for ch in str {
                 echo ch, "\n";
             }
-
         }
-
     }
 
 When invoking this method:

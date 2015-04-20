@@ -111,7 +111,7 @@ Code Protection
 In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located
 in the I/O bound of the application (quite likely) rather than compute/memory bound.
 However, compiling code could also bring some level of intelectual protection to your application.
-With Zephir, producing native binaries, you also get the ability to hide the code to users or customers.
+With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
 
 Conclusion
 ----------
@@ -119,4 +119,3 @@ Zephir was not created to replace PHP or C, instead of this, we think it is a co
 allowing developers to venture into code compilation and static typing.
 Zephir is precisely an attempt to join good things from the C and PHP worlds,
 looking for opportunities to make their applications faster.
-

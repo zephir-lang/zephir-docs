@@ -72,7 +72,8 @@ the first static type inference pass.
 
 local-context-pass
 ^^^^^^^^^^^^^^^^^^
-This compilation pass moves variables that will be allocated in the heap to the stack.
+This compilation pass moves variables that will be allocated in the heap to the stack. This
+optimization can reduce the number of memory indirections a program has to do.
 
 constant-folding
 ^^^^^^^^^^^^^^^^
@@ -131,3 +132,17 @@ call-gatherer-pass
 ^^^^^^^^^^^^^^^^^^
 This pass counts how many times a function or method is called within the same method.
 This allow the compiler to introduce inline caches to avoid method or function lookups.
+
+Is transformed into:
+
+.. code-block:: zephir
+
+	class MyClass extends OtherClass
+	{
+
+		public function getValue()
+		{
+			this->someMethod();
+            this->someMethod(); // This method is called faster
+		}
+	}
