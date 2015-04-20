@@ -125,6 +125,13 @@ div.related {
     height: 45px;
     color: rgb(126, 136, 139);
     box-shadow: 0 1px 2px rgba(199,206,209,0.6);
+    background-color: #6f5499;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#563d7c),to(#6f5499));
+    background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
+    background-image: -o-linear-gradient(top,#563d7c 0,#6f5499 100%);
+    background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+    background-repeat: repeat-x;
 }
 
 div.related li {
@@ -135,7 +142,7 @@ div.related li {
 }
 
 div.related a {
-    color: rgb(126, 136, 139);
+    color: #fff;
     font-size: 14px;
     text-decoration: none;
 }
