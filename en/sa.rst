@@ -6,7 +6,7 @@ avoid unexpected behaviors.
 
 Conditional Unassigned Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Static Analysis of assignments try to identify if a variable is used before it's assigned.
+Static Analysis of assignments tries to identify if a variable is used before it's assigned:
 
 .. code-block:: zephir
 
@@ -42,4 +42,3 @@ a warning alerting the developer:
 
 Finding such errors is sometimes tricky, however static analysis helps the programmer
 to find bugs in advance.
-

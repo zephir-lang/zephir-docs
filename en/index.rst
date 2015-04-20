@@ -21,6 +21,7 @@ Reference
    control
    exceptions
    functions
+   closures
    optimizers
    config
    globals

@@ -51,14 +51,17 @@ A 'switch' evalutes an expression against a series of predefined literal values 
 .. code-block:: zephir
 
     switch count(items) {
+    
         case 1:
         case 3:
             echo "odd items";
             break;
+
         case 2:
         case 4:
             echo "even items";
             break;
+
         default:
             echo "unknown items";
     }
@@ -214,5 +217,3 @@ Multiple mutations can be performed in a single 'let' operation:
 .. code-block:: zephir
 
     let price = 1.00, realPrice = price, status = false;
-
-

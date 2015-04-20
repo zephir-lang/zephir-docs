@@ -200,7 +200,7 @@ Also typeof can works like PHP function 'gettype'.
 .. code-block:: zephir
 
     return typeof str;
-    
+
 **Be careful**, if you want to check is object 'callable' you allways have to use 'typeof' as comparison operator.
 
 Type Hints
@@ -222,6 +222,16 @@ A type hint tells the compiler which class is related to a dynamic variable allo
     // Tell the compiler that "o"
     // is an instance of class MyClass
     let o = <MyClass> this->_myObject;
+    o->myMethod();
+
+These "type hints" are weak, this means the program does not check if the class is in fact an instance of the specified class or
+whether it implements the specified interface. If you want it to check this every time in execution:
+
+.. code-block:: zephir
+
+    // Always check if the property is an instance
+    // of MyClass before the assignment
+    let o = <MyClass!> this->_myObject;
     o->myMethod();
 
 Branch Prediction Hints

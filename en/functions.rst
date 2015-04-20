@@ -17,7 +17,6 @@ To call a PHP function, you can just refer its name in the Zephir code.
             }
             return false;
         }
-
     }
 
 You can call also functions that are expected to exist in the PHP userland but they
@@ -41,7 +40,6 @@ aren't built-in with PHP:
             }
             return false;
         }
-
     }
 
 Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
@@ -63,7 +61,6 @@ variable as a parameter, some temporary dynamic variable will be used as a bridg
             }
             return false;
         }
-
     }
 
 Similarly, functions return dynamic values that cannot be directly assigned to static
@@ -86,7 +83,6 @@ variables without the appropriate cast:
             }
             return false;
         }
-
     }
 
 Sometimes, we would need to call functions in a dynamic way, you can call them as follows:
@@ -102,6 +98,4 @@ Sometimes, we would need to call functions in a dynamic way, you can call them a
         {
             return {callback}(text);
         }
-
     }
-

@@ -241,7 +241,7 @@ When the code is compiled those methods are exported as real methods but you don
 
 Return Type Hints
 ^^^^^^^^^^^^^^^^^
-Methods in classes and interfaces can have return type hints, these will provide useful extra information to the compiler
+Methods in classes and interfaces can have "return type hints", these will provide useful extra information to the compiler
 to inform you about errors in your application. Consider the following example:
 
 .. code-block:: zephir
