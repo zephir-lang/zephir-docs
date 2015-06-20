@@ -1,9 +1,9 @@
 Конфигурационный файл
 =====================
-Every Zephir extension has a configuration file called config.json. This file is read by Zephir everytime you build or generate the extension and
+Every Zephir extension has a configuration file called config.json. This file is read by Zephir every time you build or generate the extension and
 it allows the developer to modify the extension or compiler behavior.
 
-This file use `JSON <http://en.wikipedia.org/wiki/JSON>`_ as configuration format which is very known and friendly:
+This file use `JSON <http://en.wikipedia.org/wiki/JSON>`_ as configuration format:
 
 .. code-block:: json
 
@@ -31,7 +31,7 @@ The namespace of the extension, it must be a simple identifier respecting the re
 
 name
 ^^^^
-Extension name, only can contain ascii characters:
+Extension name, can only contain ascii characters:
 
 .. code-block:: json
 
@@ -135,3 +135,39 @@ phpinfo() sections. Check the :doc:`phpinfo() <phpinfo>` chapter for more inform
             }
         ]
     }
+
+extra-cflags
+^^^^^^^^^^^^
+Any additional flags you want to add to the compilation process:
+
+.. code-block:: json
+
+    {
+        "extra-cflags": "-I/usr/local/Cellar/libevent/2.0.21_1/include"
+    }
+
+extra-libs
+^^^^^^^^^^
+Any additional libraries you want to add to the compilation process:
+
+.. code-block:: json
+
+    {
+        "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
+    }
+
+package-dependencies
+^^^^^^^^^^^^^^^^^^^^
+Declare library dependencies (version check by :code:`pkg-config`)
+
+.. code-block:: json
+
+    {
+        "package-dependencies": {
+            "openssl": "*",
+            "libpng": ">= 0.1.0",
+            "protobuf": "<= 2.6.1"
+        }
+    }
+
+Version operator supports :code:`=`, :code:`>=`, :code:`<=`, and :code:`*`
