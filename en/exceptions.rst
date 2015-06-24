@@ -1,10 +1,9 @@
 Exceptions
 ==========
-Zephir implements exceptions at a very low level providing a similar behavior like PHP
-but in compiled code.
+Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.
 
-When an exception is thrown, a "catch" block can caught the exception and the
-developer can provide the proper handling.
+When an exception is thrown, a "catch" block can be used to capture the exception and allow the
+developer to provide proper handling.
 
 .. code-block:: zephir
 
@@ -19,7 +18,7 @@ developer can provide the proper handling.
         echo e->getMessage();
     }
 
-Zephir provides a silent "try" block that simply ignores any exception produced within the block:
+Zephir provides a silent "try" block that simply ignores any exceptions produced within that block:
 
 .. code-block:: zephir
 
@@ -27,7 +26,7 @@ Zephir provides a silent "try" block that simply ignores any exception produced 
         throw new \Exception("This is an exception");
     }
 
-When catching the exception if you don't need a variable for the exception you can safely miss it:
+If you don't need an exception variable when catching then you can safely not provide it:
 
 .. code-block:: zephir
 
@@ -43,7 +42,7 @@ When catching the exception if you don't need a variable for the exception you c
     }
 
 
-A single "catch" block can be used to catch many types of exceptions:
+A single "catch" block can be used to catch different types of exception:
 
 .. code-block:: zephir
 
@@ -58,7 +57,7 @@ A single "catch" block can be used to catch many types of exceptions:
         echo e->getMessage();
     }
 
-Zephir allows you to throw literals or static typed variables as they were the message of the exception:
+Zephir allows you to throw literals or static typed variables as if they were the message of the exception:
 
 .. code-block:: zephir
 
@@ -67,9 +66,8 @@ Zephir allows you to throw literals or static typed variables as they were the m
     throw 123; // throw new \Exception((string) 123);
     throw 123.123; // throw new \Exception((string) 123.123);
 
-Zephir's exceptions provides the same facilities as in PHP to know where exception happened.
-Exception::getFile() and Exception::getLine() returns the location in the Zephir code
-where the exception has been thrown:
+Zephir's exceptions provide the same facilities as PHP that allow you to know where the exception happened.
+Exception::getFile() and Exception::getLine() return the location in the Zephir code where the exception has been thrown:
 
 .. code-block:: html
 
