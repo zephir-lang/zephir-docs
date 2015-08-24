@@ -1,7 +1,7 @@
 Вызов функций
 -------------
-PHP has a rich library of functions you can use in your extensions.
-To call a PHP function, you can just refer its name in the Zephir code.
+PHP has a rich library of functions that you can use within your extensions.
+To call a PHP function you simply use it as normal within your Zephir code:
 
 .. code-block:: zephir
 
@@ -17,11 +17,9 @@ To call a PHP function, you can just refer its name in the Zephir code.
             }
             return false;
         }
-
     }
 
-You can call also functions that are expected to exist in the PHP userland but they
-aren't built-in with PHP:
+You can also call functions that are expected to exist in the PHP userland but aren't built in to PHP:
 
 .. code-block:: zephir
 
@@ -41,11 +39,10 @@ aren't built-in with PHP:
             }
             return false;
         }
-
     }
 
-Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
-variable as a parameter, some temporary dynamic variable will be used as a bridge in order to call them:
+Note that all PHP functions only receive and return dynamic variables.  If you pass a static typed
+variable as a parameter, a temporary dynamic variable will automatically be used as a bridge in order to call the function:
 
 .. code-block:: zephir
 
@@ -63,10 +60,9 @@ variable as a parameter, some temporary dynamic variable will be used as a bridg
             }
             return false;
         }
-
     }
 
-Similarly, functions return dynamic values that cannot be directly assigned to static
+Similarly, functions return dynamic values which cannot be directly assigned to static
 variables without the appropriate cast:
 
 .. code-block:: zephir
@@ -86,10 +82,9 @@ variables without the appropriate cast:
             }
             return false;
         }
-
     }
 
-Sometimes, we would need to call functions in a dynamic way, you can call them as follows:
+Zephir provides a way for you to call functions dynamically, such as:
 
 .. code-block:: zephir
 
@@ -102,6 +97,4 @@ Sometimes, we would need to call functions in a dynamic way, you can call them a
         {
             return {callback}(text);
         }
-
     }
-
