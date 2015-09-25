@@ -168,16 +168,4 @@ Raised when the compiler detects that an element is being tried to be appended t
         var b = false;
         let b[] = "some value";
     }
-
-            'invalid-return-type'                => true,
-            'unreachable-code'                   => true,
-            'nonexistant-constant'               => true,
-            'not-supported-magic-constant'       => true,
-            'non-valid-decrement'                => true,
-            'non-valid-increment'                => true,
-            'non-valid-clone'                    => true,
-            'non-valid-new'                      => true,
-            'non-array-access'                   => true,
-            'invalid-reference'                  => true,
-            'invalid-typeof-comparison'          => true,
-            'conditional-initialization'         => true
+    
