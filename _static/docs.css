@@ -312,7 +312,7 @@ div#constants h2 {
 }
 
 div#methods a,
-div#constants a, {
+div#constants a {
     text-decoration: none;
 }
 
