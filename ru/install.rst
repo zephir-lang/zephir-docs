@@ -52,17 +52,6 @@ PHP должен быть доступен из консоли:
 	$ git clone https://github.com/phalcon/zephir
 	$ cd zephir
 
-Json-C необходим для работы парсера:
-
-.. code-block:: bash
-
-	$ git submodule update --init
-	$ cd json-c
-	$ sh autogen.sh
-	$ ./configure
-	$ make && sudo make install
-
-
 Чтобы скомпилировать и установить Zephir выполните следующие команды:
 
 .. code-block:: bash

@@ -58,10 +58,7 @@ Zephir目前必须从Github克隆:
 .. code-block:: bash
 
 	$ cd zephir
-	$ ./install-json
 	$ ./install -c
-
-如果你已经安装了 json-c 你可以跳过 ./install-json 这一步
 
 检查安装
 --------------------
