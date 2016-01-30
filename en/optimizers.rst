@@ -51,11 +51,7 @@ So, the optimizer will expect just one parameter, we have to validate that to av
     public function optimize(array $expression, Call $call, CompilationContext $context)
     {
 
-        if (!isset($expression['parameters'])) {
-            throw new CompilerException("'calculate_pi' requires one parameter", $expression);
-        }
-
-        if (count($expression['parameters']) > 1) {
+        if (! isset($expression['parameters']) OR count($expression['parameters']) > 1) {
             throw new CompilerException("'calculate_pi' requires one parameter", $expression);
         }
 
@@ -72,11 +68,7 @@ to be aware that the type of the variable used to received this calculated value
     public function optimize(array $expression, Call $call, CompilationContext $context)
     {
 
-        if (!isset($expression['parameters'])) {
-            throw new CompilerException("'calculate_pi' requires one parameter", $expression);
-        }
-
-        if (count($expression['parameters']) > 1) {
+        if (! isset($expression['parameters']) OR count($expression['parameters']) > 1) {
             throw new CompilerException("'calculate_pi' requires one parameter", $expression);
         }
 
@@ -137,11 +129,7 @@ The complete optimizer code is:
         public function optimize(array $expression, Call $call, CompilationContext $context)
         {
 
-            if (!isset($expression['parameters'])) {
-                throw new CompilerException("'calculate_pi' requires one parameter", $expression);
-            }
-
-            if (count($expression['parameters']) > 1) {
+            if (! isset($expression['parameters']) OR count($expression['parameters']) > 1) {
                 throw new CompilerException("'calculate_pi' requires one parameter", $expression);
             }
 
@@ -191,5 +179,3 @@ This file must be added at a special section in the :doc:`config.json <config>` 
     ]
 
 Check the complete source code of this example `here <https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers>`.
-
-
