@@ -190,6 +190,6 @@ This file must be added at a special section in the :doc:`config.json <config>` 
         "utils/pi.c"
     ]
 
+Lastly you will have to specify where Zephir can find your optimizer by using the `optimizer-dirs` configuration option.
+
 Check the complete source code of this example `here <https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers>`.
-
-
