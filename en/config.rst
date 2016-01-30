@@ -156,6 +156,28 @@ Any additional libraries you want to add to the compilation process:
         "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
     }
 
+extra-sources
+^^^^^^^^^^^^^
+Any additional files you want to add to the compilation process:
+
+.. code-block:: json
+
+    {
+        "extra-sources": ["utils/pi.c"]
+    }
+The search directory is relative to the `ext` folder of your project
+
+optimizer-dirs
+^^^^^^^^^^^^^^
+The directories where your own optimizers can be found:
+
+.. code-block:: json
+
+    {
+        "optimizer-dirs": ["optimizer-dirs"]
+    }
+The search directory is relative to the root folder of your project
+
 package-dependencies
 ^^^^^^^^^^^^^^^^^^^^
 Declare library dependencies (version check by :code:`pkg-config`)
