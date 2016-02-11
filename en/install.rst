@@ -59,10 +59,7 @@ Run the Zephir installer (this compiles/creates the parser):
 .. code-block:: bash
 
 	$ cd zephir
-	$ ./install-json
 	$ ./install -c
-
-You can ommit the ./install-json step if you already have json-c installed
 
 Testing Installation
 --------------------
