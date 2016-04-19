@@ -1,12 +1,12 @@
-Phpinfo() sections
+Phpinfo() секции
 ==================
-As most extensions, Zephir extensions are able to show information at the phpinfo() output.
-These information is usually related to directives, enviroment data, etc.
+Как и большинство расширений, Zephir расширения могут отображать информацию при
+выводе phpinfo(). Обычно эта информация относится к директивам, данным окружения и т.п.
 
-By default, every Zephir extension automatically adds a basic table to the phpinfo() output
-showing the extension version.
+По умолчанию каждое Zephir расширение добавляет базовую таблицу в вывод phpinfo()
+отображающую версию расширения.
 
-You can add more directives by adding the following configuration to the config.json file:
+Вы можете добавить больше директив добавив следующую конфигурацию в файл config.json:
 
 .. code-block:: javascript
 
@@ -27,7 +27,7 @@ You can add more directives by adding the following configuration to the config.
         }
     ]
 
-These information will be shown as follows:
+Эта информация будет отображена следующим образом:
 
 .. figure:: ../_static/img/info.png
     :align: center
