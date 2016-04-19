@@ -26,21 +26,30 @@ If everything is well, you should see the following help in your screen:
     /____/\___/ .___/_/ /_/_/_/
              /_/
 
-    Zephir version 0.3.0a
+    Zephir version 0.9.2a-dev
 
     Usage:
         command [options]
 
     Available commands:
-        build               Generate/Compile/Install a Zephir extension
         clean               Cleans the generated object files in compilation
-        compile             Compile a Zephir extension
-        full-clean          Cleans the generated object files in compilation
-        generate            Generates C code from the Zephir code
-        help                Displays this help
-        init [namespace]    Initializes a Zephir extension
         install             Installs the extension (requires root password)
-        version             Shows Zephir version
+        build               Generate/Compile/Install a Zephir extension
+        compile             Compile a Zephir extension
+        version             Shows the Zephir version
+        help                Displays this help
+        stubs               Generates extension PHP stubs
+        generate            Generates C code from the Zephir code
+        init [namespace]    Initializes a Zephir extension
+        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
+        fullclean           Cleans the generated object files in compilation
+        builddev            Generate/Compile/Install a Zephir extension in development mode
+
+    Options:
+        -f([a-z0-9\-]+)     Enables compiler optimizations
+        -fno-([a-z0-9\-]+)  Disables compiler optimizations
+        -w([a-z0-9\-]+)     Turns a warning on
+        -W([a-z0-9\-]+)     Turns a warning off
 
 Extension Skeleton
 ------------------
