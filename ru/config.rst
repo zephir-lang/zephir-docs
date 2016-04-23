@@ -116,6 +116,7 @@ Extension globals available. Check the :doc:`extension globals <globals>` chapte
                 "type": "int",
                 "default": 10
             }
+        }
     }
 
 info
