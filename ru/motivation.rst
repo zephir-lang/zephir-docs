@@ -40,8 +40,8 @@ and some errors can be tricky to find if you aren't an experienced developer.
 Zephir was designed to be safe, so it doesn't implement pointers or manual memory management, so
 if you're a C programmer, you will feel Zephir less powerful but more friendly than C.
 
-Compilation vs Interpretation
------------------------------
+Компиляция против Интерпретации
+-------------------------------
 Compilation usually slows the development down; you will need a bit more of patience to make your code
 compiled before running it. Moreover, the interpretation tends to reduce the performance in favor of
 productivity. In some cases, there is no any noticeable difference between the speed of the
@@ -52,7 +52,7 @@ Zephir requires compilation of your code, however, the functionality is used fro
 Once the code is compiled is not necessary to do so, however, interpreted code is interpreted each time
 it is run. A developer can decide which parts of your application should be in Zephir and which not.
 
-Statically Typed Versus Dynamically Typed Languages
+Статическая типизация против Динамической типизации
 ---------------------------------------------------
 In general speaking, in a static typed language, a variable is bound to a particular type for its lifetime.
 Its type can’t be changed and it can only reference type-compatible instances and operations.
@@ -61,7 +61,7 @@ Languages like C/C++ were implemented with the scheme:
 .. code-block:: c
 
 	int a = 0;
-	a = "hello"; // not allowed
+	a = "hello"; // не позволяется
 
 In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer
 to a value of a type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of
@@ -70,7 +70,7 @@ a dynamic typed language:
 .. code-block:: zephir
 
 	var a = 0;
-	a = "hello"; // allowed
+	a = "hello"; // позволяется
 
 Despite their productivity advantages, dynamic languages may not be the best choices for all applications,
 particularly for very large code bases and high-performance applications.
@@ -91,7 +91,7 @@ found in runtime.
 Zephir is both statically and dynamically typed allowing you to take advantage from both sides where
 possible.
 
-Схема Компиляция
+Схема компиляции
 ----------------
 Zephir offers native code generation (currently via compilation to C), a compiler like gcc/clang/vc++
 optimizes and compiles the code down to machine code. The following graph shows how the process works:
@@ -106,14 +106,14 @@ and matured a number of optimizations that improve the performance of compiled a
 * `LLVM passes <http://llvm.org/docs/Passes.html>`_
 * `Visual C/C++ optimizations <http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx>`_
 
-Code Protection
----------------
+Защита кода
+-----------
 In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located
 in the I/O bound of the application (quite likely) rather than compute/memory bound.
 However, compiling code could also bring some level of intelectual protection to your application.
 With Zephir, producing native binaries, you also get the ability to hide the code to users or customers.
 
-Conclusion
+Заключение
 ----------
 Zephir was not created to replace PHP or C, instead of this, we think it is a complement to them,
 allowing developers to venture into code compilation and static typing.
