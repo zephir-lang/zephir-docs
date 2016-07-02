@@ -133,7 +133,7 @@ Zephir позволяет создавать только классы, одна
 
         public function setMyProperty(myProperty)
         {
-            this->myProperty = myProperty;
+            let this->myProperty = myProperty;
         }
 
         public function getMyProperty()
@@ -143,7 +143,7 @@ Zephir позволяет создавать только классы, одна
 
         public function setSomeProperty(someProperty)
         {
-            this->someProperty = someProperty;
+            let this->someProperty = someProperty;
         }
 
         public function getSomeProperty()
@@ -406,7 +406,7 @@ Zephir checks that properties do exist when a program is accesing them, if a pro
 
     CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/cphalcon/phalcon/cache/backend.zep on line 62
 
-          this->_optionsx = options;
+          let this->_optionsx = options;
           ------------^
 
 If you want to avoid this compiler validation or just create a property dynamically, you can enclose the property name using string quotes:
