@@ -40,7 +40,7 @@ and some errors can be tricky to find if you aren't an experienced developer.
 Zephir was designed to be safe, so it doesn't implement pointers or manual memory management, so
 if you're a C programmer, you will feel Zephir less powerful but more friendly than C.
 
-Компиляция против Интерпретации
+Компиляция против интерпретации
 -------------------------------
 Compilation usually slows the development down; you will need a bit more of patience to make your code
 compiled before running it. Moreover, the interpretation tends to reduce the performance in favor of
@@ -52,7 +52,7 @@ Zephir requires compilation of your code, however, the functionality is used fro
 Once the code is compiled is not necessary to do so, however, interpreted code is interpreted each time
 it is run. A developer can decide which parts of your application should be in Zephir and which not.
 
-Статическая типизация против Динамической типизации
+Статическая типизация против динамической типизации
 ---------------------------------------------------
 In general speaking, in a static typed language, a variable is bound to a particular type for its lifetime.
 Its type can’t be changed and it can only reference type-compatible instances and operations.
@@ -119,4 +119,3 @@ Zephir was not created to replace PHP or C, instead of this, we think it is a co
 allowing developers to venture into code compilation and static typing.
 Zephir is precisely an attempt to join good things from the C and PHP worlds,
 looking for opportunities to make their applications faster.
-

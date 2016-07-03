@@ -1,5 +1,5 @@
-Introducing Zephir
-==================
+Введение в Zephir
+=================
 Zephir is a language that addresses the major needs of a PHP developer trying to write and compile code that
 can be executed by PHP. It is a dynamically/statically typed, some of its features can be familiar to
 PHP developers.
@@ -66,8 +66,8 @@ Actually, it is not expected that a developer that uses Zephir must know or even
 however, if you have any experience with compilers, php internals or the C language itself,
 it would provide a more clear sceneario to the developer when working with Zephir.
 
-A Taste of Zephir
------------------
+Понимание Zephir
+----------------
 In the following examples, we’ll describe just enough of the details, so you understand what’s going on.
 The goal is to give you a sense of what programming in Zephir is like. We’ll explore the details of the
 features in subsequent chapters.
