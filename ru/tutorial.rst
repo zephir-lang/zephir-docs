@@ -1,5 +1,5 @@
-Tutorial
-========
+Урок
+====
 Zephir and this book are intended for PHP developers which want to create C-extensions with a lower
 complexity.
 
@@ -26,7 +26,7 @@ If everything is well, you should see the following help in your screen:
     /____/\___/ .___/_/ /_/_/_/
              /_/
 
-    Zephir version 0.9.2a-dev
+    Zephir version 0.9.3a-dev
 
     Usage:
         command [options]
@@ -51,8 +51,8 @@ If everything is well, you should see the following help in your screen:
         -w([a-z0-9\-]+)     Turns a warning on
         -W([a-z0-9\-]+)     Turns a warning off
 
-Extension Skeleton
-------------------
+Каркас расширения
+-----------------
 The first thing we have to do is generate an extension skeleton, this will provide to our extension the basic
 structure we need to start working. In our case, we're going to create an extension called "utils":
 
@@ -83,8 +83,8 @@ We need to change the working directory to "utils" to start compiling our code:
 The directory listing will also show us a file called "config.json", this file contains configuration settings
 we can use to alter the behavior of Zephir and/or this extension.
 
-Adding our first class
-----------------------
+Добавление нашего первого класса
+--------------------------------
 Zephir is designed to generate object-oriented extensions. To start developing functionality we need to add
 our first class to the extension.
 
@@ -129,8 +129,8 @@ At the above step, it's likely that you would need to supply your root password 
 Finally, the extension must be added to the php.ini in order to be loaded by PHP. This is achieved
 by adding the initialization directive: extension=utils.so to it.
 
-Initial Testing
----------------
+Первоначальное тестирование
+---------------------------
 Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
 
 .. code-block:: bash
@@ -162,8 +162,8 @@ just created:
 
 Congratulations!, you have your first extension running on PHP.
 
-A useful class
---------------
+Удобные класс
+-------------
 The "hello world" class was fine to check if our enviroment was right, now, let's create some more useful classes.
 
 The first useful class we are going to add to this extension will provide filtering facilities to users.
@@ -259,7 +259,7 @@ In the following screencast you can watch how to create the extension explained 
 
    <div align="center"><iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
-Conclusion
+Заключение
 ----------
 This is a very simple tutorial and as you can see, it’s easy to start building extensions using Zephir.
 We invite you to continue reading the manual so that you can discover additional features offered by Zephir!

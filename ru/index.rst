@@ -1,8 +1,8 @@
-Zephir Language
-===============
+Язык Zephir
+===========
 
-Reference
----------
+Содержание
+----------
 
 .. toctree::
    :maxdepth: 3
@@ -26,8 +26,8 @@ Reference
    phpinfo
    license
 
-Other Formats
--------------
+Другие форматы
+--------------
 
 * `PDF <https://github.com/phalcon/zephir-docs/blob/master/en/_build/latex/ZephirDocumentation.pdf?raw=true>`_
 
