@@ -17,7 +17,7 @@
           {%- if not loop.first %}{{ reldelim2 }}{% endif %}</li>
         {%- endfor %}
         {%- block rootrellink %}
-        <li><a href="http://zephir-lang.com">Home</a> &raquo;</li>
+        <li><a href="https://zephir-lang.com">Home</a> &raquo;</li>
         <li><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
         {%- endblock %}
         {%- for parent in parents %}
@@ -108,7 +108,7 @@
 <html lang="en">
   <head>
     {% if sourcename == "error.txt" %}
-    <base href="http://zephir-lang.com/">
+    <base href="https://zephir-lang.com/">
     {% endif %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     {{ metatags }}
@@ -204,16 +204,16 @@
         <div id="footer">
 
           <p>Zephir Language is an open source project licensed under
-            <a href="http://zephir-lang.com/license.html">MIT license.</a></p>
+            <a href="https://zephir-lang.com/license.html">MIT license.</a></p>
 
           <p>Except where otherwise noted, content on this site is licensed under the
-            <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
+            <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a></p>
 
           {%- if last_updated %}
              {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
           {%- endif %}
           {%- if show_sphinx %}
-            {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+            {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
           {%- endif %}
 
           <p>
