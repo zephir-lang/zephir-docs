@@ -26,7 +26,7 @@ If everything is well, you should see the following help in your screen:
     /____/\___/ .___/_/ /_/_/_/
              /_/
 
-    Zephir version 0.9.2a-dev
+    Zephir version 0.9.3a-dev
 
     Usage:
         command [options]
