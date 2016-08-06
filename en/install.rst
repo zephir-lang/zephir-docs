@@ -27,10 +27,10 @@ Since Zephir is written in PHP you need to have installed a recent version of PH
 .. code-block:: bash
 
 	$ php -v
-	PHP 5.6.5 (cli) (built: Jan 24 2015 20:04:31)
-	Copyright (c) 1997-2014 The PHP Group
-	Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-    	with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+	PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
+	Copyright (c) 1997-2016 The PHP Group
+	Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
+    		with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
 
 Also, make sure you have also the PHP development libraries installed along with your PHP installation:
 
@@ -38,9 +38,9 @@ Also, make sure you have also the PHP development libraries installed along with
 
 	$ phpize -v
 	Configuring for:
-	PHP Api Version:         20131106
-	Zend Module Api No:      20131226
-	Zend Extension Api No:   220131226
+	PHP Api Version:         20151012
+	Zend Module Api No:      20151012
+	Zend Extension Api No:   320151012
 
 You don't have to necessarely see the exact above output but it's important that these commands are available to start
 developing with Zephir.
