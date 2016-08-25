@@ -26,24 +26,24 @@ If everything is well, you should see the following help in your screen:
     /____/\___/ .___/_/ /_/_/_/
              /_/
 
-    Zephir version 0.9.3a-dev
+    Zephir version 0.9.4a-dev
 
     Usage:
         command [options]
 
     Available commands:
-        clean               Cleans the generated object files in compilation
-        install             Installs the extension (requires root password)
-        build               Generate/Compile/Install a Zephir extension
-        compile             Compile a Zephir extension
-        version             Shows the Zephir version
-        help                Displays this help
         stubs               Generates extension PHP stubs
-        generate            Generates C code from the Zephir code
-        init [namespace]    Initializes a Zephir extension
+        install             Installs the extension (requires root password)
+        version             Shows the Zephir version
+        compile             Compile a Zephir extension
         api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
+        init [namespace]    Initializes a Zephir extension
         fullclean           Cleans the generated object files in compilation
         builddev            Generate/Compile/Install a Zephir extension in development mode
+        clean               Cleans the generated object files in compilation
+        generate            Generates C code from the Zephir code
+        help                Displays this help
+        build               Generate/Compile/Install a Zephir extension
 
     Options:
         -f([a-z0-9\-]+)     Enables compiler optimizations
