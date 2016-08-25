@@ -27,9 +27,10 @@ To install Zephir, please follow these steps:
 .. code-block:: bash
 
 	$ php -v
-	PHP 5.5.7 (cli) (built: Dec 14 2013 00:44:43)
-	Copyright (c) 1997-2013 The PHP Group
-	Zend Engine v2.5.0, Copyright (c) 1998-2013 Zend Technologies
+	PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
+	Copyright (c) 1997-2016 The PHP Group
+	Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
+    		with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
 
 同时,确保你也一起安装了PHP开发库:
 
@@ -37,9 +38,9 @@ To install Zephir, please follow these steps:
 
 	$ phpize -v
 	Configuring for:
-	PHP Api Version:         20121113
-	Zend Module Api No:      20121212
-	Zend Extension Api No:   220121212
+	PHP Api Version:         20151012
+	Zend Module Api No:      20151012
+	Zend Extension Api No:   320151012
 
 You don't have to necessarely see the exact above output but it's important that these commands are available to start
 developing with Zephir.
