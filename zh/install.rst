@@ -20,7 +20,7 @@ To install Zephir, please follow these steps:
 .. code-block:: bash
 
 	$ sudo apt-get update
-	$ sudo apt-get install git gcc make re2c php5 php5-json php5-dev libpcre3-dev
+	$ sudo apt-get install git gcc make re2c php7.0 php7.0-json php7.0-dev libpcre3-dev
 
 因为Zephir是用PHP编写的，所以你需要安装最新版本的PHP和控制台:
 
