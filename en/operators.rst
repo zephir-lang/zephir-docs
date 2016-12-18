@@ -236,7 +236,7 @@ whether it implements the specified interface. If you want it to check this ever
 
 Branch Prediction Hints
 ^^^^^^^^^^^^^^^^^^^^^^^
-What is branch prediction? Check this `article out`_. In environments where performance is very important, it may be useful to introduce these hints.
+What is branch prediction? Check this `article out`_ or refer to the `Wikipedia article`_. In environments where performance is very important, it may be useful to introduce these hints.
 
 Consider the following example:
 
@@ -245,7 +245,7 @@ Consider the following example:
     let allPaths = [];
     for path in this->_paths {
         if path->isAllowed() == false {
-            throw new App\Exception("error!!");
+            throw new App\Exception("Some error message here");
         } else {
             let allPaths[] = path;
         }
@@ -258,7 +258,7 @@ The authors of the above code, know in advance that the condition that throws th
     let allPaths = [];
     for path in this->_paths {
         if unlikely path->isAllowed() == false {
-            throw new App\Exception("error!!");
+            throw new App\Exception("Some error message here");
         } else {
             let allPaths[] = path;
         }
@@ -267,3 +267,4 @@ The authors of the above code, know in advance that the condition that throws th
 .. _`array_key_exists`: http://www.php.net/manual/en/function.array-key-exists.php
 .. _`php manual`: http://www.php.net/manual/en/language.operators.comparison.php
 .. _`article out`: http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/
+.. _`Wikipedia article`: https://en.wikipedia.org/wiki/Branch_predictor
