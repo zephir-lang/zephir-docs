@@ -27,5 +27,6 @@ Phpinfo() 部分
 
 
 如下显示：
+
 .. figure:: ../_static/img/info.png
     :align: center
