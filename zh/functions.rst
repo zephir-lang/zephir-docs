@@ -82,7 +82,7 @@ variables without the appropriate cast:
 
             if strlen(text) != 0 {
                 let encoded = (string) base64_encode(text);
-                return '(' . encoded . ')';
+                return "(" . encoded . ")";
             }
             return false;
         }
