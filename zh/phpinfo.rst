@@ -5,6 +5,7 @@ Phpinfo() 部分
 默认情况下，每个Zephir扩展会自动的向phpinfo()的输出的表格中添加一些数据以显示扩展的版本号等信息。
 
 我们可以添加如下的指令到config.json文件中：
+
 .. code-block:: javascript
 
     "info": [
