@@ -42,8 +42,6 @@
 	Zend Module Api No:      20151012
 	Zend Extension Api No:   320151012
 
-You don't have to necessarely see the exact above output but it's important that these commands are available to start
-developing with Zephir.
 查看如上信息不是必须的，重要的是phpize是可用的，且php是可用的即可，因为要使用zephir进行开发你必须配置php-cli的运行环境。
 
 安装 Zephir
