@@ -1,7 +1,7 @@
 数组
 ======
-Zephir为我们提供了一种使用PHP arrays_的方式。
-数组是由`hash table`_实现的。
+Zephir为我们提供了一种使用PHP arrays_ 的方式。
+数组是由 `hash table`_ 实现的。
 
 声明数组变量
 -------------------------
