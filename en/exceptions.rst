@@ -7,7 +7,7 @@ developer to provide proper handling.
 
 .. code-block:: zephir
 
-	var e;
+    var e;
     try {
 
         // exceptions can be thrown here
@@ -46,7 +46,8 @@ If you don't need an exception variable when catching then you can safely not pr
 A single "catch" block can be used to catch different types of exception:
 
 .. code-block:: zephir
-	var e;
+
+    var e;
     try {
 
         // exceptions can be thrown here
