@@ -136,3 +136,62 @@ phpinfo() 部分 检查 :doc:`phpinfo() <phpinfo>` 更多的信息。
             }
         ]
     }
+  
+附加的C编译选项
+^^^^^^^^^^^^
+编译过程中可选的编译选项写在这里:
+
+.. code-block:: json
+
+    {
+        "extra-cflags": "-I/usr/local/Cellar/libevent/2.0.21_1/include"
+    }
+
+附加的c库
+^^^^^^^^^^
+编译过程中需要的库可以写在这里:
+
+.. code-block:: json
+
+    {
+        "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
+    }
+
+附加资源
+^^^^^^^^^^^^^
+编译过程中需要的附加文件文件写在这里:
+
+.. code-block:: json
+
+    {
+        "extra-sources": ["utils/pi.c"]
+    }
+搜索路径相对于扩展的ext文件夹
+
+优化器目录
+^^^^^^^^^^^^^^
+这里是优化器所在的目录:
+
+.. code-block:: json
+
+    {
+        "optimizer-dirs": ["optimizer-dirs"]
+    }
+搜索路径相对于项目的根目录
+
+包依赖
+^^^^^^^^^^^^^^^^^^^^
+声明依赖的库(version check by :code:`pkg-config`)
+
+.. code-block:: json
+
+    {
+        "package-dependencies": {
+            "openssl": "*",
+            "libpng": ">= 0.1.0",
+            "protobuf": "<= 2.6.1"
+        }
+    }
+
+版本对比支持的操作如右 :code:`=`, :code:`>=`, :code:`<=`, and :code:`*`
+    
