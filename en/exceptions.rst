@@ -6,6 +6,7 @@ When an exception is thrown, a "catch" block can be used to capture the exceptio
 developer to provide proper handling.
 
 .. code-block:: zephir
+
 	var e;
     try {
 
