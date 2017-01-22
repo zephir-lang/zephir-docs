@@ -15,13 +15,13 @@
         "version": "1.2.0"
     }
 
-Settings defined in this file override any factory default setting provided by Zephir.
+这个文件里定义的配置项会覆盖掉Zephir的默认配置项.
 
-The following settings are supported:
+Zephir支持如下的配置项:
 
 命名空间
 ^^^^^^^^^
-扩展的命名空间, it must be a simple identifier respecting the regular expression: [a-zA-Z0-9\_]+:
+扩展的命名空间, 必须遵循正则表达式: [a-zA-Z0-9\_]+:
 
 .. code-block:: json
 
@@ -41,7 +41,7 @@ The following settings are supported:
 
 描述
 ^^^^^^^^^^^
-扩展的描述, any text describing your extension:
+扩展的描述, 描述扩展的功能等:
 
 .. code-block:: json
 
@@ -51,7 +51,7 @@ The following settings are supported:
 
 作者
 ^^^^^^
-Company, developer, institution, etc. that have developed the extension:
+开发扩展的公司, 开发者, 机构等:
 
 .. code-block:: json
 
@@ -88,7 +88,7 @@ Company, developer, institution, etc. that have developed the extension:
 
 优化
 ^^^^^^^^^^^^^
-Compiler optimizations enabled or disabled in the current project:
+当前的扩展在编译时打开或关闭的优化选项:
 
 .. code-block:: json
 
@@ -100,9 +100,9 @@ Compiler optimizations enabled or disabled in the current project:
         }
     }
 
-全局
+全局变量
 ^^^^^^^
-Extension globals available. Check the :doc:`extension globals <globals>` chapter for more information.
+扩展的全局变量。可以参见 :doc:`extension globals <globals>` 章节以获取更多信息.
 
 .. code-block:: json
 

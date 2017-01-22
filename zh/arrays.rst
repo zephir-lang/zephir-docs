@@ -1,83 +1,83 @@
 数组
 ======
-Array manipulation in Zephir provides a way to use PHP arrays_.
-An array is an implementation of a `hash table`_.
+Zephir为我们提供了一种使用PHP arrays_的方式。
+数组是由`hash table`_实现的。
 
-Declaring Array Variables
+声明数组变量
 -------------------------
-Array variables can be declared using the keywords 'var' or 'array':
+数组变量中以使用关键字var或array进行声明:
 
 .. code-block:: zephir
 
-	var a = []; // array variable, its type can be changed
-	array b = []; // array variable, its type cannot be changed across execution
+	var a = []; // 数组变量（动态），其类型可以修改
+	array b = []; // 数组变量（静态），其类型在运行中不可修改
 
 创建数组
 ---------------
-An array is created enclosing their elements in square brackets:
+数组的创建需要使用方括号包起来:
 
 .. code-block:: zephir
 
-	//Creating an empty array
+	//创建一个空的数组
 	let elements = [];
 
-	//Creating an array with elements
+	//创建有初始值的数组
 	let elements = [1, 3, 4];
 
-	//Creating an array with elements of different types
+	//创建一个有不同类型元素组成的数组
 	let elements = ["first", 2, true];
 
-	//A multidimensional array
+	//多维数组
 	let elements = [[0, 1], [4, 5], [2, 3]];
 
-As PHP, hashes or dictionaries are supported:
+像PHP中一样Zephir数组支持hash或字典:
 
 .. code-block:: zephir
 
-	//Creating a hash with string keys
+	//使用字符串作为键创建hash
 	let elements = ["foo": "bar", "bar": "foo"];
 
-	//Creating a hash with numeric keys
+	//使用数字作为键创建hash
 	let elements = [4: "bar", 8: "foo"];
 
-	//Creating a hash with mixed string and numeric keys
+	//使用字符串和数字作为键来创建hash
 	let elements = [4: "bar", "foo": 8];
 
-更新数组
+修改数组
 ---------------
-Arrays are updated in the same way as PHP using square brackets:
+我们可以像修改PHP数组一样使用方括号的形式来修改Zephir中的数组:
 
 .. code-block:: zephir
 
-	//Updating an array with a string key
+	//修改以字符串为键的数组
 	let elements["foo"] = "bar";
 
-	//Updating an array with a numeric key
+	//修改以数字为键的数组
 	let elements[0] = "bar";
 
-	//Updating multi-dimensional array
+	//修改多维数组
 	let elements[0]["foo"] = "bar";
 	let elements["foo"][0] = "bar";
 
-Appending elements
+追加数组元素
 ------------------
-Elements can be appended at the end of the array as follows:
+可以以如下形式追加元素到数组的末尾:
 
 .. code-block:: zephir
 
-	//Append an element to the array
+	//追加元素到数组的末尾
 	let elements[] = "bar";
 
-Reading elements from arrays
+从数组中读取元素
 ----------------------------
-Is possible to read array elements as follows:
+以如下形式从数组中读取元素：
 
 .. code-block:: zephir
 
-	//Getting an element using the string key "foo"
+	//读取键为foo的数组元素
 	let foo = elements["foo"];
 
-	//Getting an element using the numeric key 0
+	//读取键为0的数组元素
 	let foo = elements[0];
 
 .. _arrays: http://www.php.net/manual/en/language.types.array.php

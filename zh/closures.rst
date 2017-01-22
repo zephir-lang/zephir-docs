@@ -1,7 +1,6 @@
-Closures
---------
-You can use closures or anonymous functions in Zephir, these are PHP compatible and
-can be returned to the PHP userland:
+闭包
+----
+Zephir中我们可以使用闭包或匿名函数，这些方法是与PHP相兼容的且可以直接返回给PHP端来使用:
 
 .. code-block:: zephir
 
@@ -18,7 +17,7 @@ can be returned to the PHP userland:
         }
     }
 
-It also can be executed directly within Zephir and passed as parameter to other functions/methods:
+Zephir中的闭包可以直接在Zephir中使用，也可以作为参数传给其他函数或方法:
 
 .. code-block:: zephir
 
@@ -35,7 +34,7 @@ It also can be executed directly within Zephir and passed as parameter to other 
         }
     }
 
-A short syntax is available to define closures:
+可以用如下简写来定义闭包（lambda表达式）:
 
 .. code-block:: zephir
 

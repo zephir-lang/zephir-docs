@@ -20,8 +20,7 @@
 
     }
 
-You can call also functions that are expected to exist in the PHP userland but they
-aren't built-in with PHP:
+Zephir中可以使用PHP中定义而Zephir中未定义的函数:
 
 .. code-block:: zephir
 
@@ -44,8 +43,8 @@ aren't built-in with PHP:
 
     }
 
-Note that all PHP functions only receive and return dynamic variables, if you pass a static typed
-variable as a parameter, some temporary dynamic variable will be used as a bridge in order to call them:
+注意我们在Zephir中使用PHP的函数只接受动态变量参数，如果我们传了一个静态类型变量作为参数，则Zephir的编译器会
+生成一个动态的中间变量作为桥梁来调用这个PHP函数:
 
 .. code-block:: zephir
 
@@ -57,8 +56,7 @@ variable as a parameter, some temporary dynamic variable will be used as a bridg
         public function encode(string text)
         {
             if strlen(text) != 0 {
-                // an implicit dynamic variable is created to
-                // pass the static typed 'text' as parameter
+                //由于text是静态变量，所以Zephir的编译器会隐式的生成一个动态变量来传递给如下的函数来完成调用
                 return base64_encode(text);
             }
             return false;
@@ -66,8 +64,7 @@ variable as a parameter, some temporary dynamic variable will be used as a bridg
 
     }
 
-Similarly, functions return dynamic values that cannot be directly assigned to static
-variables without the appropriate cast:
+同样的，函数返回的动态变量也不能直接传给静态变量，需要进行适当的强制转换:
 
 .. code-block:: zephir
 
@@ -89,7 +86,7 @@ variables without the appropriate cast:
 
     }
 
-Sometimes, we would need to call functions in a dynamic way, you can call them as follows:
+有时我们用如下方式来动态的调用函数，
 
 .. code-block:: zephir
 
