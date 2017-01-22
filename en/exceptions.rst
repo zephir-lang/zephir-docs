@@ -7,6 +7,7 @@ developer to provide proper handling.
 
 .. code-block:: zephir
 
+    var e;
     try {
 
         // exceptions can be thrown here
@@ -38,7 +39,7 @@ If you don't need an exception variable when catching then you can safely not pr
     } catch \Exception {
 
         // handle exception
-        echo e->getMessage();
+        echo "An exception occur!";
     }
 
 
@@ -46,12 +47,13 @@ A single "catch" block can be used to catch different types of exception:
 
 .. code-block:: zephir
 
+    var e;
     try {
 
         // exceptions can be thrown here
         throw new \Exception("This is an exception");
 
-    } catch RuntimeException|Exception, e {
+    } catch \RuntimeException|\Exception, e {
 
         // handle exception
         echo e->getMessage();

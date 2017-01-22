@@ -15,13 +15,13 @@
         "version": "1.2.0"
     }
 
-Settings defined in this file override any factory default setting provided by Zephir.
+这个文件里定义的配置项会覆盖掉Zephir的默认配置项.
 
-The following settings are supported:
+Zephir支持如下的配置项:
 
 命名空间
 ^^^^^^^^^
-扩展的命名空间, it must be a simple identifier respecting the regular expression: [a-zA-Z0-9\_]+:
+扩展的命名空间, 必须遵循正则表达式: [a-zA-Z0-9\_]+:
 
 .. code-block:: json
 
@@ -41,7 +41,7 @@ The following settings are supported:
 
 描述
 ^^^^^^^^^^^
-扩展的描述, any text describing your extension:
+扩展的描述, 描述扩展的功能等:
 
 .. code-block:: json
 
@@ -51,7 +51,7 @@ The following settings are supported:
 
 作者
 ^^^^^^
-Company, developer, institution, etc. that have developed the extension:
+开发扩展的公司, 开发者, 机构等:
 
 .. code-block:: json
 
@@ -88,7 +88,7 @@ Company, developer, institution, etc. that have developed the extension:
 
 优化
 ^^^^^^^^^^^^^
-Compiler optimizations enabled or disabled in the current project:
+当前的扩展在编译时打开或关闭的优化选项:
 
 .. code-block:: json
 
@@ -100,9 +100,9 @@ Compiler optimizations enabled or disabled in the current project:
         }
     }
 
-全局
+全局变量
 ^^^^^^^
-Extension globals available. Check the :doc:`extension globals <globals>` chapter for more information.
+扩展的全局变量。可以参见 :doc:`extension globals <globals>` 章节以获取更多信息.
 
 .. code-block:: json
 
@@ -136,3 +136,62 @@ phpinfo() 部分 检查 :doc:`phpinfo() <phpinfo>` 更多的信息。
             }
         ]
     }
+  
+附加的C编译选项
+^^^^^^^^^^^^
+编译过程中可选的编译选项写在这里:
+
+.. code-block:: json
+
+    {
+        "extra-cflags": "-I/usr/local/Cellar/libevent/2.0.21_1/include"
+    }
+
+附加的c库
+^^^^^^^^^^
+编译过程中需要的库可以写在这里:
+
+.. code-block:: json
+
+    {
+        "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
+    }
+
+附加资源
+^^^^^^^^^^^^^
+编译过程中需要的附加文件文件写在这里:
+
+.. code-block:: json
+
+    {
+        "extra-sources": ["utils/pi.c"]
+    }
+搜索路径相对于扩展的ext文件夹
+
+优化器目录
+^^^^^^^^^^^^^^
+这里是优化器所在的目录:
+
+.. code-block:: json
+
+    {
+        "optimizer-dirs": ["optimizer-dirs"]
+    }
+搜索路径相对于项目的根目录
+
+包依赖
+^^^^^^^^^^^^^^^^^^^^
+声明依赖的库(version check by :code:`pkg-config`)
+
+.. code-block:: json
+
+    {
+        "package-dependencies": {
+            "openssl": "*",
+            "libpng": ">= 0.1.0",
+            "protobuf": "<= 2.6.1"
+        }
+    }
+
+版本对比支持的操作如右 :code:`=`, :code:`>=`, :code:`<=`, and :code:`*`
+    

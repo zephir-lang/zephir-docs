@@ -1,7 +1,7 @@
 Zephir 语言
 ===============
 
-参考
+目录
 ---------
 
 .. toctree::
@@ -21,6 +21,7 @@ Zephir 语言
    control
    exceptions
    functions
+   closures
    optimizers
    config
    globals

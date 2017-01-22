@@ -1,122 +1,95 @@
 什么是 Zephir?
 ===========
-Today’s PHP applications must balance a number of concerns including stability, performance and functionality.
-Every PHP application is based on a set of common components that are also base for most of the application.
+现今的PHP应用必须在一些相关的因素中取得平衡如稳定性，高性能与功能性等。每个PHP程序（如果不是玩具应用的话）都基于一些能用组件构建，而这些组件
+也通常是许多其他应用的基础。
 
-These common components are libraries/frameworks or a combination of them. Once installed, frameworks rarely
-change, being the foundation of the application they must be highly functional and also very fast.
+这些通用组件一般是库/框架等或是二者的混合体。一旦安装了这些库/框架，我们就通常很少修改他们，作为应用的基础，这些库或框架必须功能丰富且足够高效。
 
-Getting fast and robust libraries can be complicated due to high levels of abstraction that are
-typically implemented on them. Given the condition that base libraries or frameworks rarely change,
-there is an opportunity to build extensions that provide this functionality taking advantage of the
-compilation improving performance and resource consumption.
+实现高效和稳定的库相对比较复杂，因为要在其上进行较高层次的抽象。假定这些库或框架很少改变，那么我们可以使用扩展的形式来实现这些库或框架，这样就可以
+利用本地编译语言的优势，从而提高性能与减少资源的占用。
 
-With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from
-PHP gaining important seconds that can make your application faster while improving the user experience.
+使用Zephir，我们可以实现面向对象的类库、框架或应用，这样我们开发的应用就可以拥有更快响应速度从而提升用户体验。
 
 如果你是一个PHP程序员...
 ------------------------------
-PHP is one of the most popular languages in use for the development of web applications.
-Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
+PHP是在Web应用开发中最受欢迎的语言之一。如PHP一样的动态类型语言，因其灵活性一般会带来很高的开发效率。
 
-Since version 4 and then 5, PHP is based on the Zend Engine implementation. This is a virtual machine
-that executes the PHP code from its bytecode representation. Zend Engine is almost present in every
-PHP installation in the world, with Zephir, you can create extensions for PHP running under the
-Zend Engine.
+从PHP4和PHP5起，PHP就运于Zend Engine之上了。Zend Engine执行的是php编译后的字节码。Zend Engine现今存在于大多数的PHP安装中，使用
+Zephir，我们可以开发出运行于Zend Engine之上的扩展。
 
-PHP is hosting Zephir, so they obviously have a lot of similarities, however; they have
-important differences that give Zephir its own personality. For example, Zephir is more strict,
-and it could be make you less productive compared to PHP due to the compilation step.
+Zephir是使用PHP构建的，所以他们有许么多的共同点，但Zephir也有区别于PHP的属于自己的特点。例如，Zephir更严格，但是由于由于其是编译型语言
+使得他的开发效率不如PHP.
 
 如果你是一个 C 程序员...
 ----------------------------
-C is one of the most powerful and popular languages ever created. In fact, PHP is written in C,
-which is one of the reasons why PHP extensions are available for it. C gives you the freedom to
-manage memory, use low level types and even inline assembly routines.
+C语言是最强大的最流行的语言之一。事实上PHP是使用C开发的，这也是为什么我们可以使用C语言来PHP扩展的原因。C语言给予我们可以
+操纵内存的自由，使用C语言我们还可以使用低级的类型甚至是嵌入汇编代码。
 
-However, developing big applications in C can take much longer than expected compared to PHP or Zephir
-and some errors can be tricky to find if you aren't an experienced developer.
+所以使用C语言来开发应用与PHP或Zephir相比通常会花费更长的时间，更有甚者，如果你不是C语言方面有经验的开发者，有些bug还不容易解决。
 
-Zephir was designed to be safe, so it doesn't implement pointers or manual memory management, so
-if you're a C programmer, you will feel Zephir less powerful but more friendly than C.
+Zephir对外没有暴露操纵内存的接口，这样C开发者会觉得Zephir不如C强大，但也正是这样的设计让Zephir更安全，不过你很快会发现Zephir更好用。
 
 编译和解释
 -----------------------------
-Compilation usually slows the development down; you will need a bit more of patience to make your code
-compiled before running it. Moreover, the interpretation tends to reduce the performance in favor of
-productivity. In some cases, there is no any noticeable difference between the speed of the
-interpreted and compiled code.
+编译型语言通常开发速度比较慢；你需要在运行之前先花一些时间进行编译。不过解释型语言通常性能比较低。在某些情况下编译型语言与解释型
+语言的性能差并不那么明显。
 
-Zephir requires compilation of your code, however, the functionality is used from PHP that is interpreted.
+Zephir需要进行编译后执行，与之相应的PHP语言一般是解释执行的。
 
-Once the code is compiled is not necessary to do so, however, interpreted code is interpreted each time
-it is run. A developer can decide which parts of your application should be in Zephir and which not.
+编译型语言一旦编译后就不再次进行解释了，与之相应的是解释型语言需要在每次执行时都要进行解释。开发者可以决定应用的哪些部分使用Zephir来写
+哪些部分使用PHP来写。
 
-Statically Typed Versus Dynamically Typed Languages
+静态类型语言对比动态类型语言
 ---------------------------------------------------
-In general speaking, in a static typed language, a variable is bound to a particular type for its lifetime.
-Its type can’t be changed and it can only reference type-compatible instances and operations.
-Languages like C/C++ were implemented with the scheme:
+大体上说静态语言的类型变量在其生命周期内是不变的，其类型限定于其定义，且只能强制转化为相兼容的类型。
+像C/C++就是这种类型的语言：
 
 .. code-block:: c
 
 	int a = 0;
-	a = "hello"; // not allowed
+	a = "hello"; // 不允许
 
-In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer
-to a value of a type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of
-a dynamic typed language:
+动态语言中变量的类型是绑定于值而不是变量的。所以动态类型语言的变量可以被赋予多种类型的值。像Javascript/PHP等都是动态类型的语言：
 
 .. code-block:: zephir
 
 	var a = 0;
-	a = "hello"; // allowed
+	a = "hello"; // 允许
 
-Despite their productivity advantages, dynamic languages may not be the best choices for all applications,
-particularly for very large code bases and high-performance applications.
+尽管动态语言的开发效率比较高，但其并不适合开发所有种类的应用，尤其是那些大型的且对性能要求比较高的应用。
 
-Optimizing the performance of a dynamic language like PHP is more challenging than for a static language like C.
-In a static language, optimizers can exploit the type information to make decisions. In a dynamic language,
-fewer such clues are available for the optimizer, making optimization choices harder.
+优化像PHP一样的动态语言的性能通常比优化静态类型的C语言更有挑战性。静态语言中，优化器可以根据检测变量类型来进行多种类型的优化。动态语言中只有很少的优化
+选择可以做，这让会让优化动态语言性能的工作更难做。
 
-While recent advancements in optimizations for dynamic languages are promising (like JIT compilation),
-they lag behind the state of the art for static languages. So, if you require very high performance,
-static languages are probably a safer choice.
+虽然现在的动态语言的优化做的越来越好（像Jit编译），但其性能还是落后于静态语言。所以从这方面来说如果你开发高性能应用，静态语言
+亦然是一个不错的选择。
 
-Another small benefit of static languages is the extra checking the compiler performs.
-A compiler can’t find logic errors, which are far more significant,
-but a compiler can find errors in advance that in a dynamic language only can be
-found in runtime.
+静态语言的另一个好处是其编译器在编译期间会执行更多的检查。静态编译器不能发现逻辑错误这是正常的，但他可以发现一些解释语言在运行时
+才发现的错误。
 
-Zephir is both statically and dynamically typed allowing you to take advantage from both sides where
-possible.
+Zephir语言即是动态的也是静态的，这可以让我们使用允许利用其动静结合的优势。
 
-Compilation Scheme
+编译方式（？）
 ------------------
-Zephir offers native code generation (currently via compilation to C), a compiler like gcc/clang/vc++
-optimizes and compiles the code down to machine code. The following graph shows how the process works:
+Zephir可以编译为本地代码（当前通过编译成C之后再编译成机器语言），像gcc/clang/vc++之类的编译器可以优化并编译出机器代码。
+下面的图展示了这些步骤：
 
 .. figure:: ../_static/img/scheme.png
     :align: center
 
-In addition to the ones provided by Zephir, Over time, compilers have been implemented
-and matured a number of optimizations that improve the performance of compiled applications:
+除了Zephir带来的性能提升，随着时间的推移，编译器带来的新的性能提升会让应用的性能得以提升。
 
 * `GCC optimizations <http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html>`_
 * `LLVM passes <http://llvm.org/docs/Passes.html>`_
 * `Visual C/C++ optimizations <http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx>`_
 
-Code Protection
+代码保护
 ---------------
-In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located
-in the I/O bound of the application (quite likely) rather than compute/memory bound.
-However, compiling code could also bring some level of intelectual protection to your application.
-With Zephir, producing native binaries, you also get the ability to hide the code to users or customers.
+在一些场景下，编译型语言并不会有很大的性能提升，这可能是因为性能瓶颈在I/O而不是在计算的原因。尽管如此编译成机器码后的代码带来的一个
+额外好处是可以保护你的源代码。
+使用Zephir开发的应用，如果提交给使用者二进制的扩展的话，就可对客户和用户隐藏自己的代码。
 
-Conclusion
+总结
 ----------
-Zephir was not created to replace PHP or C, instead of this, we think it is a complement to them,
-allowing developers to venture into code compilation and static typing.
-Zephir is precisely an attempt to join good things from the C and PHP worlds,
-looking for opportunities to make their applications faster.
-
+Zephir不是用来代码PHP或C语言的，Zephir更像是C与PHP的混合，Zephir可以让我们一窥静态类型编译和编译。Zephir是连接C与PHP世界的
+桥梁是我们对二者结合以提供更高性能的一次尝试。

@@ -1,15 +1,14 @@
-Control Structures
+控制结构
 ==================
-Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
+Zephir中的控制语句与C和PHP等语言的非常类似。
 
-Conditionals
+条件语句
 ------------
 
-If Statement
+If语句
 ^^^^^^^^^^^^
-'if' statements evaluates an expression executing this trace if the evaluation is true.
-Braces are compulsory, an 'if' can have an optional 'else' clause, multiple 'if'/'else'
-constructs can be chained together:
+'if'语句内的代码其条件为真时执行。花括号是必须要写的，'if'语句有一个可选的'else'语句，多个'if'/'else'控制语句
+可以进行连写。
 
 .. code-block:: zephir
 
@@ -23,7 +22,7 @@ constructs can be chained together:
         }
     }
 
-'elseif' clauses are also available:
+我们也可以使用'elseif':
 
 .. code-block:: zephir
 
@@ -37,38 +36,41 @@ constructs can be chained together:
         echo "ok";
     }
 
-Parentheses in the evaluated expression are optional:
+小括号在条件语句中是可选择的:
 
 .. code-block:: zephir
 
     if a < 0 { return -1; } else { if a > 0 { return 1; } }
 
-Switch Statement
+分支语句
 ^^^^^^^^^^^^^^^^
-A 'switch' evalutes an expression against a series of predefined literal values executing the corresponding
-'case' block or falling back to the 'default' block case:
+'switch'语句对表达式进行评估之后与'case'后的预定义值相匹配,若匹配成功则执行相应的操作，
+未匹配成功的值则会由'default'处理(其处理方式与php一致):
 
 .. code-block:: zephir
 
     switch count(items) {
+
         case 1:
         case 3:
             echo "odd items";
             break;
+
         case 2:
         case 4:
             echo "even items";
             break;
+
         default:
             echo "unknown items";
     }
 
-Loops
+循环
 -----
 
-While Statement
+While语句
 ^^^^^^^^^^^^^^^
-'while' denotes a loop that iterates as long as its given condition evaluates as true:
+'while'语句在其表达式为真时会不断的循环执行:
 
 .. code-block:: zephir
 
@@ -77,9 +79,9 @@ While Statement
         let counter -= 1;
     }
 
-Loop Statement
+Loop语句
 ^^^^^^^^^^^^^^
-In addition to 'while', 'loop' can be used to create infinite loops:
+除了'while'之外，'loop'可以用来创建无限循环:
 
 .. code-block:: zephir
 
@@ -90,9 +92,9 @@ In addition to 'while', 'loop' can be used to create infinite loops:
         echo x, "\n";
     }
 
-For Statement
+For语句
 ^^^^^^^^^^^^^
-A 'for' is a control structure that allows to traverse arrays or strings:
+'for'语句可以用来遍历数组或字符串:
 
 .. code-block:: zephir
 
@@ -100,7 +102,7 @@ A 'for' is a control structure that allows to traverse arrays or strings:
         echo item, "\n";
     }
 
-Keys in hashes can be obtained in the following way:
+hash中的键值对可以使用如下方式来取得:
 
 .. code-block:: zephir
 
@@ -110,7 +112,7 @@ Keys in hashes can be obtained in the following way:
         echo key, " ", value, "\n";
     }
 
-A 'for' loop can also be instructed to traverse an array or string in reverse order:
+'for'语句也可以用来反向遍历数组或字符串:
 
 .. code-block:: zephir
 
@@ -120,7 +122,7 @@ A 'for' loop can also be instructed to traverse an array or string in reverse or
         echo value, "\n";
     }
 
-A 'for' can be used to traverse string variables:
+'for'语句可以用来遍历字符串变量:
 
 .. code-block:: zephir
 
@@ -130,7 +132,7 @@ A 'for' can be used to traverse string variables:
         echo "[", ch ,"]";
     }
 
-In reverse order:
+反向遍历:
 
 .. code-block:: zephir
 
@@ -140,7 +142,7 @@ In reverse order:
         echo "[", ch ,"]";
     }
 
-A standard 'for' that traverses a range of integer values can be written as follows:
+标准的'for'语句可以用来遍历range函数生成的array:
 
 .. code-block:: zephir
 
@@ -148,23 +150,31 @@ A standard 'for' that traverses a range of integer values can be written as foll
         echo i, "\n";
     }
 
-Break Statement
+如果你只想取键值对中的一个则可以使用匿名变量"_"（下划线）来屏蔽另一个不需要的，这可以避免警告的发出:
+
+.. code-block:: zephir
+
+    // 只用key不用value反之亦然
+    for key, _ in data {
+        echo key, "\n";
+    }
+
+Break语句
 ^^^^^^^^^^^^^^^
-'break' ends execution of the current 'while', 'for' or 'loop' statements:
+'break'语句可以用来停止'while'，'for'，'loop'等语句:
 
 .. code-block:: zephir
 
     for item in ["a", "b", "c", "d"] {
         if item == "c" {
-            break; // exit the for
+            break; // 退出for循环
         }
         echo item, "\n";
     }
 
-Continue Statement
+Continue语句
 ^^^^^^^^^^^^^^^^^^
-'continue' is used within looping structures to skip the rest of the current loop iteration and
-continue execution at the condition evaluation and then the beginning of the next iteration.
+'continue'语句用在循环内部以实现跳过当前循环后面的代码，继续执行进行下面的循环操作。
 
 .. code-block:: zephir
 
@@ -177,11 +187,9 @@ continue execution at the condition evaluation and then the beginning of the nex
         echo a, "\n";
     }
 
-Require
+Require语句
 -------
-The 'require' statement dynamically includes and evaluates a specified PHP file. Note that files
-included via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allow to
-include other zephir files in runtime.
+这里的'require'的作用与PHP中的require的作用是一样，注意在Zephir中require的文件只能是PHP文件不能是Zephir文件。
 
 .. code-block:: zephir
 
@@ -191,28 +199,26 @@ include other zephir files in runtime.
 
 Let
 ---
-'Let' statement is used to mutate variables, properties and arrays. Variables are by default inmutable and this instruction makes them mutable:
+'Let'语句来用修改变量，属性或数组的值。Zephir中的变量默认是不可修改的，let语句可以让这些变量变成可修改的（相当于加了一层安全保障）:
 
 .. code-block:: zephir
 
-    let name = "Tony";           // simple variable
-    let this->name = "Tony";     // object property
-    let data["name"] = "Tony";   // array index
-    let self::_name = "Tony";    // static property
+    let name = "Tony";           // 简单变量
+    let this->name = "Tony";     // 对象属性
+    let data["name"] = "Tony";   // array索引
+    let self::_name = "Tony";    // 静态属性
 
-Also this instruction must be used to increment/decrement variables:
+当然let指令也可以用来对变量做自增或自减:
 
 .. code-block:: zephir
 
-    let number++;           // increment simple variable
-    let number--;           // decrement simple variable
-    let this->number++;     // increment object property
-    let this->number--;     // decrement object property
+    let number++;           // 对简单变量进行自增运算
+    let number--;           // 对简单变量进行自减运算
+    let this->number++;     // 对对象属性进行自增运算
+    let this->number--;     // 对简单变量进行自减运算
 
-Multiple mutations can be performed in a single 'let' operation:
+在一个'let'语句中可以进行多个更新操作:
 
 .. code-block:: zephir
 
     let price = 1.00, realPrice = price, status = false;
-
-

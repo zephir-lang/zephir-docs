@@ -1,8 +1,8 @@
-Built-In Methods
-================
-As mentioned before, Zephir promotes object-oriented programming, variables related to static types can be also handled as objects.
+内置方法
+=======
+正如前文提到的，Zephir完全是面向对象的，其静态类型（基本类型变量）变量也是作为对象来处理的.
 
-Compare these two methods:
+对比如下的两个方法:
 
 .. code-block:: zephir
 
@@ -21,7 +21,7 @@ Compare these two methods:
         return o;
     }
 
-And:
+和:
 
 .. code-block:: zephir
 
@@ -40,13 +40,13 @@ And:
         return o;
     }
 
-They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables
-does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.
+两个方法的功能一致，但第二个方法使用的是面向对象的方式来实现的。在基本的静态变量上使用面向对象的方式来写代码不会对程序的性能带来不好的影响，因为
+Zephir的编译器会自动的把面向对象的代码转译为面向过程的代码版本。
 
-String
-^^^^^^
+字符串
+^^^^^
 
-The following string built-in methods are available:
+Zephir中提供了如下的字符串方法(由于rst的表格中文对齐有问题，所以表格中的内容不再翻译):
 
 +-------------------+-----------------------------------------------------+----------------------------------------------------------------------------------+
 | OO                | Procedural                                          | Description                                                                      |
@@ -76,10 +76,10 @@ The following string built-in methods are available:
 | s->sha1()         | sha1(s)                                             | Calculate the sha1 hash of a string                                              |
 +-------------------+-----------------------------------------------------+----------------------------------------------------------------------------------+
 
-Array
-^^^^^
+数组
+^^^^
 
-The following array built-in methods are available:
+Zephi中提供了如下的数组操作方法(由于rst的表格中文对齐有问题，所以表格中的内容不再翻译):
 
 +-------------------+-----------------------------------------------------+----------------------------------------------------------------------------------+
 | OO                | Procedural                                          | Description                                                                      |
@@ -89,10 +89,10 @@ The following array built-in methods are available:
 | a->reverse()      | array_reverse(a)                                    | Return an array with elements in reverse order                                   |
 +-------------------+-----------------------------------------------------+----------------------------------------------------------------------------------+
 
-Char
+字符
 ^^^^
 
-The following char built-in methods are available:
+下面是字符相关的方法(由于rst的表格中文对齐有问题，所以表格中的内容不再翻译):
 
 +-------------------+-----------------------------------------------------+
 | OO                | Procedural                                          |
@@ -100,10 +100,10 @@ The following char built-in methods are available:
 | ch->toHex()       | sprintf("%X", ch)                                   |
 +-------------------+-----------------------------------------------------+
 
-Integer
-^^^^^^^
+数字
+^^^^
 
-The following integer built-in methods are available:
+下面是数字相关的方法(由于rst的表格中文对齐有问题，所以表格中的内容不再翻译):
 
 +-------------------+-----------------------------------------------------+
 | OO                | Procedural                                          |

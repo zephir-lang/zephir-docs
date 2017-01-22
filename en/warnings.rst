@@ -156,16 +156,3 @@ Raised when the compiler detects that an element is being tried to be appended t
         var b = false;
         let b[] = "some value";
     }
-
-non-array-append
-^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an element is being tried to be appended to a non array variable:
-
-.. code-block:: zephir
-
-    public function some()
-    {
-        var b = false;
-        let b[] = "some value";
-    }
-    

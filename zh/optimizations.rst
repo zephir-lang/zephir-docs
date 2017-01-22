@@ -1,30 +1,29 @@
 Optimizations
+优化
 =============
-Because the code in Zephir is sometimes very high-level, a C compiler might not be in the ability to optimize this code enough.
+因为Zephir语言相对C语言来讲较高级一些，所以C编译器可能无法对其代码进行足够的优化。
 
-Zephir, thanks to its AOT compiler, is able to optimize the code at compile time potentially improving its execution time
-or reducing the memory required by the program.
+由于Zehpir语言是静态编译的，因此有对代码在编译时进行优化的可能，通过这些优化可以减少执行时间与内存占用。
 
-You can enable optimizations by passing its name prefixed by -f:
+我们通过在编译时传递以-f开头的编译优化参数进行优化。
 
 .. code-block:: bash
 
     zephir -fstatic-type-inference -flocal-context-pass
 
-Warnings can be disabled by passing its name prefixed by -fno-:
+在编译时可以传递-fno-来关闭一些警告信息:
 
 .. code-block:: bash
 
     zephir -fno-static-type-inference -fno-call-gatherer-pass
 
-The following optimizations are supported:
+Zephir的编译器支持下列优化参数:
 
 static-type-inference
 ^^^^^^^^^^^^^^^^^^^^^
-This compilation pass is very important, since it looks for dynamic variables that can potentially
-transformed into static/primitive types which are better optimized by the underlying compiler.
+这个编译参数非常重要，因为他可以让编译器查找动态变量以尽可能的使其编译为静态或基本变量（如int等）这样可以提升应用的性能。
 
-The following code use a set dynamic variables to perform some mathematical calculations:
+下面的代码使用一些动态变量来进行数学计算:
 
 .. code-block:: zephir
 
@@ -42,9 +41,7 @@ The following code use a set dynamic variables to perform some mathematical calc
 		return i + b;
 	}
 
-Variables 'a', 'b' and 'i' are used all of them in mathematical operations and can thus be transformed
-into static variables taking advantage of other compilation passes. After this pass, the compiler
-automatically rewrites this code to:
+变量a,b,i在其中完成了数学计算，这些变量可以被Zephir转换成基本变量，这会带来性能上提升。转换过后的代码如下:
 
 .. code-block:: zephir
 
@@ -62,22 +59,19 @@ automatically rewrites this code to:
 		return i + b;
 	}
 
-By disabling this compilation pass, all variables will maintain the type which they were originally declared
-without optimization.
+如果禁用了这个扩展，所有的变量会保持原样不变，编译器不会做出如上优化。
 
 static-type-inference-second-pass
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This enables a second type inference pass which improves the work done based on the data gathered by
-the first static type inference pass.
+这个优化选项会打开第二类型推断途经，由于其会收集基于第一静态推断途经的数据，所以会加大编译的工作量。
 
 local-context-pass
 ^^^^^^^^^^^^^^^^^^
-This compilation pass moves variables that will be allocated in the heap to the stack.
+这个编译参数会把堆中的数据移到栈中。这样通过减少内存的间接访问从而提升性能。
 
 constant-folding
 ^^^^^^^^^^^^^^^^
-Constant folding is the process of simplifying constant expressions at compile time. The following
-code is simplified when this optimization is enabled:
+常量合并即是在编译时对常量表达式进行合并。下面是打开这个优化选择时的例子:
 
 .. code-block:: zephir
 
@@ -86,7 +80,7 @@ code is simplified when this optimization is enabled:
 		return (86400 * 30) / 12;
 	}
 
-Is transformed into:
+上述代码会被转换成:
 
 .. code-block:: zephir
 
@@ -97,7 +91,7 @@ Is transformed into:
 
 static-constant-class-folding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This optimization replaces values at class constants in compile time:
+这个优化选项可以把类的常量替换成其代码的值:
 
 .. code-block:: zephir
 
@@ -110,10 +104,9 @@ This optimization replaces values at class constants in compile time:
 		{
 			return self::SOME_CONSTANT;
 		}
-
 	}
 
-Is transformed into:
+上述代码被转换为:
 
 .. code-block:: zephir
 
@@ -126,11 +119,23 @@ Is transformed into:
 		{
 			return 100;
 		}
-
 	}
 
 call-gatherer-pass
 ^^^^^^^^^^^^^^^^^^
-This pass counts how many times a function or method is called within the same method.
-This allow the compiler to introduce inline caches to avoid method or function lookups.
+这个参数打开后编译器会计算一个函数或方法在被调用方法中被调用的次数。
+这个优化选项可以让编译器引入内联缓存来避免方法或函数的查找从而提升性能。
 
+优化后:
+
+.. code-block:: zephir
+
+	class MyClass extends OtherClass
+	{
+
+		public function getValue()
+		{
+			this->someMethod();
+            this->someMethod(); // 这个方法调用会执行的比较快
+		}
+	}
