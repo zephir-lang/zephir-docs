@@ -168,7 +168,7 @@ Zephir allows to instantiate, manipulate, call methods, read class constants, et
 Static Types
 ------------
 Static typing allows the developer to declare and use some variable types available in C.
-Variables can't change their type once they're declared as dynamic types. However, they allow
+Variables can't change their type once they're declared as static types. However, they allow
 the compiler to do a better optimization job. The following types are supported:
 
 +------------------+---------------------------------------------------------------------------------+

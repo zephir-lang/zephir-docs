@@ -1,12 +1,10 @@
 类型
 =====
-Zephir 是动态和静态类型的. In this chapter we highlight the supported types and
-its behavior:
+Zephir 兼有动态和静态语言的特性. 本章我们将对Zephir支持的类型进行探讨:
 
 动态类型
 ------------
-动态类型的变量和PHP中的完全一样, they can be assigned and reassigned to
-different types without restriction.
+Zephir中动态类型的变量和PHP中的变量完全一样, 变量可以不受限制的被赋予多种类型的值。
 
 动态类型变量必须使用关键字 'var' 声明, 该行为与PHP几乎是相同的:
 
@@ -17,39 +15,39 @@ different types without restriction.
     // 初始化变量
     let a = "hello", b = false;
 
-    // 改变变量的值
+    // 修改变量的值
     let a = 10, b = "140";
 
-    // 他们之间进行操作
+    // 执行二元操作
     let c = a + b;
 
-他们可以有八种类型:
+Zephir有八种类型动态变量:
 
-+---------------+---------------------------------------------------------------------------+
-| 类型          | 描述                                                                      |
-+---------------+---------------------------------------------------------------------------+
-| boolean       | A boolean expresses a truth value. It can be either 'true' or 'false'.    |
-+---------------+---------------------------------------------------------------------------+
-| integer       | Integer numbers. The size of an integer is platform-dependent.            |
-+---------------+---------------------------------------------------------------------------+
-| float/double  | Floating point numbers. The size of a float is platform-dependent.        |
-+---------------+---------------------------------------------------------------------------+
-| string        | A string is series of characters, where a character is the same as a byte.|
-+---------------+---------------------------------------------------------------------------+
-| array         | An array is an ordered map. A map is a type that associates values to keys|
-+---------------+---------------------------------------------------------------------------+
-| object        | Object abstraction like in PHP                                            |
-+---------------+---------------------------------------------------------------------------+
-| resource      | A resource holds a reference to an external resource                      |
-+---------------+---------------------------------------------------------------------------+
-| null          | The special NULL value represents a variable with no value                |
-+---------------+---------------------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| 类型                                             + 描述                                                                           |
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| boolean(布尔型)                                  + 布尔型变量描述了值的真假。他的取值只有两个真或假。                             |
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| integer(整型)                                    + 整型。大小依赖于平台。                                                         |
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| float/double(浮点型/双精度浮点型)                + 浮点数。其大小依赖于平台。                                                     |
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| string(字符串)                                   + 字符串是由字符组成的，其中的每个字符即是一个byte长。                           |
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| array(数组)                                      + 字符串是一个有序映射。以键值对的形式存储。                                     |
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| object(对象)                                     + PHP中的对象。                                                                  |
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| resource(资源)                                   + 用来保存外部资源的句柄。                                                       |
++--------------------------------------------------+--------------------------------------------------------------------------------+
+| null(空)                                         + 代表空值。                                                                     |
++--------------------------------------------------+--------------------------------------------------------------------------------+
 
-Check more info about these types in the `PHP manual`_
+更多相关类型信息可以参见 `PHP manual`_
 
 布尔
 ^^^^^^^
-A boolean expresses a truth value. It can be either 'true' or 'false':
+布尔变量表示了值的真假。可以是true或false：
 
 .. code-block:: zephir
 
@@ -57,53 +55,46 @@ A boolean expresses a truth value. It can be either 'true' or 'false':
 
 整型
 ^^^^^^^
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two
-billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18.
-PHP does not support unsigned integers so Zephir has this restriction too:
+整型数。整型数是平台相关的在32位的机器上最大值约是21亿（2147483647），64位系统上则更大一些最大值约为9E18。
+PHP不支持无符号整数（动态类型），Zephir中也是一样。
 
 .. code-block:: zephir
 
     var a = 5, b = 10050;
 
-Integer overflow
+整数溢出
 ^^^^^^^^^^^^^^^^
-Contrary to PHP, Zephir does not automatically check for integer overflows, like in C if you are
-doing operations that may return a big number you can use types such as 'unsigned long' or 'float'
-to store them:
+与PHP相反的是Zephir不自动的检查整数溢出，如果开发者处理的结果会返回一个比较大的值一个比较好的做法是可以使用unsigned long或
+float型来保存这个数据:
 
 .. code-block:: zephir
 
     unsigned long my_number = 2147483648;
 
-Float/Double
-^^^^^^^^^^^^
-Floating-point numbers (also known as "floats", "doubles", or "real numbers").
-Floating-point literals are expressions with zero or more digits, followed by a period (.),
-followed by zero or more digits. The size of a float is
-platform-dependent, although a maximum of ~1.8e308 with a
-precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+浮点数/双精度浮点数
+^^^^^^^^^^^^^^^^
+浮点数按精度有单精度浮点数与双精度浮点数之分。浮点数一般由三部分组成第一部通常有一个小数组成，第二部分为一个e，
+第三部分则是一组代表幂的有数字组成。浮点数的大小与实现也是平台相关的(64位的浮点数IEEE格式)。
 
 .. code-block:: zephir
 
     var number = 5.0, b = 0.014;
 
-Floating point numbers have limited precision. Although it depends on the system,
-as PHP, Zephir uses the IEEE 754 double precision format, which will give a maximum
-relative error due to rounding in the order of 1.11e-16.
+浮点数的精度是有限的。由于浮点数是平台相关的，像PHP一样Zephir也使用IEEE 754双精度格式，
+有大约1.11e-16的相对误差。
 
 字符串
 ^^^^^^
-A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports
-a 256-character set, and hence does not offer native Unicode support.
+字符串是由一组字符组成的，其中的每个字符即是一个byte。像PHP一样Zephir只支持256字符集，因此不支持原生的Unicode.
 
 .. code-block:: zephir
 
     var today = "friday";
 
-In Zephir, string literals can only be specified using double quotes (like in C), single quotes are reserved
-for chars.
+Zephir中只能使用双引号来表示字符串单引号表示字符这与C语言是一致的。
 
-The following escape sequences are supported in strings:
+
+Zephir支持如下转义序列:
 
 +---------------+---------------------------------------------------------------------------+
 | 序列          | 描述                                                                      |
@@ -124,7 +115,7 @@ The following escape sequences are supported in strings:
     var today = "\tfriday\n\r",
         tomorrow = "\tsaturday";
 
-In Zephir, strings don't support variable parsing like in PHP, you can use concatenation instead:
+Zephir中不支持像PHP中一样的对双引号中的字符进行解释（以便找出变量以进行值替代），因此需要使用下面的替代方式来实现字符串连接:
 
 .. code-block:: zephir
 
@@ -134,22 +125,20 @@ In Zephir, strings don't support variable parsing like in PHP, you can use conca
 
 数组
 ^^^^^^
-The array implementation in Zephir is basically the same as in PHP: Ordered maps optimized for
-several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map),
-dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and
-multidimensional arrays are also possible.
+Zephir中的数组和PHP中是一样的： 不同的序列（访问方式等）代表者不同的数据结构类型，其用法也不同；比如可以用作数组，列表（向量），
+hash表（map的一种实现），字典，集合，栈，队列等。数组值也可是另一个数组，树与多维数组等。
 
-The syntax to define arrays is slightly different than in PHP:
+Zephir中对数组的定义与PHP中略有不同:
 
 .. code-block:: zephir
 
-    //Square braces must be used to define arrays
+    //必须使用方括号来定义数组
     let myArray = [1, 2, 3];
 
-    //Double colon must be used to define hashes' keys
+    //使用冒号分割开键值对来定义hash
     let myHash = ["first": 1, "second": 2, "third": 3];
 
-Only long and string values can be used as keys:
+Zephir数组中只能使用整型或字符串作为键:
 
 .. code-block:: zephir
 
@@ -158,7 +147,7 @@ Only long and string values can be used as keys:
 
 对象
 ^^^^^^^
-Zephir 允许实例化, 操作, 调用方法, 读取类常量, etc from PHP objects:
+Zephir 允许实例化, 操作, 调用方法, 读取类常量等:
 
 .. code-block:: zephir
 
@@ -167,52 +156,49 @@ Zephir 允许实例化, 操作, 调用方法, 读取类常量, etc from PHP obje
 
 静态类型
 ------------
-Static typing allows the developer to declare and use some variable types available in C.
-Variables can't change their type once they're declared as dynamic types. However, they allow
-the compiler to do a better optimization job. The following types are supported:
+静态类型为开发者提供了一种使用C语言中基本类型的机会。一旦变量被定义为静态类型，在使用过程中就不能再修改其类型了。
+静态类型会更容易的让编译器来做出优化的选择。Zephir中支持下列静态类型
 
-+------------------+---------------------------------------------------------------------------------+
-| Type             | Description                                                                     |
-+------------------+---------------------------------------------------------------------------------+
-| boolean          | A boolean expresses a truth value. It can be either 'true' or 'false'.          |
-+------------------+---------------------------------------------------------------------------------+
-| integer          | Signed integers. At least 16 bits in size.                                      |
-+------------------+---------------------------------------------------------------------------------+
-| unsigned integer | Unsigned integers. At least 16 bits in size.                                    |
-+------------------+---------------------------------------------------------------------------------+
-| char             | Smallest addressable unit of the machine that can contain basic character set.  |
-+------------------+---------------------------------------------------------------------------------+
-| unsigned char    | Same size as char, but guaranteed to be unsigned.                               |
-+------------------+---------------------------------------------------------------------------------+
-| long             | Long signed integer type. At least 32 bits in size.                             |
-+------------------+---------------------------------------------------------------------------------+
-| unsigned long    | Same as long, but unsigned.                                                     |
-+------------------+---------------------------------------------------------------------------------+
-| float/double     | Double precision floating-point type. The size is platform-dependent.           |
-+------------------+---------------------------------------------------------------------------------+
-| string           | A string is series of characters, where a character is the same as a byte.      |
-+------------------+---------------------------------------------------------------------------------+
-| array            | An structure that can be used as hash, map, dictionary, collection, stack, etc. |
-+------------------+---------------------------------------------------------------------------------+
++----------------------------------------------+--------------------------------------------------------------------------------+
+| 类型                                         + 描述                                                                           |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| boolean(布尔型)                              + 布尔型变量描述了值的真假。他的取值只有两个真或假。                             |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| integer(整型)                                + 有符号整型。至少16位长。                                                       |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| unsigned integer(无符号整型)                 + 无符号整型。至少16位长。                                                       |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| char(字符型)                                 + 计算机可直接寻址的最小单位，可以存下一个字符                                   |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| unsigned char(无符号字符型)                  + 大小同字符型，但，是有符号的。                                                 |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| long(长整型)                                 + 有符号长整型。至少32位。                                                       |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| unsigned long(无符号长整型)                  + 长度和有符号整型一样，但，是无符号的。                                         |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| float/double(浮点型/双精度浮点型)            + 双精度浮点型。大小与平台相关。                                                 |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| string(字符串)                               + 字符串是由字符组成的，其中的每个字符即是一个byte长。                           |
++----------------------------------------------+--------------------------------------------------------------------------------+
+| array(数组)                                  + 一个可以用作hash,map,dictionary,collecton,stack的结构。                        |
++----------------------------------------------+--------------------------------------------------------------------------------+
 
 布尔
 ^^^^^^^
-A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior
-static boolean types remain boolean (true or false) no mater what value is assigned to them:
+布尔变量表示真值。或true或false。与动态变量不同的是不管赋什么值，静态的布尔值会一直保持真或假:
 
 .. code-block:: zephir
 
     boolean a;
 
     let a = true,
-        a = 100, // automatically casted to true
-        a = null, // automatically casted to false
-        a = "hello"; // throws a compiler exception
+        a = 100, // 自动转换成true
+        a = null, // 强制转换为假
+        a = "hello"; // 抛出编译异常
 
-Integer/Unsigned Integer
+整型/无符号整型
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Integer values are like the integer member in dynamic values. Values assigned to integer variables
-remain integer:
+静态整型与动态整型是一样的。他的类型会保持不变:
 
 .. code-block:: zephir
 
@@ -220,37 +206,34 @@ remain integer:
 
     let a = 50,
         a = -70,
-        a = 100.25, // automatically casted to 100
-        a = null, // automatically casted to 0
-        a = false, // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = 100.25, // 自动强制转换为 100
+        a = null, // 自动强制转换为 0
+        a = false, // 自动强制转换为 0
+        a = "hello"; // 抛出编译异常
 
-Unsigned integers are like integers but they don't have sign, this means you can't store
-negative numbers in these sort of variables:
+无符号整型与整型不同的是他们没有符号，也就意味着可以在其中存放非负数:
 
 .. code-block:: zephir
 
     let a = 50,
-        a = -70, // automatically casted to 70
-        a = 100.25, // automatically casted to 100
-        a = null, // automatically casted to 0
-        a = false, // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = -70, // 自动强制转换为 70
+        a = 100.25, // 自动强制转换为 100
+        a = null, // 自动强制转换为 0
+        a = false, // 自动强制转换为 0
+        a = "hello"; // 抛出编译异常
 
-Unsigned integers are twice bigger than standard integers, assign unsigned integers to integers
-may represent loss of data:
+无符号整型的最大值比有符号整型的最大值大一倍，无符号整型转换成有符号整型时可能会丢失数据:
 
 .. code-block:: zephir
 
     uint a, int b;
 
     let a = 2147483648,
-        b = a, // possible loss of data
+        b = a, // 有可能会有丢失数据
 
-Long/Unsigned Long
+长整型/无符号长整型
 ^^^^^^^^^^^^^^^^^^
-Long variables are twice bigger than integer variables, thus they can store bigger numbers,
-As integers values assigned to long variables are automatically casted to this type:
+长整型的位数通常比整型大一倍，所以他们可存的整型数比较大，整型赋值给长整型时会自动强制转换为长整型:
 
 .. code-block:: zephir
 
@@ -258,60 +241,56 @@ As integers values assigned to long variables are automatically casted to this t
 
     let a = 50,
         a = -70,
-        a = 100.25, // automatically casted to 100
-        a = null, // automatically casted to 0
-        a = false, // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = 100.25, // 自动强制转换为 100
+        a = null, // 自动强制转换为 0
+        a = false, // 自动强制转换为 0
+        a = "hello"; // 抛出编译异常
 
-Unsigned longs are like longs but they aren't signed, this means you can't store
-negative numbers in these sort of variables:
+无符号长整型与整型类型除了他们没有符号之外，也就意味着可以用其存储非负数：
 
 .. code-block:: zephir
 
     let a = 50,
-        a = -70, // automatically casted to 70
-        a = 100.25, // automatically casted to 100
-        a = null, // automatically casted to 0
-        a = false, // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = -70, // 自动强制转换为 70
+        a = 100.25, // 自动强制转换为 100
+        a = null, // 自动强制转换为 0
+        a = false, // 自动强制转换为 0
+        a = "hello"; // 抛出异常
 
-Unsigned longs are twice bigger than standard longs, assign unsigned longs to longs
-may represent loss of data:
+无符号长整型的最大值是有符号长整型最大值的两倍，因此无符号长整型向有符号长整型赋值时可能会丢失数据:
 
 .. code-block:: zephir
 
     ulong a, long b;
 
     let a = 4294967296,
-        b = a, // possible loss of data
+        b = a, // 可能丢失数据
 
-Char/Unsigned Char
+字符型/无符号字符型
 ^^^^^^^^^^^^^^^^^^
-Char variables are the smallest addressable unit of the machine that can contain basic character set.
-Every 'char' variable represents every character in a string:
+可直接寻址的最小内存单元，其中可以存入一个字符。字符是组成字符串的元素:
 
 .. code-block:: zephir
 
     char ch, string name = "peter";
 
-    let ch = name[2]; // stores 't'
-    let ch = 'Z'; // char literals must be enclosed in simple quotes
+    let ch = name[2]; // 存储 't'
+    let ch = 'Z'; // 字符必须使用单引号包起来
 
-String
+字符串
 ^^^^^^
-A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set,
-and hence does not offer native Unicode support.
+字符串是由字符组成的，每个字符即是一个char。PHP中只支持256字符集，因此是不支持原生Unicode字符集的。
 
-When a variable is declared string it never changes its type:
+当变量定义为字符串时其类型就不可被更改了:
 
 .. code-block:: zephir
 
     string a;
 
     let a = "",
-        a = "hello", //string literals must be enclosed in double quotes
-        a = 'A', // converted to string "A"
-        a = null; // automatically casted to ""
+        a = "hello", //字符串要包在双引号中
+        a = 'A', // 字符'A'转换成字符串"A"
+        a = null; // 自动强制转换为 ""
 
 
 
