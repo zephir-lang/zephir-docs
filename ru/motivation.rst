@@ -1,121 +1,115 @@
 Почему Zephir?
 ==============
-Today’s PHP applications must balance a number of concerns including stability, performance and functionality.
-Every PHP application is based on a set of common components that are also base for most of the application.
+Сегодня PHP приложения должны сбалансировать ряд проблем, в том числе стабильности, производительности и функциональности.
+Каждое РНР приложение основано на наборе общих компонентов, которые также являются базой для большинства приложений.
 
-These common components are libraries/frameworks or a combination of them. Once installed, frameworks rarely
-change, being the foundation of the application they must be highly functional and also very fast.
+Эти общие компоненты библиотек/фреймворков или их сочетание. После установки фреймворки меняются редко, являясь основой 
+приложения они должны быть очень функциональным, а также очень быстрыми.
 
-Getting fast and robust libraries can be complicated due to high levels of abstraction that are
-typically implemented on them. Given the condition that base libraries or frameworks rarely change,
-there is an opportunity to build extensions that provide this functionality taking advantage of the
-compilation improving performance and resource consumption.
+Получение быстрых и надежных библиотек может быть затруднено из-за высоких уровней абстракции, 
+которые, как правило, реализуются в них. Учитывая условие, что базовые библиотеки или фреймворки 
+меняются редко, есть возможность создавать расширения, которые обеспечивают эту функциональность 
+используя компиляцию для улучшение производительности и использования ресурсов.
 
-With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from
-PHP gaining important seconds that can make your application faster while improving the user experience.
+С Zephir, вы можете реализовать объектно-ориентированные библиотеки/фреймворки/приложения, которые могут быть использованы  
+в PHP, экономя важные секунды, которые могут сделать ваше приложение быстрее, улучшая его потребительские свойства.
 
-Если ты PHP программист...
+Если вы PHP программист...
 --------------------------
-PHP is one of the most popular languages in use for the development of web applications.
-Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
+PHP является одним из самых популярных языков, используемых для разработки веб-приложений. Динамически типизированные  
+и интерпретируемые языки, как PHP предлагают очень высокую скорость разработки благодаря их гибкости.
 
-Since version 4 and then 5, PHP is based on the Zend Engine implementation. This is a virtual machine
-that executes the PHP code from its bytecode representation. Zend Engine is almost present in every
-PHP installation in the world, with Zephir, you can create extensions for PHP running under the
-Zend Engine.
+Начиная с версии 4, а затем 5, PHP основан на реализации движка Zend Engine. Это виртуальная машина, которая выполняет 
+PHP код из представления в байт-коде. Zend Engine практически присутствует в каждой установке PHP в мире, 
+с Zephir, вы можете создавать расширения для PHP, работающих под Zend Engine.
 
-PHP is hosting Zephir, so they obviously have a lot of similarities, however; they have
-important differences that give Zephir its own personality. For example, Zephir is more strict,
-and it could be make you less productive compared to PHP due to the compilation step.
+Zephir основывается на PHP, поэтому они, очевидно, имеют много общего, однако; они имеют существенные различия, которые 
+придают Zephir свою собственную индивидуальность. Например, Zephir является более строгим, и это может быть сделать 
+вас менее производительным по сравнению с PHP из-за шага компиляции.
 
-Если ты C программист...
+Если вы C программист...
 ------------------------
-C is one of the most powerful and popular languages ever created. In fact, PHP is written in C,
-which is one of the reasons why PHP extensions are available for it. C gives you the freedom to
-manage memory, use low level types and even inline assembly routines.
+C является одним из самых мощных и популярных языков когда-либо созданных. На самом деле, PHP написан на C, 
+это является одной из причин, почему расширения PHP доступны для него. C дает вам свободу для управления памятью, 
+использования типы низкого уровня и даже встроенные  ассемблерные процедуры.
 
-However, developing big applications in C can take much longer than expected compared to PHP or Zephir
-and some errors can be tricky to find if you aren't an experienced developer.
+Тем не менее, разработка больших приложений на C может занять гораздо больше времени, чем ожидалось, по сравнению с 
+PHP или Zephir и некоторые ошибки может быть сложно найти, если вы не являетесь опытным разработчиком.
 
-Zephir was designed to be safe, so it doesn't implement pointers or manual memory management, so
-if you're a C programmer, you will feel Zephir less powerful but more friendly than C.
+Zephir был разработан, чтобы быть безопасным, поэтому он не реализует указатели или ручное управление памятью, 
+так что если вы программируете на C, вы будете чувствовать, что Zephir менее мощный, но более дружественным, чем C.
 
 Компиляция против интерпретации
 -------------------------------
-Compilation usually slows the development down; you will need a bit more of patience to make your code
-compiled before running it. Moreover, the interpretation tends to reduce the performance in favor of
-productivity. In some cases, there is no any noticeable difference between the speed of the
-interpreted and compiled code.
+Компиляция обычно замедляет разработку; вам потребуется немного больше терпения, чтобы компилировать ваш код перед его запуском. 
+Соответственно, интерпретация ведет к снижению производительности в пользу скорости разработки. 
+В некоторых случаях, не существует какой-либо заметной разницы между скоростью интерпретируемого и скомпилированного кода.
 
-Zephir requires compilation of your code, however, the functionality is used from PHP that is interpreted.
+Zephir требует компиляции кода, однако, его функциональность используется с PHP, который интерпретируется.
 
-Once the code is compiled is not necessary to do so, however, interpreted code is interpreted each time
-it is run. A developer can decide which parts of your application should be in Zephir and which not.
+После компиляции кода не нужно делать ее снова, однако, интерпретируемый код интерпретируется каждый раз, когда он запускается. 
+Разработчик может решить, какие части приложения должны быть написаны на Zephir и какие нет.
 
 Статическая типизация против динамической типизации
 ---------------------------------------------------
-In general speaking, in a static typed language, a variable is bound to a particular type for its lifetime.
-Its type can’t be changed and it can only reference type-compatible instances and operations.
-Languages like C/C++ were implemented with the scheme:
+Вообще говоря, в статически типизированном языке, переменная связана с конкретным типом всю свою жизнь. 
+Её тип не может быть изменен, и он может ссылаться только на типо-совместимые экземпляры и операции. 
+Языки, типа C/C ++ были реализованы со схемой:
 
 .. code-block:: c
 
 	int a = 0;
 	a = "hello"; // не позволяется
 
-In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer
-to a value of a type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of
-a dynamic typed language:
+В динамической типизации, тип связан со значением, а не переменной. Таким образом, переменная может ссылаться 
+на тип значения, а затем переназначить позже на значение несвязанного типа. Javascript/PHP - примеры динамического типизированного языка:
 
 .. code-block:: zephir
 
 	var a = 0;
 	a = "hello"; // позволяется
 
-Despite their productivity advantages, dynamic languages may not be the best choices for all applications,
-particularly for very large code bases and high-performance applications.
+Несмотря на свои преимущества производительности, динамические Языки могут быть не лучший выбор для всех приложений, 
+в частности, для очень больших кодовых баз и высокопроизводительных приложений.
 
-Optimizing the performance of a dynamic language like PHP is more challenging than for a static language like C.
-In a static language, optimizers can exploit the type information to make decisions. In a dynamic language,
-fewer such clues are available for the optimizer, making optimization choices harder.
+Оптимизация производительности динамического языка, такого как PHP, более сложна, чем для статического языка, такого как C. 
+На статическом языке оптимизаторы могут использовать информацию типов для принятия решений. 
+В динамическом языке для оптимизатора доступно меньше таких ключей, что затрудняет выбор вариантов оптимизации.
 
-While recent advancements in optimizations for dynamic languages are promising (like JIT compilation),
-they lag behind the state of the art for static languages. So, if you require very high performance,
-static languages are probably a safer choice.
+Хотя последние достижения в оптимизации динамических языков являются многообещающими (например, компиляция JIT), 
+они отстают от уровня техники для статических языков. Таким образом, если вам требуется очень высокая производительность, 
+статические языки, вероятно, более безопасный выбор.
 
-Another small benefit of static languages is the extra checking the compiler performs.
-A compiler can’t find logic errors, which are far more significant,
-but a compiler can find errors in advance that in a dynamic language only can be
-found in runtime.
+Еще одно небольшое преимущество статических языков - дополнительная проверка компилятора. Компилятор не может найти 
+логические ошибки, которые намного важнее, но компилятор может заранее обнаружить ошибки, которые в динамическом языке могут быть найдены только во время выполнения.
 
-Zephir is both statically and dynamically typed allowing you to take advantage from both sides where
-possible.
+Zephir статически и динамически типизируется, позволяя вам использовать преимущества с обеих сторон, где это возможно.
 
 Схема компиляции
 ----------------
-Zephir offers native code generation (currently via compilation to C), a compiler like gcc/clang/vc++
-optimizes and compiles the code down to machine code. The following graph shows how the process works:
+Zephir предлагает генерацию собственного кода (в настоящее время через компиляцию в C), компилятор, подобный gcc/clang/vc ++, оптимизирует и компилирует код до машинного кода. На следующем графике показано, как работает этот процесс:
 
 .. figure:: ../_static/img/scheme.png
     :align: center
 
-In addition to the ones provided by Zephir, Over time, compilers have been implemented
-and matured a number of optimizations that improve the performance of compiled applications:
+В дополнение к тому, что предоставляет Zephir, Со временем, в компиляторе были реализованы и назрели ряд оптимизаций, 
+которые улучшают производительность скомпилированных приложений:
 
-* `GCC optimizations <http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html>`_
-* `LLVM passes <http://llvm.org/docs/Passes.html>`_
-* `Visual C/C++ optimizations <http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx>`_
+* `GCC оптимизации <http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html>`_
+* `LLVM проходы <http://llvm.org/docs/Passes.html>`_
+* `Visual C/C++ оптимизации <http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx>`_
 
 Защита кода
 -----------
-In some circumstances, the compilation does not significantly improve performance, this may be because the bottleneck is located
-in the I/O bound of the application (quite likely) rather than compute/memory bound.
-However, compiling code could also bring some level of intelectual protection to your application.
-With Zephir, producing native binaries, you also get the ability to hide the code to users or customers.
+В некоторых случаях компиляция не приводит к существенному повышению производительности, 
+это может быть связано с тем, что узкое место расположено в области ввода-вывода приложения (что вполне вероятно), 
+а не в вычислении/памяти. Тем не менее, компиляция кода может также обеспечить определенный уровень интеллектуальной 
+защиты для вашего приложения. Благодаря Zephir, производящему конечные двоичные файлы, вы также получаете возможность 
+скрывать код для пользователей или клиентов.
 
 Заключение
 ----------
-Zephir was not created to replace PHP or C, instead of this, we think it is a complement to them,
-allowing developers to venture into code compilation and static typing.
-Zephir is precisely an attempt to join good things from the C and PHP worlds,
-looking for opportunities to make their applications faster.
+В некоторых случаях компиляция не приводит к существенному повышению производительности, это может быть связано с тем, 
+что узкое место расположено в области ввода-вывода приложения (что вполне вероятно), а не в вычислении/памяти. 
+Тем не менее, компиляция кода может также обеспечить определенный уровень интеллектуальной защиты для вашего приложения. 
+Благодаря Zephir, производящему конечные двоичные файлы, вы также получаете возможность скрывать код для пользователей или клиентов.
