@@ -1,16 +1,13 @@
 Введение в Zephir
 =================
-Zephir is a language that addresses the major needs of a PHP developer trying to write and compile code that
-can be executed by PHP. It is a dynamically/statically typed, some of its features can be familiar to
-PHP developers.
+Zephir - это язык, который обращается к основным потребностям разработчика PHP, пытающегося писать и компилировать код, 
+который может быть выполнен PHP. Он динамически/статически типизирован, некоторые его функции могут быть знакомы разработчикам PHP.
 
-The name Zephir is a contraction of the words Zend Engine/PHP/Intermediate. While this suggests that the
-pronunciation should be zephyr, the creators of Zephir actually pronounce it zaefire_.
+Имя Zephir является сокращение слов Zend Engine/PHP/Intermediate. Хотя это говорит о том, что произношение должно быть зефир, создатели Zephir фактически произносят его zaefire_.
 
 Hello World!
 ------------
-Каждый язык имеет свой собственный "Hello World!" sample, in Zephir this introductory example showcases some important
-features of this language.
+Каждый язык имеет свой собственный образец "Hello World!", в Zephir этот вводный пример демонстрирует некоторые важные особенности этого языка.
 
 Код в Zephir должны быть помещены в классы. Этот язык предназначен для создания объектно-ориентированных библиотек/фреймворков,
 поэтому использование кода без класса не допускается. Кроме того, пространство имен необходимо:
@@ -33,7 +30,7 @@ features of this language.
         }
     }
 
-Once this class is compiled it produce the following code that is transparently compiled by gcc/clang/vc++:
+После компиляции этого класса он создает следующий код, который прозрачно компилируется gcc/clang/vc++:
 
 .. code-block:: c
 
@@ -62,21 +59,20 @@ Once this class is compiled it produce the following code that is transparently 
         php_printf("%s", "Hello World!");
     }
 
-Actually, it is not expected that a developer that uses Zephir must know or even understand C,
-however, if you have any experience with compilers, php internals or the C language itself,
-it would provide a more clear sceneario to the developer when working with Zephir.
+На самом деле, не ожидается, что разработчик, который использует Zephir должен знать или даже понимать C,
+однако, если у вас есть опыт работы с компиляторами, PHP внутренностей или самого языка C, 
+это обеспечит более четкий сценарий разработчику при работе с Zephir.
 
 Понимание Zephir
 ----------------
-In the following examples, we’ll describe just enough of the details, so you understand what’s going on.
-The goal is to give you a sense of what programming in Zephir is like. We’ll explore the details of the
-features in subsequent chapters.
+В следующих примерах мы опишем достаточно подробностей, чтобы вы поняли, что происходит. 
+Цель состоит в том, чтобы дать вам понять, что такое программирование в Zephir. 
+Мы рассмотрим детали функций в последующих главах.
 
-The following example is very simple, it implements a class and a method with a small program that checks
-the types of an array
+Следующий пример очень прост, он реализует класс и метод с небольшой программой, которая проверяет типы массива
 
-Let’s examine the code in detail, so we can begin to learn Zephir syntax.
-There are a lot of details in just a few lines of code! We’ll explain the general ideas here:
+Рассмотрим код подробно, чтобы мы могли начать изучать синтаксис Zephir. 
+В нескольких строках кода много деталей! Мы объясним общие идеи здесь:
 
 .. code-block:: zephir
 
@@ -89,17 +85,17 @@ There are a lot of details in just a few lines of code! We’ll explain the gene
     {
         public function someMethod()
         {
-            /* Variables must be declared */
+            /* Переменные должны быть объявлены */
             var myArray;
             int i = 0, length;
 
-            /* Create an array */
+            /* Создать массив */
             let myArray = ["hello", 0, 100.25, false, null];
 
-            /* Count the array into a 'int' variable */
+            /* Подсчитайте массив в 'INT' переменной */
             let length = count(myArray);
 
-            /* Print value types */
+            /* Вывод типов переменных */
             while i < length {
                 echo typeof myArray[i], "\n";
                 let i++;
@@ -109,40 +105,40 @@ There are a lot of details in just a few lines of code! We’ll explain the gene
         }
     }
 
-In the method, the first lines use the 'var' and 'int' keywords are used to declare a variable in the local scope.
-Every variable used in a method must be declared with its respective type. This declaration is not optional,
-it helps the compiler to report you about mistyped variables or about the use of variables out of their scope
-which usually ends in runtime errors.
+В методе в первых строках ключевые слова «var» и «int» используются для объявления переменной в локальной области. 
+Каждая переменная, используемая в методе, должна быть объявлена с соответствующим типом. 
+Эта декларация не является обязательным, это помогает компилятору сообщать вам о неверном вводе переменных 
+или об использовании переменных из сферы их применения, который обычно заканчивается ошибки во время выполнения.
 
-Dynamic variables are declared with the keyword 'var'. These variables can be assigned and reassigned
-to different types. On the other hand, we have 'i' and 'length' integer static typed variables
-that can only have values of this type in the entire program execution.
+Динамические переменные объявляются с помощью ключевого слова "var". Эти переменные могут быть назначены и переназначены 
+для разных типов. С другой стороны, у нас есть «i» и «length» целочисленные статические типизированные переменные, 
+которые могут иметь только значения этого типа во всем исполнении программы.
 
-In contrast with PHP, you are not required to put a dollar sign ($) in front of variable names.
+В отличие от PHP, вам не нужно ставить знак доллара ($) перед именами переменных.
 
-Zephir follows the same comment conventions as Java, C#, C++, etc.
-A //comment goes to the end of a line, while a /* comment \*/ can cross line boundaries.
+Zephir следует тем же соглашениям о комментариях, что и Java, C #, C ++ и т. Д.
+//Комментарий идет до конца строки, в то время как /*комментарий\*/ может пересекать границы строки.
 
-Variables are by default immutable, this means that Zephir expects that most variables stay
-unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants.
-When the variable value needs to be changed, the keyword 'let' must be used:
+Переменные по умолчанию неизменяемы, это означает, что Zephir ожидает, что большинство переменных остаются неизменными. 
+Переменные, которые сохраняют свое первоначальное значение может быть оптимизирована компилятором статических констант. 
+Когда значение переменной должно быть изменено, должно быть использовано ключевое слово 'let':
 
 .. code-block:: zephir
 
-    /* Create an array */
+    /* Создать массив */
     let myArray = ["hello", 0, 100.25, false, null];
 
-By default, arrays are dynamic like in PHP, they may contain values of different types.
-Functions from the PHP userland can be called in Zephir code, in the example the function 'count'
-was called, the compiler can performs optimizations like avoid this call because it already knows the size of
-the array:
+По умолчанию, массивы являются динамическими, как в PHP, они могут содержать значения различных типов. 
+Функции из PHP пользовательского уровня можно вызывать в коде Zephir, в примере, вызывается функция 'Count', 
+компилятор может выполняя оптимизацию избежать этого вызова, потому что он уже знает размер массива:
 
 .. code-block:: zephir
 
-    /* Count the array into a 'int' variable */
+    /* Подсчитать массив в 'INT' переменной */
     let length = count(myArray);
 
-Parentheses in control flow statements are optional, you can also use them if you feel more confortable.
+Скобки в операторах управления потоком данных не являются обязательными, вы можете использовать их, 
+если вам так больше нравится.
 
 .. code-block:: zephir
 
@@ -151,9 +147,9 @@ Parentheses in control flow statements are optional, you can also use them if yo
         let i++;
     }
 
-PHP only works with dynamic variables, methods always return dynamic variables, this means that if a
-static typed variable is returned, in the PHP side, you will get a dynamic variable that can be used
-in PHP code. Note that memory is automatically managed by the compiler, so you don't need to allocate or free
-memory like in C, working in a similar way than PHP.
+PHP работает только с динамическими переменными, методы всегда возвращают динамические переменные, 
+это означает, что если возвращается статическая типизированная переменная, со стороны PHP вы получите динамическую переменную, 
+которая может быть использована в PHP-коде. Обратите внимание, что память автоматически управляется компилятором, 
+так что вам не нужно выделять или освобождать память, как и в C, работает аналогичным образом, как и PHP.
 
 .. _zaefire: http://translate.google.com/#en/en/zaefire
