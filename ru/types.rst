@@ -1,7 +1,6 @@
 Типы
 ====
-Zephir is both dynamic and static typed. In this chapter we highlight the supported types and
-its behavior:
+Zephir динамически и статически типизируется. В этой главе мы выделим поддерживаемые типы и их поведение:
 
 Динамический тип
 ----------------
@@ -14,42 +13,42 @@ its behavior:
 
     var a, b, c;
 
-    // Initialize variables
+    // Инициализировать переменные
     let a = "hello", b = false;
 
     // Change their values
     let a = 10, b = "140";
 
-    // Perform operations between them
+    // Выполнять операции между ними
     let c = a + b;
 
 Всего существует 8 типов:
 
-+---------------+---------------------------------------------------------------------------+
-| Type          | Description                                                               |
-+---------------+---------------------------------------------------------------------------+
-| boolean       | A boolean expresses a truth value. It can be either 'true' or 'false'.    |
-+---------------+---------------------------------------------------------------------------+
-| integer       | Integer numbers. The size of an integer is platform-dependent.            |
-+---------------+---------------------------------------------------------------------------+
-| float/double  | Floating point numbers. The size of a float is platform-dependent.        |
-+---------------+---------------------------------------------------------------------------+
-| string        | A string is series of characters, where a character is the same as a byte.|
-+---------------+---------------------------------------------------------------------------+
-| array         | An array is an ordered map. A map is a type that associates values to keys|
-+---------------+---------------------------------------------------------------------------+
-| object        | Object abstraction like in PHP                                            |
-+---------------+---------------------------------------------------------------------------+
-| resource      | A resource holds a reference to an external resource                      |
-+---------------+---------------------------------------------------------------------------+
-| null          | The special NULL value represents a variable with no value                |
-+---------------+---------------------------------------------------------------------------+
++---------------+----------------------------------------------------------------------------------------+
+| Тип           | Описание                                                                               |
++---------------+----------------------------------------------------------------------------------------+
+| boolean       | Логическое выражение выражает истинное значение. Он может быть 'true' или 'false'.     |
++---------------+----------------------------------------------------------------------------------------+
+| integer       | Целые числа. Размер целого числа зависит от платформы.                                 |
++---------------+----------------------------------------------------------------------------------------+
+| float/double  | Числа с плавающей запятой. Размер зависит от платформы.                                |
++---------------+----------------------------------------------------------------------------------------+
+| string        | Строка представляет собой последовательность символов, где символ совпадает с байтом.  |
++---------------+----------------------------------------------------------------------------------------+
+| array         | Массив - это упорядоченная карта. Карта - это тип, который связывает значения с ключами|
++---------------+----------------------------------------------------------------------------------------+
+| object        | Абстракция объекта, как в PHP                                                          |
++---------------+----------------------------------------------------------------------------------------+
+| resource      | Ресурс содержит ссылку на внешний ресурс                                               |
++---------------+----------------------------------------------------------------------------------------+
+| null          | Специальное значение NULL представляет переменную без значения                         |
++---------------+----------------------------------------------------------------------------------------+
 
-Check more info about these types in the `PHP manual`_
+Подробнее об этих типах можно узнать в `PHP manual`_
 
 Boolean
 ^^^^^^^
-A boolean expresses a truth value. It can be either 'true' or 'false':
+Логическое выражение выражает истинное значение. Он может быть  'true' или 'false':
 
 .. code-block:: zephir
 
@@ -57,19 +56,19 @@ A boolean expresses a truth value. It can be either 'true' or 'false':
 
 Integer
 ^^^^^^^
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two
-billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18.
-PHP does not support unsigned integers so Zephir has this restriction too:
+Целые числа. Размер целого числа зависит от платформы, хотя максимальное значение около двух миллиардов является 
+обычным значением (это 32 бита, подписанного). 64-битные платформы обычно имеют максимальное значение около 9E18. 
+PHP не поддерживает целые числа без знака, поэтому у Zephir есть это ограничение тоже:
 
 .. code-block:: zephir
 
     var a = 5, b = 10050;
 
-Integer overflow
-^^^^^^^^^^^^^^^^
-Contrary to PHP, Zephir does not automatically checks for integer overflows, like in C if you are
-doing operations that may return a big number you can use types such as 'unsigned long' or 'float'
-to store them:
+Целочисленное переполнение
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+В отличие от PHP, Zephir не проверяет автоматически переполнение целочисленного типа, как в C, 
+если вы выполняете операции, которые могут возвращать большое число, вы можете использовать такие типы, 
+как «unsigned long» или «float» для их хранения:
 
 .. code-block:: zephir
 
@@ -77,54 +76,53 @@ to store them:
 
 Float/Double
 ^^^^^^^^^^^^
-Floating-point numbers (also known as "floats", "doubles", or "real numbers").
-Floating-point literals are expressions with zero or more digits, followed by a period (.),
-followed by zero or more digits. The size of a float is
-platform-dependent, although a maximum of ~1.8e308 with a
-precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+Числа с плавающей запятой (также известные как "floats", "doubles", или "real numbers").
+Литералы с плавающей запятой представляют собой выражения из нуля или более цифр, за которыми следует точка (.), 
+За которой следуют ноль или более цифр. Размер float зависит от платформы, хотя максимум ~ 1.8e308 
+с точностью примерно 14 десятичных цифр является общим значением (64-битный формат IEEE).
 
 .. code-block:: zephir
 
     var number = 5.0, b = 0.014;
 
-Floating point numbers have limited precision. Although it depends on the system,
-as PHP, Zephir uses the IEEE 754 double precision format, which will give a maximum
-relative error due to rounding in the order of 1.11e-16.
+Числа с плавающей запятой имеют ограниченную точность. Хотя это зависит от системы, как PHP, 
+Zephir использует формат двойной точности IEEE 754, который даст максимальную относительную ошибку 
+из-за округления порядка 1.11e-16.
 
 String
 ^^^^^^
-A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports
-a 256-character set, and hence does not offer native Unicode support.
+Строка представляет собой последовательность символов, где символ совпадает с байтом. Как PHP, Zephir 
+поддерживает только 256-символьный набор и, следовательно, не предлагает поддержку Unicode.
 
 .. code-block:: zephir
 
     var today = "friday";
 
-In Zephir, string literals can only be specified using double quotes (like in C), single quotes are reserved
-for chars.
+В Zephir строковые литералы могут указываться только с помощью двойных кавычек (как в C), одинарные кавычки 
+зарезервированы для символов.
 
-The following escape sequences are supported in strings:
+В строках поддерживаются следующие escape-последовательности:
 
-+---------------+---------------------------------------------------------------------------+
-| Sequence      | Description                                                               |
-+---------------+---------------------------------------------------------------------------+
-| \\t           | Horizontal tab                                                            |
-+---------------+---------------------------------------------------------------------------+
-| \\n           | Line feed                                                                 |
-+---------------+---------------------------------------------------------------------------+
-| \\r           | Carriage return                                                           |
-+---------------+---------------------------------------------------------------------------+
-| \\ \\         | Backslash                                                                 |
-+---------------+---------------------------------------------------------------------------+
-| \\"           | double-quote                                                              |
-+---------------+---------------------------------------------------------------------------+
++--------------------+---------------------------------------------------------------------------+
+| Последовательность | Описание                                                                  |
++--------------------+---------------------------------------------------------------------------+
+| \\t                | Горизонтальная табуляция                                                  |
++--------------------+---------------------------------------------------------------------------+
+| \\n                | Перевод строки                                                            |
++--------------------+---------------------------------------------------------------------------+
+| \\r                | Возврат каретки                                                           |
++--------------------+---------------------------------------------------------------------------+
+| \\ \\              | Обратная косая черта                                                      |
++--------------------+---------------------------------------------------------------------------+
+| \\"                | Двойная кавычка                                                           |
++--------------------+---------------------------------------------------------------------------+
 
 .. code-block:: zephir
 
     var today = "\tfriday\n\r",
         tomorrow = "\tsaturday";
 
-In Zephir, strings don't support variable parsing like in PHP, you can use concatenation instead:
+В Zephir строки не поддерживают парсинг переменных, как в PHP, вместо этого вы можете использовать конкатенацию:
 
 .. code-block:: zephir
 
@@ -134,22 +132,21 @@ In Zephir, strings don't support variable parsing like in PHP, you can use conca
 
 Arrays
 ^^^^^^
-The array implementation in Zephir is basically the same as in PHP: Ordered maps optimized for
-several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map),
-dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and
-multidimensional arrays are also possible.
+Реализация массива в Zephir в основном такая же, как и в PHP: упорядоченные карты, оптимизированные для различных целей; 
+Его можно рассматривать как массив, список (вектор), хэш-таблицу (реализацию карты), словарь, коллекцию, стек, очередь и,
+возможно, больше. В качестве значений массива могут выступать другие массивы, деревья и многомерные массивы также возможны.
 
-The syntax to define arrays is slightly different than in PHP:
+Синтаксис для определения массивов немного отличается от PHP:
 
 .. code-block:: zephir
 
-    //Square braces must be used to define arrays
+    //Квадратные фигурные скобки должны использоваться для определения массивов
     let myArray = [1, 2, 3];
 
-    //Double colon must be used to define hashes' keys
+    //Двойной двоеточие необходимо использовать для определения ключей хэшей
     let myHash = ["first": 1, "second": 2, "third": 3];
 
-Only long and string values can be used as keys:
+В качестве ключей могут использоваться только long и string значения:
 
 .. code-block:: zephir
 
@@ -158,7 +155,7 @@ Only long and string values can be used as keys:
 
 Objects
 ^^^^^^^
-Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+Zephir позволяет создавать экземпляры, манипулировать, вызывать методы, читать константы классов и т.д. Из объектов PHP:
 
 .. code-block:: zephir
 
@@ -167,52 +164,53 @@ Zephir allows to instantiate, manipulate, call methods, read class constants, et
 
 Static Types
 ------------
-Static typing allows the developer to declare and use some variable types available in C.
-Variables can't change their type once they're declared as dynamic types. However, they allow
-the compiler to do a better optimization job. The following types are supported:
+Статическая типизация позволяет разработчику объявлять и использовать некоторые типы переменных, доступные в C. 
+Переменные не могут изменить их тип, как только они объявлены как динамические типы. 
+Тем не менее, они позволяют компилятору делать лучшую оптимизационную работу. Поддерживаются следующие типы:
 
-+------------------+---------------------------------------------------------------------------------+
-| Type             | Description                                                                     |
-+------------------+---------------------------------------------------------------------------------+
-| boolean          | A boolean expresses a truth value. It can be either 'true' or 'false'.          |
-+------------------+---------------------------------------------------------------------------------+
-| integer          | Signed integers. At least 16 bits in size.                                      |
-+------------------+---------------------------------------------------------------------------------+
-| unsigned integer | Unsigned integers. At least 16 bits in size.                                    |
-+------------------+---------------------------------------------------------------------------------+
-| char             | Smallest addressable unit of the machine that can contain basic character set.  |
-+------------------+---------------------------------------------------------------------------------+
-| unsigned char    | Same size as char, but guaranteed to be unsigned.                               |
-+------------------+---------------------------------------------------------------------------------+
-| long             | Long signed integer type. At least 32 bits in size.                             |
-+------------------+---------------------------------------------------------------------------------+
-| unsigned long    | Same as long, but unsigned.                                                     |
-+------------------+---------------------------------------------------------------------------------+
-| float/double     | Double precision floating-point type. The size is platform-dependent.           |
-+------------------+---------------------------------------------------------------------------------+
-| string           | A string is series of characters, where a character is the same as a byte.      |
-+------------------+---------------------------------------------------------------------------------+
-| array            | An structure that can be used as hash, map, dictionary, collection, stack, etc. |
-+------------------+---------------------------------------------------------------------------------+
++------------------+---------------------------------------------------------------------------------------------------+
+| Тип              | Описание                                                                                          |
++------------------+---------------------------------------------------------------------------------------------------+
+| boolean          | Логическое выражение. Оно может быть либо 'true' или 'false'.                                     |
++------------------+---------------------------------------------------------------------------------------------------+
+| integer          | Целые числа со знаком. Минимум 16 бит.                                                            |
++------------------+---------------------------------------------------------------------------------------------------+
+| unsigned integer | Целочисленные без знака. Минимум 16 бит.                                                          |
++------------------+---------------------------------------------------------------------------------------------------+
+| char             | Наименьшая адресная единица машины, которая может содержать базовый символ.                       |
++------------------+---------------------------------------------------------------------------------------------------+
+| unsigned char    | Тот же размер, что и char, но гарантированно без знака.                                           |
++------------------+---------------------------------------------------------------------------------------------------+
+| long             | Длинное  целое со знаком. Минимум 32 бита.                                                        |
++------------------+---------------------------------------------------------------------------------------------------+
+| unsigned long    | То же, что и long, но без знака.                                                                  |
++------------------+---------------------------------------------------------------------------------------------------+
+| float/double     | Тип с плавающей запятой двойной точности. Размер зависит от платформы.                            |
++------------------+---------------------------------------------------------------------------------------------------+
+| string           | Строка представляет собой последовательность символов, где символ совпадает с байтом.             |
++------------------+---------------------------------------------------------------------------------------------------+
+| array            | Структура, которая может использоваться в качестве хеша, карты, словаря, коллекции, стека и т. д. |
++------------------+---------------------------------------------------------------------------------------------------+
 
 Boolean
 ^^^^^^^
-A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior
-static boolean types remain boolean (true or false) no mater what value is assigned to them:
+Логическое выражение выражает истинное значение. Он может быть 'true' или 'false'. 
+В отличие от динамического поведения статические логические типы остаются логическими (true или false), а не тем  значением, 
+что им присваевается:
 
 .. code-block:: zephir
 
     boolean a;
 
     let a = true,
-        a = 100, // automatically casted to true
-        a = null, // automatically casted to false
-        a = "hello"; // throws a compiler exception
+        a = 100, // автоматически переводится в true
+        a = null, // автоматически переводится в false
+        a = "hello"; // выдает исключение компилятора
 
 Integer/Unsigned Integer
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Integer values are like the integer member in dynamic values. Values assigned to integer variables
-remain integer:
+Целочисленные значения подобны целочисленному элементу в динамических значениях. Значения, 
+присвоенные целым переменным, остаются целыми:
 
 .. code-block:: zephir
 
@@ -220,37 +218,37 @@ remain integer:
 
     let a = 50,
         a = -70,
-        a = 100.25, // automatically casted to 100
-        a = null, // automatically casted to 0
-        a = false, // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = 100.25, // автоматически переводится в 100
+        a = null, // автоматически переводится в 0
+        a = false, // автоматически переводится в 0
+        a = "hello"; // выдает исключение компилятора
 
-Unsigned integers are like integers but they don't have sign, this means you can't store
-negative numbers in these sort of variables:
+Целые числа без знака подобны целым числам, но они не имеют знака, это означает, 
+что вы не можете хранить отрицательные числа в таких переменных:
 
 .. code-block:: zephir
 
     let a = 50,
-        a = -70, // automatically casted to 70
-        a = 100.25, // automatically casted to 100
-        a = null, // automatically casted to 0
-        a = false, // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = -70, // автоматически переводится в 70
+        a = 100.25, // автоматически переводится в 100
+        a = null, // автоматически переводится в 0
+        a = false, // автоматически переводится в 0
+        a = "hello"; // выдает исключение компилятора
 
-Unsigned integers are twice bigger than standard integers, assign unsigned integers to integers
-may represent loss of data:
+Целые числа без знака в два раза больше стандартных целых чисел, присваивать целые числа без знака целым может 
+означать потерю данных:
 
 .. code-block:: zephir
 
     uint a, int b;
 
     let a = 2147483648,
-        b = a, // possible loss of data
+        b = a, // возможная потеря данных
 
 Long/Unsigned Long
 ^^^^^^^^^^^^^^^^^^
-Long variables are twice bigger than integer variables, thus they can store bigger numbers,
-As integers values assigned to long variables are automatically casted to this type:
+Long переменные в два раза больше, чем integer переменные, поэтому они могут хранить большие числа. 
+В качестве значений целых чисел, назначенных длинным переменным, автоматически присваивается этот тип:
 
 .. code-block:: zephir
 
@@ -258,60 +256,60 @@ As integers values assigned to long variables are automatically casted to this t
 
     let a = 50,
         a = -70,
-        a = 100.25, // automatically casted to 100
-        a = null, // automatically casted to 0
-        a = false, // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = 100.25, // автоматически переводится в 100
+        a = null, // автоматически переводится в 0
+        a = false, // автоматически переводится в 0
+        a = "hello"; // выдает исключение компилятора
 
-Unsigned longs are like longs but they aren't signed, this means you can't store
-negative numbers in these sort of variables:
+Unsigned long похожи на long, но они не имеют знака, 
+это означает, что вы не можете хранить отрицательные числа в таких переменных:
 
 .. code-block:: zephir
 
     let a = 50,
-        a = -70, // automatically casted to 70
-        a = 100.25, // automatically casted to 100
-        a = null, // automatically casted to 0
-        a = false, // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = -70, // автоматически переводится в 70
+        a = 100.25, // aавтоматически переводится в 100
+        a = null, // автоматически переводится в 0
+        a = false, // автоматически переводится в 0
+        a = "hello"; // выдает исключение компилятора
 
-Unsigned longs are twice bigger than standard longs, assign unsigned longs to longs
-may represent loss of data:
+Unsigned longs в два раза больше, чем стандартные longs, 
+назначить unsigned longs longs может означать потерю данных:
 
 .. code-block:: zephir
 
     ulong a, long b;
 
     let a = 4294967296,
-        b = a, // possible loss of data
+        b = a, // возможная потеря данных
 
 Char/Unsigned Char
 ^^^^^^^^^^^^^^^^^^
-Char variables are the smallest addressable unit of the machine that can contain basic character set.
-Every 'char' variable represents every character in a string:
+Переменная Char - наименьшая адресуемая единица машины, которая может содержать базовый символ из набора. 
+Каждая переменная 'char' представляет один символ в строке:
 
 .. code-block:: zephir
 
     char ch, string name = "peter";
 
-    let ch = name[2]; // stores 't'
-    let ch = 'Z'; // char literals must be enclosed in simple quotes
+    let ch = name[2]; // сохраняет 't'
+    let ch = 'Z'; // литералы char должны быть заключены в простые кавычки
 
 String
 ^^^^^^
-A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set,
-and hence does not offer native Unicode support.
+Строка представляет собой последовательность символов, где символ совпадает с байтом. Как и в PHP, 
+он поддерживает только 256-символьный набор и, следовательно, не поддерживает использование Юникода.
 
-When a variable is declared string it never changes its type:
+Когда переменная объявлена как строка, она никогда не меняет тип:
 
 .. code-block:: zephir
 
     string a;
 
     let a = "",
-        a = "hello", //string literals must be enclosed in double quotes
-        a = 'A', // converted to string "A"
-        a = null; // automatically casted to ""
+        a = "hello", // строковые литералы должны быть заключены в двойные кавычки
+        a = 'A', //  преобразуется в строку "A"
+        a = null; // автоматически переводится в ""
 
 
 
