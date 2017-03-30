@@ -189,24 +189,25 @@ Fetch
 
 'Fetch' вернет true, если в массиве есть что-то по ключу 'key' и тогда в 'value' будет присвоенно значение.
 
-Type Hints
-^^^^^^^^^^
-Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
+Подсказка Типа 
+^^^^^^^^^^^^^^
+Zephir всегда пытается проверить, реализует ли объект методы и свойства, вызываемые/доступные для переменной, которая выводится как объект:
 
 .. code-block:: zephir
 
     let o = new MyObject();
 
-    // Zephir checks if "myMethod" is implemented on MyObject
+    // Zephir проверяет, реализован ли «myMethod» в MyObject
     o->myMethod();
 
-However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object so Zephir can not produce errors reports effectively.
-A type hint tells the compiler which class is related to a dynamic variable allowing the compiler to perform more compilation checks:
+Однако из-за динамизма, унаследованного от PHP, иногда нелегко узнать класс объекта, 
+поэтому Zephir не может эффективно создавать отчеты об ошибках.
+Type hint сообщает компилятору, какой класс связан с динамической переменной, позволяющей компилятору выполнять больше проверок компиляции:
 
 .. code-block:: zephir
 
-    // Tell the compiler that "o"
-    // is an instance of class MyClass
+    // Сообщает компилятору, что "o"
+    // является экземпляром класса MyClass
     let o = <MyClass> this->_myObject;
     o->myMethod();
 
