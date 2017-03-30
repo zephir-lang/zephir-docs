@@ -328,12 +328,12 @@ Read-Only Параметры
 
 Когда параметр объявлен только для чтения, компилятор может безопасно создавать оптимизации над этими переменными.
 
-Implementing Properties
------------------------
-Class member variables are called "properties". By default, they act as PHP properties.
-Properties are exported to the PHP extension and are visibles from PHP code.
-Properties implement the usual visibility modifiers available in PHP, explicity set
-a visibility modifier is mandatory in Zephir:
+Реализация свойств
+------------------
+Переменные-члены класса называются "properties". По умолчанию они действуют как свойства PHP. 
+Свойства экспортируются в расширение PHP и являются видимыми из кода PHP. 
+Свойства реализуют обычные модификаторы видимости, доступные в PHP, 
+явно задавать модификатор видимости обязательно в Zephir:
 
 .. code-block:: zephir
 
@@ -350,8 +350,7 @@ a visibility modifier is mandatory in Zephir:
 
     }
 
-Within class methods non-static properties may be accessed by using -> (Object Operator): this->property
-(where property is the name of the property):
+В пределах методов класса нестатические свойства могут быть доступны с помощью -> (Оператор объекта): this->property (где property - это имя свойства):
 
 .. code-block:: zephir
 
@@ -374,8 +373,9 @@ Within class methods non-static properties may be accessed by using -> (Object O
 
     }
 
-Properties can have literal compatible default values. These values must be able to be evaluated at
-compile time and must not depend on run-time information in order to be evaluated:
+Свойства могут иметь литерально совместимые значения по умолчанию. 
+Эти значения должны быть в состоянии быть оценены во время компиляции 
+и не должны зависеть от информации времени выполнения для оценки:
 
 .. code-block:: zephir
 
@@ -392,59 +392,62 @@ compile time and must not depend on run-time information in order to be evaluate
 
     }
 
-Updating Properties
+Обновление свойств
 ^^^^^^^^^^^^^^^^^^^
-Properties can be updated by accesing them using the '->' operator:
+Свойства можно обновить, обратившись к ним с помощью оператора '->':
 
 .. code-block:: zephir
 
     let this->myProperty = 100;
 
-Zephir checks that properties do exist when a program is accesing them, if a property is not declared you will get a compiler exception:
+Zephir проверяет, что свойства существуют, когда программа обращается к ним, если свойство не объявлено, 
+вы получите исключение компилятора:
 
 .. code-block:: php
 
-    CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/cphalcon/phalcon/cache/backend.zep on line 62
+    CompilerException: Property '_optionsx' is not defined on class 
+    'App\MyClass' in /Users/scott/cphalcon/phalcon/cache/backend.zep on line 62
 
           let this->_optionsx = options;
           ------------^
 
-If you want to avoid this compiler validation or just create a property dynamically, you can enclose the property name using string quotes:
+Если вы хотите избежать валидации компилятора или просто создать свойство динамически, 
+вы можете заключить имя свойства, используя строковые кавычки:
 
 .. code-block:: zephir
 
     let this->{"myProperty"} = 100;
 
-You can also use a simple variable to update a property, the property name will be taken from the variable:
+Вы также можете использовать простую переменную для обновления свойства, имя свойства будет взято из переменной:
 
 .. code-block:: zephir
 
     let someProperty = "myProperty";
     let this->{someProperty} = 100;
 
-Reading Properties
-^^^^^^^^^^^^^^^^^^
-Properties can be read by accesing them using the '->' operator:
+Чтение свойств 
+^^^^^^^^^^^^^^
+Свойства можно прочитать, обратившись к ним с помощью оператора '->':
 
 .. code-block:: zephir
 
     echo this->myProperty;
 
-As when updating, properties can be dynamically read this way:
+Как и при обновлении, свойства могут динамически читаться следующим образом:
 
 .. code-block:: zephir
 
-    //Avoid compiler check or read a dynamic user defined property
+    // Избежание проверки компилятора или чтение динамического пользовательского свойства
     echo this->{"myProperty"};
 
-    //Read using a variable name
+    //Чтение с использованием имени переменной
     let someProperty = "myProperty";
     echo this->{someProperty}
 
-Class Constants
+Константы классов
 ---------------
-Class may contain class constants that remain the same and unchangeable once the extension is compiled.
-Class constants are exported to the PHP extension allowing them to be used from PHP.
+Класс может содержать константы класса, которые остаются неизменными и неизменными после компиляции расширения. 
+Константы класса экспортируются в расширение PHP, что позволяет им использовать их с PHP.
 
 .. code-block:: zephir
 
@@ -458,7 +461,7 @@ Class constants are exported to the PHP extension allowing them to be used from 
 
     }
 
-Class constants can be accessed using the class name and the static operator (::):
+К константам класса можно получить доступ, используя имя класса и статический оператор (: :):
 
 .. code-block:: zephir
 
@@ -477,9 +480,9 @@ Class constants can be accessed using the class name and the static operator (::
 
     }
 
-Calling Methods
+Взов Методов
 ---------------
-Methods can be called using the object operator (->) as in PHP:
+Методы можно вызывать, используя оператор объекта (->), как в PHP:
 
 .. code-block:: zephir
 
@@ -500,7 +503,7 @@ Methods can be called using the object operator (->) as in PHP:
 
     }
 
-Static methods must be called using the static operator (::):
+Статические методы должны вызываться с использованием статического оператора (: :):
 
 .. code-block:: zephir
 
@@ -521,7 +524,7 @@ Static methods must be called using the static operator (::):
 
     }
 
-You can call methods in a dynamic manner as follows:
+Вы можете вызвать методы динамическим способом следующим образом:
 
 .. code-block:: zephir
 
