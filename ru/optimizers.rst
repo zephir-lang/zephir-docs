@@ -1,18 +1,18 @@
-Custom optimizers
-=================
-Most common functions in Zephir use internal optimizers. An 'optimizer' works like an interceptor for function calls.
-An 'optimizer' replaces the call for the function in the PHP userland by direct C-calls which are faster and have a lower
-overhead improving performance.
+Пользовательские оптимизаторы
+=============================
+В большинстве распространенных функций в Zephir используются внутренние оптимизаторы. 'optimizer' работает как перехватчик 
+для вызовов функций. 'optimizer' заменяет вызов функции в пользовательском пространстве PHP прямыми C-вызовами, 
+которые выполняются быстрее и имеют более низкие накладные расходы, повышающие производительность.
 
-To create an optimizer you have to create a class in the 'optimizers' directory, the following convention must be used:
+Чтобы создать оптимизатор, вам нужно создать класс в каталоге 'optimizers', необходимо использовать следующее соглашение:
 
-+--------------------+----------------------------+----------------------------------------------------------+------------------+
-| Function in Zephir | Optimizer Class Name       | Optimizer Path                                           | Function in C    |
-+====================+============================+==========================================================+==================+
-| calculate_pi       | CalculatePiOptimizer       | optimizers/CalculatePiOptimizer.php                      | my_calculate_pi  |
-+--------------------+----------------------------+----------------------------------------------------------+------------------+
++--------------------+------------------------------+----------------------------------------+------------------+
+| Функция в Zephir   | Название класса оптимизатора | Путь оптимизатора                      | Функция в C      |
++====================+==============================+========================================+==================+
+| calculate_pi       | CalculatePiOptimizer         | optimizers/CalculatePiOptimizer.php    | my_calculate_pi  |
++--------------------+------------------------------+----------------------------------------+------------------+
 
-This is the basic structure for an 'optimizer':
+Это основная структура для 'optimizer':
 
 .. code-block:: php
 
@@ -28,14 +28,15 @@ This is the basic structure for an 'optimizer':
 
     }
 
-Implementation of optimizers highly depends on the kind of code you want to generate. In our example, we're going to replace the call to this
-function by a call to a c-function. In Zephir, the code used to call this function is:
+Реализация оптимизаторов в большой степени зависит от типа кода, который вы хотите сгенерировать. 
+В нашем примере мы собираемся заменить вызов этой функции вызовом c-функции. 
+В Zephir код, используемый для вызова этой функции:
 
 .. code-block:: zephir
 
     let pi = calculate_pi(1000);
 
-So, the optimizer will expect just one parameter, we have to validate that to avoid problems later:
+Таким образом, оптимизатор будет ожидать только один параметр, мы должны подтвердить это, чтобы избежать проблем позже:
 
 .. code-block:: php
 
@@ -55,8 +56,9 @@ So, the optimizer will expect just one parameter, we have to validate that to av
         //...
     }
 
-There are functions that are just called and they don't return any value, our function returns a value that is the calculated PI value. So we need
-to be aware that the type of the variable used to received this calculated value is OK:
+Есть только что вызванные функции и они не возвращают никакого значения, наша функция возвращает значение, 
+которое является вычисленным значением PI. Поэтому мы должны знать, что тип переменной, 
+используемой для получения этого вычисленного значения, - ОК:
 
 .. code-block:: php
 
@@ -74,7 +76,7 @@ to be aware that the type of the variable used to received this calculated value
         }
 
         /**
-         * Process the expected symbol to be returned
+         * Обработка возвращаемого символа
          */
         $call->processExpectedReturn($context);
 
@@ -86,9 +88,9 @@ to be aware that the type of the variable used to received this calculated value
         //...
     }
 
-We're checking if the value returned will be stored in a variable type 'double', if not a compiler exception is thrown.
+Мы проверяем, будет ли возвращаемое значение храниться в типе переменной 'double', если не выбрано исключение компилятора.
 
-The next thing we need to do is process the parameters passed to the function:
+Следующее, что нам нужно сделать, это обработать параметры, переданные функции:
 
 .. code-block:: php
 
@@ -96,10 +98,12 @@ The next thing we need to do is process the parameters passed to the function:
 
     $resolvedParams = $call->getReadOnlyResolvedParams($expression['parameters'], $context, $expression);
 
-As a good practice with Zephir is important to create functions that don't modify their parameters, if you are changing the parameters
-passed, Zephir will need to allocate memory for constants passed and you have to use getResolvedParams instead of getReadOnlyResolvedParams.
+Как хорошая практика в Zephir важна для создания функций, которые не изменяют их параметры, 
+если вы изменяете переданные параметры, Zephir нужно будет распределить память для переданных констант, 
+и вам придется использовать getResolvedParams вместо getReadOnlyResolvedParams.
 
-Code returned by these methods is valid C-code that can be used in the code printer to generate the c-function call:
+Код, возвращаемый этими методами, является допустимым C-кодом, 
+который может использоваться в принтере кода для генерации вызова c-функции:
 
 .. code-block:: php
 
@@ -108,9 +112,10 @@ Code returned by these methods is valid C-code that can be used in the code prin
     //Generate the C-code
     return new CompiledExpression('double', 'calculate_pi( ' . $resolvedParams[0] . ')', $expression);
 
-All optimizers must return a CompiledExpression instance, this will tell the compiler the type returned by the code and its related C-code.
+Все оптимизаторы должны возвращать экземпляр CompiledExpression, это сообщит компилятору тип, 
+возвращаемый кодом и связанным с ним C-кодом.
 
-The complete optimizer code is:
+Полный код оптимизатора:
 
 .. code-block:: php
 
@@ -131,7 +136,7 @@ The complete optimizer code is:
             }
 
             /**
-             * Process the expected symbol to be returned
+             * Обработка возвращаемого символа
              */
             $call->processExpectedReturn($context);
 
