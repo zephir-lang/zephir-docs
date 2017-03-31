@@ -1,7 +1,7 @@
 Вызов функций
 -------------
-PHP has a rich library of functions that you can use within your extensions.
-To call a PHP function you simply use it as normal within your Zephir code:
+PHP имеет богатую библиотеку функций, которые вы можете использовать в своих расширениях. 
+Чтобы вызвать функцию PHP, вы просто используете ее как обычно в своем коде Zephir:
 
 .. code-block:: zephir
 
@@ -19,7 +19,7 @@ To call a PHP function you simply use it as normal within your Zephir code:
         }
     }
 
-You can also call functions that are expected to exist in the PHP userland but aren't built in to PHP:
+Вы также можете вызывать функции, которые, как ожидается, существуют в пользовательском окружении PHP, но не встроены в PHP:
 
 .. code-block:: zephir
 
@@ -41,8 +41,9 @@ You can also call functions that are expected to exist in the PHP userland but a
         }
     }
 
-Note that all PHP functions only receive and return dynamic variables.  If you pass a static typed
-variable as a parameter, a temporary dynamic variable will automatically be used as a bridge in order to call the function:
+Обратите внимание, что все функции PHP только получают и возвращают динамические переменные. 
+Если вы передаете переменную статического типа  в качестве параметра, то  в качестве моста для вызова функции будет создана
+временная динамическая переменная:
 
 .. code-block:: zephir
 
@@ -54,16 +55,17 @@ variable as a parameter, a temporary dynamic variable will automatically be used
         public function encode(string text)
         {
             if strlen(text) != 0 {
-                // an implicit dynamic variable is created to
-                // pass the static typed 'text' as parameter
+                // Неявная динамическая переменная создается, 
+                // чтобы передать переменную статического типа 
+                // 'text' в качестве параметра
                 return base64_encode(text);
             }
             return false;
         }
     }
 
-Similarly, functions return dynamic values which cannot be directly assigned to static
-variables without the appropriate cast:
+Аналогично, функции возвращают динамические значения, которые не могут быть напрямую назначены статическим 
+переменным без соответствующего приведения:
 
 .. code-block:: zephir
 
@@ -84,7 +86,7 @@ variables without the appropriate cast:
         }
     }
 
-Zephir provides a way for you to call functions dynamically, such as:
+Zephir предоставляет вам возможность динамически вызывать функции, такие как:
 
 .. code-block:: zephir
 
