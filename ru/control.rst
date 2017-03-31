@@ -1,15 +1,14 @@
 Управляющие структуры
 =====================
-Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
+Zephir реализует упрощенный набор структур управления, присутствующих в подобных языках, таких как C, PHP и т.д.
 
-Conditionals
-------------
+Условные 
+--------
 
-If Statement
+Оператор If
 ^^^^^^^^^^^^
-'if' statements evaluates an expression executing this trace if the evaluation is true.
-Braces are compulsory, an 'if' can have an optional 'else' clause, multiple 'if'/'else'
-constructs can be chained together:
+Оператор 'if' оценивает выражение, выполняет свой блок, если оценка true. Фигурные скобки обязательны, 
+'if' может иметь необязательное предложение 'else', несколько конструкций 'if'/'else' могут быть соединены вместе:
 
 .. code-block:: zephir
 
@@ -38,16 +37,16 @@ constructs can be chained together:
     }
 
 
-Parentheses in the evaluated expression are optional:
+Скобки в оцениваемом выражении необязательны:
 
 .. code-block:: zephir
 
     if a < 0 { return -1; } else { if a > 0 { return 1; } }
 
-Switch Statement
+Оператор Switch
 ^^^^^^^^^^^^^^^^
-A 'switch' evalutes an expression against a series of predefined literal values executing the corresponding
-'case' block or falling back to the 'default' block case:
+Оператор 'switch' сравнивает выражение с рядом предопределенных значений литералов, 
+и выполняет соответствующий блок 'case' или в случае неудачи, выполняет блок 'default':
 
 .. code-block:: zephir
 
@@ -64,12 +63,12 @@ A 'switch' evalutes an expression against a series of predefined literal values 
             echo "unknown items";
     }
 
-Loops
+Циклы
 -----
 
-While Statement
-^^^^^^^^^^^^^^^
-'while' denotes a loop that iterates as long as its given condition evaluates as true:
+Цикл While
+^^^^^^^^^^
+'While' обозначает цикл, который выполняет итерацию, пока его заданное условие принимает значение true:
 
 .. code-block:: zephir
 
@@ -78,9 +77,9 @@ While Statement
         let counter -= 1;
     }
 
-Loop Statement
-^^^^^^^^^^^^^^
-In addition to 'while', 'loop' can be used to create infinite loops:
+Цикл Loop
+^^^^^^^^^
+В дополнение к 'while', 'loop' может использоваться для создания бесконечных циклов:
 
 .. code-block:: zephir
 
@@ -91,9 +90,9 @@ In addition to 'while', 'loop' can be used to create infinite loops:
         echo x, "\n";
     }
 
-For Statement
-^^^^^^^^^^^^^
-A 'for' is a control structure that allows to traverse arrays or strings:
+Цикл For
+^^^^^^^^
+Цикл 'for' является структурой управления, которая позволяет перебирать массивы или строки:
 
 .. code-block:: zephir
 
@@ -101,7 +100,7 @@ A 'for' is a control structure that allows to traverse arrays or strings:
         echo item, "\n";
     }
 
-Keys in hashes can be obtained in the following way:
+Ключи в хэшах можно получить следующим образом:
 
 .. code-block:: zephir
 
@@ -111,7 +110,7 @@ Keys in hashes can be obtained in the following way:
         echo key, " ", value, "\n";
     }
 
-A 'for' loop can also be instructed to traverse an array or string in reverse order:
+Цикл 'for' также может быть проинструктирован об обходе массива или строки в обратном порядке:
 
 .. code-block:: zephir
 
@@ -121,7 +120,7 @@ A 'for' loop can also be instructed to traverse an array or string in reverse or
         echo value, "\n";
     }
 
-A 'for' can be used to traverse string variables:
+Цикл 'for' может использоваться для перемещения по строковым переменным:
 
 .. code-block:: zephir
 
@@ -131,7 +130,7 @@ A 'for' can be used to traverse string variables:
         echo "[", ch ,"]";
     }
 
-In reverse order:
+В обратном порядке:
 
 .. code-block:: zephir
 
@@ -141,7 +140,7 @@ In reverse order:
         echo "[", ch ,"]";
     }
 
-A standard 'for' that traverses a range of integer values can be written as follows:
+Стандартный 'for', который проходит диапазон целочисленных значений, можно записать следующим образом:
 
 .. code-block:: zephir
 
@@ -149,9 +148,10 @@ A standard 'for' that traverses a range of integer values can be written as foll
         echo i, "\n";
     }
 
-Break Statement
+Оператор break
 ^^^^^^^^^^^^^^^
 'break' ends execution of the current 'while', 'for' or 'loop' statements:
+'break' завершает выполнение текущих операторов 'while', 'for' или 'loop':
 
 .. code-block:: zephir
 
@@ -162,10 +162,10 @@ Break Statement
         echo item, "\n";
     }
 
-Continue Statement
+Оператор  continue
 ^^^^^^^^^^^^^^^^^^
-'continue' is used within looping structures to skip the rest of the current loop iteration and
-continue execution at the condition evaluation and then the beginning of the next iteration.
+'continue' используется внутри структур цикла, чтобы пропустить оставшуюся часть текущей итерации цикла и продолжить 
+выполнение при оценке условия, а затем в начале следующей итерации.
 
 .. code-block:: zephir
 
@@ -178,11 +178,10 @@ continue execution at the condition evaluation and then the beginning of the nex
         echo a, "\n";
     }
 
-Require
--------
-The 'require' statement dynamically includes and evaluates a specified PHP file. Note that files
-included via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allow to
-include other zephir files in runtime.
+Оператор require
+----------------
+Инструкция 'require' динамически включает и оценивает указанный PHP-файл. Обратите внимание, что файлы, включенные через Zephir,
+интерпретируются Zend Engine как обычные PHP-файлы. 'Require' не позволяет включать другие файлы Zephir во время выполнения.
 
 .. code-block:: zephir
 
@@ -190,9 +189,10 @@ include other zephir files in runtime.
         require path;
     }
 
-Let
----
-'Let' statement is used to mutate variables, properties and arrays. Variables are by default inmutable and this instruction makes them mutable:
+Оператор let
+------------
+Оператор 'let' используется для изменения переменных, свойств и массивов. Переменные по умолчанию неизменяемые, 
+и эта команда делает их изменяемыми:
 
 .. code-block:: zephir
 
@@ -201,7 +201,7 @@ Let
     let data["name"] = "Tony";   // array index
     let self::_name = "Tony";    // static property
 
-Also this instruction must be used to increment/decrement variables:
+Также эта инструкция должна использоваться для увеличения/уменьшения переменных:
 
 .. code-block:: zephir
 
@@ -210,7 +210,7 @@ Also this instruction must be used to increment/decrement variables:
     let this->number++;     // increment object property
     let this->number--;     // decrement object property
 
-Multiple mutations can be performed in a single 'let' operation:
+Множественные изменения могут быть выполнены в единственной операции 'let':
 
 .. code-block:: zephir
 
