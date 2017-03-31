@@ -1,9 +1,9 @@
 Конфигурационный файл
 =====================
-Every Zephir extension has a configuration file called config.json. This file is read by Zephir every time you build or generate the extension and
-it allows the developer to modify the extension or compiler behavior.
+Каждое расширение Zephir имеет файл конфигурации, называемый config.json. Этот файл читается Zephir каждый раз, 
+когда вы создаете или создаете расширение, и это позволяет разработчику изменять расширение или поведение компилятора.
 
-This file use `JSON <http://en.wikipedia.org/wiki/JSON>`_ as configuration format:
+Этот файл использует формат `JSON <https://ru.wikipedia.org/wiki/JSON>`_ в качестве формата конфигурации:
 
 .. code-block:: json
 
@@ -15,13 +15,13 @@ This file use `JSON <http://en.wikipedia.org/wiki/JSON>`_ as configuration forma
         "version": "1.2.0"
     }
 
-Settings defined in this file override any factory default setting provided by Zephir.
+Параметры, определенные в этом файле, переопределяют любые заводские настройки, предоставляемые Zephir.
 
-The following settings are supported:
+Поддерживаются следующие параметры:
 
 namespace
 ^^^^^^^^^
-The namespace of the extension, it must be a simple identifier respecting the regular expression: [a-zA-Z0-9\_]+:
+Пространство имен расширения - это должен быть простой идентификатор, соответствующий регулярному выражению: [a-zA-Z0-9\_]+:
 
 .. code-block:: json
 
@@ -31,7 +31,7 @@ The namespace of the extension, it must be a simple identifier respecting the re
 
 name
 ^^^^
-Extension name, can only contain ascii characters:
+Имя расширения может содержать только символы ascii:
 
 .. code-block:: json
 
@@ -41,7 +41,7 @@ Extension name, can only contain ascii characters:
 
 description
 ^^^^^^^^^^^
-Extension description, any text describing your extension:
+Расширение описание, любой текст, описывающий расширение:
 
 .. code-block:: json
 
@@ -51,7 +51,7 @@ Extension description, any text describing your extension:
 
 author
 ^^^^^^
-Company, developer, institution, etc. that have developed the extension:
+Компания, разработчик, учреждение и т.д., Которые разработали расширение:
 
 .. code-block:: json
 
@@ -61,7 +61,7 @@ Company, developer, institution, etc. that have developed the extension:
 
 version
 ^^^^^^^
-Extension version, must follow the regular expression: [0-9]+\.[0-9]+\.[0-9]+:
+Версия расширения должна следовать регулярному выражению: [0-9]+\.[0-9]+\.[0-9]+:
 
 .. code-block:: json
 
@@ -71,7 +71,7 @@ Extension version, must follow the regular expression: [0-9]+\.[0-9]+\.[0-9]+:
 
 warnings
 ^^^^^^^^
-Compiler warnings enabled or disabled in the current project:
+Предупреждения компилятора включены или отключены в текущем проекте:
 
 .. code-block:: json
 
@@ -88,7 +88,7 @@ Compiler warnings enabled or disabled in the current project:
 
 optimizations
 ^^^^^^^^^^^^^
-Compiler optimizations enabled or disabled in the current project:
+Оптимизация компилятора включена или отключена в текущем проекте:
 
 .. code-block:: json
 
@@ -102,7 +102,7 @@ Compiler optimizations enabled or disabled in the current project:
 
 globals
 ^^^^^^^
-Extension globals available. Check the :doc:`extension globals <globals>` chapter for more information.
+Доступные для расширения переменные globals. Для получения дополнительной информации см. Главу :doc:`extension globals <globals>`.
 
 .. code-block:: json
 
@@ -121,7 +121,7 @@ Extension globals available. Check the :doc:`extension globals <globals>` chapte
 
 info
 ^^^^
-phpinfo() sections. Check the :doc:`phpinfo() <phpinfo>` chapter for more information.
+phpinfo() Для получения дополнительной информации см. Главу :doc:`phpinfo() <phpinfo>`.
 
 .. code-block:: json
 
@@ -139,7 +139,7 @@ phpinfo() sections. Check the :doc:`phpinfo() <phpinfo>` chapter for more inform
 
 extra-cflags
 ^^^^^^^^^^^^
-Any additional flags you want to add to the compilation process:
+Любые дополнительные флаги, которые вы хотите добавить в процесс компиляции:
 
 .. code-block:: json
 
@@ -149,7 +149,7 @@ Any additional flags you want to add to the compilation process:
 
 extra-libs
 ^^^^^^^^^^
-Any additional libraries you want to add to the compilation process:
+Любые дополнительные библиотеки, которые вы хотите добавить в процесс компиляции:
 
 .. code-block:: json
 
@@ -159,7 +159,7 @@ Any additional libraries you want to add to the compilation process:
 
 package-dependencies
 ^^^^^^^^^^^^^^^^^^^^
-Declare library dependencies (version check by :code:`pkg-config`)
+Объявление библиотечных зависимостей (проверка версии по :code:`pkg-config`)
 
 .. code-block:: json
 
@@ -171,4 +171,4 @@ Declare library dependencies (version check by :code:`pkg-config`)
         }
     }
 
-Version operator supports :code:`=`, :code:`>=`, :code:`<=`, and :code:`*`
+Оператор версии поддерживает :code:`=`, :code:`>=`, :code:`<=`, and :code:`*`
