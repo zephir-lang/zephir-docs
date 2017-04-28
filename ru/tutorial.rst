@@ -59,7 +59,7 @@ C, Javascript и других языках. Если вы знаете како�
 
     $ zephir init utils
 
-After this, a directory called "utils" is created on the current working directory:
+После этого в текущем рабочем каталоге создается каталог с именем "utils":
 
 .. code-block:: bash
 
