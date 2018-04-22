@@ -16,6 +16,8 @@ Warnings can be disabled by passing its name prefixed by -fno-:
 .. code-block:: bash
 
     zephir -fno-static-type-inference -fno-call-gatherer-pass
+    
+From recent version of zephir-parser, optimizations can be configured in the config file ``config.json``
 
 The following optimizations are supported:
 
