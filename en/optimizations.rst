@@ -1,32 +1,32 @@
 Optimizations
 =============
-Because the code in Zephir is sometimes very high-level, a C compiler might not be in the ability to optimize this code enough.
+Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
 
-Zephir, thanks to its AOT compiler, is able to optimize the code at compile time potentially improving its execution time
-or reducing the memory required by the program.
+Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its
+execution time, or reducing the memory required by the program.
 
-You can enable optimizations by passing its name prefixed by -f:
+You can enable optimizations by passing the name prefixed by -f:
 
 .. code-block:: bash
 
     zephir -fstatic-type-inference -flocal-context-pass
 
-Warnings can be disabled by passing its name prefixed by -fno-:
+Optimizaitons can be disabled by passing the name prefixed by -fno-:
 
 .. code-block:: bash
 
     zephir -fno-static-type-inference -fno-call-gatherer-pass
-    
-From recent version of zephir-parser, optimizations can be configured in the config file ``config.json``
+
+With recent versions of zephir-parser, optimizations can be configured in the config file ``config.json``.
 
 The following optimizations are supported:
 
 static-type-inference
 ^^^^^^^^^^^^^^^^^^^^^
-This compilation pass is very important, since it looks for dynamic variables that can potentially
-transformed into static/primitive types which are better optimized by the underlying compiler.
+This compilation pass is very important, since it looks for dynamic variables that can potentially be transformed into
+static/primitive types, which are better optimized by the underlying compiler.
 
-The following code use a set dynamic variables to perform some mathematical calculations:
+The following code uses a set of dynamic variables to perform some mathematical calculations:
 
 .. code-block:: zephir
 
@@ -44,9 +44,8 @@ The following code use a set dynamic variables to perform some mathematical calc
 		return i + b;
 	}
 
-Variables 'a', 'b' and 'i' are used all of them in mathematical operations and can thus be transformed
-into static variables taking advantage of other compilation passes. After this pass, the compiler
-automatically rewrites this code to:
+Variables 'a', 'b', and 'i' are used exclusively in mathematical operations, and can thus be transformed into static
+variables taking advantage of other compilation passes. After this pass, the compiler automatically rewrites this code to:
 
 .. code-block:: zephir
 
@@ -64,23 +63,23 @@ automatically rewrites this code to:
 		return i + b;
 	}
 
-By disabling this compilation pass, all variables will maintain the type which they were originally declared
-without optimization.
+By disabling this compilation pass, all variables will maintain the type with which they were originally declared, without
+optimization.
 
 static-type-inference-second-pass
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This enables a second type inference pass which improves the work done based on the data gathered by
-the first static type inference pass.
+This enables a second type inference pass, which improves the work done based on the data gathered by the first static type
+inference pass.
 
 local-context-pass
 ^^^^^^^^^^^^^^^^^^
-This compilation pass moves variables that will be allocated in the heap to the stack. This
-optimization can reduce the number of memory indirections a program has to do.
+This compilation pass moves variables that will be allocated in the heap to the stack. This optimization can reduce the
+number of memory indirections a program has to do.
 
 constant-folding
 ^^^^^^^^^^^^^^^^
-Constant folding is the process of simplifying constant expressions at compile time. The following
-code is simplified when this optimization is enabled:
+Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when
+this optimization is enabled:
 
 .. code-block:: zephir
 
@@ -100,7 +99,7 @@ Is transformed into:
 
 static-constant-class-folding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This optimization replaces values at class constants in compile time:
+This optimization replaces values of class constants in compile time:
 
 .. code-block:: zephir
 
@@ -132,10 +131,8 @@ Is transformed into:
 
 call-gatherer-pass
 ^^^^^^^^^^^^^^^^^^
-This pass counts how many times a function or method is called within the same method.
-This allow the compiler to introduce inline caches to avoid method or function lookups.
-
-Is transformed into:
+This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce
+inline caches to avoid method or function lookups:
 
 .. code-block:: zephir
 
@@ -145,6 +142,6 @@ Is transformed into:
 		public function getValue()
 		{
 			this->someMethod();
-            this->someMethod(); // This method is called faster
+      this->someMethod(); // This method is called faster
 		}
 	}

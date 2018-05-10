@@ -4,7 +4,6 @@ To install Zephir, please follow these steps:
 
 Prerequisites
 -------------
-
 To build a PHP extension and use Zephir you need the following requirements:
 
 * gcc >= 4.x/clang >= 3.x
@@ -20,9 +19,9 @@ If you're using Ubuntu, you can install the required packages this way:
 .. code-block:: bash
 
 	$ sudo apt-get update
-	$ sudo apt-get install git gcc make re2c php7.0 php7.0-json php7.0-dev libpcre3-dev
+	$ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev
 
-Since Zephir is written in PHP you need to have installed a recent version of PHP and it must be available in your console:
+Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
 
 .. code-block:: bash
 
@@ -32,7 +31,7 @@ Since Zephir is written in PHP you need to have installed a recent version of PH
 	Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
     		with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
 
-Also, make sure you have also the PHP development libraries installed along with your PHP installation:
+Also, make sure you have the PHP development libraries installed along with your PHP installation:
 
 .. code-block:: bash
 
@@ -42,12 +41,11 @@ Also, make sure you have also the PHP development libraries installed along with
 	Zend Module Api No:      20151012
 	Zend Extension Api No:   320151012
 
-You don't have to necessarely see the exact above output but it's important that these commands are available to start
+You don't have to necessarily see the exact above output, but it's important that these commands are available to start
 developing with Zephir.
 
 Installing Zephir
 -----------------
-
 The Zephir compiler currently must be cloned from Github:
 
 .. code-block:: bash

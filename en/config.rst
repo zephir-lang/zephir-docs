@@ -1,9 +1,9 @@
 Configuration File
 ==================
-Every Zephir extension has a configuration file called config.json. This file is read by Zephir every time you build or generate the extension and
-it allows the developer to modify the extension or compiler behavior.
+Every Zephir extension has a configuration file called :code:`config.json`. This file is read by Zephir every time you build
+or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
 
-This file use `JSON <http://en.wikipedia.org/wiki/JSON>`_ as configuration format:
+This file uses `JSON <http://en.wikipedia.org/wiki/JSON>`_ as its configuration format:
 
 .. code-block:: json
 
@@ -21,7 +21,7 @@ The following settings are supported:
 
 namespace
 ^^^^^^^^^
-The namespace of the extension, it must be a simple identifier respecting the regular expression: [a-zA-Z0-9\_]+:
+The namespace of the extension - it must be a simple identifier respecting the regular expression :code:`[a-zA-Z0-9\_]+`:
 
 .. code-block:: json
 
@@ -31,17 +31,17 @@ The namespace of the extension, it must be a simple identifier respecting the re
 
 name
 ^^^^
-Extension name, can only contain ascii characters:
+Extension name - can only contain ascii characters:
 
 .. code-block:: json
 
     {
-        "namespace": "test"
+        "name": "test"
     }
 
 description
 ^^^^^^^^^^^
-Extension description, any text describing your extension:
+Extension description - any text describing your extension:
 
 .. code-block:: json
 
@@ -51,7 +51,7 @@ Extension description, any text describing your extension:
 
 author
 ^^^^^^
-Company, developer, institution, etc. that have developed the extension:
+Company, developer, institution, etc that developed the extension:
 
 .. code-block:: json
 
@@ -61,7 +61,7 @@ Company, developer, institution, etc. that have developed the extension:
 
 version
 ^^^^^^^
-Extension version, must follow the regular expression: [0-9]+\.[0-9]+\.[0-9]+:
+Extension version - must follow the regular expression :code:`[0-9]+\.[0-9]+\.[0-9]+`:
 
 .. code-block:: json
 
@@ -71,7 +71,7 @@ Extension version, must follow the regular expression: [0-9]+\.[0-9]+\.[0-9]+:
 
 warnings
 ^^^^^^^^
-Compiler warnings enabled or disabled in the current project:
+Compiler warnings which should be enabled or disabled in the current project:
 
 .. code-block:: json
 
@@ -88,7 +88,7 @@ Compiler warnings enabled or disabled in the current project:
 
 optimizations
 ^^^^^^^^^^^^^
-Compiler optimizations enabled or disabled in the current project:
+Compiler optimizations which should be enabled or disabled in the current project:
 
 .. code-block:: json
 
@@ -159,29 +159,29 @@ Any additional libraries you want to add to the compilation process:
 
 extra-sources
 ^^^^^^^^^^^^^
-Any additional files you want to add to the compilation process:
+Any additional files you want to add to the compilation process - the search directory is relative to the :code:`ext` folder
+of your project:
 
 .. code-block:: json
 
     {
         "extra-sources": ["utils/pi.c"]
     }
-The search directory is relative to the `ext` folder of your project
 
 optimizer-dirs
 ^^^^^^^^^^^^^^
-The directories where your own optimizers can be found:
+The directories where your own optimizers can be found - the search directory is relative to the root folder of your project:
 
 .. code-block:: json
 
     {
         "optimizer-dirs": ["optimizer-dirs"]
     }
-The search directory is relative to the root folder of your project
 
 package-dependencies
 ^^^^^^^^^^^^^^^^^^^^
-Declare library dependencies (version check by :code:`pkg-config`)
+Declare library dependencies (version constraints will be checked by :code:`pkg-config`, and can use one of the operators
+:code:`=`, :code:`>=`, :code:`<=`, or :code:`*`):
 
 .. code-block:: json
 
@@ -192,5 +192,3 @@ Declare library dependencies (version check by :code:`pkg-config`)
             "protobuf": "<= 2.6.1"
         }
     }
-
-Version operator supports :code:`=`, :code:`>=`, :code:`<=`, and :code:`*`
