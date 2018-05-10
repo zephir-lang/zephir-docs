@@ -1,27 +1,25 @@
 Welcome!
 ========
-Welcome to Zephir, an open source, high-level/domain specific language
-designed to ease the creation and maintainability of extensions for PHP
-with a focus on type and memory safety.
+Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of
+extensions for PHP, with a focus on type and memory safety.
 
 Some features
 -------------
 Zephir's main features are:
 
-+-------------------+-----------------------------------------------------+
-| Type system       | dynamic/static                                      |
-+-------------------+-----------------------------------------------------+
-| Memory safety     | pointers or direct memory management aren't allowed |
-+-------------------+-----------------------------------------------------+
-| Compilation model | ahead of time                                       |
-+-------------------+-----------------------------------------------------+
-| Memory model      | task-local garbage collection                       |
-+-------------------+-----------------------------------------------------+
++--------------------+------------------------------------------------------+
+| Type system        | dynamic/static                                       |
++--------------------+------------------------------------------------------+
+| Memory safety      | pointers or direct memory management aren't allowed  |
++--------------------+------------------------------------------------------+
+| Compilation model  | ahead of time                                        |
++--------------------+------------------------------------------------------+
+| Memory model       | task-local garbage collection                        |
++--------------------+------------------------------------------------------+
 
 A small taste
 -------------
-The following code registers a class with a method that filters variables returning its
-alphabetic characters:
+The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
 .. code-block:: zephir
 
@@ -33,7 +31,7 @@ alphabetic characters:
     class Filter
     {
         /**
-         * Filters a string returning its alpha characters
+         * Filters a string, returning its alpha characters
          *
          * @param string str
          */

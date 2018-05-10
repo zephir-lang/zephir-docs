@@ -1,7 +1,7 @@
 Closures
 --------
-You can use closures or anonymous functions in Zephir, these are PHP compatible and
-can be returned to the PHP userland:
+You can use closures (a.k.a. anonymous functions) in Zephir; these are PHP compatible and can be returned to the PHP
+userland:
 
 .. code-block:: zephir
 
@@ -18,7 +18,7 @@ can be returned to the PHP userland:
         }
     }
 
-It also can be executed directly within Zephir and passed as parameter to other functions/methods:
+It also can be executed directly within Zephir, and passed as a parameter to other functions/methods:
 
 .. code-block:: zephir
 
@@ -35,7 +35,7 @@ It also can be executed directly within Zephir and passed as parameter to other 
         }
     }
 
-A short syntax is available to define closures:
+A short syntax is also available to define closures:
 
 .. code-block:: zephir
 
@@ -46,6 +46,6 @@ A short syntax is available to define closures:
 
         public function map(array! data)
         {
-            return data->map( number => number * number );
+            return data->map(number => number * number);
         }
     }
