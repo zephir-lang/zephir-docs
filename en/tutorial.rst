@@ -26,7 +26,7 @@ If everything is well, you should see the following help (or something very simi
     /____/\___/ .___/_/ /_/_/_/
              /_/
 
-    Zephir version 0.9.4a-dev
+    Zephir version 0.10.9a-dev
 
     Usage:
         command [options]
@@ -116,7 +116,7 @@ Initially, and only for the first time, a number of internal commands are execut
 configurations to export this class to the PHP extension. If everything goes well, you will see the following message at the
 end of the output:
 
-.. code-block:: bash
+.. code-block:: text
 
     ...
     Extension installed!

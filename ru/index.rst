@@ -29,7 +29,7 @@
 Другие форматы
 --------------
 
-* `PDF <https://github.com/phalcon/zephir-docs/blob/master/en/_build/latex/ZephirDocumentation.pdf?raw=true>`_
+* `PDF <https://github.com/phalcon/zephir-docs/blob/master/ru/_build/latex/ZephirDocumentation.pdf?raw=true>`_
 
 .. index::
   single: index; index

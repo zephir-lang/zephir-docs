@@ -159,14 +159,14 @@ null value to the closest approximate value:
 Supported Visibilities
 ^^^^^^^^^^^^^^^^^^^^^^
 * Public: Methods marked as "public" are exported to the PHP extension; this means that public methods are visible to the
-PHP code as well to the extension itself.
+  PHP code as well to the extension itself.
 
 * Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible
-to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or
-in classes that inherit them.
+  to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or
+  in classes that inherit them.
 
 * Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only
-visible to the class where they're implemented.
+  visible to the class where they're implemented.
 
 Supported Modifiers
 ^^^^^^^^^^^^^^^^^^^

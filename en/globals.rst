@@ -16,7 +16,8 @@ You can enable extension globals by adding the following structure to your confi
         "globals": {
             "allow_some_feature": {
                 "type": "bool",
-                "default": true
+                "default": true,
+                "module": true
             },
             "number_times": {
                 "type": "int",
@@ -49,6 +50,27 @@ Compound (namespaced) globals have the following structure:
     "<namespace>.<global-name>": {
         "type": "<some-valid-type>",
         "default": <some-compatible-default-value>
+    }
+
+The optional :code:`module` key, if present, places that global's initialization process into the module-wide :code:`GINIT`
+lifecycle event, which just means it will only be set up once per PHP process, rather than being reinitialized for every
+request, which is the default:
+
+.. code-block:: javascript
+
+    {
+        //...
+        "globals": {
+            "allow_some_feature": {  // set up only once, at startup
+                "type": "bool",
+                "default": true,
+                "module": true
+            },
+            "number_times": {        // set up at the start of each request
+                "type": "int",
+                "default": 10
+            }
+        }
     }
 
 Inside any method, you can read/write extension globals using the built-in functions :code:`globals_get`/:code:`globals_set`:

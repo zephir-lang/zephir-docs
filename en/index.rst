@@ -24,6 +24,7 @@ Reference
    closures
    optimizers
    config
+   lifecycle
    globals
    phpinfo
    sa

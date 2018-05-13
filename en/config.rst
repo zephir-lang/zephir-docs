@@ -154,13 +154,23 @@ This setting lets you provide one or more C functions to be executed on certain 
 ``GINIT`` (``globals``), ``MINIT`` (``module``), and ``RINIT`` (``request``). Check the :doc:`lifecycle hooks
 <lifecycle>` chapter for more information.
 
-(At the moment, only ``request`` is supported.)
-
 .. code-block:: json
 
     {
         "initializers": [
             {
+                "globals": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "setup_globals_deps(TSRMLS_C)"
+                    }
+                ],
+                "module": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "setup_module_deps(TSRMLS_C)"
+                    }
+                ],
                 "request": [
                     {
                         "include": "my/awesome/library.h",
@@ -178,10 +188,8 @@ This setting lets you provide one or more C functions to be executed on certain 
 destructors
 ^^^^^^^^^^^
 This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically,
-``RSHUTDOWN`` (``request``), ``MSHUTDOWN`` (``module``), and ``GSHUTDOWN`` (``globals``). Check the :doc:`lifecycle hooks
-<lifecycle>` chapter for more information.
-
-(At the moment, only ``request`` is supported.)
+``RSHUTDOWN`` (``request``), ``PRSHUTDOWN`` (``post-request``), ``MSHUTDOWN`` (``module``), and ``GSHUTDOWN`` (``globals``).
+Check the :doc:`lifecycle hooks <lifecycle>` chapter for more information.
 
 .. code-block:: json
 
@@ -196,6 +204,24 @@ This setting lets you provide one or more C functions to be executed on certain 
                     {
                         "include": "my/awful/library.h",
                         "code": "some_other_c_function_than_the_other_ones(TSRMLS_C)"
+                    }
+                ],
+                "post-request": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "c_function_for_cleaning_up_after_the_response_is_sent(TSRMLS_C)"
+                    }
+                ],
+                "module": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "release_module_deps(TSRMLS_C)"
+                    }
+                ],
+                "globals": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "release_globals_deps(TSRMLS_C)"
                     }
                 ]
             }
