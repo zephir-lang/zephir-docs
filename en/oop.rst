@@ -1,13 +1,11 @@
 Classes and Objects
 ===================
-Zephir promotes object-oriented programming, this is why you can only export methods
-and classes in extensions, also you will see that most of the time, runtime errors raise
-exceptions instead of fatal errors or warnings.
+Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will
+see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
 
 Classes
 -------
-Every Zephir file must implement a class or an interface (and just once). A class structure
-is very similar to a PHP class:
+Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
 
 .. code-block:: zephir
 
@@ -25,7 +23,7 @@ Class Modifiers
 ^^^^^^^^^^^^^^^
 The following class modifiers are supported:
 
-*Final*: If a class has this modifier it cannot be extended
+*Final*: If a class has this modifier it cannot be extended:
 
 .. code-block:: zephir
 
@@ -39,7 +37,7 @@ The following class modifiers are supported:
 
     }
 
-*Abstract*: If a class has this modifier it cannot be instantiated
+*Abstract*: If a class has this modifier it cannot be instantiated:
 
 .. code-block:: zephir
 
@@ -55,8 +53,8 @@ The following class modifiers are supported:
 
 Implementing Methods
 --------------------
-The "function" keyword introduces a method. Methods implements the usual visibility modifiers available
-in PHP, explicity set a visibility modifier is mandatory in Zephir:
+The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicity
+setting a visibility modifier is mandatory in Zephir:
 
 .. code-block:: zephir
 
@@ -133,9 +131,8 @@ Methods can receive required and optional parameters:
 
 Optional nullable parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Zephir ensures that the value of a variable remains of the type the variable was declared of.
-This assurance the compiler does when a variable has a null value makes Zephir convert the null
-value to the most approximate value:
+Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the
+null value to the closest approximate value:
 
 .. code-block:: zephir
 
@@ -161,26 +158,30 @@ value to the most approximate value:
 
 Supported Visibilities
 ^^^^^^^^^^^^^^^^^^^^^^
+* Public: Methods marked as "public" are exported to the PHP extension; this means that public methods are visible to the
+  PHP code as well to the extension itself.
 
-* Public: Methods marked as "public" are exported to the PHP extension, this means that public methods are visible to the PHP code as well to the extension itself.
+* Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible
+  to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or
+  in classes that inherit them.
 
-* Protected: Methods marked as "protected" are exported to the PHP extension, this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
-
-* Private: Methods marked as "private" are not exported to the PHP extension, this means that private methods are only visible to the class where they're implemented.
+* Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only
+  visible to the class where they're implemented.
 
 Supported Modifiers
 ^^^^^^^^^^^^^^^^^^^
+* Static: Methods with this modifier can only be called in a static context (from the class, not an object).
 
-* Final: If a method has this modifier it cannot be overriden
+* Final: If a method has this modifier it cannot be overriden.
 
-* Deprecated: Methods marked as "deprecated" throwing an E_DEPRECATED error when they are called.
+* Deprecated: Methods marked as "deprecated" throw an E_DEPRECATED error when they are called.
 
 Getter/Setter shortcuts
 ^^^^^^^^^^^^^^^^^^^^^^^
-Like in C#, you can use get/set/toString shortcuts in Zephir, this feature allows to easily write setters and getters for properties without explictly
-implementing those methods as such.
+Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for
+properties, without explictly implementing those methods as such.
 
-For example, without shortcuts we could find code like:
+For example, without shortcuts we would need code like:
 
 .. code-block:: zephir
 
@@ -237,11 +238,11 @@ You can write the same code using shortcuts as follows:
 
     }
 
-When the code is compiled those methods are exported as real methods but you don’t have to write them one by one.
+When the code is compiled, those methods are exported as real methods, but you don’t have to write them manually.
 
 Return Type Hints
 ^^^^^^^^^^^^^^^^^
-Methods in classes and interfaces can have "return type hints", these will provide useful extra information to the compiler
+Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler
 to inform you about errors in your application. Consider the following example:
 
 .. code-block:: zephir
@@ -282,7 +283,8 @@ to inform you about errors in your application. Consider the following example:
 
     }
 
-A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
+A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those
+types.
 
 .. code-block:: zephir
 
@@ -310,18 +312,19 @@ Methods can also be marked as ‘void’. This means that a method is not allowe
         let this->_connection = connection;
     }
 
-Why is this useful? Because the compiler can detect if the program is expecting a returning value from these methods and produce a compiler exception:
+Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and
+produce a compiler exception:
 
 .. code-block:: zephir
 
-    let myDb = db->setConnection(connection);
-    myDb->execute("SELECT * FROM robots"); // this will produce an exception
+    let myDb = db->setConnection(connection); // this will produce an exception
+    myDb->execute("SELECT * FROM robots");
 
 Strict/Flexible Parameter Data-Types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible,
-this means that if a value with wrong (but compatible) data-type is passed, Zephir will try to transparently
-convert it to the expected one:
+In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means
+that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the
+expected one:
 
 .. code-block:: zephir
 
@@ -342,8 +345,8 @@ Above method will work with the following calls:
     $o->filterText("some text", true); // OK
     $o->filterText(array(1, 2, 3), true); // FAIL
 
-However, passing a wrong type could be often lead to bugs, a bad use of a specific API would produce unexpected results.
-You can disallow the automatic conversion by setting the parameter with a strict data-type:
+However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You
+can disallow the automatic conversion by setting the parameter with a strict data-type:
 
 .. code-block:: zephir
 
@@ -364,12 +367,14 @@ Now, most of the calls with a wrong type will cause an exception due to the inva
     $o->filterText("some text", true); // OK
     $o->filterText(array(1, 2, 3), true); // FAIL
 
-By specifying what parameters are strict and what must be flexible, a developer can set the specific behavior he/she really wants.
+By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really
+wants.
 
 Read-Only Parameters
 ^^^^^^^^^^^^^^^^^^^^
-Using the keyword 'const' you can mark parameters as read-only, this helps to respect `const-correctness <http://en.wikipedia.org/wiki/Const-correctness>`_.
-Parameters marked with this attribute cannot be modified inside the method:
+Using the keyword 'const' you can mark parameters as read-only, this helps to respect `const-correctness
+<http://en.wikipedia.org/wiki/Const-correctness>`_. Parameters marked with this attribute cannot be modified inside the
+method:
 
 .. code-block:: zephir
 
@@ -385,15 +390,14 @@ Parameters marked with this attribute cannot be modified inside the method:
         }
     }
 
-When a parameter is declared as read-only the compiler can make safe assumptions and perform
-further optimizations over these variables.
+When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over
+these variables.
 
 Implementing Properties
 -----------------------
-Class member variables are called "properties". By default, they act as PHP properties.
-Properties are exported to the PHP extension and are visibles from PHP code.
-Properties implement the usual visibility modifiers available in PHP, explicity set
-a visibility modifier is mandatory in Zephir:
+Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to
+the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and
+explicity setting a visibility modifier is mandatory in Zephir:
 
 .. code-block:: zephir
 
@@ -410,8 +414,7 @@ a visibility modifier is mandatory in Zephir:
 
     }
 
-Within class methods non-static properties may be accessed by using -> (Object Operator): this->property
-(where property is the name of the property):
+Within class methods, non-static properties may be accessed by using -> (Object Operator):
 
 .. code-block:: zephir
 
@@ -433,8 +436,8 @@ Within class methods non-static properties may be accessed by using -> (Object O
         }
     }
 
-Properties can have literal compatible default values. These values must be able to be evaluated at
-compile time and must not depend on run-time information in order to be evaluated:
+Properties can have literal compatible default values. These values must be able to be evaluated at compile time and must not
+depend on run-time information in order to be evaluated:
 
 .. code-block:: zephir
 
@@ -458,7 +461,8 @@ Properties can be updated by accesing them using the '->' operator:
 
     let this->myProperty = 100;
 
-Zephir checks that properties do exist when a program is accesing them, if a property is not declared you will get a compiler exception:
+Zephir checks that properties exist when a program is accesing them. If a property is not declared, you will get a compiler
+exception:
 
 .. code-block:: php
 
@@ -467,13 +471,14 @@ Zephir checks that properties do exist when a program is accesing them, if a pro
           let this->_optionsx = options;
           ------------^
 
-If you want to avoid this compiler validation or just create a property dynamically, you can enclose the property name using string quotes:
+If you want to avoid this compiler validation, or just create a property dynamically, you can enclose the property name using
+brackets and string quotes:
 
 .. code-block:: zephir
 
     let this->{"myProperty"} = 100;
 
-You can also use a simple variable to update a property, the property name will be taken from the variable:
+You can also use a simple variable to update a property; the property name will be taken from the variable:
 
 .. code-block:: zephir
 
@@ -501,8 +506,8 @@ As when updating, properties can be dynamically read this way:
 
 Class Constants
 ---------------
-Class may contain class constants that remain the same and unchangeable once the extension is compiled.
-Class constants are exported to the PHP extension allowing them to be used from PHP.
+Classes may contain class constants that remain the same and unchangeable once the extension is compiled. Class constants are
+exported to the PHP extension, allowing them to be used from PHP.
 
 .. code-block:: zephir
 
@@ -598,11 +603,10 @@ You can call methods in a dynamic manner as follows:
 
 Parameters by Name
 ^^^^^^^^^^^^^^^^^^
-Zephir supports call methods parameters by name or keyword arguments.
-Named parameters can be useful if you want to pass parameters in an arbitrary order,
-document the meaning of parameters or specify parameters in a more elegant way.
+Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass
+parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
 
-Consider the following example, a class called “Image” has a method that receive four parameters:
+Consider the following example. A class called “Image” has a method that receives four parameters:
 
 .. code-block:: zephir
 
@@ -616,14 +620,14 @@ Consider the following example, a class called “Image” has a method that rec
         }
     }
 
-Using the standard way of calling methods:
+Using the standard method calling approach:
 
 .. code-block:: zephir
 
     i->chop(100); // width=100, height=400, x=0, y=0
     i->chop(100, 50, 10, 20); // width=100, height=50, x=10, y=20
 
-Using named parameters you can:
+Using named parameters, you can:
 
 .. code-block:: zephir
 
@@ -632,10 +636,10 @@ Using named parameters you can:
     i->chop(height: 200, width: 100); // width=100, height=200, x=0, y=0
     i->chop(x: 20, y: 30); // width=600, height=400, x=20, y=30
 
-When the compiler (at compile time) does not know the correct order of these parameters
-they must be resolved at runtime, in this case there could be a minimum additional extra overhead:
+When the compiler (at compile time) does not know the correct order of these parameters, they must be resolved at runtime. In
+this case, there could be a minimum additional extra overhead:
 
 .. code-block:: zephir
 
     let i = new {someClass}();
-    i->chop(y:30, x: 20);
+    i->chop(y: 30, x: 20);

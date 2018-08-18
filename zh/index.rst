@@ -34,7 +34,7 @@ Zephir 语言
 其他格式
 -------------
 
-* `PDF <https://github.com/phalcon/zephir-docs/raw/master/en/_build/latex/ZephirDocumentation.pdf>`_
+* `PDF (en) <https://github.com/phalcon/zephir-docs/raw/master/en/_build/latex/ZephirDocumentation.pdf>`_
 
 .. index::
   single: index; index

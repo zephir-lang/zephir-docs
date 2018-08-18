@@ -1,19 +1,17 @@
 Compiler Warnings
 =================
+The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
 
-The compiler raise warnings when it finds situations where the code can be improved or a potential error
-can be avoided.
+Warnings can be enabled via command line parameters, or can be added to the ``config.json`` to enable or disable them more
+permanently.
 
-Warnings can be enabled via command line parameters or can be added to the config.json to enable or disable
-them permanently:
-
-You can enable warnings by passing its name prefixed by -w:
+You can enable warnings by passing their name prefixed by -w:
 
 .. code-block:: bash
 
     zephir -wunused-variable -wnonexistent-function
 
-Warnings can be disabled by passing its name prefixed by -W:
+Warnings can be disabled by passing their name prefixed by -W:
 
 .. code-block:: bash
 
@@ -63,7 +61,7 @@ Raised when a method is called with a wrong type for a parameter:
 
 nonexistent-function
 ^^^^^^^^^^^^^^^^^^^^
-Raised when a non-existent function at compile time is called:
+Raised when a function is called that doesn't exist at compile time:
 
 .. code-block:: zephir
 
@@ -74,7 +72,7 @@ Raised when a non-existent function at compile time is called:
 
 nonexistent-class
 ^^^^^^^^^^^^^^^^^
-Raised when a non-existent class is used at compile time:
+Raised when a class is used that doesn't exist at compile time:
 
 .. code-block:: zephir
 
@@ -87,7 +85,7 @@ Raised when a non-existent class is used at compile time:
 
 non-valid-isset
 ^^^^^^^^^^^^^^^
-Raised when the compiler detects that an 'isset' operation is being made on a non array or object value:
+Raised when the compiler detects that an 'isset' operation is being made on a non-array or -object value:
 
 .. code-block:: zephir
 
@@ -99,7 +97,7 @@ Raised when the compiler detects that an 'isset' operation is being made on a no
 
 non-array-update
 ^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an array update operation is being made on a non array value:
+Raised when the compiler detects that an array update operation is being made on a non-array value:
 
 .. code-block:: zephir
 
@@ -111,7 +109,7 @@ Raised when the compiler detects that an array update operation is being made on
 
 non-valid-objectupdate
 ^^^^^^^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an object update operation is being made on a non object:
+Raised when the compiler detects that an object update operation is being made on a non-object value:
 
 .. code-block:: zephir
 
@@ -123,7 +121,7 @@ Raised when the compiler detects that an object update operation is being made o
 
 non-valid-fetch
 ^^^^^^^^^^^^^^^
-Raised when the compiler detects that a 'fetch' operation is being made on a non array or object value:
+Raised when the compiler detects that a 'fetch' operation is being made on a non-array or -object value:
 
 .. code-block:: zephir
 
@@ -147,7 +145,7 @@ Raised when the compiler detects that an invalid array index is used:
 
 non-array-append
 ^^^^^^^^^^^^^^^^
-Raised when the compiler detects that an element is being tried to be appended to a non array variable:
+Raised when the compiler detects that an element is being appended to a non-array variable:
 
 .. code-block:: zephir
 

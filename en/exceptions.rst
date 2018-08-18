@@ -2,8 +2,8 @@ Exceptions
 ==========
 Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.
 
-When an exception is thrown, a "catch" block can be used to capture the exception and allow the
-developer to provide proper handling.
+When an exception is thrown, a 'catch' block can be used to capture the exception and allow the developer to provide proper
+handling:
 
 .. code-block:: zephir
 
@@ -19,7 +19,7 @@ developer to provide proper handling.
         echo e->getMessage();
     }
 
-Zephir provides a silent "try" block that simply ignores any exceptions produced within that block:
+Zephir also provides a "silent" 'try' block, that simply ignores any exceptions produced within that block:
 
 .. code-block:: zephir
 
@@ -27,7 +27,7 @@ Zephir provides a silent "try" block that simply ignores any exceptions produced
         throw new \Exception("This is an exception");
     }
 
-If you don't need an exception variable when catching then you can safely not provide it:
+If you don't need an exception variable when 'catch'ing, then you can safely not provide it:
 
 .. code-block:: zephir
 
@@ -43,7 +43,7 @@ If you don't need an exception variable when catching then you can safely not pr
     }
 
 
-A single "catch" block can be used to catch different types of exception:
+A single 'catch' block can be used to catch multiple types of exception:
 
 .. code-block:: zephir
 
@@ -68,8 +68,8 @@ Zephir allows you to throw literals or static typed variables as if they were th
     throw 123; // throw new \Exception((string) 123);
     throw 123.123; // throw new \Exception((string) 123.123);
 
-Zephir's exceptions provide the same facilities as PHP that allow you to know where the exception happened.
-Exception::getFile() and Exception::getLine() return the location in the Zephir code where the exception has been thrown:
+Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is,
+Exception::getFile() and Exception::getLine() return the location in the Zephir code where the exception was thrown:
 
 .. code-block:: html
 

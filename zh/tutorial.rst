@@ -24,7 +24,7 @@ Zephir与这本书的目的都是为了让PHP的开发者可以更容易写出PH
     /____/\___/ .___/_/ /_/_/_/
              /_/
 
-    Zephir version 0.9.4a-dev
+    Zephir version 0.10.9a-dev
 
     Usage:
         command [options]

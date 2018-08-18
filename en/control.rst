@@ -7,9 +7,8 @@ Conditionals
 
 If Statement
 ^^^^^^^^^^^^
-'if' statements evaluates an expression executing this trace if the evaluation is true.
-Braces are compulsory, an 'if' can have an optional 'else' clause, multiple 'if'/'else'
-constructs can be chained together:
+'if' statements evaluate an expression, executing the following block if the evaluation is true. Braces are required. An
+'if' can have an optional 'else' clause, and multiple 'if'/'else' constructs can be chained together:
 
 .. code-block:: zephir
 
@@ -45,8 +44,8 @@ Parentheses in the evaluated expression are optional:
 
 Switch Statement
 ^^^^^^^^^^^^^^^^
-A 'switch' evalutes an expression against a series of predefined literal values executing the corresponding
-'case' block or falling back to the 'default' block case:
+A 'switch' evalutes an expression against a series of predefined literal values, executing the corresponding 'case' block or
+falling back to the 'default' block case:
 
 .. code-block:: zephir
 
@@ -103,7 +102,7 @@ A 'for' is a control structure that allows to traverse arrays or strings:
         echo item, "\n";
     }
 
-Keys in hashes can be obtained in the following way:
+Keys in hashes can be obtained by providing a variable for both the key and value:
 
 .. code-block:: zephir
 
@@ -123,7 +122,7 @@ A 'for' loop can also be instructed to traverse an array or string in reverse or
         echo value, "\n";
     }
 
-A 'for' can be used to traverse string variables:
+A 'for' loop can be used to traverse string variables:
 
 .. code-block:: zephir
 
@@ -151,8 +150,8 @@ A standard 'for' that traverses a range of integer values can be written as foll
         echo i, "\n";
     }
 
-To avoid warnings about unused variables you can use in 'for' statements anonymous variables,
-by replacing a variable name with the placeholder "_":
+To avoid warnings about unused variables, you can use anonymous variables in 'for' statements, by replacing a variable name
+with the placeholder "_":
 
 .. code-block:: zephir
 
@@ -163,7 +162,7 @@ by replacing a variable name with the placeholder "_":
 
 Break Statement
 ^^^^^^^^^^^^^^^
-'break' ends execution of the current 'while', 'for' or 'loop' statements:
+'break' ends execution of the current 'while', 'for' or 'loop' statement:
 
 .. code-block:: zephir
 
@@ -176,8 +175,8 @@ Break Statement
 
 Continue Statement
 ^^^^^^^^^^^^^^^^^^
-'continue' is used within looping structures to skip the rest of the current loop iteration and
-continue execution at the condition evaluation and then the beginning of the next iteration.
+'continue' is used within looping structures to skip the rest of the current loop iteration and continue execution at the
+condition evaluation, and then the beginning of the next iteration.
 
 .. code-block:: zephir
 
@@ -192,9 +191,9 @@ continue execution at the condition evaluation and then the beginning of the nex
 
 Require
 -------
-The 'require' statement dynamically includes and evaluates a specified PHP file. Note that files
-included via Zephir are interpreted by Zend Engine as normal PHP files. 'require' does not allow to
-include other zephir files in runtime.
+The 'require' statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are
+interpreted by Zend Engine as normal PHP files. 'require' does not allow Zephdr code to include other Zephir files at
+runtime.
 
 .. code-block:: zephir
 
@@ -204,7 +203,8 @@ include other zephir files in runtime.
 
 Let
 ---
-'Let' statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable:
+The 'let' statement is used to mutate variables, properties and arrays. Variables are by default immutable and this
+instruction makes them mutable for the duration of the statement:
 
 .. code-block:: zephir
 
