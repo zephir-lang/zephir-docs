@@ -6,6 +6,7 @@ Prerequisites
 -------------
 To build a PHP extension and use Zephir you need the following requirements:
 
+* `Zephir parser`_ >= 1.1.0
 * gcc >= 4.x/clang >= 3.x
 * re2c 0.13 or later
 * gnu make 3.81 or later
@@ -13,6 +14,9 @@ To build a PHP extension and use Zephir you need the following requirements:
 * automake 1.14 or later
 * libpcre3
 * php development headers and tools
+* The build-essential package when using gcc on Ubuntu (and likely other distros as well)
+
+.. _Zephir parser: https://github.com/phalcon/php-zephir-parser
 
 If you're using Ubuntu, you can install the required packages this way:
 
@@ -46,7 +50,11 @@ developing with Zephir.
 
 Installing Zephir
 -----------------
+First, make sure that Zephir parser extension is installed and activated following tutorial_
+
 The Zephir compiler currently must be cloned from Github:
+
+.. _tutorial: https://github.com/phalcon/php-zephir-parser
 
 .. code-block:: bash
 
@@ -66,3 +74,6 @@ Check if Zephir is available from any directory by executing:
 .. code-block:: bash
 
 	$ zephir help
+
+
+
