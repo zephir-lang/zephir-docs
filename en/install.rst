@@ -16,8 +16,6 @@ To build a PHP extension and use Zephir you need the following requirements:
 * php development headers and tools
 * The build-essential package when using gcc on Ubuntu (and likely other distros as well)
 
-.. _Zephir parser: https://github.com/phalcon/php-zephir-parser
-
 If you're using Ubuntu, you can install the required packages this way:
 
 .. code-block:: bash
@@ -50,11 +48,9 @@ developing with Zephir.
 
 Installing Zephir
 -----------------
-First, make sure that Zephir parser extension is installed and activated following tutorial_
+First, make sure the Zephir parser extension is installed and activated following its tutorial_
 
 The Zephir compiler currently must be cloned from Github:
-
-.. _tutorial: https://github.com/phalcon/php-zephir-parser
 
 .. code-block:: bash
 
@@ -74,6 +70,6 @@ Check if Zephir is available from any directory by executing:
 .. code-block:: bash
 
 	$ zephir help
-
-
-
+	
+.. _Zephir parser: https://github.com/phalcon/php-zephir-parser
+.. _tutorial: https://github.com/phalcon/php-zephir-parser
