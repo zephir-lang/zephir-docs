@@ -21,7 +21,7 @@ If you're using Ubuntu, you can install the required packages this way:
 .. code-block:: bash
 
 	$ sudo apt-get update
-	$ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev
+	$ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
 
 Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
 
