@@ -372,8 +372,8 @@ wants.
 
 Read-Only Parameters
 ^^^^^^^^^^^^^^^^^^^^
-Using the keyword 'const' you can mark parameters as read-only, this helps to respect `const-correctness
-<http://en.wikipedia.org/wiki/Const-correctness>`_. Parameters marked with this attribute cannot be modified inside the
+Using the keyword 'const' you can mark parameters as read-only, this helps to respect 'const-correctness
+<http://en.wikipedia.org/wiki/Const-correctness>'_. Parameters marked with this attribute cannot be modified inside the
 method:
 
 .. code-block:: zephir
@@ -606,7 +606,7 @@ Parameters by Name
 Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass
 parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
 
-Consider the following example. A class called “Image” has a method that receives four parameters:
+Consider the following example. A class called "Image" has a method that receives four parameters:
 
 .. code-block:: zephir
 

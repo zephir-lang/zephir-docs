@@ -117,8 +117,8 @@ program execution.
 
 In contrast with PHP, you are not required to put a dollar sign ($) in front of variable names.
 
-Zephir follows the same comment conventions as Java, C#, C++, etc. A :code:`// comment` goes to the end of a line, while a
-:code:`/* comment */` can cross line boundaries.
+Zephir follows the same comment conventions as Java, C#, C++, etc. A :code:'// comment' goes to the end of a line, while a
+:code:'/* comment */' can cross line boundaries.
 
 Variables are, by default, immutable. This means that Zephir expects that most variables will stay unchanged. Variables that
 maintain their initial value can be optimized down by the compiler to static constants. When the variable value needs to be

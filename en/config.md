@@ -1,9 +1,9 @@
 Configuration File
 ==================
-Every Zephir extension has a configuration file called :code:`config.json`. This file is read by Zephir every time you build
+Every Zephir extension has a configuration file called :code:'config.json'. This file is read by Zephir every time you build
 or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
 
-This file uses `JSON <http://en.wikipedia.org/wiki/JSON>`_ as its configuration format:
+This file uses 'JSON <http://en.wikipedia.org/wiki/JSON>'_ as its configuration format:
 
 .. code-block:: json
 
@@ -21,7 +21,7 @@ The following settings are supported:
 
 namespace
 ^^^^^^^^^
-The namespace of the extension - it must be a simple identifier respecting the regular expression :code:`[a-zA-Z0-9\_]+`:
+The namespace of the extension - it must be a simple identifier respecting the regular expression :code:'[a-zA-Z0-9\_]+':
 
 .. code-block:: json
 
@@ -31,7 +31,7 @@ The namespace of the extension - it must be a simple identifier respecting the r
 
 extension-name
 ^^^^^^^^^^^^^^
-The base filename of the extension. It must follow the same rules as the :code:`namespace` setting, which is used as a
+The base filename of the extension. It must follow the same rules as the :code:'namespace' setting, which is used as a
 fallback in case this one isn't given.
 
 .. code-block:: json
@@ -72,7 +72,7 @@ Company, developer, institution, etc that developed the extension:
 
 version
 ^^^^^^^
-Extension version - must follow the regular expression :code:`[0-9]+\.[0-9]+\.[0-9]+`:
+Extension version - must follow the regular expression :code:'[0-9]+\.[0-9]+\.[0-9]+':
 
 .. code-block:: json
 
@@ -113,7 +113,7 @@ Compiler optimizations which should be enabled or disabled in the current projec
 
 globals
 ^^^^^^^
-Extension globals available. Check the :doc:`extension globals <globals>` chapter for more information.
+Extension globals available. Check the :doc:'extension globals <globals>' chapter for more information.
 
 .. code-block:: json
 
@@ -132,7 +132,7 @@ Extension globals available. Check the :doc:`extension globals <globals>` chapte
 
 info
 ^^^^
-phpinfo() sections. Check the :doc:`phpinfo() <phpinfo>` chapter for more information.
+phpinfo() sections. Check the :doc:'phpinfo() <phpinfo>' chapter for more information.
 
 .. code-block:: json
 
@@ -151,8 +151,8 @@ phpinfo() sections. Check the :doc:`phpinfo() <phpinfo>` chapter for more inform
 initializers
 ^^^^^^^^^^^^
 This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically,
-``GINIT`` (``globals``), ``MINIT`` (``module``), and ``RINIT`` (``request``). Check the :doc:`lifecycle hooks
-<lifecycle>` chapter for more information.
+''GINIT'' (''globals''), ''MINIT'' (''module''), and ''RINIT'' (''request''). Check the :doc:'lifecycle hooks
+<lifecycle>' chapter for more information.
 
 .. code-block:: json
 
@@ -188,8 +188,8 @@ This setting lets you provide one or more C functions to be executed on certain 
 destructors
 ^^^^^^^^^^^
 This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically,
-``RSHUTDOWN`` (``request``), ``PRSHUTDOWN`` (``post-request``), ``MSHUTDOWN`` (``module``), and ``GSHUTDOWN`` (``globals``).
-Check the :doc:`lifecycle hooks <lifecycle>` chapter for more information.
+''RSHUTDOWN'' (''request''), ''PRSHUTDOWN'' (''post-request''), ''MSHUTDOWN'' (''module''), and ''GSHUTDOWN'' (''globals'').
+Check the :doc:'lifecycle hooks <lifecycle>' chapter for more information.
 
 .. code-block:: json
 
@@ -250,7 +250,7 @@ Any additional libraries you want to add to the compilation process:
 
 extra-sources
 ^^^^^^^^^^^^^
-Any additional files you want to add to the compilation process - the search directory is relative to the :code:`ext` folder
+Any additional files you want to add to the compilation process - the search directory is relative to the :code:'ext' folder
 of your project:
 
 .. code-block:: json
@@ -317,8 +317,8 @@ You can include a class from another namespace/extension directly in your own ex
 
 package-dependencies
 ^^^^^^^^^^^^^^^^^^^^
-Declare library dependencies (version constraints will be checked by :code:`pkg-config`, and can use one of the operators
-:code:`=`, :code:`>=`, :code:`<=`, or :code:`*`):
+Declare library dependencies (version constraints will be checked by :code:'pkg-config', and can use one of the operators
+:code:'=', :code:'>=', :code:'<=', or :code:'*'):
 
 .. code-block:: json
 
@@ -361,8 +361,8 @@ to be installed during the build phase:
 
 stubs
 ^^^^^
-This setting allows adjusting the way IDE documentation stubs are generated. :code:`path` sets where the stubs should be
-created, while :code:`stubs-run-after-generate` sets whether to automatically (re)build the stubs when your code is compiled
+This setting allows adjusting the way IDE documentation stubs are generated. :code:'path' sets where the stubs should be
+created, while :code:'stubs-run-after-generate' sets whether to automatically (re)build the stubs when your code is compiled
 to C:
 
 .. code-block:: json
@@ -376,10 +376,10 @@ to C:
 
 api
 ^^^
-Used to configure the automatically generated HTML documentation for your extension. :code:`path` specifies where to create
-the documentation relative to the project root. :code:`base-url` is used to generate a :code:`sitemap.xml` file for your
-documentation. :code:`theme` is used to set the theme used for the generated documentation (via the :code:`name` setting),
-and any options the theme supports passing (via the :code:`options` setting). Finally, :code:`theme-directories` is used to
+Used to configure the automatically generated HTML documentation for your extension. :code:'path' specifies where to create
+the documentation relative to the project root. :code:'base-url' is used to generate a :code:'sitemap.xml' file for your
+documentation. :code:'theme' is used to set the theme used for the generated documentation (via the :code:'name' setting),
+and any options the theme supports passing (via the :code:'options' setting). Finally, :code:'theme-directories' is used to
 provide additional search paths for finding your desired theme.:
 
 .. code-block:: json
@@ -406,8 +406,8 @@ provide additional search paths for finding your desired theme.:
 
 backend
 ^^^^^^^
-Provides a way to configure the Zend Engine backend used by your extension. At the moment, only the :code:`templatepath`,
-which lets you select between :code:`ZendEngine2` and :code:`ZendEngine3`, is supported:
+Provides a way to configure the Zend Engine backend used by your extension. At the moment, only the :code:'templatepath',
+which lets you select between :code:'ZendEngine2' and :code:'ZendEngine3', is supported:
 
 .. code-block:: json
 
@@ -419,9 +419,9 @@ which lets you select between :code:`ZendEngine2` and :code:`ZendEngine3`, is su
 
 extra
 ^^^^^
-Contains extra settings that also can be passed, as is, on the command line. Currently, that's :code:`export-clases`
-(generate headers for accessing your classes from other C code), and :code:`indent` (select between using :code:`tabs` or
-:code:`spaces` to indent code in generated files):
+Contains extra settings that also can be passed, as is, on the command line. Currently, that's :code:'export-clases'
+(generate headers for accessing your classes from other C code), and :code:'indent' (select between using :code:'tabs' or
+:code:'spaces' to indent code in generated files):
 
 .. code-block:: json
 
@@ -434,7 +434,7 @@ Contains extra settings that also can be passed, as is, on the command line. Cur
 
 silent
 ^^^^^^
-Suppresses most/all output from :code:`zephir` commands (same as :code:`-w`):
+Suppresses most/all output from :code:'zephir' commands (same as :code:'-w'):
 
 .. code-block:: json
 
@@ -444,8 +444,8 @@ Suppresses most/all output from :code:`zephir` commands (same as :code:`-w`):
 
 verbose
 ^^^^^^^
-Displays more detail in error messages from exceptions generated by :code:`zephir` commands (can also enable with :code:`-v`,
-or disable with :code:`-V`):
+Displays more detail in error messages from exceptions generated by :code:'zephir' commands (can also enable with :code:'-v',
+or disable with :code:'-V'):
 
 .. code-block:: json
 

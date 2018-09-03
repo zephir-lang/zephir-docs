@@ -17,7 +17,7 @@ Optimizaitons can be disabled by passing the name prefixed by -fno-:
 
     zephir -fno-static-type-inference -fno-call-gatherer-pass
 
-With recent versions of zephir-parser, optimizations can be configured in the config file ``config.json``.
+With recent versions of zephir-parser, optimizations can be configured in the config file ''config.json''.
 
 The following optimizations are supported:
 

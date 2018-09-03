@@ -17,7 +17,7 @@ if "%1" == "" goto help
 
 if "%1" == "help" (
 	:help
-	echo.Please use `make ^<target^>` where ^<target^> is one of
+	echo.Please use 'make ^<target^>' where ^<target^> is one of
 	echo.  html       to make standalone HTML files
 	echo.  dirhtml    to make HTML files named index.html in directories
 	echo.  singlehtml to make a single large HTML file

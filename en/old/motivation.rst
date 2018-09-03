@@ -98,9 +98,9 @@ the code down to machine code. The following graph shows how the process works:
 In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that
 improve the performance of compiled applications:
 
-* `GCC optimizations <http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html>`_
-* `LLVM passes <http://llvm.org/docs/Passes.html>`_
-* `Visual C/C++ optimizations <http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx>`_
+* 'GCC optimizations <http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html>'_
+* 'LLVM passes <http://llvm.org/docs/Passes.html>'_
+* 'Visual C/C++ optimizations <http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx>'_
 
 Code Protection --------------- In some circumstances, the compilation does not significantly improve performance. This may
 be because the bottleneck is located in the I/O bound portion(s) of the application (quite likely) rather than compute/memory

@@ -53,8 +53,8 @@ semicolons to separate statements and expressions, as in Java, C/C++, PHP, and s
 
 Comments
 --------
-Zephir supports 'C'/'C++' comments. These are one line comments with :code:`// ...`, and multi line comments with
-:code:`/* ... */`:
+Zephir supports 'C'/'C++' comments. These are one line comments with :code:'// ...', and multi line comments with
+:code:'/* ... */':
 
 .. code-block:: c
 

@@ -6,7 +6,7 @@ Prerequisites
 -------------
 To build a PHP extension and use Zephir you need the following requirements:
 
-* `Zephir parser`_ >= 1.1.0
+* 'Zephir parser'_ >= 1.1.0
 * gcc >= 4.x/clang >= 3.x
 * re2c 0.13 or later
 * gnu make 3.81 or later

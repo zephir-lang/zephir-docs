@@ -125,10 +125,10 @@ end of the output:
 
 At the above step, it's likely that you would need to supply your root password in order to install the extension.
 
-Finally, the extension must be added to the ``php.ini`` in order to be loaded by PHP. This is achieved by adding the
-initialization directive: ``extension=utils.so`` to it. (NOTE: You can also load it on the command line with ``-d
-extension=utils.so``, but it will only load for that single request, so you'd need to include it every time you want to test
-your extension in the CLI. Adding the directive to the ``php.ini`` will ensure it is loaded for every request from then on.)
+Finally, the extension must be added to the ''php.ini'' in order to be loaded by PHP. This is achieved by adding the
+initialization directive: ''extension=utils.so'' to it. (NOTE: You can also load it on the command line with ''-d
+extension=utils.so'', but it will only load for that single request, so you'd need to include it every time you want to test
+your extension in the CLI. Adding the directive to the ''php.ini'' will ensure it is loaded for every request from then on.)
 
 Initial Testing
 ---------------

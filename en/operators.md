@@ -112,7 +112,7 @@ Example:
         echo "has some flag";
     }
 
-Learn more about comparison of dynamic variables in the `php manual`_.
+Learn more about comparison of dynamic variables in the 'php manual'_.
 
 Ternary Operator
 ----------------
@@ -241,7 +241,7 @@ type:
 
 Branch Prediction Hints
 ^^^^^^^^^^^^^^^^^^^^^^^
-What is branch prediction? Check this `article out`_ or refer to the `Wikipedia article`_. In environments where performance
+What is branch prediction? Check this 'article out'_ or refer to the 'Wikipedia article'_. In environments where performance
 is very important, it may be useful to introduce these hints.
 
 Consider the following example:
@@ -272,7 +272,7 @@ this could be hard to know, so we could introduce a hint there:
         }
     }
 
-.. _`array_key_exists`: http://www.php.net/manual/en/function.array-key-exists.php
-.. _`php manual`: http://www.php.net/manual/en/language.operators.comparison.php
-.. _`article out`: http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/
-.. _`Wikipedia article`: https://en.wikipedia.org/wiki/Branch_predictor
+.. _'array_key_exists': http://www.php.net/manual/en/function.array-key-exists.php
+.. _'php manual': http://www.php.net/manual/en/language.operators.comparison.php
+.. _'article out': http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/
+.. _'Wikipedia article': https://en.wikipedia.org/wiki/Branch_predictor
