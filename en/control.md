@@ -1,229 +1,210 @@
-Control Structures
-==================
+# Control Structures
 Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
 
-Conditionals
-------------
+## Conditionals
 
-If Statement
-^^^^^^^^^^^^
-'if' statements evaluate an expression, executing the following block if the evaluation is true. Braces are required. An
-'if' can have an optional 'else' clause, and multiple 'if'/'else' constructs can be chained together:
+### If Statement
+`if` statements evaluate an expression, executing the following block if the evaluation is true. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
 
-.. code-block:: zephir
-
-    if false {
-        echo "false?";
+```zephir
+if false {
+    echo "false?";
+} else {
+    if true {
+        echo "true!";
     } else {
-        if true {
-            echo "true!";
-        } else {
-            echo "neither true nor false";
-        }
+        echo "neither true nor false";
     }
+}
+```
 
-'elseif' clauses are also available:
+`elseif` clauses are also available:
 
-.. code-block:: zephir
-
-    if a > 100 {
-        echo "to big";
-    } elseif a < 0 {
-        echo "to small";
-    } elseif a == 50 {
-        echo "perfect!";
-    } else {
-        echo "ok";
-    }
+```zephir
+if a > 100 {
+    echo "to big";
+} elseif a < 0 {
+    echo "to small";
+} elseif a == 50 {
+    echo "perfect!";
+} else {
+    echo "ok";
+}
+```
 
 Parentheses in the evaluated expression are optional:
 
-.. code-block:: zephir
+```zephir
+if a < 0 { return -1; } else { if a > 0 { return 1; } }
+```
 
-    if a < 0 { return -1; } else { if a > 0 { return 1; } }
+### Switch Statement
+A `switch` evaluates an expression against a series of predefined literal values, executing the corresponding `case` block or falling back to the `default` block case:
 
-Switch Statement
-^^^^^^^^^^^^^^^^
-A 'switch' evalutes an expression against a series of predefined literal values, executing the corresponding 'case' block or
-falling back to the 'default' block case:
+```zephir
+switch count(items) {
 
-.. code-block:: zephir
+    case 1:
+    case 3:
+        echo "odd items";
+        break;
 
-    switch count(items) {
+    case 2:
+    case 4:
+        echo "even items";
+        break;
 
-        case 1:
-        case 3:
-            echo "odd items";
-            break;
+    default:
+        echo "unknown items";
+}
+```
 
-        case 2:
-        case 4:
-            echo "even items";
-            break;
+## Loops
 
-        default:
-            echo "unknown items";
-    }
+### While Statement
+`while` denotes a loop that iterates as long as its given condition evaluates as true:
 
-Loops
------
+```zephir
+let counter = 5;
+while counter {
+    let counter -= 1;
+}
+```
 
-While Statement
-^^^^^^^^^^^^^^^
-'while' denotes a loop that iterates as long as its given condition evaluates as true:
+### Loop Statement
+In addition to `while`, `loop` can be used to create infinite loops:
 
-.. code-block:: zephir
+```zephir
+let n = 40;
+loop {
+    let n -= 2;
+    if n % 5 == 0 { break; }
+    echo x, "\n";
+}
+```
 
-    let counter = 5;
-    while counter {
-        let counter -= 1;
-    }
+### For Statement
+A `for` is a control structure that allows to traverse arrays or strings:
 
-Loop Statement
-^^^^^^^^^^^^^^
-In addition to 'while', 'loop' can be used to create infinite loops:
-
-.. code-block:: zephir
-
-    let n = 40;
-    loop {
-        let n -= 2;
-        if n % 5 == 0 { break; }
-        echo x, "\n";
-    }
-
-For Statement
-^^^^^^^^^^^^^
-A 'for' is a control structure that allows to traverse arrays or strings:
-
-.. code-block:: zephir
-
-    for item in ["a", "b", "c", "d"] {
-        echo item, "\n";
-    }
+```zephir
+for item in ["a", "b", "c", "d"] {
+    echo item, "\n";
+}
+```
 
 Keys in hashes can be obtained by providing a variable for both the key and value:
 
-.. code-block:: zephir
+```zephir
+let items = ["a": 1, "b": 2, "c": 3, "d": 4];
 
-    let items = ["a": 1, "b": 2, "c": 3, "d": 4];
+for key, value in items {
+    echo key, " ", value, "\n";
+}
+```
 
-    for key, value in items {
-        echo key, " ", value, "\n";
-    }
+A `for` loop can also be instructed to traverse an array or string in reverse order:
 
-A 'for' loop can also be instructed to traverse an array or string in reverse order:
+```zephir
+let items = [1, 2, 3, 4, 5];
 
-.. code-block:: zephir
+for value in reverse items {
+    echo value, "\n";
+}
+```
 
-    let items = [1, 2, 3, 4, 5];
+A `for` loop can be used to traverse string variables:
 
-    for value in reverse items {
-        echo value, "\n";
-    }
+```zephir
+string language = "zephir"; char ch;
 
-A 'for' loop can be used to traverse string variables:
-
-.. code-block:: zephir
-
-    string language = "zephir"; char ch;
-
-    for ch in language {
-        echo "[", ch ,"]";
-    }
+for ch in language {
+    echo "[", ch ,"]";
+}
+```
 
 In reverse order:
 
-.. code-block:: zephir
+```zephir
+string language = "zephir"; char ch;
 
-    string language = "zephir"; char ch;
+for ch in reverse language {
+    echo "[", ch ,"]";
+}
+```
 
-    for ch in reverse language {
-        echo "[", ch ,"]";
+A standard `for` that traverses a range of integer values can be written as follows:
+
+```zephir
+for i in range(1, 10) {
+    echo i, "\n";
+}
+```
+
+To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
+
+```zephir
+// Use the key but ignore the value
+for key, _ in data {
+    echo key, "\n";
+}
+```
+
+### Break Statement
+`break` ends execution of the current `while`, `for` or `loop` statement:
+
+```zephir
+for item in ["a", "b", "c", "d"] {
+    if item == "c" {
+        break; // exit the for
     }
+    echo item, "\n";
+}
+```
 
-A standard 'for' that traverses a range of integer values can be written as follows:
+### Continue Statement
+`continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
 
-.. code-block:: zephir
-
-    for i in range(1, 10) {
-        echo i, "\n";
+```zephir
+let a = 5;
+while a > 0 {
+    let a--;
+    if a == 3 {
+        continue;
     }
+    echo a, "\n";
+}
+```
 
-To avoid warnings about unused variables, you can use anonymous variables in 'for' statements, by replacing a variable name
-with the placeholder "_":
+## Require
+The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephdr code to include other Zephir files at runtime.
 
-.. code-block:: zephir
+```zephir
+if file_exists(path) {
+    require path;
+}
+```
 
-    // Use the key but ignore the value
-    for key, _ in data {
-        echo key, "\n";
-    }
+## Let
+The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
 
-Break Statement
-^^^^^^^^^^^^^^^
-'break' ends execution of the current 'while', 'for' or 'loop' statement:
-
-.. code-block:: zephir
-
-    for item in ["a", "b", "c", "d"] {
-        if item == "c" {
-            break; // exit the for
-        }
-        echo item, "\n";
-    }
-
-Continue Statement
-^^^^^^^^^^^^^^^^^^
-'continue' is used within looping structures to skip the rest of the current loop iteration and continue execution at the
-condition evaluation, and then the beginning of the next iteration.
-
-.. code-block:: zephir
-
-    let a = 5;
-    while a > 0 {
-        let a--;
-        if a == 3 {
-            continue;
-        }
-        echo a, "\n";
-    }
-
-Require
--------
-The 'require' statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are
-interpreted by Zend Engine as normal PHP files. 'require' does not allow Zephdr code to include other Zephir files at
-runtime.
-
-.. code-block:: zephir
-
-    if file_exists(path) {
-        require path;
-    }
-
-Let
----
-The 'let' statement is used to mutate variables, properties and arrays. Variables are by default immutable and this
-instruction makes them mutable for the duration of the statement:
-
-.. code-block:: zephir
-
-    let name = "Tony";           // simple variable
-    let this->name = "Tony";     // object property
-    let data["name"] = "Tony";   // array index
-    let self::_name = "Tony";    // static property
+```zephir
+let name = "Tony";           // simple variable
+let this->name = "Tony";     // object property
+let data["name"] = "Tony";   // array index
+let self::_name = "Tony";    // static property
+```
 
 Also this instruction must be used to increment/decrement variables:
 
-.. code-block:: zephir
+```zephir
+let number++;           // increment simple variable
+let number--;           // decrement simple variable
+let this->number++;     // increment object property
+let this->number--;     // decrement object property
+```
 
-    let number++;           // increment simple variable
-    let number--;           // decrement simple variable
-    let this->number++;     // increment object property
-    let this->number--;     // decrement object property
+Multiple mutations can be performed in a single `let` operation:
 
-Multiple mutations can be performed in a single 'let' operation:
-
-.. code-block:: zephir
-
-    let price = 1.00, realPrice = price, status = false;
+```zephir
+let price = 1.00, realPrice = price, status = false;
+```

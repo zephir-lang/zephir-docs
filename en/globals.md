@@ -1,114 +1,107 @@
-Extension Globals
------------------
-PHP extensions provide a way to define globals within an extension. Reading/writing globals should be faster than any other
-global mechanisms (like static members). You can use extension globals to set up configuration options that change the
-behavior of your library.
+# Extension Globals
+PHP extensions provide a way to define globals within an extension. Reading/writing globals should be faster than any other global mechanisms (like static members). You can use extension globals to set up configuration options that change the behavior of your library.
 
-In Zephir, extension globals are restricted to simple scalar types like int/bool/double/char, etc. Complex types such as
-string/array/object/resource aren't allowed here.
+In Zephir, extension globals are restricted to simple scalar types like int/bool/double/char, etc. Complex types such as string/array/object/resource are not allowed here.
 
 You can enable extension globals by adding the following structure to your config.json:
 
-.. code-block:: javascript
-
-    {
-        //...
-        "globals": {
-            "allow_some_feature": {
-                "type": "bool",
-                "default": true,
-                "module": true
-            },
-            "number_times": {
-                "type": "int",
-                "default": 10
-            },
-            "some_component.my_setting_1": {
-                "type": "bool",
-                "default": true
-            },
-            "some_component.my_setting_2": {
-                "type": "int",
-                "default": 100
-            }
+```json
+{
+    //...
+    "globals": {
+        "allow_some_feature": {
+            "type": "bool",
+            "default": true,
+            "module": true
+        },
+        "number_times": {
+            "type": "int",
+            "default": 10
+        },
+        "some_component.my_setting_1": {
+            "type": "bool",
+            "default": true
+        },
+        "some_component.my_setting_2": {
+            "type": "int",
+            "default": 100
         }
     }
+}
+```
 
 Each global has the following structure:
 
-.. code-block:: javascript
-
-    "<global-name>": {
-        "type": "<some-valid-type>",
-        "default": <some-compatible-default-value>
-    }
+```json
+"<global-name>": {
+    "type": "<some-valid-type>",
+    "default": <some-compatible-default-value>
+}
+```
 
 Compound (namespaced) globals have the following structure:
 
-.. code-block:: javascript
+```json
+"<namespace>.<global-name>": {
+    "type": "<some-valid-type>",
+    "default": <some-compatible-default-value>
+}
+```
 
-    "<namespace>.<global-name>": {
-        "type": "<some-valid-type>",
-        "default": <some-compatible-default-value>
-    }
+The optional `module` key, if present, places that global's initialization process into the module-wide `GINIT` lifecycle event, which just means it will only be set up once per PHP process, rather than being reinitialized for every request, which is the default:
 
-The optional :code:'module' key, if present, places that global's initialization process into the module-wide :code:'GINIT'
-lifecycle event, which just means it will only be set up once per PHP process, rather than being reinitialized for every
-request, which is the default:
-
-.. code-block:: javascript
-
-    {
-        //...
-        "globals": {
-            "allow_some_feature": {  // set up only once, at startup
-                "type": "bool",
-                "default": true,
-                "module": true
-            },
-            "number_times": {        // set up at the start of each request
-                "type": "int",
-                "default": 10
-            }
+```json
+{
+    //...
+    "globals": {
+        "allow_some_feature": {  // set up only once, at startup
+            "type": "bool",
+            "default": true,
+            "module": true
+        },
+        "number_times": {        // set up at the start of each request
+            "type": "int",
+            "default": 10
         }
     }
+}
+```
 
-Inside any method, you can read/write extension globals using the built-in functions :code:'globals_get'/:code:'globals_set':
+Inside any method, you can read/write extension globals using the built-in functions `globals_get`/`globals_set`:
 
-.. code-block:: zephir
-
-    globals_set("allow_some_feature", true);
-    let someFeature = globals_get("allow_some_feature");
+```zephir
+globals_set("allow_some_feature", true);
+let someFeature = globals_get("allow_some_feature");
+```
 
 If you want to change these globals from PHP, a good option is include a method aimed at this:
 
-.. code-block:: zephir
+```zephir
+namespace Test;
 
-    namespace Test;
+class MyOptions
+{
 
-    class MyOptions
+    public static function setOptions(array options)
     {
+        boolean someOption, anotherOption;
 
-        public static function setOptions(array options)
-        {
-            boolean someOption, anotherOption;
+        if fetch someOption, options["some_option"] {
+            globals_set("some_option", someOption);
+        }
 
-            if fetch someOption, options["some_option"] {
-                globals_set("some_option", someOption);
-            }
-
-            if fetch anotherOption, options["another_option"] {
-                globals_set("another_option", anotherOption);
-            }
+        if fetch anotherOption, options["another_option"] {
+            globals_set("another_option", anotherOption);
         }
     }
+}
+```
 
-Extension globals cannot be dynamically accessed, since the C code generated by the :code:'globals_get'/:code:'globals_set'
-optimizers must be resolved at compilation time:
+Extension globals cannot be dynamically accessed, since the C code generated by the `globals_get`/`globals_set` optimizers must be resolved at compilation time:
 
-.. code-block:: zephir
+```zephir
+let myOption = "someOption";
 
-    let myOption = "someOption";
-
-    //will throw a compiler exception
-    let someOption = globals_get(myOption);
+//will throw a compiler exception
+let someOption = globals_get(myOption);
+```
