@@ -238,7 +238,7 @@ You can write the same code using shortcuts as follows:
 
     }
 
-When the code is compiled, those methods are exported as real methods, but you don’t have to write them manually.
+When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
 
 Return Type Hints
 ^^^^^^^^^^^^^^^^^
@@ -303,7 +303,7 @@ types.
 
 Return Type: Void
 ^^^^^^^^^^^^^^^^^
-Methods can also be marked as ‘void’. This means that a method is not allowed to return any data:
+Methods can also be marked as ‘void''. This means that a method is not allowed to return any data:
 
 .. code-block:: zephir
 

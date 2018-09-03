@@ -67,14 +67,14 @@ on internally when working with Zephir.
 
 A Taste of Zephir
 -----------------
-In the following examples, we’ll describe just enough of the details to understand what’s going on. The goal is to give you a
-sense of what programming in Zephir is like. We’ll explore the *details* of the features in subsequent chapters.
+In the following examples, we''ll describe just enough of the details to understand what''s going on. The goal is to give you a
+sense of what programming in Zephir is like. We''ll explore the *details* of the features in subsequent chapters.
 
 The following example is very simple; it implements a class and a method, with a small program that checks the types of an
 array.
 
-Let’s examine the code in detail, so we can begin to learn Zephir syntax. There are a lot of details in just a few lines of
-code! We’ll explain the general ideas here:
+Let''s examine the code in detail, so we can begin to learn Zephir syntax. There are a lot of details in just a few lines of
+code! We''ll explain the general ideas here:
 
 .. code-block:: zephir
 

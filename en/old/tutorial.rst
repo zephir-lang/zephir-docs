@@ -3,7 +3,7 @@ Tutorial
 Zephir, and this book, are intended for PHP developers who want to create C extensions, with a lower complexity.
 
 We assume that you are experienced in one or more other programming languages. We draw parallels to features in PHP, C,
-Javascript, and other languages. We’ll point out features in Zephir that are similar to these other languages, as well as
+Javascript, and other languages. We'll point out features in Zephir that are similar to these other languages, as well as
 many features that are new or different. If you are familiar with these specific languages, you'll pick up on these
 comparisons more quickly.
 
@@ -125,10 +125,10 @@ end of the output:
 
 At the above step, it's likely that you would need to supply your root password in order to install the extension.
 
-Finally, the extension must be added to the ''php.ini'' in order to be loaded by PHP. This is achieved by adding the
-initialization directive: ''extension=utils.so'' to it. (NOTE: You can also load it on the command line with ''-d
-extension=utils.so'', but it will only load for that single request, so you'd need to include it every time you want to test
-your extension in the CLI. Adding the directive to the ''php.ini'' will ensure it is loaded for every request from then on.)
+Finally, the extension must be added to the `php.ini` in order to be loaded by PHP. This is achieved by adding the
+initialization directive: `extension=utils.so` to it. (NOTE: You can also load it on the command line with `-d
+extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test
+your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.)
 
 Initial Testing
 ---------------
@@ -261,5 +261,5 @@ In the following screencast you can watch how to create the extension explained 
 
 Conclusion
 ----------
-This is a very simple tutorial, and as you can see, it’s easy to start building extensions using Zephir. We invite you to
+This is a very simple tutorial, and as you can see, it''s easy to start building extensions using Zephir. We invite you to
 continue reading the manual so that you can discover additional features offered by Zephir!

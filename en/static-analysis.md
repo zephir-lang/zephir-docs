@@ -5,7 +5,7 @@ find potential problems and avoid unexpected behaviors, well before runtime.
 ## Conditional Unassigned Variables
 Static Analysis of assignments tries to identify if a variable is used before it's assigned:
 
-'''zephir
+```zephir
 	class Utils
 	{
  		public function someMethod(b)
@@ -24,7 +24,7 @@ Static Analysis of assignments tries to identify if a variable is used before it
 	}
 '''
 
-The above example illustrates a common situation. The variable 'a' is assigned only when 'b' is equal to 10, then it’s
+The above example illustrates a common situation. The variable 'a' is assigned only when 'b' is equal to 10, then it''s
 required to use the value of this variable - but it could be uninitialized. Zephir detects this, automatically initializes
 the variable to an empty string, and generates a warning alerting the developer:
 

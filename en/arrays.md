@@ -4,7 +4,7 @@ Array manipulation in Zephir provides a way to use PHP [array](http://www.php.ne
 ## Declaring Array Variables
 Array variables can be declared using the keywords 'var' or 'array':
 
-'''zephir
+```zephir
   var a   = []; // array variable, its type can be changed
   array b = []; // array variable, its type cannot be changed across execution
 '''
@@ -12,7 +12,7 @@ Array variables can be declared using the keywords 'var' or 'array':
 ## Creating Arrays
 An array is created by enclosing its elements in square brackets:
 
-'''zephir
+```zephir
   // Creating an empty array
   let elements = [];
 
@@ -28,7 +28,7 @@ An array is created by enclosing its elements in square brackets:
 
 As PHP, hashes or dictionaries are supported:
 
-'''zephir
+```zephir
   // Creating a hash with string keys
   let elements = ["foo": "bar", "bar": "foo"];
 
@@ -42,7 +42,7 @@ As PHP, hashes or dictionaries are supported:
 ## Updating arrays
 Arrays are updated in the same way as PHP, using square brackets:
 
-'''zephir
+```zephir
   // Updating an array with a string key
   let elements["foo"] = "bar";
 
@@ -57,7 +57,7 @@ Arrays are updated in the same way as PHP, using square brackets:
 ## Appending elements
 Elements can be appended at the end of the array as follows:
 
-'''zephir
+```zephir
   // Append an element to the array
   let elements[] = "bar";
 '''
@@ -65,7 +65,7 @@ Elements can be appended at the end of the array as follows:
 ## Reading elements from arrays
 It is possible to read array elements as follows:
 
-'''zephir
+```zephir
   // Getting an element using the string key "foo"
   let foo = elements["foo"];
 

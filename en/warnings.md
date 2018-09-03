@@ -20,7 +20,7 @@ The following warnings are supported:
 ## unused-variable
 Raised when a variable is declared but it is not used within a method. This warning is enabled by default.
 
-'''zephir
+```zephir
 public function some()
 {
     var e; // declared but not used
@@ -32,7 +32,7 @@ public function some()
 ## unused-variable-external
 Raised when a parameter is declared but it is not used within a method.
 
-'''zephir
+```zephir
 public function sum(a, b, c) // c is not used
 {
     return a + b;
@@ -42,7 +42,7 @@ public function sum(a, b, c) // c is not used
 ## possible-wrong-parameter-undefined
 Raised when a method is called with a wrong type for a parameter:
 
-'''zephir
+```zephir
 public function some()
 {
     return this->sum("a string", "another");  // wrong parameters passed
@@ -57,7 +57,7 @@ public function sum(int a, int b)
 ## nonexistent-function
 Raised when a function is called that doesn't exist at compile time:
 
-'''zephir
+```zephir
 public function some()
 {
     someFunction(); // someFunction does not exist
@@ -67,7 +67,7 @@ public function some()
 ## nonexistent-class
 Raised when a class is used that does not exist at compile time:
 
-'''zephir
+```zephir
 public function some()
 {
     var a;
@@ -79,7 +79,7 @@ public function some()
 ## non-valid-isset
 Raised when the compiler detects that an 'isset' operation is being made on a non-array or -object value:
 
-'''zephir
+```zephir
 public function some()
 {
     var b = 1.2;
@@ -91,7 +91,7 @@ public function some()
 ## non-array-update
 Raised when the compiler detects that an array update operation is being made on a non-array value:
 
-'''zephir
+```zephir
 public function some()
 {
     var b = 1.2;
@@ -102,7 +102,7 @@ public function some()
 ## non-valid-objectupdate
 Raised when the compiler detects that an object update operation is being made on a non-object value:
 
-'''zephir
+```zephir
 public function some()
 {
     var b = 1.2;
@@ -113,7 +113,7 @@ public function some()
 ## non-valid-fetch
 Raised when the compiler detects that a 'fetch' operation is being made on a non-array or -object value:
 
-'''zephir
+```zephir
 public function some()
 {
     var b = 1.2, a;
@@ -124,7 +124,7 @@ public function some()
 ## invalid-array-index
 Raised when the compiler detects that an invalid array index is used:
 
-'''zephir
+```zephir
 public function some(var a)
 {
     var b = [];
@@ -135,7 +135,7 @@ public function some(var a)
 ## non-array-append
 Raised when the compiler detects that an element is being appended to a non-array variable:
 
-'''zephir
+```zephir
 public function some()
 {
     var b = false;

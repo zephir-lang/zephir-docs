@@ -6,7 +6,7 @@ Dynamic variables are exactly like the ones in PHP. They can be assigned and rea
 
 A dynamic variable must be declared with the keyword 'var'. The behavior is nearly the same as in PHP:
 
-'''zephir
+```zephir
 var a, b, c;
 
 // Initialize variables
@@ -37,28 +37,28 @@ Check more info about these types in the [PHP manual](http://www.php.net/manual/
 ### Boolean
 A boolean expresses a truth value. It can be either 'true' or 'false':
 
-'''zephir
+```zephir
 var a = false, b = true;
 '''
 
 ### Integer
 Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
 
-'''zephir
+```zephir
 var a = 5, b = 10050;
 '''
 
 ### Integer overflow
 Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
 
-'''zephir
+```zephir
 unsigned long my_number = 2147483648;
 '''
 
 ### Float/Double
 Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
-'''zephir
+```zephir
 var number = 5.0, b = 0.014;
 '''
 
@@ -67,7 +67,7 @@ Floating point numbers have limited precision. Although it depends on the system
 ### String
 A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
 
-'''zephir
+```zephir
 var today = "friday";
 '''
 
@@ -83,14 +83,14 @@ The following escape sequences are supported in strings:
 | \\ \\     | Backslash        |
 | \\"       | double-quote     |
 
-'''zephir
+```zephir
 var today    = "\tfriday\n\r",
     tomorrow = "\tsaturday";
 '''
 
 In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
 
-'''zephir
+```zephir
 var name = "peter";
 
 echo "hello: " . name;
@@ -101,7 +101,7 @@ The array implementation in Zephir is basically the same as in PHP: ordered maps
 
 The syntax to define arrays is slightly different than in PHP:
 
-'''zephir
+```zephir
 // Square braces must be used to define arrays
 let myArray = [1, 2, 3];
 
@@ -111,7 +111,7 @@ let myHash = ["first": 1, "second": 2, "third": 3];
 
 Only long and string values can be used as keys:
 
-'''zephir
+```zephir
 let myHash = [0: "first", 1: true, 2: null];
 let myHash = ["first": 7.0, "second": "some string", "third": false];
 '''
@@ -120,7 +120,7 @@ let myHash = ["first": 7.0, "second": "some string", "third": false];
 ^^^^^^^
 Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
 
-'''zephir
+```zephir
 let myObject = new stdClass(),
     myObject->someProperty = "my value";
 '''
@@ -144,7 +144,7 @@ Static typing allows the developer to declare and use some variable types availa
 ### Boolean
 A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
 
-'''zephir
+```zephir
 boolean a;
 
 let a = true,
@@ -156,7 +156,7 @@ let a = true,
 ### Integer/Unsigned Integer
 Integer values are like the integer member in dynamic values. Values assigned to integer variables remain integer:
 
-'''zephir
+```zephir
 int a;
 
 let a = 50,
@@ -169,7 +169,7 @@ let a = 50,
 
 Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
 
-'''zephir
+```zephir
 unsigned int a;
 
 let a = 50,
@@ -182,7 +182,7 @@ let a = 50,
 
 Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
 
-'''zephir
+```zephir
 uint a, int b;
 
 let a = 2147483648,
@@ -192,7 +192,7 @@ let a = 2147483648,
 ### Long/Unsigned Long
 Long variables are twice bigger than integer variables, thus they can store bigger numbers. As with integers, values assigned to long variables are automatically casted to this type:
 
-'''zephir
+```zephir
 long a;
 
 let a = 50,
@@ -205,7 +205,7 @@ let a = 50,
 
 Unsigned longs are like longs but they aren't signed, this means you can't store negative numbers in these sort of variables:
 
-'''zephir
+```zephir
 let a = 50,
     a = -70,     // automatically casted to 70
     a = 100.25,  // automatically casted to 100
@@ -216,7 +216,7 @@ let a = 50,
 
 Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
 
-'''zephir
+```zephir
 ulong a, long b;
 
 let a = 4294967296,
@@ -226,7 +226,7 @@ let a = 4294967296,
 ### Char/Unsigned Char
 Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A 'char' variable can be used to store any character in a string:
 
-'''zephir
+```zephir
 char ch, string name = "peter";
 
 let ch = name[2]; // stores 't'
@@ -238,7 +238,7 @@ A string is series of characters, where a character is the same as a byte. As in
 
 When a variable is declared string it never changes its type:
 
-'''zephir
+```zephir
 string a;
 
 let a = "",

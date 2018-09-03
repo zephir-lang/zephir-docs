@@ -14,7 +14,7 @@ Zephir's main features are:
 ## A small taste
 The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
-'''zephir
+```zephir
 namespace MyLibrary;
 
 /**
@@ -44,7 +44,7 @@ class Filter
 
 The class can be used from PHP as follows:
 
-'''php
+```php
   <?php
 
   $filter = new MyLibrary\Filter();
