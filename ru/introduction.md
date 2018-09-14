@@ -1,11 +1,13 @@
 # Introducing Zephir
+
 Zephir is a language that addresses the major needs of a PHP developer trying to write and compile code that can be executed by PHP. It is dynamically/statically typed, and some of its features will be familiar to PHP developers.
 
-The name Zephir is a contraction of the words Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the
-pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
+The name Zephir is a contraction of the words Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
 
 <a name='hello-world'></a>
+
 ## Hello World!
+
 Every language has its own "Hello World!" sample. In Zephir, this introductory example showcases some important features of the language.
 
 Code in Zephir must be placed in classes. The language is intended to create object-oriented libraries/frameworks, so code outside of a class is not allowed. Additionally, a namespace is required:
@@ -60,7 +62,9 @@ Once this class is compiled it will produce the following code, that is transpar
 Actually, it is not expected that a developer that uses Zephir must know or even understand C. However, if you have any experience with compilers, PHP internals, or the C language itself, that will provide a clearer understanding of what's going on internally when working with Zephir.
 
 <a name='a-taste-of-zephir'></a>
+
 ## A Taste of Zephir
+
 In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
 
 The following example is very simple; it implements a class and a method, with a small program that checks the types of an array.

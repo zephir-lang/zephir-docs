@@ -1,8 +1,11 @@
 # Arrays
-Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a []hash table](http://en.wikipedia.org/wiki/Hash_table).
+
+Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a \[]hash table\](http://en.wikipedia.org/wiki/Hash_table).
 
 <a name='declaring-array-variables'></a>
+
 ## Declaring Array Variables
+
 Array variables can be declared using the keywords 'var' or 'array':
 
 ```zephir
@@ -11,7 +14,9 @@ Array variables can be declared using the keywords 'var' or 'array':
 ```
 
 <a name='creating-arrays'></a>
+
 ## Creating Arrays
+
 An array is created by enclosing its elements in square brackets:
 
 ```zephir
@@ -42,7 +47,9 @@ As PHP, hashes or dictionaries are supported:
 ```
 
 <a name='updating-arrays'></a>
+
 ## Updating arrays
+
 Arrays are updated in the same way as PHP, using square brackets:
 
 ```zephir
@@ -58,7 +65,9 @@ Arrays are updated in the same way as PHP, using square brackets:
 ```
 
 <a name='appending-elements'></a>
+
 ## Appending elements
+
 Elements can be appended at the end of the array as follows:
 
 ```zephir
@@ -67,7 +76,9 @@ Elements can be appended at the end of the array as follows:
 ```
 
 <a name='reading-elements-from-arrays'></a>
+
 ## Reading elements from arrays
+
 It is possible to read array elements as follows:
 
 ```zephir

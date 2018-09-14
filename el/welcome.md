@@ -1,19 +1,24 @@
 # Welcome!
+
 Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
 
 <a name='some-features'></a>
+
 ## Some features
+
 Zephir's main features are:
 
-| Feature            | Description                                           |
-|--------------------|-------------------------------------------------------|
-| Type system        | dynamic/static                                        |
-| Memory safety      | pointers or direct memory management are not allowed  |
-| Compilation model  | ahead of time                                         |
-| Memory model       | task-local garbage collection                         |
+| Feature           | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| Type system       | dynamic/static                                       |
+| Memory safety     | pointers or direct memory management are not allowed |
+| Compilation model | ahead of time                                        |
+| Memory model      | task-local garbage collection                        |
 
 <a name='a-small-taste'></a>
+
 ## A small taste
+
 The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
 ```zephir

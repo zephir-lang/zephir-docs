@@ -1,8 +1,11 @@
 # Classes and Objects
+
 Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
 
 <a name='classes'></a>
+
 ## Classes
+
 Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
 
 ```zephir
@@ -18,7 +21,9 @@ class MyClass
 ```
 
 <a name='classes-modifiers'></a>
+
 ### Class Modifiers
+
 The following class modifiers are supported:
 
 *Final*: If a class has this modifier it cannot be extended:
@@ -50,7 +55,9 @@ abstract class MyClass
 ```
 
 <a name='implementing-methods'></a>
+
 ## Implementing Methods
+
 The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zephir
@@ -127,7 +134,9 @@ class MyClass
 ```
 
 <a name='implementing-methods-optional-nullable-parameters'></a>
+
 ### Optional nullable parameters
+
 Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
 
 ```zephir
@@ -153,15 +162,19 @@ public function foo(array a = null)
 ```
 
 <a name='implementing-methods-supported-visibilities'></a>
+
 ### Supported Visibilities
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the  PHP code as well to the extension itself.
+
+* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
 * Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
 
 * Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
 <a name='implementing-methods-supported-modifiers'></a>
+
 ### Supported Modifiers
+
 * Static: Methods with this modifier can only be called in a static context (from the class, not an object).
 
 * Final: If a method has this modifier it cannot be overriden.
@@ -169,7 +182,9 @@ public function foo(array a = null)
 * Deprecated: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
+
 ### Getter/Setter shortcuts
+
 Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
 
 For example, without shortcuts we would need code like:
@@ -230,7 +245,9 @@ class MyClass
 When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
 
 <a name='implementing-methods-return-type-hints'></a>
+
 ### Return Type Hints
+
 Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Consider the following example:
 
 ```zephir
@@ -288,7 +305,9 @@ class MyClass
 ```
 
 <a name='implementing-methods-return-type-void'></a>
+
 ### Return Type: Void
+
 Methods can also be marked as `void`. This means that a method is not allowed to return any data:
 
 ```zephir
@@ -306,7 +325,9 @@ myDb->execute("SELECT * FROM robots");
 ```
 
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
+
 ### Strict/Flexible Parameter Data-Types
+
 In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
 
 ```zephir
@@ -352,9 +373,10 @@ $o->filterText(array(1, 2, 3), true); // FAIL
 By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
 
 <a name='implementing-methods-read-only-parameters'></a>
+
 ### Read-Only Parameters
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the
-method:
+
+Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
 
 ```zephir
 namespace App;
@@ -373,7 +395,9 @@ class MyClass
 When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over these variables.
 
 <a name='implementing-properties'></a>
+
 ## Implementing Properties
+
 Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zephir
@@ -428,7 +452,9 @@ class MyClass
 ```
 
 <a name='implementing-properties-updating'></a>
+
 ## Updating Properties
+
 Properties can be updated by accessing them using the '->' operator:
 
 ```zephir
@@ -458,7 +484,9 @@ let this->{someProperty} = 100;
 ```
 
 <a name='implementing-properties-reading'></a>
+
 ## Reading Properties
+
 Properties can be read by accessing them using the `->` operator:
 
 ```zephir
@@ -477,7 +505,9 @@ echo this->{someProperty}
 ```
 
 <a name='class-constants'></a>
+
 ## Class Constants
+
 Classes may contain class constants that remain the same and unchangeable once the extension is compiled. Class constants are exported to the PHP extension, allowing them to be used from PHP.
 
 ```zephir
@@ -509,7 +539,9 @@ class MyClass
 ```
 
 <a name='calling-methods'></a>
+
 ## Calling Methods
+
 Methods can be called using the object operator (->) as in PHP:
 
 ```zephir
@@ -570,7 +602,9 @@ class MyClass
 ```
 
 <a name='calling-methods-parameters-by-name'></a>
+
 ### Parameters by Name
+
 Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
 
 Consider the following example. A class called `Image` has a method that receives four parameters:
