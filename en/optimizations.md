@@ -19,6 +19,7 @@ With recent versions of zephir-parser, optimizations can be configured in the co
 
 The following optimizations are supported:
 
+<a name='static-type-inference'></a>
 ## static-type-inference
 This compilation pass is very important, since it looks for dynamic variables that can potentially be transformed into static/primitive types, which are better optimized by the underlying compiler.
 
@@ -40,8 +41,7 @@ public function someCalculations(var a, var b)
 }
 ```
 
-Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and can thus be transformed into static
-variables taking advantage of other compilation passes. After this pass, the compiler automatically rewrites this code to:
+Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and can thus be transformed into static variables taking advantage of other compilation passes. After this pass, the compiler automatically rewrites this code to:
 
 ```zephir
 public function someCalculations(int a, int b)
@@ -61,12 +61,15 @@ public function someCalculations(int a, int b)
 
 By disabling this compilation pass, all variables will maintain the type with which they were originally declared, without optimization.
 
+<a name='static-type-inference-second-pass'></a>
 ## static-type-inference-second-pass
 This enables a second type inference pass, which improves the work done based on the data gathered by the first static type inference pass.
 
+<a name='local-context-pass'></a>
 ## local-context-pass
 This compilation pass moves variables that will be allocated in the heap to the stack. This optimization can reduce the number of memory indirections a program has to do.
 
+<a name='constant-folding'></a>
 ## constant-folding
 Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when this optimization is enabled:
 
@@ -86,6 +89,7 @@ public function getValue()
 }
 ```
 
+<a name='static-constant-class-folding'></a>
 ## static-constant-class-folding
 This optimization replaces values of class constants in compile time:
 
@@ -117,6 +121,7 @@ class MyClass
 }
 ```
 
+<a name='call-gatherer-pass'></a>
 ## call-gatherer-pass
 This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce inline caches to avoid method or function lookups:
 

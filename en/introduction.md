@@ -4,6 +4,7 @@ Zephir is a language that addresses the major needs of a PHP developer trying to
 The name Zephir is a contraction of the words Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the
 pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
 
+<a name='hello-world'></a>
 ## Hello World!
 Every language has its own "Hello World!" sample. In Zephir, this introductory example showcases some important features of the language.
 
@@ -58,6 +59,7 @@ Once this class is compiled it will produce the following code, that is transpar
 
 Actually, it is not expected that a developer that uses Zephir must know or even understand C. However, if you have any experience with compilers, PHP internals, or the C language itself, that will provide a clearer understanding of what's going on internally when working with Zephir.
 
+<a name='a-taste-of-zephir'></a>
 ## A Taste of Zephir
 In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
 
@@ -127,6 +129,4 @@ while i < length {
 }
 ```
 
-Since PHP only works with dynamic variables, methods always return dynamic variables. This means that if a statically typed
-variable is returned, in the PHP side you will get a dynamic variable that can be used in PHP code. Note that memory is
-automatically managed by the compiler, similarly to how PHP does it, so you don't need to allocate or free memory like in C.
+Since PHP only works with dynamic variables, methods always return dynamic variables. This means that if a statically typed variable is returned, in the PHP side you will get a dynamic variable that can be used in PHP code. Note that memory is automatically managed by the compiler, similarly to how PHP does it, so you don't need to allocate or free memory like in C.

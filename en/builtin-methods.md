@@ -41,6 +41,7 @@ public function binaryToHex(string! s) -> string
 
 They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.
 
+<a name='string'></a>
 ## String
 The following string built-in methods are available:
 
@@ -59,6 +60,7 @@ The following string built-in methods are available:
 | `s->md5()`         | `md5(s)`               | Calculate the md5 hash of a string                                             |
 | `s->sha1()`        | `sha1(s)`              | Calculate the sha1 hash of a string                                            |
 
+<a name='array'></a>
 ## Array
 The following array built-in methods are available:
 
@@ -79,6 +81,7 @@ The following array built-in methods are available:
 | `a->merge(b)`      | `array_merge(a, b)`      | Merge one or more arrays                                                 |
 | `a->pad()`         | `array_pad(a, b)`        | Pad array to the specified length with a value                           |
 
+<a name='char'></a>
 ## Char
 The following char built-in methods are available:
 
@@ -86,6 +89,7 @@ The following char built-in methods are available:
 |----------------|----------------------|
 | `ch->toHex()`  | `sprintf("%X", ch)`  |
 
+<a name='integer'></a>
 ## Integer
 The following integer built-in methods are available:
 

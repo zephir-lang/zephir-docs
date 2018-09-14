@@ -7,7 +7,7 @@ and any INI options the extension supports.
 
 You can add more directives by adding the following configuration to the `config.json` file:
 
-```javascript
+```json
 "info": [
     {
         "header": ["Directive", "Value"],
@@ -28,5 +28,4 @@ You can add more directives by adding the following configuration to the `config
 
 This information will be shown as follows:
 
-.. figure:: ../_static/img/info.png
-    :align: center
+![](/images/content/info.png)
