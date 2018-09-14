@@ -35,7 +35,7 @@ Reference
 Other Formats
 -------------
 
-* `PDF <https://github.com/phalcon/zephir-docs/raw/master/en/_build/latex/ZephirDocumentation.pdf>`_
+* 'PDF <https://github.com/phalcon/zephir-docs/raw/master/en/_build/latex/ZephirDocumentation.pdf>'_
 
 .. index::
   single: index; index

@@ -74,7 +74,7 @@ Zephir异常与PHP异常非常类似，比如我们可以找到异常发生的�
 
 .. code-block:: html
 
-    Exception: The static method 'someMethod' doesn't exist on model 'Robots'
+    Exception: The static method 'someMethod' does not exist on model 'Robots'
     File=phalcon/mvc/model.zep Line=4042
     #0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
     #1 /home/scott/test.php(64): Robots::someMethod()

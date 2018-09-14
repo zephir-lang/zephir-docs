@@ -1,5 +1,4 @@
-License
-=======
+# License
 
 Copyright (c) 2013-present by Zephir Team and contributors
 http://zephir-lang.com
