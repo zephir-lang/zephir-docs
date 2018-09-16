@@ -166,7 +166,7 @@ This file must contain the Zend Engine headers, and the C implementation of the 
     }
     
 
-This file must be added at a special section in the :doc:'config.json <config>' file:
+This file must be added at a special section in the [config.json](/[[language]]/[[version]]/config) file:
 
     "extra-sources": [
         "utils/pi.c"
