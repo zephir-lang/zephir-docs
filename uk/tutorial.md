@@ -10,25 +10,23 @@ We assume that you are experienced in one or more other programming languages. W
 
 If you have successfully installed Zephir, you will be able to execute the following command in your console:
 
-```bash
-$ zephir help
-```
+    $ zephir help
+    
 
 If everything is well, you should see the following help (or something very similar):
 
-```bash
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
       / /  / _ \/ __ \/ __ \/ / ___/
      / /__/  __/ /_/ / / / / / /
     /____/\___/ .___/_/ /_/_/_/
              /_/
-
+    
     Zephir version 0.10.9a-dev
-
+    
     Usage:
         command [options]
-
+    
     Available commands:
         stubs               Generates extension PHP stubs
         install             Installs the extension (requires root password)
@@ -42,13 +40,13 @@ If everything is well, you should see the following help (or something very simi
         generate            Generates C code from the Zephir code
         help                Displays this help
         build               Generate/Compile/Install a Zephir extension
-
+    
     Options:
         -f([a-z0-9\-]+)     Enables compiler optimizations
         -fno-([a-z0-9\-]+)  Disables compiler optimizations
         -w([a-z0-9\-]+)     Turns a warning on
         -W([a-z0-9\-]+)     Turns a warning off
-```
+    
 
 <a name='extension-skeleton'></a>
 
@@ -56,27 +54,24 @@ If everything is well, you should see the following help (or something very simi
 
 The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
 
-```bash
-$ zephir init utils
-```
+    $ zephir init utils
+    
 
 After this, a directory called "utils" is created on the current working directory:
 
-```bash
-utils/
-   ext/
-   utils/
-```
+    utils/
+       ext/
+       utils/
+    
 
 The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
 
 We need to change the working directory to "utils" to start compiling our code:
 
-```bash
-$ cd utils
-$ ls
-ext/ utils/ config.json
-```
+    $ cd utils
+    $ ls
+    ext/ utils/ config.json
+    
 
 The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
 
@@ -90,34 +85,31 @@ As in many languages/tools, the first thing we want to do is see a `hello world`
 
 The code for this class must be placed in `utils/utils/greeting.zep`:
 
-```zephir
-namespace Utils;
-
-class Greeting
-{
-
-    public static function say()
+    namespace Utils;
+    
+    class Greeting
     {
-        echo "hello world!";
+    
+        public static function say()
+        {
+            echo "hello world!";
+        }
+    
     }
-
-}
-```
+    
 
 Now, we need to tell Zephir that our project must be compiled and the extension generated:
 
-```bash
-$ zephir build
-```
+    $ zephir build
+    
 
 Initially, and only for the first time, a number of internal commands are executed producing the necessary code and configurations to export this class to the PHP extension. If everything goes well, you will see the following message at the end of the output:
 
-```text
     ...
     Extension installed!
     Add extension=utils.so to your php.ini
     Don't forget to restart your web server
-```
+    
 
 At the above step, it's likely that you would need to supply your root password in order to install the extension.
 
@@ -129,30 +121,28 @@ Finally, the extension must be added to the `php.ini` in order to be loaded by P
 
 Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
 
-```bash
-$ php -m
-[PHP Modules]
-Core
-date
-libxml
-pcre
-Reflection
-session
-SPL
-standard
-tokenizer
-utils
-xdebug
-xml
-```
+    $ php -m
+    [PHP Modules]
+    Core
+    date
+    libxml
+    pcre
+    Reflection
+    session
+    SPL
+    standard
+    tokenizer
+    utils
+    xdebug
+    xml
+    
 
 Extension `utils` should be part of the output, indicating that the extension was loaded correctly. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
 
-```php
-<?php
-
-echo Utils\Greeting::say(), "\n";
-```
+    <?php
+    
+    echo Utils\Greeting::say(), "\n";
+    
 
 Congratulations!, you have your first extension running in PHP.
 
@@ -166,90 +156,78 @@ The first useful class we are going to add to this extension will provide filter
 
 A basic skeleton for this class is the following:
 
-```zephir
-namespace Utils;
-
-class Filter
-{
-
-}
-```
+    namespace Utils;
+    
+    class Filter
+    {
+    
+    }
+    
 
 The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
 
-```zephir
-namespace Utils;
-
-class Filter
-{
-
-    public function alpha(string str)
+    namespace Utils;
+    
+    class Filter
     {
-        char ch;
-
-        for ch in str {
-            echo ch, "\n";
+    
+        public function alpha(string str)
+        {
+            char ch;
+    
+            for ch in str {
+                echo ch, "\n";
+            }
         }
     }
-}
-```
+    
 
 When invoking this method:
 
-```php
-<?php
-
-$f = new Utils\Filter();
-$f->alpha("hello");
-```
+    <?php
+    
+    $f = new Utils\Filter();
+    $f->alpha("hello");
+    
 
 You will see:
 
-```bash
     h
     e
     l
     l
     o
-```
+    
 
 Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
 
-```zephir
-class Filter
-{
-
-    public function alpha(string str) -> string
+    class Filter
     {
-        char ch; string filtered = "";
-
-        for ch in str {
-            if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
-                let filtered .= ch;
+    
+        public function alpha(string str) -> string
+        {
+            char ch; string filtered = "";
+    
+            for ch in str {
+                if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+                    let filtered .= ch;
+                }
             }
+    
+            return filtered;
         }
-
-        return filtered;
     }
-}
-```
+    
 
 The complete method can be tested as before:
 
-```php
-<?php
+    <?php
+    
+    $f = new Utils\Filter();
+    echo $f->alpha("!he#02l3'121lo."); // prints "hello"
+    
 
-$f = new Utils\Filter();
-echo $f->alpha("!he#02l3'121lo."); // prints "hello"
-```
-
-In the following screencast you can watch how to create the extension explained in this tutorial:
-
-.. raw:: html
-
-<div align="center">
-  <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
+In the following screencast you can watch how to create the extension explained in this tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
