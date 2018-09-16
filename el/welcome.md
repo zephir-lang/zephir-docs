@@ -1,14 +1,14 @@
-# Welcome!
+# Καλώς ορίσατε!
 
 Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
 
 <a name='some-features'></a>
 
-## Some features
+## Μερικά χαρακτηριστικά γνωρίσματα
 
-Zephir's main features are:
+Κύρια χαρακτηριστικά της Zephir είναι:
 
-| Feature           | Description                                          |
+| Χαρακτηριστικό    | Περιγραφή                                            |
 | ----------------- | ---------------------------------------------------- |
 | Type system       | dynamic/static                                       |
 | Memory safety     | pointers or direct memory management are not allowed |
@@ -17,7 +17,7 @@ Zephir's main features are:
 
 <a name='a-small-taste'></a>
 
-## A small taste
+## Μια μικρή γεύση
 
 The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
