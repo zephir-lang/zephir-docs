@@ -8,7 +8,7 @@ Welcome to Zephir, an open source, high-level/domain specific language designed 
 
 Κύρια χαρακτηριστικά της Zephir είναι:
 
-| Feature           | Description                                          |
+| Χαρακτηριστικό    | Περιγραφή                                            |
 | ----------------- | ---------------------------------------------------- |
 | Type system       | dynamic/static                                       |
 | Memory safety     | pointers or direct memory management are not allowed |
@@ -17,7 +17,7 @@ Welcome to Zephir, an open source, high-level/domain specific language designed 
 
 <a name='a-small-taste'></a>
 
-## A small taste
+## Μια μικρη γευση
 
 The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
