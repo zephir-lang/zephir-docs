@@ -125,7 +125,8 @@ A standard `for` that traverses a range of integer values can be written as foll
 
 To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
 
-    // Use the key but ignore the value
+##### Use the key but ignore the value
+
     for key, _ in data {
         echo key, "\n";
     }

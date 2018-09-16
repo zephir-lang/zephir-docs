@@ -102,10 +102,11 @@ Raised when the compiler detects that an object update operation is being made o
 ## non-valid-fetch
 Raised when the compiler detects that a 'fetch' operation is being made on a non-array or -object value:
 
+##### variable integer 'b' used as array
     public function some()
     {
         var b = 1.2, a;
-        fetch a, b[0]; // variable integer 'b' used as array
+        fetch a, b[0];
     }
 
 <a name='invalid-array-index'></a>
