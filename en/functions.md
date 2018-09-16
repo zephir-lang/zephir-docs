@@ -5,7 +5,6 @@ PHP has a rich library of functions that you can use within your extensions. To 
     
     class Encoder
     {
-    
         public function encode(var text)
         {
             if strlen(text) != 0 {
@@ -41,7 +40,6 @@ Note that all PHP functions only receive and return dynamic variables. If you pa
     
     class Encoder
     {
-    
         public function encode(string text)
         {
             if strlen(text) != 0 {
@@ -59,7 +57,6 @@ Similarly, functions return dynamic values, which cannot be directly assigned to
     
     class Encoder
     {
-    
         public function encode(string text)
         {
             string encoded = "";
@@ -78,7 +75,6 @@ Zephir also provides a way for you to call functions dynamically, such as:
     
     class Encoder
     {
-    
         public function encode(var callback, string text)
         {
             return {callback}(text);

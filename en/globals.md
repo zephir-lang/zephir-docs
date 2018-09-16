@@ -44,15 +44,17 @@ Compound (namespaced) globals have the following structure:
 
 The optional `module` key, if present, places that global's initialization process into the module-wide `GINIT` lifecycle event, which just means it will only be set up once per PHP process, rather than being reinitialized for every request, which is the default:
 
+##### `allow_some_feature"` is set up only once at startup; `number_times` is set up at the start of each request
+
     {
         //...
         "globals": {
-            "allow_some_feature": {  // set up only once, at startup
+            "allow_some_feature": {
                 "type": "bool",
                 "default": true,
                 "module": true
             },
-            "number_times": {        // set up at the start of each request
+            "number_times": {
                 "type": "int",
                 "default": 10
             }
