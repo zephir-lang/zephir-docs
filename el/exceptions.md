@@ -4,15 +4,15 @@
 
 When an exception is thrown, a `catch` block can be used to capture the exception and allow the developer to provide proper handling:
 
+##### Exceptions can be thrown inside the `try` block. Handling happens in the `catch` block, exactly as in PHP.
+
     var e;
     try {
     
-        // exceptions can be thrown here
         throw new \Exception("This is an exception");
     
     } catch \Exception, e {
     
-        // handle exception
         echo e->getMessage();
     }
     
@@ -28,12 +28,10 @@ If you don't need an exception variable when 'catch'ing, then you can safely not
 
     try {
     
-        // exceptions can be thrown here
         throw new \Exception("This is an exception");
     
     } catch \Exception {
     
-        // handle exception
         echo "An exception occur!";
     }
     
@@ -43,22 +41,34 @@ A single `catch` block can be used to catch multiple types of exception:
     var e;
     try {
     
-        // exceptions can be thrown here
         throw new \Exception("This is an exception");
     
     } catch \RuntimeException|\Exception, e {
     
-        // handle exception
         echo e->getMessage();
     }
     
 
 Zephir allows you to throw literals or static typed variables as if they were the message of the exception:
 
-    throw "Test";  // throw new \Exception("Test");
-    throw 't';     // throw new \Exception((string) 't');
-    throw 123;     // throw new \Exception((string) 123);
-    throw 123.123; // throw new \Exception((string) 123.123);
+##### throw new \Exception("Test");
+
+    throw "Test";
+    
+
+##### throw new \Exception((string) 't');
+
+    throw 't';
+    
+
+##### throw new \Exception((string) 123);
+
+    throw 123;
+    
+
+##### throw new \Exception((string) 123.123);
+
+    throw 123.123;
     
 
 Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is, `Exception::getFile()` and `Exception::getLine()` return the location in the Zephir code where the exception was thrown:
