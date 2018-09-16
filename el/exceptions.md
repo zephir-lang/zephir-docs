@@ -1,6 +1,6 @@
-# Exceptions
+# Εξαιρέσεις
 
-Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.
+Η Zephir υλοποιεί εξαιρέσεις σε πολύ χαμηλό επίπεδο, παρέχοντας παρόμοια συμπεριφορά και λειτουργικότητα στο PHP.
 
 When an exception is thrown, a `catch` block can be used to capture the exception and allow the developer to provide proper handling:
 

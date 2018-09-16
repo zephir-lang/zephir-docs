@@ -39,7 +39,7 @@ Check more info about these types in the [PHP manual](http://www.php.net/manual/
 
 <a name='dynamic-types-arrays'></a>
 
-### Arrays
+### Πίνακες
 
 The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
 

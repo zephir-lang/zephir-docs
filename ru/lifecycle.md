@@ -6,7 +6,7 @@ Consider the following diagram:
 
 ![](/images/content/lifecycle.png)
 
-Lifecycle hooks are registered in the `config.json` file. As you can see in the diagram above, there are four types of lifecycle hooks - `globals`, `initializers`, `destructors`, and `info`. Each of these has its own corresponding root-level setting in the configuration, and both :doc:'globals <globals>' and :doc:'info <phpinfo>' have their own chapters. This chapter covers the other two settings.
+Lifecycle hooks are registered in the `config.json` file. As you can see in the diagram above, there are four types of lifecycle hooks - `globals`, `initializers`, `destructors`, and `info`. Each of these has its own corresponding root-level setting in the configuration, and both [globals](/[[language]]/[[version]]/globals) and [info](/[[language]]/[[version]]/phpinfo) have their own chapters. This chapter covers the other two settings.
 
 You can register an `include` and a `code` for each group's supported `INIT` and `SHUTDOWN` events. The `code` can be whatever you need/want, but a single function call per hook is recommended, both for clarity in the config, and to keep code in other files as much as possible. You can safely omit either the `include` or `code` option, but duplicate `include` options are removed, so you can safely repeat those, instead. It is recommended to provide both values, to make it easier to see which includes are needed for which hooks, and make it easier to add and remove hooks individually.
 
