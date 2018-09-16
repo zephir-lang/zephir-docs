@@ -1,0 +1,6 @@
+- [static-type-inference](/[[language]]/[[version]]/optimizations#static-type-inference)
+- [static-type-inference-second-pass](/[[language]]/[[version]]/optimizations#static-type-inference-second-pass)
+- [local-context-pass](/[[language]]/[[version]]/optimizations#local-context-pass)
+- [constant-folding](/[[language]]/[[version]]/optimizations#constant-folding)
+- [static-constant-class-folding](/[[language]]/[[version]]/optimizations#static-constant-class-folding)
+- [call-gatherer-pass](/[[language]]/[[version]]/optimizations#call-gatherer-pass)
