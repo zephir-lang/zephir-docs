@@ -16,36 +16,35 @@ You can register an `include` and a `code` for each group's supported `INIT` and
 
 The `initializers` block looks something like this:
 
-```json
-{
-    "initializers": [
-        {
-            "globals": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "setup_globals_deps(TSRMLS_C)"
-                }
-            ],
-            "module": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "setup_module_deps(TSRMLS_C)"
-                }
-            ],
-            "request": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "some_c_function(TSRMLS_C)"
-                },
-                {
-                    "include": "my/awful/library.h",
-                    "code": "some_other_c_function(TSRMLS_C)"
-                }
-            ]
-        }
-    ]
-}
-```
+    {
+        "initializers": [
+            {
+                "globals": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "setup_globals_deps(TSRMLS_C)"
+                    }
+                ],
+                "module": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "setup_module_deps(TSRMLS_C)"
+                    }
+                ],
+                "request": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "some_c_function(TSRMLS_C)"
+                    },
+                    {
+                        "include": "my/awful/library.h",
+                        "code": "some_other_c_function(TSRMLS_C)"
+                    }
+                ]
+            }
+        ]
+    }
+    
 
 <a name='desctructors'></a>
 
@@ -53,39 +52,37 @@ The `initializers` block looks something like this:
 
 And the `destructors` block like this:
 
-```json
-{
-    "destructors": [
-        {
-            "request": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "c_function_for_shutting_down(TSRMLS_C)"
-                },
-                {
-                    "include": "my/awful/library.h",
-                    "code": "some_other_c_function_than_the_other_ones(TSRMLS_C)"
-                }
-            ],
-            "post-request": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "c_function_for_cleaning_up_after_the_response_is_sent(TSRMLS_C)"
-                }
-            ],
-            "module": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "release_module_deps(TSRMLS_C)"
-                }
-            ],
-            "globals": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "release_globals_deps(TSRMLS_C)"
-                }
-            ]
-        }
-    ]
-}
-```
+    {
+        "destructors": [
+            {
+                "request": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "c_function_for_shutting_down(TSRMLS_C)"
+                    },
+                    {
+                        "include": "my/awful/library.h",
+                        "code": "some_other_c_function_than_the_other_ones(TSRMLS_C)"
+                    }
+                ],
+                "post-request": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "c_function_for_cleaning_up_after_the_response_is_sent(TSRMLS_C)"
+                    }
+                ],
+                "module": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "release_module_deps(TSRMLS_C)"
+                    }
+                ],
+                "globals": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "release_globals_deps(TSRMLS_C)"
+                    }
+                ]
+            }
+        ]
+    }
