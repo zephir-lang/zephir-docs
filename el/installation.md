@@ -20,30 +20,27 @@ To build a PHP extension and use Zephir you need the following requirements:
 
 If you're using Ubuntu, you can install the required packages this way:
 
-```bash
-$ sudo apt-get update
-$ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
-```
+    $ sudo apt-get update
+    $ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
+    
 
 Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
 
-```bash
-$ php -v
-PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-        with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
-```
+    $ php -v
+    PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
+    Copyright (c) 1997-2016 The PHP Group
+    Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
+            with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
+    
 
 Also, make sure you have the PHP development libraries installed along with your PHP installation:
 
-```bash
-$ phpize -v
-Configuring for:
-PHP Api Version:         20151012
-Zend Module Api No:      20151012
-Zend Extension Api No:   320151012
-```
+    $ phpize -v
+    Configuring for:
+    PHP Api Version:         20151012
+    Zend Module Api No:      20151012
+    Zend Extension Api No:   320151012
+    
 
 You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
 
@@ -55,16 +52,14 @@ First, make sure the Zephir parser extension is installed and activated followin
 
 The Zephir compiler currently must be cloned from Github:
 
-```bash
-$ git clone https://github.com/phalcon/zephir
-```
+    $ git clone https://github.com/phalcon/zephir
+    
 
 Run the Zephir installer (this compiles/creates the parser):
 
-```bash
-$ cd zephir
-$ ./install -c
-```
+    $ cd zephir
+    $ ./install -c
+    
 
 <a name='testing-the-installation'></a>
 
@@ -72,6 +67,4 @@ $ ./install -c
 
 Check if Zephir is available from any directory by executing:
 
-```bash
-$ zephir help
-```
+    $ zephir help
