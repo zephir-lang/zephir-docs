@@ -80,7 +80,7 @@ Extension description - any text describing your extension:
 
 <a name='destructors'></a>
 ## destructors
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the :doc:'lifecycle hooks <lifecycle>' chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
 
     {
         "destructors": [
@@ -190,7 +190,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 <a name='globals'></a>
 ## globals
-Extension globals available. Check the :doc:'extension globals <globals>' chapter for more information.
+Extension globals available. Check the [globals](/[[language]]/[[version]]/globals) chapter for more information.
 
     {
         "globals": {
@@ -207,7 +207,7 @@ Extension globals available. Check the :doc:'extension globals <globals>' chapte
 
 <a name='info'></a>
 ## info
-`phpinfo()` sections. Check the :doc:'phpinfo() <phpinfo>' chapter for more information.
+`phpinfo()` sections. Check the [phpinfo()](/[[language]]/[[version]]/phpinfo) chapter for more information.
 
     {
         "info": [
@@ -223,7 +223,7 @@ Extension globals available. Check the :doc:'extension globals <globals>' chapte
 
 <a name='initializers'></a>
 ## initializers
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the :doc:'lifecycle hooks <lifecycle>' chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
 
     {
         "initializers": [
