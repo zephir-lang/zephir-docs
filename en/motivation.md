@@ -52,17 +52,13 @@ developer can decide which parts of their application should be in Zephir and wh
 ## Statically Typed Versus Dynamically Typed Languages
 Generally speaking, in a statically typed language, a variable is bound to a particular type for its lifetime. Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
 
-```c
-int a = 0;
-a = "hello"; // not allowed
-```
+    int a = 0;
+    a = "hello"; // not allowed
 
 In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer to a value of one type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of a dynamically typed languages:
 
-```c
-var a = 0;
-a = "hello"; // allowed
-```
+    var a = 0;
+    a = "hello"; // allowed
 
 Despite their productivity advantages, dynamic languages may not be the best choices for all applications, particularly for very large code bases and high-performance applications.
 
