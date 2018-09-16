@@ -17,7 +17,7 @@ Welcome to Zephir, an open source, high-level/domain specific language designed 
 
 <a name='a-small-taste'></a>
 
-## Μια μικρη γευση
+## Μια μικρή γεύση
 
 The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
