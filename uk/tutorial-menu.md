@@ -3,4 +3,4 @@
 - [Adding our first class](/[[language]]/[[version]]/tutorial#adding-our-first-class)
 - [Initial testing](/[[language]]/[[version]]/tutorial#initial-testing)
 - [A useful class](/[[language]]/[[version]]/tutorial#a-useful-class)
-- [Conclusion](/[[language]]/[[version]]/tutorial#conclusion)
+- [Висновок](/[[language]]/[[version]]/tutorial#conclusion)
