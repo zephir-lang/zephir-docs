@@ -42,13 +42,13 @@ Zephir вимагає компіляції коду, але функціонал
 
 ## Статичнотипізовані мови проти динамічнотипізованих
 
-Generally speaking, in a statically typed language, a variable is bound to a particular type for its lifetime. Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
+У цілому, в статичнотипізованій мові змінна пов'язана з певним типом протягом всього життєвого циклу програми. Тип змінної неможливо змінити і вона може лише посилатися на сумісні з типом екземпляри та операції. Мови, такі як C/C++, були реалізовані за такою схемою:
 
     int a = 0;
     a = "hello"; // not allowed
     
 
-In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer to a value of one type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of a dynamically typed languages:
+При динамічнотипізованих мовах тип прив'язується до значення, а не до змінної. Таким чином, змінна може мати значення одного типу, а потім бути перевизначеною значенням невизначеного типу. JavaScript/PHP є прикладами мов з динамічною типізацією:
 
     var a = 0;
     a = "hello"; // allowed
