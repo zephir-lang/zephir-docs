@@ -22,7 +22,7 @@ PHP is hosting Zephir, so they obviously have a lot of similarities; however, th
 
 ## Якщо ви C-програміст...
 
-C is one of the most powerful and popular languages ever created. In fact, PHP is written in C, which is one of the reasons why PHP extensions are available for it. C gives you the freedom to manage memory, use low level types and even inline assembly routines.
+C — одна з найпотужніших та найпопулярніших мов програмування, серед мов, коли-небудь створених. Насправді сам PHP написаний на C. Саме тому, розширення для PHP сумісні із C. C gives you the freedom to manage memory, use low level types and even inline assembly routines.
 
 However, developing big applications in C can take much longer than expected compared to PHP or Zephir, and some errors can be tricky to find if you aren't an experienced developer.
 
