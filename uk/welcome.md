@@ -1,14 +1,14 @@
-# Welcome!
+# Вітаємо!
 
-Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
+Вас вітає Zephir — проект з відкритим вихідним кодом, високорівнева/предметно-орієнтована мова спроектована для полегшення створення й супроводу розширень для PHP з акцентом на тип та безпеку доступу до пам'яті.
 
 <a name='some-features'></a>
 
-## Some features
+## Деякі особливості
 
-Zephir's main features are:
+Основними особливостями Zephir-у є:
 
-| Feature           | Description                                          |
+| Особливість       | Description                                          |
 | ----------------- | ---------------------------------------------------- |
 | Type system       | dynamic/static                                       |
 | Memory safety     | pointers or direct memory management are not allowed |
