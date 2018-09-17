@@ -8,18 +8,18 @@
 
 Основними особливостями Zephir-у є:
 
-| Особливість       | Description                                          |
-| ----------------- | ---------------------------------------------------- |
-| Type system       | dynamic/static                                       |
-| Memory safety     | pointers or direct memory management are not allowed |
-| Compilation model | ahead of time                                        |
-| Memory model      | task-local garbage collection                        |
+| Особливість                 | Description                                             |
+| --------------------------- | ------------------------------------------------------- |
+| Система типізації           | динамічна/статична                                      |
+| Безпечний доступ до пам'яті | вказівники або пряме керування пам'яттю не допускаються |
+| Компіляційна модель         | ahead of time                                           |
+| Memory model                | task-local garbage collection                           |
 
 <a name='a-small-taste'></a>
 
-## A small taste
+## Скуштуйте
 
-The following code registers a class with a method that filters variables, returning their alphabetic characters:
+Наступний код реєструє клас з методом, який фільтрує змінні, повертаючи лише їхні алфавітні символи:
 
     namespace MyLibrary;
     
@@ -48,7 +48,7 @@ The following code registers a class with a method that filters variables, retur
     }
     
 
-The class can be used from PHP as follows:
+Цей клас можна виконати з PHP наступним чином:
 
     <?php
     
