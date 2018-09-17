@@ -36,7 +36,7 @@ Compilation usually slows development down; you will need a bit more patience to
 
 Zephir requires compilation of your code, but functionality is used from PHP, which is interpreted.
 
-Once the code is compiled, it is not necessary to do so again. Interpreted code is interpreted each time it is run. A developer can decide which parts of their application should be in Zephir and which not.
+Once the code is compiled, it is not necessary to do so again. Interpreted code is interpreted each time it is run. Adeveloper can decide which parts of their application should be in Zephir and which not.
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
