@@ -12,9 +12,9 @@ With Zephir, you can implement object-oriented libraries/frameworks/applications
 
 ## Якщо ви PHP-програміст...
 
-PHP є однією з найпопулярніших мов, що використовуються для розробки веб-програм. Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
+PHP є однією з найпопулярніших мов, що використовуються для розробки веб-програм. Мови, з динамічною типізацію та інтерпретацією, от PHP мають дуже високу продуктивність через їхню гнучкість.
 
-Since version 4, PHP is based on the Zend Engine implementation. This is a virtual machine that executes the PHP code from its bytecode representation. Zend Engine is present in almost every PHP installation in the world. With Zephir, you can create extensions for PHP running under the Zend Engine.
+Починаючи з версії 4, PHP базується на реалізації Zend Engine. Це віртуальна машина, яка виконує PHP-код з його байт-код представлення. Zend Engine присутній практично у кожній установці PHP у світі. За допомогою Zephir ви можете створювати розширення для PHP, які працюватимуть під управлінням Zend Engine.
 
 PHP is hosting Zephir, so they obviously have a lot of similarities; however, they have important differences that give Zephir its own personality. For example, Zephir is more strict, and it could make you less productive compared to PHP due to the compilation step.
 
