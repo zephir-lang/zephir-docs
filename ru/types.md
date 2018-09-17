@@ -8,17 +8,24 @@ Zephir is both dynamically and statically typed. In this chapter we highlight th
 
 Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
 
-A dynamic variable must be declared with the keyword 'var'. The behavior is nearly the same as in PHP:
+A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
 
     var a, b, c;
     
-    // Initialize variables
+
+##### Initialize variables
+
     let a = "hello", b = false;
     
-    // Change their values
+
+##### Change their values
+
+    let a = "hello", b = false;
     let a = 10, b = "140";
     
-    // Perform operations between them
+
+##### Perform operations
+
     let c = a + b;
     
 
@@ -45,10 +52,13 @@ The array implementation in Zephir is basically the same as in PHP: ordered maps
 
 The syntax to define arrays is slightly different than in PHP:
 
-    // Square braces must be used to define arrays
+##### Square braces must be used to define arrays
+
     let myArray = [1, 2, 3];
     
-    // Double colon must be used to define hashes' keys
+
+##### Double colon must be used to define hashes' keys
+
     let myHash = ["first": 1, "second": 2, "third": 3];
     
 
@@ -164,11 +174,19 @@ Static typing allows the developer to declare and use some variable types availa
 A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
 
     boolean a;
+    let a = true;
     
-    let a = true,
-        a = 100,     // automatically casted to true
-        a = null,    // automatically casted to false
-        a = "hello"; // throws a compiler exception
+
+##### automatically casted to `true`
+
+    let a = 100;
+    
+
+##### automatically casted to `false`
+
+##### throws a compiler exception
+
+    let a = "hello";
     
 
 <a name='static-types-char-unsigned'></a>
@@ -179,8 +197,15 @@ Char variables are the smallest addressable unit of the machine that can contain
 
     char ch, string name = "peter";
     
-    let ch = name[2]; // stores 't'
-    let ch = 'Z';     // char literals must be enclosed in single quotes
+
+##### stores 't'
+
+    let ch = name[2];
+    
+
+##### `char` literals must be enclosed in single quotes
+
+    let ch = 'Z';
     
 
 <a name='static-types-integer-unsigned'></a>
@@ -192,31 +217,69 @@ Integer values are like the integer member in dynamic values. Values assigned to
     int a;
     
     let a = 50,
-        a = -70,
-        a = 100.25,  // automatically casted to 100
-        a = null,    // automatically casted to 0
-        a = false,   // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = -70;
+    
+
+##### automatically casted to 100
+
+    let a = 100.25;
+    
+
+##### automatically casted to 0
+
+    let a = null;
+    
+
+##### automatically casted to 0
+
+    let a = false;
+    
+
+##### throws a compiler exception
+
+    let a = "hello";
     
 
 Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
 
-    unsigned int a;
+    uint a;
     
-    let a = 50,
-        a = -70,     // automatically casted to 70
-        a = 100.25,  // automatically casted to 100
-        a = null,    // automatically casted to 0
-        a = false,   // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+    let a = 50;
+    
+
+##### automatically casted to 70
+
+    let a = -70;
+    
+
+##### automatically casted to 100
+
+    let a = 100.25;
+    
+
+##### automatically casted to 0
+
+    let a = null;
+    
+
+##### automatically casted to 0
+
+    let a = false;
+    
+
+##### throws a compiler exception
+
+    let a = "hello";
     
 
 Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
 
+##### potential loss of data for `b`
+
     uint a, int b;
     
     let a = 2147483648,
-        b = a, // possible loss of data
+        b = a;
     
 
 <a name='static-types-long-unsigned'></a>
@@ -228,29 +291,69 @@ Long variables are twice bigger than integer variables, thus they can store bigg
     long a;
     
     let a = 50,
-        a = -70,
-        a = 100.25,  // automatically casted to 100
-        a = null,    // automatically casted to 0
-        a = false,   // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+        a = -70;
+    
+
+##### automatically casted to 100
+
+    let a = 100.25;
+    
+
+##### automatically casted to 0
+
+    let a = null;
+    
+
+##### automatically casted to 0
+
+    let a = false;
+    
+
+##### throws a compiler exception
+
+    let a = "hello";
     
 
 Unsigned longs are like longs but they are not signed, this means you can't store negative numbers in these sort of variables:
 
-    let a = 50,
-        a = -70,     // automatically casted to 70
-        a = 100.25,  // automatically casted to 100
-        a = null,    // automatically casted to 0
-        a = false,   // automatically casted to 0
-        a = "hello"; // throws a compiler exception
+    ulong a;
+    
+    let a = 50;
+    
+
+##### automatically casted to 70
+
+    let  a = -70;
+    
+
+##### automatically casted to 100
+
+    let a = 100.25;
+    
+
+##### automatically casted to 0
+
+    let a = null;
+    
+
+##### automatically casted to 0
+
+    let a = false;
+    
+
+##### throws a compiler exception
+
+    let a = "hello";
     
 
 Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
 
+##### potential loss of data for `b`
+
     ulong a, long b;
     
     let a = 4294967296,
-        b = a, // possible loss of data
+        b = a;
     
 
 <a name='static-types-string'></a>
@@ -263,7 +366,19 @@ When a variable is declared string it never changes its type:
 
     string a;
     
-    let a = "",
-        a = "hello", // string literals must be enclosed in double quotes
-        a = 'A',     // converted to string "A"
-        a = null;    // automatically casted to ""
+    let a = "";
+    
+
+##### string literals must be enclosed in double quotes
+
+    let  a = "hello";
+    
+
+##### converted to string "A"
+
+    let a = 'A';
+    
+
+##### automatically casted to ""
+
+    let a = null;

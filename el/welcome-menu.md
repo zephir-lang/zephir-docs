@@ -1,2 +1,2 @@
-- [Some features](/[[language]]/[[version]]/welcome#some-features) 
-- [A small taste](/[[language]]/[[version]]/welcome#a-small-taste)
+- [Μερικά χαρακτηριστικά γνωρίσματα](/[[language]]/[[version]]/welcome#some-features) 
+- [Μια μικρή γεύση](/[[language]]/[[version]]/welcome#a-small-taste)
