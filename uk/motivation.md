@@ -26,13 +26,13 @@ C — одна з найпотужніших та найпопулярніших
 
 Однак, розробка великих програм на C може тривати довше, ніж очікувалося в порівнянні з PHP або Zephir. Крім того деякі помилки може бути складно знайти, якщо ви не є досвідченим розробником.
 
-Zephir was designed to be safe, so it does not implement pointers or manual memory management, so if you're a C programmer, you will feel Zephir less powerful, but more friendly, than C.
+Zephir був розроблений для безпечної роботи з пам'яттю. Тому в ньому не передбачено реалізації вказівників ручного керування пам'яттю. Отже, якщо ви C-програміст то Zephir для вас відчуватиметься дещо урізаним, проте більш дружнім.
 
 <a name='compilation-vs-interpretation'></a>
 
 ## Компіляція проти інтерпритації
 
-Compilation usually slows development down; you will need a bit more patience to compile your code before running it. On the other hand, interpretation tends to reduce code performance in favor of developer productivity. That said, in some cases, there is not any noticeable difference between the speed of interpreted and compiled code.
+Компіляція зазвичай гальмує розробку програм; вам буде потрібно трохи терпіння, щоб скомпілювати код перш ніж запустити її. On the other hand, interpretation tends to reduce code performance in favor of developer productivity. That said, in some cases, there is not any noticeable difference between the speed of interpreted and compiled code.
 
 Zephir requires compilation of your code, but functionality is used from PHP, which is interpreted.
 
