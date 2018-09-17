@@ -1,6 +1,6 @@
-# Why Zephir?
+# Чому Zephir?
 
-Today's PHP applications must balance a number of concerns including stability, performance, and functionality. Every PHP application is based on a set of common components, that are also base for many other applications.
+Сьогоднішні програми на PHP повинні збалансувати ряд проблем, таких як стабільність, продуктивність та функціональність. Кожна PHP програма базується на збірці загальних компонентів, які також є основою для багатьох інших програм.
 
 These common components are libraries, frameworks, or a combination of the two. Once installed, frameworks rarely change, and being the foundation of the application, they must be highly functional, and also very fast.
 
