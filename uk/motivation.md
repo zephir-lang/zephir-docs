@@ -2,15 +2,15 @@
 
 Сьогоднішні програми на PHP повинні збалансувати ряд проблем, таких як стабільність, продуктивність та функціональність. Кожна PHP програма базується на збірці загальних компонентів, які також є основою для багатьох інших програм.
 
-These common components are libraries, frameworks, or a combination of the two. Once installed, frameworks rarely change, and being the foundation of the application, they must be highly functional, and also very fast.
+Цими загальними компонентами є бібліотеки, фреймворки або й те й інше в одному флаконі. Після встановлення фреймворки змінюються рідко і будучи основою для програми мусять бути багатофункціональними, а також дуже швидкими.
 
-Getting fast and robust libraries can be complicated, due to high levels of abstraction that are typically implemented on them. Given the condition that base libraries or frameworks rarely change, there is an opportunity to build extensions that provide this functionality, taking advantage of the compilation improving performance and resource consumption.
+Пошук швидких та надійних бібліотек може бути складним, як правило через високі рівні абстракції, які здійснюються над ними. Виходячи з того, що базові бібліотеки або фреймворки змінюються рідко, існує можливість побудувати розширення, які нададуть цю ж функціональність, скориставшись швидкістю вже скомпільованої програми та економією ресурсів.
 
 With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from PHP, gaining important seconds that can make your application faster while improving the user experience.
 
 <a name='if-you-are-a-php-programmer'></a>
 
-## If You Are a PHP Programmer...
+## Якщо ви PHP-програміст...
 
 PHP is one of the most popular languages in use for the development of web applications. Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
 
@@ -20,7 +20,7 @@ PHP is hosting Zephir, so they obviously have a lot of similarities; however, th
 
 <a name='if-you-are-a-c-programmer'></a>
 
-## If You Are a C Programmer...
+## Якщо ви C-програміст...
 
 C is one of the most powerful and popular languages ever created. In fact, PHP is written in C, which is one of the reasons why PHP extensions are available for it. C gives you the freedom to manage memory, use low level types and even inline assembly routines.
 
@@ -30,7 +30,7 @@ Zephir was designed to be safe, so it does not implement pointers or manual memo
 
 <a name='compilation-vs-interpretation'></a>
 
-## Compilation vs Interpretation
+## Компіляція проти інтерпритації
 
 Compilation usually slows development down; you will need a bit more patience to compile your code before running it. On the other hand, interpretation tends to reduce code performance in favor of developer productivity. That said, in some cases, there is not any noticeable difference between the speed of interpreted and compiled code.
 
@@ -40,7 +40,7 @@ Once the code is compiled, it is not necessary to do so again. Interpreted code 
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
-## Statically Typed Versus Dynamically Typed Languages
+## Статичнотипізовані мови проти динамічнотипізованих
 
 Generally speaking, in a statically typed language, a variable is bound to a particular type for its lifetime. Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
 
@@ -66,7 +66,7 @@ Zephir is both statically and dynamically typed, allowing you to take advantage 
 
 <a name='compilation-scheme'></a>
 
-## Compilation Scheme
+## Схема компіляції
 
 Zephir offers native code generation (currently via compilation to C). A compiler like gcc/clang/vc++ optimizes and compiles the code down to machine code. The following graph shows how the process works:
 
@@ -86,6 +86,6 @@ In some circumstances, the compilation does not significantly improve performanc
 
 <a name='conclusion'></a>
 
-## Conclusion
+## Висновок
 
 Zephir was not created to replace PHP or C. Instead, we think it is a complement to them, allowing PHP developers to venture into code compilation and static typing. Zephir is an attempt to join good things from the C and PHP worlds, looking for opportunities to make applications faster.
