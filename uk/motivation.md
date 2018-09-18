@@ -54,7 +54,7 @@ Zephir вимагає компіляції коду, але функціонал
     a = "hello"; // allowed
     
 
-Despite their productivity advantages, dynamic languages may not be the best choices for all applications, particularly for very large code bases and high-performance applications.
+Незважаючи на свої переваги швидшої розробки динамічнотипізовані мови не завжди будуть кращим вибором для всіх програм, особливо для тих у яких дуже велика кодова база або для яких критична швидкодія.
 
 Optimizing the performance of a dynamic language like PHP is more challenging than for a static language like C. In a static language, optimizers can exploit the type information attached to variables themselves to make decisions. In a dynamic language, fewer such clues are available for the optimizer, making optimization choices harder.
 
