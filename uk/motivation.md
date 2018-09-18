@@ -4,39 +4,39 @@
 
 Цими загальними компонентами є бібліотеки, фреймворки або й те й інше в одному флаконі. Once installed, frameworks rarely change, and being the foundation of the application, they must be highly functional, and also very fast.
 
-Getting fast and robust libraries can be complicated, due to high levels of abstraction that are typically implemented on them. Given the condition that base libraries or frameworks rarely change, there is an opportunity to build extensions that provide this functionality, taking advantage of the compilation improving performance and resource consumption.
+Пошук швидких та надійних бібліотек може бути складним, як правило через високі рівні абстракції, які здійснюються над ними. Виходячи з того, що базові бібліотеки або фреймворки змінюються рідко, існує можливість побудувати розширення, які нададуть цю ж функціональність, скориставшись швидкістю вже скомпільованої програми та економією ресурсів.
 
-With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from PHP, gaining important seconds that can make your application faster while improving the user experience.
+Із Zephir ви можете реалізувати об'єктно-орієнтовані бібліотеки/фреймворки/програми, які можна використовувати з-під PHP, тим самим зберігши дорогоцінні секунди, які можуть зробити вашу програму швидшою та покращити користувацький досвід.
 
 <a name='if-you-are-a-php-programmer'></a>
 
 ## Якщо ви PHP-програміст...
 
-PHP є однією з найпопулярніших мов, що використовуються для розробки веб-програм. Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
+PHP є однією з найпопулярніших мов, що використовуються для розробки веб-програм. Мови, з динамічною типізацію та інтерпретацією, от PHP мають дуже високу продуктивність через їхню гнучкість.
 
-Починаючи з версії 4, PHP базується на реалізації Zend Engine. This is a virtual machine that executes the PHP code from its bytecode representation. Zend Engine присутній практично у кожній установці PHP у світі. With Zephir, you can create extensions for PHP running under the Zend Engine.
+Починаючи з версії 4, PHP базується на реалізації Zend Engine. Це віртуальна машина, яка виконує PHP-код з його байт-код представлення. Zend Engine присутній практично у кожній установці PHP у світі. За допомогою Zephir ви можете створювати розширення для PHP, які працюватимуть під управлінням Zend Engine.
 
-PHP is hosting Zephir, so they obviously have a lot of similarities; however, they have important differences that give Zephir its own personality. For example, Zephir is more strict, and it could make you less productive compared to PHP due to the compilation step.
+PHP is hosting Zephir, so they obviously have a lot of similarities; however, they have important differences that give Zephir its own personality. Для прикладу, Zephir більш суворіший, що в свою чергу може зменшити вашу продуктивність при написанні коду в порівняння з PHP.
 
 <a name='if-you-are-a-c-programmer'></a>
 
 ## Якщо ви C-програміст...
 
-C — одна з найпотужніших та найпопулярніших мов програмування, серед мов, коли-небудь створених. In fact, PHP is written in C, which is one of the reasons why PHP extensions are available for it. C gives you the freedom to manage memory, use low level types and even inline assembly routines.
+C — одна з найпотужніших та найпопулярніших мов програмування, серед мов, коли-небудь створених. Насправді сам PHP написаний на C. Це одна з причин, чому розширення для PHP сумісні із C. C дає вам свободу керування пам'яттю, використання типів низького рівня та навіть виконання підпрограм асемблера прямо з-під C коду.
 
-However, developing big applications in C can take much longer than expected compared to PHP or Zephir, and some errors can be tricky to find if you aren't an experienced developer.
+Однак, розробка великих програм на C може тривати довше, ніж очікувалося в порівнянні з PHP або Zephir. Крім того деякі помилки може бути складно знайти, якщо ви не є досвідченим розробником.
 
-Zephir was designed to be safe, so it does not implement pointers or manual memory management, so if you're a C programmer, you will feel Zephir less powerful, but more friendly, than C.
+Zephir був розроблений для безпечної роботи з пам'яттю. Тому в ньому не передбачено реалізації вказівників ручного керування пам'яттю. Отже, якщо ви C-програміст то Zephir для вас відчуватиметься дещо урізаним, проте більш дружнім.
 
 <a name='compilation-vs-interpretation'></a>
 
 ## Компіляція проти інтерпретації
 
-Компіляція зазвичай гальмує розробку програм; вам буде потрібно трохи терпіння, щоб скомпілювати код перш ніж запустити його. On the other hand, interpretation tends to reduce code performance in favor of developer productivity. That said, in some cases, there is not any noticeable difference between the speed of interpreted and compiled code.
+Компіляція зазвичай гальмує розробку програм; вам буде потрібно трохи терпіння, щоб скомпілювати код перш ніж запустити його. З іншого боку, інтерпретація має тенденцію до зниження швидкодії програми на користь збільшення темпів розробки продукту. Щоправда, в деяких випадках немає ніякої помітної різниці між швидкістю інтерпретованого та скомпонованого коду.
 
 Zephir вимагає компіляції коду, але функціональність використовується з PHP, який інтерпретується.
 
-Після компіляції коду не потрібно робити це знову. Інтерпретований код інтерпретується кожного разу, коли він запускається. Adeveloper can decide which parts of their application should be in Zephir and which not.
+Після компіляції коду не потрібно робити це знову. Інтерпретований код інтерпретується кожного разу, коли він запускається. Розробники можуть вирішити, які частини їхньої програми мають бути на Zephir, а які ні.
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
