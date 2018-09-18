@@ -88,4 +88,4 @@ In some circumstances, the compilation does not significantly improve performanc
 
 ## Висновок
 
-Zephir was not created to replace PHP or C. Instead, we think it is a complement to them, allowing PHP developers to venture into code compilation and static typing. Zephir is an attempt to join good things from the C and PHP worlds, looking for opportunities to make applications faster.
+Zephir не був створений для заміни PHP або C. Навпаки, ми вважаємо, що він доповнює їх, дозволяючи PHP-розробникам спробувати свої сили в написанні компілювального коду та статичній типізації. Zephir є спробою поєднати краще з C та PHP світів у пошуках можливостей зробити програми швидшими.
