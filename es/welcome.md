@@ -1,19 +1,19 @@
-# Welcome!
+# Bienvenido!
 
-Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
+Bienvenido a Zephir, un lenguaje de código abierto de alto nivel/dominio específico, diseñado para facilitar la creación y mantenimiento de extensiones para PHP con un enfoque de tipo y cuidado de memoria.
 
 <a name='some-features'></a>
 
-## Some features
+## Algunas características
 
-Zephir's main features are:
+Las principales características de Zephir son:
 
-| Feature           | Description                                          |
-| ----------------- | ---------------------------------------------------- |
-| Type system       | dynamic/static                                       |
-| Memory safety     | pointers or direct memory management are not allowed |
-| Compilation model | ahead of time                                        |
-| Memory model      | task-local garbage collection                        |
+| Características       | Descripción                                             |
+| --------------------- | ------------------------------------------------------- |
+| Tipo de sistema       | dinámica/estática                                       |
+| Ahorro de memoria     | punteros o gestión de memoria directa no está permitido |
+| Modelo de compilación | adelantado                                              |
+| Modelo de memoria     | task-local garbage collection                           |
 
 <a name='a-small-taste'></a>
 
