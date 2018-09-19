@@ -8,12 +8,12 @@
 
 Основними особливостями Zephir-у є:
 
-| Особливість                 | Description                                             |
+| Особливість                 | Опис                                                    |
 | --------------------------- | ------------------------------------------------------- |
 | Система типізації           | динамічна/статична                                      |
 | Безпечний доступ до пам'яті | вказівники або пряме керування пам'яттю не допускаються |
-| Компіляційна модель         | ahead of time                                           |
-| Memory model                | task-local garbage collection                           |
+| Компіляційна модель         | компіляція виконується заздалегідь                      |
+| Модель пам'яті              | task-local garbage collection                           |
 
 <a name='a-small-taste'></a>
 
@@ -24,12 +24,12 @@
     namespace MyLibrary;
     
     /**
-     * Filter
+     * Фільтр
      */
     class Filter
     {
         /**
-         * Filters a string, returning its alpha charactersa
+         * Фільтрує рядок, повертаючи його альфа-символи
          *
          * @param string str
          */
@@ -53,4 +53,4 @@
     <?php
     
     $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01he#l.lo?/1"); // prints hello
+    echo $filter->alpha("01he#l.lo?/1"); // виведе hello
