@@ -8,28 +8,28 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 ## Привіт світ!
 
-Кожна мова власний приклад написання «Привіт світ» програми. In Zephir, this introductory example showcases some important features of the language.
+Кожна мова власний приклад написання «Привіт світ» програми. У цьому вступі продемонстровано деякі важливі особливості мови.
 
-Code in Zephir must be placed in classes. The language is intended to create object-oriented libraries/frameworks, so code outside of a class is not allowed. Additionally, a namespace is required:
+Код в Zephir повинен розміщатися в класах. Мова призначена для створення об'єктно-орієнтованих бібліотек/фреймворків, тому код за межами класу не допускається. Крім того, необхідно вказувати простір імен:
 
     namespace Test;
     
     /**
-     * This is a sample class
+     * Це зразок класу
      */
     class Hello
     {
         /**
-         * This is a sample method
+         * Це зразок методу
          */
         public function say()
         {
-            echo "Hello World!";
+            echo "Привіт світ!";
         }
     }
     
 
-Once this class is compiled it will produce the following code, that is transparently compiled by gcc/clang/vc++:
+Після компіляції код матиме вигляд, наведений нижче. Такий код без перешкод буде скомпільований за допомогою gcc/clang/vc++:
 
     #ifdef HAVE_CONFIG_H
     #include "config.h"
@@ -42,7 +42,7 @@ Once this class is compiled it will produce the following code, that is transpar
     #include "kernel/main.h"
     
     /**
-     * This is a sample class
+     * Це зразок класу
      */
     ZEPHIR_INIT_CLASS(Test_Hello) {
         ZEPHIR_REGISTER_CLASS(Test, Hello, hello, test_hello_method_entry, 0);
@@ -50,24 +50,24 @@ Once this class is compiled it will produce the following code, that is transpar
     }
     
     /**
-     * This is a sample method
+     * Це зразок методу
      */
     PHP_METHOD(Test_Hello, say) {
-        php_printf("%s", "Hello World!");
+        php_printf("%s", "Привіт світ!");
     }
     
 
-Actually, it is not expected that a developer that uses Zephir must know or even understand C. However, if you have any experience with compilers, PHP internals, or the C language itself, that will provide a clearer understanding of what's going on internally when working with Zephir.
+Насправді, розробник, який використовує Zephir, не повинен знати або навіть зрозуміти C. Однак, якщо у вас є досвід роботи з компіляторами, нутрощами PHP або самою мовою С, це дасть змогу чіткіше зрозуміти, як працює Zephir з середини.
 
 <a name='a-taste-of-zephir'></a>
 
 ## Смак Зефіру
 
-In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
+У наступних прикладах ми опишемо лише частину деталей, щоб зрозуміти, що відбувається. Задум в тому, щоб показати вам, на що схоже програмування на Zephir. Детальніші *деталі* ми розберемо в наступних розділах.
 
-The following example is very simple; it implements a class and a method, with a small program that checks the types of an array.
+Наступний приклад дуже простий; він реалізує клас і метод, який є маленькою програмою, що перевіряє типи масиву.
 
-Let's examine the code in detail, so we can begin to learn Zephir syntax. There are a lot of details in just a few lines of code! We'll explain the general ideas here:
+Розгляньмо детальніше цей код, щоб ви могли почати вивчати синтаксис Zephir. Ці рядки містять багацько деталей! Ми пояснимо загальні ідеї:
 
     namespace Test;
     
@@ -78,17 +78,17 @@ Let's examine the code in detail, so we can begin to learn Zephir syntax. There 
     {
         public function someMethod()
         {
-            /* Variables must be declared */
+            /* Змінні мають бути оголошені */
             var myArray;
             int i = 0, length;
     
-            /* Create an array */
+            /* Створюємо масив */
             let myArray = ["hello", 0, 100.25, false, null];
     
-            /* Count the array into a 'int' variable */
+            /* Рахуємо довжину масиву в змінні типу 'int' (ціле число) */
             let length = count(myArray);
     
-            /* Print value types */
+            /* Друкуємо значення */
             while i < length {
                 echo typeof myArray[i], "\n";
                 let i++;
@@ -99,7 +99,7 @@ Let's examine the code in detail, so we can begin to learn Zephir syntax. There 
     }
     
 
-In the method, the first lines use the `var` and `int` keywords. There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
+In the method, the first lines use the `var` and `int` keywords. Вони використовуються для оголошення змінної в локальній області. Кожна змінна, яка використовувана у методі, повинна бути оголошена з відповідним типом. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
 
 Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `int` variables are statically typed integer variables, that can only have integer values in the entire program execution.
 
