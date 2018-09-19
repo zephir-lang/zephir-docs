@@ -60,9 +60,9 @@ Zephir вимагає компіляції коду, але функціонал
 
 Хоча останні досягнення в оптимізації для динамічних мов є багатообіцяючими (наприклад, компіляція JIT), вони відстають від сучасних статичнотипізованих мов. Отже, якщо вам потрібна швидкодія - статичнотипізована мова, ймовірно, будуть надійнішим вибором.
 
-Another small benefit of static languages is the extra checking the compiler performs. A compiler can't find logic errors, which are far more significant, but a compiler can find errors in advance that in a dynamic language only can be found in runtime.
+Ще однією перевагою статичнотипізованих мов є додаткова перевірка, яку виконує компілятор. Компілятор не може знайти логічних помилок, проте компілятор може заздалегідь знайти помилки, які в статичнотипізованій мові можна знайти лише під час виконання.
 
-Zephir is both statically and dynamically typed, allowing you to take advantage of both approaches where possible.
+Zephir поєднує в собі статичну та динамічну типізацію, що дозволяє вам скористатися обома підходами, де це можливо.
 
 <a name='compilation-scheme'></a>
 
@@ -82,7 +82,7 @@ In addition to the ones provided by Zephir, over time, compilers have implemente
 
 ## Code Protection
 
-In some circumstances, the compilation does not significantly improve performance. This may be because the bottleneck is located in the I/O bound portion(s) of the application (quite likely) rather than compute/memory bound. However, compiling code could also bring some level of intellectual protection to your application. With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
+In some circumstances, the compilation does not significantly improve performance. Це може бути тому, що вузьким місцем програми може бути система вводу/виводу, (що цілком імовірно) а не обчислення чи ліміт пам'яті. Однак, компіляція коду також може забезпечити певний рівень інтелектуального захисту до вашої програми. With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
 
 <a name='conclusion'></a>
 
