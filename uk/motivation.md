@@ -1,8 +1,8 @@
 # Чому Zephir?
 
-Сьогоднішні програми на PHP повинні збалансувати ряд проблем, таких як стабільність, продуктивність та функціональність. Every PHP application is based on a set of common components, that are also base for many other applications.
+Сьогоднішні програми на PHP повинні збалансувати ряд проблем, таких як стабільність, продуктивність та функціональність. Кожна PHP програма базується на збірці загальних компонентів, які також є основою для багатьох інших програм.
 
-Цими загальними компонентами є бібліотеки, фреймворки або й те й інше в одному флаконі. Once installed, frameworks rarely change, and being the foundation of the application, they must be highly functional, and also very fast.
+Цими загальними компонентами є бібліотеки, фреймворки або й те й інше в одному флаконі. Після встановлення фреймворки змінюються рідко і будучи основою для програми мусять бути багатофункціональними, а також дуже швидкими.
 
 Пошук швидких та надійних бібліотек може бути складним, як правило через високі рівні абстракції, які здійснюються над ними. Виходячи з того, що базові бібліотеки або фреймворки змінюються рідко, існує можливість побудувати розширення, які нададуть цю ж функціональність, скориставшись швидкістю вже скомпільованої програми та економією ресурсів.
 
@@ -54,9 +54,9 @@ Zephir вимагає компіляції коду, але функціонал
     a = "hello"; // allowed
     
 
-Despite their productivity advantages, dynamic languages may not be the best choices for all applications, particularly for very large code bases and high-performance applications.
+Незважаючи на свої переваги швидшої розробки динамічнотипізовані мови не завжди будуть кращим вибором для всіх програм, особливо для тих у яких дуже велика кодова база або для яких критична швидкодія.
 
-Optimizing the performance of a dynamic language like PHP is more challenging than for a static language like C. In a static language, optimizers can exploit the type information attached to variables themselves to make decisions. In a dynamic language, fewer such clues are available for the optimizer, making optimization choices harder.
+Оптимізація швидкодії динамічної мови на кшталт PHP, є складнішою, ніж для статичної мови, як C. У статичній мові оптимізатори для прийняття рішень можуть використовувати інформацію про змінні на основі їхнього типу. У динамічній мові для оптимізатора доступно менше таких підказок, що робить вибір оптимізації складнішим.
 
 While recent advancements in optimizations for dynamic languages are promising (like JIT compilation), they lag behind the state of the art for static languages. So, if you require very high performance, static languages are probably a safer choice.
 
@@ -88,4 +88,4 @@ In some circumstances, the compilation does not significantly improve performanc
 
 ## Висновок
 
-Zephir was not created to replace PHP or C. Instead, we think it is a complement to them, allowing PHP developers to venture into code compilation and static typing. Zephir is an attempt to join good things from the C and PHP worlds, looking for opportunities to make applications faster.
+Zephir не був створений для заміни PHP або C. Навпаки, ми вважаємо, що він доповнює їх, дозволяючи PHP-розробникам спробувати свої сили в написанні компілювального коду та статичній типізації. Zephir є спробою поєднати краще з C та PHP світів у пошуках можливостей зробити програми швидшими.
