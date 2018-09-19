@@ -80,9 +80,9 @@ In addition to the ones provided by Zephir, over time, compilers have implemente
 
 <a name='code-protection'></a>
 
-## Code Protection
+## Захист коду
 
-In some circumstances, the compilation does not significantly improve performance. Це може бути тому, що вузьким місцем програми може бути система вводу/виводу, (що цілком імовірно) а не обчислення чи ліміт пам'яті. Однак, компіляція коду також може забезпечити певний рівень інтелектуального захисту до вашої програми. With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
+In some circumstances, the compilation does not significantly improve performance. Це може бути тому, що вузьким місцем програми може бути система вводу/виводу, (що цілком імовірно) а не обчислення чи ліміт пам'яті. Однак, компіляція коду також може забезпечити певний рівень інтелектуального захисту до вашої програми. Із Zephir-ом ви створюєте двійковий файл, що дає вам можливість «приховати» оригінальний вихідний код для користувачів чи клієнтів.
 
 <a name='conclusion'></a>
 
