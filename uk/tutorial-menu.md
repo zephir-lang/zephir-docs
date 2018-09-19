@@ -1,4 +1,4 @@
-- [Checking the installation](/[[language]]/[[version]]/tutorial#checking-the-installation)
+- [Перевірка встановлення](/[[language]]/[[version]]/tutorial#checking-the-installation)
 - [Extension skeleton](/[[language]]/[[version]]/tutorial#extension-skeleton)
 - [Adding our first class](/[[language]]/[[version]]/tutorial#adding-our-first-class)
 - [Initial testing](/[[language]]/[[version]]/tutorial#initial-testing)
