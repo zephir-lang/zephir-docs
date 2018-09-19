@@ -8,9 +8,9 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 ## Привіт світ!
 
-Кожна мова власний приклад написання «Привіт світ» програми. In Zephir, this introductory example showcases some important features of the language.
+Кожна мова власний приклад написання «Привіт світ» програми. У цьому вступі продемонстровано деякі важливі особливості мови.
 
-Код в Zephir повинен розміщатися в класах. Мова ghbpyfxtyf для створення об'єктно-орієнтованих бібліотек/фреймворків, тому код за межами класу не допускається. Крім того, необхідно вказувати простір імен:
+Код в Zephir повинен розміщатися в класах. Мова призначена для створення об'єктно-орієнтованих бібліотек/фреймворків, тому код за межами класу не допускається. Крім того, необхідно вказувати простір імен:
 
     namespace Test;
     
@@ -67,7 +67,7 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 Наступний приклад дуже простий; він реалізує клас і метод, який є маленькою програмою, що перевіряє типи масиву.
 
-Розгляньмо детальніше цей код, щоб ви могли почати вивчати синтаксис Zephir. У цих рядках коду приховано багацько деталей! We'll explain the general ideas here:
+Розгляньмо детальніше цей код, щоб ви могли почати вивчати синтаксис Zephir. Ці рядки містять багацько деталей! Ми пояснимо загальні ідеї:
 
     namespace Test;
     
@@ -78,17 +78,17 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
     {
         public function someMethod()
         {
-            /* Variables must be declared */
+            /* Змінні мають бути оголошені */
             var myArray;
             int i = 0, length;
     
-            /* Create an array */
+            /* Створюємо масив */
             let myArray = ["hello", 0, 100.25, false, null];
     
-            /* Count the array into a 'int' variable */
+            /* Рахуємо довжину масиву в змінні типу 'int' (ціле число) */
             let length = count(myArray);
     
-            /* Print value types */
+            /* Друкуємо значення */
             while i < length {
                 echo typeof myArray[i], "\n";
                 let i++;
@@ -99,7 +99,7 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
     }
     
 
-In the method, the first lines use the `var` and `int` keywords. There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
+In the method, the first lines use the `var` and `int` keywords. Вони використовуються для оголошення змінної в локальній області. Кожна змінна, яка використовувана у методі, повинна бути оголошена з відповідним типом. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
 
 Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `int` variables are statically typed integer variables, that can only have integer values in the entire program execution.
 
