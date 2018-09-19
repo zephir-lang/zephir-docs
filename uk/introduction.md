@@ -10,26 +10,26 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 Кожна мова власний приклад написання «Привіт світ» програми. In Zephir, this introductory example showcases some important features of the language.
 
-Code in Zephir must be placed in classes. The language is intended to create object-oriented libraries/frameworks, so code outside of a class is not allowed. Additionally, a namespace is required:
+Код в Zephir повинен розміщатися в класах. Мова ghbpyfxtyf для створення об'єктно-орієнтованих бібліотек/фреймворків, тому код за межами класу не допускається. Крім того, необхідно вказувати простір імен:
 
     namespace Test;
     
     /**
-     * This is a sample class
+     * Це зразок класу
      */
     class Hello
     {
         /**
-         * This is a sample method
+         * Це зразок методу
          */
         public function say()
         {
-            echo "Hello World!";
+            echo "Привіт світ!";
         }
     }
     
 
-Once this class is compiled it will produce the following code, that is transparently compiled by gcc/clang/vc++:
+Після компіляції код матиме вигляд, наведений нижче. Такий код без перешкод буде скомпільований за допомогою gcc/clang/vc++:
 
     #ifdef HAVE_CONFIG_H
     #include "config.h"
@@ -42,7 +42,7 @@ Once this class is compiled it will produce the following code, that is transpar
     #include "kernel/main.h"
     
     /**
-     * This is a sample class
+     * Це зразок класу
      */
     ZEPHIR_INIT_CLASS(Test_Hello) {
         ZEPHIR_REGISTER_CLASS(Test, Hello, hello, test_hello_method_entry, 0);
@@ -50,10 +50,10 @@ Once this class is compiled it will produce the following code, that is transpar
     }
     
     /**
-     * This is a sample method
+     * Це зразок методу
      */
     PHP_METHOD(Test_Hello, say) {
-        php_printf("%s", "Hello World!");
+        php_printf("%s", "Привіт світ!");
     }
     
 
