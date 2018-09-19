@@ -3,5 +3,5 @@
 - [Компіляція проти інтерпретації](/[[language]]/[[version]]/motivation#compilation-vs-interpretation)
 - [Статичнотипізовані мови проти динамічнотипізованих](/[[language]]/[[version]]/motivation#statically-typed-versus-dynamically-typed-languages)
 - [Схема компіляції](/[[language]]/[[version]]/motivation#compilation-scheme)
-- [Code protection](/[[language]]/[[version]]/motivation#code-protection)
+- [Захист коду](/[[language]]/[[version]]/motivation#code-protection)
 - [Висновок](/[[language]]/[[version]]/motivation#conclusion)

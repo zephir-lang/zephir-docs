@@ -1,2 +1,2 @@
 - [Привіт світ!](/[[language]]/[[version]]/intrductiono#hello-world)
-- [Скуштуйте Zephir](/[[language]]/[[version]]/introduction#a-taste-of-zephir)
+- [Смак Зефіру](/[[language]]/[[version]]/introduction#a-taste-of-zephir)

@@ -1,14 +1,14 @@
-# Introducing Zephir
+# Представляємо Zephir
 
-Zephir is a language that addresses the major needs of a PHP developer trying to write and compile code that can be executed by PHP. It is dynamically/statically typed, and some of its features will be familiar to PHP developers.
+Zephir - мова, яка відповідає основним потребам розробника PHP, який намагається написати та скомпілювати код, який може бути виконаний з-під PHP. Він має динамічну/статичну типізацію і деякі його функції будуть знайомі PHP-розробникам.
 
-The name Zephir is a contraction of the words Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
+Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
 
 <a name='hello-world'></a>
 
-## Hello World!
+## Привіт світ!
 
-Every language has its own "Hello World!" sample. In Zephir, this introductory example showcases some important features of the language.
+Кожна мова власний приклад написання «Привіт світ» програми. In Zephir, this introductory example showcases some important features of the language.
 
 Code in Zephir must be placed in classes. The language is intended to create object-oriented libraries/frameworks, so code outside of a class is not allowed. Additionally, a namespace is required:
 
@@ -61,7 +61,7 @@ Actually, it is not expected that a developer that uses Zephir must know or even
 
 <a name='a-taste-of-zephir'></a>
 
-## A Taste of Zephir
+## Смак Зефіру
 
 In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
 
