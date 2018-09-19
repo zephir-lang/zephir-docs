@@ -1,4 +1,4 @@
-# Bienvenido!
+# ¡Bienvenido!
 
 Bienvenido a Zephir, un lenguaje de código abierto de alto nivel/dominio específico, diseñado para facilitar la creación y mantenimiento de extensiones para PHP con un enfoque de tipo y cuidado de memoria.
 
@@ -13,23 +13,23 @@ Las principales características de Zephir son:
 | Tipo de sistema       | dinámica/estática                                       |
 | Ahorro de memoria     | punteros o gestión de memoria directa no está permitido |
 | Modelo de compilación | adelantado                                              |
-| Modelo de memoria     | task-local garbage collection                           |
+| Modelo de memoria     | recolección local de basura                             |
 
 <a name='a-small-taste'></a>
 
-## A small taste
+## Una pequeña prueba
 
-The following code registers a class with a method that filters variables, returning their alphabetic characters:
+El siguiente código registra una clase con un método que filtra variables, regresando sus caracteres alfabéticos:
 
     namespace MyLibrary;
     
     /**
-     * Filter
+     * Filtro
      */
     class Filter
     {
         /**
-         * Filters a string, returning its alpha charactersa
+         * Filtra una cadena de texto, retornando solo caracteres alfabéticos
          *
          * @param string str
          */
@@ -48,9 +48,9 @@ The following code registers a class with a method that filters variables, retur
     }
     
 
-The class can be used from PHP as follows:
+La clase puede ser utiliza desde PHP de la siguiente manera:
 
     <?php
     
     $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01he#l.lo?/1"); // prints hello
+    echo $filter->alpha("01ho#.la?/1"); // imprime hola
