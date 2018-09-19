@@ -58,7 +58,7 @@ Zephir вимагає компіляції коду, але функціонал
 
 Оптимізація швидкодії динамічної мови на кшталт PHP, є складнішою, ніж для статичної мови, як C. У статичній мові оптимізатори для прийняття рішень можуть використовувати інформацію про змінні на основі їхнього типу. У динамічній мові для оптимізатора доступно менше таких підказок, що робить вибір оптимізації складнішим.
 
-While recent advancements in optimizations for dynamic languages are promising (like JIT compilation), they lag behind the state of the art for static languages. So, if you require very high performance, static languages are probably a safer choice.
+Хоча останні досягнення в оптимізації для динамічних мов є багатообіцяючими (наприклад, компіляція JIT), вони відстають від сучасних статичнотипізованих мов. So, if you require very high performance, static languages are probably a safer choice.
 
 Another small benefit of static languages is the extra checking the compiler performs. A compiler can't find logic errors, which are far more significant, but a compiler can find errors in advance that in a dynamic language only can be found in runtime.
 
