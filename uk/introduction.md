@@ -57,17 +57,17 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
     }
     
 
-Actually, it is not expected that a developer that uses Zephir must know or even understand C. However, if you have any experience with compilers, PHP internals, or the C language itself, that will provide a clearer understanding of what's going on internally when working with Zephir.
+Насправді, розробник, який використовує Zephir, не повинен знати або навіть зрозуміти C. Однак, якщо у вас є досвід роботи з компіляторами, нутрощами PHP або самою мовою С, це дасть змогу чіткіше зрозуміти, як працює Zephir з середини.
 
 <a name='a-taste-of-zephir'></a>
 
 ## Смак Зефіру
 
-In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
+У наступних прикладах ми опишемо лише частину деталей, щоб зрозуміти, що відбувається. Задум в тому, щоб показати вам, на що схоже програмування на Zephir. Детальніші *деталі* ми розберемо в наступних розділах.
 
-The following example is very simple; it implements a class and a method, with a small program that checks the types of an array.
+Наступний приклад дуже простий; він реалізує клас і метод, який є маленькою програмою, що перевіряє типи масиву.
 
-Let's examine the code in detail, so we can begin to learn Zephir syntax. There are a lot of details in just a few lines of code! We'll explain the general ideas here:
+Розгляньмо детальніше цей код, щоб ви могли почати вивчати синтаксис Zephir. У цих рядках коду приховано багацько деталей! We'll explain the general ideas here:
 
     namespace Test;
     
