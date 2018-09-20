@@ -99,7 +99,7 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
     }
     
 
-In the method, the first lines use the `var` and `int` keywords. Вони використовуються для оголошення змінної в локальній області. Кожна змінна, яка використовувана у методі, повинна бути оголошена з відповідним типом. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
+Перший рядок у цьому методі містить ключові слова `var` та `int`. Вони використовуються для оголошення змінної в локальній області. Кожна змінна, яка використовується в методі, повинна бути оголошена з відповідним типом. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
 
 Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `int` variables are statically typed integer variables, that can only have integer values in the entire program execution.
 
