@@ -1,2 +1,2 @@
-- [initializers](/[[language]]/[[version]]/lifecycle#initializers)
-- [destructors](/[[language]]/[[version]]/lifecycle#destructors)
+- [iniciadores](/[[language]]/[[version]]/lifecycle#initializers)
+- [destructores](/[[language]]/[[version]]/lifecycle#destructors)
