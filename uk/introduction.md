@@ -101,11 +101,11 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 Перший рядок у цьому методі містить ключові слова `var` та `int`. Вони використовуються для оголошення змінної в локальній області. Кожна змінна, яка використовується в методі, повинна бути оголошена з відповідним типом. Оголошення є обов'язковим, це допомагає компілятору попередити вас про помилкові змінні, або змінні, які оголошені за межами локальної області видимості, що в свою чергу призведе до помилок під час виконання.
 
-Динамічні змінні оголошуються з ключовим словом `var`. Ці змінні можна призначити і перепризначити для різних типів. On the other hand, the `int` variables are statically typed integer variables, that can only have integer values in the entire program execution.
+Динамічні змінні оголошуються з ключовим словом `var`. Ці змінні можна призначити і перепризначити для різних типів. З іншого боку, `int` є статичною змінною типу integer (ціле число), і її тип не зміниться до самого кінця виконання програми.
 
-In contrast with PHP, you are not required to put a dollar sign ($) in front of variable names.
+Відміну від PHP вам не потрібно ставити знак долара ($) перед іменами змінних.
 
-Zephir follows the same comment conventions as Java, C#, C++, etc. A `// comment` goes to the end of a line, while a `/* comment */` can cross line boundaries.
+Zephir підтримує такий же синтаксис коментарів як у Java, C#, C++ і т. д. A `// comment` goes to the end of a line, while a `/* comment */` can cross line boundaries.
 
 Variables are, by default, immutable. This means that Zephir expects that most variables will stay unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants. When the variable value needs to be changed, the keyword `let` must be used:
 
