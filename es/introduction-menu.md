@@ -1,2 +1,2 @@
-- [Hello World!](/[[language]]/[[version]]/intrductiono#hello-world)
-- [A taste of Zephir](/[[language]]/[[version]]/introduction#a-taste-of-zephir)
+- [¡Hola Mundo!](/[[language]]/[[version]]/intrductiono#hello-world)
+- [Una prueba de Zephir](/[[language]]/[[version]]/introduction#a-taste-of-zephir)

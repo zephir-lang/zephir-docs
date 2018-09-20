@@ -1,3 +1,3 @@
-- [Prerequisites](/[[language]]/[[version]]/installation#prerequisites)
-- [Installing Zephir](/[[language]]/[[version]]/installation#installing-zephir)
-- [Testing the installation](/[[language]]/[[version]]/installation#testing-the-installation)
+- [Prerequisitos](/[[language]]/[[version]]/installation#prerequisites)
+- [Instalando Zephir](/[[language]]/[[version]]/installation#installing-zephir)
+- [Probando la instalación](/[[language]]/[[version]]/installation#testing-the-installation)
