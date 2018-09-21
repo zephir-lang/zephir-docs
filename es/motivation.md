@@ -1,10 +1,10 @@
-# Why Zephir?
+# ¿Por qué Zephir?
 
-Today's PHP applications must balance a number of concerns including stability, performance, and functionality. Every PHP application is based on a set of common components, that are also base for many other applications.
+Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, rendimiento y funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son base para muchas otras aplicaciones.
 
-These common components are libraries, frameworks, or a combination of the two. Once installed, frameworks rarely change, and being the foundation of the application, they must be highly functional, and also very fast.
+Estos componentes comunes son librerías, frameworks o una combinación de los dos. Una vez instalado, los frameworks raramente cambian, y siendo la base de la aplicación, deben ser altamente funcionales y también muy rápidos.
 
-Getting fast and robust libraries can be complicated, due to high levels of abstraction that are typically implemented on them. Given the condition that base libraries or frameworks rarely change, there is an opportunity to build extensions that provide this functionality, taking advantage of the compilation improving performance and resource consumption.
+Conseguir bibliotecas rápidas y robustas puede ser complicado, debido a los altos niveles de abstracción que típicamente se aplican sobre ellas. Given the condition that base libraries or frameworks rarely change, there is an opportunity to build extensions that provide this functionality, taking advantage of the compilation improving performance and resource consumption.
 
 With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from PHP, gaining important seconds that can make your application faster while improving the user experience.
 
