@@ -40,18 +40,18 @@ Once the code is compiled, it is not necessary to do so again. Interpreted code 
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
-## Statically Typed Versus Dynamically Typed Languages
+## Lenguajes de Tipificado Estático vs Dinámico
 
 Generally speaking, in a statically typed language, a variable is bound to a particular type for its lifetime. Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
 
     int a = 0;
-    a = "hello"; // not allowed
+    a = "hello"; // no permitido
     
 
 In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer to a value of one type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of a dynamically typed languages:
 
     var a = 0;
-    a = "hello"; // allowed
+    a = "hello"; // permitido
     
 
 Despite their productivity advantages, dynamic languages may not be the best choices for all applications, particularly for very large code bases and high-performance applications.
@@ -66,7 +66,7 @@ Zephir is both statically and dynamically typed, allowing you to take advantage 
 
 <a name='compilation-scheme'></a>
 
-## Compilation Scheme
+## Esquema de compilación
 
 Zephir offers native code generation (currently via compilation to C). A compiler like gcc/clang/vc++ optimizes and compiles the code down to machine code. The following graph shows how the process works:
 
@@ -74,18 +74,18 @@ Zephir offers native code generation (currently via compilation to C). A compile
 
 In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that improve the performance of compiled applications:
 
-* [GCC optimizations](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
-* [LLVM passes](http://llvm.org/docs/Passes.html)
-* [Visual C/C++ optimizations](http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
+* [GCC optimizaciones](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
+* [LLVM pases](http://llvm.org/docs/Passes.html)
+* [Visual C/C++ optimizaciones](http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
 <a name='code-protection'></a>
 
-## Code Protection
+## Protección del código
 
 In some circumstances, the compilation does not significantly improve performance. This may be because the bottleneck is located in the I/O bound portion(s) of the application (quite likely) rather than compute/memory bound. However, compiling code could also bring some level of intellectual protection to your application. With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
 
 <a name='conclusion'></a>
 
-## Conclusion
+## Conclusión
 
-Zephir was not created to replace PHP or C. Instead, we think it is a complement to them, allowing PHP developers to venture into code compilation and static typing. Zephir is an attempt to join good things from the C and PHP worlds, looking for opportunities to make applications faster.
+Zephir no fue creado para reemplazar a PHP o C. En cambio, creemos que es un complemento a ellos, permitiendo a los desarrolladores PHP a aventurarse en la compilación de código y en el tipificado estático. Zephir es un intento para unirse a las cosas buenas de los mundos C y PHP, buscando oportunidades para hacer a las aplicaciones más rápidas.
