@@ -4,25 +4,25 @@ Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la est
 
 Estos componentes comunes son librerías, frameworks o una combinación de los dos. Una vez instalado, los frameworks raramente cambian, y siendo la base de la aplicación, deben ser altamente funcionales y también muy rápidos.
 
-Conseguir bibliotecas rápidas y robustas puede ser complicado, debido a los altos niveles de abstracción que típicamente se aplican sobre ellas. Given the condition that base libraries or frameworks rarely change, there is an opportunity to build extensions that provide this functionality, taking advantage of the compilation improving performance and resource consumption.
+Conseguir bibliotecas rápidas y robustas puede ser complicado, debido a los altos niveles de abstracción que típicamente se aplican sobre ellas. Dada la condición de que las librerías base o frameworks raramente cambian, allí esta una oportunidad para crear extensiones que proporcionan esta funcionalidad, tomando ventaja de que la compilación mejora rendimiento y el consumo de recursos.
 
-With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from PHP, gaining important seconds that can make your application faster while improving the user experience.
+Con Zephir, se puede implementar bibliotecas/frameworks/aplicaciones orientadas a objetos que se pueden utilizar desde PHP, ganando segundos importantes que pueden hacer a la aplicación más rápidas, mejorando la experiencia del usuario.
 
 <a name='if-you-are-a-php-programmer'></a>
 
-## If You Are a PHP Programmer...
+## Si eres un programador PHP...
 
-PHP is one of the most popular languages in use for the development of web applications. Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
+PHP es uno de los idiomas más populares en el desarrollo de aplicaciones web. Los idiomas dinámicamente tipificados e interpretados como PHP ofrecen muy alta productividad debido a su flexibilidad.
 
-Since version 4, PHP is based on the Zend Engine implementation. This is a virtual machine that executes the PHP code from its bytecode representation. Zend Engine is present in almost every PHP installation in the world. With Zephir, you can create extensions for PHP running under the Zend Engine.
+Desde la versión 4, PHP está basado en la implementación del motor Zend. Se trata de una máquina virtual que ejecuta el código PHP desde su representación de código en bytes. El motor Zend está presente en casi todas las instalaciones de PHP en el mundo. Con Zephir, se pueden crear extensiones para PHP que se ejecuten en el motor Zend.
 
-PHP is hosting Zephir, so they obviously have a lot of similarities; however, they have important differences that give Zephir its own personality. For example, Zephir is more strict, and it could make you less productive compared to PHP due to the compilation step.
+PHP tiene alojando a Zephir, por lo que obviamente tienen muchas similitudes; sin embargo, tienen diferencias importantes ya que Zephir tiene propia personalidad. Por ejemplo, Zephir es más estricto, y que podría hacerte menos productivo en comparación con PHP por el paso en compilación.
 
 <a name='if-you-are-a-c-programmer'></a>
 
-## If You Are a C Programmer...
+## Si eres un programador C...
 
-C is one of the most powerful and popular languages ever created. In fact, PHP is written in C, which is one of the reasons why PHP extensions are available for it. C gives you the freedom to manage memory, use low level types and even inline assembly routines.
+C es una de los lenguajes más poderosos y populares jamás creados. De hecho, PHP está escrito en C, es una de las razones por qué las extensiones PHP están disponibles para él. C gives you the freedom to manage memory, use low level types and even inline assembly routines.
 
 However, developing big applications in C can take much longer than expected compared to PHP or Zephir, and some errors can be tricky to find if you aren't an experienced developer.
 
