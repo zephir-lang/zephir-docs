@@ -1,8 +1,8 @@
-# Tutorial
+# Навчальний посібник
 
-Zephir, and this book, are intended for PHP developers who want to create C extensions, with a lower complexity.
+Zephir, і цей посібник, призначені для PHP-розробників, які хочуть створити C-розширення, але не знають C.
 
-We assume that you are experienced in one or more other programming languages. We draw parallels to features in PHP, C, Javascript, and other languages. We'll point out features in Zephir that are similar to these other languages, as well as many features that are new or different. If you are familiar with these specific languages, you'll pick up on these comparisons more quickly.
+Ми припускаємо, що ви маєте досвід в одній або декількох інших мовах програмування. Ми проведемо паралелі з функціями PHP, C, JavaScript та іншими мовами. We'll point out features in Zephir that are similar to these other languages, as well as many features that are new or different. If you are familiar with these specific languages, you'll pick up on these comparisons more quickly.
 
 <a name='checking-the-installation'></a>
 

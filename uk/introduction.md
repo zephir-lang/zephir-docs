@@ -107,19 +107,19 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 Zephir підтримує такий же синтаксис коментарів як у Java, C#, C++ і т. д. Тег `// comment` закоментовує поточний рядок, а `/* comment */` може закоментувати кілька рядків.
 
-Початково, змінні є незмінними. This means that Zephir expects that most variables will stay unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants. When the variable value needs to be changed, the keyword `let` must be used:
+Початково, змінні є незмінними. Це означає, що Zephir очікує, що більшість змінних не буде змінюватися. Змінні, які зберігаються своє початкове значення при компіляції можуть бути оптимізовані до статичних констант. Якщо значення змінної повинне змінюватися, ви повинні використовувати ключслово `let`:
 
-    /* Create an array */
+    /* Створюємо масив */
     let myArray = ["hello", 0, 100.25, false, null];
     
 
-By default, arrays are dynamically typed like in PHP - they may contain values of different types. Functions from the PHP userland can be called in Zephir code. In the next example, the function `count` is called, but the compiler can perform optimizations like avoiding this call, because it already knows the size of the array:
+Початково, масиви є динамічнотипізованими, як в PHP. Вони можуть містити значення різних типів. Функції з PHP можна використовувати у Zephir. У наступному прикладі викликається функція `count`, але компілятор може виконати оптимізацію і взагалі не робити виклику, оскільки він уже знає розмір масиву:
 
-    /* Count the array into a 'int' variable */
+    /* Підрахувати розмір масиву в змінну типу 'int */
     let length = count(myArray);
     
 
-Parentheses in control flow statements are optional. You can use them if you feel more comfortable doing so, but you aren't required to.
+Дужки у потоках керування є необов'язковими. Ви можете використовувати їх, якщо вам так зручніше.
 
     while i < length {
         echo typeof myArray[i], "\n";
@@ -127,4 +127,4 @@ Parentheses in control flow statements are optional. You can use them if you fee
     }
     
 
-Since PHP only works with dynamic variables, methods always return dynamic variables. This means that if a statically typed variable is returned, in the PHP side you will get a dynamic variable that can be used in PHP code. Note that memory is automatically managed by the compiler, similarly to how PHP does it, so you don't need to allocate or free memory like in C.
+Оскільки PHP працює лише з динамічними змінними, методи завжди повертають динамічні змінні. Це означає, якщо повернути статичнотипізовану змінну, то з боку PHP ми отримаємо динамічнотипізовану змінну й зможемо використати її в своєму PHP-коді. Зверніть увагу. Компілятор сам керує пам'яттю, так само, як це робить PHP. Тому вам не потрібно хвилюватися про виділення чи звільнення пам'яті, як це є в C.
