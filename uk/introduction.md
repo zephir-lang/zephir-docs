@@ -113,13 +113,13 @@ Zephir підтримує такий же синтаксис коментарі�
     let myArray = ["hello", 0, 100.25, false, null];
     
 
-Початково, масиви є динамічнотипізованими, як в PHP. Вони можуть містити значення різних типів. Функції з PHP можна використовувати у Zephir. In the next example, the function `count` is called, but the compiler can perform optimizations like avoiding this call, because it already knows the size of the array:
+Початково, масиви є динамічнотипізованими, як в PHP. Вони можуть містити значення різних типів. Функції з PHP можна використовувати у Zephir. У наступному прикладі викликається функція `count`, але компілятор може виконати оптимізацію і взагалі не робити виклику, оскільки він уже знає розмір масиву:
 
-    /* Count the array into a 'int' variable */
+    /* Підрахувати розмір масиву в змінну типу 'int */
     let length = count(myArray);
     
 
-Parentheses in control flow statements are optional. You can use them if you feel more comfortable doing so, but you aren't required to.
+Дужки у потоках керування є необов'язковими. Ви можете використовувати їх, якщо вам так зручніше.
 
     while i < length {
         echo typeof myArray[i], "\n";
@@ -127,4 +127,4 @@ Parentheses in control flow statements are optional. You can use them if you fee
     }
     
 
-Since PHP only works with dynamic variables, methods always return dynamic variables. This means that if a statically typed variable is returned, in the PHP side you will get a dynamic variable that can be used in PHP code. Note that memory is automatically managed by the compiler, similarly to how PHP does it, so you don't need to allocate or free memory like in C.
+Оскільки PHP працює лише з динамічними змінними, методи завжди повертають динамічні змінні. This means that if a statically typed variable is returned, in the PHP side you will get a dynamic variable that can be used in PHP code. Note that memory is automatically managed by the compiler, similarly to how PHP does it, so you don't need to allocate or free memory like in C.
