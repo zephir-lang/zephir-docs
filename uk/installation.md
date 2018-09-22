@@ -1,19 +1,19 @@
-# Installation
+# Встановлення
 
-To install Zephir, please follow these steps:
+Щоб встановити Zephir, будь ласка, слідуйте наступним крокам:
 
 <a name='prerequisites'></a>
 
-## Prerequisites
+## Передумови
 
-To build a PHP extension and use Zephir you need the following requirements:
+Щоб створити PHP-розширення за допомогою Zephir, вам потрібні наступні програми та засоби:
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
 * gcc >= 4.x/clang >= 3.x
-* re2c 0.13 or later
-* gnu make 3.81 or later
-* autoconf 2.31 or later
-* automake 1.14 or later
+* re2c 0.13 або новіший
+* gnu make 3.81 або новіший
+* autoconf 2.31 або новіший
+* automake 1.14 або новіший
 * libpcre3
 * php development headers and tools
 * The build-essential package when using gcc on Ubuntu (and likely other distributions as well)
