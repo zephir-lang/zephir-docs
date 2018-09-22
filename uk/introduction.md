@@ -107,7 +107,7 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 Zephir підтримує такий же синтаксис коментарів як у Java, C#, C++ і т. д. Тег `// comment` закоментовує поточний рядок, а `/* comment */` може закоментувати кілька рядків.
 
-Початково, змінні є незмінними. This means that Zephir expects that most variables will stay unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants. When the variable value needs to be changed, the keyword `let` must be used:
+Початково, змінні є незмінними. Це означає, що Zephir очікує, що більшість змінних не буде змінюватися. Змінні, які зберігаються своє початкове значення при компіляції можуть бути оптимізовані до статичних констант. When the variable value needs to be changed, the keyword `let` must be used:
 
     /* Create an array */
     let myArray = ["hello", 0, 100.25, false, null];
