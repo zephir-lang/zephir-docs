@@ -107,13 +107,13 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 Zephir підтримує такий же синтаксис коментарів як у Java, C#, C++ і т. д. Тег `// comment` закоментовує поточний рядок, а `/* comment */` може закоментувати кілька рядків.
 
-Початково, змінні є незмінними. Це означає, що Zephir очікує, що більшість змінних не буде змінюватися. Змінні, які зберігаються своє початкове значення при компіляції можуть бути оптимізовані до статичних констант. When the variable value needs to be changed, the keyword `let` must be used:
+Початково, змінні є незмінними. Це означає, що Zephir очікує, що більшість змінних не буде змінюватися. Змінні, які зберігаються своє початкове значення при компіляції можуть бути оптимізовані до статичних констант. Якщо значення змінної повинне змінюватися, ви повинні використовувати ключслово `let`:
 
-    /* Create an array */
+    /* Створюємо масив */
     let myArray = ["hello", 0, 100.25, false, null];
     
 
-By default, arrays are dynamically typed like in PHP - they may contain values of different types. Functions from the PHP userland can be called in Zephir code. In the next example, the function `count` is called, but the compiler can perform optimizations like avoiding this call, because it already knows the size of the array:
+Початково, масиви є динамічнотипізованими, як в PHP. Вони можуть містити значення різних типів. Функції з PHP можна використовувати у Zephir. In the next example, the function `count` is called, but the compiler can perform optimizations like avoiding this call, because it already knows the size of the array:
 
     /* Count the array into a 'int' variable */
     let length = count(myArray);
