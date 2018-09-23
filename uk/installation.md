@@ -18,13 +18,13 @@
 * php development headers and tools
 * The build-essential package when using gcc on Ubuntu (and likely other distributions as well)
 
-If you're using Ubuntu, you can install the required packages this way:
+Якщо ви використовуєте Ubuntu, то можете встановити необхідні пакунки таким чином:
 
     $ sudo apt-get update
     $ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
     
 
-Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
+Оскільки Zephir написаний на PHP, вам необхідна остання версія PHP, яка буде доступна через консоль:
 
     $ php -v
     PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
