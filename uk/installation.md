@@ -15,8 +15,8 @@
 * autoconf 2.31 або новіший
 * automake 1.14 або новіший
 * libpcre3
-* php development headers and tools
-* The build-essential package when using gcc on Ubuntu (and likely other distributions as well)
+* заголовки та інструменти розробника PHP
+* Необхідні пакети для використання gcc на Ubuntu (а також, імовірно, інших дистрибутивів)
 
 Якщо ви використовуєте Ubuntu, то можете встановити необхідні пакунки таким чином:
 
@@ -48,14 +48,14 @@
 
 ## Встановлення Zephir
 
-First, make sure the Zephir parser extension is installed and activated following its [tutorial](https://github.com/phalcon/php-zephir-parser)
+Спершу, переконайтеся розширення Zephir встановлене та налаштоване згідно [навчального посібника](https://github.com/phalcon/php-zephir-parser)
 
-The Zephir compiler currently must be cloned from Github:
+Наразі компілятор Zephir можна склонувати з Github:
 
     $ git clone https://github.com/phalcon/zephir
     
 
-Run the Zephir installer (this compiles/creates the parser):
+Запустіть програму установки Zephir (це скомпілює/створить аналізатор (parser)):
 
     $ cd zephir
     $ ./install -c
@@ -63,8 +63,8 @@ Run the Zephir installer (this compiles/creates the parser):
 
 <a name='testing-the-installation'></a>
 
-## Testing the Installation
+## Тестування встановлення
 
-Check if Zephir is available from any directory by executing:
+Перевірити чи Zephir успішно встановився можна командою:
 
     $ zephir help
