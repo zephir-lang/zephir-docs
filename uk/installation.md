@@ -15,16 +15,16 @@
 * autoconf 2.31 або новіший
 * automake 1.14 або новіший
 * libpcre3
-* php development headers and tools
-* The build-essential package when using gcc on Ubuntu (and likely other distributions as well)
+* заголовки та інструменти розробника PHP
+* Необхідні пакети для використання gcc на Ubuntu (а також, імовірно, інших дистрибутивів)
 
-If you're using Ubuntu, you can install the required packages this way:
+Якщо ви використовуєте Ubuntu, то можете встановити необхідні пакунки таким чином:
 
     $ sudo apt-get update
     $ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
     
 
-Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
+Оскільки Zephir написаний на PHP, вам необхідна остання версія PHP, яка буде доступна через консоль:
 
     $ php -v
     PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
@@ -33,7 +33,7 @@ Since Zephir is written in PHP, you need to have a recent version of PHP install
             with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
     
 
-Also, make sure you have the PHP development libraries installed along with your PHP installation:
+Також переконайтеся, що у вас встановлені пакунки бібліотек для розробки PHP:
 
     $ phpize -v
     Configuring for:
@@ -42,20 +42,20 @@ Also, make sure you have the PHP development libraries installed along with your
     Zend Extension Api No:   320151012
     
 
-You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
+Наведені вище числа - лише для прикладу, у вас вони можуть відрізнятися. Важливо, щоб ці команди працювали.
 
 <a name='installing-zephir'></a>
 
-## Installing Zephir
+## Встановлення Zephir
 
-First, make sure the Zephir parser extension is installed and activated following its [tutorial](https://github.com/phalcon/php-zephir-parser)
+Спершу, переконайтеся розширення Zephir встановлене та налаштоване згідно [навчального посібника](https://github.com/phalcon/php-zephir-parser)
 
-The Zephir compiler currently must be cloned from Github:
+Наразі компілятор Zephir можна склонувати з Github:
 
     $ git clone https://github.com/phalcon/zephir
     
 
-Run the Zephir installer (this compiles/creates the parser):
+Запустіть програму установки Zephir (це скомпілює/створить аналізатор (parser)):
 
     $ cd zephir
     $ ./install -c
@@ -63,8 +63,8 @@ Run the Zephir installer (this compiles/creates the parser):
 
 <a name='testing-the-installation'></a>
 
-## Testing the Installation
+## Тестування встановлення
 
-Check if Zephir is available from any directory by executing:
+Перевірити чи Zephir успішно встановився можна командою:
 
     $ zephir help
