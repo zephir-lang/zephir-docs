@@ -33,7 +33,7 @@
             with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
     
 
-Also, make sure you have the PHP development libraries installed along with your PHP installation:
+Також переконайтеся, що у вас встановлені пакунки бібліотек для розробки PHP:
 
     $ phpize -v
     Configuring for:
@@ -42,11 +42,11 @@ Also, make sure you have the PHP development libraries installed along with your
     Zend Extension Api No:   320151012
     
 
-You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
+Наведені вище числа - лише для прикладу, у вас вони можуть відрізнятися. Важливо, щоб ці команди працювали.
 
 <a name='installing-zephir'></a>
 
-## Installing Zephir
+## Встановлення Zephir
 
 First, make sure the Zephir parser extension is installed and activated following its [tutorial](https://github.com/phalcon/php-zephir-parser)
 
