@@ -50,14 +50,14 @@ Zephir, і цей посібник, призначені для PHP-розроб
 
 <a name='extension-skeleton'></a>
 
-## Структура розширення
+## Каркас розширення
 
-The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
+Перше, що ми зробимо це згенеруємо каркас нашого розширення. Це створить нам базову структуру розширення з якою ми працюватимемо далі. У нашому випадку ми збираємося створити розширення, яке називається `utils` (утиліти):
 
     $ zephir init utils
     
 
-After this, a directory called "utils" is created on the current working directory:
+Після цього в поточному робочому каталозі створюється каталог, що називається «utils»:
 
     utils/
        ext/
