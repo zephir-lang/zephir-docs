@@ -36,7 +36,7 @@ La compilación generalmente retrasa el desarrollo; necesitará un poco más de 
 
 Zephir requiere la compilación de su código, pero la funcionalidad se utiliza desde PHP, que es interpretado.
 
-Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. A developer can decide which parts of their application should be in Zephir and which not.
+Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. Un desarrollador, puede decidir cuales partes de su aplicación deben estar en Zephir y cuales no.
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
@@ -70,7 +70,7 @@ Zephir es tanto estática como dinámicamente tipificado, lo que le permite apro
 
 Zephir ofrece la generación nativa de código (actualmente a través de la compilación a C). Un compilador como gcc/clang/vc++ optimiza y compila el código hasta código de máquina. El siguiente gráfico muestra como funciona el proceso:
 
-![compilation scheme](/images/content/scheme.png)
+![esquema de compilación](/images/content/scheme.png)
 
 Además de los proporcionados por Zephir, con el tiempo, los compiladores han implementado y madurado una serie de optimizaciones que mejoran el rendimiento de las aplicaciones compiladas:
 
