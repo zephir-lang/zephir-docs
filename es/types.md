@@ -99,7 +99,7 @@ Integer numbers. The size of an integer is platform-dependent, although a maximu
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer overflow
+### Integer sobrecarga
 
 Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
 
@@ -191,7 +191,7 @@ A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary 
 
 <a name='static-types-char-unsigned'></a>
 
-### Char/Unsigned Char
+### Char/Char sin signo
 
 Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A 'char' variable can be used to store any character in a string:
 
@@ -210,7 +210,7 @@ Char variables are the smallest addressable unit of the machine that can contain
 
 <a name='static-types-integer-unsigned'></a>
 
-### Integer/Unsigned Integer
+### Integer/Integer sin signo
 
 Integer values are like the integer member in dynamic values. Values assigned to integer variables remain integer:
 
@@ -284,7 +284,7 @@ Unsigned integers are twice bigger than standard integers. Assigning unsigned in
 
 <a name='static-types-long-unsigned'></a>
 
-### Long/Unsigned Long
+### Long/Long sin signo
 
 Long variables are twice bigger than integer variables, thus they can store bigger numbers. As with integers, values assigned to long variables are automatically casted to this type:
 
