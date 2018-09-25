@@ -2,18 +2,18 @@
 
 Zephir, і цей посібник, призначені для PHP-розробників, які хочуть створити C-розширення, але не знають C.
 
-Ми припускаємо, що ви маєте досвід в одній або декількох інших мовах програмування. Ми проведемо паралелі з функціями PHP, C, JavaScript та іншими мовами. We'll point out features in Zephir that are similar to these other languages, as well as many features that are new or different. If you are familiar with these specific languages, you'll pick up on these comparisons more quickly.
+Ми припускаємо, що ви маєте досвід в одній або декількох інших мовах програмування. Ми проведемо паралелі з функціями PHP, C, JavaScript та іншими мовами. Ми акцентуватимемо увагу на функції Zephir, які є подібними до функцій в інших мовах, а також на функціях які є новими. Якщо ви знайомі з цими мовами вам буде простіше розібратися що до чого.
 
 <a name='checking-the-installation'></a>
 
-## Checking the Installation
+## Перевірка встановлення
 
-If you have successfully installed Zephir, you will be able to execute the following command in your console:
+Якщо ви успішно встановили Zephir, тоді виконайте таку команду в консолі:
 
     $ zephir help
     
 
-If everything is well, you should see the following help (or something very similar):
+Якщо все гаразд, ви повинні побачити такий список команд та логотип (або щось схоже):
 
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
@@ -50,14 +50,14 @@ If everything is well, you should see the following help (or something very simi
 
 <a name='extension-skeleton'></a>
 
-## Extension Skeleton
+## Каркас розширення
 
-The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
+Перше, що ми зробимо це згенеруємо каркас нашого розширення. Це створить нам базову структуру розширення з якою ми працюватимемо далі. У нашому випадку ми збираємося створити розширення, яке називається `utils` (утиліти):
 
     $ zephir init utils
     
 
-After this, a directory called "utils" is created on the current working directory:
+Після цього в поточному робочому каталозі створюється каталог, що називається «utils»:
 
     utils/
        ext/
