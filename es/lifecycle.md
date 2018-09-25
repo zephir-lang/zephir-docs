@@ -12,7 +12,7 @@ You can register an `include` and a `code` for each group's supported `INIT` and
 
 <a name='initializers'></a>
 
-## initializers
+## iniciadores
 
 The `initializers` block looks something like this:
 
@@ -48,7 +48,7 @@ The `initializers` block looks something like this:
 
 <a name='desctructors'></a>
 
-## destructors
+## destructores
 
 And the `destructors` block like this:
 
