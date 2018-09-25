@@ -1,78 +1,78 @@
 # ¿Por qué Zephir?
 
-Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, rendimiento y funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son base para muchas otras aplicaciones.
+Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, el rendimiento y la funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son la base para muchas otras aplicaciones.
 
-Estos componentes comunes son librerías, frameworks o una combinación de los dos. Una vez instalado, los frameworks raramente cambian, y siendo la base de la aplicación, deben ser altamente funcionales y también muy rápidos.
+Estos componentes comunes son librerías, frameworks o una combinación de ellos. Una vez instalados, los frameworks raramente cambian, y siendo la base de la aplicación, deben ser altamente funcionales y también muy rápidos.
 
-Conseguir bibliotecas rápidas y robustas puede ser complicado, debido a los altos niveles de abstracción que típicamente se aplican sobre ellas. Dada la condición de que las librerías base o frameworks raramente cambian, allí esta una oportunidad para crear extensiones que proporcionan esta funcionalidad, tomando ventaja de que la compilación mejora rendimiento y el consumo de recursos.
+Conseguir bibliotecas rápidas y robustas puede ser complicado, debido a los altos niveles de abstracción que típicamente se aplican sobre ellas. Dada la condición de que las librerías base o frameworks raramente cambian, allí hay una oportunidad para crear extensiones que proporcionen esta funcionalidad, tomando ventaja que la compilación mejora el rendimiento y el consumo de recursos.
 
-Con Zephir, se puede implementar bibliotecas/frameworks/aplicaciones orientadas a objetos que se pueden utilizar desde PHP, ganando segundos importantes que pueden hacer a la aplicación más rápidas, mejorando la experiencia del usuario.
+Con Zephir, se pueden implementar bibliotecas/frameworks/aplicaciones orientadas a objetos que se puedan utilizar desde PHP, ganando segundos importantes, los cuales pueden hacer a la aplicación más rápida, mejorando la experiencia del usuario.
 
 <a name='if-you-are-a-php-programmer'></a>
 
 ## Si eres un programador PHP...
 
-PHP es uno de los idiomas más populares en el desarrollo de aplicaciones web. Los idiomas dinámicamente tipificados e interpretados como PHP ofrecen muy alta productividad debido a su flexibilidad.
+PHP es uno de los idiomas más populares en el desarrollo de aplicaciones web. Los lenguajes dinámicamente tipificados e interpretados como PHP ofrecen un productividad muy alta debido a su flexibilidad.
 
 Desde la versión 4, PHP está basado en la implementación del motor Zend. Se trata de una máquina virtual que ejecuta el código PHP desde su representación de código en bytes. El motor Zend está presente en casi todas las instalaciones de PHP en el mundo. Con Zephir, se pueden crear extensiones para PHP que se ejecuten en el motor Zend.
 
-PHP tiene alojando a Zephir, por lo que obviamente tienen muchas similitudes; sin embargo, tienen diferencias importantes ya que Zephir tiene propia personalidad. Por ejemplo, Zephir es más estricto, y que podría hacerte menos productivo en comparación con PHP por el paso en compilación.
+PHP tiene alojando a Zephir, por lo que obviamente tienen muchas similitudes; sin embargo, tienen diferencias importantes ya que Zephir tiene personalidad propia. Por ejemplo, Zephir es más estricto, y podría hacerte menos productivo en comparación con PHP por el paso en compilación.
 
 <a name='if-you-are-a-c-programmer'></a>
 
 ## Si eres un programador C...
 
-C es una de los lenguajes más poderosos y populares jamás creados. De hecho, PHP está escrito en C, es una de las razones por qué las extensiones PHP están disponibles para él. C le da la libertad de administrar la memoria, usar tipos de bajo nivel e incluso rutinas de ensamblaje en línea.
+C es una de los lenguajes más poderosos y populares jamás creados. De hecho, PHP está escrito en C, es una de las razones de que las extensiones PHP estén disponibles para él. C le da la libertad de administrar la memoria, usar tipos de bajo nivel e incluso rutinas de ensamblaje en línea.
 
 Sin embargo, desarrollar grandes aplicaciones en C puede tomar mucho más tiempo de lo esperado, comparado con PHP o Zephir, y algunos errores pueden ser difíciles de encontrar si no eres un programador experimentado.
 
-Zephir fue diseñado para ser seguro, por lo que no implementa punteros o gestión de memoria manual, así que si eres un programador C, usted sentirá que Zephir menos potente pero más amigable, que C.
+Zephir fue diseñado para ser seguro, por lo que no implementa punteros o gestión de memoria manual, así que si eres un programador C, sentirá que Zephir es menos potente pero más amigable, que C.
 
 <a name='compilation-vs-interpretation'></a>
 
 ## Compilación vs Interpretación
 
-Compilation usually slows development down; you will need a bit more patience to compile your code before running it. On the other hand, interpretation tends to reduce code performance in favor of developer productivity. That said, in some cases, there is not any noticeable difference between the speed of interpreted and compiled code.
+La compilación generalmente retrasa el desarrollo; necesitará un poco más de paciencia para compilar el código antes de ejecutarlo. Por otro lado, la interpretación tiende a reducir el rendimiento del código a favor de la productividad del desarrollador. Dicho esto, en algunos casos, no hay ninguna diferencia notable entre la velocidad del código interpretado y del compilado.
 
-Zephir requires compilation of your code, but functionality is used from PHP, which is interpreted.
+Zephir requiere la compilación de su código, pero la funcionalidad se utiliza desde PHP, que es interpretado.
 
-Once the code is compiled, it is not necessary to do so again. Interpreted code is interpreted each time it is run. Adeveloper can decide which parts of their application should be in Zephir and which not.
+Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. Un desarrollador, puede decidir cuales partes de su aplicación deben estar en Zephir y cuales no.
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
 ## Lenguajes de Tipificado Estático vs Dinámico
 
-Generally speaking, in a statically typed language, a variable is bound to a particular type for its lifetime. Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
+En general, en un lenguaje estáticamente tipificado, una variable está limitada a un tipo particular durante toda su vida. No se puede cambiar su tipo y sólo puede hacer referencia a las operaciones e instancias de tipo compatible. Los lenguajes como C o C++ fueron implementados con este esquema:
 
     int a = 0;
     a = "hello"; // no permitido
     
 
-In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer to a value of one type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of a dynamically typed languages:
+En tipificado dinámico, el tipo está limitado al valor, no la variable. Por lo tanto, una variable puede hacer referencia a un valor de un tipo, entonces puede reasignarse posteriormente a un valor de un tipo sin relación. JavaScript y PHP son ejemplos de lenguajes dinámicamente tipificados:
 
     var a = 0;
     a = "hello"; // permitido
     
 
-Despite their productivity advantages, dynamic languages may not be the best choices for all applications, particularly for very large code bases and high-performance applications.
+A pesar de sus ventajas en productividad, los lenguajes dinámicos pueden no ser las mejores opciones para todas las aplicaciones, particularmente para bases de código muy grandes y aplicaciones de alto rendimiento.
 
-Optimizing the performance of a dynamic language like PHP is more challenging than for a static language like C. In a static language, optimizers can exploit the type information attached to variables themselves to make decisions. In a dynamic language, fewer such clues are available for the optimizer, making optimization choices harder.
+Optimizar el rendimiento de un lenguaje dinámico como PHP es más difícil que para un lenguaje estático como C. En un lenguaje estático, los optimizadores pueden aprovechar la información de tipo de las variables para tomar decisiones. En un lenguaje dinámico, hay menos pistas de este tipo disponibles para el optimizador, haciendo que las decisiones de optimización sean más difíciles.
 
-While recent advancements in optimizations for dynamic languages are promising (like JIT compilation), they lag behind the state of the art for static languages. So, if you require very high performance, static languages are probably a safer choice.
+Mientras que los avances recientes en optimizaciones para lenguajes dinámicos son prometedoras (como la compilación JIT), se quedan atrás del estado del arte de los lenguajes estáticos. Por lo tanto, si usted requiere un rendimiento muy elevado, los lenguajes estáticos son probablemente una opción más segura.
 
-Another small benefit of static languages is the extra checking the compiler performs. A compiler can't find logic errors, which are far more significant, but a compiler can find errors in advance that in a dynamic language only can be found in runtime.
+Otro pequeño beneficio de los lenguajes estáticos es la comprobación extra que realiza el compilador. Un compilador no puede encontrar errores lógicos, que son mucho más significativos, pero un compilador puede encontrar errores por adelantado que en un lenguaje dinámico solo se pueden encontrar en tiempo de ejecución.
 
-Zephir is both statically and dynamically typed, allowing you to take advantage of both approaches where possible.
+Zephir está tanto estática como dinámicamente tipificado, lo que le permite aprovechar ambos enfoques, siempre que sea posible.
 
 <a name='compilation-scheme'></a>
 
 ## Esquema de compilación
 
-Zephir offers native code generation (currently via compilation to C). A compiler like gcc/clang/vc++ optimizes and compiles the code down to machine code. The following graph shows how the process works:
+Zephir ofrece la generación nativa de código (actualmente a través de la compilación a C). Un compilador como gcc/clang/vc++ optimizan y compilan el código hasta código de máquina. El siguiente gráfico muestra como funciona el proceso:
 
 ![](/images/content/scheme.png)
 
-In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that improve the performance of compiled applications:
+Además de los proporcionados por Zephir, con el tiempo, los compiladores han implementado y madurado una serie de optimizaciones que mejoran el rendimiento de las aplicaciones compiladas:
 
 * [GCC optimizaciones](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
 * [LLVM pases](http://llvm.org/docs/Passes.html)
@@ -82,7 +82,7 @@ In addition to the ones provided by Zephir, over time, compilers have implemente
 
 ## Protección del código
 
-In some circumstances, the compilation does not significantly improve performance. This may be because the bottleneck is located in the I/O bound portion(s) of the application (quite likely) rather than compute/memory bound. However, compiling code could also bring some level of intellectual protection to your application. With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
+En algunas circunstancias, la compilación no mejora significativamente el rendimiento. Esto puede deberse a que el cuello de botella se encuentra en la porción o porciones de entrada y salida de la aplicación en lugar del límite de cálculo/memoria. Sin embargo, el código de compilación también podría brindar algún nivel de protección intelectual a su aplicación. Con Zephir, que produce nativos binarios, también tiene la capacidad de "ocultar" el código original a usuarios o clientes.
 
 <a name='conclusion'></a>
 
