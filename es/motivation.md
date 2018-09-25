@@ -1,18 +1,18 @@
 # ¿Por qué Zephir?
 
-Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, rendimiento y funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son base para muchas otras aplicaciones.
+Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, el rendimiento y la funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son la base para muchas otras aplicaciones.
 
-Estos componentes comunes son librerías, frameworks o una combinación de los dos. Una vez instalado, los frameworks raramente cambian, y siendo la base de la aplicación, deben ser altamente funcionales y también muy rápidos.
+Estos componentes comunes son librerías, frameworks o una combinación de ellos. Una vez instalados, los frameworks raramente cambian, y siendo la base de la aplicación, deben ser altamente funcionales y también muy rápidos.
 
-Conseguir bibliotecas rápidas y robustas puede ser complicado, debido a los altos niveles de abstracción que típicamente se aplican sobre ellas. Dada la condición de que las librerías base o frameworks raramente cambian, allí esta una oportunidad para crear extensiones que proporcionan esta funcionalidad, tomando ventaja de que la compilación mejora rendimiento y el consumo de recursos.
+Conseguir bibliotecas rápidas y robustas puede ser complicado, debido a los altos niveles de abstracción que típicamente se aplican sobre ellas. Dada la condición de que las librerías base o frameworks raramente cambian, allí hay una oportunidad para crear extensiones que proporcionen esta funcionalidad, tomando ventaja que la compilación mejora el rendimiento y el consumo de recursos.
 
-Con Zephir, se puede implementar bibliotecas/frameworks/aplicaciones orientadas a objetos que se pueden utilizar desde PHP, ganando segundos importantes que pueden hacer a la aplicación más rápidas, mejorando la experiencia del usuario.
+Con Zephir, se pueden implementar bibliotecas/frameworks/aplicaciones orientadas a objetos que se puedan utilizar desde PHP, ganando segundos importantes, los cuales pueden hacer a la aplicación más rápida, mejorando la experiencia del usuario.
 
 <a name='if-you-are-a-php-programmer'></a>
 
 ## Si eres un programador PHP...
 
-PHP es uno de los idiomas más populares en el desarrollo de aplicaciones web. Los idiomas dinámicamente tipificados e interpretados como PHP ofrecen muy alta productividad debido a su flexibilidad.
+PHP es uno de los idiomas más populares en el desarrollo de aplicaciones web. Los lenguajes dinámicamente tipificados e interpretados como PHP ofrecen un productividad muy alta debido a su flexibilidad.
 
 Desde la versión 4, PHP está basado en la implementación del motor Zend. Se trata de una máquina virtual que ejecuta el código PHP desde su representación de código en bytes. El motor Zend está presente en casi todas las instalaciones de PHP en el mundo. Con Zephir, se pueden crear extensiones para PHP que se ejecuten en el motor Zend.
 
@@ -68,11 +68,11 @@ Zephir está tanto estática como dinámicamente tipificado, lo que le permite a
 
 ## Esquema de compilación
 
-Zephir offers native code generation (currently via compilation to C). A compiler like gcc/clang/vc++ optimizes and compiles the code down to machine code. The following graph shows how the process works:
+Zephir ofrece la generación nativa de código (actualmente a través de la compilación a C). Un compilador como gcc/clang/vc++ optimizan y compilan el código hasta código de máquina. El siguiente gráfico muestra como funciona el proceso:
 
 ![](/images/content/scheme.png)
 
-In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that improve the performance of compiled applications:
+Además de los proporcionados por Zephir, con el tiempo, los compiladores han implementado y madurado una serie de optimizaciones que mejoran el rendimiento de las aplicaciones compiladas:
 
 * [GCC optimizaciones](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
 * [LLVM pases](http://llvm.org/docs/Passes.html)
@@ -82,7 +82,7 @@ In addition to the ones provided by Zephir, over time, compilers have implemente
 
 ## Protección del código
 
-In some circumstances, the compilation does not significantly improve performance. This may be because the bottleneck is located in the I/O bound portion(s) of the application (quite likely) rather than compute/memory bound. However, compiling code could also bring some level of intellectual protection to your application. With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
+En algunas circunstancias, la compilación no mejora significativamente el rendimiento. Esto puede deberse a que el cuello de botella se encuentra en la porción o porciones de entrada y salida de la aplicación en lugar del límite de cálculo/memoria. Sin embargo, el código de compilación también podría brindar algún nivel de protección intelectual a su aplicación. Con Zephir, que produce nativos binarios, también tiene la capacidad de "ocultar" el código original a usuarios o clientes.
 
 <a name='conclusion'></a>
 
