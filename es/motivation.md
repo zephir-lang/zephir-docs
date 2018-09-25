@@ -32,11 +32,11 @@ Zephir fue diseñado para ser seguro, por lo que no implementa punteros o gesti�
 
 ## Compilación vs Interpretación
 
-Compilation usually slows development down; you will need a bit more patience to compile your code before running it. On the other hand, interpretation tends to reduce code performance in favor of developer productivity. That said, in some cases, there is not any noticeable difference between the speed of interpreted and compiled code.
+La compilación generalmente retrasa el desarrollo; necesitará un poco más de paciencia para compilar el código antes de ejecutarlo. Por otro lado, la interpretación tiende a reducir el rendimiento del código a favor de la productividad del desarrollador. Dicho esto, en algunos casos, no hay ninguna diferencia notable entre la velocidad del código interpretado y del compilado.
 
-Zephir requires compilation of your code, but functionality is used from PHP, which is interpreted.
+Zephir requiere la compilación de su código, pero la funcionalidad se utiliza desde PHP, que se interpretado.
 
-Once the code is compiled, it is not necessary to do so again. Interpreted code is interpreted each time it is run. Adeveloper can decide which parts of their application should be in Zephir and which not.
+Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. Un desarrollador puede decidir qué partes de su aplicación deben estar en Zephir y cuales no.
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
