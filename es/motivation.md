@@ -36,7 +36,7 @@ La compilación generalmente retrasa el desarrollo; necesitará un poco más de 
 
 Zephir requiere la compilación de su código, pero la funcionalidad se utiliza desde PHP, que es interpretado.
 
-Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. Un desarrollador, puede decidir cuales partes de su aplicación deben estar en Zephir y cuales no.
+Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. A developer can decide which parts of their application should be in Zephir and which not.
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
@@ -62,15 +62,15 @@ Mientras que los avances recientes en optimizaciones para lenguajes dinámicos s
 
 Otro pequeño beneficio de los lenguajes estáticos es la comprobación extra que realiza el compilador. Un compilador no puede encontrar errores lógicos, que son mucho más significativos, pero un compilador puede encontrar errores por adelantado que en un lenguaje dinámico solo se pueden encontrar en tiempo de ejecución.
 
-Zephir está tanto estática como dinámicamente tipificado, lo que le permite aprovechar ambos enfoques, siempre que sea posible.
+Zephir es tanto estática como dinámicamente tipificado, lo que le permite aprovechar ambos enfoques, siempre que sea posible.
 
 <a name='compilation-scheme'></a>
 
 ## Esquema de compilación
 
-Zephir ofrece la generación nativa de código (actualmente a través de la compilación a C). Un compilador como gcc/clang/vc++ optimizan y compilan el código hasta código de máquina. El siguiente gráfico muestra como funciona el proceso:
+Zephir ofrece la generación nativa de código (actualmente a través de la compilación a C). Un compilador como gcc/clang/vc++ optimiza y compila el código hasta código de máquina. El siguiente gráfico muestra como funciona el proceso:
 
-![](/images/content/scheme.png)
+![compilation scheme](/images/content/scheme.png)
 
 Además de los proporcionados por Zephir, con el tiempo, los compiladores han implementado y madurado una serie de optimizaciones que mejoran el rendimiento de las aplicaciones compiladas:
 
@@ -82,10 +82,10 @@ Además de los proporcionados por Zephir, con el tiempo, los compiladores han im
 
 ## Protección del código
 
-En algunas circunstancias, la compilación no mejora significativamente el rendimiento. Esto puede deberse a que el cuello de botella se encuentra en la porción o porciones de entrada y salida de la aplicación en lugar del límite de cálculo/memoria. Sin embargo, el código de compilación también podría brindar algún nivel de protección intelectual a su aplicación. Con Zephir, que produce nativos binarios, también tiene la capacidad de "ocultar" el código original a usuarios o clientes.
+En algunas circunstancias, la compilación no mejora significativamente el rendimiento. Esto puede deberse a que el cuello de botella se encuentra en la porción o porciones de entrada y salida de la aplicación en lugar del límite de cálculo/memoria. Sin embargo, compilando el código, también podría brindar algún nivel de protección intelectual a su aplicación. Con Zephir, que produce nativos binarios, también tiene la capacidad de "ocultar" el código original a usuarios o clientes.
 
 <a name='conclusion'></a>
 
 ## Conclusión
 
-Zephir no fue creado para reemplazar a PHP o C. En cambio, creemos que es un complemento a ellos, permitiendo a los desarrolladores PHP a aventurarse en la compilación de código y en el tipificado estático. Zephir es un intento para unirse a las cosas buenas de los mundos C y PHP, buscando oportunidades para hacer a las aplicaciones más rápidas.
+Zephir no fue creado para reemplazar a PHP o C. En cambio, creemos que es un complemento a ellos, invitando a los desarrolladores PHP a aventurarse en la compilación de código y en el tipificado estático. Zephir es un intento para unirse a las cosas buenas de los mundos C y PHP, buscando oportunidades para hacer a las aplicaciones más rápidas.
