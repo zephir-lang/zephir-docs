@@ -36,7 +36,7 @@ Zephir був розроблений для безпечної роботи з �
 
 Zephir вимагає компіляції коду, але функціональність використовується з PHP, який інтерпретується.
 
-Після компіляції коду не потрібно робити це знову. Інтерпретований код інтерпретується кожного разу, коли він запускається. Розробники можуть вирішити, які частини їхньої програми мають бути на Zephir, а які ні.
+Після компіляції коду не потрібно робити це знову. Інтерпретований код інтерпретується кожного разу, коли він запускається. A developer can decide which parts of their application should be in Zephir and which not.
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
@@ -70,7 +70,7 @@ Zephir поєднує в собі статичну та динамічну ти�
 
 Zephir offers native code generation (currently via compilation to C). A compiler like gcc/clang/vc++ optimizes and compiles the code down to machine code. The following graph shows how the process works:
 
-![](/images/content/scheme.png)
+![compilation scheme](/images/content/scheme.png)
 
 In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that improve the performance of compiled applications:
 
