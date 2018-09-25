@@ -19,7 +19,7 @@ The following operators are supported:
 
 <a name='bitwise-operators'></a>
 
-## Bitwise Operators
+## Operadores bit a bit
 
 The following operators are supported:
 
@@ -43,7 +43,7 @@ Learn more about comparison of dynamic variables in the [php manual](http://www.
 
 <a name='comparison-operators'></a>
 
-## Comparison Operators
+## Comparación de Operadores
 
 Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
 
@@ -74,7 +74,7 @@ Example:
 
 <a name='logical-operators'></a>
 
-## Logical Operators
+## Operadores Lógicos
 
 The following operators are supported:
 
