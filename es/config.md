@@ -95,7 +95,7 @@ Extension description - any text describing your extension:
 
 <a name='destructors'></a>
 
-## destructors
+## destructores
 
 This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
 
@@ -268,7 +268,7 @@ Extension globals available. Check the [globals](/[[language]]/[[version]]/globa
 
 <a name='initializers'></a>
 
-## initializers
+## iniciadores
 
 This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
 
