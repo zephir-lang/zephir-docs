@@ -42,27 +42,27 @@ Una vez que se compila el código, no es necesario hacerlo otra vez. El código 
 
 ## Lenguajes de Tipificado Estático vs Dinámico
 
-Generally speaking, in a statically typed language, a variable is bound to a particular type for its lifetime. Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
+En general, en un lenguaje estáticamente tipificado, una variable está limitada a un tipo particular durante toda su vida. No se puede cambiar su tipo y sólo puede hacer referencia a las operaciones e instancias de tipo compatible. Los lenguajes como C o C++ fueron implementados con este esquema:
 
     int a = 0;
     a = "hello"; // no permitido
     
 
-In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer to a value of one type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of a dynamically typed languages:
+En tipificado dinámico, el tipo está limitado al valor, no la variable. Por lo tanto, una variable puede hacer referencia a un valor de un tipo, entonces puede reasignarse posteriormente a un valor de un tipo sin relación. JavaScript y PHP son ejemplos de lenguajes dinámicamente tipificados:
 
     var a = 0;
     a = "hello"; // permitido
     
 
-Despite their productivity advantages, dynamic languages may not be the best choices for all applications, particularly for very large code bases and high-performance applications.
+A pesar de sus ventajas en productividad, los lenguajes dinámicos pueden no ser las mejores opciones para todas las aplicaciones, particularmente para bases de código muy grandes y aplicaciones de alto rendimiento.
 
-Optimizing the performance of a dynamic language like PHP is more challenging than for a static language like C. In a static language, optimizers can exploit the type information attached to variables themselves to make decisions. In a dynamic language, fewer such clues are available for the optimizer, making optimization choices harder.
+Optimizar el rendimiento de un lenguaje dinámico como PHP es más difícil que para un lenguaje estático como C. En un lenguaje estático, los optimizadores pueden aprovechar la información de tipo de las variables para tomar decisiones. En un lenguaje dinámico, menos pistas de este tipo están disponibles para el optimizador, haciendo que las decisiones de optimización sean más difíciles.
 
-While recent advancements in optimizations for dynamic languages are promising (like JIT compilation), they lag behind the state of the art for static languages. So, if you require very high performance, static languages are probably a safer choice.
+Mientras que los avances recientes en optimizaciones para lenguajes dinámicos son prometedoras (como la compilación JIT), se quedan atrás del estado del arte de los lenguajes estáticos. Por lo tanto, si usted requiere un rendimiento muy elevado, los lenguajes estáticos son probablemente una opción más segura.
 
-Another small benefit of static languages is the extra checking the compiler performs. A compiler can't find logic errors, which are far more significant, but a compiler can find errors in advance that in a dynamic language only can be found in runtime.
+Otro pequeño beneficio de los lenguajes estáticos es la comprobación extra que realiza el compilador. Un compilador no puede encontrar errores lógicos, que son mucho más significativos, pero un compilador puede encontrar errores por adelantado que en un lenguaje dinámico solo se pueden encontrar en tiempo de ejecución.
 
-Zephir is both statically and dynamically typed, allowing you to take advantage of both approaches where possible.
+Zephir está tanto estática como dinámicamente tipificado, lo que le permite aprovechar ambos enfoques, siempre que sea posible.
 
 <a name='compilation-scheme'></a>
 
