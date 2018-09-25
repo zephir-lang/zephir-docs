@@ -16,17 +16,17 @@ PHP es uno de los idiomas más populares en el desarrollo de aplicaciones web. L
 
 Desde la versión 4, PHP está basado en la implementación del motor Zend. Se trata de una máquina virtual que ejecuta el código PHP desde su representación de código en bytes. El motor Zend está presente en casi todas las instalaciones de PHP en el mundo. Con Zephir, se pueden crear extensiones para PHP que se ejecuten en el motor Zend.
 
-PHP tiene alojando a Zephir, por lo que obviamente tienen muchas similitudes; sin embargo, tienen diferencias importantes ya que Zephir tiene propia personalidad. Por ejemplo, Zephir es más estricto, y que podría hacerte menos productivo en comparación con PHP por el paso en compilación.
+PHP tiene alojando a Zephir, por lo que obviamente tienen muchas similitudes; sin embargo, tienen diferencias importantes ya que Zephir tiene personalidad propia. Por ejemplo, Zephir es más estricto, y podría hacerte menos productivo en comparación con PHP por el paso en compilación.
 
 <a name='if-you-are-a-c-programmer'></a>
 
 ## Si eres un programador C...
 
-C es una de los lenguajes más poderosos y populares jamás creados. De hecho, PHP está escrito en C, es una de las razones por qué las extensiones PHP están disponibles para él. C le da la libertad de administrar la memoria, usar tipos de bajo nivel e incluso rutinas de ensamblaje en línea.
+C es una de los lenguajes más poderosos y populares jamás creados. De hecho, PHP está escrito en C, es una de las razones de que las extensiones PHP estén disponibles para él. C le da la libertad de administrar la memoria, usar tipos de bajo nivel e incluso rutinas de ensamblaje en línea.
 
 Sin embargo, desarrollar grandes aplicaciones en C puede tomar mucho más tiempo de lo esperado, comparado con PHP o Zephir, y algunos errores pueden ser difíciles de encontrar si no eres un programador experimentado.
 
-Zephir fue diseñado para ser seguro, por lo que no implementa punteros o gestión de memoria manual, así que si eres un programador C, usted sentirá que Zephir menos potente pero más amigable, que C.
+Zephir fue diseñado para ser seguro, por lo que no implementa punteros o gestión de memoria manual, así que si eres un programador C, sentirá que Zephir es menos potente pero más amigable, que C.
 
 <a name='compilation-vs-interpretation'></a>
 
@@ -34,9 +34,9 @@ Zephir fue diseñado para ser seguro, por lo que no implementa punteros o gesti�
 
 La compilación generalmente retrasa el desarrollo; necesitará un poco más de paciencia para compilar el código antes de ejecutarlo. Por otro lado, la interpretación tiende a reducir el rendimiento del código a favor de la productividad del desarrollador. Dicho esto, en algunos casos, no hay ninguna diferencia notable entre la velocidad del código interpretado y del compilado.
 
-Zephir requiere la compilación de su código, pero la funcionalidad se utiliza desde PHP, que se interpretado.
+Zephir requiere la compilación de su código, pero la funcionalidad se utiliza desde PHP, que es interpretado.
 
-Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. Un desarrollador puede decidir qué partes de su aplicación deben estar en Zephir y cuales no.
+Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. Un desarrollador, puede decidir cuales partes de su aplicación deben estar en Zephir y cuales no.
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
@@ -56,7 +56,7 @@ En tipificado dinámico, el tipo está limitado al valor, no la variable. Por lo
 
 A pesar de sus ventajas en productividad, los lenguajes dinámicos pueden no ser las mejores opciones para todas las aplicaciones, particularmente para bases de código muy grandes y aplicaciones de alto rendimiento.
 
-Optimizar el rendimiento de un lenguaje dinámico como PHP es más difícil que para un lenguaje estático como C. En un lenguaje estático, los optimizadores pueden aprovechar la información de tipo de las variables para tomar decisiones. En un lenguaje dinámico, menos pistas de este tipo están disponibles para el optimizador, haciendo que las decisiones de optimización sean más difíciles.
+Optimizar el rendimiento de un lenguaje dinámico como PHP es más difícil que para un lenguaje estático como C. En un lenguaje estático, los optimizadores pueden aprovechar la información de tipo de las variables para tomar decisiones. En un lenguaje dinámico, hay menos pistas de este tipo disponibles para el optimizador, haciendo que las decisiones de optimización sean más difíciles.
 
 Mientras que los avances recientes en optimizaciones para lenguajes dinámicos son prometedoras (como la compilación JIT), se quedan atrás del estado del arte de los lenguajes estáticos. Por lo tanto, si usted requiere un rendimiento muy elevado, los lenguajes estáticos son probablemente una opción más segura.
 
