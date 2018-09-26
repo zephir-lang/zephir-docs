@@ -1,4 +1,4 @@
-# Basic Syntax
+# Базовий синтаксис
 
 In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
 
@@ -49,7 +49,7 @@ You may have already noticed that there were very few semicolons in the code exa
 
 <a name='comments'></a>
 
-## Comments
+## Коментарі
 
 Zephir supports 'C'/'C++' comments. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
 
@@ -66,7 +66,7 @@ If a docblock is not located where it is expected, the compiler will throw an ex
 
 <a name='variable-declarations'></a>
 
-## Variable Declarations
+## Оголошення змінних
 
 In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
 
@@ -94,7 +94,7 @@ Variable names are case-sensitive, the following variables are different:
 
 <a name='variable-scope'></a>
 
-## Variable Scope
+## Область видимості
 
 All variables declared are locally scoped to the method where they were declared:
 
