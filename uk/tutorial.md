@@ -113,13 +113,13 @@ Zephir спроектований створювати об'єктно-оріє�
 
 At the above step, it's likely that you would need to supply your root password in order to install the extension.
 
-Зрештою, вам залишиться лише підключити ваше розширення у `php.ini` та перезапустити PHP-сервер. This is achieved by adding the initialization directive: `extension=utils.so` to it. (NOTE: You can also load it on the command line with `-d extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.)
+Зрештою, вам залишиться лише підключити ваше розширення у `php.ini` та перезапустити PHP-сервер. Щоб підключити ваше розширення, потрібно додати директиву `extension=utils.so` до файлу php.ini. (Примітка: Ви також можете підключити розширення через консоль за допомогою команди `-d extension=utils.so`, але це підключить його лише для одного запиту і вам доведеться писати цю команду для кожного запиту. Додавання ж директиви до `php.ini` забезпечить підключення вашого розширення для кожного запиту.)
 
 <a name='initial-testing'></a>
 
-## Initial Testing
+## Первинне тестування
 
-Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
+Тепер, коли розширення було додано до вашого php.ini, перевірте правильність завантаження розширення, виконавши наступну команду:
 
     $ php -m
     [PHP Modules]
@@ -137,18 +137,18 @@ Now that the extension was added to your php.ini, check whether the extension is
     xml
     
 
-Extension `utils` should be part of the output, indicating that the extension was loaded correctly. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
+Розширення `utils` повинно бути частиною виходу, що означає, що розширення завантажено правильно. Що ж, давайте подивимось на наш `Привіт світ`, безпосередньо з-під PHP. Для цього ви можете створити простий PHP-файл, який викликає створений нами статичний метод:
 
     <?php
     
     echo Utils\Greeting::say(), "\n";
     
 
-Congratulations!, you have your first extension running in PHP.
+Вітаємо! Ви щойно створили своє власне PHP-розширення.
 
 <a name='a-useful-class'></a>
 
-## A useful class
+## Корисний клас
 
 The `hello world` class was fine to check if our environment was right. Now, let's create some more useful classes.
 
