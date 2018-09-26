@@ -150,7 +150,7 @@ At the above step, it's likely that you would need to supply your root password 
 
 ## Корисний клас
 
-The `hello world` class was fine to check if our environment was right. Now, let's create some more useful classes.
+Клас `привіт світ` був хорошою перевіркою чи вірно налаштоване ваше оточення. Тепер давайте створимо кілька корисних класів.
 
 The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
 
