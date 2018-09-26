@@ -64,16 +64,16 @@ Zephir, і цей посібник, призначені для PHP-розроб
        utils/
     
 
-The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
+Каталог `ext/` (всередині utils) містить код, який буде використовуватися компілятором для створення розширення. У каталозі є ще один каталог, який має таке ж ім'я, як і наше розширення, а саме `utils`. Ми розмістимо код Zephir там.
 
-We need to change the working directory to "utils" to start compiling our code:
+Нам необхідно змінити робочий каталог на «utils», щоб почати компіляцію нашого коду:
 
     $ cd utils
     $ ls
     ext/ utils/ config.json
     
 
-The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
+Перегляд списку файлів покаже нам файл `config.json`. Цей файл містить параметри конфігурації, які ми можемо використовувати, щоб змінювати поведінку Zephir та/або розширення.
 
 <a name='adding-our-first-class'></a>
 
