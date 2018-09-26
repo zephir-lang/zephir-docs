@@ -152,9 +152,9 @@ At the above step, it's likely that you would need to supply your root password 
 
 Клас `привіт світ` був хорошою перевіркою чи вірно налаштоване ваше оточення. Тепер давайте створимо кілька корисних класів.
 
-The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
+Першим корисним класом, який ми додамо до розширення буде зручна фільтрація даних, які вводять користувачі. Цей клас називається `Utils\Filter` і його код повинен розміщуватися в файлі `utils/utils/filter.zep`:
 
-A basic skeleton for this class is the following:
+Базовий каркас для цього класу:
 
     namespace Utils;
     
@@ -164,7 +164,7 @@ A basic skeleton for this class is the following:
     }
     
 
-The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
+Клас містить фільтрації методи, які допоможуть фільтрувати небажані символи у рядках. Перший метод має назву `alpha` і його мета полягає в тому, щоб відкинути усі символи, крім базових літер ASCII. To begin, we are just going to traverse the string, printing every byte to the standard output:
 
     namespace Utils;
     
