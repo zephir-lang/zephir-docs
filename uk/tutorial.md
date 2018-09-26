@@ -111,7 +111,7 @@ Zephir спроектований створювати об'єктно-оріє�
     Don't forget to restart your web server
     
 
-At the above step, it's likely that you would need to supply your root password in order to install the extension.
+На наведеному вище кроці, швидше за все, для встановлення розширення вам потрібно буде ввести ваш root пароль.
 
 Зрештою, вам залишиться лише підключити ваше розширення у `php.ini` та перезапустити PHP-сервер. Щоб підключити ваше розширення, потрібно додати директиву `extension=utils.so` до файлу php.ini. (Примітка: Ви також можете підключити розширення через консоль за допомогою команди `-d extension=utils.so`, але це підключить його лише для одного запиту і вам доведеться писати цю команду для кожного запиту. Додавання ж директиви до `php.ini` забезпечить підключення вашого розширення для кожного запиту.)
 
@@ -164,7 +164,7 @@ At the above step, it's likely that you would need to supply your root password 
     }
     
 
-Клас містить фільтрації методи, які допоможуть фільтрувати небажані символи у рядках. Перший метод має назву `alpha` і його мета полягає в тому, щоб відкинути усі символи, крім базових літер ASCII. To begin, we are just going to traverse the string, printing every byte to the standard output:
+Клас містить фільтрації методи, які допоможуть фільтрувати небажані символи у рядках. Перший метод має назву `alpha` і його мета полягає в тому, щоб відкинути усі символи, крім базових літер ASCII. Щоб почати, просто пройдемося по рядку та надрукуємо кожен байт через стандартний вивід:
 
     namespace Utils;
     
@@ -182,24 +182,25 @@ At the above step, it's likely that you would need to supply your root password 
     }
     
 
-When invoking this method:
+При виклику цього методу:
 
     <?php
     
     $f = new Utils\Filter();
-    $f->alpha("hello");
+    $f->alpha("привіт");
     
 
-You will see:
+Ви побачите:
 
-    h
-    e
-    l
-    l
-    o
+    п
+    р
+    и
+    в
+    і
+    т
     
 
-Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
+Перевірити кожен символ у рядку є доволі просто. Тепер ми створимо інший рядок з правильними відфільтрованими символами:
 
     class Filter
     {
@@ -209,7 +210,7 @@ Checking every character in the string is straightforward. Now we'll create anot
             char ch; string filtered = "";
     
             for ch in str {
-                if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+                if (ch >= 'а' && ch <= 'я') || (ch >= 'А' && ch <= 'Я') {
                     let filtered .= ch;
                 }
             }
@@ -219,18 +220,18 @@ Checking every character in the string is straightforward. Now we'll create anot
     }
     
 
-The complete method can be tested as before:
+Оновлений метод можна перевірити наступним чином:
 
     <?php
     
     $f = new Utils\Filter();
-    echo $f->alpha("!he#02l3'121lo."); // prints "hello"
+    echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
     
 
-In the following screencast you can watch how to create the extension explained in this tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+У цьому скрінкасті ви можете подивитися, як створити розширення, описане в цьому посібнику: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
 ## Висновок
 
-This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
+Це дуже простий посібник, і як ви бачите - почати створювати розширення із Zephir легко. Ми запрошуємо вас продовжувати читати документацію, щоб ви могли відкрити додаткові функції Zephir!
