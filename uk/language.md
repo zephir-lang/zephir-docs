@@ -1,6 +1,6 @@
 # Базовий синтаксис
 
-In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
+У цьому розділі ми обговоримо організацію файлів, простори імен, оголошення змінних, різні синтаксичні конвенції та кілька інших загальних понять.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
