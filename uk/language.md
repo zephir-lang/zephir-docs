@@ -51,18 +51,19 @@ Zephir викине виняток (exception) компілятора, якщо 
 
 ## Коментарі
 
-Zephir підтримує коментарі в стилі 'C'/'C++'. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
+Zephir підтримує коментарі в стилі 'C'/'C++'. Це однорядкові коментарі з `// ...`, та багаторядкові з `/* ... */`:
 
-    // this is a one line comment
+    // це однорядковий коментар
     
     /**
-     * multi-line comment
+     * це багаторядковий
+     * коментар
      */
     
 
-In most languages, comments are simply text ignored by the compiler/interpreter. In Zephir, multi-line comments are also used as docblocks, and they're exported to the generated code, so they're part of the language!
+У більшості мов коментарі це просто текст, який ігнорується компілятором/інтерпретатором. У Zephir-і багаторядкові коментарі також використовуються як док-блоки (docblocks) і вони експортуються до згенерованого коду, так що вони - частина мови!
 
-If a docblock is not located where it is expected, the compiler will throw an exception.
+Якщо docblock не знаходиться там, де він очікується, компілятор викине виключення.
 
 <a name='variable-declarations'></a>
 
@@ -120,7 +121,7 @@ All variables declared are locally scoped to the method where they were declared
 
 <a name='super-global'></a>
 
-## Super Globals
+## Суперглобальні змінні
 
 Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
 
@@ -133,7 +134,7 @@ Zephir does not support global variables - accessing global variables from the P
 
 <a name='local-symbol-table'></a>
 
-## Local Symbol Table
+## Локальна таблиця символів
 
 Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
 
