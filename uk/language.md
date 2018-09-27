@@ -123,12 +123,12 @@ Zephir підтримує коментарі в стилі 'C'/'C++'. Це од�
 
 ## Суперглобальні змінні
 
-Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
+Zephir не підтримує глобальні змінні - доступу до глобальних змінних з PHP немає. Однак, ви можете отримати доступ до суперглобальних змінних PHP наступним чином:
 
-    // Getting a value from _POST
+    // Отримання значення з _POST
     let price = _POST["price"];
     
-    // Read a value from _SERVER
+    // Читання даних з _SERVER
     let requestMethod = _SERVER["REQUEST_METHOD"];
     
 
@@ -136,16 +136,16 @@ Zephir does not support global variables - accessing global variables from the P
 
 ## Локальна таблиця символів
 
-Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
+Кожен метод або контекст у PHP має таблицю символів, яка дозволяє вам записувати змінні у дуже гнучкий спосіб:
 
     <?php
     
     $b = 100;
     $a = "b";
-    echo $$a; // prints 100
+    echo $$a; // надрукує 100
     
 
-Zephir does not implement this feature, since all variables are compiled down to low-level variables, and there is no way to know which variables exist in a specific context. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
+Zephir не передбачено реалізації цієї функціональності, тому що всі змінні компілюються до низькорівневих змінних, і немає ніякого способу дізнатися, які змінні існують у специфічному контексті. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
 
     // Set variable $name in PHP
     let {"name"} = "hello";
