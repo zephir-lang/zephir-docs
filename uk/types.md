@@ -38,8 +38,8 @@ Zephir поєднує в собі статичну та динамічну ти�
 | `float`/`double` | Число з рухомою комою. Розмір числа залежить від платформи.                                         |
 | `integer`        | Цілі числа. Розмір числа залежить від платформи.                                                    |
 | `null`           | The special NULL value represents a variable with no value.                                         |
-| `object`         | Object abstraction like in PHP.                                                                     |
-| `resource`       | A resource holds a reference to an external resource.                                               |
+| `object`         | Об'єкт абстракції як у PHP.                                                                         |
+| `resource`       | Ресурс містить посилання на зовнішній ресурс.                                                       |
 | `string`         | A string is series of characters, where a character is the same as a byte.                          |
 
 Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
