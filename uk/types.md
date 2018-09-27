@@ -13,34 +13,34 @@ Zephir поєднує в собі статичну та динамічну ти�
     var a, b, c;
     
 
-##### Ініціалізувати змінні
+##### Ініціалізація змінних
 
     let a = "hello", b = false;
     
 
-##### Change their values
+##### Зміна їхнього значення
 
     let a = "hello", b = false;
     let a = 10, b = "140";
     
 
-##### Perform operations
+##### Виконання операцій
 
     let c = a + b;
     
 
-They can have eight types:
+Вони можуть бути восьми типів:
 
-| Type             | Description                                                                 |
-| ---------------- | --------------------------------------------------------------------------- |
-| `array`          | An array is an ordered map. A map is a type that associates values to keys. |
-| `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`       |
-| `float`/`double` | Floating point numbers. The size of a float is platform-dependent.          |
-| `integer`        | Integer numbers. The size of an integer is platform-dependent.              |
-| `null`           | The special NULL value represents a variable with no value.                 |
-| `object`         | Object abstraction like in PHP.                                             |
-| `resource`       | A resource holds a reference to an external resource.                       |
-| `string`         | A string is series of characters, where a character is the same as a byte.  |
+| Тип              | Опис                                                                                                |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| `array`          | Масив є впорядкованою мапою. Мапа - це тип, який встановлює відповідність між значеннями і ключами. |
+| `boolean`        | Булевий тип виражає значення істини. Він може бути `істиною` або `хибністю`                         |
+| `float`/`double` | Число з рухомою комою. Розмір числа залежить від платформи.                                         |
+| `integer`        | Цілі числа. Розмір числа залежить від платформи.                                                    |
+| `null`           | The special NULL value represents a variable with no value.                                         |
+| `object`         | Object abstraction like in PHP.                                                                     |
+| `resource`       | A resource holds a reference to an external resource.                                               |
+| `string`         | A string is series of characters, where a character is the same as a byte.                          |
 
 Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
 
@@ -92,7 +92,7 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Integer
 
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Цілі числа. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
 
     var a = 5, b = 10050;
     
@@ -154,7 +154,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
-| Type               | Description                                                                    |
+| Тип                | Description                                                                    |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
 | `boolean`          | A boolean expresses a truth value. It can be either 'true' or 'false'.         |
