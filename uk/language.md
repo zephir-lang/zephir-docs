@@ -4,11 +4,11 @@
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
-## Organizing Code in Files and Namespaces
+## Розміщення коду в файлах та простори імен
 
-In PHP, you can place code in any file, without a specific structure. In Zephir, every file must contain a class (and just one class). Every class must have a namespace, and the directory structure must match the names of the classes and namespaces used. (This is similar to PSR-4 autoloading conventions, except it's enforced by the language itself.)
+У PHP ви можете розмістити код в будь-який файл, без конкретної структури. У Zephir кожен файл мусить містити клас (і тільки один клас). Кожен клас повинен мати простір імен, а структура каталогів повинна відповідати іменам класів та просторам імен. (Це схоже на PSR-4-автозавантажувальну конвенцію, за винятком того, що вона застосовується самою мовою.)
 
-For example, given the following structure, the classes in each file must be:
+Наприклад, з огляду на наступну структуру кожен файл має мати наступні класи:
 
     mylibrary/
         router/
@@ -16,7 +16,7 @@ For example, given the following structure, the classes in each file must be:
         router.zep # MyLibrary\Router
     
 
-Class in `mylibrary/router.zep`:
+Клас у `mylibrary/router.zep`:
 
     namespace MyLibrary;
     
@@ -26,7 +26,7 @@ Class in `mylibrary/router.zep`:
     }
     
 
-Class in `mylibrary/router/exception.zep`:
+Клас у `mylibrary/router/exception.zep`:
 
     namespace MyLibrary\Router;
     
@@ -36,13 +36,13 @@ Class in `mylibrary/router/exception.zep`:
     }
     
 
-Zephir will raise a compiler exception if a file or class is not located in the expected file, or vice versa.
+Zephir викине виняток (exception) компілятора, якщо файл або клас не знаходяться в очікуваному файлі, або навпаки.
 
 <a name='instruction-separation'></a>
 
-## Instruction separation
+## Розділення інструкцій
 
-You may have already noticed that there were very few semicolons in the code examples in the previous chapter. You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
+Можливо, ви вже помітили, що в прикладах коду в попередньому розділі було дуже мало крапок з комою. Ви можете використовувати крапку з комою для відокремлення тверджень та виразів, як у Java, C/C++, PHP та подібних мовах:
 
     myObject->myMethod(1, 2, 3); echo "world";
     
@@ -51,7 +51,7 @@ You may have already noticed that there were very few semicolons in the code exa
 
 ## Коментарі
 
-Zephir supports 'C'/'C++' comments. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
+Zephir підтримує коментарі в стилі 'C'/'C++'. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
 
     // this is a one line comment
     
