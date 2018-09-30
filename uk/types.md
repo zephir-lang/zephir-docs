@@ -79,9 +79,9 @@ Zephir поєднує в собі статичну та динамічну ти�
 
 <a name='dynamic-types-float-double'></a>
 
-### Float/Double
+### Двійкові числа/Числа з подвійною точністю
 
-Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+Числа з рухомою комою (також відомі як "двійкові", "числа з подвійною точністю", "дійсні числа"). Літерали з рухомою точкою - це вирази з однією або кількома цифрами, а потім - період (.), після них одна або кілька цифр. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
     var number = 5.0, b = 0.014;
     
