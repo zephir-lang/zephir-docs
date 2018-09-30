@@ -48,21 +48,21 @@ Zephir поєднує в собі статичну та динамічну ти�
 
 ### Масиви
 
-The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
+Реалізація масивів у Zephir в основному така сама як у PHP: впорядковані мапи оптимізовані для деяких випадків; можна розглядати як масив список (вектор) хеш-таблицю (реалізація мапи), словник, колекція, стек, черги. Значеннями масиву можуть бути інші масиви, дерева, та багатовимірні масиви.
 
-The syntax to define arrays is slightly different than in PHP:
+Синтаксис оголошення масиву дещо відрізняється від PHP:
 
-##### Square braces must be used to define arrays
+##### Для оголошення повинні використовуватися квадратні дужки
 
     let myArray = [1, 2, 3];
     
 
-##### Double colon must be used to define hashes' keys
+##### Для оголошення масиву з ключами повинна використовуватися двокрапка
 
     let myHash = ["first": 1, "second": 2, "third": 3];
     
 
-Only long and string values can be used as keys:
+Ключами масиву можуть лише цілі числа та рядки:
 
     let myHash = [0: "first", 1: true, 2: null];
     let myHash = ["first": 7.0, "second": "some string", "third": false];
@@ -70,9 +70,9 @@ Only long and string values can be used as keys:
 
 <a name='dynamic-types-boolean'></a>
 
-### Boolean
+### Логічний тип
 
-A boolean expresses a truth value. It can be either 'true' or 'false':
+Булевий тип виражає значення істини. Він може бути 'true' (істина) або 'false' (хибність):
 
     var a = false, b = true;
     
