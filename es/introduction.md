@@ -2,34 +2,34 @@
 
 Zephir es un lenguaje que aborda las principales necesidades de un desarrollador PHP tratando de escribir y compilar código que pueda ser ejecutado por PHP. Es de tipificado dinámico/estático, y algunas de sus características serán familiares para los desarrolladores PHP.
 
-The name Zephir is a contraction of the words Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
+El nombre Zephir es una contracción de las palabras Z(end) E(ngine)/PH(P)/I(nte)r(mediate). Mientras que esto sugiere que la pronunciación debería ser "zephyr", los creadores de Zephir realmente pronuncian [zaefire](http://translate.google.com/#en/en/zaefire).
 
 <a name='hello-world'></a>
 
-## Hello World!
+## ¡Hola Mundo!
 
-Every language has its own "Hello World!" sample. In Zephir, this introductory example showcases some important features of the language.
+Cada lenguaje tiene su propio ejemplo "¡Hola mundo!". En Zephir, este ejemplo introductorio presenta algunas características importantes del lenguaje.
 
-Code in Zephir must be placed in classes. The language is intended to create object-oriented libraries/frameworks, so code outside of a class is not allowed. Additionally, a namespace is required:
+El código en Zephir se debe colocar en clases. El lenguaje está diseñado para crear librerías de orientadas a objetos y frameworks, por lo que no se permite el código fuera de una clase. Además, se requiere un espacio de nombres:
 
     namespace Test;
     
     /**
-     * This is a sample class
+     * Esta es una clase de ejemplo
      */
     class Hello
     {
         /**
-         * This is a sample method
+         * Este es un método de ejemplo
          */
         public function say()
         {
-            echo "Hello World!";
+            echo "¡Hola Mundo!";
         }
     }
     
 
-Once this class is compiled it will produce the following code, that is transparently compiled by gcc/clang/vc++:
+Una vez que se compila esta clase va a producir el código siguiente, que es compilado de forma transparente por gcc/clang/vc++:
 
     #ifdef HAVE_CONFIG_H
     #include "config.h"
