@@ -42,7 +42,7 @@ Una vez que se compila esta clase va a producir el código siguiente, que es com
     #include "kernel/main.h"
     
     /**
-     * This is a sample class
+     * Esta es una clase de ejemplo
      */
     ZEPHIR_INIT_CLASS(Test_Hello) {
         ZEPHIR_REGISTER_CLASS(Test, Hello, hello, test_hello_method_entry, 0);
@@ -50,18 +50,18 @@ Una vez que se compila esta clase va a producir el código siguiente, que es com
     }
     
     /**
-     * This is a sample method
+     * Este es un método de ejemplo
      */
     PHP_METHOD(Test_Hello, say) {
-        php_printf("%s", "Hello World!");
+        php_printf("%s", "¡Hola Mundo!");
     }
     
 
-Actually, it is not expected that a developer that uses Zephir must know or even understand C. However, if you have any experience with compilers, PHP internals, or the C language itself, that will provide a clearer understanding of what's going on internally when working with Zephir.
+Actualmente, no se espera que un desarrollador que utiliza Zephir deba saber o entender C. Sin embargo, si usted tiene alguna experiencia con compiladores, con el funcionamiento interno PHP o el lenguaje C, le proporcionará una comprensión más clara de lo que está sucediendo internamente cuando se trabaja con Zephir.
 
 <a name='a-taste-of-zephir'></a>
 
-## A Taste of Zephir
+## Una prueba de Zephir
 
 In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
 
@@ -78,17 +78,17 @@ Let's examine the code in detail, so we can begin to learn Zephir syntax. There 
     {
         public function someMethod()
         {
-            /* Variables must be declared */
+            /* Las variables deben ser declaradas */
             var myArray;
             int i = 0, length;
     
-            /* Create an array */
+            /* Crear un array */
             let myArray = ["hello", 0, 100.25, false, null];
     
-            /* Count the array into a 'int' variable */
+            /* Medir un array en una variable 'int' */
             let length = count(myArray);
     
-            /* Print value types */
+            /* Imprimir los tipos de los valores */
             while i < length {
                 echo typeof myArray[i], "\n";
                 let i++;
@@ -109,13 +109,13 @@ Zephir follows the same comment conventions as Java, C#, C++, etc. A `// comment
 
 Variables are, by default, immutable. This means that Zephir expects that most variables will stay unchanged. Variables that maintain their initial value can be optimized down by the compiler to static constants. When the variable value needs to be changed, the keyword `let` must be used:
 
-    /* Create an array */
+    /* Crear un array */
     let myArray = ["hello", 0, 100.25, false, null];
     
 
 By default, arrays are dynamically typed like in PHP - they may contain values of different types. Functions from the PHP userland can be called in Zephir code. In the next example, the function `count` is called, but the compiler can perform optimizations like avoiding this call, because it already knows the size of the array:
 
-    /* Count the array into a 'int' variable */
+    /* Medir un array a una variable 'int' */
     let length = count(myArray);
     
 
