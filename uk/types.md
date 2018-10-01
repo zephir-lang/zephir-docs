@@ -92,14 +92,14 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Ціле число
 
-Цілі числа. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Цілі числа. Розмір числа залежить від платформи, хоча максимальним значенням є число трохи більше за 2 мільярди (2,147,483,647). 64-розрядні платформи зазвичай мають максимальне значення близько 9E18. PHP не підтримує цілі числа без знаку, тому Zephir теж має це обмеження:
 
     var a = 5, b = 10050;
     
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer overflow
+### Програмне переповнення цілих чисел
 
 Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
 
