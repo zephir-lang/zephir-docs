@@ -1,4 +1,4 @@
-# Phpinfo() sections
+# Розділи в phpinfo()
 
 Like most extensions, Zephir extensions are able to show information in the phpinfo() output. This information is usually related to directives, environment data, etc.
 

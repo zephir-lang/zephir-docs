@@ -1,68 +1,68 @@
-# Types
+# Типи
 
-Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
+Zephir поєднує в собі статичну та динамічну типізацію. У цьому розділі ми підкреслимо підтримувані типи та їхню поведінку.
 
 <a name='dynamic-types'></a>
 
-## Dynamic Types
+## Динамічні типи
 
-Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
+Динамічних змінні працюють так само, як і в PHP. Їм можна призначати та перепризначати значення різних типів без обмежень.
 
-A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
+Динамічна змінна має бути оголошеною з ключовим словом `var`. Поведінка майже така сама, як і в PHP:
 
     var a, b, c;
     
 
-##### Initialize variables
+##### Ініціалізація змінних
 
     let a = "hello", b = false;
     
 
-##### Change their values
+##### Зміна їхнього значення
 
     let a = "hello", b = false;
     let a = 10, b = "140";
     
 
-##### Perform operations
+##### Виконання операцій
 
     let c = a + b;
     
 
-They can have eight types:
+Вони можуть бути восьми типів:
 
-| Type             | Description                                                                 |
-| ---------------- | --------------------------------------------------------------------------- |
-| `array`          | An array is an ordered map. A map is a type that associates values to keys. |
-| `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`       |
-| `float`/`double` | Floating point numbers. The size of a float is platform-dependent.          |
-| `integer`        | Integer numbers. The size of an integer is platform-dependent.              |
-| `null`           | The special NULL value represents a variable with no value.                 |
-| `object`         | Object abstraction like in PHP.                                             |
-| `resource`       | A resource holds a reference to an external resource.                       |
-| `string`         | A string is series of characters, where a character is the same as a byte.  |
+| Тип              | Опис                                                                                                |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| `array`          | Масив є впорядкованою мапою. Мапа - це тип, який встановлює відповідність між значеннями і ключами. |
+| `boolean`        | Булевий тип виражає значення істини. Він може бути `істиною` або `хибністю`                         |
+| `float`/`double` | Число з рухомою комою. Розмір числа залежить від платформи.                                         |
+| `integer`        | Цілі числа. Розмір числа залежить від платформи.                                                    |
+| `null`           | Особливе значення NULL, яке помічає змінну в якої немає значення.                                   |
+| `object`         | Об'єкт абстракції як у PHP.                                                                         |
+| `resource`       | Ресурс містить посилання на зовнішній ресурс.                                                       |
+| `string`         | A string is series of characters, where a character is the same as a byte.                          |
 
-Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
+Більше про типи ви можете дізнатися в [Документації PHP](http://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
 ### Масиви
 
-The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
+Реалізація масивів у Zephir в основному така сама як у PHP: впорядковані мапи оптимізовані для деяких випадків; можна розглядати як масив список (вектор) хеш-таблицю (реалізація мапи), словник, колекція, стек, черги. Значеннями масиву можуть бути інші масиви, дерева, та багатовимірні масиви.
 
-The syntax to define arrays is slightly different than in PHP:
+Синтаксис оголошення масиву дещо відрізняється від PHP:
 
-##### Square braces must be used to define arrays
+##### Для оголошення повинні використовуватися квадратні дужки
 
     let myArray = [1, 2, 3];
     
 
-##### Double colon must be used to define hashes' keys
+##### Для оголошення масиву з ключами повинна використовуватися двокрапка
 
     let myHash = ["first": 1, "second": 2, "third": 3];
     
 
-Only long and string values can be used as keys:
+Ключами масиву можуть лише цілі числа та рядки:
 
     let myHash = [0: "first", 1: true, 2: null];
     let myHash = ["first": 7.0, "second": "some string", "third": false];
@@ -70,18 +70,18 @@ Only long and string values can be used as keys:
 
 <a name='dynamic-types-boolean'></a>
 
-### Boolean
+### Логічний тип
 
-A boolean expresses a truth value. It can be either 'true' or 'false':
+Булевий тип виражає значення істини. Він може бути 'true' (істина) або 'false' (хибність):
 
     var a = false, b = true;
     
 
 <a name='dynamic-types-float-double'></a>
 
-### Float/Double
+### Двійкові числа/Числа з подвійною точністю
 
-Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+Числа з рухомою комою (також відомі як "двійкові", "числа з подвійною точністю", "дійсні числа"). Літерали з рухомою точкою - це вирази з однією або кількома цифрами, а потім - період (.), після нього одна або кілька цифр. Розмір числа після крапки залежить від платформи, хоча максимум ~1.8e308 з точністю приблизно 14 десяткових цифр мають загальне значення (64-біт сумісні з IEEE форматі).
 
     var number = 5.0, b = 0.014;
     
@@ -90,16 +90,16 @@ Floating point numbers have limited precision. Although it depends on the system
 
 <a name='dynamic-types-integer'></a>
 
-### Integer
+### Ціле число
 
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Цілі числа. Розмір числа залежить від платформи, хоча максимальним значенням є число трохи більше за 2 мільярди (2,147,483,647). 64-розрядні платформи зазвичай мають максимальне значення близько 9E18. PHP не підтримує цілі числа без знаку, тому Zephir теж має це обмеження:
 
     var a = 5, b = 10050;
     
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer overflow
+### Програмне переповнення цілих чисел
 
 Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
 
@@ -154,7 +154,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
-| Type               | Description                                                                    |
+| Тип                | Description                                                                    |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
 | `boolean`          | A boolean expresses a truth value. It can be either 'true' or 'false'.         |
