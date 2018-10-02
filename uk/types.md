@@ -101,7 +101,7 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Програмне переповнення цілих чисел
 
-Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
+На відміну від PHP Zephir автоматично не перевіряє рівень заповненості цілого числа. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
 
     unsigned long my_number = 2147483648;
     
