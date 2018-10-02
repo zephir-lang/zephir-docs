@@ -63,7 +63,7 @@ Actualmente, no se espera que un desarrollador que utiliza Zephir deba saber o e
 
 ## Una prueba de Zephir
 
-En los siguientes ejemplos, describiremos los detalles suficientes para entender lo que está sucediendo. El objetivo es darle un sentido de como es la programación en Zephir. Exploraremos los *detalles* de las características de los capítulos siguientes.
+En los siguientes ejemplos, describiremos los detalles suficientes para entender lo que está sucediendo. El objetivo es darle un sentido de como es la programación en Zephir. Exploraremos los *detalles* de las características en los capítulos siguientes.
 
 En el siguiente ejemplo es muy simple; implementa una clase y un método, con un pequeño programa que verifica los tipos de datos de una matriz.
 
@@ -103,7 +103,7 @@ En el método, las primeras líneas utilizan las palabras clave `var` e `int`. S
 
 Las variables dinámicas son declaradas con la palabra clave `var`. Estas variables pueden ser asignadas o reasignadas a tipos diferentes. Por otro lado, las variables `int` son estrictamente tipificadas a un entero, estas solo pueden tener valores enteros en la ejecución de todo el programa.
 
-En contraste con PHP, no necesitas color el signo de dolar ($) como prefijo de nombre de variable.
+En contraste con PHP, no necesitas colocar el signo de dolar ($) como prefijo de nombre de variable.
 
 Zephir permite las mismas convenciones de comentarios como en Java, C#, C++, etc. Un `// comentario` al final de una linea, con un `/* comentario */` puedes crear comentarios multi linea.
 
@@ -127,4 +127,4 @@ Los paréntesis en las declaraciones de control de flujo son opcionales. Puede u
     }
     
 
-Dado que PHP solo funciona con variables dinámicas, los métodos siempre retornar variables dinámicas. This means that if a statically typed variable is returned, in the PHP side you will get a dynamic variable that can be used in PHP code. Note that memory is automatically managed by the compiler, similarly to how PHP does it, so you don't need to allocate or free memory like in C.
+Dado que PHP solo funciona con variables dinámicas, los métodos siempre retornar variables dinámicas. Esto significa que si se devuelve una variable de tipo estático, en el lado de PHP obtendrá una variable dinámica que se puede utilizar en el código PHP. Note que la memoria es manejadas automáticamente por el compilador, al igual que lo hace PHP, entonces usted no necesita asignar o liberar memoria como en C.
