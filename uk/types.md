@@ -133,15 +133,15 @@ Zephir дозволяє створювати екземпляр класу, ма
 | ------------- | ---------------------- |
 | `\\t`       | Горизонтальний відступ |
 | `\\n`       | Переведення рядка      |
-| `\\r`       | Carriage return        |
-| `\\ \`   | Backslash              |
-| `\\"`       | double-quote           |
+| `\\r`       | Повернення каретки     |
+| `\\ \`   | Бекслеш                |
+| `\\"`       | подвійні лапки         |
 
     var today    = "\tfriday\n\r",
         tomorrow = "\tsaturday";
     
 
-In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
+Zephir не підтримує парсинг змінних у рядках як це було в PHP; ви повинні використовувати конкатенацію:
 
     var name = "peter";
     
@@ -150,7 +150,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 <a name='static-types'></a>
 
-## Static Types
+## Статичні типи
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
