@@ -63,11 +63,11 @@ Actualmente, no se espera que un desarrollador que utiliza Zephir deba saber o e
 
 ## Una prueba de Zephir
 
-In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
+En los siguientes ejemplos, describiremos los detalles suficientes para entender lo que está sucediendo. El objetivo es darle un sentido de como es la programación en Zephir. Exploraremos los *detalles* de las características de los capítulos siguientes.
 
-The following example is very simple; it implements a class and a method, with a small program that checks the types of an array.
+En el siguiente ejemplo es muy simple; implementa una clase y un método, con un pequeño programa que verifica los tipos de datos de una matriz.
 
-Let's examine the code in detail, so we can begin to learn Zephir syntax. There are a lot of details in just a few lines of code! We'll explain the general ideas here:
+Examinemos el código detalladamente, así podemos empezar a aprender la sintaxis de Zephir. ¡Hay un montón de detalles en unas pocas líneas de código! Vamos a explicar aquí las ideas generales:
 
     namespace Test;
     
@@ -99,7 +99,7 @@ Let's examine the code in detail, so we can begin to learn Zephir syntax. There 
     }
     
 
-In the method, the first lines use the `var` and `int` keywords. There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
+En el método, las primeras líneas utilizan las palabras clave `var` e `int`. There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
 
 Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `int` variables are statically typed integer variables, that can only have integer values in the entire program execution.
 
