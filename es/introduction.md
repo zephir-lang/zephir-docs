@@ -119,7 +119,7 @@ Por defecto, los arrays son de tipificado dinámico como en PHP, ellos pueden co
     let length = count(myArray);
     
 
-Los paréntesis en las declaraciones de control de flujo son opcionales. Puede utilizarlos sin se siente más cómodo, pero no son obligatorios.
+Los paréntesis en las declaraciones de control de flujo son opcionales. Puede utilizarlos si se siente más cómodo, pero no son obligatorios.
 
     while i < length {
         echo typeof myArray[i], "\n";
@@ -127,4 +127,4 @@ Los paréntesis en las declaraciones de control de flujo son opcionales. Puede u
     }
     
 
-Dado que PHP solo funciona con variables dinámicas, los métodos siempre retornar variables dinámicas. Esto significa que si se devuelve una variable de tipo estático, en el lado de PHP obtendrá una variable dinámica que se puede utilizar en el código PHP. Note que la memoria es manejadas automáticamente por el compilador, al igual que lo hace PHP, entonces usted no necesita asignar o liberar memoria como en C.
+Dado que PHP solo funciona con variables dinámicas, los métodos siempre retornan variables dinámicas. Esto significa que si se devuelve una variable de tipo estático, en el lado de PHP obtendrá una variable dinámica que se puede utilizar en el código PHP. Note que la memoria es manejada automáticamente por el compilador, al igual que lo hace PHP, entonces usted no necesita asignar o liberar memoria como en C.
