@@ -40,7 +40,7 @@ Zephir поєднує в собі статичну та динамічну ти�
 | `null`           | Особливе значення NULL, яке помічає змінну в якої немає значення.                                   |
 | `object`         | Об'єкт абстракції як у PHP.                                                                         |
 | `resource`       | Ресурс містить посилання на зовнішній ресурс.                                                       |
-| `string`         | A string is series of characters, where a character is the same as a byte.                          |
+| `string`         | Рядок це серія символів, де символ є таким самим, як байт.                                          |
 
 Більше про типи ви можете дізнатися в [Документації PHP](http://www.php.net/manual/en/language.types.php).
 
@@ -101,16 +101,16 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Програмне переповнення цілих чисел
 
-На відміну від PHP Zephir автоматично не перевіряє рівень заповненості цілого числа. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
+На відміну від PHP Zephir автоматично не перевіряє рівень заповненості цілого числа. Як і в C, якщо ви виконуєте операції які можуть повернути велике число ви повинні використати такі типи як "unsigned long" або ж "float":
 
     unsigned long my_number = 2147483648;
     
 
 <a name='dynamic-types-objects'></a>
 
-### Objects
+### Об'єкти
 
-Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+Zephir дозволяє створювати екземпляр класу, маніпулювати, викликати методи, читати константи класу та інші речі, які дозволяють PHP-об'єкти:
 
     let myObject = new stdClass(),
         myObject->someProperty = "my value";
@@ -118,24 +118,24 @@ Zephir allows to instantiate, manipulate, call methods, read class constants, et
 
 <a name='dynamic-types-string'></a>
 
-### String
+### Рядок
 
-A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
+Рядок це серія символів, де кожен символ є таким самим, як байт. Як і PHP, Zephir підтримує лише 256 набір символів, а отже не дає вбудованої підтримки Юнікоду.
 
     var today = "friday";
     
 
-In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for chars.
+У Zephir рядкові літерали можна задавати лише взявши їх у подвійні лапки (як у C або Go). Одинарні лапки зарезервовані для символів.
 
-The following escape sequences are supported in strings:
+У рядках підтримуються наступні символи екранування:
 
-| Sequence    | Description     |
-| ----------- | --------------- |
-| `\\t`     | Horizontal tab  |
-| `\\n`     | Line feed       |
-| `\\r`     | Carriage return |
-| `\\ \` | Backslash       |
-| `\\"`     | double-quote    |
+| Послідовність | Опис                   |
+| ------------- | ---------------------- |
+| `\\t`       | Горизонтальний відступ |
+| `\\n`       | Переведення рядка      |
+| `\\r`       | Carriage return        |
+| `\\ \`   | Backslash              |
+| `\\"`       | double-quote           |
 
     var today    = "\tfriday\n\r",
         tomorrow = "\tsaturday";
