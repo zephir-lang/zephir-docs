@@ -190,7 +190,7 @@ When invoking this method:
     $f->alpha("hola");
     
 
-You will see:
+Usted verá:
 
     h
     o
