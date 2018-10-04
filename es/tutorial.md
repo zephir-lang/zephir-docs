@@ -1,19 +1,19 @@
 # Tutorial
 
-Zephir, and this book, are intended for PHP developers who want to create C extensions, with a lower complexity.
+Zephir y este libro, están destinados para desarrolladores PHP que desean crear extensiones en C, con una complejidad menor.
 
-We assume that you are experienced in one or more other programming languages. We draw parallels to features in PHP, C, Javascript, and other languages. We'll point out features in Zephir that are similar to these other languages, as well as many features that are new or different. If you are familiar with these specific languages, you'll pick up on these comparisons more quickly.
+Asumimos que usted tiene experiencia en uno o varios lenguajes de programación. Trazaremos paralelismos entre las funciones de PHP, C, Javascript y otros lenguajes. Señalaremos características de Zephir que son similares a otros lenguajes, como también, muchas características que son nuevas o diferentes. Si estás familiarizado con estos lenguajes específicos, usted podrá entender estas comparaciones más rápidamente.
 
 <a name='checking-the-installation'></a>
 
-## Checking the Installation
+## Probando la Instalación
 
-If you have successfully installed Zephir, you will be able to execute the following command in your console:
+Si se ha instalado con éxito Zephir, usted será capaz de ejecutar el siguiente comando en la consola:
 
     $ zephir help
     
 
-If everything is well, you should see the following help (or something very similar):
+Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
 
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
@@ -28,29 +28,29 @@ If everything is well, you should see the following help (or something very simi
         command [options]
     
     Available commands:
-        stubs               Generates extension PHP stubs
-        install             Installs the extension (requires root password)
-        version             Shows the Zephir version
-        compile             Compile a Zephir extension
-        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
-        init [namespace]    Initializes a Zephir extension
-        fullclean           Cleans the generated object files in compilation
-        builddev            Generate/Compile/Install a Zephir extension in development mode
-        clean               Cleans the generated object files in compilation
-        generate            Generates C code from the Zephir code
-        help                Displays this help
-        build               Generate/Compile/Install a Zephir extension
+        stubs               Genera extensiones de apendices de PHP
+        install             Instalar la extensión (requiere contraseña root)
+        version             Muestra la versión actual de Zephir
+        compile             Compilar un extensión de Zephir
+        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Genera el API en HTML
+        init [namespace]    Inicia una extensión Zephir
+        fullclean           Limpia los archivos de objetos generados en la compilación
+        builddev            Genera/Compila/Instala una extensión Zephir en modo de desarrollo
+        clean               Limpia los archivos de objetos generados en la compilación
+        generate            Genera código C desde código Zephir
+        help                Muestra esta ayuda
+        build               Genera/Compila/Instala una extensión Zephir
     
     Options:
-        -f([a-z0-9\-]+)     Enables compiler optimizations
-        -fno-([a-z0-9\-]+)  Disables compiler optimizations
-        -w([a-z0-9\-]+)     Turns a warning on
-        -W([a-z0-9\-]+)     Turns a warning off
+        -f([a-z0-9\-]+)     Habilita las optimizaciones del compilador
+        -fno-([a-z0-9\-]+)  Dehabilita las optimizaciones del compilador
+        -w([a-z0-9\-]+)     Enciende una advertencia
+        -W([a-z0-9\-]+)     Apaga una advertencia
     
 
 <a name='extension-skeleton'></a>
 
-## Extension Skeleton
+## Esqueleto de la Extensión
 
 The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
 
@@ -77,7 +77,7 @@ The directory listing will also show us a file called `config.json`. This file c
 
 <a name='adding-our-first-class'></a>
 
-## Adding our first class
+## Agregando nuestra primer clase
 
 Zephir is designed to generate object-oriented extensions. To start developing functionality, we need to add our first class to the extension.
 
@@ -92,7 +92,7 @@ The code for this class must be placed in `utils/utils/greeting.zep`:
     
         public static function say()
         {
-            echo "hello world!";
+            echo "¡hola mundo!";
         }
     
     }
@@ -117,7 +117,7 @@ Finally, the extension must be added to the `php.ini` in order to be loaded by P
 
 <a name='initial-testing'></a>
 
-## Initial Testing
+## Prueba Inicial
 
 Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
 
@@ -148,7 +148,7 @@ Congratulations!, you have your first extension running in PHP.
 
 <a name='a-useful-class'></a>
 
-## A useful class
+## Una clase útil
 
 The `hello world` class was fine to check if our environment was right. Now, let's create some more useful classes.
 
