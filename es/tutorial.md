@@ -52,28 +52,28 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
 
 ## Esqueleto de la Extensión
 
-The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
+Lo primero que tenemos que hacer es generar un esqueleto de extensión. Esto le dará a nuestra extensión la estructura básica que necesitamos para empezar a trabajar. En nuestro caso, vamos a crear una extensión llamada `utils`:
 
     $ zephir init utils
     
 
-After this, a directory called "utils" is created on the current working directory:
+Después de esto, un directorio llamado "utils" es creado en el directorio actual de trabajo:
 
     utils/
        ext/
        utils/
     
 
-The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
+El directorio `ext/` (dentro del directorio utils) contiene el código que utilizará el compilador para producir la extensión. Otro directorio creado es `utils` este directorio tiene el mismo nombre que nuestra extensión. Aquí pondremos nuestro código Zephir.
 
-We need to change the working directory to "utils" to start compiling our code:
+Necesitamos cambiar el directorio de trabajo a "utils" para comenzar a copilar nuestro código:
 
     $ cd utils
     $ ls
     ext/ utils/ config.json
     
 
-The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
+Al listar el directorio, nos mostrará un archivo llamado `config.json`. Este archivo contiene los ajustes de configuración que podemos usar para alterar el comportamiento de Zephir y/o la extensión en sí.
 
 <a name='adding-our-first-class'></a>
 
