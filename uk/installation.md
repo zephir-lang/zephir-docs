@@ -15,8 +15,8 @@
 * autoconf 2.31 або новіший
 * automake 1.14 або новіший
 * libpcre3
-* PHP development headers and tools
-* The build-essential package when using gcc on Ubuntu (and likely in other distributions as well)
+* Заголовки та інструменти розробника PHP
+* Необхідні пакети для використання gcc на Ubuntu (а також, імовірно, в інших дистрибутивах)
 
 Якщо ви використовуєте Ubuntu, то можете встановити необхідні пакунки таким чином:
 
