@@ -152,9 +152,9 @@ La extensión `utils` debe ser parte de la salida, indicando que la extensión s
 
 La clase `hello world` estaba bien para probar si el entorno estaba bien. Ahora, vamos a crear algunas clases más útiles.
 
-The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
+La primer clase útil que vamos a agregar a esta extensión proveerá facilidades de filtrado a los usuarios. Esta clase es llamada `Utils\Filter` y su código estará ubicado en el archivo `utils/utils/filter.zep`:
 
-A basic skeleton for this class is the following:
+El esqueleto básico de esta clase es el siguiente:
 
     namespace Utils;
     
@@ -164,7 +164,7 @@ A basic skeleton for this class is the following:
     }
     
 
-The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
+La clase contiene métodos de filtrado para ayudar a los usuarios a filtrar caracteres no deseados de las cadenas de texto. El primer método es llamado `alpha`, y su propósito es filtrar solo las letras básicas de los caracteres ASCII. Para comenzar, vamos a recorrer la cadena de texto, imprimiendo cada byte en la salida estándar:
 
     namespace Utils;
     
@@ -182,7 +182,7 @@ The class contains filtering methods that help users to filter unwanted characte
     }
     
 
-When invoking this method:
+Cuando invocamos a este método:
 
     <?php
     
@@ -198,7 +198,7 @@ Usted verá:
     a
     
 
-Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
+La comprobación de todos los caracteres de la cadena es sencilla. Ahora crearemos otra cadena con los caracteres filtrados correctos:
 
     class Filter
     {
