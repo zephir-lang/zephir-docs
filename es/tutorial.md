@@ -187,16 +187,15 @@ When invoking this method:
     <?php
     
     $f = new Utils\Filter();
-    $f->alpha("hello");
+    $f->alpha("hola");
     
 
 You will see:
 
     h
-    e
-    l
-    l
     o
+    l
+    a
     
 
 Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
@@ -219,18 +218,18 @@ Checking every character in the string is straightforward. Now we'll create anot
     }
     
 
-The complete method can be tested as before:
+El método completo se puede probar como antes:
 
     <?php
     
     $f = new Utils\Filter();
-    echo $f->alpha("!he#02l3'121lo."); // prints "hello"
+    echo $f->alpha("!ho#02l3'121a."); // imprime "hola"
     
 
-In the following screencast you can watch how to create the extension explained in this tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+En el siguiente video tutorial puedes ver como crear la extensión explicada en este tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
 ## Conclusión
 
-This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
+Este es un tutorial muy simple y como se puede ver, es fácil empezar a construir una extensión usando Zephir. Te invitamos a seguir leyendo el manual para que puedas descubrir algunas funciones adicionales que ofrece Zephir!
