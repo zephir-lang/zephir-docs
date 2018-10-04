@@ -3,7 +3,7 @@
 - [Представляємо Zephir](/[[language]]/[[version]]/introduction)
 - [Встановлення](/[[language]]/[[version]]/installation)
 - [Tutorial](/[[language]]/[[version]]/tutorial)
-- [Basic Syntax](/[[language]]/[[version]]/language)
+- [Базовий синтаксис](/[[language]]/[[version]]/language)
 - [Types](/[[language]]/[[version]]/types)
 - [Operators](/[[language]]/[[version]]/operators)
 - [Масиви](/[[language]]/[[version]]/arrays)
