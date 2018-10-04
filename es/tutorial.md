@@ -111,15 +111,15 @@ Inicialmente, y sólo por primera vez, una serie de comandos internos son ejecut
     Don't forget to restart your web server
     
 
-At the above step, it's likely that you would need to supply your root password in order to install the extension.
+En el paso anterior, es probable que necesite suministrar su contraseña de root para poder instalar la extensión.
 
-Finally, the extension must be added to the `php.ini` in order to be loaded by PHP. This is achieved by adding the initialization directive: `extension=utils.so` to it. (NOTE: You can also load it on the command line with `-d extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.)
+Finalmente, hay que añadir la extensión al archivo `php.ini` para ser cargado en PHP. Esto se consigue añadiendo la directiva de inicialización: `extension=utils.so` a él. (Nota: también se puede cargar en la línea de comandos con `-d extension=utils.so`, pero se cargará sólo para esa única solicitud, por lo que tendría que incluir cada vez que desea probar su extensión en el CLI. Agregando la directiva en el `php.ini` se asegurará que está cargada para cada solicitud de ahí en adelante.)
 
 <a name='initial-testing'></a>
 
 ## Prueba Inicial
 
-Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
+Ahora que la extensión fue agregada a su `php.ini`, compruebe si la extensión esta cargada correctamente, ejecutando lo siguiente:
 
     $ php -m
     [PHP Modules]
@@ -137,20 +137,20 @@ Now that the extension was added to your php.ini, check whether the extension is
     xml
     
 
-Extension `utils` should be part of the output, indicating that the extension was loaded correctly. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
+La extensión `utils` debe ser parte de la salida, indicando que la extensión se cargo correctamente. Ahora, vemos nuestro `hello world` ejecutado directamente por PHP. Para lograr esto, puede crear un simple archivo PHP que llame al método estático que acabamos de crear:
 
     <?php
     
     echo Utils\Greeting::say(), "\n";
     
 
-Congratulations!, you have your first extension running in PHP.
+¡Felicitaciones!, tienes tu primer extensión corriendo en PHP.
 
 <a name='a-useful-class'></a>
 
 ## Una clase útil
 
-The `hello world` class was fine to check if our environment was right. Now, let's create some more useful classes.
+La clase `hello world` estaba bien para probar si el entorno estaba bien. Ahora, vamos a crear algunas clases más útiles.
 
 The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
 
