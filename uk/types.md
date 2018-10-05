@@ -152,26 +152,26 @@ Zephir не підтримує парсинг змінних у рядках я�
 
 ## Статичні типи
 
-Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
+Статичні типи дозволяють розробнику оголосити та використовувати змінні з певними типами, які доступні у C. Змінна, яка оголошена з статичним типом не може змінювати свій тип. Проте, це дозволяє компілятору провести кращу оптимізацію. Підтримуються наступні типи:
 
-| Тип                | Description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
-| `boolean`          | A boolean expresses a truth value. It can be either 'true' or 'false'.         |
-| `char`             | Smallest addressable unit of the machine that can contain basic character set. |
-| `float`/`double`   | Double precision floating-point type. The size is platform-dependent.          |
-| `integer`          | Signed integers. At least 16 bits in size.                                     |
-| `long`             | Long signed integer type. At least 32 bits in size.                            |
-| `string`           | A string is a series of characters, where a character is the same as a byte.   |
-| `unsigned char`    | Same size as char, but guaranteed to be unsigned.                              |
-| `unsigned integer` | Unsigned integers. At least 16 bits in size.                                   |
-| `unsigned long`    | Same as long, but unsigned.                                                    |
+| Тип                | Опис                                                                                       |
+| ------------------ | ------------------------------------------------------------------------------------------ |
+| `array`            | Структура, яка може бути використана як хеш, мапа, словник, колекції, стек, і т. д.        |
+| `boolean`          | Булевий тип виражає значення істини. Він може бути 'true' (істина) або 'false' (хибність). |
+| `char`             | Smallest addressable unit of the machine that can contain basic character set.             |
+| `float`/`double`   | Double precision floating-point type. The size is platform-dependent.                      |
+| `integer`          | Signed integers. At least 16 bits in size.                                                 |
+| `long`             | Long signed integer type. At least 32 bits in size.                                        |
+| `string`           | A string is a series of characters, where a character is the same as a byte.               |
+| `unsigned char`    | Same size as char, but guaranteed to be unsigned.                                          |
+| `unsigned integer` | Unsigned integers. At least 16 bits in size.                                               |
+| `unsigned long`    | Same as long, but unsigned.                                                                |
 
 <a name='static-types-boolean'></a>
 
-### Boolean
+### Логічний тип
 
-A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+Булевий тип виражає значення істини. Він може бути 'true' (істина) або 'false' (хибність). Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
