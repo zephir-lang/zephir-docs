@@ -2,7 +2,7 @@
 
 Zephir y este libro, están destinados para desarrolladores PHP que desean crear extensiones en C, con una complejidad menor.
 
-Asumimos que usted tiene experiencia en uno o varios lenguajes de programación. Trazaremos paralelismos entre las funciones de PHP, C, Javascript y otros lenguajes. Señalaremos características de Zephir que son similares a otros lenguajes, como también, muchas características que son nuevas o diferentes. Si estás familiarizado con estos lenguajes específicos, usted podrá entender estas comparaciones más rápidamente.
+Asumimos que usted tiene experiencia en uno o varios lenguajes de programación. Trazaremos paralelismos entre las funciones de PHP, C, Javascript y otros lenguajes. Señalaremos características de Zephir que son similares a otros lenguajes, como así también, muchas características que son nuevas o diferentes. Si estás familiarizado con estos lenguajes específicos, podrás entender estas comparaciones más rápidamente.
 
 <a name='checking-the-installation'></a>
 
@@ -28,7 +28,7 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
         command [options]
     
     Available commands:
-        stubs               Genera extensiones de apendices de PHP
+        stubs               Genera extensiones de apéndices de PHP
         install             Instalar la extensión (requiere contraseña root)
         version             Muestra la versión actual de Zephir
         compile             Compilar un extensión de Zephir
@@ -43,7 +43,7 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
     
     Options:
         -f([a-z0-9\-]+)     Habilita las optimizaciones del compilador
-        -fno-([a-z0-9\-]+)  Dehabilita las optimizaciones del compilador
+        -fno-([a-z0-9\-]+)  Deshabilita las optimizaciones del compilador
         -w([a-z0-9\-]+)     Enciende una advertencia
         -W([a-z0-9\-]+)     Apaga una advertencia
     
