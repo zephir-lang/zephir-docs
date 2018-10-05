@@ -15,7 +15,7 @@ Para construir una extensión de PHP y usar Zephir necesita los siguientes requi
 * autoconf 2.31 o superior
 * automake 1.14 o superior
 * libpcre3
-* herramientas y cabeceras de desarrollo de PHP
+* Herramientas y cabeceras de desarrollo de PHP
 * El paquete build-essential cuando se utiliza gcc en Ubuntu (y probablemente también en otras distribuciones)
 
 Si usas Ubuntu, puedes instalar los paquetes requeridos de esta forma:

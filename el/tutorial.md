@@ -119,7 +119,7 @@ Finally, the extension must be added to the `php.ini` in order to be loaded by P
 
 ## Initial Testing
 
-Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
+Now that the extension was added to your `php.ini`, check whether the extension is being loaded properly by executing the following:
 
     $ php -m
     [PHP Modules]
