@@ -144,11 +144,11 @@ Cada método o contexto en PHP tiene una tabla de símbolos que le permite escri
     echo $$a; // imprime 100
     
 
-Zephir no implementa esta característica, ya que todas las variables se compilan en variables de bajo nivel y no hay forma de saber qué variables existen en un contexto específico. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
+Zephir no implementa esta característica, ya que todas las variables se compilan en variables de bajo nivel y no hay forma de saber qué variables existen en un contexto específico. Si deseas crear una variable en la tabla de símbolos actual de PHP, puedes utilizar la siguiente sintaxis:
 
-    // Set variable $name in PHP
-    let {"name"} = "hello";
+    // Establecer la variable $name en PHP
+    let {"name"} = "hola";
     
-    // Set variable $price in PHP
-    let name = "price";
+    // Establecer la variable $precio en PHP
+    let name = "precio";
     let {name} = 10.2;
