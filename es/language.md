@@ -26,7 +26,7 @@ La clase en `mylibrary/router.zep`:
     }
     
 
-Class in `mylibrary/router/exception.zep`:
+La clase en `mylibrary/router/exception.zep`:
 
     namespace MyLibrary\Router;
     
@@ -36,37 +36,37 @@ Class in `mylibrary/router/exception.zep`:
     }
     
 
-Zephir will raise a compiler exception if a file or class is not located in the expected file, or vice versa.
+Zephir generará una excepción del compilador si un archivo o una clase no se encuentra en el archivo esperado, o viceversa.
 
 <a name='instruction-separation'></a>
 
-## Instruction separation
+## Separación de instrucciones
 
-You may have already noticed that there were very few semicolons in the code examples in the previous chapter. You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
+Puede ya ha notado, que había muy pocos puntos y comas en los ejemplos de código en el capítulo anterior. Usted puede utilizar puntos y comas para separar declaraciones y expresiones, como en Java, C/C++, PHP, y otros lenguajes similares:
 
-    myObject->myMethod(1, 2, 3); echo "world";
+    myObject->myMethod(1, 2, 3); echo "mundo";
     
 
 <a name='comments'></a>
 
-## Comments
+## Comentarios
 
-Zephir supports 'C'/'C++' comments. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
+Zephir soporta los comentarios de 'C'/'C++'. Estos son los comentarios de una linea `// ...`, y los comentarios multi linea`/* ... */`:
 
-    // this is a one line comment
+    // este es un comentario de una linea
     
     /**
-     * multi-line comment
+     * este es un comentario multi linea
      */
     
 
-In most languages, comments are simply text ignored by the compiler/interpreter. In Zephir, multi-line comments are also used as docblocks, and they're exported to the generated code, so they're part of the language!
+En la mayoría de los lenguajes, los comentarios son simplemente ignorados por el compilador/interprete. En Zephir, los comentarios multi linea son utilizados como bloques de documentación (docblocks), y son exportados al código generado, por lo que son parte del lenguaje!
 
-If a docblock is not located where it is expected, the compiler will throw an exception.
+Si un bloque de comentarios no esta ubicado donde sea esperado, el compilador lanzará una excepción.
 
 <a name='variable-declarations'></a>
 
-## Variable Declarations
+## Declaración de variables
 
 In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
 
