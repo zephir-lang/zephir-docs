@@ -1,14 +1,14 @@
-# Basic Syntax
+# Sintaxis básica
 
-In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
+En este capítulo, analizaremos la organización de archivos y espacios de nombres, declaraciones de variables, varios convenios de sintaxis y algunos otros conceptos generales.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
-## Organizing Code in Files and Namespaces
+## Organización del código en archivos y espacios de nombres
 
-In PHP, you can place code in any file, without a specific structure. In Zephir, every file must contain a class (and just one class). Every class must have a namespace, and the directory structure must match the names of the classes and namespaces used. (This is similar to PSR-4 autoloading conventions, except it's enforced by the language itself.)
+En PHP, usted puede colocar código en cualquier archivo, sin una estructura específica. En Zephir, cada archivo debe contener una clase (y sólo una). Cada clase debe tener un espacio de nombres, y la estructura de directorios debe coincidir con los nombres de las clases y espacios de nombres utilizados. (Esto es similar al convenio PSR-4 de carga automática, salvo que se aplica al lenguaje en sí mismo)
 
-For example, given the following structure, the classes in each file must be:
+Por ejemplo, teniendo en cuenta la siguiente estructura, las clases en cada archivo deben ser:
 
     mylibrary/
         router/
@@ -16,7 +16,7 @@ For example, given the following structure, the classes in each file must be:
         router.zep # MyLibrary\Router
     
 
-Class in `mylibrary/router.zep`:
+La clase en `mylibrary/router.zep`:
 
     namespace MyLibrary;
     
