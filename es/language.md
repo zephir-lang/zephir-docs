@@ -68,35 +68,35 @@ Si un bloque de comentarios no esta ubicado donde sea esperado, el compilador la
 
 ## Declaración de variables
 
-In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
+En Zephir, se deben declarar todas las variables utilizadas en un determinado ámbito. Esto proporciona información importante para que el compilador para realizar optimizaciones y validaciones. Las variables deben ser identificadores únicos y no pueden ser palabras reservadas.
 
-    // Declaring variables for the same type    in the same instruction
+    // Declarando variables del mismo tipo en la misma instrucción
     var a, b, c;
     
-    // Declaring each variable in separate lines
+    // Declarando cada variable en lineas separadas
     var a;
     var b;
     var c;
     
 
-Variables can optionally have an initial compatible default value:
+Las variables pueden tener opcionalmente un valor inicial por defecto compatible con el tipo:
 
-    // Declaring variables with default values
-    var a = "hello", b = 0, c = 1.0;
+    // Declarando variables con valores por defecto
+    var a = "hola", b = 0, c = 1.0;
     int d = 50; bool some = true;
     
 
-Variable names are case-sensitive, the following variables are different:
+Los nombres de variables son sensibles a mayúsculas y minúsculas, las siguientes variables son diferentes:
 
-    // Different variables
+    // Variables diferentes
     var somevalue, someValue, SomeValue;
     
 
 <a name='variable-scope'></a>
 
-## Variable Scope
+## Ámbito de la variable
 
-All variables declared are locally scoped to the method where they were declared:
+Todas las variables declaradas localmente, tienen un ámbito local al método donde se declaró:
 
     namespace Test;
     
@@ -120,31 +120,31 @@ All variables declared are locally scoped to the method where they were declared
 
 <a name='super-global'></a>
 
-## Super Globals
+## Super globales
 
-Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
+Zephir no admite variables globales; no se permite el acceso a variables globales desde el territorio de PHP. Sin embargo, se puede acceder a las super globales de PHP de la siguiente forma:
 
-    // Getting a value from _POST
+    // Obteniendo un valor desde _POST
     let price = _POST["price"];
     
-    // Read a value from _SERVER
+    // Leyeer un valor de _SERVER
     let requestMethod = _SERVER["REQUEST_METHOD"];
     
 
 <a name='local-symbol-table'></a>
 
-## Local Symbol Table
+## Tabla de símbolos locales
 
-Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
+Cada método o contexto en PHP tiene una tabla de símbolos que le permite escribir variables de una manera muy dinámica:
 
     <?php
     
     $b = 100;
     $a = "b";
-    echo $$a; // prints 100
+    echo $$a; // imprime 100
     
 
-Zephir does not implement this feature, since all variables are compiled down to low-level variables, and there is no way to know which variables exist in a specific context. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
+Zephir no implementa esta característica, ya que todas las variables se compilan en variables de bajo nivel y no hay forma de saber qué variables existen en un contexto específico. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
 
     // Set variable $name in PHP
     let {"name"} = "hello";
