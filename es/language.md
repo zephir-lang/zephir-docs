@@ -51,7 +51,7 @@ Puede que ya ha notado, que había muy pocos puntos y comas en los ejemplos de c
 
 ## Comentarios
 
-Zephir soporta los comentarios de 'C'/'C++'. Estos son los comentarios de una linea `// ...`, y los comentarios multi linea`/* ... */`:
+Zephir soporta los comentarios de tipo 'C'/'C++'. Estos son los comentarios de una linea `// ...`, y los comentarios multi linea`/* ... */`:
 
     // este es un comentario de una linea
     
@@ -122,12 +122,12 @@ Todas las variables declaradas localmente, tienen un ámbito local al método do
 
 ## Super globales
 
-Zephir no admite variables globales; no se permite el acceso a variables globales desde el territorio de PHP. Sin embargo, se puede acceder a las super globales de PHP de la siguiente forma:
+Zephir no admite variables globales; no se permite el acceso a variables globales desde la zona de usuario de PHP. Sin embargo, se puede acceder a las super globales de PHP de la siguiente forma:
 
     // Obteniendo un valor desde _POST
     let price = _POST["price"];
     
-    // Leyeer un valor de _SERVER
+    // Leer un valor de _SERVER
     let requestMethod = _SERVER["REQUEST_METHOD"];
     
 
