@@ -8,41 +8,41 @@ Zephir es dinámica y estáticamente tipificado. En este capítulo se destacan l
 
 Las variables dinámicas son exactamente como en PHP. Pueden ser asignados y reasignados a diferentes tipos sin restricción.
 
-Una variable dinámica debe declararse con la palabra clave `var`. The behavior is nearly the same as in PHP:
+Una variable dinámica debe declararse con la palabra clave `var`. El comportamiento es casi igual que en PHP:
 
     var a, b, c;
     
 
-##### Initialize variables
+##### Inicializar las variables
 
-    let a = "hello", b = false;
+    let a = "hola", b = false;
     
 
-##### Change their values
+##### Cambiar sus valores
 
-    let a = "hello", b = false;
+    let a = "hola", b = false;
     let a = 10, b = "140";
     
 
-##### Perform operations
+##### Realizar operaciones
 
     let c = a + b;
     
 
-They can have eight types:
+Pueden tener ocho tipos:
 
-| Type             | Description                                                                 |
-| ---------------- | --------------------------------------------------------------------------- |
-| `array`          | An array is an ordered map. A map is a type that associates values to keys. |
-| `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`       |
-| `float`/`double` | Floating point numbers. The size of a float is platform-dependent.          |
-| `integer`        | Integer numbers. The size of an integer is platform-dependent.              |
-| `null`           | The special NULL value represents a variable with no value.                 |
-| `object`         | Object abstraction like in PHP.                                             |
-| `resource`       | A resource holds a reference to an external resource.                       |
-| `string`         | A string is series of characters, where a character is the same as a byte.  |
+| Tipo             | Descripción                                                                                                             |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `array`          | Un array, también puede llamarse arreglo o matriz, es un mapa ordenado. Un mapa es un tipo que asocia valores a claves. |
+| `boolean`        | Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`                                                |
+| `float`/`double` | Números de punto flotante. El tamaño de un flotante depende de la plataforma.                                           |
+| `integer`        | Números enteros. El tamaño de un entero depende de la plataforma.                                                       |
+| `null`           | El valor especial `NULL` representa que la variable no tiene valor.                                                     |
+| `object`         | Abstracción de objectos como en PHP.                                                                                    |
+| `resource`       | Un recurso contiene una referencia a un recurso externo.                                                                |
+| `string`         | Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte.                                 |
 
-Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
+Revisar por más de estos tipos en el [manual de PHP](http://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
@@ -92,7 +92,7 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Integer
 
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Números enteros. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
 
     var a = 5, b = 10050;
     
@@ -154,7 +154,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
-| Type               | Description                                                                    |
+| Tipo               | Description                                                                    |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
 | `boolean`          | A boolean expresses a truth value. It can be either 'true' or 'false'.         |
