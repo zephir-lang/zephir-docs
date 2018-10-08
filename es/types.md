@@ -62,17 +62,17 @@ La sintaxis para definir matrices es ligeramente diferente a PHP:
     let myHash = ["first": 1, "second": 2, "third": 3];
     
 
-Only long and string values can be used as keys:
+Solo valores enteros y cadenas de textos pueden utilizados como claves:
 
-    let myHash = [0: "first", 1: true, 2: null];
-    let myHash = ["first": 7.0, "second": "some string", "third": false];
+    let myHash = [0: "primero", 1: true, 2: null];
+    let myHash = ["primero": 7.0, "segundo": "una cadena", "tercero": false];
     
 
 <a name='dynamic-types-boolean'></a>
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either 'true' or 'false':
+Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`:
 
     var a = false, b = true;
     
@@ -129,7 +129,7 @@ In Zephir, string literals can only be specified using double quotes (like in C 
 
 The following escape sequences are supported in strings:
 
-| Sequence    | Description     |
+| Secuencia   | Descripción     |
 | ----------- | --------------- |
 | `\\t`     | Horizontal tab  |
 | `\\n`     | Line feed       |
@@ -150,7 +150,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 <a name='static-types'></a>
 
-## Static Types
+## Tipos Estáticos
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
@@ -186,7 +186,7 @@ A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary 
 
 ##### throws a compiler exception
 
-    let a = "hello";
+    let a = "hola";
     
 
 <a name='static-types-char-unsigned'></a>
@@ -237,7 +237,7 @@ Integer values are like the integer member in dynamic values. Values assigned to
 
 ##### throws a compiler exception
 
-    let a = "hello";
+    let a = "hola";
     
 
 Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
@@ -269,7 +269,7 @@ Unsigned integers are like integers but they don't have sign, this means you can
 
 ##### throws a compiler exception
 
-    let a = "hello";
+    let a = "hola";
     
 
 Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
@@ -311,7 +311,7 @@ Long variables are twice bigger than integer variables, thus they can store bigg
 
 ##### throws a compiler exception
 
-    let a = "hello";
+    let a = "hola";
     
 
 Unsigned longs are like longs but they are not signed, this means you can't store negative numbers in these sort of variables:
@@ -343,7 +343,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
 
 ##### throws a compiler exception
 
-    let a = "hello";
+    let a = "hola";
     
 
 Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
