@@ -1,12 +1,12 @@
 # Sintaxis básica
 
-En este capítulo, analizaremos la organización de archivos y espacios de nombres, declaraciones de variables, varios convenios de sintaxis y algunos otros conceptos generales.
+En este capítulo, analizaremos la organización de archivos y espacios de nombres, declaraciones de variables, varios convenios de sintaxis y algunos conceptos generales.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
 ## Organización del código en archivos y espacios de nombres
 
-En PHP, usted puede colocar código en cualquier archivo, sin una estructura específica. En Zephir, cada archivo debe contener una clase (y sólo una). Cada clase debe tener un espacio de nombres, y la estructura de directorios debe coincidir con los nombres de las clases y espacios de nombres utilizados. (Esto es similar al convenio PSR-4 de carga automática, salvo que se aplica al lenguaje en sí mismo)
+En PHP, usted puede colocar código en cualquier archivo, sin una estructura específica. En Zephir, cada archivo debe contener una sola clase. Cada clase debe tener un espacio de nombres, y la estructura de directorios debe coincidir con los nombres de las clases y espacios de nombres utilizados. (Esto es similar al convenio PSR-4 de carga automática, salvo que se aplica al lenguaje en sí mismo)
 
 Por ejemplo, teniendo en cuenta la siguiente estructura, las clases en cada archivo deben ser:
 
@@ -42,7 +42,7 @@ Zephir generará una excepción del compilador si un archivo o una clase no se e
 
 ## Separación de instrucciones
 
-Puede ya ha notado, que había muy pocos puntos y comas en los ejemplos de código en el capítulo anterior. Usted puede utilizar puntos y comas para separar declaraciones y expresiones, como en Java, C/C++, PHP, y otros lenguajes similares:
+Puede que ya ha notado, que había muy pocos puntos y comas en los ejemplos de código en el capítulo anterior. Usted puede utilizar puntos y comas para separar declaraciones y expresiones, como en Java, C/C++, PHP, y otros lenguajes similares:
 
     myObject->myMethod(1, 2, 3); echo "mundo";
     
