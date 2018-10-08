@@ -1,14 +1,14 @@
-# Types
+# Tipos
 
-Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
+Zephir es dinámica y estáticamente tipificado. En este capítulo se destacan los tipos soportados y sus comportamientos.
 
 <a name='dynamic-types'></a>
 
-## Dynamic Types
+## Tipos Dinámicos
 
-Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
+Las variables dinámicas son exactamente como en PHP. Pueden ser asignados y reasignados a diferentes tipos sin restricción.
 
-A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
+Una variable dinámica debe declararse con la palabra clave `var`. The behavior is nearly the same as in PHP:
 
     var a, b, c;
     
