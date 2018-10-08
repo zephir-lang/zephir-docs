@@ -48,16 +48,16 @@ Revisar por más de estos tipos en el [manual de PHP](http://www.php.net/manual/
 
 ### Arrays
 
-The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
+La implementación de los arreglos en Zephir es básicamente igual que en PHP: Mapas ordenados optimizados para varios usos diferentes; se puede tratar como un array, lista (vector), tabla hash (una implementación de un mapa), diccionario, colección, pila, cola y probablemente más. Como valores del array pueden ser otros arrays, árboles y también son posibles arrays multidimensionales.
 
-The syntax to define arrays is slightly different than in PHP:
+La sintaxis para definir matrices es ligeramente diferente a PHP:
 
-##### Square braces must be used to define arrays
+##### Deben utilizarse corchetes para definir matrices
 
     let myArray = [1, 2, 3];
     
 
-##### Double colon must be used to define hashes' keys
+##### Deben utilizarse dos puntos ":" para definir claves hash
 
     let myHash = ["first": 1, "second": 2, "third": 3];
     
