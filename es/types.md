@@ -92,7 +92,7 @@ En los números de coma flotante tienen una precisión limitada. Aunque depende 
 
 ### Integer
 
-Números enteros. El tamaño de un entero es dependiente de la plataforma, aunque un valor máximo aproximadamente de 2 billones es el valor usual (que es 32 bits firmados). Las plataformas de 64 bits generalmente tienen un valor máximo aproximadamente de 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Números enteros. El tamaño de un entero es dependiente de la plataforma, aunque un valor máximo aproximadamente de 2 billones es el valor usual (que es 32 bits firmados). Las plataformas de 64 bits generalmente tienen un valor máximo aproximadamente de 9E18. PHP no soporta enteros sin signo, Zephir también tiene esta restricción:
 
     var a = 5, b = 10050;
     
@@ -101,7 +101,7 @@ Números enteros. El tamaño de un entero es dependiente de la plataforma, aunqu
 
 ### Integer sobrecarga
 
-Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
+Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como 'unsigned long' o 'float' para almacenarlos:
 
     unsigned long my_number = 2147483648;
     
@@ -110,42 +110,42 @@ Contrary to PHP, Zephir does not automatically check for integer overflows. Like
 
 ### Objects
 
-Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+Zephir permite crear, manipular, llamar métodos, leer constantes de clase, etcétera desde objetos PHP:
 
     let myObject = new stdClass(),
-        myObject->someProperty = "my value";
+        myObject->someProperty = "mi valor";
     
 
 <a name='dynamic-types-string'></a>
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
+Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte. Como en PHP, Zephir solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
-    var today = "friday";
+    var today = "Viernes";
     
 
-In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for chars.
+En Zephir, los string literales solo pueden ser especificados utilizando las comillas dobles (como en C o Go). Las comillas simples están reservadas para los caracteres.
 
-The following escape sequences are supported in strings:
+Son soportadas las siguientes secuencias de escape en strings:
 
-| Secuencia   | Descripción     |
-| ----------- | --------------- |
-| `\\t`     | Horizontal tab  |
-| `\\n`     | Line feed       |
-| `\\r`     | Carriage return |
-| `\\ \` | Backslash       |
-| `\\"`     | double-quote    |
+| Secuencia   | Descripción      |
+| ----------- | ---------------- |
+| `\\t`     | Tab horizontal   |
+| `\\n`     | Salto de línea   |
+| `\\r`     | Retorno de carro |
+| `\\ \` | Barra invertida  |
+| `\\"`     | Comilla doble    |
 
-    var today    = "\tfriday\n\r",
-        tomorrow = "\tsaturday";
+    var today    = "\tviernes\n\r",
+        tomorrow = "\tsábado";
     
 
-In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
+En Zephir, los strings no soportan el analizis de variables como en PHP; es necesario utilizar la concatenación:
 
-    var name = "peter";
+    var name = "Pedro";
     
-    echo "hello: " . name;
+    echo "hola: " . name;
     
 
 <a name='static-types'></a>
