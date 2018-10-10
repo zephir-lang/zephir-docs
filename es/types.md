@@ -81,18 +81,18 @@ Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`:
 
 ### Float/Double
 
-Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+Los números de punto flotante (también conocido como "flotantes", "dobles" o "números reales"). Los literales de coma flotante son expresiones con uno o más dígitos, seguidos de un punto (.), seguido por uno o más dígitos. El tamaño de un float es dependiente de la plataforma, aunque un tamaño máximo de ~1.8e308 con una precisión de aproximadamente 14 dígitos decimales es un valor común (el formato IEEE de 64 bits).
 
     var number = 5.0, b = 0.014;
     
 
-Floating point numbers have limited precision. Although it depends on the system, Zephir uses the same IEEE 754 double precision format used by PHP, which will give a maximum relative error due to rounding in the order of 1.11e-16.
+En los números de coma flotante tienen una precisión limitada. Aunque depende del sistema, Zephir utiliza el mismo formato de doble precisión de IEEE 754 usado por PHP, que le dará un máximo error relativo por redondeo en el orden de 1.11e-16.
 
 <a name='dynamic-types-integer'></a>
 
 ### Integer
 
-Números enteros. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Números enteros. El tamaño de un entero es dependiente de la plataforma, aunque un valor máximo aproximadamente de 2 billones es el valor usual (que es 32 bits firmados). Las plataformas de 64 bits generalmente tienen un valor máximo aproximadamente de 9E18. PHP no soporta enteros sin signo, Zephir también tiene esta restricción:
 
     var a = 5, b = 10050;
     
@@ -101,7 +101,7 @@ Números enteros. The size of an integer is platform-dependent, although a maxim
 
 ### Integer sobrecarga
 
-Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
+Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como 'unsigned long' o 'float' para almacenarlos:
 
     unsigned long my_number = 2147483648;
     
@@ -110,42 +110,42 @@ Contrary to PHP, Zephir does not automatically check for integer overflows. Like
 
 ### Objects
 
-Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+Zephir permite crear, manipular, llamar métodos, leer constantes de clase, etcétera desde objetos PHP:
 
     let myObject = new stdClass(),
-        myObject->someProperty = "my value";
+        myObject->someProperty = "mi valor";
     
 
 <a name='dynamic-types-string'></a>
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
+Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte. Como en PHP, Zephir solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
-    var today = "friday";
+    var today = "Viernes";
     
 
-In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for chars.
+En Zephir, los string literales solo pueden ser especificados utilizando las comillas dobles (como en C o Go). Las comillas simples están reservadas para los caracteres.
 
-The following escape sequences are supported in strings:
+Son soportadas las siguientes secuencias de escape en strings:
 
-| Secuencia   | Descripción     |
-| ----------- | --------------- |
-| `\\t`     | Horizontal tab  |
-| `\\n`     | Line feed       |
-| `\\r`     | Carriage return |
-| `\\ \` | Backslash       |
-| `\\"`     | double-quote    |
+| Secuencia   | Descripción      |
+| ----------- | ---------------- |
+| `\\t`     | Tab horizontal   |
+| `\\n`     | Salto de línea   |
+| `\\r`     | Retorno de carro |
+| `\\ \` | Barra invertida  |
+| `\\"`     | Comilla doble    |
 
-    var today    = "\tfriday\n\r",
-        tomorrow = "\tsaturday";
+    var today    = "\tviernes\n\r",
+        tomorrow = "\tsábado";
     
 
-In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
+En Zephir, los strings no soportan el analizis de variables como en PHP; es necesario utilizar la concatenación:
 
-    var name = "peter";
+    var name = "Pedro";
     
-    echo "hello: " . name;
+    echo "hola: " . name;
     
 
 <a name='static-types'></a>
