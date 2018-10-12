@@ -286,7 +286,7 @@ Los enteros sin signo son dos veces más grandes que los enteros estándar. La a
 
 ### Long/Long sin signo
 
-Long variables are twice bigger than integer variables, thus they can store bigger numbers. As with integers, values assigned to long variables are automatically casted to this type:
+Las variables long son dos veces más grandes que las variables enteras, por lo que pueden almacenar números más grandes. Al igual que con los enteros, los valores asignados a variables largas se convierten automáticamente a este tipo:
 
     long a;
     
@@ -314,7 +314,7 @@ Long variables are twice bigger than integer variables, thus they can store bigg
     let a = "hola";
     
 
-Unsigned longs are like longs but they are not signed, this means you can't store negative numbers in these sort of variables:
+Los longs sin signo son como los longs estandar, pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
 
     ulong a;
     
@@ -346,7 +346,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
     let a = "hola";
     
 
-Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
+Los largos sin signo son dos veces más grandes que los longs estándar; la asignación de largos sin firmar a largos estándar (con signo) puede provocar la pérdida de datos:
 
 ##### Pérdida potencial de datos en `b`
 
