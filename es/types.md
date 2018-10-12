@@ -163,28 +163,28 @@ El tipificado estático permite al programador a declarar y utilizar algunos tip
 | `integer`          | Enteros con signo. Al menos 16 bits de tamaño.                                                  |
 | `long`             | Tipo entero largo con signo. Al menos 32 bits de tamaño.                                        |
 | `string`           | Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte.         |
-| `unsigned char`    | Mismo tamaño como char, pero garantiza que sea sin signo.                                       |
-| `unsigned integer` | Unsigned integers. Al menos 16 bits de tamaño.                                                  |
-| `unsigned long`    | Same as long, but unsigned.                                                                     |
+| `unsigned char`    | Mismo tamaño que un char, pero garantiza que sea sin signo.                                     |
+| `unsigned integer` | Enteros sin signo. Al menos 16 bits de tamaño.                                                  |
+| `unsigned long`    | Al igual que el tipo long, pero sin signo.                                                      |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`. Contrariamente al comportamiento dinámico detallado anteriormente, los tipos booleanos estáticos siguen siendo booleanos (verdaderos o falsos) sin importar el valor que se les asigne:
 
     boolean a;
     let a = true;
     
 
-##### automatically casted to `true`
+##### Automáticamente clasificado como `true`
 
     let a = 100;
     
 
-##### automatically casted to `false`
+##### Automáticamente clasificado como `false`
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
@@ -195,15 +195,15 @@ A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary 
 
 Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A 'char' variable can be used to store any character in a string:
 
-    char ch, string name = "peter";
+    char ch, string name = "pedro";
     
 
-##### stores 't'
+##### almacenar 'd'
 
     let ch = name[2];
     
 
-##### `char` literals must be enclosed in single quotes
+##### Los literales `char` deben ser encerrados entre comillas simples
 
     let ch = 'Z';
     
@@ -235,7 +235,7 @@ Integer values are like the integer member in dynamic values. Values assigned to
     let a = false;
     
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
@@ -267,7 +267,7 @@ Unsigned integers are like integers but they don't have sign, this means you can
     let a = false;
     
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
@@ -309,7 +309,7 @@ Long variables are twice bigger than integer variables, thus they can store bigg
     let a = false;
     
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
@@ -341,7 +341,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
     let a = false;
     
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
