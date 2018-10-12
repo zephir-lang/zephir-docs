@@ -193,7 +193,7 @@ Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`. Contra
 
 ### Char/Char sin signo
 
-Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A 'char' variable can be used to store any character in a string:
+Las variables char son la unidad direccionable más pequeña de la máquina que puede contener el conjunto de carácter básico (generalmente 8 bits). Una variable de 'tipo char' se puede utilizar para almacenar cualquier carácter en una cadena:
 
     char ch, string name = "pedro";
     
@@ -212,7 +212,7 @@ Char variables are the smallest addressable unit of the machine that can contain
 
 ### Integer/Integer sin signo
 
-Integer values are like the integer member in dynamic values. Values assigned to integer variables remain integer:
+Los valores enteros el miembro entero en valores dinámicos. Los valores asignados a las variables de número entero permanecen enteros:
 
     int a;
     
@@ -220,17 +220,17 @@ Integer values are like the integer member in dynamic values. Values assigned to
         a = -70;
     
 
-##### automatically casted to 100
+##### Automáticamente clasificado a 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = false;
     
@@ -240,29 +240,29 @@ Integer values are like the integer member in dynamic values. Values assigned to
     let a = "hola";
     
 
-Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
+Los enteros sin signo, son como los enteros pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
 
     uint a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### Automáticamente clasificado a 70
 
     let a = -70;
     
 
-##### automatically casted to 100
+##### Automáticamente clasificado a 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = false;
     
@@ -272,9 +272,9 @@ Unsigned integers are like integers but they don't have sign, this means you can
     let a = "hola";
     
 
-Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
+Los enteros sin signo son dos veces más grandes que los enteros estándar. La asignación de enteros sin signo a enteros estándar (con signo) puede resultar en pérdida de datos:
 
-##### potential loss of data for `b`
+##### Pérdida potencial de datos en `b`
 
     uint a, int b;
     
@@ -294,17 +294,17 @@ Long variables are twice bigger than integer variables, thus they can store bigg
         a = -70;
     
 
-##### automatically casted to 100
+##### Automáticamente clasificado a 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = false;
     
@@ -321,22 +321,22 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
     let a = 50;
     
 
-##### automatically casted to 70
+##### Automáticamente clasificado a 70
 
     let  a = -70;
     
 
-##### automatically casted to 100
+##### Automáticamente clasificado a 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = false;
     
@@ -348,7 +348,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
 
 Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
 
-##### potential loss of data for `b`
+##### Pérdida potencial de datos en `b`
 
     ulong a, long b;
     
@@ -360,25 +360,25 @@ Unsigned longs are twice bigger than standard longs; assigning unsigned longs to
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
+Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte. Como PHP solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
-When a variable is declared string it never changes its type:
+Cuando una variable es declarada como string, nunca cambiar su tipo:
 
     string a;
     
     let a = "";
     
 
-##### string literals must be enclosed in double quotes
+##### Los string literales deben ser encerrados entre comillas dobles
 
-    let  a = "hello";
+    let a = "hola";
     
 
-##### converted to string "A"
+##### Convertido a string "A"
 
     let a = 'A';
     
 
-##### automatically casted to ""
+##### Automáticamente clasificado a ""
 
     let a = null;
