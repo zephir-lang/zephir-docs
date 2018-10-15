@@ -152,39 +152,39 @@ En Zephir, los strings no soportan el analizis de variables como en PHP; es nece
 
 ## Tipos Estáticos
 
-Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
+El tipificado estático permite al programador a declarar y utilizar algunos tipos de variables disponible en C. Las variables no pueden cambiar su tipo una vez que se han declarado con un tipo estático. Sin embargo, permiten al compilador hacer un mejor trabajo de optimización. Son soportados los siguientes tipos:
 
-| Tipo               | Description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
-| `boolean`          | A boolean expresses a truth value. It can be either 'true' or 'false'.         |
-| `char`             | Smallest addressable unit of the machine that can contain basic character set. |
-| `float`/`double`   | Double precision floating-point type. The size is platform-dependent.          |
-| `integer`          | Signed integers. At least 16 bits in size.                                     |
-| `long`             | Long signed integer type. At least 32 bits in size.                            |
-| `string`           | A string is a series of characters, where a character is the same as a byte.   |
-| `unsigned char`    | Same size as char, but guaranteed to be unsigned.                              |
-| `unsigned integer` | Unsigned integers. At least 16 bits in size.                                   |
-| `unsigned long`    | Same as long, but unsigned.                                                    |
+| Tipo               | Descripción                                                                                     |
+| ------------------ | ----------------------------------------------------------------------------------------------- |
+| `array`            | Una estructura que puede ser utilizada como hash, mapa, diccionario, colección, pila, etcétera. |
+| `boolean`          | Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`.                       |
+| `char`             | Es la unidad más pequeña que puede contener el conjunto de caracteres básicos.                  |
+| `float`/`double`   | Tipo punto flotante de doble precisión. El tamaño depende de la plataforma.                     |
+| `integer`          | Enteros con signo. Al menos 16 bits de tamaño.                                                  |
+| `long`             | Tipo entero largo con signo. Al menos 32 bits de tamaño.                                        |
+| `string`           | Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte.         |
+| `unsigned char`    | Mismo tamaño que un char, pero garantiza que sea sin signo.                                     |
+| `unsigned integer` | Enteros sin signo. Al menos 16 bits de tamaño.                                                  |
+| `unsigned long`    | Al igual que el tipo long, pero sin signo.                                                      |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`. Contrariamente al comportamiento dinámico detallado anteriormente, los tipos booleanos estáticos siguen siendo booleanos (verdaderos o falsos) sin importar el valor que se les asigne:
 
     boolean a;
     let a = true;
     
 
-##### automatically casted to `true`
+##### Automáticamente clasificado como `true`
 
     let a = 100;
     
 
-##### automatically casted to `false`
+##### Automáticamente clasificado como `false`
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
@@ -193,17 +193,17 @@ A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary 
 
 ### Char/Char sin signo
 
-Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A 'char' variable can be used to store any character in a string:
+Las variables char son la unidad direccionable más pequeña de la máquina que puede contener el conjunto de carácter básico (generalmente 8 bits). Una variable de 'tipo char' se puede utilizar para almacenar cualquier carácter en una cadena:
 
-    char ch, string name = "peter";
+    char ch, string name = "pedro";
     
 
-##### stores 't'
+##### almacenar 'd'
 
     let ch = name[2];
     
 
-##### `char` literals must be enclosed in single quotes
+##### Los literales `char` deben ser encerrados entre comillas simples
 
     let ch = 'Z';
     
@@ -212,7 +212,7 @@ Char variables are the smallest addressable unit of the machine that can contain
 
 ### Integer/Integer sin signo
 
-Integer values are like the integer member in dynamic values. Values assigned to integer variables remain integer:
+Los valores enteros el miembro entero en valores dinámicos. Los valores asignados a las variables de número entero permanecen enteros:
 
     int a;
     
@@ -220,61 +220,61 @@ Integer values are like the integer member in dynamic values. Values assigned to
         a = -70;
     
 
-##### automatically casted to 100
+##### Automáticamente clasificado a 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
 
-Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
+Los enteros sin signo, son como los enteros pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
 
     uint a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### Automáticamente clasificado a 70
 
     let a = -70;
     
 
-##### automatically casted to 100
+##### Automáticamente clasificado a 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
 
-Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
+Los enteros sin signo son dos veces más grandes que los enteros estándar. La asignación de enteros sin signo a enteros estándar (con signo) puede resultar en pérdida de datos:
 
-##### potential loss of data for `b`
+##### Pérdida potencial de datos en `b`
 
     uint a, int b;
     
@@ -286,7 +286,7 @@ Unsigned integers are twice bigger than standard integers. Assigning unsigned in
 
 ### Long/Long sin signo
 
-Long variables are twice bigger than integer variables, thus they can store bigger numbers. As with integers, values assigned to long variables are automatically casted to this type:
+Las variables long son dos veces más grandes que las variables enteras, por lo que pueden almacenar números más grandes. Al igual que con los enteros, los valores asignados a variables largas se convierten automáticamente a este tipo:
 
     long a;
     
@@ -294,61 +294,61 @@ Long variables are twice bigger than integer variables, thus they can store bigg
         a = -70;
     
 
-##### automatically casted to 100
+##### Automáticamente clasificado a 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
 
-Unsigned longs are like longs but they are not signed, this means you can't store negative numbers in these sort of variables:
+Los longs sin signo son como los longs estandar, pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
 
     ulong a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### Automáticamente clasificado a 70
 
     let  a = -70;
     
 
-##### automatically casted to 100
+##### Automáticamente clasificado a 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### Automáticamente clasificado a 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### Arroja una excepción de compilador
 
     let a = "hola";
     
 
-Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
+Los largos sin signo son dos veces más grandes que los longs estándar; la asignación de largos sin firmar a largos estándar (con signo) puede provocar la pérdida de datos:
 
-##### potential loss of data for `b`
+##### Pérdida potencial de datos en `b`
 
     ulong a, long b;
     
@@ -360,25 +360,25 @@ Unsigned longs are twice bigger than standard longs; assigning unsigned longs to
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
+Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte. Como PHP solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
-When a variable is declared string it never changes its type:
+Cuando una variable es declarada como string, nunca cambiar su tipo:
 
     string a;
     
     let a = "";
     
 
-##### string literals must be enclosed in double quotes
+##### Los string literales deben ser encerrados entre comillas dobles
 
-    let  a = "hello";
+    let a = "hola";
     
 
-##### converted to string "A"
+##### Convertido a string "A"
 
     let a = 'A';
     
 
-##### automatically casted to ""
+##### Automáticamente clasificado a ""
 
     let a = null;
