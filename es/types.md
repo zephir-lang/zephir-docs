@@ -92,7 +92,7 @@ Los números de punto flotante tienen una precisión limitada. Aunque depende de
 
 ### Integer
 
-Son números enteros. El tamaño de un entero es dependiente de la plataforma, aunque un valor máximo aproximadamente de 2 billones es el valor usual (que es 32 bits firmados). Las plataformas de 64 bits generalmente tienen un valor máximo aproximadamente de 9E18. PHP no soporta enteros sin signo, Zephir también tiene esta restricción:
+Son números enteros. El tamaño de un entero es dependiente de la plataforma, aunque un valor máximo aproximadamente de 2 billones es el valor usual (que es 32 bits con signo). Las plataformas de 64 bits generalmente tienen un valor máximo aproximadamente de 9E18. PHP no soporta enteros sin signo, Zephir también tiene esta restricción:
 
     var a = 5, b = 10050;
     
@@ -286,7 +286,7 @@ Los enteros sin signo son dos veces más grandes que los enteros estándar. La a
 
 ### Long/Long sin signo
 
-Las variables long son dos veces más grandes que las variables enteras, por lo que pueden almacenar números más grandes. Al igual que con los enteros, los valores asignados a variables largas se convierten automáticamente a este tipo:
+Las variables largas son dos veces más grandes que las variables enteras, por lo que pueden almacenar números más grandes. Al igual que con los enteros, los valores asignados a variables largas se convierten automáticamente a este tipo:
 
     long a;
     
@@ -314,7 +314,7 @@ Las variables long son dos veces más grandes que las variables enteras, por lo 
     let a = "hola";
     
 
-Los longs sin signo son como los longs estandar, pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
+Los largos sin signo son como los largos estándar, pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
 
     ulong a;
     
@@ -346,7 +346,7 @@ Los longs sin signo son como los longs estandar, pero no tienen signo, esto sign
     let a = "hola";
     
 
-Los largos sin signo son dos veces más grandes que los longs estándar; la asignación de largos sin firmar a largos estándar (con signo) puede provocar la pérdida de datos:
+Los largos sin signo son dos veces más grandes que los largos estándar; la asignación de largos sin signo a largos estándar (con signo) puede provocar la pérdida de datos:
 
 ##### Pérdida potencial de datos en `b`
 
@@ -362,7 +362,7 @@ Los largos sin signo son dos veces más grandes que los longs estándar; la asig
 
 Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte. Como PHP solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
-Cuando una variable es declarada como string, nunca cambiar su tipo:
+Cuando una variable es declarada como string, nunca cambia su tipo:
 
     string a;
     
