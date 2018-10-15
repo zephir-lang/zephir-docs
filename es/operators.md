@@ -1,55 +1,55 @@
-# Operators
+# Operadores
 
-Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
+Los operadores en Zephir son similares a los de PHP, también heredarán algunas de sus conductas.
 
 <a name='arithmetic-operators'></a>
 
-## Arithmetic Operators
+## Operadores Aritméticos
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation      | Example |
+| Operación      | Ejemplo |
 | -------------- | ------- |
-| Negation       | `-a`    |
-| Addition       | `a + b` |
-| Subtraction    | `a - b` |
-| Multiplication | `a * b` |
-| Division       | `a / b` |
-| Modulus        | `a % b` |
+| Negación       | `-a`    |
+| Suma           | `a + b` |
+| Resta          | `a - b` |
+| Multiplicación | `a * b` |
+| División       | `a / b` |
+| Módulo         | `a % b` |
 
 <a name='bitwise-operators'></a>
 
 ## Operadores bit a bit
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation          | Example        |
-| ------------------ | -------------- |
-| And                | `a & b`    |
-| Or (inclusive or)  | `a | b`        |
-| Xor (exclusive or) | `a ^ b`        |
-| Not                | `~a`           |
-| Shift left         | `a << b` |
-| Shift right        | `a >> b` |
+| Operación            | Ejemplo        |
+| -------------------- | -------------- |
+| And                  | `a & b`    |
+| Or (o inclusivo)     | `a | b`        |
+| Xor (o exclusivo)    | `a ^ b`        |
+| Not                  | `~a`           |
+| Mover a la izquierda | `a << b` |
+| Mover a la derecha   | `a >> b` |
 
-Example:
+Ejemplo:
 
     if a & SOME_FLAG {
-        echo "has some flag";
+        echo "tiene la bandera";
     }
     
 
-Learn more about comparison of dynamic variables in the [php manual](http://www.php.net/manual/en/language.operators.comparison.php).
+Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](http://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
 ## Comparación de Operadores
 
-Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
+Los operadores de comparación dependen del tipo de variables en comparación. Por ejemplo, si ambos operandos de la comparación son variables dinámicas, el comportamiento es igual que en PHP:
 
-| Example        | Operation                | Description                                                      |
+| Ejemplo        | Operación                | Descripción                                                      |
 | -------------- | ------------------------ | ---------------------------------------------------------------- |
-| `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
+| `a == b`       | Igual                    | `true` if a is equal to b after type juggling.                   |
 | `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
 | `a != b`       | Not equal                | `true` if a is not equal to b after type juggling.               |
 | `a <> b` | Not equal                | `true` if a is not equal to b after type juggling.               |
@@ -59,7 +59,7 @@ Comparison operators depend on the type of variables compared. For example, if b
 | `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
 | `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
 
-Example:
+Ejemplo:
 
     if a == b {
         return 0;
@@ -76,15 +76,15 @@ Example:
 
 ## Operadores Lógicos
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation | Example          |
+| Operación | Ejemplo          |
 | --------- | ---------------- |
 | And       | `a && b` |
 | Or        | `a || b`         |
 | Not       | `!a`             |
 
-Example:
+Ejemplo:
 
     if a && b || !c {
         return -1;
@@ -105,7 +105,7 @@ Zephir supports the ternary operator available in C or PHP:
 
 ## Special Operators
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
 <a name='special-operators-empty'></a>
 
