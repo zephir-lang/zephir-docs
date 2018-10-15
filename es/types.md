@@ -35,8 +35,8 @@ Pueden tener ocho tipos:
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `array`          | Un array, también puede llamarse arreglo o matriz, es un mapa ordenado. Un mapa es un tipo que asocia valores a claves. |
 | `boolean`        | Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`                                                |
-| `float`/`double` | Números de punto flotante. El tamaño de un flotante depende de la plataforma.                                           |
-| `integer`        | Números enteros. El tamaño de un entero depende de la plataforma.                                                       |
+| `float`/`double` | Son números de punto flotante. El tamaño de un flotante depende de la plataforma.                                       |
+| `integer`        | Son números enteros. El tamaño de un entero depende de la plataforma.                                                   |
 | `null`           | El valor especial `NULL` representa que la variable no tiene valor.                                                     |
 | `object`         | Abstracción de objectos como en PHP.                                                                                    |
 | `resource`       | Un recurso contiene una referencia a un recurso externo.                                                                |
@@ -81,25 +81,25 @@ Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`:
 
 ### Float/Double
 
-Los números de punto flotante (también conocido como "flotantes", "dobles" o "números reales"). Los literales de coma flotante son expresiones con uno o más dígitos, seguidos de un punto (.), seguido por uno o más dígitos. El tamaño de un float es dependiente de la plataforma, aunque un tamaño máximo de ~1.8e308 con una precisión de aproximadamente 14 dígitos decimales es un valor común (el formato IEEE de 64 bits).
+Los números de punto flotante (también conocido como "flotantes", "dobles" o "números reales"). Los literales de coma flotante son expresiones con uno o más dígitos, seguidos de un punto (.), seguido por uno o más dígitos. El tamaño de un flotante es dependiente de la plataforma, aunque un tamaño máximo de ~1.8e308 con una precisión de aproximadamente 14 dígitos decimales es un valor común (el formato IEEE de 64 bits).
 
     var number = 5.0, b = 0.014;
     
 
-En los números de coma flotante tienen una precisión limitada. Aunque depende del sistema, Zephir utiliza el mismo formato de doble precisión de IEEE 754 usado por PHP, que le dará un máximo error relativo por redondeo en el orden de 1.11e-16.
+Los números de punto flotante tienen una precisión limitada. Aunque depende del sistema, Zephir utiliza el mismo formato de doble precisión de IEEE 754 usado por PHP, que le dará un máximo error relativo por redondeo en el orden de 1.11e-16.
 
 <a name='dynamic-types-integer'></a>
 
 ### Integer
 
-Números enteros. El tamaño de un entero es dependiente de la plataforma, aunque un valor máximo aproximadamente de 2 billones es el valor usual (que es 32 bits firmados). Las plataformas de 64 bits generalmente tienen un valor máximo aproximadamente de 9E18. PHP no soporta enteros sin signo, Zephir también tiene esta restricción:
+Son números enteros. El tamaño de un entero es dependiente de la plataforma, aunque un valor máximo aproximadamente de 2 billones es el valor usual (que es 32 bits con signo). Las plataformas de 64 bits generalmente tienen un valor máximo aproximadamente de 9E18. PHP no soporta enteros sin signo, Zephir también tiene esta restricción:
 
     var a = 5, b = 10050;
     
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer sobrecarga
+### Desbordamiento de Enteros
 
 Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como 'unsigned long' o 'float' para almacenarlos:
 
@@ -127,7 +127,7 @@ Es una cadena de texto o una serie de caracteres, donde un caracter es igual a u
 
 En Zephir, los string literales solo pueden ser especificados utilizando las comillas dobles (como en C o Go). Las comillas simples están reservadas para los caracteres.
 
-Son soportadas las siguientes secuencias de escape en strings:
+Son soportadas las siguientes secuencias de escape en cadenas de texto:
 
 | Secuencia   | Descripción      |
 | ----------- | ---------------- |
@@ -152,7 +152,7 @@ En Zephir, los strings no soportan el analizis de variables como en PHP; es nece
 
 ## Tipos Estáticos
 
-El tipificado estático permite al programador a declarar y utilizar algunos tipos de variables disponible en C. Las variables no pueden cambiar su tipo una vez que se han declarado con un tipo estático. Sin embargo, permiten al compilador hacer un mejor trabajo de optimización. Son soportados los siguientes tipos:
+El tipificado estático permite al programador declarar y utilizar algunos tipos de variables disponibles en C. Las variables no pueden cambiar su tipo una vez que se han declarado con un tipo estático. Sin embargo, permiten al compilador hacer un mejor trabajo de optimización. Son soportados los siguientes tipos:
 
 | Tipo               | Descripción                                                                                     |
 | ------------------ | ----------------------------------------------------------------------------------------------- |
@@ -193,7 +193,7 @@ Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`. Contra
 
 ### Char/Char sin signo
 
-Las variables char son la unidad direccionable más pequeña de la máquina que puede contener el conjunto de carácter básico (generalmente 8 bits). Una variable de 'tipo char' se puede utilizar para almacenar cualquier carácter en una cadena:
+Las variables caracter son la unidad direccionable más pequeña de la máquina que puede contener el conjunto de carácter básico (generalmente 8 bits). Una variable de tipo `char` se puede utilizar para almacenar cualquier carácter en una cadena:
 
     char ch, string name = "pedro";
     
@@ -286,7 +286,7 @@ Los enteros sin signo son dos veces más grandes que los enteros estándar. La a
 
 ### Long/Long sin signo
 
-Las variables long son dos veces más grandes que las variables enteras, por lo que pueden almacenar números más grandes. Al igual que con los enteros, los valores asignados a variables largas se convierten automáticamente a este tipo:
+Las variables largas son dos veces más grandes que las variables enteras, por lo que pueden almacenar números más grandes. Al igual que con los enteros, los valores asignados a variables largas se convierten automáticamente a este tipo:
 
     long a;
     
@@ -314,7 +314,7 @@ Las variables long son dos veces más grandes que las variables enteras, por lo 
     let a = "hola";
     
 
-Los longs sin signo son como los longs estandar, pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
+Los largos sin signo son como los largos estándar, pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
 
     ulong a;
     
@@ -346,7 +346,7 @@ Los longs sin signo son como los longs estandar, pero no tienen signo, esto sign
     let a = "hola";
     
 
-Los largos sin signo son dos veces más grandes que los longs estándar; la asignación de largos sin firmar a largos estándar (con signo) puede provocar la pérdida de datos:
+Los largos sin signo son dos veces más grandes que los largos estándar; la asignación de largos sin signo a largos estándar (con signo) puede provocar la pérdida de datos:
 
 ##### Pérdida potencial de datos en `b`
 
@@ -362,7 +362,7 @@ Los largos sin signo son dos veces más grandes que los longs estándar; la asig
 
 Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte. Como PHP solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
-Cuando una variable es declarada como string, nunca cambiar su tipo:
+Cuando una variable es declarada como string, nunca cambia su tipo:
 
     string a;
     

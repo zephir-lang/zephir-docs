@@ -1,65 +1,65 @@
-# Operators
+# Operadores
 
-Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
+Los operadores en Zephir son similares a los de PHP, también heredarán algunas de sus conductas.
 
 <a name='arithmetic-operators'></a>
 
-## Arithmetic Operators
+## Operadores Aritméticos
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation      | Example |
+| Operación      | Ejemplo |
 | -------------- | ------- |
-| Negation       | `-a`    |
-| Addition       | `a + b` |
-| Subtraction    | `a - b` |
-| Multiplication | `a * b` |
-| Division       | `a / b` |
-| Modulus        | `a % b` |
+| Negación       | `-a`    |
+| Suma           | `a + b` |
+| Resta          | `a - b` |
+| Multiplicación | `a * b` |
+| División       | `a / b` |
+| Módulo         | `a % b` |
 
 <a name='bitwise-operators'></a>
 
 ## Operadores bit a bit
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation          | Example        |
-| ------------------ | -------------- |
-| And                | `a & b`    |
-| Or (inclusive or)  | `a | b`        |
-| Xor (exclusive or) | `a ^ b`        |
-| Not                | `~a`           |
-| Shift left         | `a << b` |
-| Shift right        | `a >> b` |
+| Operación            | Ejemplo        |
+| -------------------- | -------------- |
+| And                  | `a & b`    |
+| Or (o inclusivo)     | `a | b`        |
+| Xor (o exclusivo)    | `a ^ b`        |
+| Not                  | `~a`           |
+| Mover a la izquierda | `a << b` |
+| Mover a la derecha   | `a >> b` |
 
-Example:
+Ejemplo:
 
     if a & SOME_FLAG {
-        echo "has some flag";
+        echo "tiene la bandera";
     }
     
 
-Learn more about comparison of dynamic variables in the [php manual](http://www.php.net/manual/en/language.operators.comparison.php).
+Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](http://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
 ## Comparación de Operadores
 
-Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
+Los operadores de comparación dependen del tipo de variables en comparación. Por ejemplo, si ambos operandos de la comparación son variables dinámicas, el comportamiento es igual que en PHP:
 
-| Example        | Operation                | Description                                                      |
-| -------------- | ------------------------ | ---------------------------------------------------------------- |
-| `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
-| `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
-| `a != b`       | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a <> b` | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a !== b`      | Not identical            | `true` if a is not equal to b, or they are not of the same type. |
-| `a < b`     | Less than                | `true` if a is strictly less than b.                             |
-| `a > b`     | Greater than             | `true` if a is strictly greater than b.                          |
-| `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
-| `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
+| Ejemplo        | Operación         | Descripción                                                                  |
+| -------------- | ----------------- | ---------------------------------------------------------------------------- |
+| `a == b`       | Igual             | `true` si a es igual a b después de arreglar de otro modo las variables.     |
+| `a === b`      | Idéntico          | `true` si a es igual a b, y ambas son del mismo tipo.                        |
+| `a != b`       | No iguales        | `true` si a no es igual a b, después de arreglar de otro modo las variables. |
+| `a <> b` | No iguales        | `true` si a no es igual a b, después de arreglar de otro modo las variables. |
+| `a !== b`      | No idénticos      | `true` si a no es igual a b, o ambos no son del mismo tipo.                  |
+| `a < b`     | Menor Que         | `true` si a es estrictamente menor que b.                                    |
+| `a > b`     | Mayor que         | `true` si a es estrictamente mayor que b.                                    |
+| `a <= b`    | Menor o igual que | `true` si a es menor o igual que b.                                          |
+| `a >= b`    | Mayor o igual que | `true` si a es mayor o igual que b.                                          |
 
-Example:
+Ejemplo:
 
     if a == b {
         return 0;
@@ -76,15 +76,15 @@ Example:
 
 ## Operadores Lógicos
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation | Example          |
+| Operación | Ejemplo          |
 | --------- | ---------------- |
 | And       | `a && b` |
 | Or        | `a || b`         |
 | Not       | `!a`             |
 
-Example:
+Ejemplo:
 
     if a && b || !c {
         return -1;
@@ -94,33 +94,33 @@ Example:
 
 <a name='tenary-operator'></a>
 
-## Ternary Operator
+## Operador Ternario
 
-Zephir supports the ternary operator available in C or PHP:
+Zephir soporta el operador ternario habilitado en C o PHP:
 
-    let b = a == 1 ? "x" : "y"; // b is set to "x" if a is equal to 1, otherwise "y" is assigned as the value
+    let b = a == 1 ? "x" : "y"; // b es igual a "x" si a es igual a 1, en otro caso será igual a "y"
     
 
 <a name='special-operators'></a>
 
-## Special Operators
+## Operadores Especiales
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
 <a name='special-operators-empty'></a>
 
 ### Empty
 
-This operator allows checking whether an expression is empty. 'Empty' means the expression is `null`, is an empty string, or an empty array:
+Este operador permite chequear si una expresión esta vacía. 'Empty' significa que la expresión es igual a `null`, a una cadena de texto vacía, o a un array vacío:
 
     let someVar = "";
     if empty someVar {
-        echo "is empty!";
+        echo "¡esta vacía!";
     }
     
-    let someVar = "hello";
+    let someVar = "hola";
     if !empty someVar {
-        echo "is not empty!";
+        echo "¡no esta vacía!";
     }
     
 
@@ -128,7 +128,7 @@ This operator allows checking whether an expression is empty. 'Empty' means the 
 
 ### Fetch
 
-'Fetch' is an operator that reduces a common operation in PHP into a single instruction:
+'Fetch' es un operador que reduce una operación común en PHP a una sola instrucción:
 
     <?php
     
@@ -138,14 +138,14 @@ This operator allows checking whether an expression is empty. 'Empty' means the 
     }
     
 
-In Zephir, you can write the same code as:
+En Zephir, puedes escribir el mismo código de la siguiente manera:
 
     if fetch value, myArray[key] {
         echo value;
     }
     
 
-'Fetch' only returns `true` if the 'key' is a valid item in the array, and only in that case is 'value' populated.
+'Fetch' solo retornará `true` si la clave 'key' es un item válido en el array, y solo si tiene un valor 'value' asignado.
 
 <a name='special-operators-isset'></a>
 
