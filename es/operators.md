@@ -164,25 +164,25 @@ Utilizando `isset` como una expresión de retorno:
     return isset this->{someProperty};
     
 
-Note that `isset` in Zephir works more like PHP's function [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
+Nota: en Zephir `isset` funciona como la función [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php) de PHP, `isset` en Zephir retornará `true` incluso cuando el índice del array o la propiedad del objecto sean nulas.
 
 <a name='special-operators-typeof'></a>
 
 ### Typeof
 
-This operator checks a variable's type. 'typeof' can be used with a comparison operator:
+Este operador comprueba el tipo de una variable. `typeof` puede usarse con un operador de comparación:
 
-    if (typeof str == "string") { // or !=
+    if (typeof str == "string") { // o !=
         echo str;
     }
     
 
-It can also work like the PHP function `gettype`.
+También puede trabajar como la función `gettype` de PHP.
 
     return typeof str;
     
 
-**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
+**Cuidado** si desea comprobar que si un objeto es "callable", siempre tienes que usar `typeof` como un operador de comparación, no como una función.
 
 <a name='special-operators-type-hints'></a>
 
