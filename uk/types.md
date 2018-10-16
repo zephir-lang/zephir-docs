@@ -72,7 +72,7 @@ Zephir поєднує в собі статичну та динамічну ти�
 
 ### Логічний тип
 
-Булевий тип виражає значення істини. It can be either `true` or `false`:
+Булевий тип виражає значення істини. Він може бути `true` або `false`:
 
     var a = false, b = true;
     
@@ -101,7 +101,7 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Програмне переповнення цілих чисел
 
-На відміну від PHP Zephir автоматично не перевіряє рівень заповненості цілого числа. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
+На відміну від PHP Zephir автоматично не перевіряє рівень заповненості цілого числа. Як і в C, якщо ви виконуєте операції які можуть повернути велике число ви повинні використати такі типи як `unsigned long` або ж `float`:
 
     unsigned long my_number = 2147483648;
     
@@ -135,7 +135,7 @@ Zephir дозволяє створювати екземпляр класу, ма
 | `\\n`       | Переведення рядка      |
 | `\\r`       | Повернення каретки     |
 | `\\ \`   | Бекслеш                |
-| `\\"`       | подвійні лапки         |
+| `\\"`       | Подвійні лапки         |
 
     var today    = "\tfriday\n\r",
         tomorrow = "\tsaturday";
@@ -157,7 +157,7 @@ Zephir не підтримує парсинг змінних у рядках я�
 | Тип                | Опис                                                                                |
 | ------------------ | ----------------------------------------------------------------------------------- |
 | `array`            | Структура, яка може бути використана як хеш, мапа, словник, колекції, стек, і т. д. |
-| `boolean`          | Булевий тип виражає значення істини. It can be either `true` or `false`.            |
+| `boolean`          | Булевий тип виражає значення істини. Він може бути `true` або `false`.              |
 | `char`             | Smallest addressable unit of the machine that can contain basic character set.      |
 | `float`/`double`   | Double precision floating-point type. The size is platform-dependent.               |
 | `integer`          | Signed integers. At least 16 bits in size.                                          |
@@ -171,18 +171,18 @@ Zephir не підтримує парсинг змінних у рядках я�
 
 ### Логічний тип
 
-Булевий тип виражає значення істини. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+Булевий тип виражає значення істини. Він може бути `true` або `false`. На відміну від поведінки динамічного типу, який описаний вище - статичні булеві типи залишаються булевими, не залежно від того, яке значення їм призначається:
 
     boolean a;
     let a = true;
     
 
-##### automatically casted to `true`
+##### автоматично змінюється на `true`
 
     let a = 100;
     
 
-##### automatically casted to `false`
+##### автоматично змінюється на `false`
 
     let a = 0
     
@@ -196,7 +196,7 @@ Zephir не підтримує парсинг змінних у рядках я�
 
 ### Char/Unsigned Char
 
-Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
+Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). Змінна типу `char` може використовуватися для зберігання будь-яких символів у рядку:
 
     char ch, string name = "peter";
     
@@ -365,7 +365,7 @@ Unsigned longs are twice bigger than standard longs; assigning unsigned longs to
 
 A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
 
-When a variable is declared `string` it never changes its type:
+Коли змінна оголошується як `string` вона ніколи не змінить свого типу:
 
     string a;
     
