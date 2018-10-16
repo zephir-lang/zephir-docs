@@ -72,7 +72,7 @@ Solo valores enteros y cadenas de textos pueden utilizados como claves:
 
 ### Boolean
 
-Un valor booleano expresa un valor de verdad. It can be either `true` or `false`:
+Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`:
 
     var a = false, b = true;
     
@@ -101,7 +101,7 @@ Son números enteros. El tamaño de un entero es dependiente de la plataforma, a
 
 ### Desbordamiento de Enteros
 
-Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
+Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como `unsigned long` o `float` para almacenarlos:
 
     unsigned long my_number = 2147483648;
     
@@ -157,7 +157,7 @@ El tipificado estático permite al programador declarar y utilizar algunos tipos
 | Tipo               | Descripción                                                                                     |
 | ------------------ | ----------------------------------------------------------------------------------------------- |
 | `array`            | Una estructura que puede ser utilizada como hash, mapa, diccionario, colección, pila, etcétera. |
-| `boolean`          | Un valor booleano expresa un valor de verdad. It can be either `true` or `false`.               |
+| `boolean`          | Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`.                       |
 | `char`             | Es la unidad más pequeña que puede contener el conjunto de caracteres básicos.                  |
 | `float`/`double`   | Tipo punto flotante de doble precisión. El tamaño depende de la plataforma.                     |
 | `integer`          | Enteros con signo. Al menos 16 bits de tamaño.                                                  |
@@ -171,7 +171,7 @@ El tipificado estático permite al programador declarar y utilizar algunos tipos
 
 ### Boolean
 
-Un valor booleano expresa un valor de verdad. It can be either `true` or `false`. Contrariamente al comportamiento dinámico detallado anteriormente, los tipos booleanos estáticos siguen siendo booleanos (verdaderos o falsos) sin importar el valor que se les asigne:
+Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`. Contrariamente al comportamiento dinámico detallado anteriormente, los tipos booleanos estáticos siguen siendo booleanos (verdaderos o falsos) sin importar el valor que se les asigne:
 
     boolean a;
     let a = true;
@@ -189,16 +189,16 @@ Un valor booleano expresa un valor de verdad. It can be either `true` or `false`
 
 ##### Arroja una excepción de compilador
 
-    let a = "hello";
+    let a = "hola";
     
 
 <a name='static-types-char-unsigned'></a>
 
 ### Char/Char sin signo
 
-Las variables caracter son la unidad direccionable más pequeña de la máquina que puede contener el conjunto de carácter básico (generalmente 8 bits). A `char` variable can be used to store any character in a string:
+Las variables caracter son la unidad direccionable más pequeña de la máquina que puede contener el conjunto de carácter básico (generalmente 8 bits). Una variable de tipo `char` se puede utilizar para almacenar cualquier carácter en una cadena:
 
-    char ch, string name = "peter";
+    char ch, string name = "pedro";
     
 
 ##### almacenar 'd'
@@ -240,7 +240,7 @@ Los valores enteros el miembro entero en valores dinámicos. Los valores asignad
 
 ##### Arroja una excepción de compilador
 
-    let a = "hello";
+    let a = "hola";
     
 
 Los enteros sin signo, son como los enteros pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
@@ -272,7 +272,7 @@ Los enteros sin signo, son como los enteros pero no tienen signo, esto significa
 
 ##### Arroja una excepción de compilador
 
-    let a = "hello";
+    let a = "hola";
     
 
 Los enteros sin signo son dos veces más grandes que los enteros estándar. La asignación de enteros sin signo a enteros estándar (con signo) puede resultar en pérdida de datos:
@@ -314,7 +314,7 @@ Las variables largas son dos veces más grandes que las variables enteras, por l
 
 ##### Arroja una excepción de compilador
 
-    let a = "hello";
+    let a = "hola";
     
 
 Los largos sin signo son como los largos estándar, pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
@@ -346,7 +346,7 @@ Los largos sin signo son como los largos estándar, pero no tienen signo, esto s
 
 ##### Arroja una excepción de compilador
 
-    let a = "hello";
+    let a = "hola";
     
 
 Los largos sin signo son dos veces más grandes que los largos estándar; la asignación de largos sin signo a largos estándar (con signo) puede provocar la pérdida de datos:
@@ -365,7 +365,7 @@ Los largos sin signo son dos veces más grandes que los largos estándar; la asi
 
 Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte. Como PHP solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
-When a variable is declared `string` it never changes its type:
+Cuando una variable es declarada como `string`, nunca cambia su tipo:
 
     string a;
     
@@ -374,7 +374,7 @@ When a variable is declared `string` it never changes its type:
 
 ##### Los string literales deben ser encerrados entre comillas dobles
 
-    let  a = "hello";
+    let a = "hola";
     
 
 ##### Convertido a string "A"
