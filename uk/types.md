@@ -187,7 +187,7 @@ Zephir не підтримує парсинг змінних у рядках я�
     let a = 0
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
@@ -238,7 +238,7 @@ Integer values are like the integer member in dynamic values. Values assigned to
     let a = false;
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
@@ -270,7 +270,7 @@ Unsigned integers are like integers but they don't have sign, this means you can
     let a = false;
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
@@ -312,7 +312,7 @@ Long variables are twice bigger than integer variables, thus they can store bigg
     let a = false;
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
@@ -344,7 +344,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
     let a = false;
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
