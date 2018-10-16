@@ -151,15 +151,15 @@ En Zephir, puedes escribir el mismo código de la siguiente manera:
 
 ### Isset
 
-This operator checks whether a property or index has been defined in an array or object:
+Este operador comprueba que una propiedad o un índice esté definido en un array o en un objecto:
 
     let someArray = ["a": 1, "b": 2, "c": 3];
-    if isset someArray["b"] { // check if the array has an index "b"
-        echo "yes, it has an index 'b'\n";
+    if isset someArray["b"] { // comprueba que el array tenga el índice "b"
+        echo "si, hay un índice 'b'\n";
     }
     
 
-Using `isset` as a return expression:
+Utilizando `isset` como una expresión de retorno:
 
     return isset this->{someProperty};
     
