@@ -72,7 +72,7 @@ Only long and string values can be used as keys:
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either 'true' or 'false':
+A boolean expresses a truth value. It can be either `true` or `false`:
 
     var a = false, b = true;
     
@@ -101,7 +101,7 @@ Integer numbers. The size of an integer is platform-dependent, although a maximu
 
 ### Integer overflow
 
-Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
+Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
 
     unsigned long my_number = 2147483648;
     
@@ -157,7 +157,7 @@ Static typing allows the developer to declare and use some variable types availa
 | Type               | Description                                                                    |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
-| `boolean`          | A boolean expresses a truth value. It can be either 'true' or 'false'.         |
+| `boolean`          | A boolean expresses a truth value. It can be either `true` or `false`.         |
 | `char`             | Smallest addressable unit of the machine that can contain basic character set. |
 | `float`/`double`   | Double precision floating-point type. The size is platform-dependent.          |
 | `integer`          | Signed integers. At least 16 bits in size.                                     |
@@ -171,7 +171,7 @@ Static typing allows the developer to declare and use some variable types availa
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+A boolean expresses a truth value. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
@@ -184,6 +184,9 @@ A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary 
 
 ##### automatically casted to `false`
 
+    let a = 0
+    
+
 ##### throws a compiler exception
 
     let a = "hello";
@@ -193,7 +196,7 @@ A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary 
 
 ### Char/Unsigned Char
 
-Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A 'char' variable can be used to store any character in a string:
+Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
 
     char ch, string name = "peter";
     
@@ -362,7 +365,7 @@ Unsigned longs are twice bigger than standard longs; assigning unsigned longs to
 
 A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
 
-When a variable is declared string it never changes its type:
+When a variable is declared `string` it never changes its type:
 
     string a;
     
