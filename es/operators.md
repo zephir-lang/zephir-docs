@@ -186,28 +186,28 @@ También puede trabajar como la función `gettype` de PHP.
 
 <a name='special-operators-type-hints'></a>
 
-### Type Hints
+### Sugerencias de Tipos
 
-Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
+Zephir siempre trata de comprobar si un objeto implementa métodos y propiedades llamado/accedido a una variable, que se infiere que es un objeto:
 
     let o = new MyObject();
     
-    // Zephir checks if "myMethod" is implemented on MyObject
+    // Zephir comprueba si "myMethod" es implementado en MyObject
     o->myMethod();
     
 
-However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object, so Zephir can't produce error reports effectively. A type hint tells the compiler which class is related to a dynamic variable, allowing the compiler to perform more compilation checks:
+Sin embargo, debido al dinamismo heredado de PHP, a veces no es fácil saber la clase de un objeto, entonces Zephir no puede producir informes de errores con eficacia. Una sugerencia de tipo le indica al compilador que clase se relaciona con una variable dinámica, permitiendo que el compilador hacer más verificaciones de compilación:
 
-    // Tell the compiler that "o"
-    // is an instance of class MyClass
+    // Decirle al compilador que "o"
+    // es una instancia de la clase MyClass
     let o = <MyClass> this->_myObject;
     o->myMethod();
     
 
-These "type hints" are weak. This means the program does not check if the value is in fact an instance of the specified class, nor whether it implements the specified interface. If you want it to check this every time in execution, use a strict type:
+Estos "consejos de tipo" son débiles. Esto significa que el programa no comprueba si el valor es de hecho una instancia de la clase especificada, ni si implementa la interfaz especificada. Si desea comprobarlo en ejecución cada vez, utilice un tipo estricto:
 
-    // Always check if the property is an instance
-    // of MyClass before the assignment
+    // Siempre comprueba si la propiedades es una instancia
+    // de MyClass antes de asignarla
     let o = <MyClass!> this->_myObject;
     o->myMethod();
     
@@ -216,21 +216,21 @@ These "type hints" are weak. This means the program does not check if the value 
 
 ### Branch Prediction Hints
 
-What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
+¿Qué es la predicción de rama? Revisa este [artículo](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) o este otro [artículo en la Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). En entornos donde el desempeño es muy importante, puede ser útil introducir estos consejos.
 
-Consider the following example:
+Considere el siguiente ejemplo:
 
     let allPaths = [];
     for path in this->_paths {
         if path->isAllowed() == false {
-            throw new App\Exception("Some error message here");
+            throw new App\Exception("Un mensaje de error");
         } else {
             let allPaths[] = path;
         }
     }
     
 
-The authors of the above code know in advance that the condition that throws the exception is unlikely to happen. This means that, 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
+Los autores del código anterior saben, de antemano, que es poco probable que ocurra la condición que produce la excepción. This means that, 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
 
     let allPaths = [];
     for path in this->_paths {
