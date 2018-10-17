@@ -214,7 +214,7 @@ Estos "consejos de tipo" son débiles. Esto significa que el programa no comprue
 
 <a name='special-operators-branch-prediction-hints'></a>
 
-### Branch Prediction Hints
+### Consejos de Predicción de Rama
 
 ¿Qué es la predicción de rama? Revisa este [artículo](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) o este otro [artículo en la Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). En entornos donde el desempeño es muy importante, puede ser útil introducir estos consejos.
 
@@ -230,12 +230,12 @@ Considere el siguiente ejemplo:
     }
     
 
-Los autores del código anterior saben, de antemano, que es poco probable que ocurra la condición que produce la excepción. This means that, 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
+Los autores del código anterior saben, de antemano, que es poco probable que ocurra la condición que produce la excepción. Esto significa que, el 99.9% del tiempo, nuestro método ejecuta esa condición, pero probablemente nunca se evalúe como verdadero. Para el procesador, esto podría ser difícil de saber, pero le podríamos presentar una sugerencia allí:
 
     let allPaths = [];
     for path in this->_paths {
         if unlikely path->isAllowed() == false {
-            throw new App\Exception("Some error message here");
+            throw new App\Exception("Un mensaje de error");
         } else {
             let allPaths[] = path;
         }
