@@ -1,46 +1,46 @@
 # Arrays
 
-La manipulación de arrays o arreglos en Zephir proporciona una manera de utilizar [arrays de PHP](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).
+La manipulación de arrays o arreglos en Zephir proporciona una manera de utilizar [arrays de PHP](http://www.php.net/manual/en/language.types.array.php). Un array es una implementación de una [tabla hash](http://en.wikipedia.org/wiki/Hash_table).
 
 <a name='declaring-array-variables'></a>
 
-## Declaring Array Variables
+## Declarar Variables de Array
 
-Array variables can be declared using the keywords 'var' or 'array':
+Variables de array pueden ser declaradas usando las palabras clave 'var' o 'array':
 
-    var a   = []; // array variable, its type can be changed
-    array b = []; // array variable, its type cannot be changed across execution
+    var a   = []; // variable array, el tipo puede ser cambiado
+    array b = []; // variable array, el tipo no puede ser cambiado durante la ejecución
     
 
 <a name='creating-arrays'></a>
 
-## Creating Arrays
+## Creación de Arrays
 
-An array is created by enclosing its elements in square brackets:
+Un array se crea encerrando sus elementos entre corchetes:
 
-##### Creating an empty array
+##### Crear una arreglo vacío
 
     let elements = [];
     
 
-##### Creating an array with elements
+##### Crear un arreglo con elementos
 
     let elements = [1, 3, 4];
     
 
-##### Creating an array with elements of different types
+##### Crear un arreglo con elementos de diferentes tipos
 
     let elements = ["first", 2, true];
     
 
-##### A multidimensional array
+##### Un arreglo multidimensional
 
     let elements = [[0, 1], [4, 5], [2, 3]];
     
 
-As PHP, hashes or dictionaries are supported:
+Al igual que en PHP los hashes o claves están soportadas:
 
-##### Creating a hash with string keys
+##### Creación de un hash con claves de texto
 
     let elements = ["foo": "bar", "bar": "foo"];
     
