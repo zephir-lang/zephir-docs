@@ -1,6 +1,6 @@
 # Operadores
 
-Los operadores en Zephir son similares a los de PHP, también heredarán algunas de sus conductas.
+Los operadores en Zephir son similares a los de PHP, y también heredarán algunos de sus comportamientos.
 
 <a name='arithmetic-operators'></a>
 
