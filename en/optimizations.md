@@ -47,7 +47,7 @@ Is transformed into:
 
 <a name='internal-call-transformation'></a>
 ## internal-call-transformation
-The internal-call-transformation is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for thos internal method calls. By default, this optimization is turned off.
+The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. By default, this optimization is turned off.
 
 This optimization generates 2 implementations per method, one that is exposed in PHP and an internal one.
 
@@ -56,7 +56,7 @@ Exceptions to the above are:
 - Only PHP methods allowed to be replaced (eg. we can't do this for Phalcon's methods)
 - Closures such as (`__invoke`) and `__construct` are not supported
 - The number of required parameters must exactly match the number of actual parameters
-- Does not work for ZendEngine2
+- Does not work for ZendEngine2 (PHP 5.6)
 
 <a name='local-context-pass'></a>
 ## local-context-pass
