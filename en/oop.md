@@ -43,6 +43,42 @@ The following class modifiers are supported:
     
     }
 
+<a name='classes-interfaces'></a>
+### Implementing Interfaces
+Zephir classes can implement any number of interfaces, provided that these interfaces are visible for the extension to use. However there are times that your extension might require to implement an interface that is built in another extension or package. 
+
+If we want to implement the `MiddlewareInterface` from the `PSR` package, we will need to:
+
+	// middlewareinterfaceex.zep
+	namespace Test\Oo\Extend;
+ 	
+ 	use Psr\Http\Server\MiddlewareInterface;
+ 	
+ 	interface MiddlewareInterfaceEx extends MiddlewareInterface
+	{
+	
+	}
+
+From here we can use the "stub" interface throughout our extension. 
+
+	/**
+     * @test
+     * @issue https://github.com/phalcon/zephir/issues/1686
+     */
+    public function shouldExtendMiddlewareInterface()
+    {
+        if (!extension_loaded('psr')) {
+            $this->markTestSkipped(
+                "The psr extension is not loaded"
+            );
+        }
+         $this->assertTrue(
+            is_subclass_of(MiddlewareInterfaceEx::class, 'Psr\Http\Server\MiddlewareInterface')
+        );
+    }
+
+**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the `PSR` extension **first** before the Zephir built extension is loaded.
+
 <a name='implementing-methods'></a>
 ## Implementing Methods
 The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
