@@ -54,7 +54,7 @@ This optimization generates 2 implementations per method, one that is exposed in
 Exceptions to the above are:
 
 - Only PHP methods allowed to be replaced (eg. we can't do this for Phalcon's methods)
-- Closures such as (`__invoke`) and `__construct` are not supported
+- Closures (`__invoke`) and `__construct` are not supported
 - The number of required parameters must exactly match the number of actual parameters
 - Does not work for ZendEngine2 (PHP 5.6)
 
