@@ -29,10 +29,6 @@ This pass counts how many times a function or method is called within the same m
         }
     }
 
-<a name='check-invalid-reads'></a>
-## check-invalid-reads
-This flag will force checking types to detect for invalid reads during the compilation process, 
-
 <a name='constant-folding'></a>
 ## constant-folding
 Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when this optimization is enabled:
@@ -51,7 +47,16 @@ Is transformed into:
 
 <a name='internal-call-transformation'></a>
 ## internal-call-transformation
-...
+The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. By default, this optimization is turned off.
+
+This optimization generates 2 implementations per method, one that is exposed in PHP and an internal one.
+
+Exceptions to the above are:
+
+- Only PHP methods allowed to be replaced (eg. we can't do this for Phalcon's methods)
+- Closures (`__invoke`) and `__construct` are not supported
+- The number of required parameters must exactly match the number of actual parameters
+- Does not work for ZendEngine2 (PHP 5.6)
 
 <a name='local-context-pass'></a>
 ## local-context-pass
