@@ -1,17 +1,17 @@
-# Classes and Objects
+# Clases y Objetos
 
-Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
+Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.
 
 <a name='classes'></a>
 
-## Classes
+## Clases
 
-Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
+Cada archivo de Zephir debe implementar una clase o una interfaz (y sólo una). Una estructura de clase es muy similar a una clase en PHP:
 
     namespace Test;
     
     /**
-     * This is a sample class
+     * Esta es una clase de ejemplo
      */
     class MyClass
     {
@@ -21,16 +21,16 @@ Every Zephir file must implement a class or an interface (and just one). A class
 
 <a name='classes-modifiers'></a>
 
-### Class Modifiers
+### Modificadores de Clase
 
-The following class modifiers are supported:
+Son soportadas los siguientes modificadores de clase:
 
-*Final*: If a class has this modifier it cannot be extended:
+*final*: Si una clase tiene este modificador no puede ser extendida:
 
     namespace Test;
     
     /**
-     * This class cannot be extended by another class
+     * Esta clase no puede se extendida por otras clases
      */
     final class MyClass
     {
@@ -38,12 +38,12 @@ The following class modifiers are supported:
     }
     
 
-*Abstract*: If a class has this modifier it cannot be instantiated:
+*abstract*: Si una clase tiene este modificador no puede ser instanciada:
 
     namespace Test;
     
     /**
-     * This class cannot be instantiated
+     * Esta clase no puede ser instanciada
      */
     abstract class MyClass
     {
@@ -53,7 +53,7 @@ The following class modifiers are supported:
 
 <a name='implementing-methods'></a>
 
-## Implementing Methods
+## Implementación de Métodos
 
 The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
 
