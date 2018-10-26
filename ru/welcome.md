@@ -11,18 +11,16 @@
 | Особенность                   | Описание                                      |
 | ----------------------------- | --------------------------------------------- |
 | Система типов                 | динамическая/статическая                      |
-| Безопасное управление памятью | указатели и ручное выделение памяти запрещены |
-| Модель компиляции             | ahead of time                                 |
-| Memory model                  | task-local garbage collection                 |
+| Безопасность доступа к памяти | указатели и ручное выделение памяти запрещены |
+| Модель компиляции             | перед исполнением (AOT-компиляция)            |
+| Управление памятью            | свой сборщик мусора                           |
 
 <a name='a-small-taste'></a>
 
-## A small taste
+## Попробуйте
 
-The following code registers a class with a method that filters variables, returning their alphabetic characters:
+Этот код регистрирует класс с методом, который оставляет в строке только буквы:
 
-    namespace MyLibrary;
-    
     /**
      * Filter
      */
@@ -48,9 +46,9 @@ The following code registers a class with a method that filters variables, retur
     }
     
 
-The class can be used from PHP as follows:
+А теперь используем этот класс в PHP:
 
     <?php
     
     $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01he#l.lo?/1"); // prints hello
+    echo $filter->alpha("01he#l.lo?/1"); // выведет hello
