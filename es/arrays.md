@@ -38,7 +38,7 @@ Un array se crea encerrando sus elementos entre corchetes:
     let elements = [[0, 1], [4, 5], [2, 3]];
     
 
-Al igual que en PHP los hashes o claves están soportadas:
+Al igual que en PHP los hashes o claves están soportadas, también conocidos como arreglos asociativos:
 
 ##### Creación de un arreglo asociativo con claves de texto
 
@@ -59,7 +59,7 @@ Al igual que en PHP los hashes o claves están soportadas:
 
 ## Actualización de arrays
 
-Los arreglosse actualizan en la misma manera que en PHP, utilizando corchetes cuadrados:
+Los arreglos se actualizan en la misma manera que en PHP, utilizando corchetes cuadrados:
 
 ##### Actualización de un array con una llave de texto
 
