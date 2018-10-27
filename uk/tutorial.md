@@ -1,19 +1,22 @@
 # Навчальний посібник
 
-Zephir, і цей посібник, призначені для PHP-розробників, які хочуть створити C-розширення, але не знають C.
+Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
 
 Ми припускаємо, що ви маєте досвід в одній або декількох інших мовах програмування. Ми проведемо паралелі з функціями PHP, C, JavaScript та іншими мовами. Ми акцентуватимемо увагу на функції Zephir, які є подібними до функцій в інших мовах, а також на функціях які є новими. Якщо ви знайомі з цими мовами вам буде простіше розібратися що до чого.
+
+In this guide, we will use the standard Linux terminal commands. If you are a Windows user, you need to replace these commands with their counterparts.
 
 <a name='checking-the-installation'></a>
 
 ## Перевірка встановлення
 
-Якщо ви успішно встановили Zephir, тоді виконайте таку команду в консолі:
+If you have successfully installed Zephir, you will be able to execute the following command in your console:
 
-    $ zephir help
-    
+```bash
+zephir help
+```
 
-Якщо все гаразд, ви повинні побачити такий список команд та логотип (або щось схоже):
+If everything is well, you should see the following help (or something very similar):
 
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
@@ -48,62 +51,68 @@ Zephir, і цей посібник, призначені для PHP-розроб
         -W([a-z0-9\-]+)     Turns a warning off
     
 
+If something went wrong, please return back to the [installation](/[[language]]/[[version]]/installation) page.
+
 <a name='extension-skeleton'></a>
 
 ## Каркас розширення
 
-Перше, що ми зробимо це згенеруємо каркас нашого розширення. Це створить нам базову структуру розширення з якою ми працюватимемо далі. У нашому випадку ми збираємося створити розширення, яке називається `utils` (утиліти):
+The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
 
-    $ zephir init utils
-    
+```bash
+zephir init utils
+```
 
-Після цього в поточному робочому каталозі створюється каталог, що називається «utils»:
+After this, a directory called "utils" is created on the current working directory:
 
     utils/
        ext/
        utils/
     
 
-Каталог `ext/` (всередині utils) містить код, який буде використовуватися компілятором для створення розширення. У каталозі є ще один каталог, який має таке ж ім'я, як і наше розширення, а саме `utils`. Ми розмістимо код Zephir там.
+The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
 
-Нам необхідно змінити робочий каталог на «utils», щоб почати компіляцію нашого коду:
+We need to change the working directory to "utils" to start compiling our code:
 
-    $ cd utils
-    $ ls
-    ext/ utils/ config.json
-    
+```bash
+cd utils
+ls
+ext/ utils/ config.json
+```
 
-Перегляд списку файлів покаже нам файл `config.json`. Цей файл містить параметри конфігурації, які ми можемо використовувати, щоб змінювати поведінку Zephir та/або розширення.
+The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
 
 <a name='adding-our-first-class'></a>
 
 ## Додавання нашого першого класу
 
-Zephir спроектований створювати об'єктно-орієнтовані розширення. Перш ніж писати функціонал, нам потрібно додати наш клас до розширення.
+Zephir is designed to generate object-oriented extensions. To start developing functionality, we need to add our first class to the extension.
 
-Як і в багатьох інших мовах чи інструментах, першим ділом ми хочемо побачити `Привіт світ` згенероване Zephir та перевірити чи все гаразд. Наш перший клас називатиметься `Utils\Greeting` і міститиме метод, який друкувати `Привіт світ!`.
+As in many languages/tools, the first thing we want to do is see a `hello world` generated by Zephir, and check that everything is well. So our first class will be called `Utils\Greeting`, and contain a method printing `hello world!`.
 
-Код цього класу повинен бути поміщеним у `utils/utils/greeting.zep`:
+The code for this class must be placed in `utils/utils/greeting.zep`:
 
-    namespace Utils;
-    
-    class Greeting
+```zep
+namespace Utils;
+
+class Greeting
+{
+
+    public static function say()
     {
-    
-        public static function say()
-        {
-            echo "Привіт світ!";
-        }
-    
+        echo "Привіт світ!";
     }
-    
 
-Тепер ми маємо сказати Zephir, що наш проект треба зібрати та згенерувати розширення:
+}
+```
 
-    $ zephir build
-    
+Now, we need to tell Zephir that our project must be compiled and the extension generated:
 
-Спочатку, і лише першого разу, виконається ряд внутрішніх команд, які створять необхідний код та конфігурації для експортування цього класу в PHP-розширення. Якщо все пройде без проблем в кінці ви побачите таке повідомлення:
+```bash
+zephir build
+```
+
+Initially, and only for the first time, a number of internal commands are executed producing the necessary code and configurations to export this class to the PHP extension. If everything goes well, you will see the following message at the end of the output:
 
     ...
     Extension installed!
@@ -111,86 +120,93 @@ Zephir спроектований створювати об'єктно-оріє�
     Don't forget to restart your web server
     
 
-На наведеному вище кроці, швидше за все, для встановлення розширення вам потрібно буде ввести ваш root пароль.
+At the above step, it's likely that you would need to supply your root password in order to install the extension.
 
-Зрештою, вам залишиться лише підключити ваше розширення у `php.ini` та перезапустити PHP-сервер. Щоб підключити ваше розширення, потрібно додати директиву `extension=utils.so` до файлу php.ini. (Примітка: Ви також можете підключити розширення через консоль за допомогою команди `-d extension=utils.so`, але це підключить його лише для одного запиту і вам доведеться писати цю команду для кожного запиту. Додавання ж директиви до `php.ini` забезпечить підключення вашого розширення для кожного запиту.)
+Finally, the extension must be added to the `php.ini` in order to be loaded by PHP. This is achieved by adding the initialization directive: `extension=utils.so` to it.
+
+NOTE: You can also load it on the command line with `-d extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.
 
 <a name='initial-testing'></a>
 
 ## Первинне тестування
 
-Тепер, коли розширення було додано до вашого `php.ini`, перевірте правильність завантаження розширення, виконавши наступну команду:
+Now that the extension was added to your `php.ini`, check whether the extension is being loaded properly by executing the following:
 
-    $ php -m
-    [PHP Modules]
-    Core
-    date
-    libxml
-    pcre
-    Reflection
-    session
-    SPL
-    standard
-    tokenizer
-    utils
-    xdebug
-    xml
-    
+```bash
+php -m
+[PHP Modules]
+Core
+date
+libxml
+pcre
+Reflection
+session
+SPL
+standard
+tokenizer
+utils
+xdebug
+xml
+```
 
-Розширення `utils` повинно бути частиною виходу, що означає, що розширення завантажено правильно. Що ж, давайте подивимось на наш `Привіт світ`, безпосередньо з-під PHP. Для цього ви можете створити простий PHP-файл, який викликає створений нами статичний метод:
+Extension `utils` should be part of the output, indicating that the extension was loaded correctly. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
 
-    <?php
-    
-    echo Utils\Greeting::say(), "\n";
-    
+```php
+<?php
 
-Вітаємо! Ви щойно створили своє власне PHP-розширення.
+echo Utils\Greeting::say(), "\n";
+```
+
+Congratulations! Уou have your first extension running in PHP.
 
 <a name='a-useful-class'></a>
 
 ## Корисний клас
 
-Клас `привіт світ` був хорошою перевіркою чи вірно налаштоване ваше оточення. Тепер давайте створимо кілька корисних класів.
+The `Utils\Greeting::say` method was fine to check if our environment was right. Now, let's create some more useful classes.
 
-Першим корисним класом, який ми додамо до розширення буде зручна фільтрація даних, які вводять користувачі. Цей клас називається `Utils\Filter` і його код повинен розміщуватися в файлі `utils/utils/filter.zep`:
+The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
 
-Базовий каркас для цього класу:
+A basic skeleton for this class is the following:
 
-    namespace Utils;
-    
-    class Filter
+```zep
+namespace Utils;
+
+class Filter
+{
+
+}
+```
+
+The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
+
+```zep
+namespace Utils;
+
+class Filter
+{
+
+    public function alpha(string str)
     {
-    
-    }
-    
+        char ch;
 
-Клас містить фільтрації методи, які допоможуть фільтрувати небажані символи у рядках. Перший метод має назву `alpha` і його мета полягає в тому, щоб відкинути усі символи, крім базових літер ASCII. Щоб почати, просто пройдемося по рядку та надрукуємо кожен байт через стандартний вивід:
-
-    namespace Utils;
-    
-    class Filter
-    {
-    
-        public function alpha(string str)
-        {
-            char ch;
-    
-            for ch in str {
-                echo ch, "\n";
-            }
+        for ch in str {
+            echo ch, "\n";
         }
     }
-    
+}
+```
 
-При виклику цього методу:
+When invoking this method:
 
-    <?php
-    
-    $f = new Utils\Filter();
-    $f->alpha("привіт");
-    
+```php
+<?php
 
-Ви побачите:
+$f = new Utils\Filter();
+$f->alpha("привіт");
+```
+
+You will see:
 
     п
     р
@@ -200,38 +216,40 @@ Zephir спроектований створювати об'єктно-оріє�
     т
     
 
-Перевірити кожен символ у рядку є доволі просто. Тепер ми створимо інший рядок з правильними відфільтрованими символами:
+Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
 
-    class Filter
+```zep
+class Filter
+{
+
+    public function alpha(string str) -> string
     {
-    
-        public function alpha(string str) -> string
-        {
-            char ch; string filtered = "";
-    
-            for ch in str {
-                if (ch >= 'а' && ch <= 'я') || (ch >= 'А' && ch <= 'Я') {
-                    let filtered .= ch;
-                }
+        char ch; string filtered = "";
+
+        for ch in str {
+            if (ch >= 'а' && ch <= 'я') || (ch >= 'А' && ch <= 'Я') {
+                let filtered .= ch;
             }
-    
-            return filtered;
         }
+
+        return filtered;
     }
-    
+}
+```
 
-Оновлений метод можна перевірити наступним чином:
+The complete method can be tested as before:
 
-    <?php
-    
-    $f = new Utils\Filter();
-    echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
-    
+```php
+<?php
 
-У цьому скрінкасті ви можете подивитися, як створити розширення, описане в цьому посібнику: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+$f = new Utils\Filter();
+echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
+```
+
+In the following screencast you can watch how to create the extension explained in this tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
 ## Висновок
 
-Це дуже простий посібник, і як ви бачите - почати створювати розширення із Zephir легко. Ми запрошуємо вас продовжувати читати документацію, щоб ви могли відкрити додаткові функції Zephir!
+This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
