@@ -2,18 +2,18 @@
 
 Zephir и эта книга предназначены для разработчиков PHP, которые хотят создавать C-расширения с меньшей сложностью.
 
-Мы предполагаем, что вы знакомы с одним или несколькими языками программирования. Мы проводим параллели с функциями в PHP, C, Javascript и других языках. We'll point out features in Zephir that are similar to these other languages, as well as many features that are new or different. If you are familiar with these specific languages, you'll pick up on these comparisons more quickly.
+Мы предполагаем, что вы знакомы с одним или несколькими языками программирования. Мы проводим параллели с функциями в PHP, C, Javascript и других языках. Мы будем указывать на функции в Zephir, которые схожи с их аналогами в других языках, а также на функции, поведение которых не является похожим или даже является новым. Если вы знаете какой-либо из этих языков, вы будете отмечать эти сходства и различия более быстро.
 
 <a name='checking-the-installation'></a>
 
-## Checking the Installation
+## Проверка установки
 
-If you have successfully installed Zephir, you will be able to execute the following command in your console:
+Если вы успешно установили Zephir, вы должны быть в состоянии выполнить следующую команду в своей консоли:
 
     $ zephir help
     
 
-If everything is well, you should see the following help (or something very similar):
+Если все в порядке, на вашем экране должна появиться следующая справка (или очень похожая):
 
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
@@ -50,23 +50,23 @@ If everything is well, you should see the following help (or something very simi
 
 <a name='extension-skeleton'></a>
 
-## Extension Skeleton
+## Каркас расширения
 
-The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
+Первое, что нам нужно сделать, это сгенерировать скелет расширения. Это предоставит нашему расширению базовую структуру, которую мы должны начать работать. В нашем случае мы создадим расширение под названием `utils`:
 
     $ zephir init utils
     
 
-After this, a directory called "utils" is created on the current working directory:
+После этого в текущем рабочем каталоге создается каталог с именем "utils":
 
     utils/
        ext/
        utils/
     
 
-The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
+Каталог `ext/` (внутри utils) содержит код, который будет использоваться компилятором для создания расширения. Другой созданный каталог - `utils`, этот каталог имеет то же самое, что и наше расширение. Мы разместим код Zephir в этом каталоге.
 
-We need to change the working directory to "utils" to start compiling our code:
+Нам нужно изменить рабочий каталог на "utils", чтобы начать компилировать наш код:
 
     $ cd utils
     $ ls
