@@ -49,6 +49,10 @@ You don't have to necessarily see the exact above output, but it's important tha
 
 <a name='installing-zephir'></a>
 ## Installing Zephir
+
+<a name='git-way'></a>
+### Git Way
+
 First, make sure the Zephir parser extension is installed and activated following its [tutorial](https://github.com/phalcon/php-zephir-parser).
 
 The Zephir compiler currently must be cloned from Github:
@@ -64,11 +68,13 @@ cd zephir
 ./install -c
 ```
 
-The last thing you need is: make sure you have all the necessary dependencies and install additional PHP libraries:
+The last thing you need is to make sure you have all the necessary dependencies and install additional PHP libraries:
 
 ```bash
 composer install
 ```
+
+This step is optional for version 0.10.x, however, it will become mandatory in future versions.
 
 <a name='testing-the-installation'></a>
 ## Testing the Installation
