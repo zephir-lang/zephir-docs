@@ -113,13 +113,13 @@ Zephir предназначен для создания объектно-ори�
 
 На этом этапе вполне вероятно, что вам потребуется указать пароль root, чтобы установить расширение.
 
-Наконец, расширение должно быть добавлено в `php.ini` для загрузки PHP. Это достигается добавлением директивы инициализации: `extension=utils.so` к нему. (NOTE: You can also load it on the command line with `-d extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.)
+Наконец, расширение должно быть добавлено в `php.ini` для загрузки PHP. Это достигается добавлением директивы инициализации: `extension=utils.so` к нему. (Замечание: Вы так же можете запускать PHP передавая ему в качестве опции `-d extension=utils.so`. Однако это одноразовый «трюк», вам необходимо будет поступать так каждый раз, тестируя ваша расширение в терминале. Добавление директивы в `php.ini` будет гарантировать, что расширение загружается для каждого запроса.)
 
 <a name='initial-testing'></a>
 
-## Initial Testing
+## Первоначальное тестирование
 
-Now that the extension was added to your `php.ini`, check whether the extension is being loaded properly by executing the following:
+Теперь, когда расширение было добавлено в ваш `php.ini`, проверьте, правильно ли загружается расширение, выполнив следующее:
 
     $ php -m
     [PHP Modules]
@@ -137,24 +137,24 @@ Now that the extension was added to your `php.ini`, check whether the extension 
     xml
     
 
-Extension `utils` should be part of the output, indicating that the extension was loaded correctly. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
+Расширения `utils` должны быть частью вывода, указывающего, что расширение было загружено правильно. Теперь давайте посмотрим на наш `hello world`, непосредственно выполняемый PHP. Для этого вы можете создать простой PHP-файл, вызывающий статический метод, который мы только что создали:
 
     <?php
     
     echo Utils\Greeting::say(), "\n";
     
 
-Congratulations!, you have your first extension running in PHP.
+Поздравляем! У вас есть первое расширение, работающее в PHP.
 
 <a name='a-useful-class'></a>
 
-## A useful class
+## Удобные класс
 
-The `hello world` class was fine to check if our environment was right. Now, let's create some more useful classes.
+Класс `hello world` был хорош, чтобы проверить, правильно ли сконфигурирована наша среда. А теперь давайте создадим еще несколько полезных классов.
 
-The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
+Первый полезный класс, который мы добавим к этому расширению, предоставит пользователям средства фильтрации. Этот класс называется `Utils\Filter`, и его код должен быть помещен в `utils/utils/filter.zep`:
 
-A basic skeleton for this class is the following:
+Основным скелетом этого класса является следующее:
 
     namespace Utils;
     
@@ -164,7 +164,7 @@ A basic skeleton for this class is the following:
     }
     
 
-The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
+Класс содержит методы фильтрации, которые помогают пользователям фильтровать нежелательные символы из строк. Первый метод называется `alpha`, и его целью является отфильтровать только те символы, которые являются основными буквами ASCII. Для начала, мы просто пройдем через строковую печать каждого байта в стандартный вывод:
 
     namespace Utils;
     
@@ -182,7 +182,7 @@ The class contains filtering methods that help users to filter unwanted characte
     }
     
 
-When invoking this method:
+При вызове этого метода:
 
     <?php
     
@@ -190,7 +190,7 @@ When invoking this method:
     $f->alpha("hello");
     
 
-You will see:
+Вы увидите:
 
     h
     e
@@ -199,7 +199,7 @@ You will see:
     o
     
 
-Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
+Проверка каждого символа в строке проста. Теперь мы можем просто создать другую строку с правильными отфильтрованными символами:
 
     class Filter
     {
@@ -219,18 +219,18 @@ Checking every character in the string is straightforward. Now we'll create anot
     }
     
 
-The complete method can be tested as before:
+Полный метод может быть проверен, как и прежде:
 
     <?php
     
     $f = new Utils\Filter();
-    echo $f->alpha("!he#02l3'121lo."); // prints "hello"
+    echo $f->alpha("!he#02l3'121lo."); // выведет "hello"
     
 
-In the following screencast you can watch how to create the extension explained in this tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+В следующем скринкасте вы можете посмотреть, как создать расширение, объяснённое в этом уроке: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
 ## Заключение
 
-This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
+Это очень простой учебник, и, как вы можете видеть, легко начать создание расширений с помощью Zephir. Мы приглашаем вас продолжить чтение руководства, чтобы вы могли ознакомиться с дополнительными функциями, которые предлагает Zephir!
