@@ -54,3 +54,15 @@
     
     $filter = new MyLibrary\Filter();
     echo $filter->alpha("01he#l.lo?/1"); // виведе hello
+    
+
+<a name='external-links'></a>
+
+## External Links
+
+Below we have collected links to external resources that may interest you:
+
+- [Система типізації](https://en.wikipedia.org/wiki/Type_system)
+- [Безпечний доступ до пам'яті](https://en.wikipedia.org/wiki/Memory_safety)
+- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Memory management](https://en.wikipedia.org/wiki/Memory_management)
