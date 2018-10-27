@@ -73,7 +73,7 @@ Zephir и эта книга предназначены для разработч
     ext/ utils/ config.json
     
 
-The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
+В листинге каталога также будет отображаться файл с именем `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
 
 <a name='adding-our-first-class'></a>
 
