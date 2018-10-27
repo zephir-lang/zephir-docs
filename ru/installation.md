@@ -55,7 +55,7 @@
     $ git clone https://github.com/phalcon/zephir
     
 
-Run the Zephir installer (this compiles/creates the parser):
+Запустите установщик:
 
     $ cd zephir
     $ ./install -c
@@ -63,8 +63,8 @@ Run the Zephir installer (this compiles/creates the parser):
 
 <a name='testing-the-installation'></a>
 
-## Testing the Installation
+## Протестируйте Zephir
 
-Check if Zephir is available from any directory by executing:
+Проверьте, доступен ли Zephir из любой директории командой:
 
     $ zephir help
