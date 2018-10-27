@@ -4,13 +4,13 @@ Zephir и это руководство предназначены для раз
 
 Мы предполагаем, что вы знакомы с одним или несколькими языками программирования. Мы проводим параллели с функциями в PHP, C, Javascript и других языках. Мы будем указывать на функции в Zephir, которые схожи с их аналогами в других языках, а также на функции, поведение которых не является похожим или даже является новым. Если вы знаете какой-либо из этих языков, вы будете отмечать эти сходства и различия более быстро.
 
-In this guide, we will use the standard Linux terminal commands. If you are a Windows user, you need to replace these commands with their counterparts.
+В этом руководстве мы будем использовать стандартные команды терминала Linux. Если вы являетесь пользователем Windows, вам нужно заменить эти команды их аналогами.
 
 <a name='checking-the-installation'></a>
 
 ## Проверка установки
 
-If you have successfully installed Zephir, you will be able to execute the following command in your console:
+Если вы успешно установили Zephir, вы должны быть в состоянии выполнить следующую команду в своей консоли:
 
 ```bash
 zephir help
