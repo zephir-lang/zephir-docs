@@ -1,30 +1,30 @@
-# Introducing Zephir
+# Введение в Zephir
 
-Zephir is a language that addresses the major needs of a PHP developer trying to write and compile code that can be executed by PHP. It is dynamically/statically typed, and some of its features will be familiar to PHP developers.
+Zephir — это язык, который обращается к основным потребностям разработчика PHP, пытающегося писать и компилировать код, который может быть выполнен PHP. Он динамически/статически типизирован, некоторые его функции могут быть знакомы разработчикам PHP.
 
-The name Zephir is a contraction of the words Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
+Название Zephir является сокращением слов Z(end) E(ngine)/PH(P)/I(nte)r(mediate). Хотя это говорит о том, что произношение должно быть зефир, создатели Zephir фактически произносят его [zaefire](http://translate.google.com/#en/en/zaefire).
 
 <a name='hello-world'></a>
 
-## Hello World!
+## Привет мир!
 
-Every language has its own "Hello World!" sample. In Zephir, this introductory example showcases some important features of the language.
+Каждый язык имеет свой собственный пример "Привет мир!". В Zephir, этот вводный пример демонстрирует некоторые важные особенности этого языка.
 
-Code in Zephir must be placed in classes. The language is intended to create object-oriented libraries/frameworks, so code outside of a class is not allowed. Additionally, a namespace is required:
+Код в Zephir должен быть помещены в классы. Этот язык предназначен для создания объектно-ориентированных библиотек/фреймворков, поэтому использование кода без класса за очень редкими исключениями не допускается. Кроме того, наличие пространства имён является обязательным требованием:
 
     namespace Test;
     
     /**
-     * This is a sample class
+     * Это пример класса
      */
     class Hello
     {
         /**
-         * This is a sample method
+         * Это пример метода
          */
         public function say()
         {
-            echo "Hello World!";
+            echo "Привет мир!";
         }
     }
     
