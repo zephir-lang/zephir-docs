@@ -10,15 +10,15 @@
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
 * gcc >= 4.x/clang >= 3.x
-* re2c 0.13 or later
-* gnu make 3.81 or later
-* autoconf 2.31 or later
-* automake 1.14 or later
+* re2c 0.13 или более поздней версии
+* gnu make 3.81 или более поздней версии
+* autoconf 2.31 или более поздней версии
+* automake 1.14 или более поздней версии
 * libpcre3
-* PHP development headers and tools
-* The build-essential package when using gcc on Ubuntu (and likely in other distributions as well)
+* Заголовочные файлы PHP и инструменты разработчика
+* Пакет build-essential если вы используете gcc на Ubuntu (и, вероятно, в других дистрибутивах)
 
-If you're using Ubuntu, you can install the required packages this way:
+На Ubuntu эти пакеты можно поставить так:
 
     $ sudo apt-get update
     $ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
