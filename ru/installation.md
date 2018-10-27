@@ -1,12 +1,12 @@
-# Installation
+# Установка
 
-To install Zephir, please follow these steps:
+Следуйте инструкциям ниже, чтобы установить Zephir:
 
 <a name='prerequisites'></a>
 
-## Prerequisites
+## Системные требования
 
-To build a PHP extension and use Zephir you need the following requirements:
+Чтобы собрать расширение под PHP и использовать Zephir нужно:
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
 * gcc >= 4.x/clang >= 3.x
