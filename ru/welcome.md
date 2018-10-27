@@ -58,11 +58,11 @@
 
 <a name='external-links'></a>
 
-## External Links
+## Внешние ссылки
 
-Below we have collected links to external resources that may interest you:
+Ниже мы собрали ссылки на внешние ресурсы, которые могу вас заинтересовать:
 
 - [Система типов](https://en.wikipedia.org/wiki/Type_system)
 - [Безопасность доступа к памяти](https://en.wikipedia.org/wiki/Memory_safety)
-- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
-- [Memory management](https://en.wikipedia.org/wiki/Memory_management)
+- [AOT-компиляция](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Управление памятью](https://en.wikipedia.org/wiki/Memory_management)
