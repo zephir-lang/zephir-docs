@@ -29,7 +29,7 @@ Zephir — это язык, который обращается к основн�
     }
     
 
-Once this class is compiled it will produce the following code, that is transparently compiled by gcc/clang/vc++:
+После компиляции этого класса он создает следующий код, который прозрачно компилируется gcc/clang/vc++:
 
     #ifdef HAVE_CONFIG_H
     #include "config.h"
@@ -42,7 +42,7 @@ Once this class is compiled it will produce the following code, that is transpar
     #include "kernel/main.h"
     
     /**
-     * This is a sample class
+     * Это пример класса
      */
     ZEPHIR_INIT_CLASS(Test_Hello) {
         ZEPHIR_REGISTER_CLASS(Test, Hello, hello, test_hello_method_entry, 0);
@@ -50,24 +50,24 @@ Once this class is compiled it will produce the following code, that is transpar
     }
     
     /**
-     * This is a sample method
+     * Это пример метода
      */
     PHP_METHOD(Test_Hello, say) {
-        php_printf("%s", "Hello World!");
+        php_printf("%s", "Привет мир!");
     }
     
 
-Actually, it is not expected that a developer that uses Zephir must know or even understand C. However, if you have any experience with compilers, PHP internals, or the C language itself, that will provide a clearer understanding of what's going on internally when working with Zephir.
+На самом деле, не ожидается, что разработчик, который использует Zephir должен знать или даже понимать C, однако, если у вас есть опыт работы с компиляторами, PHP внутренностей или самого языка C, это обеспечит более чёткий сценарий разработчику при работе с Zephir.
 
 <a name='a-taste-of-zephir'></a>
 
-## A Taste of Zephir
+## Понимание Zephir
 
-In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
+В следующих примерах мы опишем достаточно подробностей, чтобы вы поняли, что происходит. Цель состоит в том, чтобы дать вам понять, что такое программирование в Zephir. Мы рассмотрим *детали* функций в последующих главах.
 
-The following example is very simple; it implements a class and a method, with a small program that checks the types of an array.
+Следующий пример очень прост, он реализует класс и метод с небольшой программой, которая проверяет типы массива.
 
-Let's examine the code in detail, so we can begin to learn Zephir syntax. There are a lot of details in just a few lines of code! We'll explain the general ideas here:
+Рассмотрим код подробно, чтобы мы могли начать изучать синтаксис Zephir. В нескольких строках кода много деталей! Мы объясним общие идеи здесь:
 
     namespace Test;
     
@@ -78,17 +78,17 @@ Let's examine the code in detail, so we can begin to learn Zephir syntax. There 
     {
         public function someMethod()
         {
-            /* Variables must be declared */
+            /* Переменные должны быть объявлены */
             var myArray;
             int i = 0, length;
     
-            /* Create an array */
+            /* Создать массив */
             let myArray = ["hello", 0, 100.25, false, null];
     
-            /* Count the array into a 'int' variable */
+            /* Подсчитать массив в переменную типа int */
             let length = count(myArray);
     
-            /* Print value types */
+            /* Вывод типов переменных */
             while i < length {
                 echo typeof myArray[i], "\n";
                 let i++;
@@ -99,7 +99,7 @@ Let's examine the code in detail, so we can begin to learn Zephir syntax. There 
     }
     
 
-In the method, the first lines use the `var` and `int` keywords. There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
+В методе в первых строках ключевые слова `var` и `int`. Этот синтаксис используется для объявления переменной в локальной области. Каждая переменная, используемая в методе, должна быть объявлена с соответствующим типом. Эта декларация не является обязательным, это помогает компилятору сообщать вам о неверном вводе переменных или об использовании переменных из сферы их применения, который обычно заканчивается ошибки во время выполнения.
 
 Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `int` variables are statically typed integer variables, that can only have integer values in the entire program execution.
 
