@@ -1,20 +1,20 @@
-# Why Zephir?
+# Почему Zephir?
 
-Today's PHP applications must balance a number of concerns including stability, performance, and functionality. Every PHP application is based on a set of common components, that are also base for many other applications.
+Сегодня PHP приложения должны сбалансировать ряд проблем, в том числе стабильности, производительности и функциональности. Каждое РНР приложение основано на наборе общих компонентов, которые также являются базой для большинства приложений.
 
-These common components are libraries, frameworks, or a combination of the two. Once installed, frameworks rarely change, and being the foundation of the application, they must be highly functional, and also very fast.
+Эти общие компоненты библиотек/фреймворков или их сочетание. После установки фреймворки меняются редко, являясь основой приложения они должны быть очень функциональным, а также очень быстрыми.
 
-Getting fast and robust libraries can be complicated, due to high levels of abstraction that are typically implemented on them. Given the condition that base libraries or frameworks rarely change, there is an opportunity to build extensions that provide this functionality, taking advantage of the compilation improving performance and resource consumption.
+Получение быстрых и надежных библиотек может быть затруднено из-за высоких уровней абстракции, которые, как правило, реализуются в них. Учитывая условие, что базовые библиотеки или фреймворки меняются редко, есть возможность создавать расширения, которые обеспечивают эту функциональность используя компиляцию для улучшение производительности и использования ресурсов.
 
-With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from PHP, gaining important seconds that can make your application faster while improving the user experience.
+С Zephir, вы можете реализовать объектно-ориентированные библиотеки/фреймворки/приложения, которые могут быть использованы в PHP, экономя важные секунды, которые могут сделать ваше приложение быстрее, улучшая его потребительские свойства.
 
 <a name='if-you-are-a-php-programmer'></a>
 
-## If You Are a PHP Programmer...
+## Если вы PHP программист...
 
-PHP is one of the most popular languages in use for the development of web applications. Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
+PHP является одним из самых популярных языков, используемых для разработки веб-приложений. Динамически типизированные и интерпретируемые языки, как PHP предлагают очень высокую скорость разработки благодаря их гибкости.
 
-Since version 4, PHP is based on the Zend Engine implementation. This is a virtual machine that executes the PHP code from its bytecode representation. Zend Engine is present in almost every PHP installation in the world. With Zephir, you can create extensions for PHP running under the Zend Engine.
+Начиная с версии 4, а затем 5, PHP основан на реализации движка Zend Engine. Это виртуальная машина, которая выполняет PHP код из представления в байт-коде. Zend Engine практически присутствует в каждой установке PHP в мире. С Zephir, вы можете создавать расширения для PHP, работающих под Zend Engine.
 
 PHP is hosting Zephir, so they obviously have a lot of similarities; however, they have important differences that give Zephir its own personality. For example, Zephir is more strict, and it could make you less productive compared to PHP due to the compilation step.
 
