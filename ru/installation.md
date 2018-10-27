@@ -1,30 +1,30 @@
-# Installation
+# Установка
 
-To install Zephir, please follow these steps:
+Следуйте инструкциям ниже, чтобы установить Zephir:
 
 <a name='prerequisites'></a>
 
-## Prerequisites
+## Системные требования
 
-To build a PHP extension and use Zephir you need the following requirements:
+Чтобы собрать расширение под PHP и использовать Zephir нужно:
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
 * gcc >= 4.x/clang >= 3.x
-* re2c 0.13 or later
-* gnu make 3.81 or later
-* autoconf 2.31 or later
-* automake 1.14 or later
+* re2c 0.13 или более поздней версии
+* gnu make 3.81 или более поздней версии
+* autoconf 2.31 или более поздней версии
+* automake 1.14 или более поздней версии
 * libpcre3
-* PHP development headers and tools
-* The build-essential package when using gcc on Ubuntu (and likely in other distributions as well)
+* Заголовочные файлы PHP и инструменты разработчика
+* Пакет build-essential если вы используете gcc на Ubuntu (и, вероятно, в других дистрибутивах)
 
-If you're using Ubuntu, you can install the required packages this way:
+На Ubuntu эти пакеты можно поставить так:
 
     $ sudo apt-get update
     $ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
     
 
-Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
+Так как Zephir написан на PHP, вам нужно установить последнюю версию PHP. PHP должен быть доступен из консоли:
 
     $ php -v
     PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
@@ -33,7 +33,7 @@ Since Zephir is written in PHP, you need to have a recent version of PHP install
             with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
     
 
-Also, make sure you have the PHP development libraries installed along with your PHP installation:
+Также проверьте, доступны ли инструменты для сборки расширений:
 
     $ phpize -v
     Configuring for:
@@ -42,20 +42,20 @@ Also, make sure you have the PHP development libraries installed along with your
     Zend Extension Api No:   320151012
     
 
-You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
+Вам не обязательно нужно получить точно такой же вывод. Однако важно, чтобы эти команды были доступны для начала разработки на Zephir.
 
 <a name='installing-zephir'></a>
 
-## Installing Zephir
+## Установка Zephir
 
-First, make sure the Zephir parser extension is installed and activated following its [tutorial](https://github.com/phalcon/php-zephir-parser)
+Во-первых, убедитесь, что расширение Zephir parser установлено и активировано, в соответствии с [этим руководством](https://github.com/phalcon/php-zephir-parser).
 
-The Zephir compiler currently must be cloned from Github:
+Склонируйте репозиторий Zephir с Github:
 
     $ git clone https://github.com/phalcon/zephir
     
 
-Run the Zephir installer (this compiles/creates the parser):
+Запустите установщик:
 
     $ cd zephir
     $ ./install -c
@@ -63,8 +63,8 @@ Run the Zephir installer (this compiles/creates the parser):
 
 <a name='testing-the-installation'></a>
 
-## Testing the Installation
+## Протестируйте Zephir
 
-Check if Zephir is available from any directory by executing:
+Проверьте, доступен ли Zephir из любой директории командой:
 
     $ zephir help
