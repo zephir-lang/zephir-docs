@@ -10,7 +10,7 @@ To build a PHP extension and use Zephir you need the following requirements:
 * [re2c](http://re2c.org/) 0.13.6 or later
 * PHP development headers and tools
 
-For Linux like systems you'll need also:
+For Linux based systems you'll need also:
 * [GNU make](https://www.gnu.org/software/make/) 3.81 or later
 * [autoconf](https://www.gnu.org/software/autoconf/autoconf.html) 2.31 or later
 * [automake](https://www.gnu.org/software/automake/) 1.14 or later
@@ -53,7 +53,7 @@ You don't have to necessarily see the exact above output, but it's important tha
 <a name='git-way'></a>
 ### Git Way
 
-First, make sure the Zephir parser extension is installed and activated following its [tutorial](https://github.com/phalcon/php-zephir-parser).
+First make sure that the Zephir parser extension is installed and activated. You can follow this [tutorial](https://github.com/phalcon/php-zephir-parser).
 
 The Zephir compiler currently must be cloned from Github:
 
