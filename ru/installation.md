@@ -24,7 +24,7 @@
     $ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
     
 
-Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
+Так как Zephir написан на PHP, вам нужно установить последнюю версию PHP. PHP должен быть доступен из консоли:
 
     $ php -v
     PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
@@ -33,7 +33,7 @@ Since Zephir is written in PHP, you need to have a recent version of PHP install
             with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
     
 
-Also, make sure you have the PHP development libraries installed along with your PHP installation:
+Также проверьте, доступны ли инструменты для сборки расширений:
 
     $ phpize -v
     Configuring for:
@@ -42,15 +42,15 @@ Also, make sure you have the PHP development libraries installed along with your
     Zend Extension Api No:   320151012
     
 
-You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
+Вам не обязательно нужно получить точно такой же вывод. Однако важно, чтобы эти команды были доступны для начала разработки на Zephir.
 
 <a name='installing-zephir'></a>
 
-## Installing Zephir
+## Установка Zephir
 
-First, make sure the Zephir parser extension is installed and activated following its [tutorial](https://github.com/phalcon/php-zephir-parser)
+Во-первых, убедитесь, что расширение Zephir parser установлено и активировано, в соответствии с [этим руководством](https://github.com/phalcon/php-zephir-parser).
 
-The Zephir compiler currently must be cloned from Github:
+Склонируйте репозиторий Zephir с Github:
 
     $ git clone https://github.com/phalcon/zephir
     
