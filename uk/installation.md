@@ -9,15 +9,15 @@
 Щоб створити PHP-розширення за допомогою Zephir, вам потрібні наступні програми та засоби:
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
-* A C compiler such as [gcc](https://gcc.gnu.org/) >= 4.4 or an alternative such as [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 or [Intel C++](https://software.intel.com/en-us/c-compilers). It is recommended to use `gcc` 4.4 or later
-* [re2c](http://re2c.org/) 0.13.6 or later
-* PHP development headers and tools
+* Один з наступних C компіляторів: [gcc](https://gcc.gnu.org/) >= 4.4, [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 або[Intel C++](https://software.intel.com/en-us/c-compilers). Рекомендується `gcc` 4.4 або старше
+* [re2c](http://re2c.org/) 0.13.6 або старше
+* Заголовки та інструменти розробника PHP
 
-For Linux based systems you'll need also:
+Для систем на базі Linux, вам також знадобиться:
 
-* [GNU make](https://www.gnu.org/software/make/) 3.81 or later
-* [autoconf](https://www.gnu.org/software/autoconf/autoconf.html) 2.31 or later
-* [automake](https://www.gnu.org/software/automake/) 1.14 or later
+* [GNU make](https://www.gnu.org/software/make/) 3.81 або старше
+* [autoconf](https://www.gnu.org/software/autoconf/autoconf.html) 2.31 або старше
+* [automake](https://www.gnu.org/software/automake/) 1.14 або старше
 * libpcre3
 * The `build-essential` package when using `gcc` on Ubuntu (and likely in other distributions as well)
 
