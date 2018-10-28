@@ -81,25 +81,23 @@ Zephir поддерживает комментарии в стиле C и C++. �
 
 Переменные могут дополнительно иметь начальное совместимое значение по умолчанию:
 
-    // Declaring variables with default values
+    // Объявление переменных со значениями по умолчанию
     var a = "hello", b = 0, c = 1.0;
     int d = 50; bool some = true;
     
 
-Variable names are case-sensitive, the following variables are different:
+Имена переменных чувствительны к регистру, следующие переменные различаются:
 
-    // Different variables
+    // Различные переменные
     var somevalue, someValue, SomeValue;
     
 
 <a name='variable-scope'></a>
 
-## Variable Scope
+## Область переменной
 
-All variables declared are locally scoped to the method where they were declared:
+Все объявленные переменные локально охвачены методом, в котором они были объявлены:
 
-    namespace Test;
-    
     class MyClass
     {
     
@@ -120,35 +118,35 @@ All variables declared are locally scoped to the method where they were declared
 
 <a name='super-global'></a>
 
-## Super Globals
+## Супер-глобальные переменные
 
-Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
+Zephir не поддерживает глобальные переменные. Доступ к глобальным переменным из пользовательского пространства PHP недопустим. Тем не менее, вы можете получить доступ к супер-глобальным переменным PHP следующим образом:
 
-    // Getting a value from _POST
+    // Получение значения от _POST
     let price = _POST["price"];
     
-    // Read a value from _SERVER
+    // Чтение значения из _SERVER
     let requestMethod = _SERVER["REQUEST_METHOD"];
     
 
 <a name='local-symbol-table'></a>
 
-## Local Symbol Table
+## Локальная таблица символов
 
-Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
+Каждый метод или контекст в PHP имеет таблицу символов, которая позволяет писать переменные очень динамичным способом:
 
     <?php
     
     $b = 100;
     $a = "b";
-    echo $$a; // prints 100
+    echo $$a; // выведет 100
     
 
-Zephir does not implement this feature, since all variables are compiled down to low-level variables, and there is no way to know which variables exist in a specific context. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
+Zephir не реализует этот функционал, так как все переменные скомпилированы до низкоуровневых переменных и не существует способа узнать, какие переменные существуют в определенном контексте. Если вы хотите создать переменную в текущей таблице символов PHP, вы можете использовать следующий синтаксис:
 
-    // Set variable $name in PHP
+    // Установить переменную $name в PHP
     let {"name"} = "hello";
     
-    // Set variable $price in PHP
+    // Установить переменную $price в PHP
     let name = "price";
     let {name} = 10.2;
