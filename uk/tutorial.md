@@ -149,7 +149,7 @@ xdebug
 xml
 ```
 
-Розширення `utils` повинно бути частиною виходу, що означає, що розширення завантажено правильно. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
+Розширення `utils` повинно бути частиною виходу, що означає, що розширення завантажено правильно. Що ж, подивімося на наш `Привіт світ`, безпосередньо з-під PHP. Для цього ви можете створити простий PHP-файл, який викликає створений нами статичний метод:
 
 ```php
 <?php
@@ -157,17 +157,17 @@ xml
 echo Utils\Greeting::say(), "\n";
 ```
 
-Congratulations! Уou have your first extension running in PHP.
+Вітаємо! У вас є перше розширення, яке працює з-під PHP.
 
 <a name='a-useful-class'></a>
 
 ## Корисний клас
 
-The `Utils\Greeting::say` method was fine to check if our environment was right. Now, let's create some more useful classes.
+Метод `Utils\Greeting::say` хороший для перевірки, чи правильно налаштоване наше середовище. Тепер створімо кілька корисних класів.
 
-The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
+Першим корисним класом, який ми додамо до розширення буде зручна фільтрація даних, які вводять користувачі. Цей клас називається `Utils\Filter` і його код повинен розміщуватися в файлі `utils/utils/filter.zep`:
 
-A basic skeleton for this class is the following:
+Базовий каркас для цього класу:
 
 ```zep
 namespace Utils;
@@ -178,7 +178,7 @@ class Filter
 }
 ```
 
-The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
+Клас містить фільтрації методи, які допоможуть фільтрувати небажані символи у рядках. Перший метод має назву `alpha` і його завдання полягає в тому, щоб відкинути усі символи, крім базових літер ASCII. Щоб почати, просто пройдемося по рядку та надрукуємо кожен байт через стандартний вивід:
 
 ```zep
 namespace Utils;
@@ -197,7 +197,7 @@ class Filter
 }
 ```
 
-When invoking this method:
+При виклику цього методу:
 
 ```php
 <?php
@@ -206,7 +206,7 @@ $f = new Utils\Filter();
 $f->alpha("привіт");
 ```
 
-You will see:
+Ви побачите:
 
     п
     р
@@ -216,7 +216,7 @@ You will see:
     т
     
 
-Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
+Перевірити кожен символ у рядку є доволі просто. Тепер ми створимо інший рядок з правильними відфільтрованими символами:
 
 ```zep
 class Filter
@@ -237,7 +237,7 @@ class Filter
 }
 ```
 
-The complete method can be tested as before:
+Оновлений метод можна перевірити наступним чином:
 
 ```php
 <?php
@@ -246,10 +246,10 @@ $f = new Utils\Filter();
 echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
 ```
 
-In the following screencast you can watch how to create the extension explained in this tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+У цьому скрінкасті ви можете подивитися, як створити розширення, описане в цьому посібнику: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
 ## Висновок
 
-This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
+Це дуже простий посібник, і як ви бачите - почати створювати розширення із Zephir легко. Ми запрошуємо вас продовжувати читати документацію, щоб ви могли відкрити додаткові функції Zephir!
