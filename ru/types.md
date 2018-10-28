@@ -154,24 +154,24 @@ Zephir позволяет создавать экземпляры PHP класс
 
 Статическая типизация позволяет разработчику объявлять и использовать некоторые типы переменных, доступные в C. Переменные, объявленные как статические, не могут менять свой тип. Тем не менее, они позволяют компилятору делать оптимизацию лучше. Поддерживаются следующие типы данных:
 
-| Тип                | Описание                                                                       |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
-| `boolean`          | A boolean expresses a truth value. It can be either `true` or `false`.         |
-| `char`             | Smallest addressable unit of the machine that can contain basic character set. |
-| `float`/`double`   | Double precision floating-point type. The size is platform-dependent.          |
-| `integer`          | Signed integers. At least 16 bits in size.                                     |
-| `long`             | Long signed integer type. At least 32 bits in size.                            |
-| `string`           | A string is a series of characters, where a character is the same as a byte.   |
-| `unsigned char`    | Same size as char, but guaranteed to be unsigned.                              |
-| `unsigned integer` | Unsigned integers. At least 16 bits in size.                                   |
-| `unsigned long`    | Same as long, but unsigned.                                                    |
+| Тип                | Описание                                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------------- |
+| `array`            | Структура, которая может использоваться в качестве хеша, карты, словаря, коллекции, стека и т. д. |
+| `boolean`          | Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`.                |
+| `char`             | Наименьшая адресуемая единица машины, которая может содержать символ из базового набора.          |
+| `float`/`double`   | Тип с плавающей точкой двойной точности. Размер является платформозависимым.                      |
+| `integer`          | Знаковое целое. Размер по крайней мере 16 бит.                                                    |
+| `long`             | Длинное знаковое целое. Размер по крайней мере 32 бит.                                            |
+| `string`           | Строка представляет собой последовательность символов, где символ (char) является одним байтом.   |
+| `unsigned char`    | Same size as char, but guaranteed to be unsigned.                                                 |
+| `unsigned integer` | Unsigned integers. Размер по крайней мере 16 бит.                                                 |
+| `unsigned long`    | Same as long, but unsigned.                                                                       |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+A boolean expresses a truth value. Он может иметь значения `true` либо `false`. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
