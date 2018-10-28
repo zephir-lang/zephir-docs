@@ -48,24 +48,24 @@ Zephir динамически и статически типизированны
 
 ### Array
 
-Реализация массива в Zephir в основном такая же, как и в PHP: упорядоченные карты, оптимизированные для различных целей; Этот тип данных можно трактовать как массив, список (вектор), хэш-таблицу (реализацию карты), словарь, коллекцию, стек, очередь. Возможны и другие трактовки. As array values can be other arrays, trees and multidimensional arrays are also possible.
+Реализация массива в Zephir в основном такая же, как и в PHP: упорядоченные карты, оптимизированные для различных целей; Этот тип данных можно трактовать как массив, список (вектор), хэш-таблицу (реализацию карты), словарь, коллекцию, стек, очередь. Возможны и другие трактовки. Много мерные массивы также возможны: в качестве значений массива могут выступать другие массивы.
 
-The syntax to define arrays is slightly different than in PHP:
+Синтаксис для определения массивов немного отличается от PHP:
 
-##### Square braces must be used to define arrays
+##### Для определения массивов должны использоваться квадратные скобки
 
     let myArray = [1, 2, 3];
     
 
-##### Double colon must be used to define hashes' keys
+##### Для определения ключей хэшей необходимо использовать двоеточие
 
-    let myHash = ["first": 1, "second": 2, "third": 3];
+    let myHash = ["раз": 1, "два": 2, "три": 3];
     
 
-Only long and string values can be used as keys:
+В качестве ключей могут использоваться только значения типов long и string:
 
-    let myHash = [0: "first", 1: true, 2: null];
-    let myHash = ["first": 7.0, "second": "some string", "third": false];
+    let myHash = [0: "раз", 1: true, 2: null];
+    let myHash = ["раз": 7.0, "два": "некоторая строка", "три": false];
     
 
 <a name='dynamic-types-boolean'></a>
@@ -108,24 +108,24 @@ Only long and string values can be used as keys:
 
 <a name='dynamic-types-objects'></a>
 
-### Objects
+### Object
 
-Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+Zephir позволяет создавать экземпляры PHP классов, манипулировать PHP объектами, вызывать методы на них, читать константы классов и т.д.:
 
-    let myObject = new stdClass(),
-        myObject->someProperty = "my value";
+    let myObject = new \stdClass(),
+        myObject->someProperty = "некоторое значение";
     
 
 <a name='dynamic-types-string'></a>
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
+Строка представляет собой последовательность символов, где символ является одним байтом. Как PHP, Zephir поддерживает только 256-символьный набор и, следовательно, не предлагает поддержку Unicode.
 
     var today = "friday";
     
 
-In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for chars.
+В Zephir строковые литералы могут указываться только с помощью двойных кавычек (как в C или Go). Single quotes are reserved for chars.
 
 The following escape sequences are supported in strings:
 
