@@ -29,7 +29,7 @@ Zephir динамически и статически типизированны
     let c = a + b;
     
 
-Они могут иметь один из следующих типов:
+Переменные объявленные как динамические, могут иметь восемь типов:
 
 | Тип              | Описание                                                                                 |
 | ---------------- | ---------------------------------------------------------------------------------------- |
@@ -120,28 +120,28 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### String
 
-Строка представляет собой последовательность символов, где символ является одним байтом. Как PHP, Zephir поддерживает только 256-символьный набор и, следовательно, не предлагает поддержку Unicode.
+Строка представляет собой последовательность символов, где символ (char) является одним байтом. Как PHP, Zephir поддерживает только 256-символьный набор и, следовательно, не предлагает поддержку Unicode.
 
     var today = "friday";
     
 
-В Zephir строковые литералы могут указываться только с помощью двойных кавычек (как в C или Go). Single quotes are reserved for chars.
+В Zephir строковые литералы могут указываться только с помощью двойных кавычек (как в C или Go). Одинарные кавычки зарезервированы для типа данных char.
 
-The following escape sequences are supported in strings:
+В строках поддерживаются следующие escape-последовательности:
 
-| Sequence    | Description     |
-| ----------- | --------------- |
-| `\\t`     | Horizontal tab  |
-| `\\n`     | Line feed       |
-| `\\r`     | Carriage return |
-| `\\ \` | Backslash       |
-| `\\"`     | double-quote    |
+| Последовательность | Описание                 |
+| ------------------ | ------------------------ |
+| `\\t`            | Горизонтальная табуляция |
+| `\\n`            | Перевод строки           |
+| `\\r`            | Возврат каретки          |
+| `\\ \`        | Обратная косая черта     |
+| `\\"`            | Двойная кавычка          |
 
-    var today    = "\tfriday\n\r",
-        tomorrow = "\tsaturday";
+    var today    = "\tпятница\n\r",
+        tomorrow = "\tсуббота";
     
 
-In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
+В Zephir строки не поддерживают интерполяцию переменных, как в PHP, вместо этого вы можете использовать конкатенацию:
 
     var name = "peter";
     
@@ -150,7 +150,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 <a name='static-types'></a>
 
-## Static Types
+## Статические типы
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
