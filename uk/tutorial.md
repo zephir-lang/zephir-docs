@@ -106,13 +106,13 @@ class Greeting
 }
 ```
 
-Now, we need to tell Zephir that our project must be compiled and the extension generated:
+Тепер ми маємо сказати Zephir, що наш проект треба зібрати та згенерувати розширення:
 
 ```bash
 zephir build
 ```
 
-Initially, and only for the first time, a number of internal commands are executed producing the necessary code and configurations to export this class to the PHP extension. If everything goes well, you will see the following message at the end of the output:
+Спочатку, і лише першого разу, виконається ряд внутрішніх команд, які створять необхідний код та конфігурації для експортування цього класу в PHP-розширення. If everything goes well, you will see the following message at the end of the output:
 
     ...
     Extension installed!
