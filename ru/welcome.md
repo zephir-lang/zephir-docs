@@ -54,3 +54,15 @@
     
     $filter = new MyLibrary\Filter();
     echo $filter->alpha("01he#l.lo?/1"); // выведет hello
+    
+
+<a name='external-links'></a>
+
+## Внешние ссылки
+
+Ниже мы собрали ссылки на внешние ресурсы, которые могу вас заинтересовать:
+
+- [Система типов](https://en.wikipedia.org/wiki/Type_system)
+- [Безопасность доступа к памяти](https://en.wikipedia.org/wiki/Memory_safety)
+- [AOT-компиляция](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Управление памятью](https://en.wikipedia.org/wiki/Memory_management)

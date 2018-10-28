@@ -54,3 +54,15 @@ La clase puede ser utiliza desde PHP de la siguiente manera:
     
     $filter = new MyLibrary\Filter();
     echo $filter->alpha("01ho#.la?/1"); // imprime hola
+    
+
+<a name='external-links'></a>
+
+## External Links
+
+Below we have collected links to external resources that may interest you:
+
+- [Tipo de sistema](https://en.wikipedia.org/wiki/Type_system)
+- [Ahorro de memoria](https://en.wikipedia.org/wiki/Memory_safety)
+- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Memory management](https://en.wikipedia.org/wiki/Memory_management)
