@@ -6,41 +6,41 @@ Zephir динамически и статически типизированны
 
 ## Динамические типы
 
-Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
+Динамические переменные точно такие же, как и в PHP. Они могут быть назначены и переназначены в различные типы без ограничений.
 
-A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
+Динамическая переменная должна быть объявлена с помощью служебного слова `var`. Работа с такой переменной очень похожа на то, как мы работаем с переменными в PHP:
 
     var a, b, c;
     
 
-##### Initialize variables
+##### Инициализировать переменные
 
     let a = "hello", b = false;
     
 
-##### Change their values
+##### Изменить их значения
 
     let a = "hello", b = false;
     let a = 10, b = "140";
     
 
-##### Perform operations
+##### Выполнить операции с ними
 
     let c = a + b;
     
 
-They can have eight types:
+Они могут иметь один из следующих типов:
 
-| Type             | Description                                                                 |
-| ---------------- | --------------------------------------------------------------------------- |
-| `array`          | An array is an ordered map. A map is a type that associates values to keys. |
-| `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`       |
-| `float`/`double` | Floating point numbers. The size of a float is platform-dependent.          |
-| `integer`        | Integer numbers. The size of an integer is platform-dependent.              |
-| `null`           | The special NULL value represents a variable with no value.                 |
-| `object`         | Object abstraction like in PHP.                                             |
-| `resource`       | A resource holds a reference to an external resource.                       |
-| `string`         | A string is series of characters, where a character is the same as a byte.  |
+| Тип              | Описание                                                                                 |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| `array`          | Массив — это упорядоченная карта. Карта — это тип, который связывает значения с ключами. |
+| `boolean`        | Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`        |
+| `float`/`double` | Числа с плавающей точкой. Размер зависит от платформы.                                   |
+| `integer`        | Целые числа. Размер целого числа зависит от платформы.                                   |
+| `null`           | Специальное значение NULL представляет переменную без значения.                          |
+| `object`         | Абстракция объекта, как и в PHP.                                                         |
+| `resource`       | Ресурс содержит ссылку на внешний ресурс.                                                |
+| `string`         | A string is series of characters, where a character is the same as a byte.               |
 
 Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
 
@@ -92,7 +92,7 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Integer
 
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Целые числа. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
 
     var a = 5, b = 10050;
     
@@ -154,7 +154,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
-| Type               | Description                                                                    |
+| Тип                | Description                                                                    |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
 | `boolean`          | A boolean expresses a truth value. It can be either `true` or `false`.         |
