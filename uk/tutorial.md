@@ -1,10 +1,10 @@
 # Навчальний посібник
 
-Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
+Zephir, і цей посібник, призначені для PHP-розробників, які хочуть створити C-розширення, але не знають C.
 
 Ми припускаємо, що ви маєте досвід в одній або декількох інших мовах програмування. Ми проведемо паралелі з функціями PHP, C, JavaScript та іншими мовами. Ми акцентуватимемо увагу на функції Zephir, які є подібними до функцій в інших мовах, а також на функціях які є новими. Якщо ви знайомі з цими мовами вам буде простіше розібратися що до чого.
 
-In this guide, we will use the standard Linux terminal commands. If you are a Windows user, you need to replace these commands with their counterparts.
+У цьому посібнику ми будемо використовувати стандартний термінал команд Linux. If you are a Windows user, you need to replace these commands with their counterparts.
 
 <a name='checking-the-installation'></a>
 
