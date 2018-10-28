@@ -125,7 +125,7 @@ Zephir дозволяє створювати екземпляри PHP класі
     var today = "friday";
     
 
-У Zephir рядкові літерали можна задавати лише взявши їх у подвійні лапки (як у C або Go). Single quotes are reserved for `char` data type.
+У Zephir рядкові літерали можна задавати лише взявши їх у подвійні лапки (як у C або Go). Одинарні лапки зарезервовані для типу даних `char`.
 
 У рядках підтримуються наступні символи екранування:
 
@@ -163,15 +163,15 @@ Zephir не підтримує інтерполяцію змінних як це
 | `integer`          | Знакові числа. Розмір не менше 16 біт.                                              |
 | `long`             | Довге знакове число. Розмір не менше 32 біт.                                        |
 | `string`           | Рядок є послідовністю символів, де кожен символ є одним байтом.                     |
-| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                                 |
+| `unsigned char`    | Той же розмір, що і `char`, але гарантовано беззнаковий.                            |
 | `unsigned integer` | Беззнакове ціле. Розмір не менше 16 біт.                                            |
-| `unsigned long`    | Same as `long`, but unsigned.                                                       |
+| `unsigned long`    | Той же розмір, що й `long`, але беззнаковий.                                        |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A `boolean` expresses a truth value. Він може бути `true` або `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
+Логічний тип `boolean` виражає значення істини. Він може бути `true` або `false`. На відміну від поведінки динамічного типу статичні логічні типи залишаються логічними (`true` or `false`), не залежно від того, яке значення їм призначається:
 
     boolean a;
     let a = true;
@@ -196,7 +196,7 @@ A `boolean` expresses a truth value. Він може бути `true` або `fal
 
 ### Char/Unsigned Char
 
-`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). Змінна типу `char` може використовуватися для зберігання будь-яких символів у рядку:
+Змінна типу `char` найменша адресна одиниця машини, яка може містити символ з базового набору (як правило, 8 біт). Змінна типу `char` може використовуватися для зберігання будь-яких символів у рядку:
 
     char ch, string name = "peter";
     
