@@ -16,7 +16,7 @@
         router.zep # MyLibrary\Router
     
 
-Class in `mylibrary/router.zep`:
+Класс в `mylibrary/router.zep`:
 
     namespace MyLibrary;
     
@@ -26,7 +26,7 @@ Class in `mylibrary/router.zep`:
     }
     
 
-Class in `mylibrary/router/exception.zep`:
+Класс в `mylibrary/router/exception.zep`:
 
     namespace MyLibrary\Router;
     
@@ -36,50 +36,50 @@ Class in `mylibrary/router/exception.zep`:
     }
     
 
-Zephir will raise a compiler exception if a file or class is not located in the expected file, or vice versa.
+Zephir выбрасывает ошибку компиляции, если файл или класс не находится в ожидаемом файле или наоборот.
 
 <a name='instruction-separation'></a>
 
-## Instruction separation
+## Разделение инструкций
 
-You may have already noticed that there were very few semicolons in the code examples in the previous chapter. You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
+Возможно, вы уже заметили, что в примерах кода в предыдущей главе было очень мало точек с запятой. Вы можете использовать точки с запятой для разделения операторов и выражений, как в Java, C / C ++, PHP и подобных языках:
 
     myObject->myMethod(1, 2, 3); echo "world";
     
 
 <a name='comments'></a>
 
-## Comments
+## Комментарии
 
-Zephir supports 'C'/'C++' comments. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
+Zephir поддерживает комментарии в стиле C и C++. Это однострочные комментарии вида `// ...`, и многострочные комментариями вида `/* ... */`:
 
-    // this is a one line comment
+    // Это однострочный
     
     /**
-     * multi-line comment
+     * Многострочный комментарий
      */
     
 
-In most languages, comments are simply text ignored by the compiler/interpreter. In Zephir, multi-line comments are also used as docblocks, and they're exported to the generated code, so they're part of the language!
+В большинстве языков комментарии — это просто текст, игнорируемый компилятором/интерпретатором. В Zephir многострочные комментарии также используются в качестве блоков документации (docblock), и они экспортируются в сгенерированный код, поэтому они являются частью языка!
 
-If a docblock is not located where it is expected, the compiler will throw an exception.
+Если блок документации не находится там, где ожидается, компилятор выдаст исключение.
 
 <a name='variable-declarations'></a>
 
-## Variable Declarations
+## Объявления переменных
 
-In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
+В Zephir все переменные, используемые в заданной области видимости, должны быть объявлены. Этот процесс предоставляет компилятору важную информацию для выполнения оптимизаций и проверок. Переменные должны быть уникальными идентификаторами, и они не могут быть зарезервированными словами.
 
-    // Declaring variables for the same type    in the same instruction
+    // Объявление переменных для одного и того же типа в одной инструкции
     var a, b, c;
     
-    // Declaring each variable in separate lines
+    // Объявление каждой переменной с новой строки
     var a;
     var b;
     var c;
     
 
-Variables can optionally have an initial compatible default value:
+Переменные могут дополнительно иметь начальное совместимое значение по умолчанию:
 
     // Declaring variables with default values
     var a = "hello", b = 0, c = 1.0;
