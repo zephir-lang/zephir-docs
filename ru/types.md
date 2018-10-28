@@ -40,9 +40,9 @@ Zephir динамически и статически типизированны
 | `null`           | Специальное значение NULL представляет переменную без значения.                          |
 | `object`         | Абстракция объекта, как и в PHP.                                                         |
 | `resource`       | Ресурс содержит ссылку на внешний ресурс.                                                |
-| `string`         | A string is series of characters, where a character is the same as a byte.               |
+| `string`         | Строка представляет собой последовательность символов, где символ совпадает с байтом.    |
 
-Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
+Подробнее об этих типах можно узнать в [руководстве PHP](http://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
@@ -72,7 +72,7 @@ Only long and string values can be used as keys:
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either `true` or `false`:
+Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`:
 
     var a = false, b = true;
     
@@ -81,7 +81,7 @@ A boolean expresses a truth value. It can be either `true` or `false`:
 
 ### Float/Double
 
-Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+Числа с плавающей точкой (также известные как "вещественные числа"). Литералы с плавающей точкой представляют собой выражения из нуля или более цифр, за которыми следует точка (.), за которой следуют ноль или более цифр. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
     var number = 5.0, b = 0.014;
     
@@ -92,16 +92,16 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Integer
 
-Целые числа. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Целые числа. Размер целого числа зависит от платформы, хотя максимальное значение около двух миллиардов является обычным значением (это 32 битное, знаковое). 64-битные платформы обычно имеют максимальное значение около 9E18. PHP не поддерживает беззнаковые целые, поэтому у Zephir есть это ограничение тоже:
 
     var a = 5, b = 10050;
     
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer overflow
+### Целочисленное переполнение
 
-Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
+В отличие от PHP, Zephir автоматически не проверяет переполнение целочисленного типа. Точно так же, как и в C, если вы выполняете операции, которые могут возвращать большое число, вы можете использовать такие типы, как `unsigned long` или `float` для их хранения:
 
     unsigned long my_number = 2147483648;
     
