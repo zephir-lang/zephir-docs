@@ -58,11 +58,11 @@
 
 <a name='external-links'></a>
 
-## External Links
+## Зовнішні посилання
 
-Below we have collected links to external resources that may interest you:
+Нижче ми зібрали посилання на зовнішні ресурси, які можуть вас зацікавити:
 
 - [Система типізації](https://en.wikipedia.org/wiki/Type_system)
 - [Безпечний доступ до пам'яті](https://en.wikipedia.org/wiki/Memory_safety)
-- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
-- [Memory management](https://en.wikipedia.org/wiki/Memory_management)
+- [Ahead-of-time (AOT) компіляція](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Керування пам’яттю](https://en.wikipedia.org/wiki/Memory_management)
