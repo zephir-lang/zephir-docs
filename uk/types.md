@@ -34,7 +34,7 @@ Zephir поєднує в собі статичну та динамічну ти�
 | Тип              | Опис                                                                                                  |
 | ---------------- | ----------------------------------------------------------------------------------------------------- |
 | `array`          | Масив — це впорядкована мапа. Мапа — це тип, який встановлює відповідність між значеннями та ключами. |
-| `boolean`        | Булевий тип виражає значення істини. Він може бути `true` або `false`                                 |
+| `boolean`        | Булевий тип виражає значення істини. Він може бути `true` або `false`.                                |
 | `float`/`double` | Число з рухомою комою. Розмір числа залежить від платформи.                                           |
 | `integer`        | Цілі числа. Розмір числа залежить від платформи.                                                      |
 | `null`           | Особливе значення NULL, яке означає змінну в якої немає значення.                                     |
@@ -46,7 +46,7 @@ Zephir поєднує в собі статичну та динамічну ти�
 
 <a name='dynamic-types-arrays'></a>
 
-### Arrays
+### Array
 
 Реалізація масивів у Zephir в основному така сама як у PHP: впорядковані мапи оптимізовані для деяких випадків; можна розглядати як масив список (вектор) хеш-таблицю (реалізація мапи), словник, колекція, стек, черги. Можливі й інші трактування. Значеннями масиву можуть бути інші масиви, дерева, та багатовимірні масиви.
 
@@ -108,11 +108,11 @@ Zephir поєднує в собі статичну та динамічну ти�
 
 <a name='dynamic-types-objects'></a>
 
-### Objects
+### Object
 
 Zephir дозволяє створювати екземпляри PHP класів, маніпулювати PHP-об'єктами, викликати методи, читати константи класу та інші речі, які дозволяють PHP-об'єкти:
 
-    let myObject = new stdClass(),
+    let myObject = new \stdClass(),
         myObject->someProperty = "my value";
     
 
@@ -120,22 +120,22 @@ Zephir дозволяє створювати екземпляри PHP класі
 
 ### String
 
-Рядок це серія символів, де кожен символ є одним байтом. Як і PHP, Zephir підтримує лише 256-символьний набір, а отже не дає вбудованої підтримки Unicode.
+A `string` is series of characters, where a character is the same as a byte. Як і PHP, Zephir підтримує лише 256-символьний набір, а отже не дає вбудованої підтримки Unicode.
 
     var today = "friday";
     
 
-У Zephir рядкові літерали можна задавати лише взявши їх у подвійні лапки (як у C або Go). Одинарні лапки зарезервовані для символів.
+У Zephir рядкові літерали можна задавати лише взявши їх у подвійні лапки (як у C або Go). Single quotes are reserved for `char` data type.
 
 У рядках підтримуються наступні символи екранування:
 
 | Послідовність | Опис                   |
 | ------------- | ---------------------- |
-| `\\t`       | Горизонтальний відступ |
-| `\\n`       | Переведення рядка      |
-| `\\r`       | Повернення каретки     |
-| `\\ \`   | Бекслеш                |
-| `\\"`       | Подвійні лапки         |
+| `\t`         | Горизонтальний відступ |
+| `\n`         | Переведення рядка      |
+| `\r`         | Повернення каретки     |
+| `\`        | Бекслеш                |
+| `\"`         | Подвійні лапки         |
 
     var today    = "\tfriday\n\r",
         tomorrow = "\tsaturday";
@@ -163,15 +163,15 @@ Zephir не підтримує інтерполяцію змінних як це
 | `integer`          | Знакові числа. Розмір не менше 16 біт.                                              |
 | `long`             | Довге знакове число. Розмір не менше 32 біт.                                        |
 | `string`           | Рядок є послідовністю символів, де кожен символ є одним байтом.                     |
-| `unsigned char`    | Той же розмір, що і char, але гарантовано беззнаковий.                              |
+| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                                 |
 | `unsigned integer` | Беззнакове ціле. Розмір не менше 16 біт.                                            |
-| `unsigned long`    | Той же розмір, що й long, але беззнаковий.                                          |
+| `unsigned long`    | Same as `long`, but unsigned.                                                       |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-Булевий тип виражає значення істини. Він може бути `true` або `false`. На відміну від поведінки динамічного типу статичні логічні типи залишаються логічними (true або false), не залежно від того, яке значення їм призначається:
+A `boolean` expresses a truth value. Він може бути `true` або `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
@@ -184,7 +184,7 @@ Zephir не підтримує інтерполяцію змінних як це
 
 ##### автоматично перетворюється на `false`
 
-    let a = 0
+    let a = 0;
     
 
 ##### кидає виняток компіляції
@@ -196,7 +196,7 @@ Zephir не підтримує інтерполяцію змінних як це
 
 ### Char/Unsigned Char
 
-Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). Змінна типу `char` може використовуватися для зберігання будь-яких символів у рядку:
+`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). Змінна типу `char` може використовуватися для зберігання будь-яких символів у рядку:
 
     char ch, string name = "peter";
     
@@ -215,7 +215,7 @@ Char variables are the smallest addressable unit of the machine that can contain
 
 ### Integer/Unsigned Integer
 
-Integer values are like the integer member in dynamic values. Values assigned to integer variables remain integer:
+`integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
     int a;
     
@@ -243,7 +243,7 @@ Integer values are like the integer member in dynamic values. Values assigned to
     let a = "hello";
     
 
-Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
+`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
 
     uint a;
     
@@ -275,7 +275,7 @@ Unsigned integers are like integers but they don't have sign, this means you can
     let a = "hello";
     
 
-Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
+`unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
 
 ##### potential loss of data for `b`
 
@@ -289,7 +289,7 @@ Unsigned integers are twice bigger than standard integers. Assigning unsigned in
 
 ### Long/Unsigned Long
 
-Long variables are twice bigger than integer variables, thus they can store bigger numbers. As with integers, values assigned to long variables are automatically casted to this type:
+`long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
 
     long a;
     
@@ -317,7 +317,7 @@ Long variables are twice bigger than integer variables, thus they can store bigg
     let a = "hello";
     
 
-Unsigned longs are like longs but they are not signed, this means you can't store negative numbers in these sort of variables:
+`unsigned long` are like `long` but they are not signed, this means you can't store negative numbers in these sort of variables:
 
     ulong a;
     
@@ -349,7 +349,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
     let a = "hello";
     
 
-Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
+`unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
 
 ##### potential loss of data for `b`
 
