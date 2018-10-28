@@ -112,7 +112,7 @@ class Greeting
 zephir build
 ```
 
-Спочатку, і лише першого разу, виконається ряд внутрішніх команд, які створять необхідний код та конфігурації для експортування цього класу в PHP-розширення. If everything goes well, you will see the following message at the end of the output:
+Спочатку, і лише першого разу, виконається ряд внутрішніх команд, які створять необхідний код та конфігурації для експортування цього класу в PHP-розширення. Якщо все пройде без проблем в кінці ви побачите таке повідомлення:
 
     ...
     Extension installed!
@@ -120,17 +120,17 @@ zephir build
     Don't forget to restart your web server
     
 
-At the above step, it's likely that you would need to supply your root password in order to install the extension.
+На цьому етапі, швидше за все, для встановлення розширення вам потрібно буде ввести ваш root пароль.
 
-Finally, the extension must be added to the `php.ini` in order to be loaded by PHP. This is achieved by adding the initialization directive: `extension=utils.so` to it.
+Зрештою, вам залишиться лише під'єднати ваше розширення у `php.ini` та перезапустити PHP-сервер. Щоб під'єднати ваше розширення, потрібно додати директиву `extension=utils.so` до файлу php.ini.
 
-NOTE: You can also load it on the command line with `-d extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.
+Примітка: Ви також можете під'єднати розширення через консоль за допомогою команди `-d extension=utils.so`, але це під'єднає його лише для одного запиту і вам доведеться писати цю команду для кожного запиту. Додавання ж директиви до `php.ini` забезпечить підключення вашого розширення для кожного запиту.
 
 <a name='initial-testing'></a>
 
 ## Первинне тестування
 
-Now that the extension was added to your `php.ini`, check whether the extension is being loaded properly by executing the following:
+Тепер, коли розширення було додано до вашого `php.ini`, перевірте правильність завантаження розширення, виконавши наступну команду:
 
 ```bash
 php -m
@@ -149,7 +149,7 @@ xdebug
 xml
 ```
 
-Extension `utils` should be part of the output, indicating that the extension was loaded correctly. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
+Розширення `utils` повинно бути частиною виходу, що означає, що розширення завантажено правильно. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
 
 ```php
 <?php
