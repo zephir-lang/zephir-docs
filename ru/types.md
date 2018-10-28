@@ -163,31 +163,31 @@ Zephir позволяет создавать экземпляры PHP класс
 | `integer`          | Знаковое целое. Размер по крайней мере 16 бит.                                                    |
 | `long`             | Длинное знаковое целое. Размер по крайней мере 32 бит.                                            |
 | `string`           | Строка представляет собой последовательность символов, где символ (char) является одним байтом.   |
-| `unsigned char`    | Same size as char, but guaranteed to be unsigned.                                                 |
-| `unsigned integer` | Unsigned integers. Размер по крайней мере 16 бит.                                                 |
-| `unsigned long`    | Same as long, but unsigned.                                                                       |
+| `unsigned char`    | Тот же размер, что и char, но гарантированно беззнаковый.                                         |
+| `unsigned integer` | Беззнаковое целое. Размер по крайней мере 16 бит.                                                 |
+| `unsigned long`    | То же размер, что и long, но беззнаковый.                                                         |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A boolean expresses a truth value. Он может иметь значения `true` либо `false`. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`. В отличие от динамического поведения статические логические типы остаются логическими (true или false), а не тем типом значения, что им присваивается:
 
     boolean a;
     let a = true;
     
 
-##### automatically casted to `true`
+##### автоматически переводится в `true`
 
     let a = 100;
     
 
-##### automatically casted to `false`
+##### автоматически переводится в `false`
 
     let a = 0
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
@@ -196,17 +196,17 @@ A boolean expresses a truth value. Он может иметь значения `
 
 ### Char/Unsigned Char
 
-Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
+Переменная типа сhar — наименьшая адресуемая единица машины, которая может содержать символ из базового набора (обычно 8 бит). Переменная типа `char` может быть использована для хранения одного символа в строке:
 
     char ch, string name = "peter";
     
 
-##### stores 't'
+##### сохраняет 't'
 
     let ch = name[2];
     
 
-##### `char` literals must be enclosed in single quotes
+##### литералы типа `char` должны быть заключены в одинарные кавычки
 
     let ch = 'Z';
     
@@ -238,7 +238,7 @@ Integer values are like the integer member in dynamic values. Values assigned to
     let a = false;
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
@@ -270,7 +270,7 @@ Unsigned integers are like integers but they don't have sign, this means you can
     let a = false;
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
@@ -312,7 +312,7 @@ Long variables are twice bigger than integer variables, thus they can store bigg
     let a = false;
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
@@ -344,7 +344,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
     let a = false;
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
