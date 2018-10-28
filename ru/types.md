@@ -34,7 +34,7 @@ Zephir динамически и статически типизированны
 | Тип              | Описание                                                                                 |
 | ---------------- | ---------------------------------------------------------------------------------------- |
 | `array`          | Массив — это упорядоченная карта. Карта — это тип, который связывает значения с ключами. |
-| `boolean`        | Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`        |
+| `boolean`        | Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`.       |
 | `float`/`double` | Числа с плавающей точкой. Размер зависит от платформы.                                   |
 | `integer`        | Целые числа. Размер целого числа зависит от платформы.                                   |
 | `null`           | Специальное значение NULL представляет переменную без значения.                          |
@@ -113,29 +113,29 @@ Zephir динамически и статически типизированны
 Zephir позволяет создавать экземпляры PHP классов, манипулировать PHP объектами, вызывать методы на них, читать константы классов и т.д.:
 
     let myObject = new \stdClass(),
-        myObject->someProperty = "некоторое значение";
+        myObject->someProperty = "my value";
     
 
 <a name='dynamic-types-string'></a>
 
 ### String
 
-Строка представляет собой последовательность символов, где символ (char) является одним байтом. Как PHP, Zephir поддерживает только 256-символьный набор и, следовательно, не предлагает поддержку Unicode.
+A `string` is series of characters, where a character is the same as a byte. Как PHP, Zephir поддерживает только 256-символьный набор и, следовательно, не предлагает поддержку Unicode.
 
     var today = "friday";
     
 
-В Zephir строковые литералы могут указываться только с помощью двойных кавычек (как в C или Go). Одинарные кавычки зарезервированы для типа данных char.
+В Zephir строковые литералы могут указываться только с помощью двойных кавычек (как в C или Go). Single quotes are reserved for `char` data type.
 
 В строках поддерживаются следующие escape-последовательности:
 
 | Последовательность | Описание                 |
 | ------------------ | ------------------------ |
-| `\\t`            | Горизонтальная табуляция |
-| `\\n`            | Перевод строки           |
-| `\\r`            | Возврат каретки          |
-| `\\ \`        | Обратная косая черта     |
-| `\\"`            | Двойная кавычка          |
+| `\t`              | Горизонтальная табуляция |
+| `\n`              | Перевод строки           |
+| `\r`              | Возврат каретки          |
+| `\`             | Обратная косая черта     |
+| `\"`              | Двойная кавычка          |
 
     var today    = "\tпятница\n\r",
         tomorrow = "\tсуббота";
@@ -163,15 +163,15 @@ Zephir позволяет создавать экземпляры PHP класс
 | `integer`          | Знаковое целое. Размер по крайней мере 16 бит.                                                    |
 | `long`             | Длинное знаковое целое. Размер по крайней мере 32 бит.                                            |
 | `string`           | Строка представляет собой последовательность символов, где символ (char) является одним байтом.   |
-| `unsigned char`    | Тот же размер, что и char, но гарантированно беззнаковый.                                         |
+| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                                               |
 | `unsigned integer` | Беззнаковое целое. Размер по крайней мере 16 бит.                                                 |
-| `unsigned long`    | То же размер, что и long, но беззнаковый.                                                         |
+| `unsigned long`    | Same as `long`, but unsigned.                                                                     |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`. В отличие от динамического поведения статические логические типы остаются логическими (true или false), а не тем типом значения, что им присваивается:
+A `boolean` expresses a truth value. Он может иметь значения `true` либо `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
@@ -184,7 +184,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ##### автоматически переводится в `false`
 
-    let a = 0
+    let a = 0;
     
 
 ##### выкидывает ошибку компиляции
@@ -196,7 +196,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### Char/Unsigned Char
 
-Переменная типа сhar — наименьшая адресуемая единица машины, которая может содержать символ из базового набора (обычно 8 бит). Переменная типа `char` может быть использована для хранения одного символа в строке:
+`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). Переменная типа `char` может быть использована для хранения одного символа в строке:
 
     char ch, string name = "peter";
     
@@ -215,7 +215,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### Integer/Unsigned Integer
 
-Целочисленные значения подобны целочисленным аналогам в динамических типах. Значения, присвоенные целым переменным, остаются целыми:
+`integer` values are like the `integer` member in dynamic values. Значения, присвоенные целым переменным, остаются целыми:
 
     int a;
     
@@ -243,7 +243,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-Беззнаковые целые подобны целым числам, но они не имеют знака, это означает, что вы не можете хранить отрицательные числа в таких переменных:
+`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
 
     uint a;
     
@@ -275,7 +275,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-Беззнаковые целые в два раза больше стандартных целых чисел. Присваивание беззнаковых целых стандартным целым (знаковым) может привести к потере данных:
+`unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
 
 ##### возможна потеря данных для `b`
 
@@ -289,7 +289,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### Long/Unsigned Long
 
-Переменные типа long в два раза больше, чем integer переменные, поэтому они могут хранить большие числа. Как и с обычными целыми, при присваивании значений переменным типа long, они будут автоматически приводиться к этому типу:
+`long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
 
     long a;
     
@@ -317,7 +317,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-Тип unsigned long похож на long, но он не имеет знака. Это означает, что вы не можете хранить отрицательные числа в таких переменных:
+`unsigned long` are like `long` but they are not signed, this means you can't store negative numbers in these sort of variables:
 
     ulong a;
     
@@ -349,7 +349,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-Тип данных unsigned long в два раза больше, чем стандартный long; Назначение значений типа unsigned long переменным типа long (знаковый long) может привести к потере данных:
+`unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
 
 ##### возможна потеря данных для `b`
 

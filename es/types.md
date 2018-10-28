@@ -34,7 +34,7 @@ Pueden tener ocho tipos:
 | Tipo             | Descripción                                                                                                             |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `array`          | Un array, también puede llamarse arreglo o matriz, es un mapa ordenado. Un mapa es un tipo que asocia valores a claves. |
-| `boolean`        | Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`                                                |
+| `boolean`        | Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`.                                               |
 | `float`/`double` | Son números de punto flotante. El tamaño de un flotante depende de la plataforma.                                       |
 | `integer`        | Son números enteros. El tamaño de un entero depende de la plataforma.                                                   |
 | `null`           | El valor especial `NULL` representa que la variable no tiene valor.                                                     |
@@ -46,7 +46,7 @@ Revisar por más de estos tipos en el [manual de PHP](http://www.php.net/manual/
 
 <a name='dynamic-types-arrays'></a>
 
-### Arrays
+### Array
 
 La implementación de los arreglos en Zephir es básicamente igual que en PHP: Mapas ordenados optimizados para varios usos diferentes; se puede tratar como un array, lista (vector), tabla hash (una implementación de un mapa), diccionario, colección, pila, cola y probablemente más. Como valores del array pueden ser otros arrays, árboles y también son posibles arrays multidimensionales.
 
@@ -108,34 +108,34 @@ Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Co
 
 <a name='dynamic-types-objects'></a>
 
-### Objects
+### Object
 
 Zephir permite crear, manipular, llamar métodos, leer constantes de clase, etcétera desde objetos PHP:
 
-    let myObject = new stdClass(),
-        myObject->someProperty = "mi valor";
+    let myObject = new \stdClass(),
+        myObject->someProperty = "my value";
     
 
 <a name='dynamic-types-string'></a>
 
 ### String
 
-Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte. Como en PHP, Zephir solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
+A `string` is series of characters, where a character is the same as a byte. Como en PHP, Zephir solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
     var today = "Viernes";
     
 
-En Zephir, los string literales solo pueden ser especificados utilizando las comillas dobles (como en C o Go). Las comillas simples están reservadas para los caracteres.
+En Zephir, los string literales solo pueden ser especificados utilizando las comillas dobles (como en C o Go). Single quotes are reserved for `char` data type.
 
 Son soportadas las siguientes secuencias de escape en cadenas de texto:
 
-| Secuencia   | Descripción      |
-| ----------- | ---------------- |
-| `\\t`     | Tab horizontal   |
-| `\\n`     | Salto de línea   |
-| `\\r`     | Retorno de carro |
-| `\\ \` | Barra invertida  |
-| `\\"`     | Comilla doble    |
+| Secuencia | Descripción      |
+| --------- | ---------------- |
+| `\t`     | Tab horizontal   |
+| `\n`     | Salto de línea   |
+| `\r`     | Retorno de carro |
+| `\`    | Barra invertida  |
+| `\"`     | Comilla doble    |
 
     var today    = "\tviernes\n\r",
         tomorrow = "\tsábado";
@@ -163,15 +163,15 @@ El tipificado estático permite al programador declarar y utilizar algunos tipos
 | `integer`          | Enteros con signo. Al menos 16 bits de tamaño.                                                  |
 | `long`             | Tipo entero largo con signo. Al menos 32 bits de tamaño.                                        |
 | `string`           | Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte.         |
-| `unsigned char`    | Mismo tamaño que un char, pero garantiza que sea sin signo.                                     |
+| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                                             |
 | `unsigned integer` | Enteros sin signo. Al menos 16 bits de tamaño.                                                  |
-| `unsigned long`    | Al igual que el tipo long, pero sin signo.                                                      |
+| `unsigned long`    | Same as `long`, but unsigned.                                                                   |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`. Contrariamente al comportamiento dinámico detallado anteriormente, los tipos booleanos estáticos siguen siendo booleanos (verdaderos o falsos) sin importar el valor que se les asigne:
+A `boolean` expresses a truth value. Puede ser `true` o `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
@@ -184,7 +184,7 @@ Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`. Contra
 
 ##### Automáticamente clasificado como `false`
 
-    let a = 0
+    let a = 0;
     
 
 ##### Arroja una excepción de compilador
@@ -196,7 +196,7 @@ Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`. Contra
 
 ### Char/Char sin signo
 
-Las variables caracter son la unidad direccionable más pequeña de la máquina que puede contener el conjunto de carácter básico (generalmente 8 bits). Una variable de tipo `char` se puede utilizar para almacenar cualquier carácter en una cadena:
+`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). Una variable de tipo `char` se puede utilizar para almacenar cualquier carácter en una cadena:
 
     char ch, string name = "pedro";
     
@@ -215,7 +215,7 @@ Las variables caracter son la unidad direccionable más pequeña de la máquina 
 
 ### Integer/Integer sin signo
 
-Los valores enteros el miembro entero en valores dinámicos. Los valores asignados a las variables de número entero permanecen enteros:
+`integer` values are like the `integer` member in dynamic values. Los valores asignados a las variables de número entero permanecen enteros:
 
     int a;
     
@@ -243,7 +243,7 @@ Los valores enteros el miembro entero en valores dinámicos. Los valores asignad
     let a = "hola";
     
 
-Los enteros sin signo, son como los enteros pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
+`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
 
     uint a;
     
@@ -275,7 +275,7 @@ Los enteros sin signo, son como los enteros pero no tienen signo, esto significa
     let a = "hola";
     
 
-Los enteros sin signo son dos veces más grandes que los enteros estándar. La asignación de enteros sin signo a enteros estándar (con signo) puede resultar en pérdida de datos:
+`unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
 
 ##### Pérdida potencial de datos en `b`
 
@@ -289,7 +289,7 @@ Los enteros sin signo son dos veces más grandes que los enteros estándar. La a
 
 ### Long/Long sin signo
 
-Las variables largas son dos veces más grandes que las variables enteras, por lo que pueden almacenar números más grandes. Al igual que con los enteros, los valores asignados a variables largas se convierten automáticamente a este tipo:
+`long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
 
     long a;
     
@@ -317,7 +317,7 @@ Las variables largas son dos veces más grandes que las variables enteras, por l
     let a = "hola";
     
 
-Los largos sin signo son como los largos estándar, pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
+`unsigned long` are like `long` but they are not signed, this means you can't store negative numbers in these sort of variables:
 
     ulong a;
     
@@ -349,7 +349,7 @@ Los largos sin signo son como los largos estándar, pero no tienen signo, esto s
     let a = "hola";
     
 
-Los largos sin signo son dos veces más grandes que los largos estándar; la asignación de largos sin signo a largos estándar (con signo) puede provocar la pérdida de datos:
+`unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
 
 ##### Pérdida potencial de datos en `b`
 
