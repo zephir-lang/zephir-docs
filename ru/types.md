@@ -46,9 +46,9 @@ Zephir динамически и статически типизированны
 
 <a name='dynamic-types-arrays'></a>
 
-### Массивы
+### Array
 
-The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
+Реализация массива в Zephir в основном такая же, как и в PHP: упорядоченные карты, оптимизированные для различных целей; Этот тип данных можно трактовать как массив, список (вектор), хэш-таблицу (реализацию карты), словарь, коллекцию, стек, очередь. Возможны и другие трактовки. As array values can be other arrays, trees and multidimensional arrays are also possible.
 
 The syntax to define arrays is slightly different than in PHP:
 
@@ -81,12 +81,12 @@ Only long and string values can be used as keys:
 
 ### Float/Double
 
-Числа с плавающей точкой (также известные как "вещественные числа"). Литералы с плавающей точкой представляют собой выражения из нуля или более цифр, за которыми следует точка (.), за которой следуют ноль или более цифр. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+Числа с плавающей точкой (также известные как "вещественные числа"). Литералы с плавающей точкой представляют собой выражения из нуля или более цифр, за которыми следует точка (.), за которой следуют ноль или более цифр. Размер float — платформозависимая величина, хотя максимум ~ 1.8e308 с точностью примерно 14 десятичных цифр является наиболее общим значением (64-битный формат IEEE).
 
     var number = 5.0, b = 0.014;
     
 
-Floating point numbers have limited precision. Although it depends on the system, Zephir uses the same IEEE 754 double precision format used by PHP, which will give a maximum relative error due to rounding in the order of 1.11e-16.
+Числа с плавающей точкой имеют ограниченную точность. Хотя это зависит от системы, как и в PHP, Zephir использует формат двойной точности IEEE 754, который даст максимальную относительную ошибку из-за округления порядка 1.11e-16.
 
 <a name='dynamic-types-integer'></a>
 
