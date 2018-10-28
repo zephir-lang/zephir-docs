@@ -289,7 +289,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### Long/Unsigned Long
 
-Переменные типа long в два раза больше, чем integer переменные, поэтому они могут хранить большие числа. As with integers, values assigned to long variables are automatically casted to this type:
+Переменные типа long в два раза больше, чем integer переменные, поэтому они могут хранить большие числа. Как и с обычными целыми, при присваивании значений переменным типа long, они будут автоматически приводиться к этому типу:
 
     long a;
     
@@ -317,7 +317,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-Unsigned longs are like longs but they are not signed, this means you can't store negative numbers in these sort of variables:
+Тип unsigned long похож на long, но он не имеет знака. Это означает, что вы не можете хранить отрицательные числа в таких переменных:
 
     ulong a;
     
@@ -326,7 +326,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
 
 ##### автоматически переводится в 70
 
-    let  a = -70;
+    let a = -70;
     
 
 ##### автоматически переводится в 100
@@ -349,7 +349,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
     let a = "hello";
     
 
-Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
+Тип данных unsigned long в два раза больше, чем стандартный long; Назначение значений типа unsigned long переменным типа long (знаковый long) может привести к потере данных:
 
 ##### возможна потеря данных для `b`
 
@@ -363,25 +363,25 @@ Unsigned longs are twice bigger than standard longs; assigning unsigned longs to
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
+Строка представляет собой последовательность символов, где символ является одним байтом. Как и в PHP, этот тип данных поддерживает только 256-символьный набор и, следовательно, не поддерживает использование Юникода.
 
-When a variable is declared `string` it never changes its type:
+Когда переменная объявлена как типа `string`, она никогда не меняет свой тип:
 
     string a;
     
     let a = "";
     
 
-##### string literals must be enclosed in double quotes
+##### строковые литералы должны быть заключены в двойные кавычки
 
-    let  a = "hello";
+    let a = "hello";
     
 
-##### converted to string "A"
+##### преобразуется в строку "A"
 
     let a = 'A';
     
 
-##### automatically casted to ""
+##### автоматически переводится в ""
 
     let a = null;
