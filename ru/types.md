@@ -152,9 +152,9 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ## Статические типы
 
-Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
+Статическая типизация позволяет разработчику объявлять и использовать некоторые типы переменных, доступные в C. Переменные, объявленные как статические, не могут менять свой тип. Тем не менее, они позволяют компилятору делать оптимизацию лучше. Поддерживаются следующие типы данных:
 
-| Тип                | Description                                                                    |
+| Тип                | Описание                                                                       |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
 | `boolean`          | A boolean expresses a truth value. It can be either `true` or `false`.         |
