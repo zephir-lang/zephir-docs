@@ -215,7 +215,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### Integer/Unsigned Integer
 
-Integer values are like the integer member in dynamic values. Values assigned to integer variables remain integer:
+Целочисленные значения подобны целочисленным аналогам в динамических типах. Значения, присвоенные целым переменным, остаются целыми:
 
     int a;
     
@@ -223,17 +223,17 @@ Integer values are like the integer member in dynamic values. Values assigned to
         a = -70;
     
 
-##### automatically casted to 100
+##### автоматически переводится в 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = false;
     
@@ -243,29 +243,29 @@ Integer values are like the integer member in dynamic values. Values assigned to
     let a = "hello";
     
 
-Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
+Беззнаковые целые подобны целым числам, но они не имеют знака, это означает, что вы не можете хранить отрицательные числа в таких переменных:
 
     uint a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### автоматически переводится в 70
 
     let a = -70;
     
 
-##### automatically casted to 100
+##### автоматически переводится в 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = false;
     
@@ -275,9 +275,9 @@ Unsigned integers are like integers but they don't have sign, this means you can
     let a = "hello";
     
 
-Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
+Беззнаковые целые в два раза больше стандартных целых чисел. Присваивание беззнаковых целых стандартным целым (знаковым) может привести к потере данных:
 
-##### potential loss of data for `b`
+##### возможна потеря данных для `b`
 
     uint a, int b;
     
@@ -289,7 +289,7 @@ Unsigned integers are twice bigger than standard integers. Assigning unsigned in
 
 ### Long/Unsigned Long
 
-Long variables are twice bigger than integer variables, thus they can store bigger numbers. As with integers, values assigned to long variables are automatically casted to this type:
+Переменные типа long в два раза больше, чем integer переменные, поэтому они могут хранить большие числа. As with integers, values assigned to long variables are automatically casted to this type:
 
     long a;
     
@@ -297,17 +297,17 @@ Long variables are twice bigger than integer variables, thus they can store bigg
         a = -70;
     
 
-##### automatically casted to 100
+##### автоматически переводится в 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = false;
     
@@ -324,22 +324,22 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
     let a = 50;
     
 
-##### automatically casted to 70
+##### автоматически переводится в 70
 
     let  a = -70;
     
 
-##### automatically casted to 100
+##### автоматически переводится в 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = false;
     
@@ -351,7 +351,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
 
 Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
 
-##### potential loss of data for `b`
+##### возможна потеря данных для `b`
 
     ulong a, long b;
     
