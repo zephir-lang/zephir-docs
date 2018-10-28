@@ -1,14 +1,14 @@
-# Basic Syntax
+# Базовый синтаксис
 
-In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
+В этой главе мы обсудим организацию файлов и пространств имен, объявления переменных, разные синтаксические соглашения и несколько других концепций.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
-## Organizing Code in Files and Namespaces
+## Организация кода в файлах и пространствах имён
 
-In PHP, you can place code in any file, without a specific structure. In Zephir, every file must contain a class (and just one class). Every class must have a namespace, and the directory structure must match the names of the classes and namespaces used. (This is similar to PSR-4 autoloading conventions, except it's enforced by the language itself.)
+В PHP вы можете поместить код в любой файл без определенной структуры. В Zephir каждый файл должен содержать класс (и только один класс). Каждый класс должен иметь пространство имён, а структура каталогов должна соответствовать именам используемых классов и имен. (Это похоже на соглашение автозагрузки классов PSR-4, за исключением того, что оно обеспечивается за счёт самого языка).
 
-For example, given the following structure, the classes in each file must be:
+Например, для следующей структуры классы в каждом файле должны быть:
 
     mylibrary/
         router/
