@@ -101,7 +101,7 @@ Examinemos el código detalladamente, así podemos empezar a aprender la sintaxi
 
 En el método, las primeras líneas utilizan las palabras clave `var` e `int`. Se utilizan para declarar una variable en el ámbito local. Cada variable utilizada en un método debe declararse con su tipo respectivo. Esta declaración no es opcional, ayuda el compilador a advertirle sobre variables mal escritas, o sobre el uso de variables fuera de ámbito, que generalmente termina en errores en tiempo de ejecución.
 
-Las variables dinámicas son declaradas con la palabra clave `var`. Estas variables pueden ser asignadas o reasignadas a tipos diferentes. On the other hand, the `int` and `length` variables are statically typed integer variables, that can only have integer values in the entire program execution.
+Las variables dinámicas son declaradas con la palabra clave `var`. Estas variables pueden ser asignadas o reasignadas a tipos diferentes. Por otro lado, las variables `int` y `length` son estrictamente tipificadas a un entero, estas solo pueden tener valores enteros en la ejecución de todo el programa.
 
 En contraste con PHP, no necesitas colocar el signo de dolar ($) como prefijo de nombre de variable.
 
