@@ -17,7 +17,7 @@
 - [Configuration file](/[[language]]/[[version]]/config)
 - [Lifecycle hooks](/[[language]]/[[version]]/lifecycle)
 - [Extension globals](/[[language]]/[[version]]/globals)
-- [phpinfo() sections](/[[language]]/[[version]]/phpinfo)
+- [Секции phpinfo()](/[[language]]/[[version]]/phpinfo)
 - [Static analysis](/[[language]]/[[version]]/static-analysis)
 - [Optimizations](/[[language]]/[[version]]/optimizations)
 - [Compiler warnings](/[[language]]/[[version]]/warnings)
