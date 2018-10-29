@@ -196,7 +196,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### Char/Unsigned Char
 
-`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). Переменная типа `char` может быть использована для хранения одного символа в строке:
+переменная типа `char` — наименьшая адресуемая единица машины, которая может содержать символ из базового набора (обычно 8 бит). Переменная типа `char` может быть использована для хранения одного символа в строке:
 
     char ch, string name = "peter";
     
@@ -215,7 +215,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### Integer/Unsigned Integer
 
-`integer` values are like the `integer` member in dynamic values. Значения, присвоенные целым переменным, остаются целыми:
+целочисленные значения подобны целочисленным аналогам в динамических типах. Значения, присвоенные целым переменным, остаются целыми:
 
     int a;
     
@@ -243,7 +243,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
+беззнаковые целые подобны целым числам, но они не имеют знака, это означает, что вы не можете хранить отрицательные числа в таких переменных:
 
     uint a;
     
@@ -275,7 +275,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-`unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
+Тип `unsigned integer` в два раза больше стандартного `integer`. Присваивание беззнаковых целых стандартным целым (знаковым) может привести к потере данных:
 
 ##### возможна потеря данных для `b`
 
@@ -289,7 +289,7 @@ Zephir позволяет создавать экземпляры PHP класс
 
 ### Long/Unsigned Long
 
-`long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
+переменные типа `long` в два раза больше, чем `integer`, поэтому они могут хранить большие числа. Как и с `integer`, при присваивании значений переменным типа `long`, они будут автоматически приводиться к этому типу:
 
     long a;
     
@@ -317,7 +317,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-`unsigned long` are like `long` but they are not signed, this means you can't store negative numbers in these sort of variables:
+Тип `unsigned long` похож на `long`, но он не имеет знака. Это означает, что вы не можете хранить отрицательные числа в таких переменных:
 
     ulong a;
     
@@ -349,7 +349,7 @@ Zephir позволяет создавать экземпляры PHP класс
     let a = "hello";
     
 
-`unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
+Тип `unsigned long` в два раза больше стандартного `long`; присваивание данных типа `unsigned long` стандартному знаковому `long` может привести к потере данных:
 
 ##### возможна потеря данных для `b`
 
