@@ -1,5 +1,6 @@
 - [Classes](/[[language]]/[[version]]/oop#classes) 
     - [Class Modifiers](/[[language]]/[[version]]/oop#classes-modifiers)
+    - [Implementing Interfaces](/[[language]]/[[version]]/oop#classes-interfaces)
 - [Implementing Methods](/[[language]]/[[version]]/oop#implementing-methods) 
     - [Optional nullable parameters](/[[language]]/[[version]]/oop#implementing-methods-optional-nullable-parameters)
     - [Supported Visibilities](/[[language]]/[[version]]/oop#implementing-methods-supported-visibilities)
