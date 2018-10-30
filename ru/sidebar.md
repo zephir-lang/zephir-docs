@@ -21,4 +21,4 @@
 - [Static analysis](/[[language]]/[[version]]/static-analysis)
 - [Optimizations](/[[language]]/[[version]]/optimizations)
 - [Compiler warnings](/[[language]]/[[version]]/warnings)
-- [License](/[[language]]/[[version]]/license)
+- [Лицензионное соглашение](/[[language]]/[[version]]/license)

@@ -113,19 +113,19 @@ Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Co
 Zephir permite crear, manipular, llamar métodos, leer constantes de clase, etcétera desde objetos PHP:
 
     let myObject = new \stdClass(),
-        myObject->someProperty = "my value";
+        myObject->someProperty = "mi valor";
     
 
 <a name='dynamic-types-string'></a>
 
 ### String
 
-A `string` is series of characters, where a character is the same as a byte. Como en PHP, Zephir solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
+Un `string` es una serie de caracteres, donde un caracter es igual a un byte. Como en PHP, Zephir solo soporta un conjunto de 256 caracteres y por lo tanto no ofrece un soporte nativo de Unicode.
 
     var today = "Viernes";
     
 
-En Zephir, los string literales solo pueden ser especificados utilizando las comillas dobles (como en C o Go). Single quotes are reserved for `char` data type.
+En Zephir, los string literales solo pueden ser especificados utilizando las comillas dobles (como en C o Go). Las comillas simples están reservadas para los datos de tipo `char`.
 
 Son soportadas las siguientes secuencias de escape en cadenas de texto:
 
@@ -163,15 +163,15 @@ El tipificado estático permite al programador declarar y utilizar algunos tipos
 | `integer`          | Enteros con signo. Al menos 16 bits de tamaño.                                                  |
 | `long`             | Tipo entero largo con signo. Al menos 32 bits de tamaño.                                        |
 | `string`           | Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte.         |
-| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                                             |
+| `unsigned char`    | Mismo tamaño que un `char`, pero garantiza que sea sin signo.                                   |
 | `unsigned integer` | Enteros sin signo. Al menos 16 bits de tamaño.                                                  |
-| `unsigned long`    | Same as `long`, but unsigned.                                                                   |
+| `unsigned long`    | Igual que `long`, pero sin signo.                                                               |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A `boolean` expresses a truth value. Puede ser `true` o `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
+Un `boolean` expresa un valor de verdad. Puede ser `true` o `false`. Contrariamente al comportamiento dinámico detallado anteriormente, los tipos `boolean` estáticos siguen siendo `boolean` (`true` o `false`) sin importar el valor que se les asigne:
 
     boolean a;
     let a = true;
