@@ -1,14 +1,14 @@
-# Basic Syntax
+# Базовый синтаксис
 
-In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
+В этой главе мы обсудим организацию файлов и пространств имен, объявления переменных, разные синтаксические соглашения и несколько других концепций.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
-## Organizing Code in Files and Namespaces
+## Организация кода в файлах и пространствах имён
 
-In PHP, you can place code in any file, without a specific structure. In Zephir, every file must contain a class (and just one class). Every class must have a namespace, and the directory structure must match the names of the classes and namespaces used. (This is similar to PSR-4 autoloading conventions, except it's enforced by the language itself.)
+В PHP вы можете поместить код в любой файл без определенной структуры. В Zephir каждый файл должен содержать класс (и только один класс). Каждый класс должен иметь пространство имён, а структура каталогов должна соответствовать именам используемых классов и имен. (Это похоже на соглашение автозагрузки классов PSR-4, за исключением того, что оно обеспечивается за счёт самого языка).
 
-For example, given the following structure, the classes in each file must be:
+Например, для следующей структуры классы в каждом файле должны быть:
 
     mylibrary/
         router/
@@ -16,7 +16,7 @@ For example, given the following structure, the classes in each file must be:
         router.zep # MyLibrary\Router
     
 
-Class in `mylibrary/router.zep`:
+Класс в `mylibrary/router.zep`:
 
     namespace MyLibrary;
     
@@ -26,7 +26,7 @@ Class in `mylibrary/router.zep`:
     }
     
 
-Class in `mylibrary/router/exception.zep`:
+Класс в `mylibrary/router/exception.zep`:
 
     namespace MyLibrary\Router;
     
@@ -36,70 +36,68 @@ Class in `mylibrary/router/exception.zep`:
     }
     
 
-Zephir will raise a compiler exception if a file or class is not located in the expected file, or vice versa.
+Zephir выбрасывает ошибку компиляции, если файл или класс не находится в ожидаемом файле или наоборот.
 
 <a name='instruction-separation'></a>
 
-## Instruction separation
+## Разделение инструкций
 
-You may have already noticed that there were very few semicolons in the code examples in the previous chapter. You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
+Возможно, вы уже заметили, что в примерах кода в предыдущей главе было очень мало точек с запятой. Вы можете использовать точки с запятой для разделения операторов и выражений, как в Java, C / C ++, PHP и подобных языках:
 
     myObject->myMethod(1, 2, 3); echo "world";
     
 
 <a name='comments'></a>
 
-## Comments
+## Комментарии
 
-Zephir supports 'C'/'C++' comments. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
+Zephir поддерживает комментарии в стиле C и C++. Это однострочные комментарии вида `// ...`, и многострочные комментариями вида `/* ... */`:
 
-    // this is a one line comment
+    // Это однострочный
     
     /**
-     * multi-line comment
+     * Многострочный комментарий
      */
     
 
-In most languages, comments are simply text ignored by the compiler/interpreter. In Zephir, multi-line comments are also used as docblocks, and they're exported to the generated code, so they're part of the language!
+В большинстве языков комментарии — это просто текст, игнорируемый компилятором/интерпретатором. В Zephir многострочные комментарии также используются в качестве блоков документации (docblock), и они экспортируются в сгенерированный код, поэтому они являются частью языка!
 
-If a docblock is not located where it is expected, the compiler will throw an exception.
+Если блок документации не находится там, где ожидается, компилятор выдаст исключение.
 
 <a name='variable-declarations'></a>
 
-## Variable Declarations
+## Объявления переменных
 
-In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
+В Zephir все переменные, используемые в заданной области видимости, должны быть объявлены. Этот процесс предоставляет компилятору важную информацию для выполнения оптимизаций и проверок. Переменные должны быть уникальными идентификаторами, и они не могут быть зарезервированными словами.
 
-    // Declaring variables for the same type    in the same instruction
+    // Объявление переменных для одного и того же типа в одной инструкции
     var a, b, c;
     
-    // Declaring each variable in separate lines
+    // Объявление каждой переменной с новой строки
     var a;
     var b;
     var c;
     
 
-Variables can optionally have an initial compatible default value:
+Переменные могут дополнительно иметь начальное совместимое значение по умолчанию:
 
-    // Declaring variables with default values
+    // Объявление переменных со значениями по умолчанию
     var a = "hello", b = 0, c = 1.0;
     int d = 50; bool some = true;
     
 
-Variable names are case-sensitive, the following variables are different:
+Имена переменных чувствительны к регистру, следующие переменные различаются:
 
-    // Different variables
+    // Различные переменные
     var somevalue, someValue, SomeValue;
     
 
 <a name='variable-scope'></a>
 
-## Variable Scope
+## Область переменной
 
-All variables declared are locally scoped to the method where they were declared:
+Все объявленные переменные локально охвачены методом, в котором они были объявлены:
 
-    namespace Test;
-    
     class MyClass
     {
     
@@ -120,35 +118,35 @@ All variables declared are locally scoped to the method where they were declared
 
 <a name='super-global'></a>
 
-## Super Globals
+## Супер-глобальные переменные
 
-Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
+Zephir не поддерживает глобальные переменные. Доступ к глобальным переменным из пользовательского пространства PHP недопустим. Тем не менее, вы можете получить доступ к супер-глобальным переменным PHP следующим образом:
 
-    // Getting a value from _POST
+    // Получение значения от _POST
     let price = _POST["price"];
     
-    // Read a value from _SERVER
+    // Чтение значения из _SERVER
     let requestMethod = _SERVER["REQUEST_METHOD"];
     
 
 <a name='local-symbol-table'></a>
 
-## Local Symbol Table
+## Локальная таблица символов
 
-Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
+Каждый метод или контекст в PHP имеет таблицу символов, которая позволяет писать переменные очень динамичным способом:
 
     <?php
     
     $b = 100;
     $a = "b";
-    echo $$a; // prints 100
+    echo $$a; // выведет 100
     
 
-Zephir does not implement this feature, since all variables are compiled down to low-level variables, and there is no way to know which variables exist in a specific context. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
+Zephir не реализует этот функционал, так как все переменные скомпилированы до низкоуровневых переменных и не существует способа узнать, какие переменные существуют в определенном контексте. Если вы хотите создать переменную в текущей таблице символов PHP, вы можете использовать следующий синтаксис:
 
-    // Set variable $name in PHP
+    // Установить переменную $name в PHP
     let {"name"} = "hello";
     
-    // Set variable $price in PHP
+    // Установить переменную $price в PHP
     let name = "price";
     let {name} = 10.2;

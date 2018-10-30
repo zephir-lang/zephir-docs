@@ -27,7 +27,7 @@ They can have eight types:
 | Type              | Description                                                                  |
 |-------------------|------------------------------------------------------------------------------|
 | `array`           | An array is an ordered map. A map is a type that associates values to keys.  |
-| `boolean`         | A boolean expresses a truth value. It can be either `true` or `false`        |
+| `boolean`         | A boolean expresses a truth value. It can be either `true` or `false`.       |
 | `float`/`double`  | Floating point numbers. The size of a float is platform-dependent.           |
 | `integer`         | Integer numbers. The size of an integer is platform-dependent.               |
 | `null`            | The special NULL value represents a variable with no value.                  |
@@ -38,7 +38,7 @@ They can have eight types:
 Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
-### Arrays
+### Array
 The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
 
 The syntax to define arrays is slightly different than in PHP:
@@ -58,7 +58,7 @@ Only long and string values can be used as keys:
 
 <a name='dynamic-types-boolean'></a>
 ### Boolean
-A boolean expresses a truth value. It can be either 'true' or 'false':
+A boolean expresses a truth value. It can be either `true` or `false`:
 
     var a = false, b = true;
 
@@ -78,34 +78,34 @@ Integer numbers. The size of an integer is platform-dependent, although a maximu
 
 <a name='dynamic-types-integer-overflow'></a>
 ### Integer overflow
-Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
+Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
 
     unsigned long my_number = 2147483648;
 
 <a name='dynamic-types-objects'></a>
-### Objects
+### Object
 Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
 
-    let myObject = new stdClass(),
+    let myObject = new \stdClass(),
         myObject->someProperty = "my value";
 
 <a name='dynamic-types-string'></a>
 ### String
-A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
+A `string` is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
 
     var today = "friday";
 
-In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for chars.
+In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for `char` data type.
 
 The following escape sequences are supported in strings:
 
 | Sequence    | Description      |
 |-------------|------------------|
-| `\\t`       | Horizontal tab   |
-| `\\n`       | Line feed        |
-| `\\r`       | Carriage return  |
-| `\\ \\`     | Backslash        |
-| `\\"`       | double-quote     |
+| `\t`        | Horizontal tab   |
+| `\n`        | Line feed        |
+| `\r`        | Carriage return  |
+| `\\`        | Backslash        |
+| `\"`        | double-quote     |
 
     var today    = "\tfriday\n\r",
         tomorrow = "\tsaturday";
@@ -123,19 +123,19 @@ Static typing allows the developer to declare and use some variable types availa
 | Type                  | Description                                                                     |
 |-----------------------|---------------------------------------------------------------------------------|
 | `array`               | A structure that can be used as hash, map, dictionary, collection, stack, etc.  |
-| `boolean`             | A boolean expresses a truth value. It can be either 'true' or 'false'.          |
+| `boolean`             | A boolean expresses a truth value. It can be either `true` or `false`.          |
 | `char`                | Smallest addressable unit of the machine that can contain basic character set.  |
 | `float`/`double`      | Double precision floating-point type. The size is platform-dependent.           |
 | `integer`             | Signed integers. At least 16 bits in size.                                      |
 | `long`                | Long signed integer type. At least 32 bits in size.                             |
 | `string`              | A string is a series of characters, where a character is the same as a byte.    |
-| `unsigned char`       | Same size as char, but guaranteed to be unsigned.                               |
+| `unsigned char`       | Same size as `char`, but guaranteed to be unsigned.                             |
 | `unsigned integer`    | Unsigned integers. At least 16 bits in size.                                    |
-| `unsigned long`       | Same as long, but unsigned.                                                     |
+| `unsigned long`       | Same as `long`, but unsigned.                                                   |
 
 <a name='static-types-boolean'></a>
 ### Boolean
-A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+A `boolean` expresses a truth value. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
@@ -146,13 +146,15 @@ A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary 
     
 ##### automatically casted to `false`
 
+    let a = 0;
+
 ##### throws a compiler exception
     
     let a = "hello";
     
 <a name='static-types-char-unsigned'></a>
 ### Char/Unsigned Char
-Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A 'char' variable can be used to store any character in a string:
+`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
 
     char ch, string name = "peter";
     
@@ -168,7 +170,7 @@ Char variables are the smallest addressable unit of the machine that can contain
 
 <a name='static-types-integer-unsigned'></a>
 ### Integer/Unsigned Integer
-Integer values are like the integer member in dynamic values. Values assigned to integer variables remain integer:
+`integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
     int a;
     
@@ -191,7 +193,7 @@ Integer values are like the integer member in dynamic values. Values assigned to
 
     let a = "hello";
 
-Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
+`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
 
     uint a;
     
@@ -217,7 +219,7 @@ Unsigned integers are like integers but they don't have sign, this means you can
 
     let a = "hello";
 
-Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
+`unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
 
 ##### potential loss of data for `b`
 
@@ -228,7 +230,7 @@ Unsigned integers are twice bigger than standard integers. Assigning unsigned in
 
 <a name='static-types-long-unsigned'></a>
 ### Long/Unsigned Long
-Long variables are twice bigger than integer variables, thus they can store bigger numbers. As with integers, values assigned to long variables are automatically casted to this type:
+`long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
 
     long a;
     
@@ -251,7 +253,7 @@ Long variables are twice bigger than integer variables, thus they can store bigg
 
     let a = "hello";
 
-Unsigned longs are like longs but they are not signed, this means you can't store negative numbers in these sort of variables:
+`unsigned long` are like `long` but they are not signed, this means you can't store negative numbers in these sort of variables:
 
     ulong a;
     
@@ -277,7 +279,7 @@ Unsigned longs are like longs but they are not signed, this means you can't stor
 
     let a = "hello";
 
-Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
+`unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
 
 ##### potential loss of data for `b`
 
@@ -290,7 +292,7 @@ Unsigned longs are twice bigger than standard longs; assigning unsigned longs to
 ### String
 A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
 
-When a variable is declared string it never changes its type:
+When a variable is declared `string` it never changes its type:
 
     string a;
     

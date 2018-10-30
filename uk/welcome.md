@@ -8,12 +8,12 @@
 
 Основними особливостями Zephir-у є:
 
-| Особливість                 | Description                                             |
-| --------------------------- | ------------------------------------------------------- |
-| Система типізації           | динамічна/статична                                      |
-| Безпечний доступ до пам'яті | вказівники або пряме керування пам'яттю не допускаються |
-| Компіляційна модель         | ahead of time                                           |
-| Memory model                | task-local garbage collection                           |
+| Особливість                 | Опис                                               |
+| --------------------------- | -------------------------------------------------- |
+| Система типізації           | динамічна/статична                                 |
+| Безпечний доступ до пам'яті | вказівники або пряме керування пам'яттю заборонені |
+| Компіляційна модель         | компіляція виконується заздалегідь                 |
+| Модель пам'яті              | свій збирач сміття                                 |
 
 <a name='a-small-taste'></a>
 
@@ -24,12 +24,12 @@
     namespace MyLibrary;
     
     /**
-     * Filter
+     * Фільтр
      */
     class Filter
     {
         /**
-         * Filters a string, returning its alpha charactersa
+         * Фільтрує рядок, повертаючи його альфа-символи
          *
          * @param string str
          */
@@ -53,4 +53,16 @@
     <?php
     
     $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01he#l.lo?/1"); // prints hello
+    echo $filter->alpha("01he#l.lo?/1"); // виведе hello
+    
+
+<a name='external-links'></a>
+
+## Зовнішні посилання
+
+Нижче ми зібрали посилання на зовнішні ресурси, які можуть вас зацікавити:
+
+- [Система типізації](https://en.wikipedia.org/wiki/Type_system)
+- [Безпечний доступ до пам'яті](https://en.wikipedia.org/wiki/Memory_safety)
+- [Ahead-of-time (AOT) компіляція](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Керування пам’яттю](https://en.wikipedia.org/wiki/Memory_management)

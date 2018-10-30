@@ -70,7 +70,7 @@ Zephir is both statically and dynamically typed, allowing you to take advantage 
 
 Zephir offers native code generation (currently via compilation to C). A compiler like gcc/clang/vc++ optimizes and compiles the code down to machine code. The following graph shows how the process works:
 
-![](/images/content/scheme.png)
+![compilation scheme](/images/content/scheme.png)
 
 In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that improve the performance of compiled applications:
 
