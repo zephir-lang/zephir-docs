@@ -1,8 +1,8 @@
 # Розділи в phpinfo()
 
-Like most extensions, Zephir extensions are able to show information in the [phpinfo()](http://php.net/manual/en/function.phpinfo.php) output. This information is usually related to directives, environment data, etc.
+Як і більшість PHP-розширень, Zephir-розширення здатні показати інформацію у виводі [phpinfo()](http://php.net/manual/en/function.phpinfo.php). This information is usually related to directives, environment data, etc.
 
-By default, every Zephir extension automatically adds a basic table to the `phpinfo()` output showing the extension version, and any INI options the extension supports.
+Типово, кожне Zephir-розширення додає базову таблицю у вивід`phpinfo()`, яка показує версію розширення.
 
 You can add more directives by adding the following configuration to the `config.json` file:
 
