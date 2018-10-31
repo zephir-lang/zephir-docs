@@ -1,10 +1,10 @@
-# Extension Globals
+# Глобальные параметры расширения
 
-PHP extensions provide a way to define globals within an extension. Reading/writing globals should be faster than any other global mechanisms (like static members). You can use extension globals to set up configuration options that change the behavior of your library.
+Расширения PHP предоставляют способ определения глобальных переменных внутри расширения. Чтение/запись глобальных данных должны быть быстрее, чем любые другие глобальные механизмы (например, доступ к статическим членам). Глобальные переменные расширений можно использовать для настройки параметров конфигурации, которые изменяют поведение вашей библиотеки.
 
-In Zephir, extension globals are restricted to simple scalar types like `int`/`bool`/`double`/`char`, etc. Complex types such as string/array/object/resource are not allowed here.
+В Zephir глобальные переменные ограничены простыми скалярными типами типа `int`/`bool`/`double`/`char` и т.д. Здесь не допускаются комплексные типы, такие как строки/массивы/объекты/ресурсы.
 
-You can enable extension globals by adding the following structure to your `config.json`:
+Вы можете ввести глобальные переменные в расширение, добавив следующую структуру в `config.json`:
 
     {
         //...
@@ -30,7 +30,7 @@ You can enable extension globals by adding the following structure to your `conf
     }
     
 
-Each global has the following structure:
+Каждая глобальная секция имеет следующую структуру:
 
     "<global-name>": {
         "type": "<some-valid-type>",
@@ -38,7 +38,7 @@ Each global has the following structure:
     }
     
 
-Compound (namespaced) globals have the following structure:
+Составные (именованные) глобальные переменные имеют следующую структуру:
 
     "<namespace>.<global-name>": {
         "type": "<some-valid-type>",
@@ -66,7 +66,7 @@ The optional `module` key, if present, places that global's initialization proce
     }
     
 
-Inside any method, you can read/write extension globals using the built-in functions `globals_get`/`globals_set`:
+Внутри любого метода вы можете читать/писать глобальные переменные расширения с помощью встроенных функций `globals_get` и `globals_set`:
 
     globals_set("allow_some_feature", true);
     let someFeature = globals_get("allow_some_feature");
