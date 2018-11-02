@@ -196,7 +196,7 @@ Un `boolean` expresa un valor de verdad. Puede ser `true` o `false`. Contrariame
 
 ### Char/Char sin signo
 
-`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). Una variable de tipo `char` se puede utilizar para almacenar cualquier carácter en una cadena:
+las variables `char` son la unidad direccionable más pequeña de la máquina que puede contener el conjunto de carácter básico (generalmente 8 bits). Una variable de tipo `char` se puede utilizar para almacenar cualquier carácter en una cadena:
 
     char ch, string name = "pedro";
     
@@ -215,7 +215,7 @@ Un `boolean` expresa un valor de verdad. Puede ser `true` o `false`. Contrariame
 
 ### Integer/Integer sin signo
 
-`integer` values are like the `integer` member in dynamic values. Los valores asignados a las variables de número entero permanecen enteros:
+Los valores `integer` son como los miembros `integer` en valores dinámicos. Los valores asignados a las variables de número entero permanecen enteros:
 
     int a;
     
@@ -243,7 +243,7 @@ Un `boolean` expresa un valor de verdad. Puede ser `true` o `false`. Contrariame
     let a = "hola";
     
 
-`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
+Los `unsigned integer`, son como los `integer` pero no tienen signo, esto significa que no puede almacenar números negativos en este tipo de variables:
 
     uint a;
     
