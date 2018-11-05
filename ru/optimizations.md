@@ -95,7 +95,7 @@ zephir_fetch_params(1, 1, 0, &n);
 
 It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir developers will not see a change in their code. This affects the generated C code.
 
-More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/questions/4861656/why-should-we-nullify-pointer-after-freeing-memory-by-free) and [here](https://stackoverflow.com/questions/1879550/should-one-really-set-pointers-to-null-after-freeing-them).
+More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
 
 <a name='constant-folding'></a>
 
