@@ -58,7 +58,7 @@ class ForInRange
 {
     public static function forEmpty(var n)
     {
-        var i = NULL;
+        var i = null;
         for i in range(1, n) {
             // Do something
         }
