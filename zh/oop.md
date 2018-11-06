@@ -94,13 +94,13 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTE**开发人员有责任确保在加载扩展之前存在所有外部引用。 So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
+**NOTE**开发人员有责任确保在加载扩展之前存在所有外部引用。 因此，对于上面的示例，在加载Zephir构建的扩展之前，必须先加载[PSR](https://pecl.php.net/package/psr)扩展。
 
 <a name='implementing-methods'></a>
 
-## Implementing Methods
+## 实施方法
 
-The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+"function" 关键字引入了一种方法。 方法实现PHP中常用的可见性修饰符。 在 Zephir中, 必须明确设置可见性修改器:
 
 ```zep
 namespace Test;
@@ -125,7 +125,7 @@ class MyClass
 }
 ```
 
-Methods can receive required and optional parameters:
+方法可以接收所需的和可选的参数:
 
 ```zep
 namespace Test;
@@ -179,7 +179,7 @@ class MyClass
 
 ### 可选参数可以为空
 
-Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
+Zephir确保变量的值保持声明的类型不变。 这使得Zephir将空值转换为最近的近似值:
 
 ```zep
 public function foo(int a = null)
@@ -207,29 +207,29 @@ public function foo(array a = null)
 
 ### 支持可见性
 
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
+* Public: 将标记为` Public `的方法导出到PHP扩展; 这意味着公共方法对PHP代码和扩展本身都是可见的。
 
-* Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Protected: 将标记为“Protected”的方法导出到PHP扩展; 这意味着受保护的方法对PHP代码和扩展本身都是可见的。 但是，受保护的方法只能在类的作用域中调用，或者在继承它们的类中调用。
 
-* Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Private: 标记为“Private”的方法不会导出到PHP扩展; 这意味着私有方法只对实现它们的类可见。
 
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### 支持修改器
 
-* Static: Methods with this modifier can only be called in a static context (from the class, not an object).
+* Static: 使用此修饰符的方法只能在静态上下文(来自类，而不是对象) 中调用。
 
-* Final: If a method has this modifier it cannot be overriden.
+* Final: 如果方法具有此修饰符, 则无法对其进行覆盖.
 
-* Deprecated: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* Deprecated: 被标记为`deprecated`的方法在被调用时抛出一个`E_DEPRECATED`错误。
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Getter / Setter 快捷方式
 
-Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
+和c#一样，您可以在Zephir中使用get/set/toString快捷方式。 该特性允许您轻松编写属性的setter和getter，而无需显式地实现这些方法。
 
-For example, without shortcuts we would need code like:
+例如，如果没有快捷方式，我们需要如下代码:
 
 ```zep
 namespace Test;
@@ -267,7 +267,7 @@ class MyClass
 }
 ```
 
-You can write the same code using shortcuts as follows:
+您可以使用以下快捷方式编写相同的代码:
 
 ```zep
 namespace App;
