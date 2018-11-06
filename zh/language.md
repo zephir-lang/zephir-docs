@@ -68,33 +68,33 @@ Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `
 
 ## 变量声明
 
-In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
+在Zephir中，必须声明给定范围中使用的所有变量。 这为编译器执行优化和验证提供了重要信息。 变量必须是唯一的标识符，它们不能是保留字。
 
-    // Declaring variables for the same type    in the same instruction
+    // 在同一指令中声明相同类型的变量
     var a, b, c;
     
-    // Declaring each variable in separate lines
+    // 在单独的行中声明每个变量
     var a;
     var b;
     var c;
     
 
-Variables can optionally have an initial compatible default value:
+变量可以选择有一个初始兼容的默认值:
 
-    // Declaring variables with default values
+    // 使用默认值声明变量
     var a = "hello", b = 0, c = 1.0;
     int d = 50; bool some = true;
     
 
-Variable names are case-sensitive, the following variables are different:
+变量名区分大小写，以下变量不同:
 
-    // Different variables
+    // 不同的变量
     var somevalue, someValue, SomeValue;
     
 
 <a name='variable-scope'></a>
 
-## Variable Scope
+## 变量作用域
 
 All variables declared are locally scoped to the method where they were declared:
 
