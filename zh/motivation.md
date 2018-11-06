@@ -6,35 +6,35 @@
 
 获得快速和可靠的库可能会很复杂, 因为通常在它们上实现了高水平的抽象。 考虑到基础库或框架很少更改的限制, 可以利用编译来提高性能和资源消耗, 构建提供此功能的扩展。
 
-With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from PHP, gaining important seconds that can make your application faster while improving the user experience.
+使用 Zephir, 您可以实现可从 php 使用的面向对象的库/框架/应用程序, 使您的应用程序更快, 同时改善用户体验。
 
 <a name='if-you-are-a-php-programmer'></a>
 
-## If You Are a PHP Programmer...
+## 如果你是一个 php 程序员..。
 
-PHP is one of the most popular languages in use for the development of web applications. Dynamically typed and interpreted languages like PHP offer very high productivity due to their flexibility.
+PHP是web应用程序开发中最流行的语言之一。 像PHP这样的动态类型和解释语言由于其灵活性提供了非常高的生产力。
 
-Since version 4, PHP is based on the Zend Engine implementation. This is a virtual machine that executes the PHP code from its bytecode representation. Zend Engine is present in almost every PHP installation in the world. With Zephir, you can create extensions for PHP running under the Zend Engine.
+由于是第4版，PHP基于Zend引擎实现。 这是一个虚拟机，它通过字节码表示来执行PHP代码。 Zend 引擎几乎出现在世界上所有PHP安装中。 使用Zephir，您可以为在Zend引擎下运行的PHP创建扩展。
 
-PHP is hosting Zephir, so they obviously have a lot of similarities; however, they have important differences that give Zephir its own personality. For example, Zephir is more strict, and it could make you less productive compared to PHP due to the compilation step.
+PHP是Zephir的宿主，显然它们有很多相似之处; 然而，它们有重要的区别，使得Zephir有了自己的个性。 例如，Zephir更加严格，由于编译步骤的原因，它可能使您的生产率低于PHP。
 
 <a name='if-you-are-a-c-programmer'></a>
 
-## If You Are a C Programmer...
+## 如果你是一个 C 程序员..。
 
-C is one of the most powerful and popular languages ever created. In fact, PHP is written in C, which is one of the reasons why PHP extensions are available for it. C gives you the freedom to manage memory, use low level types and even inline assembly routines.
+C语言是有史以来最强大、最流行的语言之一。 实际上，PHP是用C编写的，这也是PHP扩展可用的原因之一。 C允许您自由地管理内存，使用低级类型，甚至内联程序集例程。
 
-However, developing big applications in C can take much longer than expected compared to PHP or Zephir, and some errors can be tricky to find if you aren't an experienced developer.
+然而，与PHP或Zephir相比，在C中开发大型应用程序所花费的时间要比预期的长得多，而且如果您不是经验丰富的开发人员，有些错误可能很难发现。
 
-Zephir was designed to be safe, so it does not implement pointers or manual memory management, so if you're a C programmer, you will feel Zephir less powerful, but more friendly, than C.
+Zephir是为了安全而设计的，因此它不实现指针或手动内存管理，因此如果您是C程序员，您会觉得Zephir不如C程序员强大，但比C程序员更友好。
 
 <a name='compilation-vs-interpretation'></a>
 
-## Compilation vs Interpretation
+## 编译 vs 解释
 
-Compilation usually slows development down; you will need a bit more patience to compile your code before running it. On the other hand, interpretation tends to reduce code performance in favor of developer productivity. That said, in some cases, there is not any noticeable difference between the speed of interpreted and compiled code.
+编译通常会减慢开发速度; 在运行代码之前，您需要更多的耐心来编译代码。 另一方面，解释倾向于降低代码性能，以提高开发人员的工作效率。 也就是说，在某些情况下，解释代码和编译代码的速度没有明显的区别。
 
-Zephir requires compilation of your code, but functionality is used from PHP, which is interpreted.
+Zephir需要编译您的代码，但其功能是从PHP中使用的，PHP是经过解释的。
 
 Once the code is compiled, it is not necessary to do so again. Interpreted code is interpreted each time it is run. A developer can decide which parts of their application should be in Zephir and which not.
 
