@@ -96,9 +96,9 @@
 
 <a name='integer'></a>
 
-## 整数
+## Integer
 
-The following integer built-in methods are available:
+以下是可用的整数内置方法:
 
 | OO            | 实际过程     |
 | ------------- | -------- |
