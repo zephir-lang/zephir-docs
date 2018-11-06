@@ -114,25 +114,25 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
     }
     
 
-A `for` loop can also be instructed to traverse an array or string in reverse order:
+还可以指示` for </ 0>循环以相反的顺序遍历数组或字符串：</p>
 
-    let items = [1, 2, 3, 4, 5];
-    
-    for value in reverse items {
-        echo value, "\n";
-    }
-    
+<pre><code>let items = [1, 2, 3, 4, 5];
 
-A `for` loop can be used to traverse string variables:
+for value in reverse items {
+    echo value, "\n";
+}
+`</pre> 
 
-    string language = "zephir"; char ch;
-    
-    for ch in language {
-        echo "[", ch ,"]";
-    }
-    
+` for </ 0>循环可用于遍历字符串变量：</p>
 
-In reverse order:
+<pre><code>string language = "zephir"; char ch;
+
+for ch in language {
+    echo "[", ch ,"]";
+}
+`</pre> 
+
+按相反顺序：
 
     string language = "zephir"; char ch;
     
@@ -141,27 +141,27 @@ In reverse order:
     }
     
 
-A standard `for` that traverses a range of integer values can be written as follows:
+遍历一系列整数值` </ 0>可以写成如下：</p>
 
-    for i in range(1, 10) {
-        echo i, "\n";
-    }
-    
+<pre><code>for i in range(1, 10) {
+    echo i, "\n";
+}
+`</pre> 
 
-To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
+要避免对未使用的变量发出警告，可以在`for`语句中使用匿名变量，方法是使用占位符` _ </ 0>替换变量名称：</p>
 
-##### Use the key but ignore the value
+<h5>使用键, 但忽略该值</h5>
 
-    for key, _ in data {
-        echo key, "\n";
-    }
-    
+<pre><code>for key, _ in data {
+    echo key, "\n";
+}
+`</pre> 
 
 <a name='loops-break'></a>
 
-### Break Statement
+### Break 语句
 
-`break` ends execution of the current `while`, `for` or `loop` statement:
+`break` 结束当前 `while`、`for` 或 `loop` 语句的执行:
 
     for item in ["a", "b", "c", "d"] {
         if item == "c" {
@@ -173,9 +173,9 @@ To avoid warnings about unused variables, you can use anonymous variables in `fo
 
 <a name='loops-continue'></a>
 
-### Continue Statement
+### Continue 语句
 
-`continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
+在循环结构中使用 `continue` 跳过当前循环迭代的其余部分, 并在条件计算时继续执行, 然后在下一次迭代的开始时继续执行。
 
     let a = 5;
     while a > 0 {
@@ -191,18 +191,18 @@ To avoid warnings about unused variables, you can use anonymous variables in `fo
 
 ## Require
 
-The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephdr code to include other Zephir files at runtime.
+` require </ 0>语句动态地包含和执行指定的PHP文件。 请注意，Zend Engine将Zephir包含的文件解释为普通的PHP文件。 <code> require </ 0>不允许Zephdr代码在运行时包含其他Zephir文件。</p>
 
-    if file_exists(path) {
-        require path;
-    }
-    
+<pre><code>if file_exists(path) {
+    require path;
+}
+`</pre> 
 
 <a name='let'></a>
 
 ## Let
 
-The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
+`let` 语句用于可变变量、属性和数组。 变量默认是不可变的，并且该指令使它们在语句的作用域内是可变的：
 
     let name = "Tony";           // simple variable
     let this->name = "Tony";     // object property
@@ -210,7 +210,7 @@ The `let` statement is used to mutate variables, properties and arrays. Variable
     let self::_name = "Tony";    // static property
     
 
-Also this instruction must be used to increment/decrement variables:
+此指令也必须用于递增/递减变量：
 
     let number++;           // increment simple variable
     let number--;           // decrement simple variable
@@ -218,6 +218,7 @@ Also this instruction must be used to increment/decrement variables:
     let this->number--;     // decrement object property
     
 
-Multiple mutations can be performed in a single `let` operation:
+可以在单个` let </ 0>操作中执行多个突变：</p>
 
-    let price = 1.00, realPrice = price, status = false;
+<pre><code>let price = 1.00, realPrice = price, status = false;
+`</pre>
