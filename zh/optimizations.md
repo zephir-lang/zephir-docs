@@ -1,4 +1,4 @@
-# Optimizations
+# 优化
 
 Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
 
