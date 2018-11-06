@@ -412,13 +412,13 @@ $o->filterText("some text", true);    // OK
 $o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
-By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
+通过指定严格的参数和灵活的参数，开发人员可以设置他/她真正想要的特定行为。
 
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### 只读参数
 
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
+使用关键字`const`，您可以将参数标记为只读，这有助于尊重[const-correctness](http://en.wikipedia.org/wiki/Const-correctness)。 属性中不能修改标有此属性的参数 方法:
 
 ```zep
 namespace App;
