@@ -1,4 +1,4 @@
-# Built-In Methods
+# 内建方法
 
 As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
 
