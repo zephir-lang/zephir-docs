@@ -1,12 +1,12 @@
-# Installation
+# 安装
 
-To install Zephir, please follow these steps:
+要安装 zefir, 请按照下列步骤操作:
 
 <a name='prerequisites'></a>
 
-## Prerequisites
+## 基础要求
 
-To build a PHP extension and use Zephir you need the following requirements:
+要构建PHP扩展并使用Zephir，您需要满足以下要求：
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
 * A C compiler such as [gcc](https://gcc.gnu.org/) >= 4.4 or an alternative such as [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 or [Intel C++](https://software.intel.com/en-us/c-compilers). It is recommended to use `gcc` 4.4 or later
