@@ -434,13 +434,13 @@ class MyClass
 }
 ```
 
-When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over these variables.
+当一个参数被声明为只读时，编译器可以做出安全的假设，并对这些变量进行进一步的优化。
 
 <a name='implementing-properties'></a>
 
-## Implementing Properties
+## 实现属性
 
-Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
+类成员变量称为 "属性"。 默认情况下, 它们的作用与 php 属性相同。 属性被导出到PHP扩展中，并从PHP代码中可见。 属性实现 php 中可用的常规可见性修饰符, 并且在 Zephir中必须显式设置可见性修饰符:
 
 ```zep
 namespace Test;
@@ -455,7 +455,7 @@ class MyClass
 }
 ```
 
-Within class methods, non-static properties may be accessed by using -> (Object Operator):
+在类方法中, 可以使用-> (对象运算符) 访问非静态属性:
 
 ```zep
 namespace Test;
