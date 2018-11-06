@@ -350,7 +350,7 @@ class MyClass
 
 ### 返回类型: Void
 
-Methods can also be marked as `void`. This means that a method is not allowed to return any data:
+方法也可以标记为 `void`。 这意味着不允许方法返回任何数据:
 
 ```zep
 public function setConnection(connection) -> void
@@ -359,7 +359,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+Why is this useful? 因为编译器可以检测程序是否期望从这些方法返回值，并产生一个编译器异常:
 
 ```zep
 let myDb = db->setConnection(connection); // this will produce an exception
@@ -370,7 +370,7 @@ myDb->execute("SELECT * FROM robots");
 
 ### 严格/灵活的参数的数据类型
 
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
+在 Zephir中, 可以指定方法的每个参数的数据类型。 默认情况下, 这些数据类型是灵活的。这意味着, 如果传递了具有错误 (但兼容) 数据类型的值, 则 Zephir 将尝试以透明方式将其转换为预期的数据类型:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -379,7 +379,7 @@ public function filterText(string text, boolean escape=false)
 }
 ```
 
-Above method will work with the following calls:
+上述方法将适用于以下调用:
 
 ```zep
 <?php
@@ -391,7 +391,7 @@ $o->filterText("some text", true);    // OK
 $o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
-However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
+但是, 传递错误的类型通常会导致错误。 不正确地使用特定的 api 会产生意外的结果。 通过使用严格的数据类型设置参数, 可以禁止自动转换:
 
 ```zep
 public function filterText(string! text, boolean escape=false)
@@ -400,7 +400,7 @@ public function filterText(string! text, boolean escape=false)
 }
 ```
 
-Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
+现在，由于传递的数据类型无效，大多数类型错误的调用都会导致异常:
 
 ```zep
 <?php
