@@ -284,13 +284,13 @@ class MyClass
 }
 ```
 
-When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
+在编译代码时，这些方法作为实际方法导出，但您不必手动编写它们。
 
 <a name='implementing-methods-return-type-hints'></a>
 
 ### 返回类型提示
 
-Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. 请考虑下面的示例:
+类和接口中的方法可以有“返回类型提示”。 这些将为编译器提供有用的额外信息，以告知您应用程序中的错误。 请考虑下面的示例:
 
 ```zep
 namespace App;
@@ -329,7 +329,7 @@ class MyClass
 }
 ```
 
-A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
+一个方法可以有多个返回类型。 在定义多个类型时，必须使用操作符|来分隔这些类型。
 
 ```zep
 namespace App;
