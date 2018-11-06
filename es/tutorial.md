@@ -1,22 +1,22 @@
 # Tutorial
 
-Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
+Zephir y este manual, están destinados para desarrolladores PHP que desean crear extensiones en C, con una complejidad menor.
 
 Asumimos que usted tiene experiencia en uno o varios lenguajes de programación. Trazaremos paralelismos entre las funciones de PHP, C, Javascript y otros lenguajes. Señalaremos características de Zephir que son similares a otros lenguajes, como así también, muchas características que son nuevas o diferentes. Si estás familiarizado con estos lenguajes específicos, podrás entender estas comparaciones más rápidamente.
 
-In this guide, we will use the standard Linux terminal commands. If you are a Windows user, you need to replace these commands with their counterparts.
+En esta guía, utilizaremos los comandos estándar de la terminal de Linux. Si eres un usuario de Windows, necesitas reemplazar estos comandos por sus homólogos.
 
 <a name='checking-the-installation'></a>
 
 ## Probando la Instalación
 
-If you have successfully installed Zephir, you will be able to execute the following command in your console:
+Si se ha instalado con éxito Zephir, usted será capaz de ejecutar el siguiente comando en la consola:
 
 ```bash
 zephir help
 ```
 
-If everything is well, you should see the following help (or something very similar):
+Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
 
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
@@ -51,13 +51,13 @@ If everything is well, you should see the following help (or something very simi
         -W([a-z0-9\-]+)     Apaga una advertencia
     
 
-If something went wrong, please return back to the [installation](/[[language]]/[[version]]/installation) page.
+Si algo salió mal, por favor regrese a la [página de instalación](/[[language]]/[[version]]/installation).
 
 <a name='extension-skeleton'></a>
 
 ## Esqueleto de la Extensión
 
-The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
+Lo primero que tenemos que hacer es generar un esqueleto de extensión. Esto le dará a nuestra extensión la estructura básica que necesitamos para empezar a trabajar. En nuestro caso, vamos a crear una extensión llamada `utils`:
 
 ```bash
 zephir init utils
