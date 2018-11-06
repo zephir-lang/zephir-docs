@@ -1,12 +1,12 @@
-# Classes and Objects
+# 类与对象
 
-Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
+Zephir 提倡面向对象编程。 这就是为什么您只能在扩展中导出方法和类的原因。 您还将看到, 在大多数情况下, 运行时错误会引发异常, 而不是致命错误或警告。
 
 <a name='classes'></a>
 
-## Classes
+## 类
 
-Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
+每个 Zephir 文件都必须实现一个类或接口 (并且只有一个)。 类结构与 php 类非常相似:
 
 ```zep
 namespace Test;
@@ -22,11 +22,11 @@ class MyClass
 
 <a name='classes-modifiers'></a>
 
-### Class Modifiers
+### 类修饰符
 
-The following class modifiers are supported:
+支持以下类修饰符:
 
-*Final*: If a class has this modifier it cannot be extended:
+*Final*: 如果类具有此修饰符, 则无法对其进行扩展:
 
 ```zep
 namespace Test;
@@ -40,7 +40,7 @@ final class MyClass
 }
 ```
 
-*Abstract*: If a class has this modifier it cannot be instantiated:
+*Abstract*: 如果类具有此修饰符, 则无法实例化:
 
 ```zep
 namespace Test;
@@ -56,11 +56,11 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 
-### Implementing Interfaces
+### 实现接口
 
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+Zephir 类可以实现任意数量的接口, 前提是这些接口 `显性` 的引用(使用use)。 但是, 有时 Zephir 类 (以及随后的扩展) 可能需要实现在不同扩展中构建的接口。
 
-If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
+如果我们想要实现`MiddlewareInterface`从`PSR`扩展，我们需要创建一个`stub`接口:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -177,7 +177,7 @@ class MyClass
 
 <a name='implementing-methods-optional-nullable-parameters'></a>
 
-### Optional nullable parameters
+### 可选参数可以为空
 
 Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
 
@@ -205,7 +205,7 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-visibilities'></a>
 
-### Supported Visibilities
+### 支持可见性
 
 * Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
@@ -215,7 +215,7 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-modifiers'></a>
 
-### Supported Modifiers
+### 支持修改器
 
 * Static: Methods with this modifier can only be called in a static context (from the class, not an object).
 
@@ -225,7 +225,7 @@ public function foo(array a = null)
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
-### Getter/Setter shortcuts
+### Getter / Setter 快捷方式
 
 Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
 
@@ -288,9 +288,9 @@ When the code is compiled, those methods are exported as real methods, but you d
 
 <a name='implementing-methods-return-type-hints'></a>
 
-### Return Type Hints
+### 返回类型提示
 
-Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Consider the following example:
+Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. 请考虑下面的示例:
 
 ```zep
 namespace App;
@@ -348,7 +348,7 @@ class MyClass
 
 <a name='implementing-methods-return-type-void'></a>
 
-### Return Type: Void
+### 返回类型: Void
 
 Methods can also be marked as `void`. This means that a method is not allowed to return any data:
 
@@ -368,7 +368,7 @@ myDb->execute("SELECT * FROM robots");
 
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
 
-### Strict/Flexible Parameter Data-Types
+### 严格/灵活的参数的数据类型
 
 In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
 
@@ -416,7 +416,7 @@ By specifying what parameters are strict and what can be flexible, a developer c
 
 <a name='implementing-methods-read-only-parameters'></a>
 
-### Read-Only Parameters
+### 只读参数
 
 Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
 
@@ -645,7 +645,7 @@ class MyClass
 
 <a name='calling-methods-parameters-by-name'></a>
 
-### Parameters by Name
+### 参数名
 
 Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
 
