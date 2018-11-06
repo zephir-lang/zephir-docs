@@ -1,10 +1,10 @@
-# Why Zephir?
+# 为什么选择 Zephir?
 
-Today's PHP applications must balance a number of concerns including stability, performance, and functionality. Every PHP application is based on a set of common components, that are also base for many other applications.
+今天的 php 应用程序必须平衡许多问题, 包括稳定性、性能和功能。 每个 php 应用程序都基于一组公共组件, 这些组件也是许多其他应用程序的基础。
 
-These common components are libraries, frameworks, or a combination of the two. Once installed, frameworks rarely change, and being the foundation of the application, they must be highly functional, and also very fast.
+这些常见组件是库、框架或两者的组合。 一旦安装, 框架很少改变, 并且作为应用程序的基础, 它们必须具有很高的功能, 而且速度也非常快。
 
-Getting fast and robust libraries can be complicated, due to high levels of abstraction that are typically implemented on them. Given the condition that base libraries or frameworks rarely change, there is an opportunity to build extensions that provide this functionality, taking advantage of the compilation improving performance and resource consumption.
+获得快速和可靠的库可能会很复杂, 因为通常在它们上实现了高水平的抽象。 考虑到基础库或框架很少更改的限制, 可以利用编译来提高性能和资源消耗, 构建提供此功能的扩展。
 
 With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from PHP, gaining important seconds that can make your application faster while improving the user experience.
 
