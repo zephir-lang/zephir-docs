@@ -1,12 +1,12 @@
-# Lifecycle hooks
+# 生命周期钩子
 
-PHP provides several lifecycle events, which extensions can use to perform common initialization or shutdown tasks. Normally,Zephir's own hooks into these events will cover all the setup and tear down your extension will need, but if you find that you need to do something more, there are a few options you can use to pass your own code into these same hooks.
+PHP提供了几个生命周期事件，这些扩展可以用来执行常见的初始化或关闭任务。 通常，Zephir在这些事件中自己的钩子会覆盖所有设置，并删除您需要的扩展，但是如果您发现需要做更多的事情，可以使用一些选项将您自己的代码传递到这些相同的钩子中。
 
-Consider the following diagram:
+考虑下面的图表:
 
 ![](/images/content/lifecycle.png)
 
-Lifecycle hooks are registered in the `config.json` file. As you can see in the diagram above, there are four types of lifecycle hooks - `globals`, `initializers`, `destructors`, and `info`. Each of these has its own corresponding root-level setting in the configuration, and both [globals](/[[language]]/[[version]]/globals) and [info](/[[language]]/[[version]]/phpinfo) have their own chapters. This chapter covers the other two settings.
+生命周期钩子注册在`config.json< / 0 >。 如上图所示，有四种生命周期钩子 — <code>globals`， `initializers`，`destructors`，`info`。 每一个都在配置中有自己对应的根级别设置，[globals](/[[language]]/[[version]]/globals)和[info](/[[language]]/[[version]]/phpinfo)都有自己的章节。 本章将介绍另外两种设置。
 
 You can register an `include` and a `code` for each group's supported `INIT` and `SHUTDOWN` events. The `code` can be whatever you need/want, but a single function call per hook is recommended, both for clarity in the config, and to keep code in other files as much as possible. You can safely omit either the `include` or `code` option, but duplicate `include` options are removed, so you can safely repeat those, instead. It is recommended to provide both values, to make it easier to see which includes are needed for which hooks, and make it easier to add and remove hooks individually.
 
