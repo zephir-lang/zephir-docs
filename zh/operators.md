@@ -128,7 +128,7 @@ Zephir支持C或PHP中的三进制运算符:
 
 ### Fetch
 
-'Fetch' is an operator that reduces a common operation in PHP into a single instruction:
+Fetch操作符将PHP中的一个常见操作简化为一条指令:
 
     <?php
     
@@ -138,20 +138,20 @@ Zephir支持C或PHP中的三进制运算符:
     }
     
 
-In Zephir, you can write the same code as:
+在Zephir中，您可以编写与以下代码相同的代码:
 
     if fetch value, myArray[key] {
         echo value;
     }
     
 
-'Fetch' only returns `true` if the 'key' is a valid item in the array, and only in that case is 'value' populated.
+'Fetch'只返回`true`，只有在'key'是数组中的有效项的情况下进行'value'填充。
 
 <a name='special-operators-isset'></a>
 
 ### Isset
 
-This operator checks whether a property or index has been defined in an array or object:
+这个操作符检查是否在数组或对象中定义了属性或索引:
 
     let someArray = ["a": 1, "b": 2, "c": 3];
     if isset someArray["b"] { // check if the array has an index "b"
@@ -159,36 +159,40 @@ This operator checks whether a property or index has been defined in an array or
     }
     
 
-Using `isset` as a return expression:
+使用`isset`作为返回表达式:
 
     return isset this->{someProperty};
     
 
-Note that `isset` in Zephir works more like PHP's function [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
+注意，在Zephir中`isset` </code>更像PHP的函数[array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php)，在Zephir中`isset</0>即使数组索引或属性为空也返回true。</p>
+
+<p>
 
 <a name='special-operators-typeof'></a>
 
-### Typeof
+</p>
 
-This operator checks a variable's type. 'typeof' can be used with a comparison operator:
+<h3>Typeof</h3>
 
-    if (typeof str == "string") { // or !=
-        echo str;
-    }
-    
+<p>这个操作符检查变量的类型。 'typeof'可与比较运算符一起使用:</p>
 
-It can also work like the PHP function `gettype`.
+<pre><code>if (typeof str == "string") { // or !=
+    echo str;
+}
+`</pre> 
+
+它也可以像PHP函数`gettype`那样工作。
 
     return typeof str;
     
 
-**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
+**坑: **，如果你想检查一个对象是否“callable”，你总是必须使用`typeof`作为比较运算符，而不是函数。
 
 <a name='special-operators-type-hints'></a>
 
-### Type Hints
+### 类型提示
 
-Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
+Zephir总是试图检查一个对象是否实现了方法和属性，这些方法和属性在一个被推断为对象的变量上被调用/访问:
 
     let o = new MyObject();
     
@@ -196,7 +200,7 @@ Zephir always tries to check whether an object implements methods and properties
     o->myMethod();
     
 
-However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object, so Zephir can't produce error reports effectively. A type hint tells the compiler which class is related to a dynamic variable, allowing the compiler to perform more compilation checks:
+但是，由于继承自PHP的动态性，有时很难知道对象的类，所以Zephir无法有效地生成错误报告。 A type hint tells the compiler which class is related to a dynamic variable, allowing the compiler to perform more compilation checks:
 
     // Tell the compiler that "o"
     // is an instance of class MyClass
