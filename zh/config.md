@@ -1,8 +1,8 @@
-# Configuration File
+# 配置文件
 
-Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
+每个Zephir扩展都有一个名为`config.json`的配置文件。 每当构建或生成扩展时，Zephir都会读取这个文件，它允许开发人员修改扩展或编译器的行为。
 
-This file uses [JSON](http://en.wikipedia.org/wiki/JSON) as its configuration format:
+该文件使用[JSON](http://en.wikipedia.org/wiki/JSON)作为配置格式:
 
     {
         "namespace": "test",
@@ -13,15 +13,15 @@ This file uses [JSON](http://en.wikipedia.org/wiki/JSON) as its configuration fo
     }
     
 
-Settings defined in this file override any factory default setting provided by Zephir.
+此文件中定义的设置覆盖Zephir提供的任何默认设置。
 
-The following settings are supported:
+支持以下设置:
 
 <a name='api'></a>
 
 ## api
 
-Used to configure the automatically generated HTML documentation for your extension. `path` specifies where to create the documentation relative to the project root. `base-url` is used to generate a `sitemap.xml` file for your documentation. `theme` is used to set the theme used for the generated documentation (via the `name` setting), and any options the theme supports passing (via the `options` setting). Finally, `theme-directories` is used to provide additional search paths for finding your desired theme.:
+用于为您的扩展配置自动生成的HTML文档。 `path`指定在何处创建与项目根相关的文档。 `base-url` is used to generate a `sitemap.xml` file for your documentation. `theme` is used to set the theme used for the generated documentation (via the `name` setting), and any options the theme supports passing (via the `options` setting). Finally, `theme-directories` is used to provide additional search paths for finding your desired theme.:
 
     {
         "api": {
