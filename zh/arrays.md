@@ -1,12 +1,12 @@
-# Arrays
+# 数组
 
-Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).
+Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/manual/en/language.types.array.php)的方法。 数组是 < 0>hash 表 </0 > 的实现。
 
 <a name='declaring-array-variables'></a>
 
-## Declaring Array Variables
+## 声明数组变量
 
-Array variables can be declared using the keywords 'var' or 'array':
+数组变量可以使用关键字 "var" 或 "array" 来声明:
 
     var a   = []; // array variable, its type can be changed
     array b = []; // array variable, its type cannot be changed across execution
