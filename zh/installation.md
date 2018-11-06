@@ -41,7 +41,7 @@
             with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
     ```
     
-    Also, make sure you have the PHP development libraries installed along with your PHP installation:
+    此外, 请确保您在安装 php 的同时安装了 php 开发库:
     
     ```bash
     phpize -v
@@ -51,54 +51,54 @@
     Zend Extension Api No:   320151012
     ```
     
-    You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
+    您不必确切看到的以上输出，但是这些命令对于开始使用Zephir进行开发非常重要。
     
     
 
 <a name='installing-zephir'></a>
 
     
-    ## Installing Zephir
+    ## 安装 Zephir
     
     
 
 <a name='git-way'></a>
 
     
-    ### Git Way
+    ### Git 方式
     
-    First make sure that the Zephir parser extension is installed and activated. You can follow this [tutorial](https://github.com/phalcon/php-zephir-parser).
+    首先, 确保安装并激活了 Zephir 解析器扩展。 你可以按照这个 [tutorial](https://github.com/phalcon/php-zephir-parser)。
     
-    The Zephir compiler currently must be cloned from Github:
+    Zephir 编译器当前必须从 github 克隆:
     
     ```bash
     git clone https://github.com/phalcon/zephir
     ```
     
-    Run the Zephir installer:
+    运行 Zephir 安装程序:
     
     ```bash
     cd zephir
     ./install -c
     ```
     
-    The last thing you need is to make sure you have all the necessary dependencies and install additional PHP libraries:
+    最后一件事，你需要确保你有所有必要的依赖和安装额外的PHP库:
     
     ```bash
     composer install
     ```
     
-    This step is optional for version 0.10.x, however, it will become mandatory in future versions.
+    这个步骤对于0.10版本是可选的。 然而，在未来的版本中它将成为强制性的。
     
     
 
 <a name='testing-the-installation'></a>
 
     
-    ## Testing the Installation
+    ## 测试安装
     
-    Check if Zephir is available from any directory by executing:
+    检查Zephir是否可以从任何目录执行:
     
     ```bash
-    zephir help
+    zephir 帮助
     ```
