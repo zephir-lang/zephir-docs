@@ -19,7 +19,7 @@ Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些�
 
 <a name='bitwise-operators'></a>
 
-## Bitwise Operators
+## 按位运算符
 
 支持一下操作符
 
@@ -43,7 +43,7 @@ Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些�
 
 <a name='comparison-operators'></a>
 
-## Comparison Operators
+## 比较运算符
 
 比较运算符取决于比较变量的类型。 例如，如果两个比较操作数都是动态变量，其行为与PHP相同:
 
@@ -74,7 +74,7 @@ Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些�
 
 <a name='logical-operators'></a>
 
-## Logical Operators
+## 逻辑运算符
 
 支持一下操作符
 
@@ -200,7 +200,7 @@ Zephir总是试图检查一个对象是否实现了方法和属性，这些方�
     o->myMethod();
     
 
-但是，由于继承自PHP的动态性，有时很难知道对象的类，所以Zephir无法有效地生成错误报告。 A type hint tells the compiler which class is related to a dynamic variable, allowing the compiler to perform more compilation checks:
+但是，由于继承自PHP的动态性，有时很难知道对象的类，所以Zephir无法有效地生成错误报告。 类型提示告诉编译器哪个类与动态变量相关，允许编译器执行更多的编译检查:
 
     // Tell the compiler that "o"
     // is an instance of class MyClass
@@ -208,21 +208,21 @@ Zephir总是试图检查一个对象是否实现了方法和属性，这些方�
     o->myMethod();
     
 
-These "type hints" are weak. This means the program does not check if the value is in fact an instance of the specified class, nor whether it implements the specified interface. If you want it to check this every time in execution, use a strict type:
+这些 "类型提示" 很弱。 这意味着程序不检查该值是否实际上是指定类的实例, 也不检查它是否实现了指定的接口。 如果希望它每次执行时都检查此问题, 请使用严格的类型:
 
-    // Always check if the property is an instance
-    // of MyClass before the assignment
+    // 始终检查属性是否为实例
+    // 在使用前检查
     let o = <MyClass!> this->_myObject;
     o->myMethod();
     
 
 <a name='special-operators-branch-prediction-hints'></a>
 
-### Branch Prediction Hints
+### 分支预测提示
 
-What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
+什么是分支预测？ 请检查此 [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) 或参考 "1>Wikipedia 文章 </1 >。 在性能非常重要的环境中, 引入这些提示可能会很有用。
 
-Consider the following example:
+请考虑下面的示例:
 
     let allPaths = [];
     for path in this->_paths {
@@ -234,7 +234,7 @@ Consider the following example:
     }
     
 
-The authors of the above code know in advance that the condition that throws the exception is unlikely to happen. This means that, 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
+上述代码的作者事先知道, 引发异常的条件不太可能发生。 这意味着, 99.9% 的时间, 我们的方法执行该条件, 但它可能永远不会被评估为 true。 对于处理器, 这可能很难知道, 因此我们可以在那里引入一个提示:
 
     let allPaths = [];
     for path in this->_paths {
