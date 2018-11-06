@@ -15,4 +15,4 @@
     - [Reading Properties](/[[language]]/[[version]]/oop#implementing-properties-reading)
 - [Class Constants](/[[language]]/[[version]]/oop#class-constants)
 - [Calling Methods](/[[language]]/[[version]]/oop#calling-methods) 
-    - [Parameters by Name](/[[language]]/[[version]]/oop#calling-methods-parameters-by-name)
+    - [参数名](/[[language]]/[[version]]/oop#calling-methods-parameters-by-name)
