@@ -2,15 +2,15 @@
 
 Zephir 是一种语言, 它能够满足 php 开发人员的主要需求, 他们试图编写和编译可由 php 执行的代码。 它是动态的/静态类型的, 它的一些功能为 php 开发人员所熟悉。
 
-Zephir 这个名字是单词 z (end) e (ngine)/ph (p)/i (nte) r (mediate) 的收缩。 While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
+Zephir 这个名字是单词 z (end) e (ngine)/ph (p)/i (nte) r (mediate) 的收缩。 虽然这表明 </div> 发音的 "div class="notranslate">0 应该是" zephyr ", 但 zefir 的创作者实际上 [zaefire](http://translate.google.com/#en/en/zaefire) 发音。
 
 <a name='hello-world'></a>
 
 ## Hello World!
 
-Every language has its own "Hello World!" sample. In Zephir, this introductory example showcases some important features of the language.
+每种语言都有自己的 "Hello World!" 示例。 在 Zephir 中, 这个介绍性示例展示了该语言的一 些重要功能。
 
-Code in Zephir must be placed in classes. The language is intended to create object-oriented libraries/frameworks, so code outside of a class is not allowed. Additionally, a namespace is required:
+Zephir 中的代码必须放在类中。 该语言旨在创建面向对象的库框架, 因此不允许在类之外使用代码。 此外, 还需要命名空间:
 
     namespace Test;
     
@@ -29,7 +29,7 @@ Code in Zephir must be placed in classes. The language is intended to create obj
     }
     
 
-Once this class is compiled it will produce the following code, that is transparently compiled by gcc/clang/vc++:
+编译此类后, 它将生成以下代码, 该代码由 gcc/clang/vc ++ 透明地编译:
 
     #ifdef HAVE_CONFIG_H
     #include "config.h"
@@ -57,17 +57,17 @@ Once this class is compiled it will produce the following code, that is transpar
     }
     
 
-Actually, it is not expected that a developer that uses Zephir must know or even understand C. However, if you have any experience with compilers, PHP internals, or the C language itself, that will provide a clearer understanding of what's going on internally when working with Zephir.
+实际上, 使用 Zephir 的开发人员必须知道甚至理解 c, 这是不希望的。但是, 如果您对编译器、php 内部或 c 语言本身有任何经验, 这将使您更清楚地了解在使用 Zephir 时内部发生的情况。
 
 <a name='a-taste-of-zephir'></a>
 
-## A Taste of Zephir
+## 一个 Zephir 的尝试
 
-In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
+在下面的例子中，我们将描述足够多的细节来理解发生了什么。 目标是让您了解Zephir中的编程是什么样子的。 我们将在后面的章节中探索*细节*的特性。
 
-The following example is very simple; it implements a class and a method, with a small program that checks the types of an array.
+下面的例子很简单; 它实现了一个类和一个方法，以及一个检查数组类型的小程序。
 
-Let's examine the code in detail, so we can begin to learn Zephir syntax. There are a lot of details in just a few lines of code! We'll explain the general ideas here:
+让我们详细检查代码，以便开始学习Zephir语法。 There are a lot of details in just a few lines of code! 我们将在这里解释其大意:
 
     namespace Test;
     
@@ -99,7 +99,7 @@ Let's examine the code in detail, so we can begin to learn Zephir syntax. There 
     }
     
 
-In the method, the first lines use the `var` and `int` keywords. There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
+在该方法中，第一行使用`var`和`int`关键字。 There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
 
 Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `i` and `length` variables are statically typed integer variables, that can only have integer values in the entire program execution.
 
