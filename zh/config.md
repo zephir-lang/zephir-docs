@@ -21,7 +21,7 @@
 
 ## api
 
-用于为您的扩展配置自动生成的HTML文档。 `path`指定在何处创建与项目根相关的文档。 `base-url` is used to generate a `sitemap.xml` file for your documentation. `theme` is used to set the theme used for the generated documentation (via the `name` setting), and any options the theme supports passing (via the `options` setting). Finally, `theme-directories` is used to provide additional search paths for finding your desired theme.:
+用于为您的扩展配置自动生成的HTML文档。 `path`指定在何处创建与项目根相关的文档。 使用`base-url`生成`sitemap.xml`文件为您的文档。 `theme`用于设置用于生成文档的主题(通过`name`设置)，以及主题支持传递的任何选项(通过`options`设置)。 最后，`theme-directories`被用来提供额外的搜索路径，以找到你想要的主题。
 
     {
         "api": {
@@ -48,7 +48,7 @@
 
 ## author
 
-Company, developer, institution, etc that developed the extension:
+开发扩展的公司、开发商、机构等:
 
 ```json
 {
@@ -60,7 +60,7 @@ Company, developer, institution, etc that developed the extension:
 
 ## backend
 
-Provides a way to configure the Zend Engine backend used by your extension. At the moment, only the `templatepath`, which lets you select between `ZendEngine2` and `ZendEngine3`, is supported:
+提供一种配置扩展所使用的Zend引擎后端的方法。 目前，仅支持`templatepath`，允许您在`ZendEngine2` </code> ZendEngine3</0>之间进行选择:
 
     {
         "backend": {
@@ -73,7 +73,7 @@ Provides a way to configure the Zend Engine backend used by your extension. At t
 
 ## constants-sources
 
-To import just the constants in a C source file into your project, list the file's path in this setting:
+要将C源文件中的常量导入到项目中，请在此设置中列出文件的路径:
 
     {
         "constants-sources": [
@@ -86,7 +86,7 @@ To import just the constants in a C source file into your project, list the file
 
 ## description
 
-Extension description - any text describing your extension:
+扩展描述-任何文字描述您的扩展:
 
     {
         "description": "My amazing extension"
@@ -97,7 +97,7 @@ Extension description - any text describing your extension:
 
 ## destructors
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
+此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 查看[lifecycle hooks](/[[language]]/[[version]]/lifecycle)章节了解更多信息。
 
     {
         "destructors": [
@@ -139,7 +139,7 @@ This setting lets you provide one or more C functions to be executed on certain 
 
 ## extension-name
 
-The base filename of the extension. It must follow the same rules as the `namespace` setting, which is used as a fallback in case this one isn't given.
+扩展的基本文件名。 它必须遵循与`namespace`设置相同的规则，如果没有给出>设置，则将其用作后备。
 
     {
         "extension-name": "test"
@@ -150,7 +150,7 @@ The base filename of the extension. It must follow the same rules as the `namesp
 
 ## external-dependencies
 
-You can include a class from another namespace/extension directly in your own extension by configuring it here:
+您可以在自己的扩展中直接包含来自另一个名称空间/扩展的类，在这里进行配置:
 
     {
         "external-dependencies": {
@@ -164,7 +164,7 @@ You can include a class from another namespace/extension directly in your own ex
 
 ## extra
 
-Contains extra settings that also can be passed, as is, on the command line. Currently, that's `export-clases` (generate headers for accessing your classes from other C code), and `indent` (select between using `tabs` or `spaces` to indent code in generated files):
+Contains extra settings that also can be passed, as is, on the command line. 目前，这是`export-clases`(生成从其他C代码访问类的头文件)，和`indent`(选择使用`tabs`或`spaces`缩进生成的文件中的代码):
 
     {
         "extra": {
@@ -178,7 +178,7 @@ Contains extra settings that also can be passed, as is, on the command line. Cur
 
 ## extra-cflags
 
-Any additional flags you want to add to the compilation process:
+您想要添加到编译过程中的任何附加标志:
 
     {
         "extra-cflags": "-I/usr/local/Cellar/libevent/2.0.21_1/include"
@@ -189,7 +189,7 @@ Any additional flags you want to add to the compilation process:
 
 ## extra-classes
 
-If you already have a PHP class implemented in C, you can include it directly in your extension by configuring it here:
+如果你已经在C语言中实现了一个PHP类，你可以直接将它包含在你的扩展中，在这里进行配置:
 
     {
         "extra-classes": [
@@ -207,7 +207,7 @@ If you already have a PHP class implemented in C, you can include it directly in
 
 ## extra-libs
 
-Any additional libraries you want to add to the compilation process:
+您想要添加到编译过程中的任何其他库:
 
     {
         "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
@@ -218,7 +218,7 @@ Any additional libraries you want to add to the compilation process:
 
 ## extra-sources
 
-Any additional files you want to add to the compilation process - the search directory is relative to the `ext` folder of your project:
+任何其他文件，你想添加到编译过程-搜索目录是相对于`ext`文件夹您的项目:
 
     {
         "extra-sources": [
@@ -231,7 +231,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 ## globals
 
-Extension globals available. Check the [globals](/[[language]]/[[version]]/globals) chapter for more information.
+扩展全局可用。 Check the [globals](/[[language]]/[[version]]/globals) chapter for more information.
 
     {
         "globals": {
@@ -251,7 +251,7 @@ Extension globals available. Check the [globals](/[[language]]/[[version]]/globa
 
 ## info
 
-`phpinfo()` sections. Check the [phpinfo()](/[[language]]/[[version]]/phpinfo) chapter for more information.
+`phpinfo()` sections. 查看[phpinfo()](/[[language]]/[[version]]/phpinfo)章节了解更多信息。
 
     {
         "info": [
@@ -270,7 +270,7 @@ Extension globals available. Check the [globals](/[[language]]/[[version]]/globa
 
 ## initializers
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
+这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 查看[lifecycle hooks](/[[language]]/[[version]]/lifecycle)章节了解更多信息。
 
     {
         "initializers": [
