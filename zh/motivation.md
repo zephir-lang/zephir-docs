@@ -70,22 +70,22 @@ Zephir 是静态和动态类型化的, 允许您在可能的情况下利用这�
 
 Zephir提供本机代码生成（目前通过编译到C）。 像gcc/clang/vc++这样的编译器会优化并将代码编译成机器代码。 下图显示了该过程的工作原理:
 
-![compilation scheme](/images/content/scheme.png)
+![编译方案](/images/content/scheme.png)
 
-In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that improve the performance of compiled applications:
+除了Zephir提供的优化之外，随着时间的推移，编译器已经实现并成熟了许多优化，这些优化可以提高编译应用程序的性能:
 
-* [GCC optimizations](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
-* [LLVM passes](http://llvm.org/docs/Passes.html)
-* [Visual C/C++ optimizations](http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
+* [GCC 优化](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
+* [LLVM 传递](http://llvm.org/docs/Passes.html)
+* [Visual C/C++ 优化](http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
 <a name='code-protection'></a>
 
-## Code Protection
+## 代码保护
 
-In some circumstances, the compilation does not significantly improve performance. This may be because the bottleneck is located in the I/O bound portion(s) of the application (quite likely) rather than compute/memory bound. However, compiling code could also bring some level of intellectual protection to your application. With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
+在某些情况下，编译不会显著提高性能。 这可能是因为瓶颈位于应用程序的I/O绑定部分(很可能)，而不是计算/内存绑定。 然而，编译代码也可以为您的应用程序带来一定程度的知识保护。 使用Zephir，生成本地二进制文件，您还可以将原始代码“隐藏”给用户或客户。
 
 <a name='conclusion'></a>
 
-## Conclusion
+## 结语
 
-Zephir was not created to replace PHP or C. Instead, we think it is a complement to them, allowing PHP developers to venture into code compilation and static typing. Zephir is an attempt to join good things from the C and PHP worlds, looking for opportunities to make applications faster.
+Zephir的创建不是为了替代PHP或C. 相反，我们认为它是对它们的补充，允许PHP开发人员尝试进行代码编译和静态类型。 Zephir试图将C和PHP世界的优点结合起来，寻找使应用程序更快的机会。
