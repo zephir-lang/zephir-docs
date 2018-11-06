@@ -99,7 +99,7 @@ Zephir 中的代码必须放在类中。 该语言旨在创建面向对象的库
     }
     
 
-在该方法中，第一行使用`var`和`int`关键字。 There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
+在该方法中，第一行使用`var`和`int`关键字。 用于在局部作用域中声明一个变量。 方法中使用的每个变量都必须使用其各自的类型声明。 This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
 
 Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `i` and `length` variables are statically typed integer variables, that can only have integer values in the entire program execution.
 
