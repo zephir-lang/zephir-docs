@@ -1,8 +1,8 @@
 # 内建方法
 
-As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
+如前所述，Zephir提倡面向对象编程。 与静态类型相关的变量也可以作为对象处理。
 
-Compare these two methods:
+比较这两种方法:
 
     public function binaryToHex(string! s) -> string
     {
@@ -20,7 +20,7 @@ Compare these two methods:
     }
     
 
-And:
+与
 
     public function binaryToHex(string! s) -> string
     {
@@ -38,17 +38,17 @@ And:
     }
     
 
-They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.
+它们都有相同的功能，但是第二个使用的是面向对象编程。 对静态类型变量调用方法对性能没有任何影响，因为Zephir在内部将代码从面向对象版本转换为过程版本。
 
 <a name='string'></a>
 
 ## String
 
-The following string built-in methods are available:
+下面的字符串内置方法可用:
 
-| OO                   | Procedural            | Description                                                                   |
+| OO                   | 实际过程                  | 说明                                                                            |
 | -------------------- | --------------------- | ----------------------------------------------------------------------------- |
-| `s->format()`     | `sprintf(s, "%s", x)` | Return a formatted string                                                     |
+| `s->format()`     | `sprintf(s, "%s", x)` | 返回格式化的字符串                                                                     |
 | `s->index("foo")` | `strpos(s, "foo")`    | Find the position of the first occurrence of a substring in a string          |
 | `s->length()`     | `strlen(s)`           | Get string length                                                             |
 | `s->lower()`      | `strtolower(s)`       | Make a string lowercase                                                       |
@@ -67,7 +67,7 @@ The following string built-in methods are available:
 
 The following array built-in methods are available:
 
-| OO                   | Procedural              | Description                                                             |
+| OO                   | 实际过程                    | 说明                                                                      |
 | -------------------- | ----------------------- | ----------------------------------------------------------------------- |
 | `a->combine(b)`   | `array_combine(a, b)`   | Creates an array by using one array for keys and another for its values |
 | `a->diff()`       | `array_diff(a)`         | Computes the difference of arrays                                       |
@@ -90,7 +90,7 @@ The following array built-in methods are available:
 
 The following char built-in methods are available:
 
-| OO               | Procedural          |
+| OO               | 实际过程                |
 | ---------------- | ------------------- |
 | `ch->toHex()` | `sprintf("%X", ch)` |
 
@@ -100,6 +100,6 @@ The following char built-in methods are available:
 
 The following integer built-in methods are available:
 
-| OO            | Procedural |
-| ------------- | ---------- |
-| `i->abs()` | `abs(i)`   |
+| OO            | 实际过程     |
+| ------------- | -------- |
+| `i->abs()` | `abs(i)` |
