@@ -36,13 +36,13 @@ Zephir是为了安全而设计的，因此它不实现指针或手动内存管�
 
 Zephir需要编译您的代码，但其功能是从PHP中使用的，PHP是经过解释的。
 
-Once the code is compiled, it is not necessary to do so again. Interpreted code is interpreted each time it is run. A developer can decide which parts of their application should be in Zephir and which not.
+一旦编译了代码，就不需要再这样做了。 每次运行解释代码时都会对其进行解释。 开发人员可以决定其应用程序的哪些部分应位于 Zephir 中, 而哪些部分不应该在 Zephir 中。
 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
-## Statically Typed Versus Dynamically Typed Languages
+## 静态类型化 vs 动态类型化的语言
 
-Generally speaking, in a statically typed language, a variable is bound to a particular type for its lifetime. Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
+一般来说, 在静态类型化语言中, 变量在其生存期内绑定到特定类型。 Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
 
     int a = 0;
     a = "hello"; // not allowed
