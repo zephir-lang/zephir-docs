@@ -8,13 +8,13 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 
 生命周期钩子注册在`config.json< / 0 >。 如上图所示，有四种生命周期钩子 — <code>globals`， `initializers`，`destructors`，`info`。 每一个都在配置中有自己对应的根级别设置，[globals](/[[language]]/[[version]]/globals)和[info](/[[language]]/[[version]]/phpinfo)都有自己的章节。 本章将介绍另外两种设置。
 
-You can register an `include` and a `code` for each group's supported `INIT` and `SHUTDOWN` events. The `code` can be whatever you need/want, but a single function call per hook is recommended, both for clarity in the config, and to keep code in other files as much as possible. You can safely omit either the `include` or `code` option, but duplicate `include` options are removed, so you can safely repeat those, instead. It is recommended to provide both values, to make it easier to see which includes are needed for which hooks, and make it easier to add and remove hooks individually.
+您可以为每个支持`INIT`和`SHUTDOWN`的组事件注册一个`include`和`code`。 `code` 可以是您需要的任何东西, 但建议每个钩子调用一个函数, 这既是为了在配置中清晰, 也是为了尽可能地将代码保留在其他文件中。 You can safely omit either the `include` or `code` option, but duplicate `include` options are removed, so you can safely repeat those, instead. 建议同时提供这两个值, 以便更轻松地查看哪些包含需要哪些挂钩, 并使单独添加和删除挂钩变得更容易。
 
 <a name='initializers'></a>
 
 ## initializers
 
-The `initializers` block looks something like this:
+`initializers` 块如下所示:
 
     {
         "initializers": [
@@ -50,7 +50,7 @@ The `initializers` block looks something like this:
 
 ## destructors
 
-And the `destructors` block like this:
+而 `destructors` 块, 如下所示:
 
     {
         "destructors": [
