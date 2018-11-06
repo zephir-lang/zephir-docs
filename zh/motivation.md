@@ -42,33 +42,33 @@ Zephir需要编译您的代码，但其功能是从PHP中使用的，PHP是经�
 
 ## 静态类型化 vs 动态类型化的语言
 
-一般来说, 在静态类型化语言中, 变量在其生存期内绑定到特定类型。 Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
+一般来说, 在静态类型化语言中, 变量在其生存期内绑定到特定类型。 它的类型不能更改, 它只能引用与类型兼容的实例和操作。 使用了类似 c/c ++ 等语言的方案:
 
     int a = 0;
     a = "hello"; // not allowed
     
 
-In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer to a value of one type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of a dynamically typed languages:
+在动态类型中, 类型绑定到值, 而不是变量。 因此，一个变量可以引用一个类型的值，然后被重新分配到一个不相关类型的值。 Javascript/PHP 是一个动态类型语言的例子:
 
     var a = 0;
     a = "hello"; // allowed
     
 
-Despite their productivity advantages, dynamic languages may not be the best choices for all applications, particularly for very large code bases and high-performance applications.
+尽管动态语言具有生产率优势，但它可能不是所有应用程序的最佳选择，尤其是对于非常大的代码库和高性能应用程序。
 
-Optimizing the performance of a dynamic language like PHP is more challenging than for a static language like C. In a static language, optimizers can exploit the type information attached to variables themselves to make decisions. In a dynamic language, fewer such clues are available for the optimizer, making optimization choices harder.
+优化动态语言(如PHP) 的性能比优化静态语言(如c) 更具有挑战性。在静态语言中，优化器可以利用附加在变量本身上的类型信息来做出决策。 在动态语言中, 优化器可用的此类线索较少, 因此优化选择更加困难。
 
-While recent advancements in optimizations for dynamic languages are promising (like JIT compilation), they lag behind the state of the art for static languages. So, if you require very high performance, static languages are probably a safer choice.
+虽然最近在动态语言优化方面取得的进展很有希望 (如 jit 编译), 但它们落后于静态语言的最新发展。 因此, 如果您需要非常高性能, 静态语言可能是更安全的选择。
 
-Another small benefit of static languages is the extra checking the compiler performs. A compiler can't find logic errors, which are far more significant, but a compiler can find errors in advance that in a dynamic language only can be found in runtime.
+静态语言的另一个小好处是编译器执行的额外检查。 编译器找不到逻辑错误, 这些错误的重要性要大得多, 但编译器可以提前找到仅在运行时动态语言中才能找到的错误。
 
-Zephir is both statically and dynamically typed, allowing you to take advantage of both approaches where possible.
+Zephir 是静态和动态类型化的, 允许您在可能的情况下利用这两种方法。
 
 <a name='compilation-scheme'></a>
 
-## Compilation Scheme
+## 编译方案
 
-Zephir offers native code generation (currently via compilation to C). A compiler like gcc/clang/vc++ optimizes and compiles the code down to machine code. The following graph shows how the process works:
+Zephir提供本机代码生成（目前通过编译到C）。 像gcc/clang/vc++这样的编译器会优化并将代码编译成机器代码。 下图显示了该过程的工作原理:
 
 ![compilation scheme](/images/content/scheme.png)
 
