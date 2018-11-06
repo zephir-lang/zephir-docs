@@ -1,10 +1,10 @@
 # 全局扩展
 
-PHP extensions provide a way to define globals within an extension. Reading/writing globals should be faster than any other global mechanisms (like static members). You can use extension globals to set up configuration options that change the behavior of your library.
+PHP扩展提供了一种在扩展中定义全局变量的方法。 读/写全局变量应该比任何其他全局机制（如静态成员）更快。 您可以使用扩展全局变量来设置更改库行为的配置选项。
 
-In Zephir, extension globals are restricted to simple scalar types like `int`/`bool`/`double`/`char`, etc. Complex types such as string/array/object/resource are not allowed here.
+在Zephir中，扩展全局变量仅限于简单的标量类型，如` int </ 0> / <code> bool </ 0> / <code> double </ 0> / <code> char </ 0>等。 此处不允许使用复杂类型，例如字符串/数组/对象/资源。</p>
 
-You can enable extension globals by adding the following structure to your `config.json`:
+<p>您可以通过将以下结构添加到<code> config.json `来启用扩展全局变量：
 
     {
         //...
@@ -30,7 +30,7 @@ You can enable extension globals by adding the following structure to your `conf
     }
     
 
-Each global has the following structure:
+每个全局具有以下结构：
 
     "<global-name>": {
         "type": "<some-valid-type>",
@@ -38,7 +38,7 @@ Each global has the following structure:
     }
     
 
-Compound (namespaced) globals have the following structure:
+复合（命名空间）全局变量具有以下结构：
 
     "<namespace>.<global-name>": {
         "type": "<some-valid-type>",
