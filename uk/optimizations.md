@@ -35,6 +35,68 @@ This pass counts how many times a function or method is called within the same m
     }
     
 
+<a name='check-invalid-reads'></a>
+
+## check-invalid-reads
+
+This flag will force checking types to detect for invalid reads during the compilation process. This ensures that all variables are properly defined and initialized with their default values (as well as the internal pointers). An example is:
+
+```zep
+namespace Acme;
+
+class ForInRange
+{
+    public static function forEmpty(var n)
+    {
+        var i;
+        for i in range(1, n) {
+            // Do something
+        }
+    }
+}
+```
+
+compared to:
+
+```zep
+namespace Acme;
+
+class ForInRange
+{
+    public static function forEmpty(var n)
+    {
+        var i = null;
+        for i in range(1, n) {
+            // Do something
+        }
+    }
+}
+```
+
+Both examples are perfectly valid as far as Zephir is concerned. The difference is in the generated C code:
+
+```c
+zval *n;
+
+// ...
+
+zephir_fetch_params(1, 1, 0, &n);
+```
+
+compared to:
+
+```c
+zval *n = NULL;
+
+// ...
+
+zephir_fetch_params(1, 1, 0, &n);
+```
+
+It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir developers will not see a change in their code. This affects the generated C code.
+
+More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
+
 <a name='constant-folding'></a>
 
 ## constant-folding

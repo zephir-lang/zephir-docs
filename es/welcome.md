@@ -58,11 +58,11 @@ La clase puede ser utiliza desde PHP de la siguiente manera:
 
 <a name='external-links'></a>
 
-## External Links
+## Enlaces externos
 
-Below we have collected links to external resources that may interest you:
+A continuación hemos recopilado enlaces a recursos externos que te pueden interesar:
 
 - [Tipo de sistema](https://en.wikipedia.org/wiki/Type_system)
 - [Ahorro de memoria](https://en.wikipedia.org/wiki/Memory_safety)
-- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
-- [Memory management](https://en.wikipedia.org/wiki/Memory_management)
+- [Compilación Ahead-of-time](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Gestión de la memoria](https://en.wikipedia.org/wiki/Memory_management)
