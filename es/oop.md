@@ -100,7 +100,7 @@ public function shouldExtendMiddlewareInterface()
 
 ## Implementación de Métodos
 
-The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+La palabra clave "function" introduce un método. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
 
 ```zep
 namespace Test;
@@ -125,7 +125,7 @@ class MyClass
 }
 ```
 
-Methods can receive required and optional parameters:
+Los métodos pueden recibir parámetros obligatorios y opcionales:
 
 ```zep
 namespace Test;
@@ -134,7 +134,7 @@ class MyClass
 {
 
     /**
-     * All parameters are required
+     * Todos los parámetros son obligatorios
      */
     public function doSum1(a, b)
     {
@@ -142,7 +142,7 @@ class MyClass
     }
 
     /**
-     * Only 'a' is required, 'b' is optional and it has a default value
+     * Solo 'a' es obligatorio, 'b' es opcional y tiene un valor por defecto
      */
     public function doSum2(a, b = 3)
     {
@@ -150,7 +150,7 @@ class MyClass
     }
 
     /**
-     * Both parameters are optional
+     * Ambos parámetros son opcionales
      */
     public function doSum3(a = 1, b = 2)
     {
@@ -158,7 +158,7 @@ class MyClass
     }
 
     /**
-     * Parameters are required and their values must be integer
+     * Los parámetros son obligatorios y sus valores deben ser del tipo integer
      */
     public function doSum4(int a, int b)
     {
@@ -166,7 +166,7 @@ class MyClass
     }
 
     /**
-     * Static typed with default values
+     * Tipos estáticos con valores por defecto
      */
     public function doSum4(int a = 4, int b = 2)
     {
@@ -179,7 +179,7 @@ class MyClass
 
 ### Parámetros opcionales nulos
 
-Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
+Zephir se asegura de que el valor de una variable permanezca del tipo como la variable fue declarada. Esto hace que Zephir convierta el valor null al valor más cercado:
 
 ```zep
 public function foo(int a = null)
