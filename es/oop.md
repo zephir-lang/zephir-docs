@@ -184,22 +184,22 @@ Zephir se asegura de que el valor de una variable permanezca del tipo como la va
 ```zep
 public function foo(int a = null)
 {
-    echo a; // if "a" is not passed it prints 0
+    echo a; // si no es pasado "a" imprime 0
 }
 
 public function foo(boolean a = null)
 {
-    echo a; // if "a" is not passed it prints false
+    echo a; // si no es pasado "a" imprime false
 }
 
 public function foo(string a = null)
 {
-    echo a; // if "a" is not passed it prints an empty string
+    echo a; // si no es pasado "a" imprime una cadena de texto vacía
 }
 
 public function foo(array a = null)
 {
-    var_dump(a); // if "a" is not passed it prints an empty array
+    var_dump(a); // si no es pasado "a" imprime un array vacío
 }
 ```
 
