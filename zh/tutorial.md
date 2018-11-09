@@ -1,4 +1,4 @@
-# Tutorial
+# 教程
 
 Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
 
@@ -13,7 +13,7 @@ In this guide, we will use the standard Linux terminal commands. If you are a Wi
 If you have successfully installed Zephir, you will be able to execute the following command in your console:
 
 ```bash
-zephir help
+zephir 帮助
 ```
 
 If everything is well, you should see the following help (or something very similar):
@@ -249,6 +249,6 @@ In the following screencast you can watch how to create the extension explained 
 
 <a name='conclusion'></a>
 
-## Conclusion
+## 结语
 
 This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
