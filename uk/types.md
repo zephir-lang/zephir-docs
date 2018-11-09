@@ -201,12 +201,12 @@ Zephir не підтримує інтерполяцію змінних як це
     char ch, string name = "peter";
     
 
-##### stores 't'
+##### зберігає "t"
 
     let ch = name[2];
     
 
-##### `char` literals must be enclosed in single quotes
+##### Літерали типу `char` мають бути взяті в одинарні лапки
 
     let ch = 'Z';
     
@@ -215,7 +215,7 @@ Zephir не підтримує інтерполяцію змінних як це
 
 ### Integer/Unsigned Integer
 
-`integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
+Значення дійсних чисел подібні аналогам дійсних чисел в динамічних типах. Значення, присвоєні цілим змінним, залишаються цілими:
 
     int a;
     
@@ -223,17 +223,17 @@ Zephir не підтримує інтерполяцію змінних як це
         a = -70;
     
 
-##### automatically casted to 100
+##### автоматично перетворюється на 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = false;
     
@@ -243,29 +243,29 @@ Zephir не підтримує інтерполяцію змінних як це
     let a = "hello";
     
 
-`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
+Беззнакові цілі `unsigned integer` схожі на цілі числа `integer`, але вони не мають знака, це означає, що ви не можете зберігати від’ємні числа в таких змінних:
 
     uint a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### автоматично перетворюється на 70
 
     let a = -70;
     
 
-##### automatically casted to 100
+##### автоматично перетворюється на 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = false;
     
@@ -275,9 +275,9 @@ Zephir не підтримує інтерполяцію змінних як це
     let a = "hello";
     
 
-`unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
+Тип `unsigned integer` вдвічі більший стандартного `integer`. Присвоєння беззнакових цілих стандартним цілим (знаковим) може привести до втрати даних:
 
-##### potential loss of data for `b`
+##### можлива втрата даних для `b`
 
     uint a, int b;
     
@@ -297,17 +297,17 @@ Zephir не підтримує інтерполяцію змінних як це
         a = -70;
     
 
-##### automatically casted to 100
+##### автоматично перетворюється на 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = false;
     
@@ -324,22 +324,22 @@ Zephir не підтримує інтерполяцію змінних як це
     let a = 50;
     
 
-##### automatically casted to 70
+##### автоматично перетворюється на 70
 
     let  a = -70;
     
 
-##### automatically casted to 100
+##### автоматично перетворюється на 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = false;
     
@@ -351,7 +351,7 @@ Zephir не підтримує інтерполяцію змінних як це
 
 `unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
 
-##### potential loss of data for `b`
+##### можлива втрата даних для `b`
 
     ulong a, long b;
     
