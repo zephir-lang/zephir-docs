@@ -1,4 +1,4 @@
-# Types
+# 类型
 
 Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
 
@@ -31,7 +31,7 @@ A dynamic variable must be declared with the keyword `var`. The behavior is near
 
 They can have eight types:
 
-| Type             | Description                                                                 |
+| Type             | 说明                                                                          |
 | ---------------- | --------------------------------------------------------------------------- |
 | `array`          | An array is an ordered map. A map is a type that associates values to keys. |
 | `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`.      |
@@ -129,7 +129,7 @@ In Zephir, string literals can only be specified using double quotes (like in C 
 
 The following escape sequences are supported in strings:
 
-| Sequence | Description     |
+| Sequence | 说明              |
 | -------- | --------------- |
 | `\t`    | Horizontal tab  |
 | `\n`    | Line feed       |
@@ -154,7 +154,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
-| Type               | Description                                                                    |
+| Type               | 说明                                                                             |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
 | `boolean`          | A boolean expresses a truth value. It can be either `true` or `false`.         |
