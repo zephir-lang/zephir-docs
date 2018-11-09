@@ -56,11 +56,11 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 
-### Implementing Interfaces
+### Implementación de Interfaces
 
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+Las clases de Zephir pueden implementar cualquier cantidad de interfaces, siempre que estas clases sean `visible` para que la clase las utilice. Sin embargo, hay ocasiones en que la clase Zephir (y posteriormente la extensión) puede requerir implementar una interfaz que se construya en una extensión diferente.
 
-If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
+Si quieren implementar `MiddlewareInterface` de la extensión `PSR`, deberemos crear una interface `stub`:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-From here we can use the `stub` interface throughout our extension.
+Desde aquí podemos utilizar la interfaz `stub` a lo largo de nuestra extensión.
 
 ```php
 /**
@@ -84,7 +84,7 @@ public function shouldExtendMiddlewareInterface()
 {
     if (!extension_loaded('psr')) {
         $this->markTestSkipped(
-            "The psr extension is not loaded"
+            "La extensión PSR no esta cargada"
         );
     }
 
@@ -94,7 +94,7 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
+**NOTA** Es responsabilidad del desarrollador asegurarse de que todas las referencias externas estén presentes antes de que se cargue la extensión. Entonces para el ejemplo anterior, la extensión [PSR](https://pecl.php.net/package/psr) tiene que estar cargada **antes** que la extensión construida en Zephir este cargada.
 
 <a name='implementing-methods'></a>
 
@@ -177,7 +177,7 @@ class MyClass
 
 <a name='implementing-methods-optional-nullable-parameters'></a>
 
-### Optional nullable parameters
+### Parámetros opcionales nulos
 
 Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
 
@@ -205,7 +205,7 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-visibilities'></a>
 
-### Supported Visibilities
+### Visibilidades soportadas
 
 * Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
@@ -215,7 +215,7 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-modifiers'></a>
 
-### Supported Modifiers
+### Modificadores Soportados
 
 * Static: Methods with this modifier can only be called in a static context (from the class, not an object).
 
@@ -225,7 +225,7 @@ public function foo(array a = null)
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
-### Getter/Setter shortcuts
+### Métodos abreviados de getter/setter
 
 Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
 
@@ -288,7 +288,7 @@ When the code is compiled, those methods are exported as real methods, but you d
 
 <a name='implementing-methods-return-type-hints'></a>
 
-### Return Type Hints
+### Tipo de valor devuelto
 
 Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Considere el siguiente ejemplo:
 
@@ -348,7 +348,7 @@ class MyClass
 
 <a name='implementing-methods-return-type-void'></a>
 
-### Return Type: Void
+### Tipo de valor devuelto: void
 
 Methods can also be marked as `void`. This means that a method is not allowed to return any data:
 
@@ -368,7 +368,7 @@ myDb->execute("SELECT * FROM robots");
 
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
 
-### Strict/Flexible Parameter Data-Types
+### Tipos de datos de parámetro Estricto/Flexible
 
 In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
 
@@ -416,7 +416,7 @@ By specifying what parameters are strict and what can be flexible, a developer c
 
 <a name='implementing-methods-read-only-parameters'></a>
 
-### Read-Only Parameters
+### Parámetros de sólo lectura
 
 Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
 
@@ -645,7 +645,7 @@ class MyClass
 
 <a name='calling-methods-parameters-by-name'></a>
 
-### Parameters by Name
+### Parámetros por Nombre
 
 Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
 
