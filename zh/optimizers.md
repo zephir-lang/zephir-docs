@@ -4,13 +4,13 @@ Zephir 中最常见的函数使用内部优化器。 "优化器" 的工作方式
 
 要创建优化器，您必须在“优化器”目录中创建一个类(您可以在`config.json`中配置该目录的名称; 见下文)。 必须使用以下命名约定:
 
-| 在 Zephir的作用    | 优化器类名                  | 优化器路径                                 | Function in C     |
+| 在 Zephir的作用    | 优化器类名                  | 优化器路径                                 | C 中的函数            |
 | -------------- | ---------------------- | ------------------------------------- | ----------------- |
 | `calculate_pi` | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
 
-Note that an optimizer is written in PHP, not Zephir. It is used during compilation to programmatically generate the appropriate C code for your extension to call. It is responsible for checking that arguments and return types match what the C function actually requires, preventing Zephir from generating invalid C code.
+请注意, 优化器是用 PHP 编写的, 而不是 Zephir编写的。 在编译过程中, 它用于以编程方式为您的扩展调用生成适当的 c 代码。 它负责检查参数和返回类型是否与 c 函数实际需要的内容相匹配, 从而防止 Zephir 生成无效的 c 代码。
 
-This is the basic structure for an 'optimizer':
+这是 "优化器" 的基本结构:
 
     <?php
     
@@ -31,12 +31,12 @@ This is the basic structure for an 'optimizer':
     }
     
 
-Implementation of optimizers highly depends on the kind of code you want to generate. In our example, we're going to replace the call to this function by a call to a C function. In Zephir, the code used to call this function is:
+优化器的实现在很大程度上取决于要生成的代码类型。 在我们的示例中, 我们将用对 c 函数的调用来替换对此函数的调用。 在 Zephir 中, 用于调用此函数的代码是:
 
     let pi = calculate_pi(1000);
     
 
-So, the optimizer will expect just one parameter, we have to validate that to avoid problems later:
+因此, 优化器只需要一个参数, 我们必须验证这一点, 以避免以后出现问题:
 
     <?php
     
@@ -55,7 +55,7 @@ So, the optimizer will expect just one parameter, we have to validate that to av
     }
     
 
-There are functions that are just called and don't return any value. Our function returns a value that is the calculated PI value. So we need to check that the type of the variable used to receive this calculated value is OK:
+有一些函数只是调用, 不返回任何值。 我们的函数返回一个值, 该值是计算出的 pi 值。 So we need to check that the type of the variable used to receive this calculated value is OK:
 
     <?php
     
