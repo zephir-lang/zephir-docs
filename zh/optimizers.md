@@ -1,12 +1,12 @@
-# Custom optimizers
+# 自定义优化器
 
-Most common functions in Zephir use internal optimizers. An 'optimizer' works like an interceptor for function calls. An 'optimizer' replaces calls to a function normally defined in the PHP userland, by direct C calls, which are faster and have a lower overhead, improving performance.
+Zephir 中最常见的函数使用内部优化器。 "优化器" 的工作方式类似于函数调用的拦截器。 一个“优化器”取代了对PHP代码块中通常定义的函数调用的直接C调用，后者更快，开销更低，从而提高了性能。
 
-To create an optimizer, you have to create a class in the 'optimizers' directory (you can configure this directory's name in `config.json`; see below). The following naming convention must be used:
+要创建优化器，您必须在“优化器”目录中创建一个类(您可以在`config.json`中配置该目录的名称; 见下文)。 必须使用以下命名约定:
 
-| Function in Zephir | Optimizer Class Name   | Optimizer Path                        | Function in C     |
-| ------------------ | ---------------------- | ------------------------------------- | ----------------- |
-| `calculate_pi`     | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
+| 在 Zephir的作用    | 优化器类名                  | 优化器路径                                 | Function in C     |
+| -------------- | ---------------------- | ------------------------------------- | ----------------- |
+| `calculate_pi` | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
 
 Note that an optimizer is written in PHP, not Zephir. It is used during compilation to programmatically generate the appropriate C code for your extension to call. It is responsible for checking that arguments and return types match what the C function actually requires, preventing Zephir from generating invalid C code.
 
