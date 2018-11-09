@@ -166,18 +166,18 @@ Zephir 的一个好做法是创建不修改其参数的函数。 如果要更改
     }
     
 
-This file must be added at a special section in the [config.json](/[[language]]/[[version]]/config) file:
+这个文件必须在[config.json ](/[[language]]/[[version]]/config)中的一个特殊部分中添加:
 
     "extra-sources": [
         "utils/pi.c"
     ]
     
 
-Lastly you will have to specify where Zephir can find your optimizer by using the `optimizer-dirs` configuration option.
+最后, 您必须使用 `optimizer-dirs` 配置选项指定 Zephir 在何处可以找到优化器。
 
     "optimizer-dirs": [
         "optimizers"
     ]
     
 
-Check the complete source code of this example [here](https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers)
+检查此示例的完整源代码 [here](https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers)
