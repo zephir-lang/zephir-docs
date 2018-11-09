@@ -1,8 +1,8 @@
 # 教程
 
-Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
+Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其复杂性较低。
 
-We assume that you are experienced in one or more other programming languages. We draw parallels to features in PHP, C, Javascript, and other languages. We'll point out features in Zephir that are similar to these other languages, as well as many features that are new or different. If you are familiar with these specific languages, you'll pick up on these comparisons more quickly.
+我们假设您在一种或多种其他编程语言方面有丰富的经验。 我们与 php、c、javascript 和其他语言中的功能进行了比较。 我们将指出Zephir中与这些其他语言相似的特性，以及许多新的或不同的特性。 如果您熟悉这些特定的语言，您将更快地了解这些比较。
 
 In this guide, we will use the standard Linux terminal commands. If you are a Windows user, you need to replace these commands with their counterparts.
 
