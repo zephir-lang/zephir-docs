@@ -163,11 +163,11 @@ echo Utils\Greeting::say(), "\n";
 
 ## 一个有用的类
 
-`Utils Greeting::say`方法可以检查我们的环境是否正确。 Now, let's create some more useful classes.
+`Utils Greeting::say`方法可以检查我们的环境是否正确。 现在, 让我们创建一些更有用的类。
 
-The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
+我们要添加到此扩展中的第一个有用的类将为用户提供筛选功能。 此类称为 `Utils\Filter` 其代码必须放在 `utils/utils/filter.zep`:
 
-A basic skeleton for this class is the following:
+此类的基本框架如下所示:
 
 ```zep
 namespace Utils;
@@ -178,7 +178,7 @@ class Filter
 }
 ```
 
-The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
+该类包含筛选方法, 这些方法可帮助用户从字符串中筛选不需要的字符。 第一种方法称为 `alpha`, 其目的是只筛选那些 ASCII 基本字母的字符。 首先, 我们只是遍历字符串, 将每个字节打印到标准输出:
 
 ```zep
 namespace Utils;
@@ -197,7 +197,7 @@ class Filter
 }
 ```
 
-When invoking this method:
+调用此方法时:
 
 ```php
 <?php
@@ -206,7 +206,7 @@ $f = new Utils\Filter();
 $f->alpha("hello");
 ```
 
-You will see:
+您将看到:
 
     h
     e
@@ -215,7 +215,7 @@ You will see:
     o
     
 
-Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
+检查字符串中的每个字符很简单。 现在, 我们将使用正确的筛选字符创建另一个字符串:
 
 ```zep
 class Filter
@@ -236,7 +236,7 @@ class Filter
 }
 ```
 
-The complete method can be tested as before:
+完整的方法可以像以前一样进行测试:
 
 ```php
 <?php
@@ -245,10 +245,10 @@ $f = new Utils\Filter();
 echo $f->alpha("!he#02l3'121lo."); // prints "hello"
 ```
 
-In the following screencast you can watch how to create the extension explained in this tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+在下面的屏幕截图中, 您可以观看如何创建本教程中介绍的扩展: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
 ## 结语
 
-This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
+这是一个非常简单的教程, 正如您所看到的, 使用 Zephir开始构建扩展很容易。 我们邀请您继续阅读手册, 以便您可以发现 Zephir提供的其他功能!
