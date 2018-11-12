@@ -60,19 +60,19 @@ zephir 帮助
 我们要做的第一件事就是生成扩展骨架。 这将为我们的扩展提供我们开始工作所需的基本结构。 在我们的示例中, 我们将创建一个名为 `utils` 的扩展:
 
 ```bash
-zephir init utils
+zephir初始化工具
 ```
 
-After this, a directory called "utils" is created on the current working directory:
+在此之后, 将在当前工作目录上创建一个名为 "utils" 的目录:
 
     utils/
        ext/
        utils/
     
 
-The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
+目录 `ext/` (内部实用程序) 包含编译器将用于生成扩展的代码。 创建的另一个目录是 `utils`-此目录与我们的扩展具有相同的名称。 我们将把 Zephir 代码放在那里。
 
-We need to change the working directory to "utils" to start compiling our code:
+我们需要将工作目录更改为 "utils", 以开始编译我们的代码:
 
 ```bash
 cd utils
@@ -80,7 +80,7 @@ ls
 ext/ utils/ config.json
 ```
 
-The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
+目录列表还将向我们显示一个名为 `config.json` 的文件。 此文件包含配置设置, 我们可以使用这些设置来更改 Zephir 和/或扩展本身的行为。
 
 <a name='adding-our-first-class'></a>
 
