@@ -1,14 +1,14 @@
 # 类型
 
-Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
+Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍支持的类型及其行为。
 
 <a name='dynamic-types'></a>
 
-## Dynamic Types
+## 动态类型
 
-Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
+动态变量与PHP中的变量完全相同。 它们可以不受限制地分配和重新分配到不同的类型。
 
-A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
+动态变量必须声明为关键字`var`。 The behavior is nearly the same as in PHP:
 
     var a, b, c;
     
