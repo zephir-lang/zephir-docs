@@ -1,28 +1,28 @@
 # 优化
 
-Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
+因为 Zephir 中的代码有时非常高级, 所以 c 编译器可能无法足够地优化此代码。
 
-Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its execution time, or reducing the memory required by the program.
+由于其 AOT (ahead-of-time) 编译器, Zephir能够在编译时优化代码, 有可能缩短其执行时间, 或减少程序所需的内存。
 
-You can enable optimizations by passing the name prefixed by `-f`:
+您可以通过传递 `-f` 前缀的名称来启用优化:
 
     zephir -fstatic-type-inference -flocal-context-pass
     
 
-Optimizations can be disabled by passing the name prefixed by `-fno-`:
+可以通过传递 `-fno-` 前缀的名称来禁用优化:
 
     zephir -fno-static-type-inference -fno-call-gatherer-pass
     
 
-With recent versions of zephir-parser, optimizations can be configured in the config file `config.json`.
+对于最新版本的 zephir-parser, 可以在配置文件 `config.json` 中配置优化。
 
-The following optimizations are supported:
+支持以下优化:
 
 <a name='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
 
-This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce inline caches to avoid method or function lookups:
+This pass counts how many times a function or method is called within the same method. 这允许编译器引入内联缓存, 以避免方法或函数查找:
 
     class MyClass extends OtherClass
     {
