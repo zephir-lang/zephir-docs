@@ -1,68 +1,68 @@
 # 类型
 
-Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
+Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍支持的类型及其行为。
 
 <a name='dynamic-types'></a>
 
-## Dynamic Types
+## 动态类型
 
-Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
+动态变量与PHP中的变量完全相同。 它们可以不受限制地分配和重新分配到不同的类型。
 
-A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
+动态变量必须声明为关键字`var`。 其行为与PHP中几乎相同:
 
     var a, b, c;
     
 
-##### Initialize variables
+##### 初始化变量
 
     let a = "hello", b = false;
     
 
-##### Change their values
+##### 改变变量
 
     let a = "hello", b = false;
     let a = 10, b = "140";
     
 
-##### Perform operations
+##### 做一些处理
 
     let c = a + b;
     
 
-They can have eight types:
+它们有八种类型
 
-| Type             | 说明                                                                          |
-| ---------------- | --------------------------------------------------------------------------- |
-| `array`          | An array is an ordered map. A map is a type that associates values to keys. |
-| `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`.      |
-| `float`/`double` | Floating point numbers. The size of a float is platform-dependent.          |
-| `integer`        | Integer numbers. The size of an integer is platform-dependent.              |
-| `null`           | The special NULL value represents a variable with no value.                 |
-| `object`         | Object abstraction like in PHP.                                             |
-| `resource`       | A resource holds a reference to an external resource.                       |
-| `string`         | A string is series of characters, where a character is the same as a byte.  |
+| 类型               | 说明                                                                         |
+| ---------------- | -------------------------------------------------------------------------- |
+| `array`          | 数组是有序映射。 映射是将值与键关联的类型。                                                     |
+| `boolean`        | 布尔值表示真值。 It can be either `true` or `false`.                               |
+| `float`/`double` | 浮点数 浮点的大小依赖于平台。                                                            |
+| `integer`        | 整数 整数的大小与平台有关。                                                             |
+| `null`           | 特殊的空值表示一个没有值的变量。                                                           |
+| `object`         | 对象抽象和PHP的类似。                                                               |
+| `resource`       | 资源，对外部资源的引用。                                                               |
+| `string`         | A string is series of characters, where a character is the same as a byte. |
 
-Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
+查看[PHP手册](http://www.php.net/manual/en/language.types.php)中关于这些类型的更多信息。
 
 <a name='dynamic-types-arrays'></a>
 
 ### Array
 
-The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
+Zephir中的数组实现与PHP中的基本相同: 为几种不同用途优化的有序映射; 它可以被视为数组、列表(向量)、哈希表(映射的实现)、字典、集合、堆栈、队列，甚至可能更多。 由于数组值可以是其他数组，树和多维数组也是可能的。
 
-The syntax to define arrays is slightly different than in PHP:
+定义数组的语法与PHP略有不同:
 
-##### Square braces must be used to define arrays
+##### 必须使用方形大括号来定义数组
 
     let myArray = [1, 2, 3];
     
 
-##### Double colon must be used to define hashes' keys
+##### 必须使用双冒号来定义哈希键
 
     let myHash = ["first": 1, "second": 2, "third": 3];
     
 
-Only long and string values can be used as keys:
+只能使用长值和字符串值作为键:
 
     let myHash = [0: "first", 1: true, 2: null];
     let myHash = ["first": 7.0, "second": "some string", "third": false];
@@ -72,7 +72,7 @@ Only long and string values can be used as keys:
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either `true` or `false`:
+布尔值表示真值。 它可以是 `true`, 也可以是 `false`:
 
     var a = false, b = true;
     
@@ -81,18 +81,18 @@ A boolean expresses a truth value. It can be either `true` or `false`:
 
 ### Float/Double
 
-Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+浮点数(也称为浮点数、双数或实数)。 浮点文字是具有一个或多个数字的表达式, 后跟句点 (.), 后跟一个或多个数字。 浮点的大小取决于平台, 但精度约为14位十进制数字的最大值为 ~ 1.8 e308 是一个通用值 (64位 IEEE 格式)。
 
     var number = 5.0, b = 0.014;
     
 
-Floating point numbers have limited precision. Although it depends on the system, Zephir uses the same IEEE 754 double precision format used by PHP, which will give a maximum relative error due to rounding in the order of 1.11e-16.
+浮点数的精度有限。 虽然这取决于系统, 但 Zephir 使用 php 使用的相同 IEEE 754 双精度格式, 这将由于舍入的1.11e-16 的顺序而产生最大的相对误差。
 
 <a name='dynamic-types-integer'></a>
 
 ### Integer
 
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+整数 一个整数的大小依赖于平台，尽管通常的值是20亿左右(32位)。 64位平台的最大值通常在9E18左右。 PHP不支持无符号整数，所以Zephir也有这个限制:
 
     var a = 5, b = 10050;
     
@@ -154,10 +154,10 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
-| Type               | 说明                                                                             |
+| 类型                 | 说明                                                                             |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
-| `boolean`          | A boolean expresses a truth value. It can be either `true` or `false`.         |
+| `boolean`          | 布尔值表示真值。 It can be either `true` or `false`.                                   |
 | `char`             | Smallest addressable unit of the machine that can contain basic character set. |
 | `float`/`double`   | Double precision floating-point type. The size is platform-dependent.          |
 | `integer`          | Signed integers. At least 16 bits in size.                                     |
