@@ -4,19 +4,19 @@ Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其�
 
 我们假设您在一种或多种其他编程语言方面有丰富的经验。 我们与 php、c、javascript 和其他语言中的功能进行了比较。 我们将指出Zephir中与这些其他语言相似的特性，以及许多新的或不同的特性。 如果您熟悉这些特定的语言，您将更快地了解这些比较。
 
-In this guide, we will use the standard Linux terminal commands. If you are a Windows user, you need to replace these commands with their counterparts.
+在本指南中, 我们将使用标准的 linux 终端命令。 如果您是 windows 用户, 则需要将这些命令替换为对应命令。
 
 <a name='checking-the-installation'></a>
 
-## Checking the Installation
+## 检查安装
 
-If you have successfully installed Zephir, you will be able to execute the following command in your console:
+如果您已成功安装 Zephir, 则可以在控制台中执行以下命令:
 
 ```bash
 zephir 帮助
 ```
 
-If everything is well, you should see the following help (or something very similar):
+如果一切正常, 您应该看到以下帮助 (或非常相似的内容):
 
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
@@ -51,13 +51,13 @@ If everything is well, you should see the following help (or something very simi
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-If something went wrong, please return back to the [installation](/[[language]]/[[version]]/installation) page.
+如果出现问题, 请返回到 [installation](/[[language]]/[[version]]/installation) 页面。
 
 <a name='extension-skeleton'></a>
 
-## Extension Skeleton
+## 扩展骨架
 
-The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
+我们要做的第一件事就是生成扩展骨架。 这将为我们的扩展提供我们开始工作所需的基本结构。 在我们的示例中, 我们将创建一个名为 `utils` 的扩展:
 
 ```bash
 zephir init utils
