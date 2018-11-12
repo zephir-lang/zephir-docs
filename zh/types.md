@@ -72,7 +72,7 @@ Zephir中的数组实现与PHP中的基本相同: 为几种不同用途优化的
 
 ### Boolean
 
-布尔值表示真值。 It can be either `true` or `false`:
+布尔值表示真值。 它可以是 `true`, 也可以是 `false`:
 
     var a = false, b = true;
     
@@ -81,18 +81,18 @@ Zephir中的数组实现与PHP中的基本相同: 为几种不同用途优化的
 
 ### Float/Double
 
-Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+浮点数(也称为浮点数、双数或实数)。 浮点文字是具有一个或多个数字的表达式, 后跟句点 (.), 后跟一个或多个数字。 浮点的大小取决于平台, 但精度约为14位十进制数字的最大值为 ~ 1.8 e308 是一个通用值 (64位 IEEE 格式)。
 
     var number = 5.0, b = 0.014;
     
 
-Floating point numbers have limited precision. Although it depends on the system, Zephir uses the same IEEE 754 double precision format used by PHP, which will give a maximum relative error due to rounding in the order of 1.11e-16.
+浮点数的精度有限。 虽然这取决于系统, 但 Zephir 使用 php 使用的相同 IEEE 754 双精度格式, 这将由于舍入的1.11e-16 的顺序而产生最大的相对误差。
 
 <a name='dynamic-types-integer'></a>
 
 ### Integer
 
-整数 The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+整数 一个整数的大小依赖于平台，尽管通常的值是20亿左右(32位)。 64位平台的最大值通常在9E18左右。 PHP不支持无符号整数，所以Zephir也有这个限制:
 
     var a = 5, b = 10050;
     
