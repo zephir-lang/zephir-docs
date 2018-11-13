@@ -164,7 +164,7 @@
 
 ## extra
 
-Contains extra settings that also can be passed, as is, on the command line. 目前，这是`export-clases`(生成从其他C代码访问类的头文件)，和`indent`(选择使用`tabs`或`spaces`缩进生成的文件中的代码):
+包含额外的设置, 这些设置也可以像在命令行中一样传递。 目前，这是`export-clases`(生成从其他C代码访问类的头文件)，和`indent`(选择使用`tabs`或`spaces`缩进生成的文件中的代码):
 
     {
         "extra": {
