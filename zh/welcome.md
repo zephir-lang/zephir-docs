@@ -1,25 +1,25 @@
-# 欢迎!
+# Welcome!
 
-Zephir，一种开源的高级语言，旨在简化PHP扩展的创建和可维护性，重点关注类型和内存安全性。
+Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
 
 <a name='some-features'></a>
 
-## 一些特征
+## Some features
 
-Zephir 的主要特点是:
+Zephir's main features are:
 
-| 属性   | 说明             |
-| ---- | -------------- |
-| 类型系统 | 动态/静态          |
-| 内存安全 | 不允许使用指针或直接内存管理 |
-| 编译模型 | 预编译            |
-| 内存模型 | 任务本地垃圾回收       |
+| Feature           | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| Type system       | dynamic/static                                       |
+| Memory safety     | pointers or direct memory management are not allowed |
+| Compilation model | ahead of time                                        |
+| Memory model      | task-local garbage collection                        |
 
 <a name='a-small-taste'></a>
 
-## 一个小尝试
+## A small taste
 
-下面的代码使用筛选变量的方法注册一个类, 返回它们的字母字符:
+The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
     namespace MyLibrary;
     
@@ -48,7 +48,7 @@ Zephir 的主要特点是:
     }
     
 
-该类可从 php 中使用, 如下所示:
+The class can be used from PHP as follows:
 
     <?php
     
@@ -58,11 +58,11 @@ Zephir 的主要特点是:
 
 <a name='external-links'></a>
 
-## 外部链接
+## External Links
 
-下面我们收集了您可能感兴趣的外部资源链接:
+Below we have collected links to external resources that may interest you:
 
-- [类型系统](https://en.wikipedia.org/wiki/Type_system)
-- [内存安全](https://en.wikipedia.org/wiki/Memory_safety)
-- [预编译](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
-- [内存管理](https://en.wikipedia.org/wiki/Memory_management)
+- [Type system](https://en.wikipedia.org/wiki/Type_system)
+- [Memory safety](https://en.wikipedia.org/wiki/Memory_safety)
+- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Memory management](https://en.wikipedia.org/wiki/Memory_management)
