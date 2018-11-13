@@ -127,4 +127,4 @@ Zephir 遵循与 java、c#、c++ 等相同的注释约定。 `//评论 </0 > 到
     }
     
 
-由于PHP只处理动态变量，因此方法总是返回动态变量。 这意味着如果返回静态类型的变量，在PHP端您将得到一个可用于PHP代码的动态变量。 Note that memory is automatically managed by the compiler, similarly to how PHP does it, so you don't need to allocate or free memory like in C.
+由于PHP只处理动态变量，因此方法总是返回动态变量。 这意味着如果返回静态类型的变量，在PHP端您将得到一个可用于PHP代码的动态变量。 注意，内存是由编译器自动管理的，类似于PHP的管理方式，所以您不需要像在C中那样分配或释放内存。
