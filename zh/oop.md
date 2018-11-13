@@ -518,7 +518,7 @@ CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in
 let this->{"myProperty"} = 100;
 ```
 
-You can also use a simple variable to update a property; the property name will be taken from the variable:
+您还可以使用一个简单的变量来更新属性; 属性名将取自变量:
 
 ```zep
 let someProperty = "myProperty";
@@ -527,15 +527,15 @@ let this->{someProperty} = 100;
 
 <a name='implementing-properties-reading'></a>
 
-## Reading Properties
+## 查看属性
 
-Properties can be read by accessing them using the `->` operator:
+属性可以通过使用 "->" 运算符访问来查看:
 
 ```zep
 echo this->myProperty;
 ```
 
-As when updating, properties can be dynamically read this way:
+与更新一样, 可以通过以下方式动态读取属性:
 
 ```zep
 // Avoid compiler check or read a dynamic user defined property
