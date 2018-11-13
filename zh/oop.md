@@ -359,7 +359,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? 因为编译器可以检测程序是否期望从这些方法返回值，并产生一个编译器异常:
+为什么这是有用的？ 因为编译器可以检测程序是否期望从这些方法返回值，并产生一个编译器异常:
 
 ```zep
 let myDb = db->setConnection(connection); // this will produce an exception
@@ -477,7 +477,7 @@ class MyClass
 }
 ```
 
-Properties can have literal compatible default values. These values must be able to be evaluated at compile time and must not depend on run-time information in order to be evaluated:
+属性可以具有文本兼容的默认值。 这些值必须能够在编译时进行计算, 并且不能依赖于运行时信息才能进行计算:
 
 ```zep
 namespace Test;
@@ -495,15 +495,15 @@ class MyClass
 
 <a name='implementing-properties-updating'></a>
 
-## Updating Properties
+## 更新属性
 
-Properties can be updated by accessing them using the '->' operator:
+属性可以通过使用 "->" 运算符访问来更新:
 
 ```zep
 let this->myProperty = 100;
 ```
 
-Zephir checks that properties exist when a program is accessing them. If a property is not declared, you will get a compiler exception:
+Zephir 检查程序在访问属性时会检查是否存在属性。 如果未声明属性, 您将获得编译器异常:
 
 ```bash
 CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/utils/app/myclass.zep on line 62
@@ -512,7 +512,7 @@ CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in
       ------------^
 ```
 
-If you want to avoid this compiler validation, or just create a property dynamically, you can enclose the property name using brackets and string quotes:
+如果要避免此编译器验证, 或者只是动态创建属性, 则可以使用括号和字符串引号将属性名称括起来:
 
 ```zep
 let this->{"myProperty"} = 100;
