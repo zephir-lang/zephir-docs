@@ -1,3 +1,3 @@
-- [Передумови](/[[language]]/[[version]]/installation#prerequisites)
-- [Встановлення Zephir](/[[language]]/[[version]]/installation#installing-zephir)
-- [Тестування встановлення](/[[language]]/[[version]]/installation#testing-the-installation)
+- [Prerequisites](/[[language]]/[[version]]/installation#prerequisites)
+- [Installing Zephir](/[[language]]/[[version]]/installation#installing-zephir)
+- [Testing the installation](/[[language]]/[[version]]/installation#testing-the-installation)
