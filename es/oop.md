@@ -290,7 +290,7 @@ Cuando el código es compilado, estos métodos son exportados como métodos real
 
 ### Tipo de valor devuelto
 
-Los métodos en clases e interfaces pueden tener "sugerencias de tipo de retorno". These will provide useful extra information to the compiler to inform you about errors in your application. Considere el siguiente ejemplo:
+Los métodos en clases e interfaces pueden tener "sugerencias de tipo de retorno". Estos proporcionarán información adicional útil al compilador para informarle sobre los errores en su aplicación. Considere el siguiente ejemplo:
 
 ```zep
 namespace App;
@@ -299,17 +299,17 @@ class MyClass
 {
     public function getSomeData() -> string
     {
-        // this will throw a compiler exception
-        // since the returned value (boolean) does not match
-        // the expected returned type string
+        // esto lanzará una excepción del compilador
+        // ya que el valor devuelto (booleano) no coincide
+        // la cadena de tipo devuelta esperada
         return false;
     }
 
     public function getSomeOther() -> <App\MyInterface>
     {
-        // this will throw a compiler exception
-        // if the returned object does not implement
-        // the expected interface App\MyInterface
+        // esto lanzará una excepción del compilador
+        // si el objeto devuelto no implementa
+        // la interfaz esperada App\MyInterface
         return new App\MyObject;
     }
 
@@ -317,19 +317,19 @@ class MyClass
     {
         var myObject;
 
-        // the type-hint will tell the compiler that
-        // myObject is an instance of a class
-        // that implement App\MyInterface
+        // la sugerencia de tipo le dirá al compilador que
+        // myObject es una instancia de una clase
+        // que implementa App\MyInterface
         let myObject = this->getSomeOther();
 
-        // the compiler will check if App\MyInterface
-        // implements a method called "someMethod"
+        // el compilador comprobará si App\MyInterface
+        // implementa un método llamado "someMethod"
         echo myObject->someMethod();
     }
 }
 ```
 
-A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
+Un método puede tener más de un tipo de valor devuelto. Cuando se definen varios tipos, debe utilizarse el operador | para separar estos tipos.
 
 ```zep
 namespace App;
@@ -350,7 +350,7 @@ class MyClass
 
 ### Tipo de valor devuelto: void
 
-Methods can also be marked as `void`. This means that a method is not allowed to return any data:
+Los métodos también se pueden marcar como `void`. Esto significa que un método no puede devolver datos:
 
 ```zep
 public function setConnection(connection) -> void
@@ -359,10 +359,10 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+¿Por qué esto es útil? Porque el compilador puede detectar si el programa espera un valor devuelto de estos métodos y producir una excepción del compilador:
 
 ```zep
-let myDb = db->setConnection(connection); // this will produce an exception
+let myDb = db->setConnection(connection); // esto producirá una excepción
 myDb->execute("SELECT * FROM robots");
 ```
 
@@ -385,10 +385,10 @@ Above method will work with the following calls:
 <?php
 
 $o->filterText(1111, 1);              // OK
-$o->filterText("some text", null);    // OK
+$o->filterText("un texto", null);    // OK
 $o->filterText(null, true);           // OK
-$o->filterText("some text", true);    // OK
-$o->filterText(array(1, 2, 3), true); // FAIL
+$o->filterText("un texto", true);    // OK
+$o->filterText(array(1, 2, 3), true); // FALLO
 ```
 
 However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
@@ -405,11 +405,11 @@ Now, most of the calls with a wrong type will cause an exception due to the inva
 ```zep
 <?php
 
-$o->filterText(1111, 1);              // FAIL
-$o->filterText("some text", null);    // OK
-$o->filterText(null, true);           // FAIL
-$o->filterText("some text", true);    // OK
-$o->filterText(array(1, 2, 3), true); // FAIL
+$o->filterText(1111, 1);              // FALLO
+$o->filterText("un texto", null);    // OK
+$o->filterText(null, true);           // FALLO
+$o->filterText("un texto", true);    // OK
+$o->filterText(array(1, 2, 3), true); // FALLO
 ```
 
 By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
