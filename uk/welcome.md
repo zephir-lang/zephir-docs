@@ -1,35 +1,35 @@
-# Вітаємо!
+# Welcome!
 
-Вас вітає Zephir — проект з відкритим вихідним кодом, високорівнева/предметно-орієнтована мова спроектована для полегшення створення й супроводу розширень для PHP з акцентом на тип та безпеку доступу до пам'яті.
+Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
 
 <a name='some-features'></a>
 
-## Деякі особливості
+## Some features
 
-Основними особливостями Zephir-у є:
+Zephir's main features are:
 
-| Особливість                 | Опис                                               |
-| --------------------------- | -------------------------------------------------- |
-| Система типізації           | динамічна/статична                                 |
-| Безпечний доступ до пам'яті | вказівники або пряме керування пам'яттю заборонені |
-| Компіляційна модель         | компіляція виконується заздалегідь                 |
-| Модель пам'яті              | свій збирач сміття                                 |
+| Feature           | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| Type system       | dynamic/static                                       |
+| Memory safety     | pointers or direct memory management are not allowed |
+| Compilation model | ahead of time                                        |
+| Memory model      | task-local garbage collection                        |
 
 <a name='a-small-taste'></a>
 
-## Скуштуйте
+## A small taste
 
-Наступний код реєструє клас з методом, який фільтрує змінні, повертаючи лише їхні алфавітні символи:
+The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
     namespace MyLibrary;
     
     /**
-     * Фільтр
+     * Filter
      */
     class Filter
     {
         /**
-         * Фільтрує рядок, повертаючи його альфа-символи
+         * Filters a string, returning its alpha charactersa
          *
          * @param string str
          */
@@ -48,21 +48,21 @@
     }
     
 
-Цей клас можна виконати з PHP наступним чином:
+The class can be used from PHP as follows:
 
     <?php
     
     $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01he#l.lo?/1"); // виведе hello
+    echo $filter->alpha("01he#l.lo?/1"); // prints hello
     
 
 <a name='external-links'></a>
 
-## Зовнішні посилання
+## External Links
 
-Нижче ми зібрали посилання на зовнішні ресурси, які можуть вас зацікавити:
+Below we have collected links to external resources that may interest you:
 
-- [Система типізації](https://en.wikipedia.org/wiki/Type_system)
-- [Безпечний доступ до пам'яті](https://en.wikipedia.org/wiki/Memory_safety)
-- [Ahead-of-time (AOT) компіляція](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
-- [Керування пам’яттю](https://en.wikipedia.org/wiki/Memory_management)
+- [Type system](https://en.wikipedia.org/wiki/Type_system)
+- [Memory safety](https://en.wikipedia.org/wiki/Memory_safety)
+- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Memory management](https://en.wikipedia.org/wiki/Memory_management)
