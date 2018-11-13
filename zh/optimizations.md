@@ -95,7 +95,7 @@ zephir_fetch_params(1, 1, 0, &n);
 
 对于任何编程语言, 始终使用默认值和类型初始化变量是一种很好的做法。 不这样做, 可能会给应用程序带来意想不到的后果, 并引入错误、内存泄漏等。 通过在`config.json` 中使用 `check-invalid-read`标志我们确保指针和它们各自的C变量被正确初始化。 Zephir 开发人员不会看到他们的代码发生更改。 这将影响生成的C代码。
 
-More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
+关于为什么C指针需要在Stack overflow [here ](https://stackoverflow.com/q/12253191/1661465)中无效的更多信息。
 
 <a name='constant-folding'></a>
 
