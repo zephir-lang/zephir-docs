@@ -370,7 +370,7 @@ myDb->execute("SELECT * FROM robots");
 
 ### Tipos de datos de parámetro Estricto/Flexible
 
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
+En Zephir, puede especificar el tipo de datos de cada parámetro de un método. Por defecto, estos tipos de datos son flexibles; esto significa que si se pasa un valor con un tipo de datos equivocado (pero compatible), Zephir intentará convertir de forma transparente al tipo esperado:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -379,7 +379,7 @@ public function filterText(string text, boolean escape=false)
 }
 ```
 
-Above method will work with the following calls:
+El método anterior funcionará con las siguientes llamadas:
 
 ```zep
 <?php
@@ -425,11 +425,11 @@ namespace App;
 
 class MyClass
 {
-    // "a" is read-only
+    // "a" es solo lectura
     public function getSomeData(const string a)
     {
-        // this will throw a compiler exception
-        let a = "hello";
+        // esto arrojará una excepción del compilador
+        let a = "hola";
     }
 }
 ```
@@ -438,7 +438,7 @@ When a parameter is declared as read-only, the compiler can make safe assumption
 
 <a name='implementing-properties'></a>
 
-## Implementing Properties
+## Implementación de Propiedades
 
 Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
 
@@ -489,7 +489,7 @@ class MyClass
     protected myProperty2 = false;
     protected myProperty3 = 2.0;
     protected myProperty4 = 5;
-    protected myProperty5 = "my value";
+    protected myProperty5 = "mi valor";
 }
 ```
 
