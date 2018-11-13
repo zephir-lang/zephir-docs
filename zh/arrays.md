@@ -1,12 +1,12 @@
-# 数组
+# Arrays
 
-Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/manual/en/language.types.array.php)的方法。 数组是 < 0>hash 表 </0 > 的实现。
+Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).
 
 <a name='declaring-array-variables'></a>
 
-## 声明数组变量
+## Declaring Array Variables
 
-数组变量可以使用关键字 "var" 或 "array" 来声明:
+Array variables can be declared using the keywords 'var' or 'array':
 
     var a   = []; // array variable, its type can be changed
     array b = []; // array variable, its type cannot be changed across execution
@@ -14,43 +14,43 @@ Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/man
 
 <a name='creating-arrays'></a>
 
-## 创建数组
+## Creating Arrays
 
-通过将其元素括在方括号中创建数组:
+An array is created by enclosing its elements in square brackets:
 
-##### 创建空数组
+##### Creating an empty array
 
     let elements = [];
     
 
-##### 创建包含元素的数组
+##### Creating an array with elements
 
     let elements = [1, 3, 4];
     
 
-##### 使用不同类型的元素创建数组
+##### Creating an array with elements of different types
 
     let elements = ["first", 2, true];
     
 
-##### 多维数组
+##### A multidimensional array
 
     let elements = [[0, 1], [4, 5], [2, 3]];
     
 
-就像 PHP，哈希或字典都支持的:
+As PHP, hashes or dictionaries are supported:
 
-##### 使用字符串键创建哈希
+##### Creating a hash with string keys
 
     let elements = ["foo": "bar", "bar": "foo"];
     
 
-##### 使用数字键创建哈希
+##### Creating a hash with numeric keys
 
     let elements = [4: "bar", 8: "foo"];
     
 
-##### 使用字符串和数字键混合创建哈希
+##### Creating a hash with mixed string and numeric keys
 
     let elements = [4: "bar", "foo": 8];
     
@@ -61,17 +61,17 @@ Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/man
 
 Arrays are updated in the same way as PHP, using square brackets:
 
-##### 使用字符串键名更新数组
+##### Updating an array with a string key
 
     let elements["foo"] = "bar";
     
 
-##### 使用数字键更新数组
+##### Updating an array with a numeric key
 
     let elements[0] = "bar";
     
 
-##### 多维数组
+##### Updating multi-dimensional array
 
     let elements[0]["foo"] = "bar";
     let elements["foo"][0] = "bar";
@@ -79,26 +79,26 @@ Arrays are updated in the same way as PHP, using square brackets:
 
 <a name='appending-elements'></a>
 
-## 追加元素
+## Appending elements
 
-元素可以追加到数组的末尾, 如下所示:
+Elements can be appended at the end of the array as follows:
 
-##### 向数组追加一个元素
+##### Append an element to the array
 
     let elements[] = "bar";
     
 
 <a name='reading-elements-from-arrays'></a>
 
-## 从数组中读取元素
+## Reading elements from arrays
 
-可以读取数组元素, 如下所示:
+It is possible to read array elements as follows:
 
-##### 使用字符串键获取元素 `foo`
+##### Getting an element using the string key `foo`
 
     let foo = elements["foo"];
     
 
-##### 使用数字键0获取元素
+##### Getting an element using the numeric key 0
 
     let foo = elements[0];
