@@ -31,16 +31,16 @@ Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍�
 
 它们有八种类型
 
-| 类型               | 说明                                                                         |
-| ---------------- | -------------------------------------------------------------------------- |
-| `array`          | 数组是有序映射。 映射是将值与键关联的类型。                                                     |
-| `boolean`        | 布尔值表示真值。 它可以是`true`或`false`。                                               |
-| `float`/`double` | 浮点数 浮点的大小依赖于平台。                                                            |
-| `integer`        | 整数 整数的大小与平台有关。                                                             |
-| `null`           | 特殊的空值表示一个没有值的变量。                                                           |
-| `object`         | 对象抽象和PHP的类似。                                                               |
-| `resource`       | 资源，对外部资源的引用。                                                               |
-| `string`         | A string is series of characters, where a character is the same as a byte. |
+| 类型               | 说明                           |
+| ---------------- | ---------------------------- |
+| `array`          | 数组是有序映射。 映射是将值与键关联的类型。       |
+| `boolean`        | 布尔值表示真值。 它可以是`true`或`false`。 |
+| `float`/`double` | 浮点数 浮点的大小依赖于平台。              |
+| `integer`        | 整数 整数的大小与平台有关。               |
+| `null`           | 特殊的空值表示一个没有值的变量。             |
+| `object`         | 对象抽象和PHP的类似。                 |
+| `resource`       | 资源，对外部资源的引用。                 |
+| `string`         | 一个string是一系列字符，其中字符与字节相同。    |
 
 查看[PHP手册](http://www.php.net/manual/en/language.types.php)中关于这些类型的更多信息。
 
@@ -243,14 +243,14 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
     let a = "hello";
     
 
-`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
+`unsigned integer`变量类似于`integer`但它们没有符号，这意味着你不能在这些变量中存储负数:
 
     uint a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### 自动转换为70
 
     let a = -70;
     
@@ -275,9 +275,9 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
     let a = "hello";
     
 
-`unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
+< 0>unsigned integer</0 > 变量比标准 `integer` 大两倍。 将 `unsigned integer</0 > 分配给标准 (有符号) <code>integer` 可能会导致数据丢失:
 
-##### potential loss of data for `b`
+##### `b` 的数据可能丢失
 
     uint a, int b;
     
@@ -289,7 +289,7 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
 
 ### 长值/无符号长值
 
-`long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
+`long` 变量比 `integer` 变量大两倍, 因此它们可以存储较大的数字。 与 `integer` 一样, 分配给 `long` 变量的值将自动转换为此类型:
 
     long a;
     
@@ -317,14 +317,14 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
     let a = "hello";
     
 
-`unsigned long` are like `long` but they are not signed, this means you can't store negative numbers in these sort of variables:
+< 0>unsigned long</0 > 类似 `long` 但它们没有符号, 这意味着您不能将负数存储在以下类型的变量中:
 
     ulong a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### 自动转换为70
 
     let  a = -70;
     
@@ -349,9 +349,9 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
     let a = "hello";
     
 
-`unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
+< 0>unsigned long </0 > 变量比标准 `long` 大两倍; 将 `unsigned long</0 > 分配给标准 (有符号) <code>long` 可能会导致数据丢失:
 
-##### potential loss of data for `b`
+##### `b` 的数据可能丢失
 
     ulong a, long b;
     
@@ -363,25 +363,25 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
+一个string是一系列字符，其中字符与字节相同。 与PHP一样，Zephir只支持256个字符集，因此不提供本地Unicode支持。
 
-When a variable is declared `string` it never changes its type:
+当一个变量被声明为`string`时，它永远不会改变它的类型:
 
     string a;
     
     let a = "";
     
 
-##### string literals must be enclosed in double quotes
+##### string 文字必须用双引号括起来
 
     let  a = "hello";
     
 
-##### converted to string "A"
+##### 转换为字符串“A”
 
     let a = 'A';
     
 
-##### automatically casted to ""
+##### 自动转换为""
 
     let a = null;
