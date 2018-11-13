@@ -1,26 +1,26 @@
-# 编译警告
+# Compiler Warnings
 
-当发现代码可以改进或避免潜在错误的情况时，编译器会发出警告。
+The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
 
-警告可以通过命令行参数启用，也可以添加到`config.json`以更永久地启用或禁用它们。
+Warnings can be enabled via command line parameters, or can be added to the `config.json` to enable or disable them more permanently.
 
-可以通过将警告的名称以`-w`为前缀传递来启用警告:
+You can enable warnings by passing their name prefixed by `-w`:
 
     zephir -wunused-variable -wnonexistent-function
     
 
-警告可以通过传递前缀为`-W`的名称来禁用:
+Warnings can be disabled by passing their name prefixed by `-W`:
 
     zephir -Wunused-variable -Wnonexistent-function
     
 
-支持以下警告:
+The following warnings are supported:
 
 <a name='unused-variable'></a>
 
 ## unused-variable
 
-在声明变量但在方法中未使用时引发。 此警告默认启用。
+Raised when a variable is declared but it is not used within a method. This warning is enabled by default.
 
     public function some()
     {
@@ -34,7 +34,7 @@
 
 ## unused-variable-external
 
-当一个参数被声明但在方法中没有使用时引发。
+Raised when a parameter is declared but it is not used within a method.
 
     public function sum(a, b, c) // c is not used
     {
@@ -46,7 +46,7 @@
 
 ## possible-wrong-parameter-undefined
 
-当一个方法以错误的类型调用参数时引发:
+Raised when a method is called with a wrong type for a parameter:
 
     public function some()
     {
@@ -63,7 +63,7 @@
 
 ## nonexistent-function
 
-调用编译时不存在的函数时引发:
+Raised when a function is called that does not exist at compile time:
 
     public function some()
     {
@@ -75,7 +75,7 @@
 
 ## nonexistent-class
 
-当使用编译时不存在的类时引发:
+Raised when a class is used that does not exist at compile time:
 
     public function some()
     {
@@ -89,7 +89,7 @@
 
 ## non-valid-isset
 
-当编译器检测到正在对非数组或-对象值执行“isset”操作时引发:
+Raised when the compiler detects that an 'isset' operation is being made on a non-array or -object value:
 
     public function some()
     {
@@ -103,7 +103,7 @@
 
 ## non-array-update
 
-当编译器检测到正在对非数组值执行数组更新操作时引发:
+Raised when the compiler detects that an array update operation is being made on a non-array value:
 
     public function some()
     {
@@ -116,7 +116,7 @@
 
 ## non-valid-objectupdate
 
-当编译器检测到正在对非对象值进行对象更新操作时引发:
+Raised when the compiler detects that an object update operation is being made on a non-object value:
 
     public function some()
     {
@@ -129,9 +129,9 @@
 
 ## non-valid-fetch
 
-当编译器检测到正在对非数组或-对象值进行'fetch'操作时引发:
+Raised when the compiler detects that a 'fetch' operation is being made on a non-array or -object value:
 
-##### 变量整数'b'用作数组
+##### variable integer 'b' used as array
 
     public function some()
     {
@@ -144,7 +144,7 @@
 
 ## invalid-array-index
 
-当编译器检测到使用了无效的数组索引时引发:
+Raised when the compiler detects that an invalid array index is used:
 
     public function some(var a)
     {
@@ -157,7 +157,7 @@
 
 ## non-array-append
 
-当编译器检测到一个元素被附加到一个非数组变量时引发:
+Raised when the compiler detects that an element is being appended to a non-array variable:
 
     public function some()
     {
