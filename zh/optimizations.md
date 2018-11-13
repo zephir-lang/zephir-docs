@@ -101,7 +101,7 @@ zephir_fetch_params(1, 1, 0, &n);
 
 ## constant-folding
 
-Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when this optimization is enabled:
+常量折叠是在编译时对常量表达式进行简化的过程。 启用此优化时, 将简化以下代码:
 
     public function getValue()
     {
@@ -109,7 +109,7 @@ Constant folding is the process of simplifying constant expressions at compile t
     }
     
 
-Is transformed into:
+转换为:
 
     public function getValue()
     {
@@ -121,11 +121,11 @@ Is transformed into:
 
 ## internal-call-transformation
 
-The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. By default, this optimization is turned off.
+`internal-call-transformation` 需要根据其等效的 php 方法生成内部方法, 从而允许绕过这些内部方法调用的 php 用户空间。 默认情况下, 此优化处于关闭状态。
 
-This optimization generates 2 implementations per method, one that is exposed in PHP and an internal one.
+此优化为每个方法生成2个实现, 一个在 php 中公开, 一个在内部公开。
 
-Exceptions to the above are:
+上述规定的例外情况是:
 
 - Only PHP methods allowed to be replaced (eg. we can't do this for Phalcon's methods)
 - Closures (`__invoke`) and `__construct` are not supported
@@ -156,7 +156,7 @@ This optimization replaces values of class constants in compile time:
     }
     
 
-Is transformed into:
+转换为:
 
     class MyClass
     {
