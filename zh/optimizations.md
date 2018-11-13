@@ -127,22 +127,22 @@ zephir_fetch_params(1, 1, 0, &n);
 
 上述规定的例外情况是:
 
-- Only PHP methods allowed to be replaced (eg. we can't do this for Phalcon's methods)
-- Closures (`__invoke`) and `__construct` are not supported
-- The number of required parameters must exactly match the number of actual parameters
-- Does not work for ZendEngine2 (PHP 5.6)
+- 只允许替换 php 方法 (例如。 我们不能这样做的 phalcon 的方法)
+- 不支持关闭 (`__invoke`) 和 `__construct`
+- 所需参数的数量必须与实际参数的数量完全匹配
+- 不能在 ZendEngine2中起作用的 (PHP 5.6)
 
 <a name='local-context-pass'></a>
 
 ## local-context-pass
 
-This compilation pass moves variables that will be allocated in the heap to the stack. This optimization can reduce the number of memory indirections a program has to do.
+此编译传递将在堆中分配的变量移动到堆栈。 这种优化可以减少程序必须做的内存间接数。
 
 <a name='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
 
-This optimization replaces values of class constants in compile time:
+此优化将替换编译时的类常量值:
 
     class MyClass
     {
@@ -174,9 +174,9 @@ This optimization replaces values of class constants in compile time:
 
 ## static-type-inference
 
-This compilation pass is very important, since it looks for dynamic variables that can potentially be transformed into static/primitive types, which are better optimized by the underlying compiler.
+这个编译过程非常重要，因为它寻找的是可能被转换为静态/基本类型的动态变量，底层编译器可以更好地对其进行优化。
 
-The following code uses a set of dynamic variables to perform some mathematical calculations:
+下面的代码使用一组动态变量来执行一些数学计算:
 
     public function someCalculations(var a, var b)
     {
