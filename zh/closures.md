@@ -1,6 +1,6 @@
-# 闭 包
+# Closures
 
-您可以在Zephir中使用闭包(也称为匿名函数);这些是PHP兼容的，可以返回给PHP代码块:
+You can use closures (a.k.a. anonymous functions) in Zephir; these are PHP compatible and can be returned to the PHP userland:
 
     namespace MyLibrary;
     
@@ -16,7 +16,7 @@
     }
     
 
-它也可以直接在Zephir中执行，并作为参数传递给其他函数/方法:
+It also can be executed directly within Zephir, and passed as a parameter to other functions/methods:
 
     namespace MyLibrary;
     
@@ -32,7 +32,7 @@
     }
     
 
-一个简短的语法也可以用来定义闭包:
+A short syntax is also available to define closures:
 
     namespace MyLibrary;
     
