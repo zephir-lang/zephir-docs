@@ -290,7 +290,7 @@ Cuando el código es compilado, estos métodos son exportados como métodos real
 
 ### Tipo de valor devuelto
 
-Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Considere el siguiente ejemplo:
+Los métodos en clases e interfaces pueden tener "sugerencias de tipo de retorno". These will provide useful extra information to the compiler to inform you about errors in your application. Considere el siguiente ejemplo:
 
 ```zep
 namespace App;
