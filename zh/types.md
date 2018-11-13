@@ -79,7 +79,7 @@ Zephir中的数组实现与PHP中的基本相同: 为几种不同用途优化的
 
 <a name='dynamic-types-float-double'></a>
 
-### Float/Double
+### 浮点型/双精度浮点
 
 浮点数(也称为浮点数、双数或实数)。 浮点文字是具有一个或多个数字的表达式, 后跟句点 (.), 后跟一个或多个数字。 浮点的大小取决于平台, 但精度约为14位十进制数字的最大值为 ~ 1.8 e308 是一个通用值 (64位 IEEE 格式)。
 
@@ -99,9 +99,9 @@ Zephir中的数组实现与PHP中的基本相同: 为几种不同用途优化的
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer overflow
+### 整数溢出
 
-Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
+与PHP相反，Zephir不会自动检查整数溢出。 像在C中一样，如果你做的操作可能会返回一个大的数字，你应该使用`unsigned long`或`float`来存储它们:
 
     unsigned long my_number = 2147483648;
     
@@ -194,7 +194,7 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
 
 <a name='static-types-char-unsigned'></a>
 
-### Char/Unsigned Char
+### 字符/无符号字符
 
 `char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
 
@@ -213,7 +213,7 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
 
 <a name='static-types-integer-unsigned'></a>
 
-### Integer/Unsigned Integer
+### 整数/无符号整数
 
 `integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
@@ -287,7 +287,7 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
 
 <a name='static-types-long-unsigned'></a>
 
-### Long/Unsigned Long
+### 长值/无符号长值
 
 `long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
 
