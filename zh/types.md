@@ -154,40 +154,40 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
 
 静态类型允许开发人员声明和使用 c. 变量中可用的某些变量类型, 一旦它们被声明为静态类型, 就不能更改它们的类型。 但是，它们允许编译器做更好的优化工作。 支持以下类型:
 
-| 类型                 | 说明                                                                           |
-| ------------------ | ---------------------------------------------------------------------------- |
-| `array`            | 可以用作散列、映射、字典、集合、堆栈等的结构。                                                      |
-| `boolean`          | 布尔值表示真值。 它可以是`true`或`false`。                                                 |
-| `char`             | 能包含基本字符集的机器的最小可寻址单元。                                                         |
-| `float`/`double`   | 双精度浮点型。 大小依赖于平台。                                                             |
-| `integer`          | 带符号的整形 至少16位的大小。                                                             |
-| `long`             | 长有符号整数类型。 至少32位。                                                             |
-| `string`           | A string is a series of characters, where a character is the same as a byte. |
-| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                          |
-| `unsigned integer` | Unsigned integers. 至少16位的大小。                                                 |
-| `unsigned long`    | Same as `long`, but unsigned.                                                |
+| 类型                 | 说明                           |
+| ------------------ | ---------------------------- |
+| `array`            | 可以用作散列、映射、字典、集合、堆栈等的结构。      |
+| `boolean`          | 布尔值表示真值。 它可以是`true`或`false`。 |
+| `char`             | 能包含基本字符集的机器的最小可寻址单元。         |
+| `float`/`double`   | 双精度浮点型。 大小依赖于平台。             |
+| `integer`          | 带符号的整形 至少16位的大小。             |
+| `long`             | 长有符号整数类型。 至少32位。             |
+| `string`           | 字符串是一系列字符，其中字符与字节相同。         |
+| `unsigned char`    | 与`char`大小相同，但保证是无符号的。        |
+| `unsigned integer` | 无符号整数 至少16位的大小。              |
+| `unsigned long`    | 与`long`相同，但无符号。              |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A `boolean` expresses a truth value. 它可以是`true`或`false`。 Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
+一个`boolean`表示一个真假。 它可以是`true`或`false`。 与上面详细描述的动态行为相反，静态`布尔值`类型仍然是`布尔值` (`true`或`false`)，不管赋予它们什么值:
 
     boolean a;
     let a = true;
     
 
-##### automatically casted to `true`
+##### 自动转换为`true`
 
     let a = 100;
     
 
-##### automatically casted to `false`
+##### 自动转换为`false`
 
     let a = 0;
     
 
-##### throws a compiler exception
+##### 抛出编译器异常
 
     let a = "hello";
     
@@ -196,7 +196,7 @@ A `boolean` expresses a truth value. 它可以是`true`或`false`。 Contrary to
 
 ### 字符/无符号字符
 
-`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
+`char`变量是机器中能够包含基本字符集(通常是8位) 的最小可寻址单元。 `char`变量是机器中能够包含基本字符集(通常是8位) 的最小可寻址单元。
 
     char ch, string name = "peter";
     
@@ -238,7 +238,7 @@ A `boolean` expresses a truth value. 它可以是`true`或`false`。 Contrary to
     let a = false;
     
 
-##### throws a compiler exception
+##### 抛出编译器异常
 
     let a = "hello";
     
@@ -270,7 +270,7 @@ A `boolean` expresses a truth value. 它可以是`true`或`false`。 Contrary to
     let a = false;
     
 
-##### throws a compiler exception
+##### 抛出编译器异常
 
     let a = "hello";
     
@@ -312,7 +312,7 @@ A `boolean` expresses a truth value. 它可以是`true`或`false`。 Contrary to
     let a = false;
     
 
-##### throws a compiler exception
+##### 抛出编译器异常
 
     let a = "hello";
     
@@ -344,7 +344,7 @@ A `boolean` expresses a truth value. 它可以是`true`或`false`。 Contrary to
     let a = false;
     
 
-##### throws a compiler exception
+##### 抛出编译器异常
 
     let a = "hello";
     
