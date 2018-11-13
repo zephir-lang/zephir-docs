@@ -34,7 +34,7 @@ Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍�
 | 类型               | 说明                                                                         |
 | ---------------- | -------------------------------------------------------------------------- |
 | `array`          | 数组是有序映射。 映射是将值与键关联的类型。                                                     |
-| `boolean`        | 布尔值表示真值。 It can be either `true` or `false`.                               |
+| `boolean`        | 布尔值表示真值。 它可以是`true`或`false`。                                               |
 | `float`/`double` | 浮点数 浮点的大小依赖于平台。                                                            |
 | `integer`        | 整数 整数的大小与平台有关。                                                             |
 | `null`           | 特殊的空值表示一个没有值的变量。                                                           |
@@ -108,9 +108,9 @@ Zephir中的数组实现与PHP中的基本相同: 为几种不同用途优化的
 
 <a name='dynamic-types-objects'></a>
 
-### Object
+### 对象
 
-Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
 
     let myObject = new \stdClass(),
         myObject->someProperty = "my value";
@@ -120,28 +120,28 @@ Zephir allows to instantiate, manipulate, call methods, read class constants, et
 
 ### String
 
-A `string` is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
+一个`string`是一系列字符，其中字符与字节相同。 与PHP一样，Zephir只支持256个字符集，因此不提供本地Unicode支持。
 
     var today = "friday";
     
 
-In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for `char` data type.
+在Zephir中，字符串文字只能使用双引号指定(类似在C或Go中)。 单引号用于`char`数据类型。
 
-The following escape sequences are supported in strings:
+字符串中支持下列转义序列:
 
-| Sequence | 说明              |
-| -------- | --------------- |
-| `\t`    | Horizontal tab  |
-| `\n`    | Line feed       |
-| `\r`    | Carriage return |
-| `\`   | Backslash       |
-| `\"`    | double-quote    |
+| 序列     | 说明    |
+| ------ | ----- |
+| `\t`  | 水平制表符 |
+| `\n`  | 换行    |
+| `\r`  | 回车    |
+| `\` | 反斜线   |
+| `\"`  | 双引号   |
 
     var today    = "\tfriday\n\r",
         tomorrow = "\tsaturday";
     
 
-In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
+在 Zephir中, 字符串不支持像 php 中那样的变量解析; 您需要改为使用串联:
 
     var name = "peter";
     
@@ -150,28 +150,28 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 <a name='static-types'></a>
 
-## Static Types
+## 静态类型
 
-Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
+静态类型允许开发人员声明和使用 c. 变量中可用的某些变量类型, 一旦它们被声明为静态类型, 就不能更改它们的类型。 但是，它们允许编译器做更好的优化工作。 支持以下类型:
 
-| 类型                 | 说明                                                                             |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
-| `boolean`          | 布尔值表示真值。 It can be either `true` or `false`.                                   |
-| `char`             | Smallest addressable unit of the machine that can contain basic character set. |
-| `float`/`double`   | Double precision floating-point type. The size is platform-dependent.          |
-| `integer`          | Signed integers. At least 16 bits in size.                                     |
-| `long`             | Long signed integer type. At least 32 bits in size.                            |
-| `string`           | A string is a series of characters, where a character is the same as a byte.   |
-| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                            |
-| `unsigned integer` | Unsigned integers. At least 16 bits in size.                                   |
-| `unsigned long`    | Same as `long`, but unsigned.                                                  |
+| 类型                 | 说明                                                                           |
+| ------------------ | ---------------------------------------------------------------------------- |
+| `array`            | 可以用作散列、映射、字典、集合、堆栈等的结构。                                                      |
+| `boolean`          | 布尔值表示真值。 它可以是`true`或`false`。                                                 |
+| `char`             | 能包含基本字符集的机器的最小可寻址单元。                                                         |
+| `float`/`double`   | 双精度浮点型。 大小依赖于平台。                                                             |
+| `integer`          | 带符号的整形 至少16位的大小。                                                             |
+| `long`             | 长有符号整数类型。 至少32位。                                                             |
+| `string`           | A string is a series of characters, where a character is the same as a byte. |
+| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                          |
+| `unsigned integer` | Unsigned integers. 至少16位的大小。                                                 |
+| `unsigned long`    | Same as `long`, but unsigned.                                                |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A `boolean` expresses a truth value. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
+A `boolean` expresses a truth value. 它可以是`true`或`false`。 Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
