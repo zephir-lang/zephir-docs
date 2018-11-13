@@ -1,18 +1,18 @@
-# 基本语法
+# Basic Syntax
 
-在本章中, 我们将讨论文件和命名空间、变量声明、杂项语法约定以及其他几个一般概念的组织。
+In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
-## 在文件和命名空间中组织代码
+## Organizing Code in Files and Namespaces
 
-在 php 中, 您可以将代码放置在任何文件中, 而不需要特定的结构。 在 Zephir中, 每个文件都必须包含一个类 (并且只有一个类)。 每个类都必须有一个命名空间, 并且目录结构必须与所使用的类和命名空间的名称相匹配。 (这类似于 psr-4 自动加载约定, 只是它是由语言本身强制执行的。
+In PHP, you can place code in any file, without a specific structure. In Zephir, every file must contain a class (and just one class). Every class must have a namespace, and the directory structure must match the names of the classes and namespaces used. (This is similar to PSR-4 autoloading conventions, except it's enforced by the language itself.)
 
-例如, 给定以下结构, 每个文件中的类必须是:
+For example, given the following structure, the classes in each file must be:
 
     mylibrary/
         router/
-            exception.zep # 
+            exception.zep # MyLibrary\Router\Exception
         router.zep # MyLibrary\Router
     
 
@@ -36,22 +36,22 @@ Class in `mylibrary/router/exception.zep`:
     }
     
 
-如果文件或类不在预期文件中, 则 Zephir 将引发编译器异常, 反之亦然。
+Zephir will raise a compiler exception if a file or class is not located in the expected file, or vice versa.
 
 <a name='instruction-separation'></a>
 
-## 指令分离
+## Instruction separation
 
-您可能已经注意到, 前一章中的代码示例中很少有分号。 您可以使用分号分隔语句和表达式, 如 java、c/c ++、php 和类似语言:
+You may have already noticed that there were very few semicolons in the code examples in the previous chapter. You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
 
     myObject->myMethod(1, 2, 3); echo "world";
     
 
 <a name='comments'></a>
 
-## 注释
+## Comments
 
-Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `/* ... */`:
+Zephir supports 'C'/'C++' comments. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
 
     // this is a one line comment
     
@@ -60,43 +60,43 @@ Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `
      */
     
 
-在大多数语言中，注释只是编译器/解释器忽略的文本。 在Zephir中，多行注释也用作docblock，它们被导出到生成的代码中，因此它们是语言的一部分!
+In most languages, comments are simply text ignored by the compiler/interpreter. In Zephir, multi-line comments are also used as docblocks, and they're exported to the generated code, so they're part of the language!
 
-如果docblock不在预期的位置，编译器将抛出异常。
+If a docblock is not located where it is expected, the compiler will throw an exception.
 
 <a name='variable-declarations'></a>
 
-## 变量声明
+## Variable Declarations
 
-在Zephir中，必须声明给定范围中使用的所有变量。 这为编译器执行优化和验证提供了重要信息。 变量必须是唯一的标识符，它们不能是保留字。
+In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
 
-    // 在同一指令中声明相同类型的变量
+    // Declaring variables for the same type    in the same instruction
     var a, b, c;
     
-    // 在单独的行中声明每个变量
+    // Declaring each variable in separate lines
     var a;
     var b;
     var c;
     
 
-变量可以选择有一个初始兼容的默认值:
+Variables can optionally have an initial compatible default value:
 
-    // 使用默认值声明变量
+    // Declaring variables with default values
     var a = "hello", b = 0, c = 1.0;
     int d = 50; bool some = true;
     
 
-变量名区分大小写，以下变量不同:
+Variable names are case-sensitive, the following variables are different:
 
-    // 不同的变量
+    // Different variables
     var somevalue, someValue, SomeValue;
     
 
 <a name='variable-scope'></a>
 
-## 变量作用域
+## Variable Scope
 
-所有声明的变量都局部作用于声明它们的方法:
+All variables declared are locally scoped to the method where they were declared:
 
     namespace Test;
     
@@ -120,22 +120,22 @@ Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `
 
 <a name='super-global'></a>
 
-## 超全局
+## Super Globals
 
-Zephir不支持全局变量——不允许从PHP代码块访问全局变量。 然而，您可以访问PHP的超全局变量，如下所示:
+Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
 
-    // 从_POST获取值
+    // Getting a value from _POST
     let price = _POST["price"];
     
-    // 从_SERVER读取值
+    // Read a value from _SERVER
     let requestMethod = _SERVER["REQUEST_METHOD"];
     
 
 <a name='local-symbol-table'></a>
 
-## 本地符号表
+## Local Symbol Table
 
-PHP中的每个方法或上下文都有一个符号表，允许您以非常动态的方式编写变量:
+Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
 
     <?php
     
@@ -144,7 +144,7 @@ PHP中的每个方法或上下文都有一个符号表，允许您以非常动�
     echo $$a; // prints 100
     
 
-Zephir没有实现这个特性，因为所有变量都被编译为低级变量，而且无法知道在特定上下文中存在哪些变量。 如果您想在当前PHP符号表中创建一个变量，您可以使用以下语法:
+Zephir does not implement this feature, since all variables are compiled down to low-level variables, and there is no way to know which variables exist in a specific context. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
 
     // Set variable $name in PHP
     let {"name"} = "hello";
