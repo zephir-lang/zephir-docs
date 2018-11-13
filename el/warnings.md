@@ -1,6 +1,6 @@
 # Compiler Warnings
 
-Το πρόγραμμα μεταγλώττισης δημιουργεί προειδοποιήσεις όταν εντοπίζει καταστάσεις όπου ο κώδικας μπορεί να βελτιωθεί, ή μπορεί να αποφευχθεί πιθανό σφάλμα.
+The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
 
 Warnings can be enabled via command line parameters, or can be added to the `config.json` to enable or disable them more permanently.
 
