@@ -1,10 +1,10 @@
-# Розділи в phpinfo()
+# Phpinfo() sections
 
-Як і більшість PHP-розширень, Zephir-розширення здатні показати інформацію у виводі [phpinfo()](http://php.net/manual/en/function.phpinfo.php). Зазвичай ця інформація відноситься до директив, даних оточення і т.д.
+Як і більшість PHP-розширень, Zephir-розширення здатні показати інформацію у виводі [phpinfo()](http://php.net/manual/en/function.phpinfo.php). This information is usually related to directives, environment data, etc.
 
 Типово, кожне Zephir-розширення додає базову таблицю у вивід`phpinfo()`, яка показує версію розширення.
 
-Ви можете додати більше директив, додавши наступну конфігурацію в файл `config.json`:
+You can add more directives by adding the following configuration to the `config.json` file:
 
     "info": [
         {
@@ -24,6 +24,6 @@
     ]
     
 
-Ця інформація буде показана наступним чином:
+This information will be shown as follows:
 
 ![](/images/content/info.png)
