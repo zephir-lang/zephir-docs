@@ -1,18 +1,18 @@
-# Clases y Objetos
+# Classes and Objects
 
-Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.
+Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
 
 <a name='classes'></a>
 
 ## Clases
 
-Cada archivo de Zephir debe implementar una clase o una interfaz (y sólo una). Una estructura de clase es muy similar a una clase en PHP:
+Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
 
 ```zep
 namespace Test;
 
 /**
- * Esta es una clase de ejemplo
+ * This is a sample class
  */
 class MyClass
 {
@@ -24,15 +24,15 @@ class MyClass
 
 ### Modificadores de Clase
 
-Son soportadas los siguientes modificadores de clase:
+The following class modifiers are supported:
 
-*final*: Si una clase tiene este modificador no puede ser extendida:
+*Final*: If a class has this modifier it cannot be extended:
 
 ```zep
 namespace Test;
 
 /**
- * Esta clase no puede se extendida por otras clases
+ * This class cannot be extended by another class
  */
 final class MyClass
 {
@@ -40,13 +40,13 @@ final class MyClass
 }
 ```
 
-*abstract*: Si una clase tiene este modificador no puede ser instanciada:
+*Abstract*: If a class has this modifier it cannot be instantiated:
 
 ```zep
 namespace Test;
 
 /**
- * Esta clase no puede ser instanciada
+ * This class cannot be instantiated
  */
 abstract class MyClass
 {
@@ -56,11 +56,11 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 
-### Implementación de Interfaces
+### Implementing Interfaces
 
-Las clases de Zephir pueden implementar cualquier cantidad de interfaces, siempre que estas clases sean `visible` para que la clase las utilice. Sin embargo, hay ocasiones en que la clase Zephir (y posteriormente la extensión) puede requerir implementar una interfaz que se construya en una extensión diferente.
+Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
 
-Si quieren implementar `MiddlewareInterface` de la extensión `PSR`, deberemos crear una interface `stub`:
+If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-Desde aquí podemos utilizar la interfaz `stub` a lo largo de nuestra extensión.
+From here we can use the `stub` interface throughout our extension.
 
 ```php
 /**
@@ -84,7 +84,7 @@ public function shouldExtendMiddlewareInterface()
 {
     if (!extension_loaded('psr')) {
         $this->markTestSkipped(
-            "La extensión PSR no esta cargada"
+            "The psr extension is not loaded"
         );
     }
 
@@ -94,13 +94,13 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTA** Es responsabilidad del desarrollador asegurarse de que todas las referencias externas estén presentes antes de que se cargue la extensión. Entonces para el ejemplo anterior, la extensión [PSR](https://pecl.php.net/package/psr) tiene que estar cargada **antes** que la extensión construida en Zephir este cargada.
+**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
 
 <a name='implementing-methods'></a>
 
 ## Implementación de Métodos
 
-La palabra clave "function" introduce un método. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
+The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zep
 namespace Test;
@@ -125,7 +125,7 @@ class MyClass
 }
 ```
 
-Los métodos pueden recibir parámetros obligatorios y opcionales:
+Methods can receive required and optional parameters:
 
 ```zep
 namespace Test;
@@ -134,7 +134,7 @@ class MyClass
 {
 
     /**
-     * Todos los parámetros son obligatorios
+     * All parameters are required
      */
     public function doSum1(a, b)
     {
@@ -142,7 +142,7 @@ class MyClass
     }
 
     /**
-     * Solo 'a' es obligatorio, 'b' es opcional y tiene un valor por defecto
+     * Only 'a' is required, 'b' is optional and it has a default value
      */
     public function doSum2(a, b = 3)
     {
@@ -150,7 +150,7 @@ class MyClass
     }
 
     /**
-     * Ambos parámetros son opcionales
+     * Both parameters are optional
      */
     public function doSum3(a = 1, b = 2)
     {
@@ -158,7 +158,7 @@ class MyClass
     }
 
     /**
-     * Los parámetros son obligatorios y sus valores deben ser del tipo integer
+     * Parameters are required and their values must be integer
      */
     public function doSum4(int a, int b)
     {
@@ -166,7 +166,7 @@ class MyClass
     }
 
     /**
-     * Tipos estáticos con valores por defecto
+     * Static typed with default values
      */
     public function doSum4(int a = 4, int b = 2)
     {
@@ -179,27 +179,27 @@ class MyClass
 
 ### Parámetros opcionales nulos
 
-Zephir se asegura de que el valor de una variable permanezca del tipo como la variable fue declarada. Esto hace que Zephir convierta el valor null al valor más cercado:
+Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
 
 ```zep
 public function foo(int a = null)
 {
-    echo a; // si no es pasado "a" imprime 0
+    echo a; // if "a" is not passed it prints 0
 }
 
 public function foo(boolean a = null)
 {
-    echo a; // si no es pasado "a" imprime false
+    echo a; // if "a" is not passed it prints false
 }
 
 public function foo(string a = null)
 {
-    echo a; // si no es pasado "a" imprime una cadena de texto vacía
+    echo a; // if "a" is not passed it prints an empty string
 }
 
 public function foo(array a = null)
 {
-    var_dump(a); // si no es pasado "a" imprime un array vacío
+    var_dump(a); // if "a" is not passed it prints an empty array
 }
 ```
 
@@ -207,29 +207,29 @@ public function foo(array a = null)
 
 ### Visibilidades soportadas
 
-* Público: los métodos marcados como `public` se exportan a la extensión PHP; Esto significa que métodos públicos son accesibles para el código PHP y para la extensión.
+* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
-* Protegido: los métodos marcados como `protected` se exportan a la extensión PHP; esto significa que métodos protegidos son accesibles para el código PHP y para la extensión. Sin embargo, sólo se pueden llamar estos métodos protegidos en el ámbito de la clase o en clases que la heredan.
+* Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
 
-* Privado: los métodos marcados como `private` no se exportan a la extensión PHP; esto significa que métodos privados sólo son accesibles a la clase donde está implementados.
+* Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### Modificadores Soportados
 
-* Estáticos: los métodos con el modificador `static` sólo se pueden llamar en un contexto estático (de la clase, no de un objeto).
+* Static: Methods with this modifier can only be called in a static context (from the class, not an object).
 
-* Final: Si un método tiene el modificador `final` no puede ser sobre cargar.
+* Final: If a method has this modifier it cannot be overriden.
 
-* Obsoleto: los métodos que se marcan como `deprecated` arrojan un error `E_DEPRECATED` cuando se les llama.
+* Deprecated: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Métodos abreviados de getter/setter
 
-Como en C#, en Zephir puede utilizar métodos abreviados get/set/toString. Esta característica le permite escribir fácilmente setters y getters para las propiedades, sin implementar explícitamente los métodos como tales.
+Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
 
-Por ejemplo, sin atajos necesitaríamos un código como el siguiente:
+For example, without shortcuts we would need code like:
 
 ```zep
 namespace Test;
@@ -267,7 +267,7 @@ class MyClass
 }
 ```
 
-Es posible escribir el mismo código utilizando los siguiente métodos abreviados:
+You can write the same code using shortcuts as follows:
 
 ```zep
 namespace App;
@@ -284,13 +284,13 @@ class MyClass
 }
 ```
 
-Cuando el código es compilado, estos métodos son exportados como métodos reales, pero usted no tiene que escribirlos manualmente.
+When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
 
 <a name='implementing-methods-return-type-hints'></a>
 
 ### Tipo de valor devuelto
 
-Los métodos en clases e interfaces pueden tener "sugerencias de tipo de retorno". Estos proporcionarán información adicional útil al compilador para informarle sobre los errores en su aplicación. Considere el siguiente ejemplo:
+Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Considere el siguiente ejemplo:
 
 ```zep
 namespace App;
@@ -299,17 +299,17 @@ class MyClass
 {
     public function getSomeData() -> string
     {
-        // esto lanzará una excepción del compilador
-        // ya que el valor devuelto (booleano) no coincide
-        // la cadena de tipo devuelta esperada
+        // this will throw a compiler exception
+        // since the returned value (boolean) does not match
+        // the expected returned type string
         return false;
     }
 
     public function getSomeOther() -> <App\MyInterface>
     {
-        // esto lanzará una excepción del compilador
-        // si el objeto devuelto no implementa
-        // la interfaz esperada App\MyInterface
+        // this will throw a compiler exception
+        // if the returned object does not implement
+        // the expected interface App\MyInterface
         return new App\MyObject;
     }
 
@@ -317,19 +317,19 @@ class MyClass
     {
         var myObject;
 
-        // la sugerencia de tipo le dirá al compilador que
-        // myObject es una instancia de una clase
-        // que implementa App\MyInterface
+        // the type-hint will tell the compiler that
+        // myObject is an instance of a class
+        // that implement App\MyInterface
         let myObject = this->getSomeOther();
 
-        // el compilador comprobará si App\MyInterface
-        // implementa un método llamado "someMethod"
+        // the compiler will check if App\MyInterface
+        // implements a method called "someMethod"
         echo myObject->someMethod();
     }
 }
 ```
 
-Un método puede tener más de un tipo de valor devuelto. Cuando se definen varios tipos, debe utilizarse el operador | para separar estos tipos.
+A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
 
 ```zep
 namespace App;
@@ -350,7 +350,7 @@ class MyClass
 
 ### Tipo de valor devuelto: void
 
-Los métodos también se pueden marcar como `void`. Esto significa que un método no puede devolver datos:
+Methods can also be marked as `void`. This means that a method is not allowed to return any data:
 
 ```zep
 public function setConnection(connection) -> void
@@ -359,10 +359,10 @@ public function setConnection(connection) -> void
 }
 ```
 
-¿Por qué esto es útil? Porque el compilador puede detectar si el programa espera un valor devuelto de estos métodos y producir una excepción del compilador:
+Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
 
 ```zep
-let myDb = db->setConnection(connection); // esto producirá una excepción
+let myDb = db->setConnection(connection); // this will produce an exception
 myDb->execute("SELECT * FROM robots");
 ```
 
@@ -370,7 +370,7 @@ myDb->execute("SELECT * FROM robots");
 
 ### Tipos de datos de parámetro Estricto/Flexible
 
-En Zephir, puede especificar el tipo de datos de cada parámetro de un método. Por defecto, estos tipos de datos son flexibles; esto significa que si se pasa un valor con un tipo de datos equivocado (pero compatible), Zephir intentará convertir de forma transparente al tipo esperado:
+In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -379,16 +379,16 @@ public function filterText(string text, boolean escape=false)
 }
 ```
 
-El método anterior funcionará con las siguientes llamadas:
+Above method will work with the following calls:
 
 ```zep
 <?php
 
 $o->filterText(1111, 1);              // OK
-$o->filterText("un texto", null);    // OK
+$o->filterText("some text", null);    // OK
 $o->filterText(null, true);           // OK
-$o->filterText("un texto", true);    // OK
-$o->filterText(array(1, 2, 3), true); // FALLO
+$o->filterText("some text", true);    // OK
+$o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
 However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
@@ -405,11 +405,11 @@ Now, most of the calls with a wrong type will cause an exception due to the inva
 ```zep
 <?php
 
-$o->filterText(1111, 1);              // FALLO
-$o->filterText("un texto", null);    // OK
-$o->filterText(null, true);           // FALLO
-$o->filterText("un texto", true);    // OK
-$o->filterText(array(1, 2, 3), true); // FALLO
+$o->filterText(1111, 1);              // FAIL
+$o->filterText("some text", null);    // OK
+$o->filterText(null, true);           // FAIL
+$o->filterText("some text", true);    // OK
+$o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
 By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
@@ -425,11 +425,11 @@ namespace App;
 
 class MyClass
 {
-    // "a" es solo lectura
+    // "a" is read-only
     public function getSomeData(const string a)
     {
-        // esto arrojará una excepción del compilador
-        let a = "hola";
+        // this will throw a compiler exception
+        let a = "hello";
     }
 }
 ```
@@ -438,7 +438,7 @@ When a parameter is declared as read-only, the compiler can make safe assumption
 
 <a name='implementing-properties'></a>
 
-## Implementación de Propiedades
+## Implementing Properties
 
 Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
 
@@ -489,7 +489,7 @@ class MyClass
     protected myProperty2 = false;
     protected myProperty3 = 2.0;
     protected myProperty4 = 5;
-    protected myProperty5 = "mi valor";
+    protected myProperty5 = "my value";
 }
 ```
 
