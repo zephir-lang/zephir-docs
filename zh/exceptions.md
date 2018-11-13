@@ -1,10 +1,10 @@
-# 例外情况
+# Exceptions
 
-Zephir以非常低的级别实现异常，为PHP提供类似的行为和功能。
+Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.
 
-抛出异常时，可以使用` catch `块来捕获异常并允许开发人员提供正确的处理：
+When an exception is thrown, a `catch` block can be used to capture the exception and allow the developer to provide proper handling:
 
-##### 可以在` try `块内抛出异常。 处理发生在` catch `块中，与PHP完全相同。
+##### Exceptions can be thrown inside the `try` block. Handling happens in the `catch` block, exactly as in PHP.
 
     var e;
     try {
@@ -17,14 +17,14 @@ Zephir以非常低的级别实现异常，为PHP提供类似的行为和功能�
     }
     
 
-Zephir还提供了一个“silent”` try `块，它只是忽略该块中产生的任何异常：
+Zephir also provides a "silent" `try` block, that simply ignores any exceptions produced within that block:
 
     try {
         throw new \Exception("This is an exception");
     }
     
 
-如果你在'catch'ing时不需要异常变量，那么你可以放心地不提供它：
+If you don't need an exception variable when 'catch'ing, then you can safely not provide it:
 
     try {
     
@@ -36,7 +36,7 @@ Zephir还提供了一个“silent”` try `块，它只是忽略该块中产生�
     }
     
 
-一个简单的` catch `块可用于捕获多种类型的异常：
+A single `catch` block can be used to catch multiple types of exception:
 
     var e;
     try {
@@ -49,7 +49,7 @@ Zephir还提供了一个“silent”` try `块，它只是忽略该块中产生�
     }
     
 
-Zephir允许您抛出文字或静态类型变量，就像它们是异常的消息一样：
+Zephir allows you to throw literals or static typed variables as if they were the message of the exception:
 
 ##### throw new \Exception("Test");
 
@@ -71,11 +71,10 @@ Zephir允许您抛出文字或静态类型变量，就像它们是异常的消�
     throw 123.123;
     
 
-Zephir的异常提供了相同的方法来知道PHP异常发生的异常发生的位置。 也就是说，` Exception::getFile()</ 0>和<code> Exception::getLine()</ 0>返回抛出异常的Zephir代码中的位置：</p>
+Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is, `Exception::getFile()` and `Exception::getLine()` return the location in the Zephir code where the exception was thrown:
 
-<pre><code>例外：模型'机器人'上不存在静态方法'someMethod'
-File=phalcon/mvc/model.zep Line=4042
-#0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
-#1 /home/scott/test.php(64): Robots::someMethod()
-#2 {main}
-`</pre>
+    Exception: The static method 'someMethod' does not exist on model 'Robots'
+    File=phalcon/mvc/model.zep Line=4042
+    #0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
+    #1 /home/scott/test.php(64): Robots::someMethod()
+    #2 {main}
