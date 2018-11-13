@@ -538,19 +538,19 @@ echo this->myProperty;
 与更新一样, 可以通过以下方式动态读取属性:
 
 ```zep
-// Avoid compiler check or read a dynamic user defined property
+// 避免编译器检查或读取动态用户定义属性
 echo this->{"myProperty"};
 
-// Read using a variable name
+// 使用变量名读取
 let someProperty = "myProperty";
 echo this->{someProperty}
 ```
 
 <a name='class-constants'></a>
 
-## Class Constants
+## 类常量
 
-Classes may contain class constants that remain the same and unchangeable once the extension is compiled. Class constants are exported to the PHP extension, allowing them to be used from PHP.
+类可能包含类常量, 这些常量在编译扩展后保持不变和不可更改。 类常量导出到 php 扩展, 允许从 php 中使用它们。
 
 ```zep
 namespace Test;
@@ -562,7 +562,7 @@ class MyClass
 }
 ```
 
-Class constants can be accessed using the class name and the static operator (::):
+类常量可以使用类名和静态运算符 (::) 访问:
 
 ```zep
 namespace Test;
@@ -582,9 +582,9 @@ class MyClass
 
 <a name='calling-methods'></a>
 
-## Calling Methods
+## 调用方法
 
-Methods can be called using the object operator (->) as in PHP:
+方法可以使用对象操作符(->) 调用，就像在PHP中:
 
 ```zep
 namespace Test;
@@ -603,7 +603,7 @@ class MyClass
 }
 ```
 
-Static methods must be called using the static operator (::):
+必须使用静态操作符(::) 调用静态方法:
 
 ```zep
 namespace Test;
@@ -622,7 +622,7 @@ class MyClass
 }
 ```
 
-You can call methods in a dynamic manner as follows:
+您可以按照以下动态方式调用方法:
 
 ```zep
 namespace Test;
@@ -647,9 +647,9 @@ class MyClass
 
 ### 参数名
 
-Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
+Zephir 支持按名称或关键字参数调用方法参数。 如果您希望以任意顺序传递参数、记录参数的含义或以更优雅的方式指定参数，那么命名参数可能非常有用。
 
-Consider the following example. A class called `Image` has a method that receives four parameters:
+请考虑下面的示例. 一个名为 `Image` 的类具有接收四个参数的方法:
 
 ```zep
 namespace Test;
@@ -663,14 +663,14 @@ class Image
 }
 ```
 
-Using the standard method calling approach:
+使用标准方法调用方法:
 
 ```zep
 i->chop(100);             // width=100, height=400, x=0, y=0
 i->chop(100, 50, 10, 20); // width=100, height=50, x=10, y=20
 ```
 
-Using named parameters, you can:
+使用命名参数, 您可以:
 
 ```zep
 i->chop(width: 100);              // width=100, height=400, x=0, y=0
@@ -679,7 +679,7 @@ i->chop(height: 200, width: 100); // width=100, height=200, x=0, y=0
 i->chop(x: 20, y: 30);            // width=600, height=400, x=20, y=30
 ```
 
-When the compiler (at compile time) does not know the correct order of these parameters, they must be resolved at runtime. In this case, there could be a minimum additional extra overhead:
+当编译器(在编译时) 不知道这些参数的正确顺序时，必须在运行时解析它们。 在这种情况下，可能会有一个最小的额外额外开销:
 
 ```zep
 let i = new {someClass}();
