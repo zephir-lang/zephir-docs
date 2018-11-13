@@ -1,16 +1,16 @@
-# 控制结构
+# Control Structures
 
-Zephir实现了一组简化的控制结构，这些结构用类似的语言表示，如C、PHP等。
+Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
 
 <a name='conditionals'></a>
 
-## 条件
+## Conditionals
 
 <a name='conditionals-if'></a>
 
-### If 语句
+### If Statement
 
-`if`语句对一个表达式求值，如果求值为true，则执行以下代码块。 括号是必需的。 一个`如果`可以有一个可选的`else`子句, 而且多个`if`/`else`构造可以放在一起 
+`if` statements evaluate an expression, executing the following block if the evaluation is true. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
 
     if false {
         echo "false?";
@@ -23,7 +23,7 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
     }
     
 
-`elseif`也有条件
+`elseif` clauses are also available:
 
     if a > 100 {
         echo "to big";
@@ -36,16 +36,16 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
     }
     
 
-计算表达式中的括号是可选的:
+Parentheses in the evaluated expression are optional:
 
     if a < 0 { return -1; } else { if a > 0 { return 1; } }
     
 
 <a name='conditionals-switch'></a>
 
-### Switch 语句
+### Switch Statement
 
-一个`switch`根据一系列预定义的文字值计算表达式，执行相应的`case`块或回落到`default`块:
+A `switch` evaluates an expression against a series of predefined literal values, executing the corresponding `case` block or falling back to the `default` block case:
 
     switch count(items) {
     
@@ -70,9 +70,9 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
 
 <a name='loops-while'></a>
 
-### While 语句
+### While Statement
 
-`while` 表示循环, 只要其给定条件的计算结果为 true, 该循环就会迭代到:
+`while` denotes a loop that iterates as long as its given condition evaluates as true:
 
     let counter = 5;
     while counter {
@@ -82,9 +82,9 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
 
 <a name='loops-loop'></a>
 
-### Loop 语句
+### Loop Statement
 
-除了 `while`, `loop` 还可用于创建无限循环:
+In addition to `while`, `loop` can be used to create infinite loops:
 
     let n = 40;
     loop {
@@ -96,16 +96,16 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
 
 <a name='loops-for'></a>
 
-### For 语句
+### For Statement
 
-`for` 是一种控制结构, 允许遍历数组或字符串:
+A `for` is a control structure that allows to traverse arrays or strings:
 
     for item in ["a", "b", "c", "d"] {
         echo item, "\n";
     }
     
 
-可以通过为键和值提供变量来获取哈希中的键：
+Keys in hashes can be obtained by providing a variable for both the key and value:
 
     let items = ["a": 1, "b": 2, "c": 3, "d": 4];
     
@@ -114,25 +114,25 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
     }
     
 
-还可以指示` for </ 0>循环以相反的顺序遍历数组或字符串：</p>
+A `for` loop can also be instructed to traverse an array or string in reverse order:
 
-<pre><code>let items = [1, 2, 3, 4, 5];
+    let items = [1, 2, 3, 4, 5];
+    
+    for value in reverse items {
+        echo value, "\n";
+    }
+    
 
-for value in reverse items {
-    echo value, "\n";
-}
-`</pre> 
+A `for` loop can be used to traverse string variables:
 
-` for </ 0>循环可用于遍历字符串变量：</p>
+    string language = "zephir"; char ch;
+    
+    for ch in language {
+        echo "[", ch ,"]";
+    }
+    
 
-<pre><code>string language = "zephir"; char ch;
-
-for ch in language {
-    echo "[", ch ,"]";
-}
-`</pre> 
-
-按相反顺序：
+In reverse order:
 
     string language = "zephir"; char ch;
     
@@ -141,27 +141,27 @@ for ch in language {
     }
     
 
-遍历一系列整数值` </ 0>可以写成如下：</p>
+A standard `for` that traverses a range of integer values can be written as follows:
 
-<pre><code>for i in range(1, 10) {
-    echo i, "\n";
-}
-`</pre> 
+    for i in range(1, 10) {
+        echo i, "\n";
+    }
+    
 
-要避免对未使用的变量发出警告，可以在`for`语句中使用匿名变量，方法是使用占位符` _ </ 0>替换变量名称：</p>
+To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
 
-<h5>使用键, 但忽略该值</h5>
+##### Use the key but ignore the value
 
-<pre><code>for key, _ in data {
-    echo key, "\n";
-}
-`</pre> 
+    for key, _ in data {
+        echo key, "\n";
+    }
+    
 
 <a name='loops-break'></a>
 
-### Break 语句
+### Break Statement
 
-`break` 结束当前 `while`、`for` 或 `loop` 语句的执行:
+`break` ends execution of the current `while`, `for` or `loop` statement:
 
     for item in ["a", "b", "c", "d"] {
         if item == "c" {
@@ -173,9 +173,9 @@ for ch in language {
 
 <a name='loops-continue'></a>
 
-### Continue 语句
+### Continue Statement
 
-在循环结构中使用 `continue` 跳过当前循环迭代的其余部分, 并在条件计算时继续执行, 然后在下一次迭代的开始时继续执行。
+`continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
 
     let a = 5;
     while a > 0 {
@@ -191,18 +191,18 @@ for ch in language {
 
 ## Require
 
-` require </ 0>语句动态地包含和执行指定的PHP文件。 请注意，Zend Engine将Zephir包含的文件解释为普通的PHP文件。 <code> require </ 0>不允许Zephdr代码在运行时包含其他Zephir文件。</p>
+The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephdr code to include other Zephir files at runtime.
 
-<pre><code>if file_exists(path) {
-    require path;
-}
-`</pre> 
+    if file_exists(path) {
+        require path;
+    }
+    
 
 <a name='let'></a>
 
 ## Let
 
-`let` 语句用于可变变量、属性和数组。 变量默认是不可变的，并且该指令使它们在语句的作用域内是可变的：
+The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
 
     let name = "Tony";           // simple variable
     let this->name = "Tony";     // object property
@@ -210,7 +210,7 @@ for ch in language {
     let self::_name = "Tony";    // static property
     
 
-此指令也必须用于递增/递减变量：
+Also this instruction must be used to increment/decrement variables:
 
     let number++;           // increment simple variable
     let number--;           // decrement simple variable
@@ -218,7 +218,6 @@ for ch in language {
     let this->number--;     // decrement object property
     
 
-可以在单个` let </ 0>操作中执行多个突变：</p>
+Multiple mutations can be performed in a single `let` operation:
 
-<pre><code>let price = 1.00, realPrice = price, status = false;
-`</pre>
+    let price = 1.00, realPrice = price, status = false;
