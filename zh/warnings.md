@@ -1,15 +1,15 @@
-# Compiler Warnings
+# 编译警告
 
-The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
+当发现代码可以改进或避免潜在错误的情况时，编译器会发出警告。
 
-Warnings can be enabled via command line parameters, or can be added to the `config.json` to enable or disable them more permanently.
+警告可以通过命令行参数启用，也可以添加到`config.json`以更永久地启用或禁用它们。
 
-You can enable warnings by passing their name prefixed by `-w`:
+可以通过将警告的名称以`-w`为前缀传递来启用警告:
 
     zephir -wunused-variable -wnonexistent-function
     
 
-Warnings can be disabled by passing their name prefixed by `-W`:
+警告可以通过传递前缀为`-W`的名称来禁用:
 
     zephir -Wunused-variable -Wnonexistent-function
     
