@@ -193,7 +193,7 @@ zephir_fetch_params(1, 1, 0, &n);
     }
     
 
-Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and can thus be transformed into static variables taking advantage of other compilation passes. After this pass, the compiler automatically rewrites this code to:
+变量`a`， `b`， `i`仅用于数学运算，因此可以利用其他编译通道转换为静态变量。 在此传递之后, 编译器会自动将此代码重写为:
 
     public function someCalculations(int a, int b)
     {
@@ -210,10 +210,10 @@ Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and
     }
     
 
-By disabling this compilation pass, all variables will maintain the type with which they were originally declared, without optimization.
+通过禁用此编译过程, 所有变量都将维护最初声明它们的类型, 而不进行优化。
 
 <a name='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
 
-This enables a second type inference pass, which improves the work done based on the data gathered by the first static type inference pass.
+这将启用第二个类型推断传递, 从而改进基于第一个静态类型推断传递所收集的数据所做的工作。
