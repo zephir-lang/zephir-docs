@@ -22,7 +22,7 @@
 
 ## call-gatherer-pass
 
-This pass counts how many times a function or method is called within the same method. 这允许编译器引入内联缓存, 以避免方法或函数查找:
+这个遍历计算在同一个方法中调用一个函数或方法的次数。 这允许编译器引入内联缓存, 以避免方法或函数查找:
 
     class MyClass extends OtherClass
     {
