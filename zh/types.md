@@ -206,7 +206,7 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
     let ch = name[2];
     
 
-##### `char` literals must be enclosed in single quotes
+##### `char`文字必须用单引号括起来
 
     let ch = 'Z';
     
@@ -215,7 +215,7 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
 
 ### 整数/无符号整数
 
-`integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
+`integer`值与动态值中的`integer`成员相似。 赋给整数变量的值仍然是整数:
 
     int a;
     
@@ -223,17 +223,17 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
         a = -70;
     
 
-##### automatically casted to 100
+##### 自动转换为100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### 自动转换为0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### 自动转换为0
 
     let a = false;
     
@@ -255,17 +255,17 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
     let a = -70;
     
 
-##### automatically casted to 100
+##### 自动转换为100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### 自动转换为0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### 自动转换为0
 
     let a = false;
     
@@ -297,17 +297,17 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
         a = -70;
     
 
-##### automatically casted to 100
+##### 自动转换为100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### 自动转换为0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### 自动转换为0
 
     let a = false;
     
@@ -329,17 +329,17 @@ Zephir允许从PHP对象实例化、操作、调用方法、读取类常量等:
     let  a = -70;
     
 
-##### automatically casted to 100
+##### 自动转换为100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### 自动转换为0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### 自动转换为0
 
     let a = false;
     
