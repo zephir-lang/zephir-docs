@@ -14,7 +14,7 @@ You can register an `include` and a `code` for each group's supported `INIT` and
 
 ## iniciadores
 
-El bloque de `initializers` se ve algo así:
+The `initializers` block looks something like this:
 
     {
         "initializers": [
@@ -50,7 +50,7 @@ El bloque de `initializers` se ve algo así:
 
 ## destructores
 
-Y el bloque de los `destructors` algo así:
+And the `destructors` block like this:
 
     {
         "destructors": [

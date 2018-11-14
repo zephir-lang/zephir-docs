@@ -1,28 +1,28 @@
-# 优化
+# Optimizations
 
-因为 Zephir 中的代码有时非常高级, 所以 c 编译器可能无法足够地优化此代码。
+Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
 
-由于其 AOT (ahead-of-time) 编译器, Zephir能够在编译时优化代码, 有可能缩短其执行时间, 或减少程序所需的内存。
+Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its execution time, or reducing the memory required by the program.
 
-您可以通过传递 `-f` 前缀的名称来启用优化:
+You can enable optimizations by passing the name prefixed by `-f`:
 
     zephir -fstatic-type-inference -flocal-context-pass
     
 
-可以通过传递 `-fno-` 前缀的名称来禁用优化:
+Optimizations can be disabled by passing the name prefixed by `-fno-`:
 
     zephir -fno-static-type-inference -fno-call-gatherer-pass
     
 
-对于最新版本的 zephir-parser, 可以在配置文件 `config.json` 中配置优化。
+With recent versions of zephir-parser, optimizations can be configured in the config file `config.json`.
 
-支持以下优化:
+The following optimizations are supported:
 
 <a name='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
 
-This pass counts how many times a function or method is called within the same method. 这允许编译器引入内联缓存, 以避免方法或函数查找:
+This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce inline caches to avoid method or function lookups:
 
     class MyClass extends OtherClass
     {
@@ -39,7 +39,7 @@ This pass counts how many times a function or method is called within the same m
 
 ## check-invalid-reads
 
-在编译过程中, 这个标志将强制检查类型来检测无效的读取。 这可确保使用默认值 (以及内部指针) 正确定义和初始化所有变量。 一个例子:
+This flag will force checking types to detect for invalid reads during the compilation process. This ensures that all variables are properly defined and initialized with their default values (as well as the internal pointers). An example is:
 
 ```zep
 namespace Acme;
@@ -56,7 +56,7 @@ class ForInRange
 }
 ```
 
-与之比较：
+compared to:
 
 ```zep
 namespace Acme;
@@ -73,7 +73,7 @@ class ForInRange
 }
 ```
 
-就Zephir 而言, 这两个例子都是完全有效的。 不同之处在于生成的 c 代码:
+Both examples are perfectly valid as far as Zephir is concerned. The difference is in the generated C code:
 
 ```c
 zval *n;
@@ -83,7 +83,7 @@ zval *n;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-与之比较：
+compared to:
 
 ```c
 zval *n = NULL;
@@ -93,7 +93,7 @@ zval *n = NULL;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-对于任何编程语言, 始终使用默认值和类型初始化变量是一种很好的做法。 不这样做, 可能会给应用程序带来意想不到的后果, 并引入错误、内存泄漏等。 通过在`config.json` 中使用 `check-invalid-read`标志我们确保指针和它们各自的C变量被正确初始化。 Zephir 开发人员不会看到他们的代码发生更改。 这将影响生成的C代码。
+It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir developers will not see a change in their code. This affects the generated C code.
 
 More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
 

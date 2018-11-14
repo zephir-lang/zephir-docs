@@ -1,68 +1,68 @@
-# Типи
+# Types
 
-Zephir поєднує в собі статичну та динамічну типізацію. У цьому розділі ми розглянемо підтримувані типи даних та їхню поведінку.
+Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
 
 <a name='dynamic-types'></a>
 
-## Динамічні типи
+## Dynamic Types
 
-Динамічних змінні працюють так само, як і в PHP. Їм можна призначати та перепризначати значення різних типів без обмежень.
+Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
 
-Динамічна змінна має бути оголошеною з ключовим словом `var`. Поведінка майже така сама, як і в PHP:
+A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
 
     var a, b, c;
     
 
-##### Ініціалізація змінних
+##### Initialize variables
 
     let a = "hello", b = false;
     
 
-##### Зміна їхнього значення
+##### Change their values
 
     let a = "hello", b = false;
     let a = 10, b = "140";
     
 
-##### Виконання операцій
+##### Perform operations
 
     let c = a + b;
     
 
-Вони можуть бути восьми типів:
+They can have eight types:
 
-| Тип              | Опис                                                                                                  |
-| ---------------- | ----------------------------------------------------------------------------------------------------- |
-| `array`          | Масив — це впорядкована мапа. Мапа — це тип, який встановлює відповідність між значеннями та ключами. |
-| `boolean`        | Булевий тип виражає значення істини. Він може бути `true` або `false`.                                |
-| `float`/`double` | Число з рухомою комою. Розмір числа залежить від платформи.                                           |
-| `integer`        | Цілі числа. Розмір числа залежить від платформи.                                                      |
-| `null`           | Особливе значення NULL, яке означає змінну в якої немає значення.                                     |
-| `object`         | Абстракція об'єкта як у PHP.                                                                          |
-| `resource`       | Ресурс містить посилання на зовнішній ресурс.                                                         |
-| `string`         | Рядок є послідовністю символів, де кожен символ є одним байтом.                                       |
+| Type             | Description                                                                 |
+| ---------------- | --------------------------------------------------------------------------- |
+| `array`          | An array is an ordered map. A map is a type that associates values to keys. |
+| `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`.      |
+| `float`/`double` | Floating point numbers. The size of a float is platform-dependent.          |
+| `integer`        | Integer numbers. The size of an integer is platform-dependent.              |
+| `null`           | The special NULL value represents a variable with no value.                 |
+| `object`         | Object abstraction like in PHP.                                             |
+| `resource`       | Ресурс містить посилання на зовнішній ресурс.                               |
+| `string`         | A string is series of characters, where a character is the same as a byte.  |
 
-Більше про типи ви можете дізнатися в [Документації PHP](http://www.php.net/manual/en/language.types.php).
+Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
 ### Array
 
-Реалізація масивів у Zephir в основному така сама як у PHP: впорядковані мапи оптимізовані для деяких випадків; можна розглядати як масив список (вектор) хеш-таблицю (реалізація мапи), словник, колекція, стек, черги. Можливі й інші трактування. Значеннями масиву можуть бути інші масиви, дерева, та багатовимірні масиви.
+The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
 
-Синтаксис оголошення масиву дещо відрізняється від PHP:
+The syntax to define arrays is slightly different than in PHP:
 
-##### Для оголошення повинні використовуватися квадратні дужки
+##### Square braces must be used to define arrays
 
     let myArray = [1, 2, 3];
     
 
-##### Для оголошення масиву з ключами повинна використовуватися двокрапка
+##### Double colon must be used to define hashes' keys
 
     let myHash = ["first": 1, "second": 2, "third": 3];
     
 
-Ключами масиву можуть лише цілі числа та рядки:
+Only long and string values can be used as keys:
 
     let myHash = [0: "first", 1: true, 2: null];
     let myHash = ["first": 7.0, "second": "some string", "third": false];
@@ -72,7 +72,7 @@ Zephir поєднує в собі статичну та динамічну ти�
 
 ### Boolean
 
-Булевий тип виражає значення істини. Він може бути `true` або `false`:
+A boolean expresses a truth value. It can be either `true` or `false`:
 
     var a = false, b = true;
     
@@ -81,36 +81,36 @@ Zephir поєднує в собі статичну та динамічну ти�
 
 ### Float/Double
 
-Числа з рухомою комою (також відомі як "двійкові", "числа з подвійною точністю", "дійсні числа"). Літерали з рухомою комою - це вирази з однією або кількома цифрами, а потім - крапка (.), після нього одна або кілька цифр. Розмір числа після крапки залежить від платформи, хоча максимум ~1.8e308 з точністю приблизно 14 десяткових цифр мають загальне значення (64-бітний форматі IEEE).
+Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
     var number = 5.0, b = 0.014;
     
 
-Числа з рухомою комою мають обмежену точність. Хоча це залежить від системи, як і в PHP, Zephir використовує формат подвійної точності IEEE 754, який дасть максимальну відносну помилку через округлення порядку 1.11e-16.
+Floating point numbers have limited precision. Although it depends on the system, Zephir uses the same IEEE 754 double precision format used by PHP, which will give a maximum relative error due to rounding in the order of 1.11e-16.
 
 <a name='dynamic-types-integer'></a>
 
 ### Integer
 
-Цілі числа. Розмір числа залежить від платформи, хоча максимальне значення для 32-бітного знакового числа є 2,147,483,647. 64-розрядні платформи зазвичай мають максимальне значення близько 9E18. PHP не підтримує цілі числа без знаку, тому Zephir теж має це обмеження:
+Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
 
     var a = 5, b = 10050;
     
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Програмне переповнення цілих чисел
+### Integer overflow
 
-На відміну від PHP Zephir автоматично не перевіряє рівень заповненості цілого числа. Як і в C, якщо ви виконуєте операції які можуть повернути велике число ви повинні використати такі типи як `unsigned long` або ж `float`:
+Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
 
     unsigned long my_number = 2147483648;
     
 
 <a name='dynamic-types-objects'></a>
 
-### Об'єкт
+### Object
 
-Zephir дозволяє створювати екземпляри PHP класів, маніпулювати PHP-об'єктами, викликати методи, читати константи класу та інші речі, які дозволяють PHP-об'єкти:
+Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
 
     let myObject = new \stdClass(),
         myObject->someProperty = "my value";
@@ -120,28 +120,28 @@ Zephir дозволяє створювати екземпляри PHP класі
 
 ### String
 
-Рядок `string` є послідовністю символів, де кожен символ є одним байтом. Як і PHP, Zephir підтримує лише 256-символьний набір, а отже не дає вбудованої підтримки Unicode.
+A `string` is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
 
     var today = "friday";
     
 
-У Zephir рядкові літерали можна задавати лише взявши їх у подвійні лапки (як у C або Go). Одинарні лапки зарезервовані для типу даних `char`.
+In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for `char` data type.
 
-У рядках підтримуються наступні символи екранування:
+The following escape sequences are supported in strings:
 
-| Послідовність | Опис                   |
-| ------------- | ---------------------- |
-| `\t`         | Горизонтальний відступ |
-| `\n`         | Переведення рядка      |
-| `\r`         | Повернення каретки     |
-| `\`        | Бекслеш                |
-| `\"`         | Подвійні лапки         |
+| Sequence | Description     |
+| -------- | --------------- |
+| `\t`    | Horizontal tab  |
+| `\n`    | Line feed       |
+| `\r`    | Carriage return |
+| `\`   | Backslash       |
+| `\"`    | double-quote    |
 
     var today    = "\tfriday\n\r",
         tomorrow = "\tsaturday";
     
 
-Zephir не підтримує інтерполяцію змінних як це було в PHP; натомість ви повинні використовувати конкатенацію:
+In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
 
     var name = "peter";
     
@@ -150,44 +150,44 @@ Zephir не підтримує інтерполяцію змінних як це
 
 <a name='static-types'></a>
 
-## Статичні типи
+## Static Types
 
-Статичні типи дозволяють розробнику оголосити та використовувати змінні з певними типами, які доступні у C. Змінна, яка оголошена з статичним типом не може змінювати свій тип. Проте, це дозволяє компілятору провести кращу оптимізацію. Підтримуються наступні типи даних:
+Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
-| Тип                | Опис                                                                                |
-| ------------------ | ----------------------------------------------------------------------------------- |
-| `array`            | Структура, яка може бути використана як хеш, мапа, словник, колекція, стек, і т. д. |
-| `boolean`          | Булевий тип виражає значення істини. Він може бути `true` або `false`.              |
-| `char`             | Найменша адресна одиниця машини, яка може містити символ з базового набору.         |
-| `float`/`double`   | Тип з рухомою комою подвійної точності. Розмір числа залежить від платформи.        |
-| `integer`          | Знакові числа. Розмір не менше 16 біт.                                              |
-| `long`             | Довге знакове число. Розмір не менше 32 біт.                                        |
-| `string`           | Рядок є послідовністю символів, де кожен символ є одним байтом.                     |
-| `unsigned char`    | Той же розмір, що і `char`, але гарантовано беззнаковий.                            |
-| `unsigned integer` | Беззнакове ціле. Розмір не менше 16 біт.                                            |
-| `unsigned long`    | Той же розмір, що й `long`, але беззнаковий.                                        |
+| Type               | Description                                                                    |
+| ------------------ | ------------------------------------------------------------------------------ |
+| `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
+| `boolean`          | A boolean expresses a truth value. It can be either `true` or `false`.         |
+| `char`             | Smallest addressable unit of the machine that can contain basic character set. |
+| `float`/`double`   | Double precision floating-point type. The size is platform-dependent.          |
+| `integer`          | Signed integers. At least 16 bits in size.                                     |
+| `long`             | Long signed integer type. At least 32 bits in size.                            |
+| `string`           | A string is a series of characters, where a character is the same as a byte.   |
+| `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                            |
+| `unsigned integer` | Unsigned integers. At least 16 bits in size.                                   |
+| `unsigned long`    | Same as `long`, but unsigned.                                                  |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-Логічний тип `boolean` виражає значення істини. Він може бути `true` або `false`. На відміну від поведінки динамічного типу статичні логічні типи залишаються логічними (`true` or `false`), не залежно від того, яке значення їм призначається:
+A `boolean` expresses a truth value. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
     
 
-##### автоматично перетворюється на `true`
+##### automatically casted to `true`
 
     let a = 100;
     
 
-##### автоматично перетворюється на `false`
+##### automatically casted to `false`
 
     let a = 0;
     
 
-##### кидає виняток компіляції
+##### throws a compiler exception
 
     let a = "hello";
     
@@ -196,17 +196,17 @@ Zephir не підтримує інтерполяцію змінних як це
 
 ### Char/Unsigned Char
 
-Змінна типу `char` найменша адресна одиниця машини, яка може містити символ з базового набору (як правило, 8 біт). Змінна типу `char` може використовуватися для зберігання будь-яких символів у рядку:
+`char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
 
     char ch, string name = "peter";
     
 
-##### зберігає "t"
+##### stores 't'
 
     let ch = name[2];
     
 
-##### Літерали типу `char` мають бути взяті в одинарні лапки
+##### `char` literals must be enclosed in single quotes
 
     let ch = 'Z';
     
@@ -215,7 +215,7 @@ Zephir не підтримує інтерполяцію змінних як це
 
 ### Integer/Unsigned Integer
 
-Значення дійсних чисел подібні аналогам дійсних чисел в динамічних типах. Значення, присвоєні цілим змінним, залишаються цілими:
+`integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
     int a;
     
@@ -223,61 +223,61 @@ Zephir не підтримує інтерполяцію змінних як це
         a = -70;
     
 
-##### автоматично перетворюється на 100
+##### automatically casted to 100
 
     let a = 100.25;
     
 
-##### автоматично перетворюється на 0
+##### automatically casted to 0
 
     let a = null;
     
 
-##### автоматично перетворюється на 0
+##### automatically casted to 0
 
     let a = false;
     
 
-##### кидає виняток компіляції
+##### throws a compiler exception
 
     let a = "hello";
     
 
-Беззнакові цілі `unsigned integer` схожі на цілі числа `integer`, але вони не мають знака, це означає, що ви не можете зберігати від’ємні числа в таких змінних:
+`unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
 
     uint a;
     
     let a = 50;
     
 
-##### автоматично перетворюється на 70
+##### automatically casted to 70
 
     let a = -70;
     
 
-##### автоматично перетворюється на 100
+##### automatically casted to 100
 
     let a = 100.25;
     
 
-##### автоматично перетворюється на 0
+##### automatically casted to 0
 
     let a = null;
     
 
-##### автоматично перетворюється на 0
+##### automatically casted to 0
 
     let a = false;
     
 
-##### кидає виняток компіляції
+##### throws a compiler exception
 
     let a = "hello";
     
 
-Тип `unsigned integer` вдвічі більший стандартного `integer`. Присвоєння беззнакових цілих стандартним цілим (знаковим) може привести до втрати даних:
+`unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
 
-##### можлива втрата даних для `b`
+##### potential loss of data for `b`
 
     uint a, int b;
     
@@ -297,22 +297,22 @@ Zephir не підтримує інтерполяцію змінних як це
         a = -70;
     
 
-##### автоматично перетворюється на 100
+##### automatically casted to 100
 
     let a = 100.25;
     
 
-##### автоматично перетворюється на 0
+##### automatically casted to 0
 
     let a = null;
     
 
-##### автоматично перетворюється на 0
+##### automatically casted to 0
 
     let a = false;
     
 
-##### кидає виняток компіляції
+##### throws a compiler exception
 
     let a = "hello";
     
@@ -324,34 +324,34 @@ Zephir не підтримує інтерполяцію змінних як це
     let a = 50;
     
 
-##### автоматично перетворюється на 70
+##### automatically casted to 70
 
     let  a = -70;
     
 
-##### автоматично перетворюється на 100
+##### automatically casted to 100
 
     let a = 100.25;
     
 
-##### автоматично перетворюється на 0
+##### automatically casted to 0
 
     let a = null;
     
 
-##### автоматично перетворюється на 0
+##### automatically casted to 0
 
     let a = false;
     
 
-##### кидає виняток компіляції
+##### throws a compiler exception
 
     let a = "hello";
     
 
 `unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
 
-##### можлива втрата даних для `b`
+##### potential loss of data for `b`
 
     ulong a, long b;
     
@@ -363,9 +363,9 @@ Zephir не підтримує інтерполяцію змінних як це
 
 ### String
 
-Рядок є послідовністю символів, де кожен символ є одним байтом. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
+A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
 
-Коли змінна оголошується як `string` вона ніколи не змінить свого типу:
+When a variable is declared `string` it never changes its type:
 
     string a;
     

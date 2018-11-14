@@ -1,18 +1,18 @@
-# Clases y Objetos
+# Classes and Objects
 
-Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.
+Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
 
 <a name='classes'></a>
 
 ## Clases
 
-Cada archivo de Zephir debe implementar una clase o una interfaz (y sólo una). Una estructura de clase es muy similar a una clase en PHP:
+Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
 
 ```zep
 namespace Test;
 
 /**
- * Esta es una clase de ejemplo
+ * This is a sample class
  */
 class MyClass
 {
@@ -24,15 +24,15 @@ class MyClass
 
 ### Modificadores de Clase
 
-Son soportadas los siguientes modificadores de clase:
+The following class modifiers are supported:
 
-*final*: Si una clase tiene este modificador no puede ser extendida:
+*Final*: If a class has this modifier it cannot be extended:
 
 ```zep
 namespace Test;
 
 /**
- * Esta clase no puede se extendida por otras clases
+ * This class cannot be extended by another class
  */
 final class MyClass
 {
@@ -40,13 +40,13 @@ final class MyClass
 }
 ```
 
-*abstract*: Si una clase tiene este modificador no puede ser instanciada:
+*Abstract*: If a class has this modifier it cannot be instantiated:
 
 ```zep
 namespace Test;
 
 /**
- * Esta clase no puede ser instanciada
+ * This class cannot be instantiated
  */
 abstract class MyClass
 {
@@ -56,11 +56,11 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 
-### Implementación de Interfaces
+### Implementing Interfaces
 
-Las clases de Zephir pueden implementar cualquier cantidad de interfaces, siempre que estas clases sean `visible` para que la clase las utilice. Sin embargo, hay ocasiones en que la clase Zephir (y posteriormente la extensión) puede requerir implementar una interfaz que se construya en una extensión diferente.
+Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
 
-Si quieren implementar `MiddlewareInterface` de la extensión `PSR`, deberemos crear una interface `stub`:
+If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-Desde aquí podemos utilizar la interfaz `stub` a lo largo de nuestra extensión.
+From here we can use the `stub` interface throughout our extension.
 
 ```php
 /**
@@ -84,7 +84,7 @@ public function shouldExtendMiddlewareInterface()
 {
     if (!extension_loaded('psr')) {
         $this->markTestSkipped(
-            "La extensión PSR no esta cargada"
+            "The psr extension is not loaded"
         );
     }
 
@@ -94,13 +94,13 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTA** Es responsabilidad del desarrollador asegurarse de que todas las referencias externas estén presentes antes de que se cargue la extensión. Entonces para el ejemplo anterior, la extensión [PSR](https://pecl.php.net/package/psr) tiene que estar cargada **antes** que la extensión construida en Zephir este cargada.
+**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
 
 <a name='implementing-methods'></a>
 
 ## Implementación de Métodos
 
-La palabra clave "function" introduce un método. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
+The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zep
 namespace Test;
@@ -125,7 +125,7 @@ class MyClass
 }
 ```
 
-Los métodos pueden recibir parámetros obligatorios y opcionales:
+Methods can receive required and optional parameters:
 
 ```zep
 namespace Test;
@@ -134,7 +134,7 @@ class MyClass
 {
 
     /**
-     * Todos los parámetros son obligatorios
+     * All parameters are required
      */
     public function doSum1(a, b)
     {
@@ -142,7 +142,7 @@ class MyClass
     }
 
     /**
-     * Solo 'a' es obligatorio, 'b' es opcional y tiene un valor por defecto
+     * Only 'a' is required, 'b' is optional and it has a default value
      */
     public function doSum2(a, b = 3)
     {
@@ -150,7 +150,7 @@ class MyClass
     }
 
     /**
-     * Ambos parámetros son opcionales
+     * Both parameters are optional
      */
     public function doSum3(a = 1, b = 2)
     {
@@ -158,7 +158,7 @@ class MyClass
     }
 
     /**
-     * Los parámetros son obligatorios y sus valores deben ser del tipo integer
+     * Parameters are required and their values must be integer
      */
     public function doSum4(int a, int b)
     {
@@ -166,7 +166,7 @@ class MyClass
     }
 
     /**
-     * Tipos estáticos con valores por defecto
+     * Static typed with default values
      */
     public function doSum4(int a = 4, int b = 2)
     {
@@ -179,27 +179,27 @@ class MyClass
 
 ### Parámetros opcionales nulos
 
-Zephir se asegura de que el valor de una variable permanezca del tipo como la variable fue declarada. Esto hace que Zephir convierta el valor null al valor más cercado:
+Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
 
 ```zep
 public function foo(int a = null)
 {
-    echo a; // si no es pasado "a" imprime 0
+    echo a; // if "a" is not passed it prints 0
 }
 
 public function foo(boolean a = null)
 {
-    echo a; // si no es pasado "a" imprime false
+    echo a; // if "a" is not passed it prints false
 }
 
 public function foo(string a = null)
 {
-    echo a; // si no es pasado "a" imprime una cadena de texto vacía
+    echo a; // if "a" is not passed it prints an empty string
 }
 
 public function foo(array a = null)
 {
-    var_dump(a); // si no es pasado "a" imprime un array vacío
+    var_dump(a); // if "a" is not passed it prints an empty array
 }
 ```
 

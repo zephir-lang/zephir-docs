@@ -1,2 +1,2 @@
 - [Hello World!](/[[language]]/[[version]]/intrductiono#hello-world)
-- [一个 Zephir 的尝试](/[[language]]/[[version]]/introduction#a-taste-of-zephir)
+- [A taste of Zephir](/[[language]]/[[version]]/introduction#a-taste-of-zephir)

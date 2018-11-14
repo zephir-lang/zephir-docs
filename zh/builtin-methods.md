@@ -1,8 +1,8 @@
-# 内建方法
+# Built-In Methods
 
-如前所述，Zephir提倡面向对象编程。 与静态类型相关的变量也可以作为对象处理。
+As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
 
-比较这两种方法:
+Compare these two methods:
 
     public function binaryToHex(string! s) -> string
     {
@@ -20,7 +20,7 @@
     }
     
 
-与
+And:
 
     public function binaryToHex(string! s) -> string
     {
@@ -38,59 +38,59 @@
     }
     
 
-它们都有相同的功能，但是第二个使用的是面向对象编程。 对静态类型变量调用方法对性能没有任何影响，因为Zephir在内部将代码从面向对象版本转换为过程版本。
+They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.
 
 <a name='string'></a>
 
 ## String
 
-下面的字符串内置方法可用:
+The following string built-in methods are available:
 
-| OO                   | 实际过程                  | 说明                     |
-| -------------------- | --------------------- | ---------------------- |
-| `s->format()`     | `sprintf(s, "%s", x)` | 返回格式化的字符串              |
-| `s->index("foo")` | `strpos(s, "foo")`    | 查找字符串中第一个出现的子字符串的位置    |
-| `s->length()`     | `strlen(s)`           | 获取字符串长度                |
-| `s->lower()`      | `strtolower(s)`       | 使字符串小写                 |
-| `s->lowerfirst()` | `lcfirst(s)`          | 使字符串的第一个字符小写           |
-| `s->md5()`        | `md5(s)`              | 计算字符串的 md5 哈希          |
-| `s->sha1()`       | `sha1(s)`             | 计算字符串的 sha1 哈希         |
-| `s->trim()`       | `trim(s)`             | 删除字符串的开头和结尾的空格 (或其他字符) |
-| `s->trimleft()`   | `ltrim(s)`            | 从字符串开头的条带空白 (或其他字符)    |
-| `s->trimright()`  | `rtrim(s)`            | 删除字符串末端的空白字符（或者其他字符）   |
-| `s->upper()`      | `strtoupper(s)`       | 使字符串大写                 |
-| `s->upperfirst()` | `ucfirst(s)`          | 使字符串的第一个字符大写           |
+| OO                   | Procedural            | Description                                                                   |
+| -------------------- | --------------------- | ----------------------------------------------------------------------------- |
+| `s->format()`     | `sprintf(s, "%s", x)` | Return a formatted string                                                     |
+| `s->index("foo")` | `strpos(s, "foo")`    | Find the position of the first occurrence of a substring in a string          |
+| `s->length()`     | `strlen(s)`           | Get string length                                                             |
+| `s->lower()`      | `strtolower(s)`       | Make a string lowercase                                                       |
+| `s->lowerfirst()` | `lcfirst(s)`          | Make a string's first character lowercase                                     |
+| `s->md5()`        | `md5(s)`              | Calculate the md5 hash of a string                                            |
+| `s->sha1()`       | `sha1(s)`             | Calculate the sha1 hash of a string                                           |
+| `s->trim()`       | `trim(s)`             | Strip whitespace (or other characters) from the beginning and end of a string |
+| `s->trimleft()`   | `ltrim(s)`            | Strip whitespace (or other characters) from the beginning of a string         |
+| `s->trimright()`  | `rtrim(s)`            | Strip whitespace (or other characters) from the end of a string               |
+| `s->upper()`      | `strtoupper(s)`       | Make a string uppercase                                                       |
+| `s->upperfirst()` | `ucfirst(s)`          | Make a string's first character uppercase                                     |
 
 <a name='array'></a>
 
 ## Array
 
-可用的数组内置方法如下:
+The following array built-in methods are available:
 
-| OO                   | 实际过程                    | 说明                      |
-| -------------------- | ----------------------- | ----------------------- |
-| `a->combine(b)`   | `array_combine(a, b)`   | 通过使用一个数组表示键, 为其值创建另一个数组 |
-| `a->diff()`       | `array_diff(a)`         | 计算数组的差异                 |
-| `a->flip()`       | `array_flip(a)`         | 将数组中的所有键与其关联的值交换        |
-| `a->hasKey()`     | `array_key_exists(a)`   | 检查数组中是否存在给定的键或索引        |
-| `a->intersect(b)` | `array_intersect(a, b)` | 计算数组的交集                 |
-| `a->join(" ")`    | `join(" ", a)`          | 使用字符串联接数组元素             |
-| `a->keys()`       | `array_keys(a)`         | 返回数组的所有键或键的子集           |
-| `a->merge(b)`     | `array_merge(a, b)`     | 合并一个或多个数组               |
-| `a->pad()`        | `array_pad(a, b)`       | 以指定长度将一个值填充进数组          |
-| `a->rev()`        | `array_reverse(a)`      | 返回具有相反顺序的元素的数组          |
-| `a->reversed()`   | `array_reverse(a)`      | 返回具有相反顺序的元素的数组          |
-| `a->split()`      | `array_chunk(a)`        | 将数组拆分为多个块               |
-| `a->values()`     | `array_values(a)`       | 返回数组的所有值                |
-| `a->walk()`       | `array_walk(a)`         | 使用用户自定义函数对数组中的每个元素做回调处理 |
+| OO                   | Procedural              | Description                                                             |
+| -------------------- | ----------------------- | ----------------------------------------------------------------------- |
+| `a->combine(b)`   | `array_combine(a, b)`   | Creates an array by using one array for keys and another for its values |
+| `a->diff()`       | `array_diff(a)`         | Computes the difference of arrays                                       |
+| `a->flip()`       | `array_flip(a)`         | Exchanges all keys with their associated values in an array             |
+| `a->hasKey()`     | `array_key_exists(a)`   | Checks if the given key or index exists in the array                    |
+| `a->intersect(b)` | `array_intersect(a, b)` | Computes the intersection of arrays                                     |
+| `a->join(" ")`    | `join(" ", a)`          | Join array elements with a string                                       |
+| `a->keys()`       | `array_keys(a)`         | Return all the keys or a subset of the keys of an array                 |
+| `a->merge(b)`     | `array_merge(a, b)`     | Merge one or more arrays                                                |
+| `a->pad()`        | `array_pad(a, b)`       | Pad array to the specified length with a value                          |
+| `a->rev()`        | `array_reverse(a)`      | Return an array with elements in reverse order                          |
+| `a->reversed()`   | `array_reverse(a)`      | Return an array with elements in reverse order                          |
+| `a->split()`      | `array_chunk(a)`        | Split an array into chunks                                              |
+| `a->values()`     | `array_values(a)`       | Return all the values of an array                                       |
+| `a->walk()`       | `array_walk(a)`         | Apply a user supplied function to every member of an array              |
 
 <a name='char'></a>
 
 ## Char
 
-提供了以下字符内置方法:
+The following char built-in methods are available:
 
-| OO               | 实际过程                |
+| OO               | Procedural          |
 | ---------------- | ------------------- |
 | `ch->toHex()` | `sprintf("%X", ch)` |
 
@@ -98,8 +98,8 @@
 
 ## Integer
 
-以下是可用的整数内置方法:
+The following integer built-in methods are available:
 
-| OO            | 实际过程     |
-| ------------- | -------- |
-| `i->abs()` | `abs(i)` |
+| OO            | Procedural |
+| ------------- | ---------- |
+| `i->abs()` | `abs(i)`   |

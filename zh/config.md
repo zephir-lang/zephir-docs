@@ -1,8 +1,8 @@
-# 配置文件
+# Configuration File
 
-每个Zephir扩展都有一个名为`config.json`的配置文件。 每当构建或生成扩展时，Zephir都会读取这个文件，它允许开发人员修改扩展或编译器的行为。
+Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
 
-该文件使用[JSON](http://en.wikipedia.org/wiki/JSON)作为配置格式:
+This file uses [JSON](http://en.wikipedia.org/wiki/JSON) as its configuration format:
 
     {
         "namespace": "test",
@@ -13,15 +13,15 @@
     }
     
 
-此文件中定义的设置覆盖Zephir提供的任何默认设置。
+Settings defined in this file override any factory default setting provided by Zephir.
 
-支持以下设置:
+The following settings are supported:
 
 <a name='api'></a>
 
 ## api
 
-用于为您的扩展配置自动生成的HTML文档。 `path`指定在何处创建与项目根相关的文档。 使用`base-url`生成`sitemap.xml`文件为您的文档。 `theme`用于设置用于生成文档的主题(通过`name`设置)，以及主题支持传递的任何选项(通过`options`设置)。 最后，`theme-directories`被用来提供额外的搜索路径，以找到你想要的主题。
+Used to configure the automatically generated HTML documentation for your extension. `path` specifies where to create the documentation relative to the project root. `base-url` is used to generate a `sitemap.xml` file for your documentation. `theme` is used to set the theme used for the generated documentation (via the `name` setting), and any options the theme supports passing (via the `options` setting). Finally, `theme-directories` is used to provide additional search paths for finding your desired theme.:
 
     {
         "api": {
@@ -48,7 +48,7 @@
 
 ## author
 
-开发扩展的公司、开发商、机构等:
+Company, developer, institution, etc that developed the extension:
 
 ```json
 {
@@ -60,7 +60,7 @@
 
 ## backend
 
-提供一种配置扩展所使用的Zend引擎后端的方法。 目前，仅支持`templatepath`，允许您在`ZendEngine2` </code> ZendEngine3</0>之间进行选择:
+Provides a way to configure the Zend Engine backend used by your extension. At the moment, only the `templatepath`, which lets you select between `ZendEngine2` and `ZendEngine3`, is supported:
 
     {
         "backend": {
@@ -73,7 +73,7 @@
 
 ## constants-sources
 
-要将C源文件中的常量导入到项目中，请在此设置中列出文件的路径:
+To import just the constants in a C source file into your project, list the file's path in this setting:
 
     {
         "constants-sources": [
@@ -86,7 +86,7 @@
 
 ## description
 
-扩展描述-任何文字描述您的扩展:
+Extension description - any text describing your extension:
 
     {
         "description": "My amazing extension"
@@ -97,7 +97,7 @@
 
 ## destructors
 
-此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 查看[lifecycle hooks](/[[language]]/[[version]]/lifecycle)章节了解更多信息。
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
 
     {
         "destructors": [
@@ -139,7 +139,7 @@
 
 ## extension-name
 
-扩展的基本文件名。 它必须遵循与`namespace`设置相同的规则，如果没有给出>设置，则将其用作后备。
+The base filename of the extension. It must follow the same rules as the `namespace` setting, which is used as a fallback in case this one isn't given.
 
     {
         "extension-name": "test"
@@ -150,7 +150,7 @@
 
 ## external-dependencies
 
-您可以在自己的扩展中直接包含来自另一个名称空间/扩展的类，在这里进行配置:
+You can include a class from another namespace/extension directly in your own extension by configuring it here:
 
     {
         "external-dependencies": {
@@ -164,7 +164,7 @@
 
 ## extra
 
-Contains extra settings that also can be passed, as is, on the command line. 目前，这是`export-clases`(生成从其他C代码访问类的头文件)，和`indent`(选择使用`tabs`或`spaces`缩进生成的文件中的代码):
+Contains extra settings that also can be passed, as is, on the command line. Currently, that's `export-clases` (generate headers for accessing your classes from other C code), and `indent` (select between using `tabs` or `spaces` to indent code in generated files):
 
     {
         "extra": {
@@ -178,7 +178,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## extra-cflags
 
-您想要添加到编译过程中的任何附加标志:
+Any additional flags you want to add to the compilation process:
 
     {
         "extra-cflags": "-I/usr/local/Cellar/libevent/2.0.21_1/include"
@@ -189,7 +189,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## extra-classes
 
-如果你已经在C语言中实现了一个PHP类，你可以直接将它包含在你的扩展中，在这里进行配置:
+If you already have a PHP class implemented in C, you can include it directly in your extension by configuring it here:
 
     {
         "extra-classes": [
@@ -207,7 +207,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## extra-libs
 
-您想要添加到编译过程中的任何其他库:
+Any additional libraries you want to add to the compilation process:
 
     {
         "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
@@ -218,7 +218,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## extra-sources
 
-任何其他文件，你想添加到编译过程-搜索目录是相对于`ext`文件夹您的项目:
+Any additional files you want to add to the compilation process - the search directory is relative to the `ext` folder of your project:
 
     {
         "extra-sources": [
@@ -231,7 +231,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## globals
 
-扩展全局可用。 Check the [globals](/[[language]]/[[version]]/globals) chapter for more information.
+Extension globals available. Check the [globals](/[[language]]/[[version]]/globals) chapter for more information.
 
     {
         "globals": {
@@ -251,7 +251,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## info
 
-`phpinfo()` sections. 查看[phpinfo()](/[[language]]/[[version]]/phpinfo)章节了解更多信息。
+`phpinfo()` sections. Check the [phpinfo()](/[[language]]/[[version]]/phpinfo) chapter for more information.
 
     {
         "info": [
@@ -270,7 +270,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## initializers
 
-这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 查看[lifecycle hooks](/[[language]]/[[version]]/lifecycle)章节了解更多信息。
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
 
     {
         "initializers": [
@@ -306,7 +306,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## name
 
-在编译后的C代码中使用的扩展名-只能包含ascii字符:
+Extension name used in compiled C code - can only contain ascii characters:
 
     {
         "name": "test"
@@ -317,7 +317,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## namespace
 
-扩展的名称空间-它必须是一个简单的标识符，对应于正则表达式`[a- za - z0 -9\_]+`:
+The namespace of the extension - it must be a simple identifier respecting the regular expression `[a-zA-Z0-9\_]+`:
 
     {
         "namespace": "test"
@@ -328,7 +328,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## optimizations
 
-在当前项目中应该启用或禁用的编译器优化:
+Compiler optimizations which should be enabled or disabled in the current project:
 
     {
         "optimizations": {
@@ -343,7 +343,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## optimizer-dirs
 
-你自己的优化器可以找到的目录-搜索目录是相对于根文件夹的项目:
+The directories where your own optimizers can be found - the search directory is relative to the root folder of your project:
 
     {
         "optimizer-dirs": [
@@ -356,7 +356,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## package-dependencies
 
-声明库依赖关系(版本约束将被`pkg-config`检查，可以使用`=`，`>=`， `<=`，或`*`):
+Declare library dependencies (version constraints will be checked by `pkg-config`, and can use one of the operators `=`, `>=`, `<=`, or `*`):
 
     {
         "package-dependencies": {
@@ -371,7 +371,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## prototype-dir
 
-允许您提供描述构建自己的扩展所需的其他扩展的原型文件，因此它们不需要在构建阶段安装:
+Allows you to provide prototype files describing other extensions required to build your own, so they don't necessarily need to be installed during the build phase:
 
     {
         "prototype-dir": {
@@ -385,7 +385,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## requires
 
-允许您列出其他扩展所需的建立/使用您自己:
+Allows you to list other extensions as required to build/use your own:
 
     {
         "requires": {
@@ -401,7 +401,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## silent
 
-允许您列出其他扩展所需的建立/使用您自己:
+Suppresses most/all output from `zephir` commands (same as `-w`):
 
     {
         "silent": false
@@ -412,7 +412,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## stubs
 
-此设置允许调整IDE文档存根生成的方式。 `path`集，其中应该创建存根，而`stubs-run-after-generate`集，当您的代码被编译为C时，是否自动(重新)构建存根:
+This setting allows adjusting the way IDE documentation stubs are generated. `path` sets where the stubs should be created, while `stubs-run-after-generate` sets whether to automatically (re)build the stubs when your code is compiled to C:
 
     {
         "stubs": {
@@ -426,7 +426,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## verbose
 
-在错误消息中显示由`zephir`命令生成的异常的更多细节(也可以启用`-v`，或禁用`-V`):
+Displays more detail in error messages from exceptions generated by `zephir` commands (can also enable with `-v`, or disable with `-V`):
 
     {
         "verbose": false
@@ -437,7 +437,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## version
 
-扩展版本-必须遵循正则表达式`[0-9]+\.[0-9]+\.[0-9]+`:
+Extension version - must follow the regular expression `[0-9]+\.[0-9]+\.[0-9]+`:
 
     {
         "version": "1.2.0"
@@ -448,7 +448,7 @@ Contains extra settings that also can be passed, as is, on the command line. 目
 
 ## warnings
 
-在当前项目中应该启用或禁用的编译器警告:
+Compiler warnings which should be enabled or disabled in the current project:
 
     {
         "warnings": {

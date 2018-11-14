@@ -1,12 +1,12 @@
-# 类与对象
+# Classes and Objects
 
-Zephir 提倡面向对象编程。 这就是为什么您只能在扩展中导出方法和类的原因。 您还将看到, 在大多数情况下, 运行时错误会引发异常, 而不是致命错误或警告。
+Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
 
 <a name='classes'></a>
 
-## 类
+## Classes
 
-每个 Zephir 文件都必须实现一个类或接口 (并且只有一个)。 类结构与 php 类非常相似:
+Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
 
 ```zep
 namespace Test;
@@ -22,11 +22,11 @@ class MyClass
 
 <a name='classes-modifiers'></a>
 
-### 类修饰符
+### Class Modifiers
 
-支持以下类修饰符:
+The following class modifiers are supported:
 
-*Final*: 如果类具有此修饰符, 则无法对其进行扩展:
+*Final*: If a class has this modifier it cannot be extended:
 
 ```zep
 namespace Test;
@@ -40,7 +40,7 @@ final class MyClass
 }
 ```
 
-*Abstract*: 如果类具有此修饰符, 则无法实例化:
+*Abstract*: If a class has this modifier it cannot be instantiated:
 
 ```zep
 namespace Test;
@@ -56,11 +56,11 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 
-### 实现接口
+### Implementing Interfaces
 
-Zephir 类可以实现任意数量的接口, 前提是这些接口 `显性` 的引用(使用use)。 但是, 有时 Zephir 类 (以及随后的扩展) 可能需要实现在不同扩展中构建的接口。
+Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
 
-如果我们想要实现`MiddlewareInterface`从`PSR`扩展，我们需要创建一个`stub`接口:
+If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-从这里开始，我们可以在整个扩展过程中使用`stub`接口。
+From here we can use the `stub` interface throughout our extension.
 
 ```php
 /**
@@ -94,13 +94,13 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTE**开发人员有责任确保在加载扩展之前存在所有外部引用。 因此，对于上面的示例，在加载Zephir构建的扩展之前，必须先加载[PSR](https://pecl.php.net/package/psr)扩展。
+**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
 
 <a name='implementing-methods'></a>
 
-## 实施方法
+## Implementing Methods
 
-"function" 关键字引入了一种方法。 方法实现PHP中常用的可见性修饰符。 在 Zephir中, 必须明确设置可见性修改器:
+The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zep
 namespace Test;
@@ -125,7 +125,7 @@ class MyClass
 }
 ```
 
-方法可以接收所需的和可选的参数:
+Methods can receive required and optional parameters:
 
 ```zep
 namespace Test;
@@ -177,9 +177,9 @@ class MyClass
 
 <a name='implementing-methods-optional-nullable-parameters'></a>
 
-### 可选参数可以为空
+### Optional nullable parameters
 
-Zephir确保变量的值保持声明的类型不变。 这使得Zephir将空值转换为最近的近似值:
+Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
 
 ```zep
 public function foo(int a = null)
@@ -205,31 +205,31 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-visibilities'></a>
 
-### 支持可见性
+### Supported Visibilities
 
-* Public: 将标记为` Public `的方法导出到PHP扩展; 这意味着公共方法对PHP代码和扩展本身都是可见的。
+* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
-* Protected: 将标记为“Protected”的方法导出到PHP扩展; 这意味着受保护的方法对PHP代码和扩展本身都是可见的。 但是，受保护的方法只能在类的作用域中调用，或者在继承它们的类中调用。
+* Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
 
-* Private: 标记为“Private”的方法不会导出到PHP扩展; 这意味着私有方法只对实现它们的类可见。
+* Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
-### 支持修改器
+### Supported Modifiers
 
-* Static: 使用此修饰符的方法只能在静态上下文(来自类，而不是对象) 中调用。
+* Static: Methods with this modifier can only be called in a static context (from the class, not an object).
 
-* Final: 如果方法具有此修饰符, 则无法对其进行覆盖.
+* Final: If a method has this modifier it cannot be overriden.
 
-* Deprecated: 被标记为`deprecated`的方法在被调用时抛出一个`E_DEPRECATED`错误。
+* Deprecated: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
-### Getter / Setter 快捷方式
+### Getter/Setter shortcuts
 
-和c#一样，您可以在Zephir中使用get/set/toString快捷方式。 该特性允许您轻松编写属性的setter和getter，而无需显式地实现这些方法。
+Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
 
-例如，如果没有快捷方式，我们需要如下代码:
+For example, without shortcuts we would need code like:
 
 ```zep
 namespace Test;
@@ -267,7 +267,7 @@ class MyClass
 }
 ```
 
-您可以使用以下快捷方式编写相同的代码:
+You can write the same code using shortcuts as follows:
 
 ```zep
 namespace App;
@@ -284,13 +284,13 @@ class MyClass
 }
 ```
 
-在编译代码时，这些方法作为实际方法导出，但您不必手动编写它们。
+When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
 
 <a name='implementing-methods-return-type-hints'></a>
 
-### 返回类型提示
+### Return Type Hints
 
-类和接口中的方法可以有“返回类型提示”。 这些将为编译器提供有用的额外信息，以告知您应用程序中的错误。 请考虑下面的示例:
+Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Consider the following example:
 
 ```zep
 namespace App;
@@ -329,7 +329,7 @@ class MyClass
 }
 ```
 
-一个方法可以有多个返回类型。 在定义多个类型时，必须使用操作符|来分隔这些类型。
+A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
 
 ```zep
 namespace App;
@@ -348,9 +348,9 @@ class MyClass
 
 <a name='implementing-methods-return-type-void'></a>
 
-### 返回类型: Void
+### Return Type: Void
 
-方法也可以标记为 `void`。 这意味着不允许方法返回任何数据:
+Methods can also be marked as `void`. This means that a method is not allowed to return any data:
 
 ```zep
 public function setConnection(connection) -> void
@@ -359,7 +359,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? 因为编译器可以检测程序是否期望从这些方法返回值，并产生一个编译器异常:
+Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
 
 ```zep
 let myDb = db->setConnection(connection); // this will produce an exception
@@ -368,9 +368,9 @@ myDb->execute("SELECT * FROM robots");
 
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
 
-### 严格/灵活的参数的数据类型
+### Strict/Flexible Parameter Data-Types
 
-在 Zephir中, 可以指定方法的每个参数的数据类型。 默认情况下, 这些数据类型是灵活的。这意味着, 如果传递了具有错误 (但兼容) 数据类型的值, 则 Zephir 将尝试以透明方式将其转换为预期的数据类型:
+In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -379,7 +379,7 @@ public function filterText(string text, boolean escape=false)
 }
 ```
 
-上述方法将适用于以下调用:
+Above method will work with the following calls:
 
 ```zep
 <?php
@@ -391,7 +391,7 @@ $o->filterText("some text", true);    // OK
 $o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
-但是, 传递错误的类型通常会导致错误。 不正确地使用特定的 api 会产生意外的结果。 通过使用严格的数据类型设置参数, 可以禁止自动转换:
+However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
 
 ```zep
 public function filterText(string! text, boolean escape=false)
@@ -400,7 +400,7 @@ public function filterText(string! text, boolean escape=false)
 }
 ```
 
-现在，由于传递的数据类型无效，大多数类型错误的调用都会导致异常:
+Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
 
 ```zep
 <?php
@@ -412,13 +412,13 @@ $o->filterText("some text", true);    // OK
 $o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
-通过指定严格的参数和灵活的参数，开发人员可以设置他/她真正想要的特定行为。
+By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
 
 <a name='implementing-methods-read-only-parameters'></a>
 
-### 只读参数
+### Read-Only Parameters
 
-使用关键字`const`，您可以将参数标记为只读，这有助于尊重[const-correctness](http://en.wikipedia.org/wiki/Const-correctness)。 属性中不能修改标有此属性的参数 方法:
+Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
 
 ```zep
 namespace App;
@@ -434,13 +434,13 @@ class MyClass
 }
 ```
 
-当一个参数被声明为只读时，编译器可以做出安全的假设，并对这些变量进行进一步的优化。
+When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over these variables.
 
 <a name='implementing-properties'></a>
 
-## 实现属性
+## Implementing Properties
 
-类成员变量称为 "属性"。 默认情况下, 它们的作用与 php 属性相同。 属性被导出到PHP扩展中，并从PHP代码中可见。 属性实现 php 中可用的常规可见性修饰符, 并且在 Zephir中必须显式设置可见性修饰符:
+Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zep
 namespace Test;
@@ -455,7 +455,7 @@ class MyClass
 }
 ```
 
-在类方法中, 可以使用-> (对象运算符) 访问非静态属性:
+Within class methods, non-static properties may be accessed by using -> (Object Operator):
 
 ```zep
 namespace Test;
@@ -645,7 +645,7 @@ class MyClass
 
 <a name='calling-methods-parameters-by-name'></a>
 
-### 参数名
+### Parameters by Name
 
 Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
 
