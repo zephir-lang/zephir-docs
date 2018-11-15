@@ -19,7 +19,7 @@ Every Zephir file must implement a class or an interface (and just one). A class
 ### Class Modifiers
 The following class modifiers are supported:
 
-*Final*: If a class has this modifier it cannot be extended:
+`final`: If a class has this modifier it cannot be extended:
 
     namespace Test;
     
@@ -31,7 +31,7 @@ The following class modifiers are supported:
     
     }
 
-*Abstract*: If a class has this modifier it cannot be instantiated:
+`abstract: If a class has this modifier it cannot be instantiated:
 
     namespace Test;
     
@@ -45,7 +45,7 @@ The following class modifiers are supported:
 
 <a name='implementing-methods'></a>
 ## Implementing Methods
-The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+The `function` keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
 
     namespace Test;
     
@@ -118,7 +118,7 @@ Methods can receive required and optional parameters:
 
 <a name='implementing-methods-optional-nullable-parameters'></a>
 ### Optional nullable parameters
-Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
+Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the `null` value to the closest approximate value:
 
     public function foo(int a = null)
     {
@@ -142,23 +142,23 @@ Zephir ensures that the value of a variable remains of the type the variable was
 
 <a name='implementing-methods-supported-visibilities'></a>
 ### Supported Visibilities
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the  PHP code as well to the extension itself.
+* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
-* Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
 
-* Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
 <a name='implementing-methods-supported-modifiers'></a>
 ### Supported Modifiers
-* Static: Methods with this modifier can only be called in a static context (from the class, not an object).
+* `static`: Methods with this modifier can only be called in a static context (from the class, not an object).
 
-* Final: If a method has this modifier it cannot be overriden.
+* `final`: If a method has this modifier it cannot be overriden.
 
-* Deprecated: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 ### Getter/Setter shortcuts
-Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
+Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
 
 For example, without shortcuts we would need code like:
 
@@ -252,7 +252,7 @@ Methods in classes and interfaces can have "return type hints". These will provi
         }
     }
 
-A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
+A method can have more than one return type. When multiple types are defined, the operator `|` must be used to separate those types.
 
     namespace App;
     
@@ -353,7 +353,7 @@ Class member variables are called "properties". By default, they act the same as
         private myProperty3;
     }
 
-Within class methods, non-static properties may be accessed by using -> (Object Operator):
+Within class methods, non-static properties may be accessed by using `->` (Object Operator):
 
     namespace Test;
     
@@ -389,7 +389,7 @@ Properties can have literal compatible default values. These values must be able
 
 <a name='implementing-properties-updating'></a>
 ## Updating Properties
-Properties can be updated by accessing them using the '->' operator:
+Properties can be updated by accessing them using the `->` operator:
 
     let this->myProperty = 100;
 
@@ -436,7 +436,7 @@ Classes may contain class constants that remain the same and unchangeable once t
         const MYCONSTANT2 = 1.0;
     }
 
-Class constants can be accessed using the class name and the static operator (::):
+Class constants can be accessed using the class name and the static operator `::`:
 
     namespace Test;
     
@@ -454,7 +454,7 @@ Class constants can be accessed using the class name and the static operator (::
 
 <a name='calling-methods'></a>
 ## Calling Methods
-Methods can be called using the object operator (->) as in PHP:
+Methods can be called using the object operator `->` as in PHP:
 
     namespace Test;
     
@@ -471,7 +471,7 @@ Methods can be called using the object operator (->) as in PHP:
         }
     }
 
-Static methods must be called using the static operator (::):
+Static methods must be called using the static operator `::`:
 
     namespace Test;
     
