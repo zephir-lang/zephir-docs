@@ -1,18 +1,18 @@
-# Classes and Objects
+# Clases y Objetos
 
-Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
+Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.
 
 <a name='classes'></a>
 
 ## Clases
 
-Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
+Cada archivo de Zephir debe implementar una clase o una interfaz (y sólo una). Una estructura de clase es muy similar a una clase en PHP:
 
 ```zep
 namespace Test;
 
 /**
- * This is a sample class
+ * Esta es una clase de ejemplo
  */
 class MyClass
 {
@@ -645,7 +645,7 @@ class MyClass
 
 <a name='calling-methods-parameters-by-name'></a>
 
-### Parámetros por Nombre
+### Parameters by Name
 
 Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
 
