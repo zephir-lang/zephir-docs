@@ -58,9 +58,9 @@ abstract class MyClass
 
 ### Implementación de Interfaces
 
-Las clases de Zephir pueden implementar cualquier cantidad de interfaces, siempre que estas clases sean `visible` para que la clase las utilice. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+Las clases de Zephir pueden implementar cualquier cantidad de interfaces, siempre que estas clases sean `visible` para que la clase las utilice. Sin embargo, hay ocasiones en que la clase Zephir (y posteriormente la extensión) puede requerir implementar una interfaz que se construya en una extensión diferente.
 
-If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
+Si quieren implementar `MiddlewareInterface` de la extensión `PSR`, deberemos crear una interface `stub`:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-From here we can use the `stub` interface throughout our extension.
+Desde aquí podemos utilizar la interfaz `stub` a lo largo de nuestra extensión.
 
 ```php
 /**
@@ -84,7 +84,7 @@ public function shouldExtendMiddlewareInterface()
 {
     if (!extension_loaded('psr')) {
         $this->markTestSkipped(
-            "The psr extension is not loaded"
+            "La extensión PSR no esta cargada"
         );
     }
 
@@ -94,13 +94,13 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
+**NOTA** Es responsabilidad del desarrollador asegurarse de que todas las referencias externas estén presentes antes de que se cargue la extensión. Entonces para el ejemplo anterior, la extensión [PSR](https://pecl.php.net/package/psr) tiene que estar cargada **antes** que la extensión construida en Zephir este cargada.
 
 <a name='implementing-methods'></a>
 
 ## Implementación de Métodos
 
-The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+La palabra clave `function` introduce un método. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
 
 ```zep
 namespace Test;
