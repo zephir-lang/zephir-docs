@@ -24,15 +24,15 @@ class MyClass
 
 ### Modificadores de Clase
 
-The following class modifiers are supported:
+Son soportadas los siguientes modificadores de clase:
 
-*Final*: If a class has this modifier it cannot be extended:
+*final*: Si una clase tiene este modificador no puede ser extendida:
 
 ```zep
 namespace Test;
 
 /**
- * This class cannot be extended by another class
+ * Esta clase no puede se extendida por otras clases
  */
 final class MyClass
 {
@@ -40,13 +40,13 @@ final class MyClass
 }
 ```
 
-*Abstract*: If a class has this modifier it cannot be instantiated:
+*abstract*: Si una clase tiene este modificador no puede ser instanciada:
 
 ```zep
 namespace Test;
 
 /**
- * This class cannot be instantiated
+ * Esta clase no puede ser instanciada
  */
 abstract class MyClass
 {
@@ -56,9 +56,9 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 
-### Implementing Interfaces
+### Implementación de Interfaces
 
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+Las clases de Zephir pueden implementar cualquier cantidad de interfaces, siempre que estas clases sean `visible` para que la clase las utilice. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
 
 If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
 
