@@ -168,7 +168,7 @@ class MyClass
 
 <a name='implementing-methods-optional-nullable-parameters'></a>
 ### Optional nullable parameters
-Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
+Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the `null` value to the closest approximate value:
 
 ```zep
 public function foo(int a = null)
