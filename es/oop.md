@@ -179,27 +179,27 @@ class MyClass
 
 ### Parámetros opcionales nulos
 
-Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
+Zephir se asegura que el valor de una variable permanezca del tipo que fue declarada la variable. This makes Zephir convert the null value to the closest approximate value:
 
 ```zep
 public function foo(int a = null)
 {
-    echo a; // if "a" is not passed it prints 0
+    echo a; // si no es pasado "a" imprime 0
 }
 
 public function foo(boolean a = null)
 {
-    echo a; // if "a" is not passed it prints false
+    echo a; // si no es pasado "a" imprime false
 }
 
 public function foo(string a = null)
 {
-    echo a; // if "a" is not passed it prints an empty string
+    echo a; // si no es pasado "a" imprime una cadena de texto vacía
 }
 
 public function foo(array a = null)
 {
-    var_dump(a); // if "a" is not passed it prints an empty array
+    var_dump(a); // si no es pasado "a" imprime un array vacío
 }
 ```
 
@@ -207,29 +207,29 @@ public function foo(array a = null)
 
 ### Visibilidades soportadas
 
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
+* Público: los métodos marcados como `public` se exportan a la extensión PHP; esto significa que métodos públicos son accesibles para el código PHP y para la extensión.
 
-* Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Protegido: los métodos marcados como `protected` se exportan a la extensión PHP; esto significa que métodos protegidos son accesibles para el código PHP y para la extensión. Sin embargo, sólo se pueden llamar estos métodos protegidos en el ámbito de la clase o en clases que la heredan.
 
-* Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Privado: los métodos marcados como `private` no se exportan a la extensión PHP; esto significa que métodos privados sólo son accesibles a la clase donde está implementados.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### Modificadores Soportados
 
-* Static: Methods with this modifier can only be called in a static context (from the class, not an object).
+* Estáticos: los métodos con el modificador `static` sólo se pueden llamar en un contexto estático (de la clase, no de un objeto).
 
-* Final: If a method has this modifier it cannot be overriden.
+* Final: Si un método tiene el modificador `final` no puede ser sobre cargar.
 
-* Deprecated: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* Obsoleto: los métodos que se marcan como `deprecated` arrojan un error `E_DEPRECATED` cuando se les llama.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Métodos abreviados de getter/setter
 
-Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
+Como en C#, en Zephir puede utilizar métodos abreviados get/set/toString. Esta característica le permite escribir fácilmente setters y getters para las propiedades, sin implementar explícitamente los métodos como tales.
 
-For example, without shortcuts we would need code like:
+Por ejemplo, sin atajos necesitaríamos un código como el siguiente:
 
 ```zep
 namespace Test;
@@ -267,7 +267,7 @@ class MyClass
 }
 ```
 
-You can write the same code using shortcuts as follows:
+Es posible escribir el mismo código utilizando los siguiente métodos abreviados:
 
 ```zep
 namespace App;
@@ -284,13 +284,13 @@ class MyClass
 }
 ```
 
-When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
+Cuando el código es compilado, estos métodos son exportados como métodos reales, pero usted no tiene que escribirlos manualmente.
 
 <a name='implementing-methods-return-type-hints'></a>
 
 ### Tipo de valor devuelto
 
-Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Considere el siguiente ejemplo:
+Los métodos en clases e interfaces pueden tener "sugerencias de tipo de retorno". Estos proporcionarán información adicional útil al compilador para informarle sobre los errores en su aplicación. Considere el siguiente ejemplo:
 
 ```zep
 namespace App;
@@ -299,17 +299,17 @@ class MyClass
 {
     public function getSomeData() -> string
     {
-        // this will throw a compiler exception
-        // since the returned value (boolean) does not match
-        // the expected returned type string
+        // esto lanzará una excepción del compilador
+        // ya que el valor devuelto (booleano) no coincide
+        // la cadena de tipo devuelta esperada
         return false;
     }
 
     public function getSomeOther() -> <App\MyInterface>
     {
-        // this will throw a compiler exception
-        // if the returned object does not implement
-        // the expected interface App\MyInterface
+        // esto lanzará una excepción del compilador
+        // si el objeto devuelto no implementa
+        // la interfaz esperada App\MyInterface
         return new App\MyObject;
     }
 
@@ -317,19 +317,19 @@ class MyClass
     {
         var myObject;
 
-        // the type-hint will tell the compiler that
-        // myObject is an instance of a class
-        // that implement App\MyInterface
+        // la sugerencia de tipo le dirá al compilador que
+        // myObject es una instancia de una clase
+        // que implementa App\MyInterface
         let myObject = this->getSomeOther();
 
-        // the compiler will check if App\MyInterface
-        // implements a method called "someMethod"
+        // el compilador comprobará si App\MyInterface
+        // implementa un método llamado "someMethod"
         echo myObject->someMethod();
     }
 }
 ```
 
-A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
+Un método puede tener más de un tipo de valor devuelto. Cuando se definen varios tipos, debe utilizarse el operador | para separar estos tipos.
 
 ```zep
 namespace App;
