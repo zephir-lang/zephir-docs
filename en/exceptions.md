@@ -3,7 +3,8 @@ Zephir implements exceptions at a very low level, providing similar behavior and
 
 When an exception is thrown, a `catch` block can be used to capture the exception and allow the developer to provide proper handling:
 
-##### Exceptions can be thrown inside the `try` block. Handling happens in the `catch` block, exactly as in PHP.
+Exceptions can be thrown inside the `try` block. Handling happens in the `catch` block, exactly as in PHP:
+
     var e;
     try {
     
@@ -45,20 +46,16 @@ A single `catch` block can be used to catch multiple types of exception:
 
 Zephir allows you to throw literals or static typed variables as if they were the message of the exception:
 
-##### throw new \Exception("Test");
-
+    // throw new \Exception("Test");
     throw "Test";
 
-##### throw new \Exception((string) 't');
-
+    // throw new \Exception((string) 't');
     throw 't';
 
-##### throw new \Exception((string) 123);
-
+    // throw new \Exception((string) 123);
     throw 123;
     
-##### throw new \Exception((string) 123.123);
-
+    // throw new \Exception((string) 123.123);
     throw 123.123;
 
 Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is, `Exception::getFile()` and `Exception::getLine()` return the location in the Zephir code where the exception was thrown:
