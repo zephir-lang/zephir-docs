@@ -26,7 +26,7 @@ class MyClass
 
 Son soportadas los siguientes modificadores de clase:
 
-*final*: Si una clase tiene este modificador no puede ser extendida:
+`final`: If a class has this modifier it cannot be extended:
 
 ```zep
 namespace Test;
@@ -40,7 +40,7 @@ final class MyClass
 }
 ```
 
-*abstract*: Si una clase tiene este modificador no puede ser instanciada:
+`abstract: If a class has this modifier it cannot be instantiated:
 
 ```zep
 namespace Test;
@@ -100,7 +100,7 @@ public function shouldExtendMiddlewareInterface()
 
 ## Implementación de Métodos
 
-La palabra clave `function` introduce un método. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
+The `function` keyword introduces a method. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
 
 ```zep
 namespace Test;
@@ -179,7 +179,7 @@ class MyClass
 
 ### Parámetros opcionales nulos
 
-Zephir se asegura que el valor de una variable permanezca del tipo que fue declarada la variable. This makes Zephir convert the null value to the closest approximate value:
+Zephir se asegura que el valor de una variable permanezca del tipo que fue declarada la variable. This makes Zephir convert the `null` value to the closest approximate value:
 
 ```zep
 public function foo(int a = null)
@@ -207,27 +207,27 @@ public function foo(array a = null)
 
 ### Visibilidades soportadas
 
-* Público: los métodos marcados como `public` se exportan a la extensión PHP; esto significa que métodos públicos son accesibles para el código PHP y para la extensión.
+* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
-* Protegido: los métodos marcados como `protected` se exportan a la extensión PHP; esto significa que métodos protegidos son accesibles para el código PHP y para la extensión. Sin embargo, sólo se pueden llamar estos métodos protegidos en el ámbito de la clase o en clases que la heredan.
+* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. Sin embargo, sólo se pueden llamar estos métodos protegidos en el ámbito de la clase o en clases que la heredan.
 
-* Privado: los métodos marcados como `private` no se exportan a la extensión PHP; esto significa que métodos privados sólo son accesibles a la clase donde está implementados.
+* Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### Modificadores Soportados
 
-* Estáticos: los métodos con el modificador `static` sólo se pueden llamar en un contexto estático (de la clase, no de un objeto).
+* `static`: Methods with this modifier can only be called in a static context (from the class, not an object).
 
-* Final: Si un método tiene el modificador `final` no puede ser sobre cargar.
+* `final`: If a method has this modifier it cannot be overriden.
 
-* Obsoleto: los métodos que se marcan como `deprecated` arrojan un error `E_DEPRECATED` cuando se les llama.
+* `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Métodos abreviados de getter/setter
 
-Como en C#, en Zephir puede utilizar métodos abreviados get/set/toString. Esta característica le permite escribir fácilmente setters y getters para las propiedades, sin implementar explícitamente los métodos como tales.
+Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. Esta característica le permite escribir fácilmente setters y getters para las propiedades, sin implementar explícitamente los métodos como tales.
 
 Por ejemplo, sin atajos necesitaríamos un código como el siguiente:
 
@@ -329,7 +329,7 @@ class MyClass
 }
 ```
 
-Un método puede tener más de un tipo de valor devuelto. Cuando se definen varios tipos, debe utilizarse el operador | para separar estos tipos.
+Un método puede tener más de un tipo de valor devuelto. When multiple types are defined, the operator `|` must be used to separate those types.
 
 ```zep
 namespace App;
@@ -455,7 +455,7 @@ class MyClass
 }
 ```
 
-En métodos de la clase, las propiedades no estáticas se pueden acceder usando el operador `->`:
+Within class methods, non-static properties may be accessed by using `->` (Object Operator):
 
 ```zep
 namespace Test;
@@ -497,7 +497,7 @@ class MyClass
 
 ## Actualización de propiedades
 
-Las propiedades pueden actualizarse accediendo a ellas mediante el operador `->`:
+Properties can be updated by accessing them using the `->` operator:
 
 ```zep
 let this->myProperty = 100;
@@ -562,7 +562,7 @@ class MyClass
 }
 ```
 
-Las constantes de la clase se pueden acceder utilizando el nombre de la clase y el operador estático `::`:
+Class constants can be accessed using the class name and the static operator `::`:
 
 ```zep
 namespace Test;
@@ -584,7 +584,7 @@ class MyClass
 
 ## Llamando a métodos
 
-Los métodos pueden ser llamados utilizando el operador de objectos `->` como en PHP:
+Methods can be called using the object operator `->` as in PHP:
 
 ```zep
 namespace Test;
@@ -603,7 +603,7 @@ class MyClass
 }
 ```
 
-Los métodos estáticos deben ser llamados utilizando el operador `::`:
+Static methods must be called using the static operator `::`:
 
 ```zep
 namespace Test;
