@@ -1,78 +1,78 @@
-# Types
+# Типы
 
-Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
+Zephir динамически и статически типизированный. В этой главе мы выделим поддерживаемые типы и их поведение.
 
 <a name='dynamic-types'></a>
 
-## Dynamic Types
+## Динамические типы
 
-Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
+Динамические переменные точно такие же, как и в PHP. Они могут быть назначены и переназначены в различные типы без ограничений.
 
-A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
+Динамическая переменная должна быть объявлена с помощью служебного слова `var`. Работа с такой переменной очень похожа на то, как мы работаем с переменными в PHP:
 
     var a, b, c;
     
 
-##### Initialize variables
+##### Инициализировать переменные
 
     let a = "hello", b = false;
     
 
-##### Change their values
+##### Изменить их значения
 
     let a = "hello", b = false;
     let a = 10, b = "140";
     
 
-##### Perform operations
+##### Выполнить операции с ними
 
     let c = a + b;
     
 
-They can have eight types:
+Переменные объявленные как динамические, могут иметь восемь типов:
 
-| Type             | Description                                                                 |
-| ---------------- | --------------------------------------------------------------------------- |
-| `array`          | An array is an ordered map. A map is a type that associates values to keys. |
-| `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`       |
-| `float`/`double` | Floating point numbers. The size of a float is platform-dependent.          |
-| `integer`        | Integer numbers. The size of an integer is platform-dependent.              |
-| `null`           | The special NULL value represents a variable with no value.                 |
-| `object`         | Object abstraction like in PHP.                                             |
-| `resource`       | A resource holds a reference to an external resource.                       |
-| `string`         | A string is series of characters, where a character is the same as a byte.  |
+| Тип              | Описание                                                                                 |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| `array`          | Массив — это упорядоченная карта. Карта — это тип, который связывает значения с ключами. |
+| `boolean`        | Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`.       |
+| `float`/`double` | Числа с плавающей точкой. Размер зависит от платформы.                                   |
+| `integer`        | Целые числа. Размер целого числа зависит от платформы.                                   |
+| `null`           | Специальное значение NULL представляет переменную без значения.                          |
+| `object`         | Абстракция объекта, как и в PHP.                                                         |
+| `resource`       | Ресурс содержит ссылку на внешний ресурс.                                                |
+| `string`         | Строка представляет собой последовательность символов, где символ совпадает с байтом.    |
 
-Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
+Подробнее об этих типах можно узнать в [руководстве PHP](http://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
-### Arrays
+### Array
 
-The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
+Реализация массива в Zephir в основном такая же, как и в PHP: упорядоченные карты, оптимизированные для различных целей; Этот тип данных можно трактовать как массив, список (вектор), хэш-таблицу (реализацию карты), словарь, коллекцию, стек, очередь. Возможны и другие трактовки. Много мерные массивы также возможны: в качестве значений массива могут выступать другие массивы.
 
-The syntax to define arrays is slightly different than in PHP:
+Синтаксис для определения массивов немного отличается от PHP:
 
-##### Square braces must be used to define arrays
+##### Для определения массивов должны использоваться квадратные скобки
 
     let myArray = [1, 2, 3];
     
 
-##### Double colon must be used to define hashes' keys
+##### Для определения ключей хэшей необходимо использовать двоеточие
 
-    let myHash = ["first": 1, "second": 2, "third": 3];
+    let myHash = ["раз": 1, "два": 2, "три": 3];
     
 
-Only long and string values can be used as keys:
+В качестве ключей могут использоваться только значения типов long и string:
 
-    let myHash = [0: "first", 1: true, 2: null];
-    let myHash = ["first": 7.0, "second": "some string", "third": false];
+    let myHash = [0: "раз", 1: true, 2: null];
+    let myHash = ["раз": 7.0, "два": "некоторая строка", "три": false];
     
 
 <a name='dynamic-types-boolean'></a>
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either 'true' or 'false':
+Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`:
 
     var a = false, b = true;
     
@@ -81,67 +81,67 @@ A boolean expresses a truth value. It can be either 'true' or 'false':
 
 ### Float/Double
 
-Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
+Числа с плавающей точкой (также известные как "вещественные числа"). Литералы с плавающей точкой представляют собой выражения из нуля или более цифр, за которыми следует точка (.), за которой следуют ноль или более цифр. Размер float — платформозависимая величина, хотя максимум ~ 1.8e308 с точностью примерно 14 десятичных цифр является наиболее общим значением (64-битный формат IEEE).
 
     var number = 5.0, b = 0.014;
     
 
-Floating point numbers have limited precision. Although it depends on the system, Zephir uses the same IEEE 754 double precision format used by PHP, which will give a maximum relative error due to rounding in the order of 1.11e-16.
+Числа с плавающей точкой имеют ограниченную точность. Хотя это зависит от системы, как и в PHP, Zephir использует формат двойной точности IEEE 754, который даст максимальную относительную ошибку из-за округления порядка 1.11e-16.
 
 <a name='dynamic-types-integer'></a>
 
 ### Integer
 
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Целые числа. Размер целого числа зависит от платформы, хотя максимальное значение около двух миллиардов является обычным значением (это 32 битное, знаковое). 64-битные платформы обычно имеют максимальное значение около 9E18. PHP не поддерживает беззнаковые целые, поэтому у Zephir есть это ограничение тоже:
 
     var a = 5, b = 10050;
     
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer overflow
+### Целочисленное переполнение
 
-Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as 'unsigned long' or 'float' to store them:
+В отличие от PHP, Zephir автоматически не проверяет переполнение целочисленного типа. Точно так же, как и в C, если вы выполняете операции, которые могут возвращать большое число, вы можете использовать такие типы, как `unsigned long` или `float` для их хранения:
 
     unsigned long my_number = 2147483648;
     
 
 <a name='dynamic-types-objects'></a>
 
-### Objects
+### Object
 
-Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
+Zephir позволяет создавать экземпляры PHP классов, манипулировать PHP объектами, вызывать методы на них, читать константы классов и т.д.:
 
-    let myObject = new stdClass(),
-        myObject->someProperty = "my value";
+    let myObject = new \stdClass(),
+        myObject->someProperty = "некоторое значение";
     
 
 <a name='dynamic-types-string'></a>
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
+Переменная типа `string` представляет собой последовательность символов, где символ (char) является одним байтом. Как PHP, Zephir поддерживает только 256-символьный набор и, следовательно, не предлагает поддержку Unicode.
 
     var today = "friday";
     
 
-In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for chars.
+В Zephir строковые литералы могут указываться только с помощью двойных кавычек (как в C или Go). Одинарные кавычки зарезервированы для типа данных `char`.
 
-The following escape sequences are supported in strings:
+В строках поддерживаются следующие escape-последовательности:
 
-| Sequence    | Description     |
-| ----------- | --------------- |
-| `\\t`     | Horizontal tab  |
-| `\\n`     | Line feed       |
-| `\\r`     | Carriage return |
-| `\\ \` | Backslash       |
-| `\\"`     | double-quote    |
+| Последовательность | Описание                 |
+| ------------------ | ------------------------ |
+| `\t`              | Горизонтальная табуляция |
+| `\n`              | Перевод строки           |
+| `\r`              | Возврат каретки          |
+| `\`             | Обратная косая черта     |
+| `\"`              | Двойная кавычка          |
 
-    var today    = "\tfriday\n\r",
-        tomorrow = "\tsaturday";
+    var today    = "\tпятница\n\r",
+        tomorrow = "\tсуббота";
     
 
-In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
+В Zephir строки не поддерживают интерполяцию переменных, как в PHP, вместо этого вы можете использовать конкатенацию:
 
     var name = "peter";
     
@@ -150,41 +150,44 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 <a name='static-types'></a>
 
-## Static Types
+## Статические типы
 
-Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
+Статическая типизация позволяет разработчику объявлять и использовать некоторые типы переменных, доступные в C. Переменные, объявленные как статические, не могут менять свой тип. Тем не менее, они позволяют компилятору делать оптимизацию лучше. Поддерживаются следующие типы данных:
 
-| Type               | Description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------ |
-| `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
-| `boolean`          | A boolean expresses a truth value. It can be either 'true' or 'false'.         |
-| `char`             | Smallest addressable unit of the machine that can contain basic character set. |
-| `float`/`double`   | Double precision floating-point type. The size is platform-dependent.          |
-| `integer`          | Signed integers. At least 16 bits in size.                                     |
-| `long`             | Long signed integer type. At least 32 bits in size.                            |
-| `string`           | A string is a series of characters, where a character is the same as a byte.   |
-| `unsigned char`    | Same size as char, but guaranteed to be unsigned.                              |
-| `unsigned integer` | Unsigned integers. At least 16 bits in size.                                   |
-| `unsigned long`    | Same as long, but unsigned.                                                    |
+| Тип                | Описание                                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------------- |
+| `array`            | Структура, которая может использоваться в качестве хеша, карты, словаря, коллекции, стека и т. д. |
+| `boolean`          | Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`.                |
+| `char`             | Наименьшая адресуемая единица машины, которая может содержать символ из базового набора.          |
+| `float`/`double`   | Тип с плавающей точкой двойной точности. Размер является платформозависимым.                      |
+| `integer`          | Знаковое целое. Размер по крайней мере 16 бит.                                                    |
+| `long`             | Длинное знаковое целое. Размер по крайней мере 32 бит.                                            |
+| `string`           | Строка представляет собой последовательность символов, где символ (char) является одним байтом.   |
+| `unsigned char`    | Тот же размер, что и `char`, но гарантированно беззнаковый.                                       |
+| `unsigned integer` | Беззнаковое целое. Размер по крайней мере 16 бит.                                                 |
+| `unsigned long`    | То же, что и `long`, но без знака.                                                                |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary to the dynamic behavior detailed above, static boolean types remain boolean (true or false) no mater what value is assigned to them:
+Булев тип выражает истинное значение. Он может иметь значения `true` либо `false`. В отличие от динамического поведения, описанного выше, статические логические типы остаются логическими (`true` или `false`), а не тем типом значения, что им присваивается:
 
     boolean a;
     let a = true;
     
 
-##### automatically casted to `true`
+##### автоматически переводится в `true`
 
     let a = 100;
     
 
-##### automatically casted to `false`
+##### автоматически переводится в `false`
 
-##### throws a compiler exception
+    let a = 0;
+    
+
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
@@ -193,17 +196,17 @@ A boolean expresses a truth value. It can be either 'true' or 'false'. Contrary 
 
 ### Char/Unsigned Char
 
-Char variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A 'char' variable can be used to store any character in a string:
+переменная типа `char` — наименьшая адресуемая единица машины, которая может содержать символ из базового набора (обычно 8 бит). Переменная типа `char` может быть использована для хранения одного символа в строке:
 
     char ch, string name = "peter";
     
 
-##### stores 't'
+##### сохраняет 't'
 
     let ch = name[2];
     
 
-##### `char` literals must be enclosed in single quotes
+##### литералы типа `char` должны быть заключены в одинарные кавычки
 
     let ch = 'Z';
     
@@ -212,7 +215,7 @@ Char variables are the smallest addressable unit of the machine that can contain
 
 ### Integer/Unsigned Integer
 
-Integer values are like the integer member in dynamic values. Values assigned to integer variables remain integer:
+целочисленные значения подобны целочисленным аналогам в динамических типах. Значения, присвоенные целым переменным, остаются целыми:
 
     int a;
     
@@ -220,61 +223,61 @@ Integer values are like the integer member in dynamic values. Values assigned to
         a = -70;
     
 
-##### automatically casted to 100
+##### автоматически переводится в 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
 
-Unsigned integers are like integers but they don't have sign, this means you can't store negative numbers in these sort of variables:
+беззнаковые целые подобны целым числам, но они не имеют знака, это означает, что вы не можете хранить отрицательные числа в таких переменных:
 
     uint a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### автоматически переводится в 70
 
     let a = -70;
     
 
-##### automatically casted to 100
+##### автоматически переводится в 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
 
-Unsigned integers are twice bigger than standard integers. Assigning unsigned integers to standard (signed) integers may result in loss of data:
+Тип `unsigned integer` в два раза больше стандартного `integer`. Присваивание беззнаковых целых стандартным целым (знаковым) может привести к потере данных:
 
-##### potential loss of data for `b`
+##### возможна потеря данных для `b`
 
     uint a, int b;
     
@@ -286,7 +289,7 @@ Unsigned integers are twice bigger than standard integers. Assigning unsigned in
 
 ### Long/Unsigned Long
 
-Long variables are twice bigger than integer variables, thus they can store bigger numbers. As with integers, values assigned to long variables are automatically casted to this type:
+переменные типа `long` в два раза больше, чем `integer`, поэтому они могут хранить большие числа. Как и с `integer`, при присваивании значений переменным типа `long`, они будут автоматически приводиться к этому типу:
 
     long a;
     
@@ -294,61 +297,61 @@ Long variables are twice bigger than integer variables, thus they can store bigg
         a = -70;
     
 
-##### automatically casted to 100
+##### автоматически переводится в 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
 
-Unsigned longs are like longs but they are not signed, this means you can't store negative numbers in these sort of variables:
+Тип `unsigned long` похож на `long`, но он не имеет знака. Это означает, что вы не можете хранить отрицательные числа в таких переменных:
 
     ulong a;
     
     let a = 50;
     
 
-##### automatically casted to 70
+##### автоматически переводится в 70
 
-    let  a = -70;
+    let a = -70;
     
 
-##### automatically casted to 100
+##### автоматически переводится в 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматически переводится в 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### выкидывает ошибку компиляции
 
     let a = "hello";
     
 
-Unsigned longs are twice bigger than standard longs; assigning unsigned longs to standard (signed) longs may result in loss of data:
+Тип `unsigned long` в два раза больше стандартного `long`; присваивание данных типа `unsigned long` стандартному знаковому `long` может привести к потере данных:
 
-##### potential loss of data for `b`
+##### возможна потеря данных для `b`
 
     ulong a, long b;
     
@@ -360,25 +363,25 @@ Unsigned longs are twice bigger than standard longs; assigning unsigned longs to
 
 ### String
 
-A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
+Строка представляет собой последовательность символов, где символ является одним байтом. Как и в PHP, этот тип данных поддерживает только 256-символьный набор и, следовательно, не поддерживает использование Юникода.
 
-When a variable is declared string it never changes its type:
+Когда переменная объявлена как типа `string`, она никогда не меняет свой тип:
 
     string a;
     
     let a = "";
     
 
-##### string literals must be enclosed in double quotes
+##### строковые литералы должны быть заключены в двойные кавычки
 
-    let  a = "hello";
+    let a = "hello";
     
 
-##### converted to string "A"
+##### преобразуется в строку "A"
 
     let a = 'A';
     
 
-##### automatically casted to ""
+##### автоматически переводится в ""
 
     let a = null;

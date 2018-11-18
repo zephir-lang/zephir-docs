@@ -1,19 +1,22 @@
 # Tutorial
 
-Zephir, and this book, are intended for PHP developers who want to create C extensions, with a lower complexity.
+Zephir y este manual, están destinados para desarrolladores PHP que desean crear extensiones en C, con una complejidad menor.
 
-We assume that you are experienced in one or more other programming languages. We draw parallels to features in PHP, C, Javascript, and other languages. We'll point out features in Zephir that are similar to these other languages, as well as many features that are new or different. If you are familiar with these specific languages, you'll pick up on these comparisons more quickly.
+Asumimos que usted tiene experiencia en uno o varios lenguajes de programación. Trazaremos paralelismos entre las funciones de PHP, C, Javascript y otros lenguajes. Señalaremos características de Zephir que son similares a otros lenguajes, como así también, muchas características que son nuevas o diferentes. Si estás familiarizado con estos lenguajes específicos, podrás entender estas comparaciones más rápidamente.
+
+En esta guía, utilizaremos los comandos estándar de la terminal de Linux. Si eres un usuario de Windows, necesitas reemplazar estos comandos por sus homólogos.
 
 <a name='checking-the-installation'></a>
 
-## Checking the Installation
+## Probando la Instalación
 
-If you have successfully installed Zephir, you will be able to execute the following command in your console:
+Si se ha instalado con éxito Zephir, usted será capaz de ejecutar el siguiente comando en la consola:
 
-    $ zephir help
-    
+```bash
+zephir help
+```
 
-If everything is well, you should see the following help (or something very similar):
+Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
 
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
@@ -28,82 +31,88 @@ If everything is well, you should see the following help (or something very simi
         command [options]
     
     Available commands:
-        stubs               Generates extension PHP stubs
-        install             Installs the extension (requires root password)
-        version             Shows the Zephir version
-        compile             Compile a Zephir extension
-        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
-        init [namespace]    Initializes a Zephir extension
-        fullclean           Cleans the generated object files in compilation
-        builddev            Generate/Compile/Install a Zephir extension in development mode
-        clean               Cleans the generated object files in compilation
-        generate            Generates C code from the Zephir code
-        help                Displays this help
-        build               Generate/Compile/Install a Zephir extension
+        stubs               Genera extensiones de apéndices de PHP
+        install             Instalar la extensión (requiere contraseña root)
+        version             Muestra la versión actual de Zephir
+        compile             Compilar un extensión de Zephir
+        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Genera el API en HTML
+        init [namespace]    Inicia una extensión Zephir
+        fullclean           Limpia los archivos de objetos generados en la compilación
+        builddev            Genera/Compila/Instala una extensión Zephir en modo de desarrollo
+        clean               Limpia los archivos de objetos generados en la compilación
+        generate            Genera código C desde código Zephir
+        help                Muestra esta ayuda
+        build               Genera/Compila/Instala una extensión Zephir
     
     Options:
-        -f([a-z0-9\-]+)     Enables compiler optimizations
-        -fno-([a-z0-9\-]+)  Disables compiler optimizations
-        -w([a-z0-9\-]+)     Turns a warning on
-        -W([a-z0-9\-]+)     Turns a warning off
+        -f([a-z0-9\-]+)     Habilita las optimizaciones del compilador
+        -fno-([a-z0-9\-]+)  Deshabilita las optimizaciones del compilador
+        -w([a-z0-9\-]+)     Enciende una advertencia
+        -W([a-z0-9\-]+)     Apaga una advertencia
     
+
+Si algo salió mal, por favor regrese a la [página de instalación](/[[language]]/[[version]]/installation).
 
 <a name='extension-skeleton'></a>
 
-## Extension Skeleton
+## Esqueleto de la Extensión
 
-The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
+Lo primero que tenemos que hacer es generar un esqueleto de extensión. Esto le dará a nuestra extensión la estructura básica que necesitamos para empezar a trabajar. En nuestro caso, vamos a crear una extensión llamada `utils`:
 
-    $ zephir init utils
-    
+```bash
+zephir init utils
+```
 
-After this, a directory called "utils" is created on the current working directory:
+Después de esto, un directorio llamado "utils" es creado en el directorio actual de trabajo:
 
     utils/
        ext/
        utils/
     
 
-The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
+El directorio `ext/` (dentro del directorio utils) contiene el código que utilizará el compilador para producir la extensión. Otro directorio creado es `utils` este directorio tiene el mismo nombre que nuestra extensión. Aquí pondremos nuestro código Zephir.
 
-We need to change the working directory to "utils" to start compiling our code:
+Necesitamos cambiar el directorio de trabajo a "utils" para comenzar a copilar nuestro código:
 
-    $ cd utils
-    $ ls
-    ext/ utils/ config.json
-    
+```bash
+cd utils
+ls
+ext/ utils/ config.json
+```
 
-The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
+Al listar el directorio, nos mostrará un archivo llamado `config.json`. Este archivo contiene los ajustes de configuración que podemos usar para alterar el comportamiento de Zephir y/o la extensión en sí.
 
 <a name='adding-our-first-class'></a>
 
-## Adding our first class
+## Agregando nuestra primer clase
 
-Zephir is designed to generate object-oriented extensions. To start developing functionality, we need to add our first class to the extension.
+Zephir está diseñado para generar extensiones orientadas a objetos. Para empezar a desarrollar funcionalidades, tenemos que añadir nuestra primera clase de la extensión.
 
-As in many languages/tools, the first thing we want to do is see a `hello world` generated by Zephir, and check that everything is well. So our first class will be called `Utils\Greeting`, and contain a method printing `hello world!`.
+Como en muchos lenguajes y herramientas, lo primero que queremos hacer es ver un `Hola mundo` generado por Zephir, y comprobar que todo este bien. Así que nuestra primera clase se llamará `Utils\Greeting` y contendrá un método que imprima `¡Hola mundo!`.
 
-The code for this class must be placed in `utils/utils/greeting.zep`:
+El código para esta clase se debe colocar en `utils/utils/greeting.zep`:
 
-    namespace Utils;
-    
-    class Greeting
+```zep
+namespace Utils;
+
+class Greeting
+{
+
+    public static function say()
     {
-    
-        public static function say()
-        {
-            echo "hello world!";
-        }
-    
+        echo "¡hola mundo!";
     }
-    
 
-Now, we need to tell Zephir that our project must be compiled and the extension generated:
+}
+```
 
-    $ zephir build
-    
+Ahora, debemos decirle a Zephir que nuestro proyecto debe ser compilado y la extensión generada:
 
-Initially, and only for the first time, a number of internal commands are executed producing the necessary code and configurations to export this class to the PHP extension. If everything goes well, you will see the following message at the end of the output:
+```bash
+zephir build
+```
+
+Inicialmente, y sólo por primera vez, una serie de comandos internos son ejecutados produciendo el código necesario y configuraciones para exportar esta clase a la extensión PHP. Si todo va bien, verá el siguiente mensaje al final de la salida:
 
     ...
     Extension installed!
@@ -111,126 +120,134 @@ Initially, and only for the first time, a number of internal commands are execut
     Don't forget to restart your web server
     
 
-At the above step, it's likely that you would need to supply your root password in order to install the extension.
+En el paso anterior, es probable que necesite suministrar su contraseña de root para poder instalar la extensión.
 
-Finally, the extension must be added to the `php.ini` in order to be loaded by PHP. This is achieved by adding the initialization directive: `extension=utils.so` to it. (NOTE: You can also load it on the command line with `-d extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.)
+Finalmente, hay que añadir la extensión al archivo `php.ini` para ser cargado en PHP. Esto se consigue añadiendo la directiva de inicialización: `extension=utils.so` a él.
+
+Nota: también se puede cargar en la línea de comandos con `-d extension=utils.so`, pero se cargará sólo para esa única solicitud, por lo que tendría que incluir cada vez que desea probar su extensión en el CLI. Agregando la directiva en el `php.ini` se asegurará que está cargada para cada solicitud de ahí en adelante.
 
 <a name='initial-testing'></a>
 
-## Initial Testing
+## Prueba Inicial
 
-Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
+Ahora que la extensión fue agregada a su `php.ini`, compruebe si la extensión esta cargada correctamente, ejecutando lo siguiente:
 
-    $ php -m
-    [PHP Modules]
-    Core
-    date
-    libxml
-    pcre
-    Reflection
-    session
-    SPL
-    standard
-    tokenizer
-    utils
-    xdebug
-    xml
-    
+```bash
+php -m
+[PHP Modules]
+Core
+date
+libxml
+pcre
+Reflection
+session
+SPL
+standard
+tokenizer
+utils
+xdebug
+xml
+```
 
-Extension `utils` should be part of the output, indicating that the extension was loaded correctly. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
+La extensión `utils` debe ser parte de la salida, indicando que la extensión se cargo correctamente. Ahora, vemos nuestro `hello world` ejecutado directamente por PHP. Para lograr esto, puede crear un simple archivo PHP que llame al método estático que acabamos de crear:
 
-    <?php
-    
-    echo Utils\Greeting::say(), "\n";
-    
+```php
+<?php
 
-Congratulations!, you have your first extension running in PHP.
+echo Utils\Greeting::say(), "\n";
+```
+
+¡Felicitaciones! Tienes tu primer extensión corriendo en PHP.
 
 <a name='a-useful-class'></a>
 
-## A useful class
+## Una clase útil
 
-The `hello world` class was fine to check if our environment was right. Now, let's create some more useful classes.
+Este método `Utils\Greeting::say` está bien para comprobar si nuestro entorno esta bien. Ahora, vamos a crear algunas clases más útiles.
 
-The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
+La primer clase útil que vamos a agregar a esta extensión proveerá facilidades de filtrado a los usuarios. Esta clase es llamada `Utils\Filter` y su código estará ubicado en el archivo `utils/utils/filter.zep`:
 
-A basic skeleton for this class is the following:
+El esqueleto básico de esta clase es el siguiente:
 
-    namespace Utils;
-    
-    class Filter
+```zep
+namespace Utils;
+
+class Filter
+{
+
+}
+```
+
+La clase contiene métodos de filtrado para ayudar a los usuarios a filtrar caracteres no deseados de las cadenas de texto. El primer método es llamado `alpha`, y su propósito es filtrar solo las letras básicas de los caracteres ASCII. Para comenzar, vamos a recorrer la cadena de texto, imprimiendo cada byte en la salida estándar:
+
+```zep
+namespace Utils;
+
+class Filter
+{
+
+    public function alpha(string str)
     {
-    
-    }
-    
+        char ch;
 
-The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
-
-    namespace Utils;
-    
-    class Filter
-    {
-    
-        public function alpha(string str)
-        {
-            char ch;
-    
-            for ch in str {
-                echo ch, "\n";
-            }
+        for ch in str {
+            echo ch, "\n";
         }
     }
-    
+}
+```
 
-When invoking this method:
+Cuando invocamos a este método:
 
-    <?php
-    
-    $f = new Utils\Filter();
-    $f->alpha("hello");
-    
+```php
+<?php
 
-You will see:
+$f = new Utils\Filter();
+$f->alpha("hola");
+```
+
+Usted verá:
 
     h
-    e
-    l
-    l
     o
+    l
+    a
     
 
-Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
+La comprobación de todos los caracteres de la cadena es sencilla. Ahora crearemos otra cadena con los caracteres filtrados correctos:
 
-    class Filter
+```zep
+class Filter
+{
+
+    public function alpha(string str) -> string
     {
-    
-        public function alpha(string str) -> string
-        {
-            char ch; string filtered = "";
-    
-            for ch in str {
-                if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
-                    let filtered .= ch;
-                }
+        char ch; string filtered = "";
+
+        for ch in str {
+            if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+                let filtered .= ch;
             }
-    
-            return filtered;
         }
+
+        return filtered;
     }
-    
+}
+```
 
-The complete method can be tested as before:
+El método completo se puede probar como antes:
 
-    <?php
-    
-    $f = new Utils\Filter();
-    echo $f->alpha("!he#02l3'121lo."); // prints "hello"
-    
+```php
+<?php
 
-In the following screencast you can watch how to create the extension explained in this tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+$f = new Utils\Filter();
+echo $f->alpha("!ho#02l3'121a."); // imprime "hola"
+```
+
+En el siguiente video tutorial puedes ver como crear la extensión explicada en este tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
-## Conclusion
+## Conclusión
 
-This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
+Este es un tutorial muy simple y como se puede ver, es fácil empezar a construir una extensión usando Zephir. Te invitamos a seguir leyendo el manual para que puedas descubrir algunas funciones adicionales que ofrece Zephir!

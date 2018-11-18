@@ -1,10 +1,10 @@
-# Phpinfo() sections
+# Phpinfo() Secciones
 
-Like most extensions, Zephir extensions are able to show information in the phpinfo() output. This information is usually related to directives, environment data, etc.
+Al igual que la mayoria de las extensiones, las extensiones de Zephir pueden mostrar información en la salida de [phpinfo()](http://php.net/manual/en/function.phpinfo.php). Esta información está usualmente relacionada con directivas, datos de entorno, etc.
 
-By default, every Zephir extension automatically adds a basic table to the phpinfo() output showing the extension version, and any INI options the extension supports.
+Por defecto, cada extensión de Zephir automáticamente agrega una tabla básica de datos a la salida de `phpinfo()` mostrando la versión de la extensión, y cualquier opción INI que soporte la extensión.
 
-You can add more directives by adding the following configuration to the `config.json` file:
+Usted puede agregar más directivas agregando la siguiente configuración al archivo `config.json`:
 
     "info": [
         {
@@ -24,6 +24,6 @@ You can add more directives by adding the following configuration to the `config
     ]
     
 
-This information will be shown as follows:
+Esta información se mostrará de la siguiente manera:
 
 ![](/images/content/info.png)

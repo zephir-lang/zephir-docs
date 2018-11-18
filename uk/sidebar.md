@@ -1,6 +1,6 @@
 - [Welcome](/[[language]]/[[version]]/welcome)
 - [Why Zephir](/[[language]]/[[version]]/motivation)
-- [Introducing Zephir](/[[language]]/[[version]]/introduction)
+- [Представляємо Zephir](/[[language]]/[[version]]/introduction)
 - [Installation](/[[language]]/[[version]]/installation)
 - [Tutorial](/[[language]]/[[version]]/tutorial)
 - [Basic Syntax](/[[language]]/[[version]]/language)

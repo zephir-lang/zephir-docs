@@ -1,14 +1,14 @@
-# Εισαγωγή Zephir
+# Introducing Zephir
 
-Zephir είναι μια γλώσσα που αντιμετωπίζει τις κύριες ανάγκες προγραμματιστών PHP που προσπαθούν να γράψουν και να μεταγλώττισουν κώδικα που μπορεί να εκτελεστεί από την PHP. It is dynamically/statically typed, and some of its features will be familiar to PHP developers.
+Zephir is a language that addresses the major needs of a PHP developer trying to write and compile code that can be executed by PHP. It is dynamically/statically typed, and some of its features will be familiar to PHP developers.
 
-Το όνομα Zephir είναι μια συστολή από τις λέξεις Z(end) E(ngine)/PH(P)/I(nte)r(mediate). Ενώ αυτό προτείνει ότι η προφορά πρέπει να είναι «Ζεφίρ», οι δημιουργοί του Zephir προφέρει πραγματικά [Ζεφάιρ](http://translate.google.com/#en/en/zaefire).
+The name Zephir is a contraction of the words Z(end) E(ngine)/PH(P)/I(nte)r(mediate). Ενώ αυτό προτείνει ότι η προφορά πρέπει να είναι «Ζεφίρ», οι δημιουργοί του Zephir προφέρει πραγματικά [Ζεφάιρ](http://translate.google.com/#en/en/zaefire).
 
 <a name='hello-world'></a>
 
 ## Hello World!
 
-Κάθε γλώσσα έχει το δικλο του δείγμα "Hello World!". In Zephir, this introductory example showcases some important features of the language.
+Every language has its own "Hello World!" sample. In Zephir, this introductory example showcases some important features of the language.
 
 Code in Zephir must be placed in classes. The language is intended to create object-oriented libraries/frameworks, so code outside of a class is not allowed. Additionally, a namespace is required:
 
@@ -101,7 +101,7 @@ Let's examine the code in detail, so we can begin to learn Zephir syntax. There 
 
 In the method, the first lines use the `var` and `int` keywords. There are used to declare a variable in the local scope. Every variable used in a method must be declared with its respective type. This declaration is not optional - it helps the compiler warn you about mistyped variables, or about the use of variables out of scope, which usually ends in runtime errors.
 
-Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `int` variables are statically typed integer variables, that can only have integer values in the entire program execution.
+Dynamic variables are declared with the keyword `var`. These variables can be assigned and reassigned to different types. On the other hand, the `i` and `length` variables are statically typed integer variables, that can only have integer values in the entire program execution.
 
 In contrast with PHP, you are not required to put a dollar sign ($) in front of variable names.
 

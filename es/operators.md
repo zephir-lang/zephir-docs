@@ -1,65 +1,65 @@
-# Operators
+# Operadores
 
-Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
+Los operadores en Zephir son similares a los de PHP, y también heredarán algunos de sus comportamientos.
 
 <a name='arithmetic-operators'></a>
 
-## Arithmetic Operators
+## Operadores Aritméticos
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation      | Example |
+| Operación      | Ejemplo |
 | -------------- | ------- |
-| Negation       | `-a`    |
-| Addition       | `a + b` |
-| Subtraction    | `a - b` |
-| Multiplication | `a * b` |
-| Division       | `a / b` |
-| Modulus        | `a % b` |
+| Negación       | `-a`    |
+| Suma           | `a + b` |
+| Resta          | `a - b` |
+| Multiplicación | `a * b` |
+| División       | `a / b` |
+| Módulo         | `a % b` |
 
 <a name='bitwise-operators'></a>
 
-## Bitwise Operators
+## Operadores bit a bit
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation          | Example        |
-| ------------------ | -------------- |
-| And                | `a & b`    |
-| Or (inclusive or)  | `a | b`        |
-| Xor (exclusive or) | `a ^ b`        |
-| Not                | `~a`           |
-| Shift left         | `a << b` |
-| Shift right        | `a >> b` |
+| Operación            | Ejemplo        |
+| -------------------- | -------------- |
+| And                  | `a & b`    |
+| Or (o inclusivo)     | `a | b`        |
+| Xor (o exclusivo)    | `a ^ b`        |
+| Not                  | `~a`           |
+| Mover a la izquierda | `a << b` |
+| Mover a la derecha   | `a >> b` |
 
-Example:
+Ejemplo:
 
     if a & SOME_FLAG {
-        echo "has some flag";
+        echo "tiene la bandera";
     }
     
 
-Learn more about comparison of dynamic variables in the [php manual](http://www.php.net/manual/en/language.operators.comparison.php).
+Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](http://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
-## Comparison Operators
+## Comparación de Operadores
 
-Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
+Los operadores de comparación dependen del tipo de variables en comparación. Por ejemplo, si ambos operandos de la comparación son variables dinámicas, el comportamiento es igual que en PHP:
 
-| Example        | Operation                | Description                                                      |
-| -------------- | ------------------------ | ---------------------------------------------------------------- |
-| `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
-| `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
-| `a != b`       | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a <> b` | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a !== b`      | Not identical            | `true` if a is not equal to b, or they are not of the same type. |
-| `a < b`     | Less than                | `true` if a is strictly less than b.                             |
-| `a > b`     | Greater than             | `true` if a is strictly greater than b.                          |
-| `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
-| `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
+| Ejemplo        | Operación         | Descripción                                                                  |
+| -------------- | ----------------- | ---------------------------------------------------------------------------- |
+| `a == b`       | Igual             | `true` si a es igual a b después de arreglar de otro modo las variables.     |
+| `a === b`      | Idéntico          | `true` si a es igual a b, y ambas son del mismo tipo.                        |
+| `a != b`       | No iguales        | `true` si a no es igual a b, después de arreglar de otro modo las variables. |
+| `a <> b` | No iguales        | `true` si a no es igual a b, después de arreglar de otro modo las variables. |
+| `a !== b`      | No idénticos      | `true` si a no es igual a b, o ambos no son del mismo tipo.                  |
+| `a < b`     | Menor Que         | `true` si a es estrictamente menor que b.                                    |
+| `a > b`     | Mayor que         | `true` si a es estrictamente mayor que b.                                    |
+| `a <= b`    | Menor o igual que | `true` si a es menor o igual que b.                                          |
+| `a >= b`    | Mayor o igual que | `true` si a es mayor o igual que b.                                          |
 
-Example:
+Ejemplo:
 
     if a == b {
         return 0;
@@ -74,17 +74,17 @@ Example:
 
 <a name='logical-operators'></a>
 
-## Logical Operators
+## Operadores Lógicos
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
-| Operation | Example          |
+| Operación | Ejemplo          |
 | --------- | ---------------- |
 | And       | `a && b` |
 | Or        | `a || b`         |
 | Not       | `!a`             |
 
-Example:
+Ejemplo:
 
     if a && b || !c {
         return -1;
@@ -94,33 +94,33 @@ Example:
 
 <a name='tenary-operator'></a>
 
-## Ternary Operator
+## Operador Ternario
 
-Zephir supports the ternary operator available in C or PHP:
+Zephir soporta el operador ternario habilitado en C o PHP:
 
-    let b = a == 1 ? "x" : "y"; // b is set to "x" if a is equal to 1, otherwise "y" is assigned as the value
+    let b = a == 1 ? "x" : "y"; // b es igual a "x" si a es igual a 1, en otro caso será igual a "y"
     
 
 <a name='special-operators'></a>
 
-## Special Operators
+## Operadores Especiales
 
-The following operators are supported:
+Son soportados los siguientes operadores:
 
 <a name='special-operators-empty'></a>
 
 ### Empty
 
-This operator allows checking whether an expression is empty. 'Empty' means the expression is `null`, is an empty string, or an empty array:
+Este operador permite chequear si una expresión esta vacía. 'Empty' significa que la expresión es igual a `null`, a una cadena de texto vacía, o a un array vacío:
 
     let someVar = "";
     if empty someVar {
-        echo "is empty!";
+        echo "¡esta vacía!";
     }
     
-    let someVar = "hello";
+    let someVar = "hola";
     if !empty someVar {
-        echo "is not empty!";
+        echo "¡no esta vacía!";
     }
     
 
@@ -128,7 +128,7 @@ This operator allows checking whether an expression is empty. 'Empty' means the 
 
 ### Fetch
 
-'Fetch' is an operator that reduces a common operation in PHP into a single instruction:
+'Fetch' es un operador que reduce una operación común en PHP a una sola instrucción:
 
     <?php
     
@@ -138,104 +138,104 @@ This operator allows checking whether an expression is empty. 'Empty' means the 
     }
     
 
-In Zephir, you can write the same code as:
+En Zephir, puedes escribir el mismo código de la siguiente manera:
 
     if fetch value, myArray[key] {
         echo value;
     }
     
 
-'Fetch' only returns `true` if the 'key' is a valid item in the array, and only in that case is 'value' populated.
+'Fetch' solo retornará `true` si la clave 'key' es un item válido en el array, y solo si tiene un valor 'value' asignado.
 
 <a name='special-operators-isset'></a>
 
 ### Isset
 
-This operator checks whether a property or index has been defined in an array or object:
+Este operador comprueba que una propiedad o un índice esté definido en un array o en un objecto:
 
     let someArray = ["a": 1, "b": 2, "c": 3];
-    if isset someArray["b"] { // check if the array has an index "b"
-        echo "yes, it has an index 'b'\n";
+    if isset someArray["b"] { // comprueba que el array tenga el índice "b"
+        echo "si, hay un índice 'b'\n";
     }
     
 
-Using `isset` as a return expression:
+Utilizando `isset` como una expresión de retorno:
 
     return isset this->{someProperty};
     
 
-Note that `isset` in Zephir works more like PHP's function [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
+Nota: en Zephir `isset` funciona como la función [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php) de PHP, `isset` en Zephir retornará `true` incluso cuando el índice del array o la propiedad del objecto sean nulas.
 
 <a name='special-operators-typeof'></a>
 
 ### Typeof
 
-This operator checks a variable's type. 'typeof' can be used with a comparison operator:
+Este operador comprueba el tipo de una variable. `typeof` puede usarse con un operador de comparación:
 
-    if (typeof str == "string") { // or !=
+    if (typeof str == "string") { // o !=
         echo str;
     }
     
 
-It can also work like the PHP function `gettype`.
+También puede trabajar como la función `gettype` de PHP.
 
     return typeof str;
     
 
-**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
+**Cuidado** si desea comprobar que si un objeto es "callable", siempre tienes que usar `typeof` como un operador de comparación, no como una función.
 
 <a name='special-operators-type-hints'></a>
 
-### Type Hints
+### Sugerencias de Tipos
 
-Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
+Zephir siempre trata de comprobar si un objeto implementa métodos y propiedades llamado/accedido a una variable, que se infiere que es un objeto:
 
     let o = new MyObject();
     
-    // Zephir checks if "myMethod" is implemented on MyObject
+    // Zephir comprueba si "myMethod" es implementado en MyObject
     o->myMethod();
     
 
-However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object, so Zephir can't produce error reports effectively. A type hint tells the compiler which class is related to a dynamic variable, allowing the compiler to perform more compilation checks:
+Sin embargo, debido al dinamismo heredado de PHP, a veces no es fácil saber la clase de un objeto, entonces Zephir no puede producir informes de errores con eficacia. Una sugerencia de tipo le indica al compilador que clase se relaciona con una variable dinámica, permitiendo que el compilador hacer más verificaciones de compilación:
 
-    // Tell the compiler that "o"
-    // is an instance of class MyClass
+    // Decirle al compilador que "o"
+    // es una instancia de la clase MyClass
     let o = <MyClass> this->_myObject;
     o->myMethod();
     
 
-These "type hints" are weak. This means the program does not check if the value is in fact an instance of the specified class, nor whether it implements the specified interface. If you want it to check this every time in execution, use a strict type:
+Estos "consejos de tipo" son débiles. Esto significa que el programa no comprueba si el valor es de hecho una instancia de la clase especificada, ni si implementa la interfaz especificada. Si desea comprobarlo en ejecución cada vez, utilice un tipo estricto:
 
-    // Always check if the property is an instance
-    // of MyClass before the assignment
+    // Siempre comprueba si la propiedades es una instancia
+    // de MyClass antes de asignarla
     let o = <MyClass!> this->_myObject;
     o->myMethod();
     
 
 <a name='special-operators-branch-prediction-hints'></a>
 
-### Branch Prediction Hints
+### Consejos de Predicción de Rama
 
-What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
+¿Qué es la predicción de rama? Revisa este [artículo](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) o este otro [artículo en la Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). En entornos donde el desempeño es muy importante, puede ser útil introducir estos consejos.
 
-Consider the following example:
+Considere el siguiente ejemplo:
 
     let allPaths = [];
     for path in this->_paths {
         if path->isAllowed() == false {
-            throw new App\Exception("Some error message here");
+            throw new App\Exception("Un mensaje de error");
         } else {
             let allPaths[] = path;
         }
     }
     
 
-The authors of the above code know in advance that the condition that throws the exception is unlikely to happen. This means that, 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
+Los autores del código anterior saben, de antemano, que es poco probable que ocurra la condición que produce la excepción. Esto significa que, el 99.9% del tiempo, nuestro método ejecuta esa condición, pero probablemente nunca se evalúe como verdadero. Para el procesador, esto podría ser difícil de saber, pero le podríamos presentar una sugerencia allí:
 
     let allPaths = [];
     for path in this->_paths {
         if unlikely path->isAllowed() == false {
-            throw new App\Exception("Some error message here");
+            throw new App\Exception("Un mensaje de error");
         } else {
             let allPaths[] = path;
         }

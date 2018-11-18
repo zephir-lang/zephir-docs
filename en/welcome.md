@@ -48,3 +48,12 @@ The class can be used from PHP as follows:
     
     $filter = new MyLibrary\Filter();
     echo $filter->alpha("01he#l.lo?/1"); // prints hello
+ 
+<a name='external-links'></a>
+## External Links
+Below we have collected links to external resources that may interest you:
+
+- [Type system](https://en.wikipedia.org/wiki/Type_system)
+- [Memory safety](https://en.wikipedia.org/wiki/Memory_safety)
+- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Memory management](https://en.wikipedia.org/wiki/Memory_management)

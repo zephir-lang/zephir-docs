@@ -1,77 +1,77 @@
 # Arrays
 
-Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).
+La manipulación de arrays o arreglos en Zephir proporciona una manera de utilizar los [arrays de PHP](http://www.php.net/manual/en/language.types.array.php). Un array es una implementación de una [tabla hash](http://en.wikipedia.org/wiki/Hash_table).
 
 <a name='declaring-array-variables'></a>
 
-## Declaring Array Variables
+## Declarar Variables de tipo Array
 
-Array variables can be declared using the keywords 'var' or 'array':
+Variables de array pueden ser declaradas usando las palabras clave 'var' o 'array':
 
-    var a   = []; // array variable, its type can be changed
-    array b = []; // array variable, its type cannot be changed across execution
+    var a   = []; // variable array, el tipo puede ser cambiado
+    array b = []; // variable array, el tipo no puede ser cambiado durante la ejecución
     
 
 <a name='creating-arrays'></a>
 
-## Creating Arrays
+## Creación de Arrays
 
-An array is created by enclosing its elements in square brackets:
+Un array se crea encerrando sus elementos entre corchetes:
 
-##### Creating an empty array
+##### Crear una arreglo vacío
 
     let elements = [];
     
 
-##### Creating an array with elements
+##### Crear un arreglo con elementos
 
     let elements = [1, 3, 4];
     
 
-##### Creating an array with elements of different types
+##### Crear un arreglo con elementos de diferentes tipos
 
     let elements = ["first", 2, true];
     
 
-##### A multidimensional array
+##### Un arreglo multidimensional
 
     let elements = [[0, 1], [4, 5], [2, 3]];
     
 
-As PHP, hashes or dictionaries are supported:
+Al igual que en PHP los hashes o claves están soportadas, también conocidos como arreglos asociativos:
 
-##### Creating a hash with string keys
+##### Creación de un arreglo asociativo con claves de texto
 
     let elements = ["foo": "bar", "bar": "foo"];
     
 
-##### Creating a hash with numeric keys
+##### Creación de un array asociativo con claves numéricas
 
     let elements = [4: "bar", 8: "foo"];
     
 
-##### Creating a hash with mixed string and numeric keys
+##### Creación de un array asociativo mixto, con claves de texto y numéricas
 
     let elements = [4: "bar", "foo": 8];
     
 
 <a name='updating-arrays'></a>
 
-## Updating arrays
+## Actualización de arrays
 
-Arrays are updated in the same way as PHP, using square brackets:
+Los arreglos se actualizan en la misma manera que en PHP, utilizando corchetes cuadrados:
 
-##### Updating an array with a string key
+##### Actualización de un array con una llave de texto
 
     let elements["foo"] = "bar";
     
 
-##### Updating an array with a numeric key
+##### Actualización de un array con una llave numérica
 
     let elements[0] = "bar";
     
 
-##### Updating multi-dimensional array
+##### Actualización de un array multidimensional
 
     let elements[0]["foo"] = "bar";
     let elements["foo"][0] = "bar";
@@ -79,26 +79,26 @@ Arrays are updated in the same way as PHP, using square brackets:
 
 <a name='appending-elements'></a>
 
-## Appending elements
+## Agregando elementos
 
-Elements can be appended at the end of the array as follows:
+Los elementos pueden ser añadidos al final del array de la siguiente manera:
 
-##### Append an element to the array
+##### Añadir un nuevo elemento a un array
 
     let elements[] = "bar";
     
 
 <a name='reading-elements-from-arrays'></a>
 
-## Reading elements from arrays
+## Leyendo elementos desde arrays
 
-It is possible to read array elements as follows:
+Es posible leer los elementos de la matriz de la siguiente forma:
 
-##### Getting an element using the string key `foo`
+##### Obteniendo un elemento utilizando la clave de texto `foo`
 
     let foo = elements["foo"];
     
 
-##### Getting an element using the numeric key 0
+##### Obteniendo un elemento utilizando la clave numérica 0
 
     let foo = elements[0];

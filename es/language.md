@@ -1,14 +1,14 @@
-# Basic Syntax
+# Sintaxis básica
 
-In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
+En este capítulo, analizaremos la organización de archivos y espacios de nombres, declaraciones de variables, varios convenios de sintaxis y algunos conceptos generales.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
-## Organizing Code in Files and Namespaces
+## Organización del código en archivos y espacios de nombres
 
-In PHP, you can place code in any file, without a specific structure. In Zephir, every file must contain a class (and just one class). Every class must have a namespace, and the directory structure must match the names of the classes and namespaces used. (This is similar to PSR-4 autoloading conventions, except it's enforced by the language itself.)
+En PHP, usted puede colocar código en cualquier archivo, sin una estructura específica. En Zephir, cada archivo debe contener una sola clase. Cada clase debe tener un espacio de nombres, y la estructura de directorios debe coincidir con los nombres de las clases y espacios de nombres utilizados. (Esto es similar al convenio PSR-4 de carga automática, salvo que se aplica al lenguaje en sí mismo)
 
-For example, given the following structure, the classes in each file must be:
+Por ejemplo, teniendo en cuenta la siguiente estructura, las clases en cada archivo deben ser:
 
     mylibrary/
         router/
@@ -16,7 +16,7 @@ For example, given the following structure, the classes in each file must be:
         router.zep # MyLibrary\Router
     
 
-Class in `mylibrary/router.zep`:
+La clase en `mylibrary/router.zep`:
 
     namespace MyLibrary;
     
@@ -26,7 +26,7 @@ Class in `mylibrary/router.zep`:
     }
     
 
-Class in `mylibrary/router/exception.zep`:
+La clase en `mylibrary/router/exception.zep`:
 
     namespace MyLibrary\Router;
     
@@ -36,67 +36,67 @@ Class in `mylibrary/router/exception.zep`:
     }
     
 
-Zephir will raise a compiler exception if a file or class is not located in the expected file, or vice versa.
+Zephir generará una excepción del compilador si un archivo o una clase no se encuentra en el archivo esperado, o viceversa.
 
 <a name='instruction-separation'></a>
 
-## Instruction separation
+## Separación de instrucciones
 
-You may have already noticed that there were very few semicolons in the code examples in the previous chapter. You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
+Puede que ya ha notado, que había muy pocos puntos y comas en los ejemplos de código en el capítulo anterior. Usted puede utilizar puntos y comas para separar declaraciones y expresiones, como en Java, C/C++, PHP, y otros lenguajes similares:
 
-    myObject->myMethod(1, 2, 3); echo "world";
+    myObject->myMethod(1, 2, 3); echo "mundo";
     
 
 <a name='comments'></a>
 
-## Comments
+## Comentarios
 
-Zephir supports 'C'/'C++' comments. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
+Zephir soporta los comentarios de tipo 'C'/'C++'. Estos son los comentarios de una linea `// ...`, y los comentarios multi linea`/* ... */`:
 
-    // this is a one line comment
+    // este es un comentario de una linea
     
     /**
-     * multi-line comment
+     * este es un comentario multi linea
      */
     
 
-In most languages, comments are simply text ignored by the compiler/interpreter. In Zephir, multi-line comments are also used as docblocks, and they're exported to the generated code, so they're part of the language!
+En la mayoría de los lenguajes, los comentarios son simplemente ignorados por el compilador/interprete. En Zephir, los comentarios multi linea son utilizados como bloques de documentación (docblocks), y son exportados al código generado, por lo que son parte del lenguaje!
 
-If a docblock is not located where it is expected, the compiler will throw an exception.
+Si un bloque de comentarios no esta ubicado donde sea esperado, el compilador lanzará una excepción.
 
 <a name='variable-declarations'></a>
 
-## Variable Declarations
+## Declaración de variables
 
-In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
+En Zephir, se deben declarar todas las variables utilizadas en un determinado ámbito. Esto proporciona información importante para que el compilador para realizar optimizaciones y validaciones. Las variables deben ser identificadores únicos y no pueden ser palabras reservadas.
 
-    // Declaring variables for the same type    in the same instruction
+    // Declarando variables del mismo tipo en la misma instrucción
     var a, b, c;
     
-    // Declaring each variable in separate lines
+    // Declarando cada variable en lineas separadas
     var a;
     var b;
     var c;
     
 
-Variables can optionally have an initial compatible default value:
+Las variables pueden tener opcionalmente un valor inicial por defecto compatible con el tipo:
 
-    // Declaring variables with default values
-    var a = "hello", b = 0, c = 1.0;
+    // Declarando variables con valores por defecto
+    var a = "hola", b = 0, c = 1.0;
     int d = 50; bool some = true;
     
 
-Variable names are case-sensitive, the following variables are different:
+Los nombres de variables son sensibles a mayúsculas y minúsculas, las siguientes variables son diferentes:
 
-    // Different variables
+    // Variables diferentes
     var somevalue, someValue, SomeValue;
     
 
 <a name='variable-scope'></a>
 
-## Variable Scope
+## Ámbito de la variable
 
-All variables declared are locally scoped to the method where they were declared:
+Todas las variables declaradas localmente, tienen un ámbito local al método donde se declaró:
 
     namespace Test;
     
@@ -120,35 +120,35 @@ All variables declared are locally scoped to the method where they were declared
 
 <a name='super-global'></a>
 
-## Super Globals
+## Super globales
 
-Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
+Zephir no admite variables globales; no se permite el acceso a variables globales desde la zona de usuario de PHP. Sin embargo, se puede acceder a las super globales de PHP de la siguiente forma:
 
-    // Getting a value from _POST
+    // Obteniendo un valor desde _POST
     let price = _POST["price"];
     
-    // Read a value from _SERVER
+    // Leer un valor de _SERVER
     let requestMethod = _SERVER["REQUEST_METHOD"];
     
 
 <a name='local-symbol-table'></a>
 
-## Local Symbol Table
+## Tabla de símbolos locales
 
-Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
+Cada método o contexto en PHP tiene una tabla de símbolos que le permite escribir variables de una manera muy dinámica:
 
     <?php
     
     $b = 100;
     $a = "b";
-    echo $$a; // prints 100
+    echo $$a; // imprime 100
     
 
-Zephir does not implement this feature, since all variables are compiled down to low-level variables, and there is no way to know which variables exist in a specific context. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
+Zephir no implementa esta característica, ya que todas las variables se compilan en variables de bajo nivel y no hay forma de saber qué variables existen en un contexto específico. Si deseas crear una variable en la tabla de símbolos actual de PHP, puedes utilizar la siguiente sintaxis:
 
-    // Set variable $name in PHP
-    let {"name"} = "hello";
+    // Establecer la variable $name en PHP
+    let {"name"} = "hola";
     
-    // Set variable $price in PHP
-    let name = "price";
+    // Establecer la variable $precio en PHP
+    let name = "precio";
     let {name} = 10.2;
