@@ -1,13 +1,17 @@
 # Zephir Documentation
 
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/zephir-documentation/localized.svg)](https://crowdin.com/project/zephir-documentation)
+
+
 ## Welcome
+This repository the documentation for the [Zephir Language](https://zephir-lang.com). The documentation can be found [here](https://docs.zephir-lang.com)
 
-This is the repository for the [Zephir](https://zephir-lang.com) documentation.
+## Changes/Corrections
+If you see any problems in the documentation, feel free to issue a Pull Request. 
 
-You are welcome to fork this repository and add, correct, enhance the
-documentation yourselves.
+Pull requests are only accepted in the source language which is English `en` 
 
-The documentation language is [reStructuredText](http://www.sphinx-doc.org/en/stable/rest.html)
+## Localization
+We welcome contributions in localizing the documentation. Our localization is handled by our friends at [Crowdin](https://crowdin.com), who very generously offered their platform for our project.
 
-You need to install the [Zephir Lexer for Pygments](https://github.com/phalcon/zephir-lexer)
-if you want to generate the documentation.
+You can visit [the project in Crowdin](https://crowdin.com/project/zephir-documentation) and start translating there. Crowdin will issue pull requests to this repository automatically when new translations come in and we manually update the website that hosts our documents.

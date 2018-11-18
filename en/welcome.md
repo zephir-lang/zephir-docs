@@ -16,39 +16,44 @@ Zephir's main features are:
 ## A small taste
 The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
-```zephir
-namespace MyLibrary;
-
-/**
- * Filter
- */
-class Filter
-{
+    namespace MyLibrary;
+    
     /**
-     * Filters a string, returning its alpha characters
-     *
-     * @param string str
+     * Filter
      */
-    public function alpha(string str)
+    class Filter
     {
-        char ch; string filtered = "";
-
-        for ch in str {
-           if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
-              let filtered .= ch;
-           }
+        /**
+         * Filters a string, returning its alpha charactersa
+         *
+         * @param string str
+         */
+        public function alpha(string str)
+        {
+            char ch; string filtered = "";
+    
+            for ch in str {
+               if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+                  let filtered .= ch;
+               }
+            }
+    
+            return filtered;
         }
-
-        return filtered;
     }
-}
-```
 
 The class can be used from PHP as follows:
 
-```php
-  <?php
+    <?php
+    
+    $filter = new MyLibrary\Filter();
+    echo $filter->alpha("01he#l.lo?/1"); // prints hello
+ 
+<a name='external-links'></a>
+## External Links
+Below we have collected links to external resources that may interest you:
 
-  $filter = new MyLibrary\Filter();
-  echo $filter->alpha("01he#l.lo?/1"); // prints hello
-```
+- [Type system](https://en.wikipedia.org/wiki/Type_system)
+- [Memory safety](https://en.wikipedia.org/wiki/Memory_safety)
+- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+- [Memory management](https://en.wikipedia.org/wiki/Memory_management)

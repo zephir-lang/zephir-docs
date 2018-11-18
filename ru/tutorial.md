@@ -1,34 +1,35 @@
-# Tutorial
+# Урок
 
-Zephir, and this book, are intended for PHP developers who want to create C extensions, with a lower complexity.
+Zephir и это руководство предназначены для разработчиков PHP, которые хотят создавать C-расширения с меньшей сложностью.
 
-We assume that you are experienced in one or more other programming languages. We draw parallels to features in PHP, C, Javascript, and other languages. We'll point out features in Zephir that are similar to these other languages, as well as many features that are new or different. If you are familiar with these specific languages, you'll pick up on these comparisons more quickly.
+Мы предполагаем, что вы знакомы с одним или несколькими языками программирования. Мы проводим параллели с функциями в PHP, C, Javascript и других языках. Мы будем указывать на функции в Zephir, которые схожи с их аналогами в других языках, а также на функции, поведение которых не является похожим или даже является новым. Если вы знаете какой-либо из этих языков, вы будете отмечать эти сходства и различия более быстро.
+
+В этом руководстве мы будем использовать стандартные команды терминала Linux. Если вы являетесь пользователем Windows, вам нужно заменить эти команды их аналогами.
 
 <a name='checking-the-installation'></a>
 
-## Checking the Installation
+## Проверка установки
 
-If you have successfully installed Zephir, you will be able to execute the following command in your console:
+Если вы успешно установили Zephir, вы должны быть в состоянии выполнить следующую команду в своей консоли:
 
 ```bash
-$ zephir help
+zephir help
 ```
 
-If everything is well, you should see the following help (or something very similar):
+Если все в порядке, на вашем экране должна появиться следующая справка (или очень похожая):
 
-```bash
      _____              __    _
     /__  /  ___  ____  / /_  (_)____
       / /  / _ \/ __ \/ __ \/ / ___/
      / /__/  __/ /_/ / / / / / /
     /____/\___/ .___/_/ /_/_/_/
              /_/
-
+    
     Zephir version 0.10.9a-dev
-
+    
     Usage:
         command [options]
-
+    
     Available commands:
         stubs               Generates extension PHP stubs
         install             Installs the extension (requires root password)
@@ -42,55 +43,56 @@ If everything is well, you should see the following help (or something very simi
         generate            Generates C code from the Zephir code
         help                Displays this help
         build               Generate/Compile/Install a Zephir extension
-
+    
     Options:
         -f([a-z0-9\-]+)     Enables compiler optimizations
         -fno-([a-z0-9\-]+)  Disables compiler optimizations
         -w([a-z0-9\-]+)     Turns a warning on
         -W([a-z0-9\-]+)     Turns a warning off
-```
+    
+
+Если что-то пошло не так, вернитесь к разделу [установка](/[[language]]/[[version]]/installation).
 
 <a name='extension-skeleton'></a>
 
-## Extension Skeleton
+## Каркас расширения
 
-The first thing we have to do is generate an extension skeleton. This will provide to our extension the basic structure we need to start working. In our case, we're going to create an extension called `utils`:
+Первое, что нам нужно сделать, это сгенерировать скелет расширения. Это предоставит нашему расширению базовую структуру, которую мы должны начать работать. В нашем случае мы создадим расширение под названием `utils`:
 
 ```bash
-$ zephir init utils
+zephir init utils
 ```
 
-After this, a directory called "utils" is created on the current working directory:
+После этого в текущем рабочем каталоге создается каталог с именем "utils":
+
+    utils/
+       ext/
+       utils/
+    
+
+Каталог `ext/` (внутри utils) содержит код, который будет использоваться компилятором для создания расширения. Другой созданный каталог — `utils`, этот каталог имеет то же самое, что и наше расширение. Мы разместим код Zephir в этом каталоге.
+
+Нам нужно изменить рабочий каталог на "utils", чтобы начать компилировать наш код:
 
 ```bash
-utils/
-   ext/
-   utils/
-```
-
-The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
-
-We need to change the working directory to "utils" to start compiling our code:
-
-```bash
-$ cd utils
-$ ls
+cd utils
+ls
 ext/ utils/ config.json
 ```
 
-The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
+В листинге каталога также будет отображаться файл с именем `config.json`. Этот файл содержит параметры конфигурации, которые мы можем использовать для изменения поведения Zephir и/или этого расширения.
 
 <a name='adding-our-first-class'></a>
 
-## Adding our first class
+## Добавление нашего первого класса
 
-Zephir is designed to generate object-oriented extensions. To start developing functionality, we need to add our first class to the extension.
+Zephir предназначен для создания объектно-ориентированных расширений. Чтобы начать разработку, нам нужно добавить наш первый класс к расширению.
 
-As in many languages/tools, the first thing we want to do is see a `hello world` generated by Zephir, and check that everything is well. So our first class will be called `Utils\Greeting`, and contain a method printing `hello world!`.
+Как и во многих языках/инструментах, первое, что мы хотим сделать, это увидеть `hello world`, сгенерированный Zephir, и проверить, что все в порядке. Итак, наш первый класс будет называться `Utils\Greeting` и он содержит метод печати `hello world!`.
 
-The code for this class must be placed in `utils/utils/greeting.zep`:
+Код для этого класса должен быть помещен в `utils/utils/greeting.zep`:
 
-```zephir
+```zep
 namespace Utils;
 
 class Greeting
@@ -104,33 +106,34 @@ class Greeting
 }
 ```
 
-Now, we need to tell Zephir that our project must be compiled and the extension generated:
+Теперь нам нужно сообщить Zephir, что наш проект должен быть скомпилирован и сгенерировано расширение:
 
 ```bash
-$ zephir build
+zephir build
 ```
 
-Initially, and only for the first time, a number of internal commands are executed producing the necessary code and configurations to export this class to the PHP extension. If everything goes well, you will see the following message at the end of the output:
+Изначально и только в первый раз выполняется ряд внутренних команд, создающих необходимый код и конфигурации, чтобы экспортировать этот класс в расширение PHP. Если все пойдет хорошо, вы увидите следующее сообщение в конце вывода:
 
-```text
     ...
     Extension installed!
     Add extension=utils.so to your php.ini
     Don't forget to restart your web server
-```
+    
 
-At the above step, it's likely that you would need to supply your root password in order to install the extension.
+На этом этапе вполне вероятно, что вам потребуется указать пароль root, чтобы установить расширение.
 
-Finally, the extension must be added to the `php.ini` in order to be loaded by PHP. This is achieved by adding the initialization directive: `extension=utils.so` to it. (NOTE: You can also load it on the command line with `-d extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.)
+Наконец, расширение должно быть добавлено в `php.ini` для загрузки PHP. Это достигается добавлением директивы инициализации: `extension=utils.so` к нему.
+
+Замечание: Вы так же можете запускать PHP передавая ему в качестве опции `-d extension=utils.so`. Однако это одноразовый «трюк», вам необходимо будет поступать так каждый раз, тестируя ваше расширение в терминале. Добавление директивы в `php.ini` будет гарантировать, что расширение загружается для каждого запроса.
 
 <a name='initial-testing'></a>
 
-## Initial Testing
+## Первоначальное тестирование
 
-Now that the extension was added to your php.ini, check whether the extension is being loaded properly by executing the following:
+Теперь, когда расширение было добавлено в ваш `php.ini`, проверьте, правильно ли загружается расширение, выполнив следующее:
 
 ```bash
-$ php -m
+php -m
 [PHP Modules]
 Core
 date
@@ -146,7 +149,7 @@ xdebug
 xml
 ```
 
-Extension `utils` should be part of the output, indicating that the extension was loaded correctly. Now, let's see our `hello world` directly executed by PHP. To accomplish this, you can create a simple PHP file calling the static method we have just created:
+Расширения `utils` должны быть частью вывода, указывающего, что расширение было загружено правильно. Теперь давайте посмотрим на наш `hello world`, непосредственно выполняемый PHP. Для этого вы можете создать простой PHP-файл, вызывающий статический метод, который мы только что создали:
 
 ```php
 <?php
@@ -154,19 +157,19 @@ Extension `utils` should be part of the output, indicating that the extension wa
 echo Utils\Greeting::say(), "\n";
 ```
 
-Congratulations!, you have your first extension running in PHP.
+Поздравляем! У вас есть первое расширение, работающее с PHP.
 
 <a name='a-useful-class'></a>
 
-## A useful class
+## Удобные класс
 
-The `hello world` class was fine to check if our environment was right. Now, let's create some more useful classes.
+Метод `Utils\Greeting::say` был хорош, чтобы проверить, правильно ли сконфигурирована наша среда. А теперь давайте создадим еще несколько полезных классов.
 
-The first useful class we are going to add to this extension will provide filtering facilities to users. This class is called `Utils\Filter` and its code must be placed in `utils/utils/filter.zep`:
+Первый полезный класс, который мы добавим к этому расширению, предоставит пользователям средства фильтрации. Этот класс называется `Utils\Filter`, и его код должен быть помещен в `utils/utils/filter.zep`:
 
-A basic skeleton for this class is the following:
+Основным скелетом этого класса является следующее:
 
-```zephir
+```zep
 namespace Utils;
 
 class Filter
@@ -175,9 +178,9 @@ class Filter
 }
 ```
 
-The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
+Класс содержит методы фильтрации, которые помогают пользователям фильтровать нежелательные символы из строк. Первый метод называется `alpha`, и его целью является отфильтровать только те символы, которые являются основными буквами ASCII. Для начала, мы просто пройдем через строковую печать каждого байта в стандартный вывод:
 
-```zephir
+```zep
 namespace Utils;
 
 class Filter
@@ -194,7 +197,7 @@ class Filter
 }
 ```
 
-When invoking this method:
+При вызове этого метода:
 
 ```php
 <?php
@@ -203,19 +206,18 @@ $f = new Utils\Filter();
 $f->alpha("hello");
 ```
 
-You will see:
+Вы увидите:
 
-```bash
     h
     e
     l
     l
     o
-```
+    
 
-Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
+Проверка каждого символа в строке проста. Теперь мы можем просто создать другую строку с правильными отфильтрованными символами:
 
-```zephir
+```zep
 class Filter
 {
 
@@ -234,25 +236,19 @@ class Filter
 }
 ```
 
-The complete method can be tested as before:
+Полный метод может быть проверен, как и прежде:
 
 ```php
 <?php
 
 $f = new Utils\Filter();
-echo $f->alpha("!he#02l3'121lo."); // prints "hello"
+echo $f->alpha("!he#02l3'121lo."); // выведет "hello"
 ```
 
-In the following screencast you can watch how to create the extension explained in this tutorial:
-
-.. raw:: html
-
-<div align="center">
-  <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
+В следующем скринкасте вы можете посмотреть, как создать расширение, объяснённое в этом уроке: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
 <a name='conclusion'></a>
 
-## Conclusion
+## Заключение
 
-This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
+Это очень простой учебник, и, как вы можете видеть, легко начать создание расширений с помощью Zephir. Мы приглашаем вас продолжить чтение руководства, чтобы вы могли ознакомиться с дополнительными функциями, которые предлагает Zephir!

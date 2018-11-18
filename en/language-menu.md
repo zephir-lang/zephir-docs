@@ -1,0 +1,7 @@
+- [Organizing code in files and namespaces](/[[language]]/[[version]]/language#organizing-code-in-files-and-namespaces)
+- [Instruction separation](/[[language]]/[[version]]/language#instruction-separation)
+- [Comments](/[[language]]/[[version]]/language#comments)
+- [Variable declarations](/[[language]]/[[version]]/language#variable-declarations)
+- [Variable scope](/[[language]]/[[version]]/language#variable-scope)
+- [Super globals](/[[language]]/[[version]]/language#super-globals)
+- [Local symbol table](/[[language]]/[[version]]/language#local-symbol-table)

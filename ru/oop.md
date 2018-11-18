@@ -8,7 +8,7 @@ Zephir promotes object-oriented programming. This is why you can only export met
 
 Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
 
-```zephir
+```zep
 namespace Test;
 
 /**
@@ -28,7 +28,7 @@ The following class modifiers are supported:
 
 *Final*: If a class has this modifier it cannot be extended:
 
-```zephir
+```zep
 namespace Test;
 
 /**
@@ -42,7 +42,7 @@ final class MyClass
 
 *Abstract*: If a class has this modifier it cannot be instantiated:
 
-```zephir
+```zep
 namespace Test;
 
 /**
@@ -54,13 +54,55 @@ abstract class MyClass
 }
 ```
 
+<a name='classes-interfaces'></a>
+
+### Implementing Interfaces
+
+Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+
+If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
+
+```zep
+// middlewareinterfaceex.zep
+namespace Test\Oo\Extend;
+
+use Psr\Http\Server\MiddlewareInterface;
+
+interface MiddlewareInterfaceEx extends MiddlewareInterface
+{
+
+}
+```
+
+From here we can use the `stub` interface throughout our extension.
+
+```php
+/**
+ * @test
+ */
+public function shouldExtendMiddlewareInterface()
+{
+    if (!extension_loaded('psr')) {
+        $this->markTestSkipped(
+            "The psr extension is not loaded"
+        );
+    }
+
+    $this->assertTrue(
+        is_subclass_of(MiddlewareInterfaceEx::class, 'Psr\Http\Server\MiddlewareInterface')
+    );
+}
+```
+
+**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
+
 <a name='implementing-methods'></a>
 
 ## Implementing Methods
 
 The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -85,7 +127,7 @@ class MyClass
 
 Methods can receive required and optional parameters:
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -139,7 +181,7 @@ class MyClass
 
 Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
 
-```zephir
+```zep
 public function foo(int a = null)
 {
     echo a; // if "a" is not passed it prints 0
@@ -189,7 +231,7 @@ Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allow
 
 For example, without shortcuts we would need code like:
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -222,12 +264,12 @@ class MyClass
     {
         return this->myProperty;
     }
- }
+}
 ```
 
 You can write the same code using shortcuts as follows:
 
-```zephir
+```zep
 namespace App;
 
 class MyClass
@@ -250,7 +292,7 @@ When the code is compiled, those methods are exported as real methods, but you d
 
 Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Consider the following example:
 
-```zephir
+```zep
 namespace App;
 
 class MyClass
@@ -289,7 +331,7 @@ class MyClass
 
 A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
 
-```zephir
+```zep
 namespace App;
 
 class MyClass
@@ -310,7 +352,7 @@ class MyClass
 
 Methods can also be marked as `void`. This means that a method is not allowed to return any data:
 
-```zephir
+```zep
 public function setConnection(connection) -> void
 {
     let this->_connection = connection;
@@ -319,7 +361,7 @@ public function setConnection(connection) -> void
 
 Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
 
-```zephir
+```zep
 let myDb = db->setConnection(connection); // this will produce an exception
 myDb->execute("SELECT * FROM robots");
 ```
@@ -330,7 +372,7 @@ myDb->execute("SELECT * FROM robots");
 
 In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
 
-```zephir
+```zep
 public function filterText(string text, boolean escape=false)
 {
     //...
@@ -339,7 +381,7 @@ public function filterText(string text, boolean escape=false)
 
 Above method will work with the following calls:
 
-```php
+```zep
 <?php
 
 $o->filterText(1111, 1);              // OK
@@ -351,7 +393,7 @@ $o->filterText(array(1, 2, 3), true); // FAIL
 
 However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
 
-```zephir
+```zep
 public function filterText(string! text, boolean escape=false)
 {
     //...
@@ -360,7 +402,7 @@ public function filterText(string! text, boolean escape=false)
 
 Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
 
-```php
+```zep
 <?php
 
 $o->filterText(1111, 1);              // FAIL
@@ -378,7 +420,7 @@ By specifying what parameters are strict and what can be flexible, a developer c
 
 Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
 
-```zephir
+```zep
 namespace App;
 
 class MyClass
@@ -400,7 +442,7 @@ When a parameter is declared as read-only, the compiler can make safe assumption
 
 Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -415,7 +457,7 @@ class MyClass
 
 Within class methods, non-static properties may be accessed by using -> (Object Operator):
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -437,7 +479,7 @@ class MyClass
 
 Properties can have literal compatible default values. These values must be able to be evaluated at compile time and must not depend on run-time information in order to be evaluated:
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -457,28 +499,28 @@ class MyClass
 
 Properties can be updated by accessing them using the '->' operator:
 
-```zephir
+```zep
 let this->myProperty = 100;
 ```
 
 Zephir checks that properties exist when a program is accessing them. If a property is not declared, you will get a compiler exception:
 
-```php
-    CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/utils/app/myclass.zep on line 62
+```bash
+CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/utils/app/myclass.zep on line 62
 
-          let this->_optionsx = options;
-          ------------^
+      let this->_optionsx = options;
+      ------------^
 ```
 
 If you want to avoid this compiler validation, or just create a property dynamically, you can enclose the property name using brackets and string quotes:
 
-```zephir
+```zep
 let this->{"myProperty"} = 100;
 ```
 
 You can also use a simple variable to update a property; the property name will be taken from the variable:
 
-```zephir
+```zep
 let someProperty = "myProperty";
 let this->{someProperty} = 100;
 ```
@@ -489,13 +531,13 @@ let this->{someProperty} = 100;
 
 Properties can be read by accessing them using the `->` operator:
 
-```zephir
+```zep
 echo this->myProperty;
 ```
 
 As when updating, properties can be dynamically read this way:
 
-```zephir
+```zep
 // Avoid compiler check or read a dynamic user defined property
 echo this->{"myProperty"};
 
@@ -510,7 +552,7 @@ echo this->{someProperty}
 
 Classes may contain class constants that remain the same and unchangeable once the extension is compiled. Class constants are exported to the PHP extension, allowing them to be used from PHP.
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -522,7 +564,7 @@ class MyClass
 
 Class constants can be accessed using the class name and the static operator (::):
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -544,7 +586,7 @@ class MyClass
 
 Methods can be called using the object operator (->) as in PHP:
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -563,7 +605,7 @@ class MyClass
 
 Static methods must be called using the static operator (::):
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -582,7 +624,7 @@ class MyClass
 
 You can call methods in a dynamic manner as follows:
 
-```zephir
+```zep
 namespace Test;
 
 class MyClass
@@ -609,7 +651,7 @@ Zephir supports calling method parameters by name or keyword arguments. Named pa
 
 Consider the following example. A class called `Image` has a method that receives four parameters:
 
-```zephir
+```zep
 namespace Test;
 
 class Image
@@ -623,14 +665,14 @@ class Image
 
 Using the standard method calling approach:
 
-```zephir
+```zep
 i->chop(100);             // width=100, height=400, x=0, y=0
 i->chop(100, 50, 10, 20); // width=100, height=50, x=10, y=20
 ```
 
 Using named parameters, you can:
 
-```zephir
+```zep
 i->chop(width: 100);              // width=100, height=400, x=0, y=0
 i->chop(height: 200);             // width=600, height=200, x=0, y=0
 i->chop(height: 200, width: 100); // width=100, height=200, x=0, y=0
@@ -639,7 +681,7 @@ i->chop(x: 20, y: 30);            // width=600, height=400, x=20, y=30
 
 When the compiler (at compile time) does not know the correct order of these parameters, they must be resolved at runtime. In this case, there could be a minimum additional extra overhead:
 
-```zephir
+```zep
 let i = new {someClass}();
 i->chop(y: 30, x: 20);
 ```

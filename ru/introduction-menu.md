@@ -1,0 +1,2 @@
+- [Привет мир!](/[[language]]/[[version]]/intrductiono#hello-world)
+- [Понимание Zephir](/[[language]]/[[version]]/introduction#a-taste-of-zephir)

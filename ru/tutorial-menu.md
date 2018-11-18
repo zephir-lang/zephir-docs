@@ -1,0 +1,6 @@
+- [Проверка установки](/[[language]]/[[version]]/tutorial#checking-the-installation)
+- [Каркас расширения](/[[language]]/[[version]]/tutorial#extension-skeleton)
+- [Добавление нашего первого класса](/[[language]]/[[version]]/tutorial#adding-our-first-class)
+- [Первоначальное тестирование](/[[language]]/[[version]]/tutorial#initial-testing)
+- [Удобные класс](/[[language]]/[[version]]/tutorial#a-useful-class)
+- [Заключение](/[[language]]/[[version]]/tutorial#conclusion)

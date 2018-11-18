@@ -1,6 +1,6 @@
 # Arrays
 
-Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a \[]hash table\](http://en.wikipedia.org/wiki/Hash_table).
+Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).
 
 <a name='declaring-array-variables'></a>
 
@@ -8,10 +8,9 @@ Array manipulation in Zephir provides a way to use PHP [array](http://www.php.ne
 
 Array variables can be declared using the keywords 'var' or 'array':
 
-```zephir
-  var a   = []; // array variable, its type can be changed
-  array b = []; // array variable, its type cannot be changed across execution
-```
+    var a   = []; // array variable, its type can be changed
+    array b = []; // array variable, its type cannot be changed across execution
+    
 
 <a name='creating-arrays'></a>
 
@@ -19,32 +18,42 @@ Array variables can be declared using the keywords 'var' or 'array':
 
 An array is created by enclosing its elements in square brackets:
 
-```zephir
-  // Creating an empty array
-  let elements = [];
+##### Creating an empty array
 
-  // Creating an array with elements
-  let elements = [1, 3, 4];
+    let elements = [];
+    
 
-  // Creating an array with elements of different types
-  let elements = ["first", 2, true];
+##### Creating an array with elements
 
-  // A multidimensional array
-  let elements = [[0, 1], [4, 5], [2, 3]];
-```
+    let elements = [1, 3, 4];
+    
+
+##### Creating an array with elements of different types
+
+    let elements = ["first", 2, true];
+    
+
+##### A multidimensional array
+
+    let elements = [[0, 1], [4, 5], [2, 3]];
+    
 
 As PHP, hashes or dictionaries are supported:
 
-```zephir
-  // Creating a hash with string keys
-  let elements = ["foo": "bar", "bar": "foo"];
+##### Creating a hash with string keys
 
-  // Creating a hash with numeric keys
-  let elements = [4: "bar", 8: "foo"];
+    let elements = ["foo": "bar", "bar": "foo"];
+    
 
-  // Creating a hash with mixed string and numeric keys
-  let elements = [4: "bar", "foo": 8];
-```
+##### Creating a hash with numeric keys
+
+    let elements = [4: "bar", 8: "foo"];
+    
+
+##### Creating a hash with mixed string and numeric keys
+
+    let elements = [4: "bar", "foo": 8];
+    
 
 <a name='updating-arrays'></a>
 
@@ -52,17 +61,21 @@ As PHP, hashes or dictionaries are supported:
 
 Arrays are updated in the same way as PHP, using square brackets:
 
-```zephir
-  // Updating an array with a string key
-  let elements["foo"] = "bar";
+##### Updating an array with a string key
 
-  // Updating an array with a numeric key
-  let elements[0] = "bar";
+    let elements["foo"] = "bar";
+    
 
-  // Updating multi-dimensional array
-  let elements[0]["foo"] = "bar";
-  let elements["foo"][0] = "bar";
-```
+##### Updating an array with a numeric key
+
+    let elements[0] = "bar";
+    
+
+##### Updating multi-dimensional array
+
+    let elements[0]["foo"] = "bar";
+    let elements["foo"][0] = "bar";
+    
 
 <a name='appending-elements'></a>
 
@@ -70,10 +83,10 @@ Arrays are updated in the same way as PHP, using square brackets:
 
 Elements can be appended at the end of the array as follows:
 
-```zephir
-  // Append an element to the array
-  let elements[] = "bar";
-```
+##### Append an element to the array
+
+    let elements[] = "bar";
+    
 
 <a name='reading-elements-from-arrays'></a>
 
@@ -81,10 +94,11 @@ Elements can be appended at the end of the array as follows:
 
 It is possible to read array elements as follows:
 
-```zephir
-  // Getting an element using the string key "foo"
-  let foo = elements["foo"];
+##### Getting an element using the string key `foo`
 
-  //Getting an element using the numeric key 0
-  let foo = elements[0];
-```
+    let foo = elements["foo"];
+    
+
+##### Getting an element using the numeric key 0
+
+    let foo = elements[0];
