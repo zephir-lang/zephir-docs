@@ -21,7 +21,7 @@ class MyClass
 ### Class Modifiers
 The following class modifiers are supported:
 
-*Final*: If a class has this modifier it cannot be extended:
+`final`: If a class has this modifier it cannot be extended:
 
 ```zep
 namespace Test;
@@ -35,7 +35,7 @@ final class MyClass
 }
 ```
 
-*Abstract*: If a class has this modifier it cannot be instantiated:
+`abstract: If a class has this modifier it cannot be instantiated:
 
 ```zep
 namespace Test;
@@ -91,7 +91,7 @@ public function shouldExtendMiddlewareInterface()
 
 <a name='implementing-methods'></a>
 ## Implementing Methods
-The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+The `function` keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zep
 namespace Test;
@@ -194,23 +194,23 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-visibilities'></a>
 ### Supported Visibilities
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the  PHP code as well to the extension itself.
+* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
-* Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
 
-* Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
 <a name='implementing-methods-supported-modifiers'></a>
 ### Supported Modifiers
-* Static: Methods with this modifier can only be called in a static context (from the class, not an object).
+* `static`: Methods with this modifier can only be called in a static context (from the class, not an object).
 
-* Final: If a method has this modifier it cannot be overriden.
+* `final`: If a method has this modifier it cannot be overriden.
 
-* Deprecated: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 ### Getter/Setter shortcuts
-Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
+Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
 
 For example, without shortcuts we would need code like:
 
@@ -310,7 +310,7 @@ class MyClass
 }
 ```
 
-A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
+A method can have more than one return type. When multiple types are defined, the operator `|` must be used to separate those types.
 
 ```zep
 namespace App;
@@ -429,7 +429,7 @@ class MyClass
 }
 ```
 
-Within class methods, non-static properties may be accessed by using -> (Object Operator):
+Within class methods, non-static properties may be accessed by using `->` (Object Operator):
 
 ```zep
 namespace Test;
@@ -469,7 +469,7 @@ class MyClass
 
 <a name='implementing-properties-updating'></a>
 ## Updating Properties
-Properties can be updated by accessing them using the '->' operator:
+Properties can be updated by accessing them using the `->` operator:
 
 ```zep
 let this->myProperty = 100;
@@ -530,7 +530,7 @@ class MyClass
 }
 ```
 
-Class constants can be accessed using the class name and the static operator (::):
+Class constants can be accessed using the class name and the static operator `::`:
 
 ```zep
 namespace Test;
@@ -550,7 +550,7 @@ class MyClass
 
 <a name='calling-methods'></a>
 ## Calling Methods
-Methods can be called using the object operator (->) as in PHP:
+Methods can be called using the object operator `->` as in PHP:
 
 ```zep
 namespace Test;
@@ -569,7 +569,7 @@ class MyClass
 }
 ```
 
-Static methods must be called using the static operator (::):
+Static methods must be called using the static operator `::`:
 
 ```zep
 namespace Test;
