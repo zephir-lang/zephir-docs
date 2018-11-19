@@ -49,7 +49,7 @@ Zephir 还提供了一个“安静”`try`语句，用来忽略产生的任何�
     }
     
 
-Zephir allows you to throw literals or static typed variables as if they were the message of the exception:
+Zephir允许您抛出文字或静态类型变量，就像它们是异常的消息一样：
 
     // throw new \Exception("Test");
     throw "Test";
