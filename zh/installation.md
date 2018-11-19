@@ -31,7 +31,7 @@
     
     请注意，阅读本指南时特定版本的库和程序可能有所不同。
     
-    Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
+    由于Zephir代码的编写是在PHP中进行的，所以需要安装最新版本的PHP，并且必须在您的控制台中可用:
     
     ```bash
     php -v
