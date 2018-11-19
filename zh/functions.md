@@ -37,7 +37,7 @@ PHP有一个丰富的函数库，您可以在扩展中使用它们。 要调用P
     }
     
 
-请注意，所有PHP函数仅接收和返回动态变量。 If you pass a static typed variable as a parameter, a temporary dynamic variable will automatically be used as a bridge in order to call the function:
+请注意，所有PHP函数仅接收和返回动态变量。 如果将静态类型变量作为参数传递，则临时动态变量将自动用作桥接器以调用该函数：
 
     namespace MyLibrary;
     
@@ -55,7 +55,7 @@ PHP有一个丰富的函数库，您可以在扩展中使用它们。 要调用P
     }
     
 
-Similarly, functions return dynamic values, which cannot be directly assigned to static variables without the appropriate explicit cast:
+类似地，函数返回动态值，如果没有适当的显式强制转换，则无法直接将其分配给静态变量：
 
     namespace MyLibrary;
     
@@ -74,7 +74,7 @@ Similarly, functions return dynamic values, which cannot be directly assigned to
     }
     
 
-Zephir also provides a way for you to call functions dynamically, such as:
+Zephir还为您提供了一种动态调用函数的方法，例如：
 
     namespace MyLibrary;
     
