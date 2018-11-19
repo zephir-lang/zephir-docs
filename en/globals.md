@@ -57,7 +57,7 @@ The optional `module` key, if present, places that global's initialization proce
         }
     }
 
-In the example above, `allow_some_feature"` is set up only once at startup; `number_times` is set up at the start of each request.
+In the example above, `allow_some_feature` is set up only once at startup; `number_times` is set up at the start of each request.
 
 Inside any method, you can read/write extension globals using the built-in functions `globals_get`/`globals_set`:
 
