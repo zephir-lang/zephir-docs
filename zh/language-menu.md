@@ -1,6 +1,6 @@
 - [Organizing code in files and namespaces](/[[language]]/[[version]]/language#organizing-code-in-files-and-namespaces)
-- [Instruction separation](/[[language]]/[[version]]/language#instruction-separation)
-- [Comments](/[[language]]/[[version]]/language#comments)
+- [指令分离](/[[language]]/[[version]]/language#instruction-separation)
+- [注释](/[[language]]/[[version]]/language#comments)
 - [Variable declarations](/[[language]]/[[version]]/language#variable-declarations)
 - [Variable scope](/[[language]]/[[version]]/language#variable-scope)
 - [Super globals](/[[language]]/[[version]]/language#super-globals)
