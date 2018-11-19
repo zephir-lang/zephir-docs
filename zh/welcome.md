@@ -8,7 +8,7 @@ Welcome to Zephir, an open source, high-level/domain specific language designed 
 
 Zephir's main features are:
 
-| Feature           | Description                                          |
+| Feature           | 说明                                                   |
 | ----------------- | ---------------------------------------------------- |
 | Type system       | dynamic/static                                       |
 | Memory safety     | pointers or direct memory management are not allowed |
