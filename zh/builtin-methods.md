@@ -67,28 +67,28 @@
 
 可用的数组内置方法如下:
 
-| OO                   | 实际过程                    | 说明                                                         |
-| -------------------- | ----------------------- | ---------------------------------------------------------- |
-| `a->combine(b)`   | `array_combine(a, b)`   | 通过使用一个数组表示键, 为其值创建另一个数组                                    |
-| `a->diff()`       | `array_diff(a)`         | 计算数组的差异                                                    |
-| `a->flip()`       | `array_flip(a)`         | 将数组中的所有键与其关联的值交换                                           |
-| `a->hasKey()`     | `array_key_exists(a)`   | 检查数组中是否存在给定的键或索引                                           |
-| `a->intersect(b)` | `array_intersect(a, b)` | 计算数组的交集                                                    |
-| `a->join(" ")`    | `join(" ", a)`          | 使用字符串联接数组元素                                                |
-| `a->keys()`       | `array_keys(a)`         | 返回数组的所有键或键的子集                                              |
-| `a->merge(b)`     | `array_merge(a, b)`     | Merge one or more arrays                                   |
-| `a->pad()`        | `array_pad(a, b)`       | Pad array to the specified length with a value             |
-| `a->rev()`        | `array_reverse(a)`      | Return an array with elements in reverse order             |
-| `a->reversed()`   | `array_reverse(a)`      | Return an array with elements in reverse order             |
-| `a->split()`      | `array_chunk(a)`        | Split an array into chunks                                 |
-| `a->values()`     | `array_values(a)`       | Return all the values of an array                          |
-| `a->walk()`       | `array_walk(a)`         | Apply a user supplied function to every member of an array |
+| OO                   | 实际过程                    | 说明                      |
+| -------------------- | ----------------------- | ----------------------- |
+| `a->combine(b)`   | `array_combine(a, b)`   | 通过使用一个数组表示键, 为其值创建另一个数组 |
+| `a->diff()`       | `array_diff(a)`         | 计算数组的差异                 |
+| `a->flip()`       | `array_flip(a)`         | 将数组中的所有键与其关联的值交换        |
+| `a->hasKey()`     | `array_key_exists(a)`   | 检查数组中是否存在给定的键或索引        |
+| `a->intersect(b)` | `array_intersect(a, b)` | 计算数组的交集                 |
+| `a->join(" ")`    | `join(" ", a)`          | 使用字符串联接数组元素             |
+| `a->keys()`       | `array_keys(a)`         | 返回数组的所有键或键的子集           |
+| `a->merge(b)`     | `array_merge(a, b)`     | 合并一个或多个数组               |
+| `a->pad()`        | `array_pad(a, b)`       | 以指定长度将一个值填充进数组          |
+| `a->rev()`        | `array_reverse(a)`      | 返回具有相反顺序的元素的数组          |
+| `a->reversed()`   | `array_reverse(a)`      | 返回具有相反顺序的元素的数组          |
+| `a->split()`      | `array_chunk(a)`        | 将数组拆分为多个块               |
+| `a->values()`     | `array_values(a)`       | 返回数组的所有值                |
+| `a->walk()`       | `array_walk(a)`         | 使用用户自定义函数对数组中的每个元素做回调处理 |
 
 <a name='char'></a>
 
 ## Char
 
-The following char built-in methods are available:
+提供了以下字符内置方法:
 
 | OO               | 实际过程                |
 | ---------------- | ------------------- |
@@ -98,7 +98,7 @@ The following char built-in methods are available:
 
 ## Integer
 
-The following integer built-in methods are available:
+以下是可用的整数内置方法:
 
 | OO            | 实际过程     |
 | ------------- | -------- |
