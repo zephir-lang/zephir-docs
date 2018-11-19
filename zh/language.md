@@ -120,22 +120,22 @@ Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `
 
 <a name='super-global'></a>
 
-## Super Globals
+## 超全局
 
-Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
+Zephir不支持全局变量——不允许从PHP代码块访问全局变量。 然而，您可以访问PHP的超全局变量，如下所示:
 
-    // Getting a value from _POST
+    // 从_POST获取值
     let price = _POST["price"];
     
-    // Read a value from _SERVER
+    // 从_SERVER读取值
     let requestMethod = _SERVER["REQUEST_METHOD"];
     
 
 <a name='local-symbol-table'></a>
 
-## Local Symbol Table
+## 本地符号表
 
-Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
+PHP中的每个方法或上下文都有一个符号表，允许您以非常动态的方式编写变量:
 
     <?php
     
@@ -144,7 +144,7 @@ Every method or context in PHP has a symbol table that allows you to write varia
     echo $$a; // prints 100
     
 
-Zephir does not implement this feature, since all variables are compiled down to low-level variables, and there is no way to know which variables exist in a specific context. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
+Zephir没有实现这个特性，因为所有变量都被编译为低级变量，而且无法知道在特定上下文中存在哪些变量。 如果您想在当前PHP符号表中创建一个变量，您可以使用以下语法:
 
     // Set variable $name in PHP
     let {"name"} = "hello";
