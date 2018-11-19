@@ -29,7 +29,7 @@
     sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
     ```
     
-    Please note that specific versions of libraries and programs at the time of reading this guide may vary.
+    请注意，阅读本指南时特定版本的库和程序可能有所不同。
     
     Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
     
