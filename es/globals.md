@@ -7,7 +7,6 @@ In Zephir, extension globals are restricted to simple scalar types like `int`/`b
 You can enable extension globals by adding the following structure to your `config.json`:
 
     {
-        //...
         "globals": {
             "allow_some_feature": {
                 "type": "bool",
@@ -48,10 +47,7 @@ Compound (namespaced) globals have the following structure:
 
 The optional `module` key, if present, places that global's initialization process into the module-wide `GINIT` lifecycle event, which just means it will only be set up once per PHP process, rather than being reinitialized for every request, which is the default:
 
-##### `allow_some_feature"` is set up only once at startup; `number_times` is set up at the start of each request
-
     {
-        //...
         "globals": {
             "allow_some_feature": {
                 "type": "bool",
@@ -65,6 +61,8 @@ The optional `module` key, if present, places that global's initialization proce
         }
     }
     
+
+In the example above, `allow_some_feature` is set up only once at startup; `number_times` is set up at the start of each request.
 
 Inside any method, you can read/write extension globals using the built-in functions `globals_get`/`globals_set`:
 

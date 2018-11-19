@@ -13,7 +13,7 @@ In this guide, we will use the standard Linux terminal commands. If you are a Wi
 If you have successfully installed Zephir, you will be able to execute the following command in your console:
 
 ```bash
-zephir help
+zephir 帮助
 ```
 
 If everything is well, you should see the following help (or something very similar):

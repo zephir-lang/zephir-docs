@@ -47,7 +47,7 @@ Learn more about comparison of dynamic variables in the [php manual](http://www.
 
 Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
 
-| Example        | Operation                | Description                                                      |
+| Example        | Operation                | 说明                                                               |
 | -------------- | ------------------------ | ---------------------------------------------------------------- |
 | `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
 | `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |

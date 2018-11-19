@@ -1,51 +1,51 @@
-# Arrays
+# 数组
 
-Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).
+Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/manual/en/language.types.array.php)的方法。 数组是 < 0>hash 表 </0 > 的实现。
 
 <a name='declaring-array-variables'></a>
 
-## Declaring Array Variables
+## 声明数组变量
 
-Array variables can be declared using the keywords 'var' or 'array':
+数组变量可以使用关键字 "var" 或 "array" 来声明:
 
-    var a   = []; // array variable, its type can be changed
-    array b = []; // array variable, its type cannot be changed across execution
+    var a   = []; // 数组变量，其类型可以改变
+    array b = []; // 数组变量，其类型不能在执行过程中更改
     
 
 <a name='creating-arrays'></a>
 
-## Creating Arrays
+## 创建数组
 
-An array is created by enclosing its elements in square brackets:
+通过将其元素括在方括号中创建数组:
 
-##### Creating an empty array
+##### 创建空数组
 
     let elements = [];
     
 
-##### Creating an array with elements
+##### 创建包含元素的数组
 
     let elements = [1, 3, 4];
     
 
-##### Creating an array with elements of different types
+##### 使用不同类型的元素创建数组
 
     let elements = ["first", 2, true];
     
 
-##### A multidimensional array
+##### 多维数组
 
     let elements = [[0, 1], [4, 5], [2, 3]];
     
 
-As PHP, hashes or dictionaries are supported:
+就像 PHP，哈希或字典都支持的:
 
-##### Creating a hash with string keys
+##### 使用字符串键创建哈希
 
     let elements = ["foo": "bar", "bar": "foo"];
     
 
-##### Creating a hash with numeric keys
+##### 使用数字键创建哈希
 
     let elements = [4: "bar", 8: "foo"];
     
@@ -61,17 +61,17 @@ As PHP, hashes or dictionaries are supported:
 
 Arrays are updated in the same way as PHP, using square brackets:
 
-##### Updating an array with a string key
+##### 使用字符串键名更新数组
 
     let elements["foo"] = "bar";
     
 
-##### Updating an array with a numeric key
+##### 使用数字键更新数组
 
     let elements[0] = "bar";
     
 
-##### Updating multi-dimensional array
+##### 多维数组
 
     let elements[0]["foo"] = "bar";
     let elements["foo"][0] = "bar";
@@ -79,26 +79,26 @@ Arrays are updated in the same way as PHP, using square brackets:
 
 <a name='appending-elements'></a>
 
-## Appending elements
+## 追加元素
 
-Elements can be appended at the end of the array as follows:
+元素可以追加到数组的末尾, 如下所示:
 
-##### Append an element to the array
+##### 向数组追加一个元素
 
     let elements[] = "bar";
     
 
 <a name='reading-elements-from-arrays'></a>
 
-## Reading elements from arrays
+## 从数组中读取元素
 
-It is possible to read array elements as follows:
+可以读取数组元素, 如下所示:
 
-##### Getting an element using the string key `foo`
+##### 使用字符串键获取元素 `foo`
 
     let foo = elements["foo"];
     
 
-##### Getting an element using the numeric key 0
+##### 使用数字键0获取元素
 
     let foo = elements[0];

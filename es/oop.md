@@ -1,18 +1,18 @@
-# Classes and Objects
+# Clases y Objetos
 
-Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
+Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.
 
 <a name='classes'></a>
 
 ## Clases
 
-Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
+Cada archivo de Zephir debe implementar una clase o una interfaz (y sólo una). Una estructura de clase es muy similar a una clase en PHP:
 
 ```zep
 namespace Test;
 
 /**
- * This is a sample class
+ * Esta es una clase de ejemplo
  */
 class MyClass
 {
@@ -24,15 +24,15 @@ class MyClass
 
 ### Modificadores de Clase
 
-The following class modifiers are supported:
+Son soportadas los siguientes modificadores de clase:
 
-*Final*: If a class has this modifier it cannot be extended:
+`final`: If a class has this modifier it cannot be extended:
 
 ```zep
 namespace Test;
 
 /**
- * This class cannot be extended by another class
+ * Esta clase no puede se extendida por otras clases
  */
 final class MyClass
 {
@@ -40,13 +40,13 @@ final class MyClass
 }
 ```
 
-*Abstract*: If a class has this modifier it cannot be instantiated:
+`abstract: If a class has this modifier it cannot be instantiated:
 
 ```zep
 namespace Test;
 
 /**
- * This class cannot be instantiated
+ * Esta clase no puede ser instanciada
  */
 abstract class MyClass
 {
@@ -56,11 +56,11 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 
-### Implementing Interfaces
+### Implementación de Interfaces
 
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+Las clases de Zephir pueden implementar cualquier cantidad de interfaces, siempre que estas clases sean `visible` para que la clase las utilice. Sin embargo, hay ocasiones en que la clase Zephir (y posteriormente la extensión) puede requerir implementar una interfaz que se construya en una extensión diferente.
 
-If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
+Si quieren implementar `MiddlewareInterface` de la extensión `PSR`, deberemos crear una interface `stub`:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-From here we can use the `stub` interface throughout our extension.
+Desde aquí podemos utilizar la interfaz `stub` a lo largo de nuestra extensión.
 
 ```php
 /**
@@ -84,7 +84,7 @@ public function shouldExtendMiddlewareInterface()
 {
     if (!extension_loaded('psr')) {
         $this->markTestSkipped(
-            "The psr extension is not loaded"
+            "La extensión PSR no esta cargada"
         );
     }
 
@@ -94,13 +94,13 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
+**NOTA** Es responsabilidad del desarrollador asegurarse de que todas las referencias externas estén presentes antes de que se cargue la extensión. Entonces para el ejemplo anterior, la extensión [PSR](https://pecl.php.net/package/psr) tiene que estar cargada **antes** que la extensión construida en Zephir este cargada.
 
 <a name='implementing-methods'></a>
 
 ## Implementación de Métodos
 
-The "function" keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+The `function` keyword introduces a method. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
 
 ```zep
 namespace Test;
@@ -125,7 +125,7 @@ class MyClass
 }
 ```
 
-Methods can receive required and optional parameters:
+Los métodos pueden recibir parámetros obligatorios y opcionales:
 
 ```zep
 namespace Test;
@@ -134,7 +134,7 @@ class MyClass
 {
 
     /**
-     * All parameters are required
+     * Todos los parámetros son obligatorios
      */
     public function doSum1(a, b)
     {
@@ -142,7 +142,7 @@ class MyClass
     }
 
     /**
-     * Only 'a' is required, 'b' is optional and it has a default value
+     * Solo 'a' es obligatorio, 'b' es opcional y tiene un valor por defecto
      */
     public function doSum2(a, b = 3)
     {
@@ -150,7 +150,7 @@ class MyClass
     }
 
     /**
-     * Both parameters are optional
+     * Ambos parámetros son opcionales
      */
     public function doSum3(a = 1, b = 2)
     {
@@ -158,7 +158,7 @@ class MyClass
     }
 
     /**
-     * Parameters are required and their values must be integer
+     * Los parámetros son obligatorios y sus valores deben ser del tipo integer
      */
     public function doSum4(int a, int b)
     {
@@ -166,7 +166,7 @@ class MyClass
     }
 
     /**
-     * Static typed with default values
+     * Tipos estáticos con valores por defecto
      */
     public function doSum4(int a = 4, int b = 2)
     {
@@ -179,27 +179,27 @@ class MyClass
 
 ### Parámetros opcionales nulos
 
-Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the null value to the closest approximate value:
+Zephir se asegura que el valor de una variable permanezca del tipo que fue declarada la variable. This makes Zephir convert the `null` value to the closest approximate value:
 
 ```zep
 public function foo(int a = null)
 {
-    echo a; // if "a" is not passed it prints 0
+    echo a; // si no es pasado "a" imprime 0
 }
 
 public function foo(boolean a = null)
 {
-    echo a; // if "a" is not passed it prints false
+    echo a; // si no es pasado "a" imprime false
 }
 
 public function foo(string a = null)
 {
-    echo a; // if "a" is not passed it prints an empty string
+    echo a; // si no es pasado "a" imprime una cadena de texto vacía
 }
 
 public function foo(array a = null)
 {
-    var_dump(a); // if "a" is not passed it prints an empty array
+    var_dump(a); // si no es pasado "a" imprime un array vacío
 }
 ```
 
@@ -209,27 +209,27 @@ public function foo(array a = null)
 
 * Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
-* Protected: Methods marked as "protected" are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. Sin embargo, sólo se pueden llamar estos métodos protegidos en el ámbito de la clase o en clases que la heredan.
 
-* Private: Methods marked as "private" are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### Modificadores Soportados
 
-* Static: Methods with this modifier can only be called in a static context (from the class, not an object).
+* `static`: Methods with this modifier can only be called in a static context (from the class, not an object).
 
-* Final: If a method has this modifier it cannot be overriden.
+* `final`: If a method has this modifier it cannot be overriden.
 
-* Deprecated: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Métodos abreviados de getter/setter
 
-Like in C#, you can use get/set/toString shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
+Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. Esta característica le permite escribir fácilmente setters y getters para las propiedades, sin implementar explícitamente los métodos como tales.
 
-For example, without shortcuts we would need code like:
+Por ejemplo, sin atajos necesitaríamos un código como el siguiente:
 
 ```zep
 namespace Test;
@@ -267,7 +267,7 @@ class MyClass
 }
 ```
 
-You can write the same code using shortcuts as follows:
+Es posible escribir el mismo código utilizando los siguiente métodos abreviados:
 
 ```zep
 namespace App;
@@ -284,13 +284,13 @@ class MyClass
 }
 ```
 
-When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
+Cuando el código es compilado, estos métodos son exportados como métodos reales, pero usted no tiene que escribirlos manualmente.
 
 <a name='implementing-methods-return-type-hints'></a>
 
 ### Tipo de valor devuelto
 
-Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Considere el siguiente ejemplo:
+Los métodos en clases e interfaces pueden tener "sugerencias de tipo de retorno". Estos proporcionarán información adicional útil al compilador para informarle sobre los errores en su aplicación. Considere el siguiente ejemplo:
 
 ```zep
 namespace App;
@@ -299,17 +299,17 @@ class MyClass
 {
     public function getSomeData() -> string
     {
-        // this will throw a compiler exception
-        // since the returned value (boolean) does not match
-        // the expected returned type string
+        // esto lanzará una excepción del compilador
+        // ya que el valor devuelto (booleano) no coincide
+        // la cadena de tipo devuelta esperada
         return false;
     }
 
     public function getSomeOther() -> <App\MyInterface>
     {
-        // this will throw a compiler exception
-        // if the returned object does not implement
-        // the expected interface App\MyInterface
+        // esto lanzará una excepción del compilador
+        // si el objeto devuelto no implementa
+        // la interfaz esperada App\MyInterface
         return new App\MyObject;
     }
 
@@ -317,19 +317,19 @@ class MyClass
     {
         var myObject;
 
-        // the type-hint will tell the compiler that
-        // myObject is an instance of a class
-        // that implement App\MyInterface
+        // la sugerencia de tipo le dirá al compilador que
+        // myObject es una instancia de una clase
+        // que implementa App\MyInterface
         let myObject = this->getSomeOther();
 
-        // the compiler will check if App\MyInterface
-        // implements a method called "someMethod"
+        // el compilador comprobará si App\MyInterface
+        // implementa un método llamado "someMethod"
         echo myObject->someMethod();
     }
 }
 ```
 
-A method can have more than one return type. When multiple types are defined, the operator | must be used to separate those types.
+Un método puede tener más de un tipo de valor devuelto. When multiple types are defined, the operator `|` must be used to separate those types.
 
 ```zep
 namespace App;
@@ -350,7 +350,7 @@ class MyClass
 
 ### Tipo de valor devuelto: void
 
-Methods can also be marked as `void`. This means that a method is not allowed to return any data:
+Los métodos también se pueden marcar como `void`. Esto significa que un método no puede devolver datos:
 
 ```zep
 public function setConnection(connection) -> void
@@ -359,10 +359,10 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+¿Por qué esto es útil? Porque el compilador puede detectar si el programa espera un valor devuelto de estos métodos y producir una excepción del compilador:
 
 ```zep
-let myDb = db->setConnection(connection); // this will produce an exception
+let myDb = db->setConnection(connection); // esto producirá una excepción
 myDb->execute("SELECT * FROM robots");
 ```
 
@@ -370,7 +370,7 @@ myDb->execute("SELECT * FROM robots");
 
 ### Tipos de datos de parámetro Estricto/Flexible
 
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
+En Zephir, puede especificar el tipo de datos de cada parámetro de un método. Por defecto, estos tipos de datos son flexibles; esto significa que si se pasa un valor con un tipo de datos equivocado (pero compatible), Zephir intentará convertir de forma transparente al tipo esperado:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -379,19 +379,19 @@ public function filterText(string text, boolean escape=false)
 }
 ```
 
-Above method will work with the following calls:
+El método anterior funcionará con las siguientes llamadas:
 
 ```zep
 <?php
 
 $o->filterText(1111, 1);              // OK
-$o->filterText("some text", null);    // OK
+$o->filterText("un texto", null);    // OK
 $o->filterText(null, true);           // OK
-$o->filterText("some text", true);    // OK
-$o->filterText(array(1, 2, 3), true); // FAIL
+$o->filterText("un texto", true);    // OK
+$o->filterText(array(1, 2, 3), true); // FALLO
 ```
 
-However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
+Sin embargo, pasando un tipo incorrecto, a menudo, podría conducir a errores. El uso incorrecto de una API específica produciría resultados inesperados. Puede no permitir la conversión automática del parámetro con un tipo de datos estricto:
 
 ```zep
 public function filterText(string! text, boolean escape=false)
@@ -400,47 +400,47 @@ public function filterText(string! text, boolean escape=false)
 }
 ```
 
-Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
+Ahora, la mayoría de las llamadas con un tipo incorrecto causarán una excepción debido a los tipos de datos no válidos pasados:
 
 ```zep
 <?php
 
-$o->filterText(1111, 1);              // FAIL
-$o->filterText("some text", null);    // OK
-$o->filterText(null, true);           // FAIL
-$o->filterText("some text", true);    // OK
-$o->filterText(array(1, 2, 3), true); // FAIL
+$o->filterText(1111, 1);              // FALLO
+$o->filterText("un texto", null);    // OK
+$o->filterText(null, true);           // FALLO
+$o->filterText("un texto", true);    // OK
+$o->filterText(array(1, 2, 3), true); // FALLO
 ```
 
-By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
+Al especificar qué parámetros son estrictos y cuales pueden ser flexible, un desarrollador puede establecer el comportamiento específico que realmente desea.
 
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### Parámetros de sólo lectura
 
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
+Utilizando la palabra clave `const` puede marcar los parámetros como de solo lectura, esto ayuda a respetar la [correctitud de constantes](http://en.wikipedia.org/wiki/Const-correctness). Los parámetros marcados con este atributo no pueden ser modificados dentro del método:
 
 ```zep
 namespace App;
 
 class MyClass
 {
-    // "a" is read-only
+    // "a" es solo lectura
     public function getSomeData(const string a)
     {
-        // this will throw a compiler exception
-        let a = "hello";
+        // esto arrojará una excepción del compilador
+        let a = "hola";
     }
 }
 ```
 
-When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over these variables.
+Cuando un parámetro es declarado como solo lectura, el compilador puede hacer suposiciones seguras y realizar futuras optimizaciones sobre estas variables.
 
 <a name='implementing-properties'></a>
 
-## Implementing Properties
+## Implementación de Propiedades
 
-Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
+Las variables miembro de la clase se llaman "propiedades". Por defecto, estas actúan igual que las propiedades en PHP. Las propiedades se exportan a la extensión PHP y son accesibles desde el código PHP. Las propiedades implementan los modificadores de visibilidad generalmente disponibles en PHP, configurar explícitamente un modificador de visibilidad es obligatorio en Zephir:
 
 ```zep
 namespace Test;
@@ -455,7 +455,7 @@ class MyClass
 }
 ```
 
-Within class methods, non-static properties may be accessed by using -> (Object Operator):
+Within class methods, non-static properties may be accessed by using `->` (Object Operator):
 
 ```zep
 namespace Test;
@@ -477,7 +477,7 @@ class MyClass
 }
 ```
 
-Properties can have literal compatible default values. These values must be able to be evaluated at compile time and must not depend on run-time information in order to be evaluated:
+Las propiedades pueden tener valores literales compatibles por defecto compatible. Estos valores deben poder evaluarse en tiempo de compilación y no deben depender de la información de tiempo de ejecución para poder ser evaluados:
 
 ```zep
 namespace Test;
@@ -489,21 +489,21 @@ class MyClass
     protected myProperty2 = false;
     protected myProperty3 = 2.0;
     protected myProperty4 = 5;
-    protected myProperty5 = "my value";
+    protected myProperty5 = "mi valor";
 }
 ```
 
 <a name='implementing-properties-updating'></a>
 
-## Updating Properties
+## Actualización de propiedades
 
-Properties can be updated by accessing them using the '->' operator:
+Properties can be updated by accessing them using the `->` operator:
 
 ```zep
 let this->myProperty = 100;
 ```
 
-Zephir checks that properties exist when a program is accessing them. If a property is not declared, you will get a compiler exception:
+Zephir comprueba estas propiedades existan cuando un programa está accediendo a ellas. Si no se declara una propiedad, se obtendrá una excepción del compilador:
 
 ```bash
 CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/utils/app/myclass.zep on line 62
@@ -512,13 +512,13 @@ CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in
       ------------^
 ```
 
-If you want to avoid this compiler validation, or just create a property dynamically, you can enclose the property name using brackets and string quotes:
+Si desea evitar esta validación del compilador, o crear una propiedad dinámicamente, puede incluir el nombre de la propiedad utilizando llaves y comillas dobles:
 
 ```zep
 let this->{"myProperty"} = 100;
 ```
 
-You can also use a simple variable to update a property; the property name will be taken from the variable:
+También puede utilizar una simple variable para actualizar una propiedad; se tomara el nombre de la variable:
 
 ```zep
 let someProperty = "myProperty";
@@ -527,30 +527,30 @@ let this->{someProperty} = 100;
 
 <a name='implementing-properties-reading'></a>
 
-## Reading Properties
+## Leyendo propiedades
 
-Properties can be read by accessing them using the `->` operator:
+Las propiedades pueden leerse accediendo a ellas mediante el operador `->`:
 
 ```zep
 echo this->myProperty;
 ```
 
-As when updating, properties can be dynamically read this way:
+Como al actualizar, se puede leer dinámicamente de esta manera:
 
 ```zep
-// Avoid compiler check or read a dynamic user defined property
+// Evitar comprobación del compilador o leer dinámicamente una propiedad definida por el usuario
 echo this->{"myProperty"};
 
-// Read using a variable name
+// Leer utilizando el nombre de la variable
 let someProperty = "myProperty";
 echo this->{someProperty}
 ```
 
 <a name='class-constants'></a>
 
-## Class Constants
+## Constante de Clase
 
-Classes may contain class constants that remain the same and unchangeable once the extension is compiled. Class constants are exported to the PHP extension, allowing them to be used from PHP.
+Las clases pueden contener constantes de clase que siguen siendo las mismas e inmutables una vez compilada la extensión. Las constantes de clase son exportadas a la extensión PHP, lo que les permite ser utilizadas desde PHP.
 
 ```zep
 namespace Test;
@@ -562,7 +562,7 @@ class MyClass
 }
 ```
 
-Class constants can be accessed using the class name and the static operator (::):
+Class constants can be accessed using the class name and the static operator `::`:
 
 ```zep
 namespace Test;
@@ -582,9 +582,9 @@ class MyClass
 
 <a name='calling-methods'></a>
 
-## Calling Methods
+## Llamando a métodos
 
-Methods can be called using the object operator (->) as in PHP:
+Methods can be called using the object operator `->` as in PHP:
 
 ```zep
 namespace Test;
@@ -603,7 +603,7 @@ class MyClass
 }
 ```
 
-Static methods must be called using the static operator (::):
+Static methods must be called using the static operator `::`:
 
 ```zep
 namespace Test;
@@ -622,7 +622,7 @@ class MyClass
 }
 ```
 
-You can call methods in a dynamic manner as follows:
+Puede llamar a los métodos en una forma dinámica como la siguiente:
 
 ```zep
 namespace Test;
@@ -647,9 +647,9 @@ class MyClass
 
 ### Parámetros por Nombre
 
-Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
+Zephir admite parámetros de método de llamada por nombre o argumentos de palabras clave. Los parámetros con nombre pueden ser útiles si desea pasar parámetros en un orden arbitrario, documentar el significado de los parámetros o especificar parámetros de una manera más elegante.
 
-Consider the following example. A class called `Image` has a method that receives four parameters:
+Considere el siguiente ejemplo. Una clase llamada `Image` tiene un método que recibe cuatro parámetros:
 
 ```zep
 namespace Test;
@@ -663,14 +663,14 @@ class Image
 }
 ```
 
-Using the standard method calling approach:
+Utilizando el método estándar de llamado:
 
 ```zep
 i->chop(100);             // width=100, height=400, x=0, y=0
 i->chop(100, 50, 10, 20); // width=100, height=50, x=10, y=20
 ```
 
-Using named parameters, you can:
+Utilizando parámetros nombrados, usted puede hacer lo siguiente:
 
 ```zep
 i->chop(width: 100);              // width=100, height=400, x=0, y=0
@@ -679,7 +679,7 @@ i->chop(height: 200, width: 100); // width=100, height=200, x=0, y=0
 i->chop(x: 20, y: 30);            // width=600, height=400, x=20, y=30
 ```
 
-When the compiler (at compile time) does not know the correct order of these parameters, they must be resolved at runtime. In this case, there could be a minimum additional extra overhead:
+Cuando el compilador (en tiempo de compilación) no conoce el orden correcto de estos parámetros, estos deben resolverse en tiempo de ejecución. En este caso, podría haber una mínima sobrecarga adicional:
 
 ```zep
 let i = new {someClass}();
