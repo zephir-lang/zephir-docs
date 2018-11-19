@@ -62,7 +62,7 @@ PHP扩展提供了一种在扩展中定义全局变量的方法。 读/写全局
 }
 `</pre> 
 
-In the example above, `allow_some_feature"` is set up only once at startup; `number_times` is set up at the start of each request.
+In the example above, `allow_some_feature` is set up only once at startup; `number_times` is set up at the start of each request.
 
 Inside any method, you can read/write extension globals using the built-in functions `globals_get`/`globals_set`:
 
