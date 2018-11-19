@@ -64,7 +64,7 @@ The optional `module` key, if present, places that global's initialization proce
 
 In the example above, `allow_some_feature` is set up only once at startup; `number_times` is set up at the start of each request.
 
-Доступ к глобальным переменным может быть осуществлён из метода расширения с помощью встроенных функций `globals_get` и `globals_set`:
+Доступ к глобальным переменным может быть осуществлён из любого метода расширения при помощи встроенных функций `globals_get` и `globals_set`:
 
     globals_set("allow_some_feature", true);
     let someFeature = globals_get("allow_some_feature");
