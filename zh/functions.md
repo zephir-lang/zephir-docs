@@ -1,6 +1,6 @@
-# Calling Functions
+# 调用函数
 
-PHP has a rich library of functions that you can use within your extensions. To call a PHP function you simply use it as normal within your Zephir code:
+PHP有一个丰富的函数库，您可以在扩展中使用它们。 要调用PHP函数，只需在Zephir代码中正常使用它：
 
     namespace MyLibrary;
     
@@ -16,7 +16,7 @@ PHP has a rich library of functions that you can use within your extensions. To 
     }
     
 
-You can also call functions that are expected to exist in the PHP userland, but are not necessarily built in to PHP itself:
+您还可以调用预期存在于PHP用户区中的函数，但不一定是内置于PHP本身：
 
     namespace MyLibrary;
     
@@ -37,7 +37,7 @@ You can also call functions that are expected to exist in the PHP userland, but 
     }
     
 
-Note that all PHP functions only receive and return dynamic variables. If you pass a static typed variable as a parameter, a temporary dynamic variable will automatically be used as a bridge in order to call the function:
+请注意，所有PHP函数仅接收和返回动态变量。 If you pass a static typed variable as a parameter, a temporary dynamic variable will automatically be used as a bridge in order to call the function:
 
     namespace MyLibrary;
     
