@@ -4,31 +4,31 @@ Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/man
 
 <a name='declaring-array-variables'></a>
 
-## Declaring Array Variables
+## 声明数组变量
 
-Array variables can be declared using the keywords 'var' or 'array':
+数组变量可以使用关键字 "var" 或 "array" 来声明:
 
-    var a   = []; // array variable, its type can be changed
-    array b = []; // array variable, its type cannot be changed across execution
+    var a   = []; // 数组变量，其类型可以改变
+    array b = []; // 数组变量，其类型不能在执行过程中更改
     
 
 <a name='creating-arrays'></a>
 
-## Creating Arrays
+## 创建数组
 
-An array is created by enclosing its elements in square brackets:
+通过将其元素括在方括号中创建数组:
 
-##### Creating an empty array
+##### 创建空数组
 
     let elements = [];
     
 
-##### Creating an array with elements
+##### 创建包含元素的数组
 
     let elements = [1, 3, 4];
     
 
-##### Creating an array with elements of different types
+##### 使用不同类型的元素创建数组
 
     let elements = ["first", 2, true];
     
