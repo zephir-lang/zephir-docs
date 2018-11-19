@@ -1,5 +1,5 @@
 - [Dynamic Types](/[[language]]/[[version]]/types#dynamic-types) 
-    - [Arrays](/[[language]]/[[version]]/types#dynamic-types-arrays)
+    - [数组](/[[language]]/[[version]]/types#dynamic-types-arrays)
     - [Boolean](/[[language]]/[[version]]/types#dynamic-types-boolean)
     - [Float/Double](/[[language]]/[[version]]/types#dynamic-types-float-double)
     - [Integer](/[[language]]/[[version]]/types#dynamic-types-integer)
