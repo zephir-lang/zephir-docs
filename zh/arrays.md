@@ -33,19 +33,19 @@ Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/man
     let elements = ["first", 2, true];
     
 
-##### A multidimensional array
+##### 多维数组
 
     let elements = [[0, 1], [4, 5], [2, 3]];
     
 
-As PHP, hashes or dictionaries are supported:
+就像 PHP，哈希或字典都支持的:
 
-##### Creating a hash with string keys
+##### 使用字符串键创建哈希
 
     let elements = ["foo": "bar", "bar": "foo"];
     
 
-##### Creating a hash with numeric keys
+##### 使用数字键创建哈希
 
     let elements = [4: "bar", 8: "foo"];
     
@@ -61,17 +61,17 @@ As PHP, hashes or dictionaries are supported:
 
 Arrays are updated in the same way as PHP, using square brackets:
 
-##### Updating an array with a string key
+##### 使用字符串键名更新数组
 
     let elements["foo"] = "bar";
     
 
-##### Updating an array with a numeric key
+##### 使用数字键更新数组
 
     let elements[0] = "bar";
     
 
-##### Updating multi-dimensional array
+##### 多维数组
 
     let elements[0]["foo"] = "bar";
     let elements["foo"][0] = "bar";
@@ -79,26 +79,26 @@ Arrays are updated in the same way as PHP, using square brackets:
 
 <a name='appending-elements'></a>
 
-## Appending elements
+## 追加元素
 
-Elements can be appended at the end of the array as follows:
+元素可以追加到数组的末尾, 如下所示:
 
-##### Append an element to the array
+##### 向数组追加一个元素
 
     let elements[] = "bar";
     
 
 <a name='reading-elements-from-arrays'></a>
 
-## Reading elements from arrays
+## 从数组中读取元素
 
-It is possible to read array elements as follows:
+可以读取数组元素, 如下所示:
 
-##### Getting an element using the string key `foo`
+##### 使用字符串键获取元素 `foo`
 
     let foo = elements["foo"];
     
 
-##### Getting an element using the numeric key 0
+##### 使用数字键0获取元素
 
     let foo = elements[0];
