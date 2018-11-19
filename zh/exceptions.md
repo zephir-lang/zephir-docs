@@ -1,10 +1,10 @@
-# Exceptions
+# 例外情况
 
-Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.
+Zephir以非常低的级别实现异常，为PHP提供类似的行为和功能。
 
-When an exception is thrown, a `catch` block can be used to capture the exception and allow the developer to provide proper handling:
+抛出异常时，可以使用` catch `块来捕获异常并允许开发人员提供正确的处理：
 
-Exceptions can be thrown inside the `try` block. Handling happens in the `catch` block, exactly as in PHP:
+可以在`try`语句中抛出异常。 和PHP一样，在`catch`中捕获异常并处理
 
     var e;
     try {
@@ -17,14 +17,14 @@ Exceptions can be thrown inside the `try` block. Handling happens in the `catch`
     }
     
 
-Zephir also provides a "silent" `try` block, that simply ignores any exceptions produced within that block:
+Zephir 还提供了一个“安静”`try`语句，用来忽略产生的任何异常：
 
     try {
         throw new \Exception("This is an exception");
     }
     
 
-If you don't need an exception variable when 'catch'ing, then you can safely not provide it:
+如果在<0>catch</0>中不处理异常，可以不提供异常变量：
 
     try {
     
@@ -36,7 +36,7 @@ If you don't need an exception variable when 'catch'ing, then you can safely not
     }
     
 
-A single `catch` block can be used to catch multiple types of exception:
+在`catch`中捕获多个异常：
 
     var e;
     try {
