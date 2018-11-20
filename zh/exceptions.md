@@ -64,10 +64,11 @@ Zephir允许您抛出文字或静态类型变量，就像它们是异常的消�
     throw 123.123;
     
 
-Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is, `Exception::getFile()` and `Exception::getLine()` return the location in the Zephir code where the exception was thrown:
+Zephir的异常提供了相同的方法来知道PHP异常发生的异常发生的位置。 也就是说，` Exception::getFile()</ 0>和<code> Exception::getLine()</ 0>返回抛出异常的Zephir代码中的位置：</p>
 
-    Exception: The static method 'someMethod' does not exist on model 'Robots'
-    File=phalcon/mvc/model.zep Line=4042
-    #0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
-    #1 /home/scott/test.php(64): Robots::someMethod()
-    #2 {main}
+<pre><code>Exception: The static method 'someMethod' does not exist on model 'Robots'
+File=phalcon/mvc/model.zep Line=4042
+#0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
+#1 /home/scott/test.php(64): Robots::someMethod()
+#2 {main}
+`</pre>
