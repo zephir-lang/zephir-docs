@@ -1,12 +1,12 @@
-# Classes and Objects
+# 类与对象
 
-Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
+Zephir 提倡面向对象编程。 这就是为什么您只能在扩展中导出方法和类的原因。 您还将看到, 在大多数情况下, 运行时错误会引发异常, 而不是致命错误或警告。
 
 <a name='classes'></a>
 
-## Classes
+## 类
 
-Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
+每个 Zephir 文件都必须实现一个类或接口 (并且只有一个)。 类结构与 php 类非常相似:
 
 ```zep
 namespace Test;
@@ -22,9 +22,9 @@ class MyClass
 
 <a name='classes-modifiers'></a>
 
-### Class Modifiers
+### 类修饰符
 
-The following class modifiers are supported:
+支持以下类修饰符:
 
 `final`: If a class has this modifier it cannot be extended:
 
