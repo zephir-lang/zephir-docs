@@ -179,7 +179,7 @@ class MyClass
 
 ### Parámetros opcionales nulos
 
-Zephir se asegura que el valor de una variable permanezca del tipo que fue declarada la variable. This makes Zephir convert the `null` value to the closest approximate value:
+Zephir se asegura que el valor de una variable permanezca del tipo que fue declarada la variable. Esto hace que Zephir convierta el valor `null` al valor más cercado:
 
 ```zep
 public function foo(int a = null)
@@ -207,27 +207,27 @@ public function foo(array a = null)
 
 ### Visibilidades soportadas
 
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
+* Público: los métodos marcados como `public` se exportan a la extensión PHP; esto significa que métodos públicos son accesibles para el código PHP y para la extensión.
 
-* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. Sin embargo, sólo se pueden llamar estos métodos protegidos en el ámbito de la clase o en clases que la heredan.
+* Protegido: los métodos marcados como `protected` se exportan a la extensión PHP; esto significa que métodos protegidos son accesibles para el código PHP y para la extensión. Sin embargo, sólo se pueden llamar estos métodos protegidos en el ámbito de la clase o en clases que la heredan.
 
-* Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Privado: los métodos marcados como `private` no se exportan a la extensión PHP; esto significa que métodos privados sólo son accesibles a la clase donde está implementados.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### Modificadores Soportados
 
-* `static`: Methods with this modifier can only be called in a static context (from the class, not an object).
+* `static`: los métodos con este modificador sólo se pueden llamar en un contexto estático (de la clase, no de un objeto).
 
-* `final`: If a method has this modifier it cannot be overriden.
+* `final`: si un método tiene este modificador no se puede sobre cargar.
 
-* `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* `deprecated`: los métodos que se marcan como `deprecated` arrojan un error `E_DEPRECATED` cuando se les llama.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Métodos abreviados de getter/setter
 
-Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. Esta característica le permite escribir fácilmente setters y getters para las propiedades, sin implementar explícitamente los métodos como tales.
+Al igual que en C#, es posible utilizar en Zephir los atajos `get`/`set`/`toString`. Esta característica le permite escribir fácilmente setters y getters para las propiedades, sin implementar explícitamente los métodos como tales.
 
 Por ejemplo, sin atajos necesitaríamos un código como el siguiente:
 
@@ -329,7 +329,7 @@ class MyClass
 }
 ```
 
-Un método puede tener más de un tipo de valor devuelto. When multiple types are defined, the operator `|` must be used to separate those types.
+Un método puede tener más de un tipo de valor devuelto. Cuando se definen varios tipos, debe utilizarse el operador `|` para separar estos tipos.
 
 ```zep
 namespace App;
@@ -455,7 +455,7 @@ class MyClass
 }
 ```
 
-Within class methods, non-static properties may be accessed by using `->` (Object Operator):
+En métodos de la clase, las propiedades no estáticas se pueden acceder usando el operador `->`:
 
 ```zep
 namespace Test;
@@ -497,7 +497,7 @@ class MyClass
 
 ## Actualización de propiedades
 
-Properties can be updated by accessing them using the `->` operator:
+Las propiedades pueden actualizarse accediendo a ellas mediante el operador `->`:
 
 ```zep
 let this->myProperty = 100;
@@ -562,7 +562,7 @@ class MyClass
 }
 ```
 
-Class constants can be accessed using the class name and the static operator `::`:
+Las constantes de la clase se pueden acceder utilizando el nombre de la clase y el operador estático `::`:
 
 ```zep
 namespace Test;
@@ -584,7 +584,7 @@ class MyClass
 
 ## Llamando a métodos
 
-Methods can be called using the object operator `->` as in PHP:
+Los métodos pueden ser llamados utilizando el operador de objectos `->` como en PHP:
 
 ```zep
 namespace Test;
@@ -603,7 +603,7 @@ class MyClass
 }
 ```
 
-Static methods must be called using the static operator `::`:
+Los métodos estáticos deben ser llamados utilizando el operador `::`:
 
 ```zep
 namespace Test;
