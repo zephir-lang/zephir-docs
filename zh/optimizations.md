@@ -9,20 +9,20 @@
     zephir -fstatic-type-inference -flocal-context-pass
     
 
-Optimizations can be disabled by passing the name prefixed by `-fno-`:
+可以通过传递 `-fno-` 前缀的名称来禁用优化:
 
     zephir -fno-static-type-inference -fno-call-gatherer-pass
     
 
 With recent versions of zephir-parser, optimizations can be configured in the config file `config.json`.
 
-The following optimizations are supported:
+支持以下优化:
 
 <a name='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
 
-This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce inline caches to avoid method or function lookups:
+这个遍历计算在同一个方法中调用一个函数或方法的次数。 这允许编译器引入内联缓存, 以避免方法或函数查找:
 
     class MyClass extends OtherClass
     {
@@ -39,7 +39,7 @@ This pass counts how many times a function or method is called within the same m
 
 ## check-invalid-reads
 
-This flag will force checking types to detect for invalid reads during the compilation process. This ensures that all variables are properly defined and initialized with their default values (as well as the internal pointers). An example is:
+在编译过程中, 这个标志将强制检查类型来检测无效的读取。 这可确保使用默认值 (以及内部指针) 正确定义和初始化所有变量。 一个例子:
 
 ```zep
 namespace Acme;
@@ -56,7 +56,7 @@ class ForInRange
 }
 ```
 
-compared to:
+与之比较：
 
 ```zep
 namespace Acme;
@@ -73,7 +73,7 @@ class ForInRange
 }
 ```
 
-Both examples are perfectly valid as far as Zephir is concerned. The difference is in the generated C code:
+就Zephir 而言, 这两个例子都是完全有效的。 不同之处在于生成的 c 代码:
 
 ```c
 zval *n;
@@ -83,7 +83,7 @@ zval *n;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-compared to:
+与之比较：
 
 ```c
 zval *n = NULL;
@@ -93,15 +93,15 @@ zval *n = NULL;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir developers will not see a change in their code. This affects the generated C code.
+对于任何编程语言, 始终使用默认值和类型初始化变量是一种很好的做法。 不这样做, 可能会给应用程序带来意想不到的后果, 并引入错误、内存泄漏等。 通过在`config.json` 中使用 `check-invalid-read`标志我们确保指针和它们各自的C变量被正确初始化。 Zephir 开发人员不会看到他们的代码发生更改。 这将影响生成的C代码。
 
-More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
+关于为什么C指针需要在Stack overflow [here ](https://stackoverflow.com/q/12253191/1661465)中无效的更多信息。
 
 <a name='constant-folding'></a>
 
 ## constant-folding
 
-Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when this optimization is enabled:
+常量折叠是在编译时对常量表达式进行简化的过程。 启用此优化时, 将简化以下代码:
 
     public function getValue()
     {
@@ -109,7 +109,7 @@ Constant folding is the process of simplifying constant expressions at compile t
     }
     
 
-Is transformed into:
+转换为:
 
     public function getValue()
     {
@@ -121,28 +121,28 @@ Is transformed into:
 
 ## internal-call-transformation
 
-The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. By default, this optimization is turned off.
+`internal-call-transformation` 需要根据其等效的 php 方法生成内部方法, 从而允许绕过这些内部方法调用的 php 用户空间。 默认情况下, 此优化处于关闭状态。
 
-This optimization generates 2 implementations per method, one that is exposed in PHP and an internal one.
+此优化为每个方法生成2个实现, 一个在 php 中公开, 一个在内部公开。
 
-Exceptions to the above are:
+上述规定的例外情况是:
 
-- Only PHP methods allowed to be replaced (eg. we can't do this for Phalcon's methods)
-- Closures (`__invoke`) and `__construct` are not supported
-- The number of required parameters must exactly match the number of actual parameters
-- Does not work for ZendEngine2 (PHP 5.6)
+- 只允许替换 php 方法 (例如。 我们不能这样做的 phalcon 的方法)
+- 不支持关闭 (`__invoke`) 和 `__construct`
+- 所需参数的数量必须与实际参数的数量完全匹配
+- 不能在 ZendEngine2中起作用的 (PHP 5.6)
 
 <a name='local-context-pass'></a>
 
 ## local-context-pass
 
-This compilation pass moves variables that will be allocated in the heap to the stack. This optimization can reduce the number of memory indirections a program has to do.
+此编译传递将在堆中分配的变量移动到堆栈。 这种优化可以减少程序必须做的内存间接数。
 
 <a name='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
 
-This optimization replaces values of class constants in compile time:
+此优化将替换编译时的类常量值:
 
     class MyClass
     {
@@ -156,7 +156,7 @@ This optimization replaces values of class constants in compile time:
     }
     
 
-Is transformed into:
+转换为:
 
     class MyClass
     {
@@ -174,9 +174,9 @@ Is transformed into:
 
 ## static-type-inference
 
-This compilation pass is very important, since it looks for dynamic variables that can potentially be transformed into static/primitive types, which are better optimized by the underlying compiler.
+这个编译过程非常重要，因为它寻找的是可能被转换为静态/基本类型的动态变量，底层编译器可以更好地对其进行优化。
 
-The following code uses a set of dynamic variables to perform some mathematical calculations:
+下面的代码使用一组动态变量来执行一些数学计算:
 
     public function someCalculations(var a, var b)
     {
@@ -193,7 +193,7 @@ The following code uses a set of dynamic variables to perform some mathematical 
     }
     
 
-Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and can thus be transformed into static variables taking advantage of other compilation passes. After this pass, the compiler automatically rewrites this code to:
+变量`a`， `b`， `i`仅用于数学运算，因此可以利用其他编译通道转换为静态变量。 在此传递之后, 编译器会自动将此代码重写为:
 
     public function someCalculations(int a, int b)
     {
@@ -210,10 +210,10 @@ Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and
     }
     
 
-By disabling this compilation pass, all variables will maintain the type with which they were originally declared, without optimization.
+通过禁用此编译过程, 所有变量都将维护最初声明它们的类型, 而不进行优化。
 
 <a name='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
 
-This enables a second type inference pass, which improves the work done based on the data gathered by the first static type inference pass.
+这将启用第二个类型推断传递, 从而改进基于第一个静态类型推断传递所收集的数据所做的工作。
