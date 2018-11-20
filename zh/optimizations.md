@@ -1,10 +1,10 @@
-# Optimizations
+# 优化
 
-Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
+因为 Zephir 中的代码有时非常高级, 所以 c 编译器可能无法足够地优化此代码。
 
-Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its execution time, or reducing the memory required by the program.
+由于其 AOT (ahead-of-time) 编译器, Zephir能够在编译时优化代码, 有可能缩短其执行时间, 或减少程序所需的内存。
 
-You can enable optimizations by passing the name prefixed by `-f`:
+您可以通过传递 `-f` 前缀的名称来启用优化:
 
     zephir -fstatic-type-inference -flocal-context-pass
     
