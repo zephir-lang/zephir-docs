@@ -400,7 +400,7 @@ public function filterText(string! text, boolean escape=false)
 }
 ```
 
-Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
+现在，由于传递的数据类型无效，大多数类型错误的调用都会导致异常:
 
 ```zep
 <?php
@@ -412,13 +412,13 @@ $o->filterText("some text", true);    // OK
 $o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
-By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
+通过指定严格的参数和灵活的参数，开发人员可以设置他/她真正想要的特定行为。
 
 <a name='implementing-methods-read-only-parameters'></a>
 
-### Read-Only Parameters
+### 只读参数
 
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
+使用关键字`const`，您可以将参数标记为只读，这有助于尊重[const-correctness](http://en.wikipedia.org/wiki/Const-correctness)。 属性中不能修改标有此属性的参数 方法:
 
 ```zep
 namespace App;
@@ -434,13 +434,13 @@ class MyClass
 }
 ```
 
-When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over these variables.
+当一个参数被声明为只读时，编译器可以做出安全的假设，并对这些变量进行进一步的优化。
 
 <a name='implementing-properties'></a>
 
-## Implementing Properties
+## 实现属性
 
-Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
+类成员变量称为 "属性"。 默认情况下, 它们的作用与 php 属性相同。 属性被导出到PHP扩展中，并从PHP代码中可见。 属性实现 php 中可用的常规可见性修饰符, 并且在 Zephir中必须显式设置可见性修饰符:
 
 ```zep
 namespace Test;
@@ -455,7 +455,7 @@ class MyClass
 }
 ```
 
-Within class methods, non-static properties may be accessed by using `->` (Object Operator):
+在类方法中, 可以使用`->` (对象运算符) 访问非静态属性:
 
 ```zep
 namespace Test;
@@ -477,7 +477,7 @@ class MyClass
 }
 ```
 
-Properties can have literal compatible default values. These values must be able to be evaluated at compile time and must not depend on run-time information in order to be evaluated:
+属性可以具有文本兼容的默认值。 这些值必须能够在编译时进行计算, 并且不能依赖于运行时信息才能进行计算:
 
 ```zep
 namespace Test;
@@ -495,15 +495,15 @@ class MyClass
 
 <a name='implementing-properties-updating'></a>
 
-## Updating Properties
+## 更新属性
 
-Properties can be updated by accessing them using the `->` operator:
+属性可以通过使用 "->" 运算符访问来更新:
 
 ```zep
 let this->myProperty = 100;
 ```
 
-Zephir checks that properties exist when a program is accessing them. If a property is not declared, you will get a compiler exception:
+Zephir 检查程序在访问属性时会检查是否存在属性。 如果未声明属性, 您将获得编译器异常:
 
 ```bash
 CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/utils/app/myclass.zep on line 62
@@ -512,13 +512,13 @@ CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in
       ------------^
 ```
 
-If you want to avoid this compiler validation, or just create a property dynamically, you can enclose the property name using brackets and string quotes:
+如果要避免此编译器验证, 或者只是动态创建属性, 则可以使用括号和字符串引号将属性名称括起来:
 
 ```zep
 let this->{"myProperty"} = 100;
 ```
 
-You can also use a simple variable to update a property; the property name will be taken from the variable:
+您还可以使用一个简单的变量来更新属性; 属性名将取自变量:
 
 ```zep
 let someProperty = "myProperty";
@@ -527,30 +527,30 @@ let this->{someProperty} = 100;
 
 <a name='implementing-properties-reading'></a>
 
-## Reading Properties
+## 查看属性
 
-Properties can be read by accessing them using the `->` operator:
+属性可以通过使用 "->" 运算符访问来查看:
 
 ```zep
 echo this->myProperty;
 ```
 
-As when updating, properties can be dynamically read this way:
+与更新一样, 可以通过以下方式动态读取属性:
 
 ```zep
-// Avoid compiler check or read a dynamic user defined property
+// 避免编译器检查或读取动态用户定义属性
 echo this->{"myProperty"};
 
-// Read using a variable name
+// 使用变量名读取
 let someProperty = "myProperty";
 echo this->{someProperty}
 ```
 
 <a name='class-constants'></a>
 
-## Class Constants
+## 类常量
 
-Classes may contain class constants that remain the same and unchangeable once the extension is compiled. Class constants are exported to the PHP extension, allowing them to be used from PHP.
+类可能包含类常量, 这些常量在编译扩展后保持不变和不可更改。 类常量导出到 php 扩展, 允许从 php 中使用它们。
 
 ```zep
 namespace Test;
@@ -582,7 +582,7 @@ class MyClass
 
 <a name='calling-methods'></a>
 
-## Calling Methods
+## 调用方法
 
 Methods can be called using the object operator `->` as in PHP:
 
@@ -622,7 +622,7 @@ class MyClass
 }
 ```
 
-You can call methods in a dynamic manner as follows:
+您可以按照以下动态方式调用方法:
 
 ```zep
 namespace Test;
@@ -645,11 +645,11 @@ class MyClass
 
 <a name='calling-methods-parameters-by-name'></a>
 
-### Parameters by Name
+### 参数名
 
-Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
+Zephir 支持按名称或关键字参数调用方法参数。 如果您希望以任意顺序传递参数、记录参数的含义或以更优雅的方式指定参数，那么命名参数可能非常有用。
 
-Consider the following example. A class called `Image` has a method that receives four parameters:
+请考虑下面的示例. 一个名为 `Image` 的类具有接收四个参数的方法:
 
 ```zep
 namespace Test;
@@ -663,14 +663,14 @@ class Image
 }
 ```
 
-Using the standard method calling approach:
+使用标准方法调用方法:
 
 ```zep
 i->chop(100);             // width=100, height=400, x=0, y=0
 i->chop(100, 50, 10, 20); // width=100, height=50, x=10, y=20
 ```
 
-Using named parameters, you can:
+使用命名参数, 您可以:
 
 ```zep
 i->chop(width: 100);              // width=100, height=400, x=0, y=0
@@ -679,7 +679,7 @@ i->chop(height: 200, width: 100); // width=100, height=200, x=0, y=0
 i->chop(x: 20, y: 30);            // width=600, height=400, x=20, y=30
 ```
 
-When the compiler (at compile time) does not know the correct order of these parameters, they must be resolved at runtime. In this case, there could be a minimum additional extra overhead:
+当编译器(在编译时) 不知道这些参数的正确顺序时，必须在运行时解析它们。 在这种情况下，可能会有一个最小的额外额外开销:
 
 ```zep
 let i = new {someClass}();
