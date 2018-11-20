@@ -14,7 +14,7 @@ Each hook in the `config.json` file is an array of objects, which themselves are
 
 ## initializers
 
-The `initializers` block looks something like this:
+`initializers` 块如下所示:
 
     {
         "initializers": [
