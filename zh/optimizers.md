@@ -55,7 +55,7 @@ Zephir 中最常见的函数使用内部优化器。 "优化器" 的工作方式
     }
     
 
-There are functions that are just called and don't return any value. Our function returns a value that is the calculated PI value. So we need to check that the type of the variable used to receive this calculated value is OK:
+有一些函数只是调用, 不返回任何值。 我们的函数返回一个值, 该值是计算出的 pi 值。 因此, 我们需要检查用于接收此计算值的变量的类型是否为 "确定":
 
     <?php
     
@@ -84,18 +84,18 @@ There are functions that are just called and don't return any value. Our functio
     }
     
 
-We're checking if the value returned will be stored in a variable of type `double`; if not, a compiler exception is thrown.
+我们正在检查返回的值是否将存储在 `double` 类型的变量中; 否则, 将引发编译器异常。
 
-The next thing we need to do is process the parameters passed to the function:
+接下来我们需要做的是处理传递给函数的参数:
 
     <?php
     
     $resolvedParams = $call->getReadOnlyResolvedParams($expression['parameters'], $context, $expression);
     
 
-A good practice with Zephir is to create functions that don't modify their parameters. If you are changing the parameters passed, Zephir will need to allocate memory for them, and you have to use `getResolvedParams` instead of `getReadOnlyResolvedParams`.
+Zephir 的一个好做法是创建不修改其参数的函数。 如果要更改传递的参数, Zephir 将需要为其分配内存, 并且必须使用 `getResolvedParams` 而不是 `getReadOnlyResolvedParams`。
 
-Code returned by these methods is valid C code that can be used in the code printer to generate the C function call:
+这些方法返回的代码是有效的 c 代码, 可在代码打印机中用于生成 c 函数调用:
 
     <?php
     
