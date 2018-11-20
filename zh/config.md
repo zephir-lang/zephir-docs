@@ -46,9 +46,9 @@
 
 <a name='author'></a>
 
-## author
+## 作者
 
-Company, developer, institution, etc that developed the extension:
+开发扩展的公司、开发商、机构等:
 
 ```json
 {
