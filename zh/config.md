@@ -58,9 +58,9 @@
 
 <a name='backend'></a>
 
-## backend
+## 后端
 
-Provides a way to configure the Zend Engine backend used by your extension. At the moment, only the `templatepath`, which lets you select between `ZendEngine2` and `ZendEngine3`, is supported:
+提供一种配置扩展所使用的Zend引擎后端的方法。 目前，仅支持`templatepath`，允许您在`ZendEngine2` </code> ZendEngine3</0>之间进行选择:
 
     {
         "backend": {
@@ -71,9 +71,9 @@ Provides a way to configure the Zend Engine backend used by your extension. At t
 
 <a name='constants-sources'></a>
 
-## constants-sources
+## 常量来源
 
-To import just the constants in a C source file into your project, list the file's path in this setting:
+要将C源文件中的常量导入到项目中，请在此设置中列出文件的路径:
 
     {
         "constants-sources": [
@@ -84,7 +84,7 @@ To import just the constants in a C source file into your project, list the file
 
 <a name='description'></a>
 
-## description
+## 描述
 
 Extension description - any text describing your extension:
 
