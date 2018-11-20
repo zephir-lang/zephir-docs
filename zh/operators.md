@@ -4,7 +4,7 @@ Zephir's operators are similar to the ones in PHP, and also inherit some of thei
 
 <a name='arithmetic-operators'></a>
 
-## Arithmetic Operators
+## 算术运算符
 
 The following operators are supported:
 
@@ -19,7 +19,7 @@ The following operators are supported:
 
 <a name='bitwise-operators'></a>
 
-## Bitwise Operators
+## 按位运算符
 
 The following operators are supported:
 
@@ -43,7 +43,7 @@ Learn more about comparison of dynamic variables in the [php manual](http://www.
 
 <a name='comparison-operators'></a>
 
-## Comparison Operators
+## 比较运算符
 
 Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
 
@@ -74,7 +74,7 @@ Example:
 
 <a name='logical-operators'></a>
 
-## Logical Operators
+## 逻辑运算符
 
 The following operators are supported:
 
@@ -94,7 +94,7 @@ Example:
 
 <a name='tenary-operator'></a>
 
-## Ternary Operator
+## 三元运算符
 
 Zephir supports the ternary operator available in C or PHP:
 
@@ -186,7 +186,7 @@ It can also work like the PHP function `gettype`.
 
 <a name='special-operators-type-hints'></a>
 
-### Type Hints
+### 类型提示
 
 Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
 
@@ -214,7 +214,7 @@ These "type hints" are weak. This means the program does not check if the value 
 
 <a name='special-operators-branch-prediction-hints'></a>
 
-### Branch Prediction Hints
+### 分支预测提示
 
 What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
 
