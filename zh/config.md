@@ -46,7 +46,7 @@
 
 <a name='author'></a>
 
-## 作者
+## author
 
 开发扩展的公司、开发商、机构等:
 
@@ -58,7 +58,7 @@
 
 <a name='backend'></a>
 
-## 后端
+## backend
 
 提供一种配置扩展所使用的Zend引擎后端的方法。 目前，仅支持`templatepath`，允许您在`ZendEngine2` </code> ZendEngine3</0>之间进行选择:
 
@@ -71,7 +71,7 @@
 
 <a name='constants-sources'></a>
 
-## 常量来源
+## constants-sources
 
 要将C源文件中的常量导入到项目中，请在此设置中列出文件的路径:
 
@@ -84,7 +84,7 @@
 
 <a name='description'></a>
 
-## 描述
+## description
 
 Extension description - any text describing your extension:
 
@@ -97,7 +97,7 @@ Extension description - any text describing your extension:
 
 ## destructors
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
+此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 查看[lifecycle hooks](/[[language]]/[[version]]/lifecycle)章节了解更多信息。
 
     {
         "destructors": [
@@ -139,7 +139,7 @@ This setting lets you provide one or more C functions to be executed on certain 
 
 ## extension-name
 
-The base filename of the extension. It must follow the same rules as the `namespace` setting, which is used as a fallback in case this one isn't given.
+扩展的基本文件名。 它必须遵循与`namespace`设置相同的规则，如果没有给出>设置，则将其用作后备。
 
     {
         "extension-name": "test"
@@ -150,7 +150,7 @@ The base filename of the extension. It must follow the same rules as the `namesp
 
 ## external-dependencies
 
-You can include a class from another namespace/extension directly in your own extension by configuring it here:
+您可以在自己的扩展中直接包含来自另一个名称空间/扩展的类，在这里进行配置:
 
     {
         "external-dependencies": {
@@ -164,7 +164,7 @@ You can include a class from another namespace/extension directly in your own ex
 
 ## extra
 
-Contains extra settings that also can be passed, as is, on the command line. Currently, that's `export-clases` (generate headers for accessing your classes from other C code), and `indent` (select between using `tabs` or `spaces` to indent code in generated files):
+包含额外的设置, 这些设置也可以像在命令行中一样传递。 目前，这是`export-clases`(生成从其他C代码访问类的头文件)，和`indent`(选择使用`tabs`或`spaces`缩进生成的文件中的代码):
 
     {
         "extra": {
@@ -178,7 +178,7 @@ Contains extra settings that also can be passed, as is, on the command line. Cur
 
 ## extra-cflags
 
-Any additional flags you want to add to the compilation process:
+您想要添加到编译过程中的任何附加标志:
 
     {
         "extra-cflags": "-I/usr/local/Cellar/libevent/2.0.21_1/include"
@@ -189,7 +189,7 @@ Any additional flags you want to add to the compilation process:
 
 ## extra-classes
 
-If you already have a PHP class implemented in C, you can include it directly in your extension by configuring it here:
+如果你已经在C语言中实现了一个PHP类，你可以直接将它包含在你的扩展中，在这里进行配置:
 
     {
         "extra-classes": [
@@ -207,7 +207,7 @@ If you already have a PHP class implemented in C, you can include it directly in
 
 ## extra-libs
 
-Any additional libraries you want to add to the compilation process:
+您想要添加到编译过程中的任何其他库:
 
     {
         "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
@@ -218,7 +218,7 @@ Any additional libraries you want to add to the compilation process:
 
 ## extra-sources
 
-Any additional files you want to add to the compilation process - the search directory is relative to the `ext` folder of your project:
+任何其他文件，你想添加到编译过程-搜索目录是相对于`ext`文件夹您的项目:
 
     {
         "extra-sources": [
@@ -231,7 +231,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 ## globals
 
-Extension globals available. Check the [globals](/[[language]]/[[version]]/globals) chapter for more information.
+扩展全局可用。 查看[globals](/[[language]]/[[version]]/globals)章节了解更多信息。
 
     {
         "globals": {
@@ -251,7 +251,7 @@ Extension globals available. Check the [globals](/[[language]]/[[version]]/globa
 
 ## info
 
-`phpinfo()` sections. Check the [phpinfo()](/[[language]]/[[version]]/phpinfo) chapter for more information.
+`phpinfo()` 信息. 查看[phpinfo()](/[[language]]/[[version]]/phpinfo)章节了解更多信息。
 
     {
         "info": [
@@ -270,7 +270,7 @@ Extension globals available. Check the [globals](/[[language]]/[[version]]/globa
 
 ## initializers
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/[[language]]/[[version]]/lifecycle) chapter for more information.
+这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 查看[lifecycle hooks](/[[language]]/[[version]]/lifecycle)章节了解更多信息。
 
     {
         "initializers": [
@@ -306,7 +306,7 @@ This setting lets you provide one or more C functions to be executed on certain 
 
 ## name
 
-Extension name used in compiled C code - can only contain ascii characters:
+在编译后的C代码中使用的扩展名-只能包含ascii字符:
 
     {
         "name": "test"
@@ -317,7 +317,7 @@ Extension name used in compiled C code - can only contain ascii characters:
 
 ## namespace
 
-The namespace of the extension - it must be a simple identifier respecting the regular expression `[a-zA-Z0-9\_]+`:
+扩展的名称空间-它必须是一个简单的标识符，对应于正则表达式`[a- za - z0 -9\_]+`:
 
     {
         "namespace": "test"
@@ -328,7 +328,7 @@ The namespace of the extension - it must be a simple identifier respecting the r
 
 ## optimizations
 
-Compiler optimizations which should be enabled or disabled in the current project:
+在当前项目中应该启用或禁用的编译器优化:
 
     {
         "optimizations": {
@@ -343,7 +343,7 @@ Compiler optimizations which should be enabled or disabled in the current projec
 
 ## optimizer-dirs
 
-The directories where your own optimizers can be found - the search directory is relative to the root folder of your project:
+你自己的优化器可以找到的目录-搜索目录是相对于根文件夹的项目:
 
     {
         "optimizer-dirs": [
@@ -356,7 +356,7 @@ The directories where your own optimizers can be found - the search directory is
 
 ## package-dependencies
 
-Declare library dependencies (version constraints will be checked by `pkg-config`, and can use one of the operators `=`, `>=`, `<=`, or `*`):
+声明库依赖关系(版本约束将被`pkg-config`检查，可以使用`=`，`>=`， `<=`，或`*`):
 
     {
         "package-dependencies": {
@@ -371,7 +371,7 @@ Declare library dependencies (version constraints will be checked by `pkg-config
 
 ## prototype-dir
 
-Allows you to provide prototype files describing other extensions required to build your own, so they don't necessarily need to be installed during the build phase:
+允许您提供描述构建自己的扩展所需的其他扩展的原型文件，因此它们不需要在构建阶段安装:
 
     {
         "prototype-dir": {
@@ -385,7 +385,7 @@ Allows you to provide prototype files describing other extensions required to bu
 
 ## requires
 
-Allows you to list other extensions as required to build/use your own:
+允许您列出其他扩展所需的建立/使用您自己:
 
     {
         "requires": {
@@ -401,7 +401,7 @@ Allows you to list other extensions as required to build/use your own:
 
 ## silent
 
-Suppresses most/all output from `zephir` commands (same as `-w`):
+允许您列出其他扩展所需的建立/使用您自己:
 
     {
         "silent": false
@@ -412,7 +412,7 @@ Suppresses most/all output from `zephir` commands (same as `-w`):
 
 ## stubs
 
-This setting allows adjusting the way IDE documentation stubs are generated. `path` sets where the stubs should be created, while `stubs-run-after-generate` sets whether to automatically (re)build the stubs when your code is compiled to C:
+此设置允许调整IDE文档存根生成的方式。 `path`集，其中应该创建存根，而`stubs-run-after-generate`集，当您的代码被编译为C时，是否自动(重新)构建存根:
 
     {
         "stubs": {
@@ -426,7 +426,7 @@ This setting allows adjusting the way IDE documentation stubs are generated. `pa
 
 ## verbose
 
-Displays more detail in error messages from exceptions generated by `zephir` commands (can also enable with `-v`, or disable with `-V`):
+在错误消息中显示由`zephir`命令生成的异常的更多细节(也可以启用`-v`，或禁用`-V`):
 
     {
         "verbose": false
@@ -437,7 +437,7 @@ Displays more detail in error messages from exceptions generated by `zephir` com
 
 ## version
 
-Extension version - must follow the regular expression `[0-9]+\.[0-9]+\.[0-9]+`:
+扩展版本-必须遵循正则表达式`[0-9]+\.[0-9]+\.[0-9]+`:
 
     {
         "version": "1.2.0"
@@ -448,7 +448,7 @@ Extension version - must follow the regular expression `[0-9]+\.[0-9]+\.[0-9]+`:
 
 ## warnings
 
-Compiler warnings which should be enabled or disabled in the current project:
+在当前项目中应该启用或禁用的编译器警告:
 
     {
         "warnings": {
