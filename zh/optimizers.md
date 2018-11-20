@@ -103,9 +103,9 @@ Zephir 的一个好做法是创建不修改其参数的函数。 如果要更改
     return new CompiledExpression('double', 'calculate_pi( ' . $resolvedParams[0] . ')', $expression);
     
 
-All optimizers must return a CompiledExpression instance. This will tell the compiler the type returned by the code, and its related C-code.
+所有优化器都必须返回一个编译表达式实例。 这将告诉编译器代码返回的类型及其相关的c代码。
 
-The complete optimizer code is:
+完整的优化器代码是:
 
     <?php
     
