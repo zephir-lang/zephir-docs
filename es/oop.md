@@ -26,7 +26,7 @@ class MyClass
 
 Son soportadas los siguientes modificadores de clase:
 
-`final`: If a class has this modifier it cannot be extended:
+`final`: Si una clase tiene este modificador no puede ser extendida:
 
 ```zep
 namespace Test;
@@ -100,7 +100,7 @@ public function shouldExtendMiddlewareInterface()
 
 ## Implementación de Métodos
 
-The `function` keyword introduces a method. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
+La palabra clave `function` introduce un método. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
 
 ```zep
 namespace Test;
