@@ -1,16 +1,16 @@
-# Control Structures
+# 控制结构
 
-Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
+Zephir实现了一组简化的控制结构，这些结构用类似的语言表示，如C、PHP等。
 
 <a name='conditionals'></a>
 
-## Conditionals
+## 条件
 
 <a name='conditionals-if'></a>
 
-### If Statement
+### If 语句
 
-`if` statements evaluate an expression, executing the following block if the evaluation is true. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
+`if`语句对一个表达式求值，如果求值为true，则执行以下代码块。 括号是必需的。 一个`如果`可以有一个可选的`else`子句, 而且多个`if`/`else`构造可以放在一起 
 
     if false {
         echo "false?";
@@ -23,7 +23,7 @@ Zephir implements a simplified set of control structures present in similar lang
     }
     
 
-`elseif` clauses are also available:
+`elseif`也有条件
 
     if a > 100 {
         echo "to big";
@@ -36,16 +36,16 @@ Zephir implements a simplified set of control structures present in similar lang
     }
     
 
-Parentheses in the evaluated expression are optional:
+计算表达式中的括号是可选的:
 
     if a < 0 { return -1; } else { if a > 0 { return 1; } }
     
 
 <a name='conditionals-switch'></a>
 
-### Switch Statement
+### Switch 语句
 
-A `switch` evaluates an expression against a series of predefined literal values, executing the corresponding `case` block or falling back to the `default` block case:
+一个`switch`根据一系列预定义的文字值计算表达式，执行相应的`case`块或回落到`default`块:
 
     switch count(items) {
     
@@ -70,9 +70,9 @@ A `switch` evaluates an expression against a series of predefined literal values
 
 <a name='loops-while'></a>
 
-### While Statement
+### While 语句
 
-`while` denotes a loop that iterates as long as its given condition evaluates as true:
+`while` 表示循环, 只要其给定条件的计算结果为 true, 该循环就会迭代到:
 
     let counter = 5;
     while counter {
@@ -82,9 +82,9 @@ A `switch` evaluates an expression against a series of predefined literal values
 
 <a name='loops-loop'></a>
 
-### Loop Statement
+### Loop 语句
 
-In addition to `while`, `loop` can be used to create infinite loops:
+除了 `while`, `loop` 还可用于创建无限循环:
 
     let n = 40;
     loop {
@@ -96,16 +96,16 @@ In addition to `while`, `loop` can be used to create infinite loops:
 
 <a name='loops-for'></a>
 
-### For Statement
+### For 语句
 
-A `for` is a control structure that allows to traverse arrays or strings:
+`for` 是一种控制结构, 允许遍历数组或字符串:
 
     for item in ["a", "b", "c", "d"] {
         echo item, "\n";
     }
     
 
-Keys in hashes can be obtained by providing a variable for both the key and value:
+可以通过为键和值提供变量来获取哈希中的键：
 
     let items = ["a": 1, "b": 2, "c": 3, "d": 4];
     
@@ -114,23 +114,23 @@ Keys in hashes can be obtained by providing a variable for both the key and valu
     }
     
 
-A `for` loop can also be instructed to traverse an array or string in reverse order:
+还可以指示` for </ 0>循环以相反的顺序遍历数组或字符串：</p>
 
-    let items = [1, 2, 3, 4, 5];
-    
-    for value in reverse items {
-        echo value, "\n";
-    }
-    
+<pre><code>let items = [1, 2, 3, 4, 5];
 
-A `for` loop can be used to traverse string variables:
+for value in reverse items {
+    echo value, "\n";
+}
+`</pre> 
 
-    string language = "zephir"; char ch;
-    
-    for ch in language {
-        echo "[", ch ,"]";
-    }
-    
+` for </ 0>循环可用于遍历字符串变量：</p>
+
+<pre><code>string language = "zephir"; char ch;
+
+for ch in language {
+    echo "[", ch ,"]";
+}
+`</pre> 
 
 In reverse order:
 
