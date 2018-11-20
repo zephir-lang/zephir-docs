@@ -56,11 +56,11 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 
-### Implementing Interfaces
+### 实现接口
 
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+Zephir 类可以实现任意数量的接口, 前提是这些接口 `显性` 的引用(使用use)。 但是, 有时 Zephir 类 (以及随后的扩展) 可能需要实现在不同扩展中构建的接口。
 
-If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
+如果我们想要实现`MiddlewareInterface`从`PSR`扩展，我们需要创建一个`stub`接口:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-From here we can use the `stub` interface throughout our extension.
+从这里开始，我们可以在整个扩展过程中使用`stub`接口。
 
 ```php
 /**
@@ -94,13 +94,13 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
+**NOTE**开发人员有责任确保在加载扩展之前存在所有外部引用。 因此，对于上面的示例，在加载Zephir构建的扩展之前，必须先加载[PSR](https://pecl.php.net/package/psr)扩展。
 
 <a name='implementing-methods'></a>
 
-## Implementing Methods
+## 实现方法
 
-The `function` keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+`function`关键字引入了一个方法。 方法实现PHP中常用的可见性修饰符。 在 Zephir中, 必须明确设置可见性修改器:
 
 ```zep
 namespace Test;
@@ -125,7 +125,7 @@ class MyClass
 }
 ```
 
-Methods can receive required and optional parameters:
+方法可以接收所需的和可选的参数:
 
 ```zep
 namespace Test;
@@ -177,9 +177,9 @@ class MyClass
 
 <a name='implementing-methods-optional-nullable-parameters'></a>
 
-### Optional nullable parameters
+### 可选参数可以为空
 
-Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the `null` value to the closest approximate value:
+Zephir确保变量的值保持声明的类型不变。 这使得Zephir将 `null`值转换为最近的近似值:
 
 ```zep
 public function foo(int a = null)
@@ -205,19 +205,19 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-visibilities'></a>
 
-### Supported Visibilities
+### 支持可见性
 
 * Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
-* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. 但是，受保护的方法只能在类的作用域中调用，或者在继承它们的类中调用。
 
 * Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
-### Supported Modifiers
+### 支持修改器
 
-* `static`: Methods with this modifier can only be called in a static context (from the class, not an object).
+* `static`: 使用此修饰符的方法只能在静态上下文(来自类，而不是对象) 中调用。
 
 * `final`: If a method has this modifier it cannot be overriden.
 
@@ -225,11 +225,11 @@ public function foo(array a = null)
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
-### Getter/Setter shortcuts
+### Getter / Setter 快捷方式
 
-Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
+Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. 该特性允许您轻松编写属性的setter和getter，而无需显式地实现这些方法。
 
-For example, without shortcuts we would need code like:
+例如，如果没有快捷方式，我们需要如下代码:
 
 ```zep
 namespace Test;
@@ -267,7 +267,7 @@ class MyClass
 }
 ```
 
-You can write the same code using shortcuts as follows:
+您可以使用以下快捷方式编写相同的代码:
 
 ```zep
 namespace App;
@@ -284,13 +284,13 @@ class MyClass
 }
 ```
 
-When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
+在编译代码时，这些方法作为实际方法导出，但您不必手动编写它们。
 
 <a name='implementing-methods-return-type-hints'></a>
 
-### Return Type Hints
+### 返回类型提示
 
-Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Consider the following example:
+类和接口中的方法可以有“返回类型提示”。 这些将为编译器提供有用的额外信息，以告知您应用程序中的错误。 请考虑下面的示例:
 
 ```zep
 namespace App;
@@ -299,17 +299,17 @@ class MyClass
 {
     public function getSomeData() -> string
     {
-        // this will throw a compiler exception
-        // since the returned value (boolean) does not match
-        // the expected returned type string
+        // 这会引发编译器异常
+        // 因为返回的值(布尔值)不匹配
+        // 预期返回的类型字符串
         return false;
     }
 
     public function getSomeOther() -> <App\MyInterface>
     {
-        // this will throw a compiler exception
-        // if the returned object does not implement
-        // the expected interface App\MyInterface
+        //  这会引发编译器异常
+        // 如果返回的对象没有实现
+        // 期望的接口App\MyInterface
         return new App\MyObject;
     }
 
@@ -317,19 +317,19 @@ class MyClass
     {
         var myObject;
 
-        // the type-hint will tell the compiler that
-        // myObject is an instance of a class
-        // that implement App\MyInterface
+        // 类型提示会告诉编译器这一点
+        // myObject是一个类的实例
+        // 实现应用程序\MyInterface
         let myObject = this->getSomeOther();
 
-        // the compiler will check if App\MyInterface
-        // implements a method called "someMethod"
+        // 编译器会检查App\MyInterface是否正确
+        // 实现一个名为“someMethod”的方法
         echo myObject->someMethod();
     }
 }
 ```
 
-A method can have more than one return type. When multiple types are defined, the operator `|` must be used to separate those types.
+一个方法可以有多个返回类型。 When multiple types are defined, the operator `|` must be used to separate those types.
 
 ```zep
 namespace App;
@@ -348,9 +348,9 @@ class MyClass
 
 <a name='implementing-methods-return-type-void'></a>
 
-### Return Type: Void
+### 返回类型: Void
 
-Methods can also be marked as `void`. This means that a method is not allowed to return any data:
+方法也可以标记为 `void`。 这意味着不允许方法返回任何数据:
 
 ```zep
 public function setConnection(connection) -> void
@@ -359,18 +359,18 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+为什么这是有用的？ 因为编译器可以检测程序是否期望从这些方法返回值，并产生一个编译器异常:
 
 ```zep
-let myDb = db->setConnection(connection); // this will produce an exception
+let myDb = db->setConnection(connection); // 这将产生一个异常
 myDb->execute("SELECT * FROM robots");
 ```
 
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
 
-### Strict/Flexible Parameter Data-Types
+### 严格/灵活的参数的数据类型
 
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
+在 Zephir中, 可以指定方法的每个参数的数据类型。 默认情况下, 这些数据类型是灵活的。这意味着, 如果传递了具有错误 (但兼容) 数据类型的值, 则 Zephir 将尝试以透明方式将其转换为预期的数据类型:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -379,7 +379,7 @@ public function filterText(string text, boolean escape=false)
 }
 ```
 
-Above method will work with the following calls:
+上述方法将适用于以下调用:
 
 ```zep
 <?php
@@ -391,7 +391,7 @@ $o->filterText("some text", true);    // OK
 $o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
-However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
+但是, 传递错误的类型通常会导致错误。 不正确地使用特定的 api 会产生意外的结果。 通过使用严格的数据类型设置参数, 可以禁止自动转换:
 
 ```zep
 public function filterText(string! text, boolean escape=false)
