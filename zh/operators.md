@@ -218,7 +218,7 @@ These "type hints" are weak. This means the program does not check if the value 
 
 What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
 
-Consider the following example:
+请考虑下面的示例:
 
     let allPaths = [];
     for path in this->_paths {
