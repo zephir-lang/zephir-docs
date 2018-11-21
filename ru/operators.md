@@ -1,65 +1,65 @@
-# Operators
+# Операторы
 
-Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
+Операторы в Zephir похожи на их аналоги в PHP и также себя ведут.
 
 <a name='arithmetic-operators'></a>
 
-## Arithmetic Operators
+## Арифметические операторы
 
-The following operators are supported:
+Поддерживаются следующие операторы:
 
-| Operation      | Example |
-| -------------- | ------- |
-| Negation       | `-a`    |
-| Addition       | `a + b` |
-| Subtraction    | `a - b` |
-| Multiplication | `a * b` |
-| Division       | `a / b` |
-| Modulus        | `a % b` |
+| Операция                    | Пример  |
+| --------------------------- | ------- |
+| Приведение к отрицательному | `-a`    |
+| Сложение                    | `a + b` |
+| Вычитание                   | `a - b` |
+| Умножение                   | `a * b` |
+| Деление                     | `a / b` |
+| Деление по модулю           | `a % b` |
 
 <a name='bitwise-operators'></a>
 
-## Bitwise Operators
+## Побитовые операторы
 
-The following operators are supported:
+Поддерживаются следующие операторы:
 
-| Operation          | Example        |
-| ------------------ | -------------- |
-| And                | `a & b`    |
-| Or (inclusive or)  | `a | b`        |
-| Xor (exclusive or) | `a ^ b`        |
-| Not                | `~a`           |
-| Shift left         | `a << b` |
-| Shift right        | `a >> b` |
+| Операция        | Пример         |
+| --------------- | -------------- |
+| И               | `a & b`    |
+| Или             | `a | b`        |
+| Исключающее или | `a ^ b`        |
+| Отрицание       | `~a`           |
+| Сдвиг влево     | `a << b` |
+| Сдвиг вправо    | `a >> b` |
 
-Example:
+Пример:
 
     if a & SOME_FLAG {
-        echo "has some flag";
+        echo "Флаг установлен";
     }
     
 
-Learn more about comparison of dynamic variables in the [php manual](http://www.php.net/manual/en/language.operators.comparison.php).
+Узнать больше о сравнении динамических переменных можно из [документации по PHP](http://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
-## Comparison Operators
+## Операторы сравнения
 
-Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
+Операции сравнения зависят от типа сравниваемых переменных. Например если оба операнда динамические, то результат будет таким же как и в PHP:
 
-| Example        | Operation                | Description                                                      |
-| -------------- | ------------------------ | ---------------------------------------------------------------- |
-| `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
-| `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
-| `a != b`       | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a <> b` | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a !== b`      | Not identical            | `true` if a is not equal to b, or they are not of the same type. |
-| `a < b`     | Less than                | `true` if a is strictly less than b.                             |
-| `a > b`     | Greater than             | `true` if a is strictly greater than b.                          |
-| `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
-| `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
+| Пример         | Операция             | Описание                                         |
+| -------------- | -------------------- | ------------------------------------------------ |
+| `a == b`       | Равенство            | `true` если a равно b после приведения типов.    |
+| `a === b`      | Идентичность         | `true` если a равно b, и операнды одного типа.   |
+| `a != b`       | Не равны             | `true` если a не равно b после приведения типов. |
+| `a <> b` | Не равны             | `true` если a не равно b после приведения типов. |
+| `a !== b`      | Не идентичны         | `true` если a не равно b после приведения типов. |
+| `a < b`     | Меньше чем           | `true` если a строго меньше b.                   |
+| `a > b`     | Больше чем           | `true` если a строго больше b.                   |
+| `a <= b`    | Меньше чем или равно | `true` если a меньше, или равно b.               |
+| `a >= b`    | Больше чем или равно | `true` если a строго больше, или равно b.        |
 
-Example:
+Пример:
 
     if a == b {
         return 0;
@@ -74,17 +74,17 @@ Example:
 
 <a name='logical-operators'></a>
 
-## Logical Operators
+## Логические операторы
 
-The following operators are supported:
+Поддерживаются следующие операторы:
 
-| Operation | Example          |
+| Операция  | Пример           |
 | --------- | ---------------- |
-| And       | `a && b` |
-| Or        | `a || b`         |
-| Not       | `!a`             |
+| И         | `a && b` |
+| Или       | `a || b`         |
+| Отрицание | `!a`             |
 
-Example:
+Пример:
 
     if a && b || !c {
         return -1;
@@ -94,33 +94,33 @@ Example:
 
 <a name='tenary-operator'></a>
 
-## Ternary Operator
+## Тернарный оператор
 
-Zephir supports the ternary operator available in C or PHP:
+Zephir поддерживает тернарный оператор, как в C или PHP:
 
-    let b = a == 1 ? "x" : "y"; // b is set to "x" if a is equal to 1, otherwise "y" is assigned as the value
+    let b = a == 1 ? "x" : "y"; // b будет присвоен "x", если a равно 1 в противном случае "y"
     
 
 <a name='special-operators'></a>
 
-## Special Operators
+## Специальные операторы
 
-The following operators are supported:
+Поддерживаются следующие операторы:
 
 <a name='special-operators-empty'></a>
 
 ### Empty
 
-This operator allows checking whether an expression is empty. 'Empty' means the expression is `null`, is an empty string, or an empty array:
+Этот оператор позволяет узнать пусто ли выражение. Под "пусто" подразумевается выражение равное `null`, пустая строка или пустой массив:
 
     let someVar = "";
     if empty someVar {
-        echo "is empty!";
+        echo "пусто!";
     }
     
-    let someVar = "hello";
+    let someVar = "привет";
     if !empty someVar {
-        echo "is not empty!";
+        echo "не пусто!";
     }
     
 
@@ -128,7 +128,7 @@ This operator allows checking whether an expression is empty. 'Empty' means the 
 
 ### Fetch
 
-'Fetch' is an operator that reduces a common operation in PHP into a single instruction:
+Оператор "fetch" создан для сокращения популярной в PHP конструкции:
 
     <?php
     
@@ -138,33 +138,33 @@ This operator allows checking whether an expression is empty. 'Empty' means the 
     }
     
 
-In Zephir, you can write the same code as:
+В Zephir тот же код будет можно написать так:
 
     if fetch value, myArray[key] {
         echo value;
     }
     
 
-'Fetch' only returns `true` if the 'key' is a valid item in the array, and only in that case is 'value' populated.
+Оператор "fetch" вернет `true`, если в массиве есть что-то по ключу "key" и тогда переменной "value" будет присвоено значение.
 
 <a name='special-operators-isset'></a>
 
 ### Isset
 
-This operator checks whether a property or index has been defined in an array or object:
+Проверяет, существует ли индекс у массива или свойство у объекта:
 
     let someArray = ["a": 1, "b": 2, "c": 3];
-    if isset someArray["b"] { // check if the array has an index "b"
-        echo "yes, it has an index 'b'\n";
+    if isset someArray["b"] { // проверим, есть ли у массива индекс "b"
+        echo "Да, переменная имеет индекс 'b'\n";
     }
     
 
-Using `isset` as a return expression:
+Использование `isset` возможно и в возвращаемых конструкциях:
 
     return isset this->{someProperty};
     
 
-Note that `isset` in Zephir works more like PHP's function [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
+Обратите внимание, `isset` в Zephir работает скорее как [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php) в PHP. Иными словами `isset` в Zephir вернёт true, даже если значение равно null.
 
 <a name='special-operators-typeof'></a>
 
@@ -186,20 +186,20 @@ It can also work like the PHP function `gettype`.
 
 <a name='special-operators-type-hints'></a>
 
-### Type Hints
+### Подсказки типа
 
-Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
+Zephir всегда пытается проверить, реализует ли объект методы и свойства, вызываемые/доступные для переменной, которая выводится как объект:
 
     let o = new MyObject();
     
-    // Zephir checks if "myMethod" is implemented on MyObject
+    // Zephir проверяет, реализован ли "myMethod" в MyObject
     o->myMethod();
     
 
-However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object, so Zephir can't produce error reports effectively. A type hint tells the compiler which class is related to a dynamic variable, allowing the compiler to perform more compilation checks:
+Однако из-за динамичной природы, унаследованной от PHP, иногда нелегко узнать класс объекта, поэтому Zephir не может эффективно создавать отчеты об ошибках. Подсказка типа сообщает компилятору, какой класс связан с динамической переменной, позволяющей компилятору выполнять больше проверок компиляции:
 
-    // Tell the compiler that "o"
-    // is an instance of class MyClass
+    // Сообщает компилятору, что "o"
+    // является экземпляром класса MyClass
     let o = <MyClass> this->_myObject;
     o->myMethod();
     
@@ -214,28 +214,28 @@ These "type hints" are weak. This means the program does not check if the value 
 
 <a name='special-operators-branch-prediction-hints'></a>
 
-### Branch Prediction Hints
+### Подсказки прогнозирования ветвлений
 
-What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
+Что такое прогнозирование ветвлений? Для подробного описания это понятия обратитесь к [статье Игоря Островского](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) или [описанию на Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). В окружениях, где производительность является очень важной составляющей, может оказаться полезным использование подсказок при прогнозировании ветвлений.
 
-Consider the following example:
+Рассмотрим следующий пример:
 
     let allPaths = [];
     for path in this->_paths {
         if path->isAllowed() == false {
-            throw new App\Exception("Some error message here");
+            throw new App\Exception("Некое сообщение об ошибке");
         } else {
             let allPaths[] = path;
         }
     }
     
 
-The authors of the above code know in advance that the condition that throws the exception is unlikely to happen. This means that, 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
+Авторы кода, приведенного выше, заранее знают, что условие, которое выбрасывает исключение, вряд ли произойдет. Это означает, что в 99.9% случаев наш метод выполняет эту проверку в холостую — условие вероятно не будет оцениваться как истинное. Но для процессора, обычно, это сложно понять, поэтому мы могли бы ввести здесь подсказку:
 
     let allPaths = [];
     for path in this->_paths {
         if unlikely path->isAllowed() == false {
-            throw new App\Exception("Some error message here");
+            throw new App\Exception("Некое сообщение об ошибке");
         } else {
             let allPaths[] = path;
         }
