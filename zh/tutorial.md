@@ -249,6 +249,6 @@ In the following screencast you can watch how to create the extension explained 
 
 <a name='conclusion'></a>
 
-## Conclusion
+## 结语
 
 This is a very simple tutorial, and as you can see, it's easy to start building extensions using Zephir. We invite you to continue reading the manual so that you can discover additional features offered by Zephir!
