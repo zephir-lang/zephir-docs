@@ -40,7 +40,7 @@ final class MyClass
 }
 ```
 
-`abstract`: If a class has this modifier it cannot be instantiated:
+`abstract`: Si una clase tiene este modificador no puede ser instanciada:
 
 ```zep
 namespace Test;
