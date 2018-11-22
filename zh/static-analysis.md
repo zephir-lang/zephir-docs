@@ -1,12 +1,12 @@
-# Static Analysis
+# 静态分析
 
-Zephir's compiler provides static analysis of the compiled code. The idea behind this feature is to help the developer to find potential problems and avoid unexpected behaviors, well before runtime.
+Zephir 的编译器提供对已编译代码的静态分析。 此功能背后的想法是在运行时之前帮助开发人员发现潜在的问题, 避免意外的行为 。
 
 <a name='conditional-unassigned-variables'></a>
 
-## Conditional Unassigned Variables
+## 条件未分配的变量
 
-Static Analysis of assignments tries to identify if a variable is used before it's assigned:
+工作分配的静态分析尝试确定变量在赋值之前是否已使用:
 
     class Utils
     {
