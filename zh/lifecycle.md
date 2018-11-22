@@ -4,11 +4,11 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 
 考虑下面的图表:
 
-![The PHP Process/Request Lifecycle](/images/content/lifecycle.png)
+![PHP进程/请求生命周期](/images/content/lifecycle.png)
 
 生命周期钩子注册在`config.json`。 如上图所示，有四种生命周期钩子 — `globals`， `initializers`，`destructors`，`info`。 每一个都在配置中有自己对应的根级别设置，[globals](/[[language]]/[[version]]/globals)和[info](/[[language]]/[[version]]/phpinfo)都有自己的章节。 本章将介绍另外两种设置。
 
-Each hook in the `config.json` file is an array of objects, which themselves are essentially `include`/`code` pairs. The `include` value will pull in a given C header file, if it hasn't been already, so that the `code` will have access to its contents. The `code` value is the logic run by the hook itself, and while you can technically put any valid C in here, it is ***strongly*** recommended to put logic longer than one or two lines into a separate C source file (such as the one pulled in along with your `include`d header file), and use a single-line function call here.
+每个钩子在`config.json`文件是一个对象数组，其本身本质上是`include`/`code`对。 `include`值，如果还没有，则会拉入一个给定的C头文件，这样`code`就可以访问它的内容。 `code`值是由钩的逻辑本身, 虽然在技术上你可以把任何有效的C, 它是*** 强烈***建议把逻辑超过一个或两个行到一个单独的C源文件(比如一个拉连同你的`include` d头文件), 并使用一个单行的函数调用。
 
 <a name='initializers'></a>
 
@@ -46,13 +46,13 @@ Each hook in the `config.json` file is an array of objects, which themselves are
     }
     
 
-This block is responsible for defining hooks into the Init events shown in the diagram above. There are three of these: `globals` for setting up the global variable space, `module` for setting up anything the extension itself needs to function, and `request` for setting up the extension to handle a single request.
+这个块负责定义到上面图中显示的Init事件的钩子。 其中有三个:`globals`用于设置全局变量空间;`module`用于设置扩展本身需要功能的任何内容;`request`用于设置扩展来处理单个请求。
 
 <a name='desctructors'></a>
 
 ## destructors
 
-The `destructors` block looks something like this:
+`destructors` 块如下所示:
 
 ```json
 {
@@ -91,4 +91,4 @@ The `destructors` block looks something like this:
 }
 ```
 
-Much as the `initializers` block is responsible for defining hooks into the Init events shown in the diagram above, *this* block is responsible for defining hooks into the Shutdown events. There are four of these: `request` for finalizing any data before a response is sent to the client, `post-request` for cleaning up after a response has been sent, `module` for cleaning up after the extension itself before the PHP process shuts down, and `globals` for cleaning up the global variable space.
+正如 `initializers` 块负责定义上图中显示的 init 事件中的挂钩一样, *this* 块负责定义关机事件中的挂钩。 有四个:`request`响应之前敲定任何数据发送到客户端,`post-request`清理响应被发送后,`module</0 >模块扩展后的清理本身PHP进程关闭之前, 和<code>globals`清理全局变量空间。
