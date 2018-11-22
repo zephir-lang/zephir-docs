@@ -46,49 +46,49 @@ Los tienen la misma funcionalidad, pero el segundo utiliza programación orienta
 
 Los siguientes métodos incorporados de cadena están disponibles:
 
-| OO                   | Procedimientos        | Descripción                                                                   |
-| -------------------- | --------------------- | ----------------------------------------------------------------------------- |
-| `s->format()`     | `sprintf(s, "%s", x)` | Retorna una cadena formateada                                                 |
-| `s->index("foo")` | `strpos(s, "foo")`    | Busca la posición de la primer aparición de una subcadena en una cadena       |
-| `s->length()`     | `strlen(s)`           | Obtiene el largo de una cadena                                                |
-| `s->lower()`      | `strtolower(s)`       | Make a string lowercase                                                       |
-| `s->lowerfirst()` | `lcfirst(s)`          | Make a string's first character lowercase                                     |
-| `s->md5()`        | `md5(s)`              | Calculate the md5 hash of a string                                            |
-| `s->sha1()`       | `sha1(s)`             | Calculate the sha1 hash of a string                                           |
-| `s->trim()`       | `trim(s)`             | Strip whitespace (or other characters) from the beginning and end of a string |
-| `s->trimleft()`   | `ltrim(s)`            | Strip whitespace (or other characters) from the beginning of a string         |
-| `s->trimright()`  | `rtrim(s)`            | Strip whitespace (or other characters) from the end of a string               |
-| `s->upper()`      | `strtoupper(s)`       | Make a string uppercase                                                       |
-| `s->upperfirst()` | `ucfirst(s)`          | Make a string's first character uppercase                                     |
+| OO                   | Procedimientos        | Descripción                                                                        |
+| -------------------- | --------------------- | ---------------------------------------------------------------------------------- |
+| `s->format()`     | `sprintf(s, "%s", x)` | Retorna una cadena formateada                                                      |
+| `s->index("foo")` | `strpos(s, "foo")`    | Busca la posición de la primer aparición de una subcadena en una cadena            |
+| `s->length()`     | `strlen(s)`           | Obtiene el largo de una cadena                                                     |
+| `s->lower()`      | `strtolower(s)`       | Convierte a minúsculas una cadena de texto                                         |
+| `s->lowerfirst()` | `lcfirst(s)`          | Convierte en minúscula la primera letra de la cadena de texto                      |
+| `s->md5()`        | `md5(s)`              | Calcula el hash MD5 de la cadena de texto                                          |
+| `s->sha1()`       | `sha1(s)`             | Calcula el hash SHA1 de la cadena de texto                                         |
+| `s->trim()`       | `trim(s)`             | Quita los espacios en blanco (u otros caracteres) del inicio y del final del texto |
+| `s->trimleft()`   | `ltrim(s)`            | Quita los espacios en blanco (u otros caracteres) del inicio del texto             |
+| `s->trimright()`  | `rtrim(s)`            | Quita los espacios en blanco (u otros caracteres) del final del texto              |
+| `s->upper()`      | `strtoupper(s)`       | Convierte a mayúsculas una cadena de texto                                         |
+| `s->upperfirst()` | `ucfirst(s)`          | Convierte en mayúscula la primera letra de la cadena de texto                      |
 
 <a name='array'></a>
 
 ## Array
 
-The following array built-in methods are available:
+Los siguientes métodos incorporados de array están disponibles:
 
-| OO                   | Procedimientos          | Descripción                                                             |
-| -------------------- | ----------------------- | ----------------------------------------------------------------------- |
-| `a->combine(b)`   | `array_combine(a, b)`   | Creates an array by using one array for keys and another for its values |
-| `a->diff()`       | `array_diff(a)`         | Computes the difference of arrays                                       |
-| `a->flip()`       | `array_flip(a)`         | Exchanges all keys with their associated values in an array             |
-| `a->hasKey()`     | `array_key_exists(a)`   | Checks if the given key or index exists in the array                    |
-| `a->intersect(b)` | `array_intersect(a, b)` | Computes the intersection of arrays                                     |
-| `a->join(" ")`    | `join(" ", a)`          | Join array elements with a string                                       |
-| `a->keys()`       | `array_keys(a)`         | Return all the keys or a subset of the keys of an array                 |
-| `a->merge(b)`     | `array_merge(a, b)`     | Merge one or more arrays                                                |
-| `a->pad()`        | `array_pad(a, b)`       | Pad array to the specified length with a value                          |
-| `a->rev()`        | `array_reverse(a)`      | Return an array with elements in reverse order                          |
-| `a->reversed()`   | `array_reverse(a)`      | Return an array with elements in reverse order                          |
-| `a->split()`      | `array_chunk(a)`        | Split an array into chunks                                              |
-| `a->values()`     | `array_values(a)`       | Return all the values of an array                                       |
-| `a->walk()`       | `array_walk(a)`         | Apply a user supplied function to every member of an array              |
+| OO                   | Procedimientos          | Descripción                                                               |
+| -------------------- | ----------------------- | ------------------------------------------------------------------------- |
+| `a->combine(b)`   | `array_combine(a, b)`   | Crea un array utilizando un array para las claves y otro para sus valores |
+| `a->diff()`       | `array_diff(a)`         | Calcula la diferencia entre arrays                                        |
+| `a->flip()`       | `array_flip(a)`         | Intercambia todos las claves del array por sus valores asociados          |
+| `a->hasKey()`     | `array_key_exists(a)`   | Comprueba si el índice o clave dada existe en el array                    |
+| `a->intersect(b)` | `array_intersect(a, b)` | Calcula la intersección entre arrays                                      |
+| `a->join(" ")`    | `join(" ", a)`          | Une los elementos de un array con un texto                                |
+| `a->keys()`       | `array_keys(a)`         | Devolver todas las claves o un subconjunto de las claves de una matriz    |
+| `a->merge(b)`     | `array_merge(a, b)`     | Une uno o más arrays                                                      |
+| `a->pad()`        | `array_pad(a, b)`       | Rellena un array de un largo y con un valor dados                         |
+| `a->rev()`        | `array_reverse(a)`      | Regresa un array con los elementos en orden inverso                       |
+| `a->reversed()`   | `array_reverse(a)`      | Regresa un array con los elementos en orden inverso                       |
+| `a->split()`      | `array_chunk(a)`        | Divide un array en partes                                                 |
+| `a->values()`     | `array_values(a)`       | Regresa todos los valores de un array                                     |
+| `a->walk()`       | `array_walk(a)`         | Aplica una función definida por el usuario a cada elemento de un array    |
 
 <a name='char'></a>
 
 ## Char
 
-The following char built-in methods are available:
+Los siguientes métodos incorporados para chars están disponibles:
 
 | OO               | Procedimientos      |
 | ---------------- | ------------------- |
@@ -98,7 +98,7 @@ The following char built-in methods are available:
 
 ## Integer
 
-The following integer built-in methods are available:
+Los siguientes métodos incorporados para enteros están disponibles:
 
 | OO            | Procedimientos |
 | ------------- | -------------- |
