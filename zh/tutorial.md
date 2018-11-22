@@ -1,4 +1,4 @@
-# Tutorial
+# 教程
 
 Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
 
