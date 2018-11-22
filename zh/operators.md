@@ -1,65 +1,65 @@
-# Operators
+# 运算符
 
-Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
+Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些行为。
 
 <a name='arithmetic-operators'></a>
 
-## 算术运算符
+## Arithmetic Operators
 
-The following operators are supported:
+支持一下操作符
 
-| Operation      | Example |
-| -------------- | ------- |
-| Negation       | `-a`    |
-| Addition       | `a + b` |
-| Subtraction    | `a - b` |
-| Multiplication | `a * b` |
-| Division       | `a / b` |
-| Modulus        | `a % b` |
+| 操作 | 示例      |
+| -- | ------- |
+| 求反 | `-a`    |
+| 加  | `a + b` |
+| 相减 | `a - b` |
+| 乘  | `a * b` |
+| 除  | `a / b` |
+| 取模 | `a % b` |
 
 <a name='bitwise-operators'></a>
 
 ## 按位运算符
 
-The following operators are supported:
+支持一下操作符
 
-| Operation          | Example        |
+| 操作                 | 示例             |
 | ------------------ | -------------- |
-| And                | `a & b`    |
-| Or (inclusive or)  | `a | b`        |
+| 与                  | `a & b`    |
+| 或(包括)              | `a | b`        |
 | Xor (exclusive or) | `a ^ b`        |
-| Not                | `~a`           |
-| Shift left         | `a << b` |
-| Shift right        | `a >> b` |
+| 非                  | `~a`           |
+| 左移                 | `a << b` |
+| 右移                 | `a >> b` |
 
-Example:
+示例︰
 
     if a & SOME_FLAG {
         echo "has some flag";
     }
     
 
-Learn more about comparison of dynamic variables in the [php manual](http://www.php.net/manual/en/language.operators.comparison.php).
+了解[php手册](http://www.php.net/manual/en/language.operators.comparison.php)中动态变量的比较。
 
 <a name='comparison-operators'></a>
 
 ## 比较运算符
 
-Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
+比较运算符取决于比较变量的类型。 例如，如果两个比较操作数都是动态变量，其行为与PHP相同:
 
-| Example        | Operation                | 说明                                                               |
-| -------------- | ------------------------ | ---------------------------------------------------------------- |
-| `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
-| `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
-| `a != b`       | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a <> b` | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a !== b`      | Not identical            | `true` if a is not equal to b, or they are not of the same type. |
-| `a < b`     | Less than                | `true` if a is strictly less than b.                             |
-| `a > b`     | Greater than             | `true` if a is strictly greater than b.                          |
-| `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
-| `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
+| 示例             | 操作                       | 说明                                         |
+| -------------- | ------------------------ | ------------------------------------------ |
+| `a == b`       | 等于                       | `true`如果a在去除类型后等于b。                        |
+| `a === b`      | 完全相同的                    | `true`如果a等于b，它们是相同类型的。                     |
+| `a != b`       | 不等于                      | `true`如果a在去除类型后不等于b。                       |
+| `a <> b` | 不等于                      | `true`如果a在去除类型后不等于b。                       |
+| `a !== b`      | 不一致                      | `true`如果a不等于b，或者它们不是同一类型。                  |
+| `a < b`     | 小于                       | 如果a严格小于b，则`true`。                          |
+| `a > b`     | 大于                       | 如果a严格大于b，则`true`。                          |
+| `a <= b`    | 小于或等于                    | `true` if a is less than or equal to b.    |
+| `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b. |
 
-Example:
+示例︰
 
     if a == b {
         return 0;
@@ -76,15 +76,15 @@ Example:
 
 ## 逻辑运算符
 
-The following operators are supported:
+支持一下操作符
 
-| Operation | Example          |
-| --------- | ---------------- |
-| And       | `a && b` |
-| Or        | `a || b`         |
-| Not       | `!a`             |
+| 操作 | 示例               |
+| -- | ---------------- |
+| 与  | `a && b` |
+| Or | `a || b`         |
+| 非  | `!a`             |
 
-Example:
+示例︰
 
     if a && b || !c {
         return -1;
@@ -105,7 +105,7 @@ Zephir supports the ternary operator available in C or PHP:
 
 ## Special Operators
 
-The following operators are supported:
+支持一下操作符
 
 <a name='special-operators-empty'></a>
 
