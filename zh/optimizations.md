@@ -14,7 +14,7 @@
     zephir -fno-static-type-inference -fno-call-gatherer-pass
     
 
-With recent versions of zephir-parser, optimizations can be configured in the config file `config.json`.
+使用最新版本的zephir解析器，可以在配置文件`config.json`中配置优化。
 
 支持以下优化:
 
