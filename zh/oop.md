@@ -26,7 +26,7 @@ class MyClass
 
 支持以下类修饰符:
 
-`final`: If a class has this modifier it cannot be extended:
+`final`: 如果一个类有这个修饰符，它就不能被扩展:
 
 ```zep
 namespace Test;
@@ -40,7 +40,7 @@ final class MyClass
 }
 ```
 
-`abstract`: If a class has this modifier it cannot be instantiated:
+`abstract`: 如果一个类有这个修饰符，它不能被实例化:
 
 ```zep
 namespace Test;
@@ -207,11 +207,11 @@ public function foo(array a = null)
 
 ### 支持可见性
 
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
+* Public: 将标记为` public`的方法导出到PHP扩展; 这意味着公共方法对PHP代码和扩展本身都是可见的。
 
-* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. 但是，受保护的方法只能在类的作用域中调用，或者在继承它们的类中调用。
+* Protected: 将标记为`protected`的方法导出到PHP扩展; 这意味着受保护的方法对PHP代码和扩展本身都是可见的。 但是，受保护的方法只能在类的作用域中调用，或者在继承它们的类中调用。
 
-* Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Private: 标记为 `private` 的方法不会导出到PHP扩展; 这意味着私有方法只对实现它们的类可见。
 
 <a name='implementing-methods-supported-modifiers'></a>
 
@@ -219,9 +219,9 @@ public function foo(array a = null)
 
 * `static`: 使用此修饰符的方法只能在静态上下文(来自类，而不是对象) 中调用。
 
-* `final`: If a method has this modifier it cannot be overriden.
+* `final`: 如果方法具有此修饰符, 则无法对其进行覆盖.
 
-* `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* `deprecated`: 被标记为`deprecated`的方法在被调用时抛出一个`E_DEPRECATED`错误。
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
@@ -329,7 +329,7 @@ class MyClass
 }
 ```
 
-一个方法可以有多个返回类型。 When multiple types are defined, the operator `|` must be used to separate those types.
+一个方法可以有多个返回类型。 在定义多个类型时，必须使用操作符 `|`来分隔这些类型。
 
 ```zep
 namespace App;
@@ -562,7 +562,7 @@ class MyClass
 }
 ```
 
-Class constants can be accessed using the class name and the static operator `::`:
+类常量可以使用类名和静态运算符 `::`访问:
 
 ```zep
 namespace Test;
@@ -584,7 +584,7 @@ class MyClass
 
 ## 调用方法
 
-Methods can be called using the object operator `->` as in PHP:
+方法可以使用对象操作符 `->` 调用，就像在PHP中:
 
 ```zep
 namespace Test;
@@ -603,7 +603,7 @@ class MyClass
 }
 ```
 
-Static methods must be called using the static operator `::`:
+必须使用静态操作符 `::` 调用静态方法:
 
 ```zep
 namespace Test;
