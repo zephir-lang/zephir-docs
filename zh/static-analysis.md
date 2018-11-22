@@ -26,22 +26,23 @@ Zephir 的编译器提供对已编译代码的静态分析。 此功能背后的
     }
     
 
-The above example illustrates a common situation. The variable `a` is assigned only when `b` is equal to 10, then it's required to use the value of this variable - but it could be uninitialized. Zephir detects this, automatically initializes the variable to an empty string, and generates a warning alerting the developer:
+上面的示例说明了一种常见情况。 只有当 `b` 等于 10时, 才会分配变量 `a`, 然后需要使用此变量的值--但它可能未初始化。 Zephir 检测到这一点, 自动将变量初始化为空字符串, 并生成警告开发人员:
 
-    Warning: Variable 'a' was assigned for the first time in conditional branch,
-    consider initialize it in its declaration in
+    警告:第一次在条件分支中分配变量a，
+    考虑在声明中初始化它
+    
     /home/scott/test/test/utils.zep on 21 [conditional-initialization]
     
         for c in a {
     
 
-Finding such errors is sometimes tricky, however static analysis helps the programmer to find bugs in advance.
+发现这样的错误有时是很棘手的, 但是静态分析可以帮助程序员提前发现错误。
 
 <a name='dead-code-elimination'></a>
 
-## Dead Code Elimination
+## 死码消除
 
-Zephir informs the developer about unreachable branches in the code and performs dead code elimination, which means it gets rid of all that code from the generated binary, since it cannot be executed anyway:
+Zephir 通知开发人员代码中无法访问的分支, 并执行死代码消除, 这意味着它将从生成的二进制文件中删除所有代码, 因为它无论如何都无法执行:
 
     class Utils
     {
