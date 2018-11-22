@@ -1,4 +1,4 @@
-# Installation
+# 安装
 
 要安装 Zephir, 请按照下列步骤操作:
 
