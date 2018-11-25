@@ -6,7 +6,7 @@
     - [整数溢出](/[[language]]/[[version]]/types#dynamic-types-integer-overflow)
     - [对象](/[[language]]/[[version]]/types#dynamic-types-objects)
     - [String](/[[language]]/[[version]]/types#dynamic-types-string)
-- [静态类型](/[[language]]/[[version]]/types#static-types) 
+- [Static Types](/[[language]]/[[version]]/types#static-types) 
     - [Boolean](/[[language]]/[[version]]/types#static-types-boolean)
     - [字符/无符号字符](/[[language]]/[[version]]/types#static-types-char-unsigned)
     - [整数/无符号整数](/[[language]]/[[version]]/types#static-types-integer-unsigned)
