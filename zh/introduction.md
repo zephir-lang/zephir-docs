@@ -67,7 +67,7 @@ Zephir 中的代码必须放在类中。 该语言旨在创建面向对象的库
 
 下面的例子很简单; 它实现了一个类和一个方法，以及一个检查数组类型的小程序。
 
-让我们详细检查代码，以便开始学习Zephir语法。 There are a lot of details in just a few lines of code! 我们将在这里解释其大意:
+让我们详细检查代码，以便开始学习Zephir语法。 在短短几行代码中有很多细节! 我们将在这里解释其大意:
 
     namespace Test;
     
