@@ -4,7 +4,7 @@ Zephir is both dynamically and statically typed. In this chapter we highlight th
 
 <a name='dynamic-types'></a>
 
-## Dynamic Types
+## 动态类型
 
 Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
 
@@ -79,7 +79,7 @@ A boolean expresses a truth value. It can be either `true` or `false`:
 
 <a name='dynamic-types-float-double'></a>
 
-### Float/Double
+### 浮点型/双精度浮点
 
 Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
