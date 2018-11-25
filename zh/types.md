@@ -150,7 +150,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 <a name='static-types'></a>
 
-## Static Types
+## 静态类型
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
