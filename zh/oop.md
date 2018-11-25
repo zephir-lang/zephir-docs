@@ -227,7 +227,7 @@ public function foo(array a = null)
 
 ### Getter / Setter 快捷方式
 
-Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. 该特性允许您轻松编写属性的setter和getter，而无需显式地实现这些方法。
+和C#一样，在Zephir中可以使用`get`/`set`/`toString`快捷方式。 该特性允许您轻松编写属性的setter和getter，而无需显式地实现这些方法。
 
 例如，如果没有快捷方式，我们需要如下代码:
 
