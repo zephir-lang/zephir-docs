@@ -1,0 +1,2 @@
+- [Некоторые особенности](/[[language]]/[[version]]/welcome#some-features) 
+- [Попробуйте](/[[language]]/[[version]]/welcome#a-small-taste)
