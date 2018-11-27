@@ -1,52 +1,52 @@
 # Lifecycle hooks
-PHP provides several lifecycle events, which extensions can use to perform common initialization or shutdown tasks. Normally,Zephir's own hooks into these events will cover all the setup and tear down your extension will need, but if you find that you need to do something more, there are a few options you can use to pass your own code into these same hooks.
+PHP provides several lifecycle events, which extensions can use to perform common initialization or shutdown tasks. Normally, Zephir's own hooks into these events will cover all the setup and tear down your extension will need, but if you find that you need to do something more, there are a few options you can use to pass your own code into these same hooks.
 
 Consider the following diagram:
 
-![](/images/content/lifecycle.png)
+![The PHP Process/Request Lifecycle](/images/content/lifecycle.png)
 
-Lifecycle hooks are registered in the `config.json` file. As you can see in the diagram above, there are four types of lifecycle hooks - `globals`, `initializers`, `destructors`, and `info`. Each of these has its own corresponding root-level setting in the configuration, and both :doc:'globals <globals>' and :doc:'info <phpinfo>' have their own chapters. This chapter covers the other two settings.
+Lifecycle hooks are registered in the `config.json` file. As you can see in the diagram above, there are four types of lifecycle hooks - `globals`, `initializers`, `destructors`, and `info`. Each of these has its own corresponding root-level setting in the configuration, and both [globals](/[[language]]/[[version]]/globals) and [info](/[[language]]/[[version]]/phpinfo) have their own chapters. This chapter covers the other two settings.
 
-You can register an `include` and a `code` for each group's supported `INIT` and `SHUTDOWN` events. The `code` can be whatever you need/want, but a single function call per hook is recommended, both for clarity in the config, and to keep code in other files as much as possible. You can safely omit either the `include` or `code` option, but duplicate `include` options are removed, so you can safely repeat those, instead. It is recommended to provide both values, to make it easier to see which includes are needed for which hooks, and make it easier to add and remove hooks individually.
+Each hook in the `config.json` file is an array of objects, which themselves are essentially `include`/`code` pairs. The `include` value will pull in a given C header file, if it hasn't been already, so that the `code` will have access to its contents. The `code` value is the logic run by the hook itself, and while you can technically put any valid C in here, it is **_strongly_** recommended to put logic longer than one or two lines into a separate C source file (such as the one pulled in along with your `include`d header file), and use a single-line function call here.
 
 <a name='initializers'></a>
 ## initializers
 The `initializers` block looks something like this:
 
-```json
-{
-    "initializers": [
-        {
-            "globals": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "setup_globals_deps(TSRMLS_C)"
-                }
-            ],
-            "module": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "setup_module_deps(TSRMLS_C)"
-                }
-            ],
-            "request": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "some_c_function(TSRMLS_C)"
-                },
-                {
-                    "include": "my/awful/library.h",
-                    "code": "some_other_c_function(TSRMLS_C)"
-                }
-            ]
-        }
-    ]
-}
-```
+    {
+        "initializers": [
+            {
+                "globals": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "setup_globals_deps(TSRMLS_C)"
+                    }
+                ],
+                "module": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "setup_module_deps(TSRMLS_C)"
+                    }
+                ],
+                "request": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "some_c_function(TSRMLS_C)"
+                    },
+                    {
+                        "include": "my/awful/library.h",
+                        "code": "some_other_c_function(TSRMLS_C)"
+                    }
+                ]
+            }
+        ]
+    }
+
+This block is responsible for defining hooks into the Init events shown in the diagram above. There are three of these: `globals` for setting up the global variable space, `module` for setting up anything the extension itself needs to function, and `request` for setting up the extension to handle a single request.
 
 <a name='desctructors'></a>
 ## destructors
-And the `destructors` block like this:
+The `destructors` block looks something like this:
 
 ```json
 {
@@ -84,3 +84,5 @@ And the `destructors` block like this:
     ]
 }
 ```
+
+Much as the `initializers` block is responsible for defining hooks into the Init events shown in the diagram above, _this_ block is responsible for defining hooks into the Shutdown events. There are four of these: `request` for finalizing any data before a response is sent to the client, `post-request` for cleaning up after a response has been sent, `module` for cleaning up after the extension itself before the PHP process shuts down, and `globals` for cleaning up the global variable space.
