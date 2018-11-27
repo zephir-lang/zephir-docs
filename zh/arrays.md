@@ -50,7 +50,7 @@ Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/man
     let elements = [4: "bar", 8: "foo"];
     
 
-##### Creating a hash with mixed string and numeric keys
+##### 使用字符串和数字键混合创建哈希
 
     let elements = [4: "bar", "foo": 8];
     
