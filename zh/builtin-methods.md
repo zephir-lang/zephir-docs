@@ -46,24 +46,24 @@
 
 下面的字符串内置方法可用:
 
-| OO                   | 实际过程                  | 说明                                 |
-| -------------------- | --------------------- | ---------------------------------- |
-| `s->format()`     | `sprintf(s, "%s", x)` | 返回格式化的字符串                          |
-| `s->index("foo")` | `strpos(s, "foo")`    | 查找字符串中第一个出现的子字符串的位置                |
-| `s->length()`     | `strlen(s)`           | 获取字符串长度                            |
-| `s->lower()`      | `strtolower(s)`       | 使字符串小写                             |
-| `s->lowerfirst()` | `lcfirst(s)`          | 使字符串的第一个字符小写                       |
-| `s->md5()`        | `md5(s)`              | Calculate the md5 hash of a string |
-| `s->sha1()`       | `sha1(s)`             | 计算字符串的 sha1 哈希                     |
-| `s->trim()`       | `trim(s)`             | 删除字符串的开头和结尾的空格 (或其他字符)             |
-| `s->trimleft()`   | `ltrim(s)`            | 从字符串开头的条带空白 (或其他字符)                |
-| `s->trimright()`  | `rtrim(s)`            | 删除字符串末端的空白字符（或者其他字符）               |
-| `s->upper()`      | `strtoupper(s)`       | 使字符串大写                             |
-| `s->upperfirst()` | `ucfirst(s)`          | 使字符串的第一个字符大写                       |
+| OO                   | 实际过程                  | 说明                     |
+| -------------------- | --------------------- | ---------------------- |
+| `s->format()`     | `sprintf(s, "%s", x)` | 返回格式化的字符串              |
+| `s->index("foo")` | `strpos(s, "foo")`    | 查找字符串中第一个出现的子字符串的位置    |
+| `s->length()`     | `strlen(s)`           | 获取字符串长度                |
+| `s->lower()`      | `strtolower(s)`       | 使字符串小写                 |
+| `s->lowerfirst()` | `lcfirst(s)`          | 使字符串的第一个字符小写           |
+| `s->md5()`        | `md5(s)`              | 计算字符串的 md5 哈希          |
+| `s->sha1()`       | `sha1(s)`             | 计算字符串的 sha1 哈希         |
+| `s->trim()`       | `trim(s)`             | 删除字符串的开头和结尾的空格 (或其他字符) |
+| `s->trimleft()`   | `ltrim(s)`            | 从字符串开头的条带空白 (或其他字符)    |
+| `s->trimright()`  | `rtrim(s)`            | 删除字符串末端的空白字符（或者其他字符）   |
+| `s->upper()`      | `strtoupper(s)`       | 使字符串大写                 |
+| `s->upperfirst()` | `ucfirst(s)`          | 使字符串的第一个字符大写           |
 
 <a name='array'></a>
 
-## 数组
+## Array
 
 可用的数组内置方法如下:
 

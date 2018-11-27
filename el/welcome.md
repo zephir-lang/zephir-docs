@@ -8,7 +8,7 @@ Welcome to Zephir, an open source, high-level/domain specific language designed 
 
 Κύρια χαρακτηριστικά της Zephir είναι:
 
-| Χαρακτηριστικό    | Περιγραφή                                            |
+| Χαρακτηριστικό    | Description                                          |
 | ----------------- | ---------------------------------------------------- |
 | Type system       | dynamic/static                                       |
 | Memory safety     | pointers or direct memory management are not allowed |

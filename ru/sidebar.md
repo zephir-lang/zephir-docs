@@ -5,7 +5,7 @@
 - [Урок](/[[language]]/[[version]]/tutorial)
 - [Базовый синтаксис](/[[language]]/[[version]]/language)
 - [Типы](/[[language]]/[[version]]/types)
-- [Operators](/[[language]]/[[version]]/operators)
+- [Операторы](/[[language]]/[[version]]/operators)
 - [Arrays](/[[language]]/[[version]]/arrays)
 - [Classes and objects](/[[language]]/[[version]]/oop)
 - [Built-in methods](/[[language]]/[[version]]/builtin-methods)
