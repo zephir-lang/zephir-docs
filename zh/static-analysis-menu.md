@@ -1,2 +1,2 @@
-- [Conditional Unassigned Variables](/[[language]]/[[version]]/static-analysis#conditional-unassigned-variables)
-- [Dead Code Elimination](/[[language]]/[[version]]/static-analysis#dead-code-elimination)
+- [条件未分配的变量](/[[language]]/[[version]]/static-analysis#conditional-unassigned-variables)
+- [死码消除](/[[language]]/[[version]]/static-analysis#dead-code-elimination)
