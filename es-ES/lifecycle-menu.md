@@ -1,0 +1,2 @@
+- [iniciadores](/[[language]]/[[version]]/lifecycle#initializers)
+- [destructores](/[[language]]/[[version]]/lifecycle#destructors)

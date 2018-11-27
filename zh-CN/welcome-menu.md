@@ -1,0 +1,2 @@
+- [一些特征](/[[language]]/[[version]]/welcome#some-features) 
+- [一个小尝试](/[[language]]/[[version]]/welcome#a-small-taste)
