@@ -86,7 +86,7 @@
 
 ## description
 
-Extension description - any text describing your extension:
+扩展描述-任何文字描述您的扩展:
 
     {
         "description": "My amazing extension"
