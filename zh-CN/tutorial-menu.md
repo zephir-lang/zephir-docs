@@ -1,0 +1,6 @@
+- [检查安装](/[[language]]/[[version]]/tutorial#checking-the-installation)
+- [扩展骨架](/[[language]]/[[version]]/tutorial#extension-skeleton)
+- [添加我们的第一个类](/[[language]]/[[version]]/tutorial#adding-our-first-class)
+- [初步测试](/[[language]]/[[version]]/tutorial#initial-testing)
+- [一个有用的类](/[[language]]/[[version]]/tutorial#a-useful-class)
+- [结语](/[[language]]/[[version]]/tutorial#conclusion)
