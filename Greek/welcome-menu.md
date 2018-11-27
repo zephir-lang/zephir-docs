@@ -1,0 +1,2 @@
+- [Μερικά χαρακτηριστικά γνωρίσματα](/[[language]]/[[version]]/welcome#some-features) 
+- [Μια μικρή γεύση](/[[language]]/[[version]]/welcome#a-small-taste)
