@@ -7,5 +7,5 @@
     - [Empty](/[[language]]/[[version]]/operators#special-operators-empty)
     - [Fetch](/[[language]]/[[version]]/operators#special-operators-fetch)
     - [Isset](/[[language]]/[[version]]/operators#special-operators-isset)
-    - [Type Hints](/[[language]]/[[version]]/operators#special-operators-type-hints)
-    - [Branch Prediction Hints](/[[language]]/[[version]]/operators#special-operators-branch-prediction-hints)
+    - [Sugerencias de Tipos](/[[language]]/[[version]]/operators#special-operators-type-hints)
+    - [Consejos de Predicción de Rama](/[[language]]/[[version]]/operators#special-operators-branch-prediction-hints)
