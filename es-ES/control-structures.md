@@ -72,7 +72,7 @@ A `switch` evaluates an expression against a series of predefined literal values
 
 ### While Statement
 
-`while` denotes a loop that iterates as long as its given condition evaluates as true:
+`while` denotes a loop that iterates as long as its given condition evaluates as `true`:
 
     let counter = 5;
     while counter {
