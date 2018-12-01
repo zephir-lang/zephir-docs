@@ -72,7 +72,7 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
 
 ### While 语句
 
-`while` 表示循环, 只要其给定条件的计算结果为 true, 该循环就会迭代到:
+`while` 表示循环, 只要其给定条件的计算结果为 `true`, 该循环就会迭代到:
 
     let counter = 5;
     while counter {
