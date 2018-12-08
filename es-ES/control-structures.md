@@ -1,14 +1,14 @@
-# Control Structures
+# Estructuras de Control
 
-Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
+Zephir implementa un conjunto simplificado de estructuras de control presentes en lenguajes similares como C, PHP, etc.
 
 <a name='conditionals'></a>
 
-## Conditionals
+## Condicionales
 
 <a name='conditionals-if'></a>
 
-### If Statement
+### Declaración If
 
 `if` statements evaluate an expression, executing the following block if the evaluation is true. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
 
