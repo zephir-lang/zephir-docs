@@ -10,69 +10,69 @@ Zephir implementa un conjunto simplificado de estructuras de control presentes e
 
 ### Declaración If
 
-`if` statements evaluate an expression, executing the following block if the evaluation is true. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
+Las declaraciones `if` evalúan una expresión, ejecutando el siguiente bloque, si la evaluación es verdadera. Las llaves son obligatorias. Un `if` puede tener un `else` opcional y múltiples construcciones `if`/`else` se pueden encadenar juntas:
 
     if false {
-        echo "false?";
+        echo "¿falso?";
     } else {
         if true {
-            echo "true!";
+            echo "¡verdadero!";
         } else {
-            echo "neither true nor false";
+            echo "ni verdadero ni falso";
         }
     }
     
 
-`elseif` clauses are also available:
+Las declaraciones `elseif` también están disponibles:
 
     if a > 100 {
-        echo "to big";
+        echo "muy grande";
     } elseif a < 0 {
-        echo "to small";
+        echo "muy pequeño";
     } elseif a == 50 {
-        echo "perfect!";
+        echo "¡perfecto!";
     } else {
         echo "ok";
     }
     
 
-Parentheses in the evaluated expression are optional:
+Los paréntesis en la expresión evaluada son opcionales:
 
     if a < 0 { return -1; } else { if a > 0 { return 1; } }
     
 
 <a name='conditionals-switch'></a>
 
-### Switch Statement
+### Declaración Switch
 
-A `switch` evaluates an expression against a series of predefined literal values, executing the corresponding `case` block or falling back to the `default` block case:
+Un `switch` evalúa una expresión contra una serie de valores literales predefinidos, ejecutando los correspondientes bloques `case` o en caso contrario, finalizando en `default`:
 
     switch count(items) {
     
         case 1:
         case 3:
-            echo "odd items";
+            echo "impares";
             break;
     
         case 2:
         case 4:
-            echo "even items";
+            echo "pares";
             break;
     
         default:
-            echo "unknown items";
+            echo "desconocido";
     }
     
 
 <a name='loops'></a>
 
-## Loops
+## Bucles
 
 <a name='loops-while'></a>
 
-### While Statement
+### Declaración While
 
-`while` denotes a loop that iterates as long as its given condition evaluates as true:
+`while` indica un bucle que se itera mientras su condición se evalúe como `true`:
 
     let counter = 5;
     while counter {
@@ -82,9 +82,9 @@ A `switch` evaluates an expression against a series of predefined literal values
 
 <a name='loops-loop'></a>
 
-### Loop Statement
+### Declaración Loop
 
-In addition to `while`, `loop` can be used to create infinite loops:
+Además de `while`, `loop` puede ser utilizado para crear bucles infinitos:
 
     let n = 40;
     loop {
@@ -96,16 +96,16 @@ In addition to `while`, `loop` can be used to create infinite loops:
 
 <a name='loops-for'></a>
 
-### For Statement
+### Declaración For
 
-A `for` is a control structure that allows to traverse arrays or strings:
+`for` es una estructura de control que permite recorrer matrices o cadenas de texto:
 
     for item in ["a", "b", "c", "d"] {
         echo item, "\n";
     }
     
 
-Keys in hashes can be obtained by providing a variable for both the key and value:
+Las claves hash se pueden obtener proporcionando una variable tanto para la clave como para el valor:
 
     let items = ["a": 1, "b": 2, "c": 3, "d": 4];
     
@@ -114,7 +114,7 @@ Keys in hashes can be obtained by providing a variable for both the key and valu
     }
     
 
-A `for` loop can also be instructed to traverse an array or string in reverse order:
+Un bucle `for` también puede ser utilizado para recorrer una matriz o cadena de texto en orden inverso:
 
     let items = [1, 2, 3, 4, 5];
     
@@ -123,7 +123,7 @@ A `for` loop can also be instructed to traverse an array or string in reverse or
     }
     
 
-A `for` loop can be used to traverse string variables:
+Un bucle `for` también puede utilizarse para recorrer cadenas de texto:
 
     string language = "zephir"; char ch;
     
@@ -132,7 +132,7 @@ A `for` loop can be used to traverse string variables:
     }
     
 
-In reverse order:
+En orden inverso:
 
     string language = "zephir"; char ch;
     
@@ -141,16 +141,16 @@ In reverse order:
     }
     
 
-A standard `for` that traverses a range of integer values can be written as follows:
+Un `for` estandar, que recorre un rango de valores enteros, se puede escribir de la siguiente manera:
 
     for i in range(1, 10) {
         echo i, "\n";
     }
     
 
-To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
+Para evitar avisos sobre variables no utilizadas, es posible utilizar variables anónimas en las declaraciones `for`, reemplazando el nombre de una variable por el marcador `_`:
 
-##### Use the key but ignore the value
+##### Utilizar las claves pero ignorar los valores
 
     for key, _ in data {
         echo key, "\n";
@@ -159,13 +159,13 @@ To avoid warnings about unused variables, you can use anonymous variables in `fo
 
 <a name='loops-break'></a>
 
-### Break Statement
+### Declaración Break
 
-`break` ends execution of the current `while`, `for` or `loop` statement:
+Un `break` termina con la ejecución actual de una declaración `while`, `for` o `loop`:
 
     for item in ["a", "b", "c", "d"] {
         if item == "c" {
-            break; // exit the for
+            break; // salir del for
         }
         echo item, "\n";
     }
@@ -173,9 +173,9 @@ To avoid warnings about unused variables, you can use anonymous variables in `fo
 
 <a name='loops-continue'></a>
 
-### Continue Statement
+### Declaración Continue
 
-`continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
+El `continue` se usa dentro de las estructuras de bucle para omitir el resto de la iteración del bucle actual y continuar la ejecución en la evaluación de condición, y luego al comienzo de la siguiente iteración.
 
     let a = 5;
     while a > 0 {
@@ -191,7 +191,7 @@ To avoid warnings about unused variables, you can use anonymous variables in `fo
 
 ## Require
 
-The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephdr code to include other Zephir files at runtime.
+La declaración `require` incluye dinámicamente y evalúa un archivo especifico de PHP. Tenga en cuenta que estos archivos incluidos por Zephir son interpretados por el Zend Engine como un archivo normal de PHP. `require` no permite que el código Zephir incluya otros archivos de Zephir en tiempo de ejecución.
 
     if file_exists(path) {
         require path;
@@ -202,22 +202,22 @@ The `require` statement dynamically includes and evaluates a specified PHP file.
 
 ## Let
 
-The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
+La declaración `let` es utilizada para mutar variables, propiedades y arrays. Las variables, por defecto, son inmutables y esta instrucción les hace mutables por la duración de la declaración:
 
-    let name = "Tony";           // simple variable
-    let this->name = "Tony";     // object property
-    let data["name"] = "Tony";   // array index
-    let self::_name = "Tony";    // static property
+    let name = "Tony";           // variable simple
+    let this->name = "Tony";     // propiedad de un objecto
+    let data["name"] = "Tony";   // índice de un array
+    let self::_name = "Tony";    // propiedad estática
     
 
-Also this instruction must be used to increment/decrement variables:
+Además esta instrucción debe ser utilizada para incrementar/disminuir variables:
 
-    let number++;           // increment simple variable
-    let number--;           // decrement simple variable
-    let this->number++;     // increment object property
-    let this->number--;     // decrement object property
+    let number++;           // incrementar una variable simple
+    let number--;           // disminuir una variable simple
+    let this->number++;     // incrementar una propiedad de un objecto
+    let this->number--;     // disminuir una propiedad de un objecto
     
 
-Multiple mutations can be performed in a single `let` operation:
+Varias mutaciones pueden ser realizadas en una sola operación `let`:
 
     let price = 1.00, realPrice = price, status = false;
