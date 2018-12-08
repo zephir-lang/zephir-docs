@@ -6,7 +6,7 @@ Zephir implements a simplified set of control structures present in similar lang
 
 <a name='conditionals-if'></a>
 ### If Statement
-`if` statements evaluate an expression, executing the following block if the evaluation is true. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
+`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
 
     if false {
         echo "false?";
@@ -157,7 +157,7 @@ To avoid warnings about unused variables, you can use anonymous variables in `fo
 
 <a name='require'></a>
 ## Require
-The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephdr code to include other Zephir files at runtime.
+The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephir code to include other Zephir files at runtime.
 
     if file_exists(path) {
         require path;
