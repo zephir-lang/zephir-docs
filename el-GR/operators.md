@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 - text: 'Arithmetic Operators' url: '#arithmetic-operators'
 - text: 'Bitwise Operators' url: '#bitwise-operators'
