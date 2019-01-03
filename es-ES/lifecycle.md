@@ -1,10 +1,19 @@
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+- text: 'initializers' url: '#initializers'
+- text: 'destructors' url: '#destructors'
+
+* * *
+
 # Lifecycle hooks
 
 PHP provides several lifecycle events, which extensions can use to perform common initialization or shutdown tasks. Normally, Zephir's own hooks into these events will cover all the setup and tear down your extension will need, but if you find that you need to do something more, there are a few options you can use to pass your own code into these same hooks.
 
 Consider the following diagram:
 
-![The PHP Process/Request Lifecycle](/images/content/lifecycle.png)
+![The PHP Process/Request Lifecycle](/assets/content/lifecycle.png)
 
 Lifecycle hooks are registered in the `config.json` file. As you can see in the diagram above, there are four types of lifecycle hooks - `globals`, `initializers`, `destructors`, and `info`. Each of these has its own corresponding root-level setting in the configuration, and both [globals](/[[language]]/[[version]]/globals) and [info](/[[language]]/[[version]]/phpinfo) have their own chapters. This chapter covers the other two settings.
 
@@ -16,35 +25,36 @@ Each hook in the `config.json` file is an array of objects, which themselves are
 
 The `initializers` block looks something like this:
 
-    {
-        "initializers": [
-            {
-                "globals": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "setup_globals_deps(TSRMLS_C)"
-                    }
-                ],
-                "module": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "setup_module_deps(TSRMLS_C)"
-                    }
-                ],
-                "request": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "some_c_function(TSRMLS_C)"
-                    },
-                    {
-                        "include": "my/awful/library.h",
-                        "code": "some_other_c_function(TSRMLS_C)"
-                    }
-                ]
-            }
-        ]
-    }
-    
+```json
+{
+    "initializers": [
+        {
+            "globals": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "setup_globals_deps(TSRMLS_C)"
+                }
+            ],
+            "module": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "setup_module_deps(TSRMLS_C)"
+                }
+            ],
+            "request": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "some_c_function(TSRMLS_C)"
+                },
+                {
+                    "include": "my/awful/library.h",
+                    "code": "some_other_c_function(TSRMLS_C)"
+                }
+            ]
+        }
+    ]
+}
+```
 
 This block is responsible for defining hooks into the Init events shown in the diagram above. There are three of these: `globals` for setting up the global variable space, `module` for setting up anything the extension itself needs to function, and `request` for setting up the extension to handle a single request.
 
