@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 - text: 'Some Features' url: '#some-features'
 - text: 'A small taste' url: '#a-small-taste' 
