@@ -75,7 +75,7 @@ zephir help
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-Если что-то пошло не так, вернитесь к разделу [установка](/[[language]]/[[version]]/installation).
+Если что-то пошло не так, вернитесь к разделу [установка](/{{ page.version }}/{{ page.language }}/installation).
 
 <a name='extension-skeleton'></a>
 

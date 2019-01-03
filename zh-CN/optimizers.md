@@ -171,7 +171,7 @@ Zephir 的一个好做法是创建不修改其参数的函数。 如果要更改
     }
     
 
-这个文件必须在[config.json ](/[[language]]/[[version]]/config)中的一个特殊部分中添加:
+这个文件必须在[config.json ](/{{ page.version }}/{{ page.language }}/config)中的一个特殊部分中添加:
 
     "extra-sources": [
         "utils/pi.c"

@@ -75,7 +75,7 @@ If everything is well, you should see the following help (or something very simi
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-If something went wrong, please return back to the [installation](/[[language]]/[[version]]/installation) page.
+If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
 
 <a name='extension-skeleton'></a>
 

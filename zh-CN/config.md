@@ -187,7 +187,7 @@ menu:
 
 ## destructors
 
-此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 查看[lifecycle hooks](/[[language]]/[[version]]/lifecycle)章节了解更多信息。
+此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 查看[lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle)章节了解更多信息。
 
     {
         "destructors": [
@@ -321,7 +321,7 @@ menu:
 
 ## globals
 
-扩展全局可用。 查看[globals](/[[language]]/[[version]]/globals)章节了解更多信息。
+扩展全局可用。 查看[globals](/{{ page.version }}/{{ page.language }}/globals)章节了解更多信息。
 
     {
         "globals": {
@@ -341,7 +341,7 @@ menu:
 
 ## info
 
-`phpinfo()` 信息. 查看[phpinfo()](/[[language]]/[[version]]/phpinfo)章节了解更多信息。
+`phpinfo()` 信息. 查看[phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo)章节了解更多信息。
 
     {
         "info": [
@@ -360,7 +360,7 @@ menu:
 
 ## initializers
 
-这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 查看[lifecycle hooks](/[[language]]/[[version]]/lifecycle)章节了解更多信息。
+这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 查看[lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle)章节了解更多信息。
 
     {
         "initializers": [
