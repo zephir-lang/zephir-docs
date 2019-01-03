@@ -6,7 +6,7 @@
 - [Базовый синтаксис](/[[language]]/[[version]]/language)
 - [Типы](/[[language]]/[[version]]/types)
 - [Операторы](/[[language]]/[[version]]/operators)
-- [Arrays](/[[language]]/[[version]]/arrays)
+- [Массивы](/[[language]]/[[version]]/arrays)
 - [Classes and objects](/[[language]]/[[version]]/oop)
 - [Built-in methods](/[[language]]/[[version]]/builtin-methods)
 - [Control structures](/[[language]]/[[version]]/control-structures)
