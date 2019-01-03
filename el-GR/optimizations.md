@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 - text: 'call-gatherer-pass' url: 'call-gatherer-pass'
 - text: 'check-invalid-reads' url: 'check-invalid-reads'
