@@ -1,42 +1,55 @@
+* * *
+
+layout: default language: 'en' version: '0.10' menu:
+
+- text: 'String' url: '#string'
+- text: 'Array' url: '#array'
+- text: 'Char' url: '#char'
+- text: 'Integer' url: '#integer'
+
+* * *
+
 # Métodos integrados
 
 Como se mencionó antes, Zephir promueve la programación orientada a objetos. Las variables relacionadas con los tipos estáticos también se pueden manejar como objetos.
 
 Compare estos dos métodos:
 
-    public function binaryToHex(string! s) -> string
-    {
-        var o = "", n; char ch;
-    
-        for ch in range(0, strlen(s)) {
-            let n = sprintf("%X", ch);
-            if strlen(n) < 2 {
-                let o .= "0" . n;
-            } else {
-                let o .= n;
-            }
+```zephir
+public function binaryToHex(string! s) -> string
+{
+    var o = "", n; char ch;
+
+    for ch in range(0, strlen(s)) {
+        let n = sprintf("%X", ch);
+        if strlen(n) < 2 {
+            let o .= "0" . n;
+        } else {
+            let o .= n;
         }
-        return o;
     }
-    
+    return o;
+}
+```
 
 Y:
 
-    public function binaryToHex(string! s) -> string
-    {
-        var o = "", n; char ch;
-    
-        for ch in range(0, s->length()) {
-            let n = ch->toHex();
-            if n->length() < 2 {
-                let o .= "0" . n;
-            } else {
-                let o .= n;
-            }
+```zephir
+public function binaryToHex(string! s) -> string
+{
+    var o = "", n; char ch;
+
+    for ch in range(0, s->length()) {
+        let n = ch->toHex();
+        if n->length() < 2 {
+            let o .= "0" . n;
+        } else {
+            let o .= n;
         }
-        return o;
     }
-    
+    return o;
+}
+```
 
 Los tienen la misma funcionalidad, pero el segundo utiliza programación orientada a objecto. Los métodos de llamada en variables de tipo estático no tienen ningún impacto en el rendimiento, ya que Zephir transforma internamente el código de la versión orientada a objetos a la versión de procedimiento.
 
