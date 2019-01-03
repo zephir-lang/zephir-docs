@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 * text: 'If you are a PHP programmer...' url: '#if-you-are-a-php-programmer'
 * text: 'If you are a C programmer...' url: '#if-you-are-a-c-programmer'
