@@ -1,3 +1,17 @@
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+* text: 'If you are a PHP programmer...' url: '#if-you-are-a-php-programmer'
+* text: 'If you are a C programmer...' url: '#if-you-are-a-c-programmer'
+* text: 'Compilation vs Interpretation' url: '#compilation-vs-interpretation'
+* text: 'Statically typed versus dynamically typed languages' url: '#statically-typed-versus-dynamically-typed-languages'
+* text: 'Compilation scheme' url: '#compilation-scheme'
+* text: 'Code protection' url: '#code-protection'
+* text: 'Conclusion' url: '#conclusion'
+
+* * *
+
 # ¿Por qué Zephir?
 
 Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, el rendimiento y la funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son la base para muchas otras aplicaciones.
@@ -44,15 +58,17 @@ Una vez que se compila el código, no es necesario hacerlo otra vez. El código 
 
 En general, en un lenguaje estáticamente tipificado, una variable está limitada a un tipo particular durante toda su vida. No se puede cambiar su tipo y sólo puede hacer referencia a las operaciones e instancias de tipo compatible. Los lenguajes como C o C++ fueron implementados con este esquema:
 
-    int a = 0;
-    a = "hello"; // no permitido
-    
+```zephir
+int a = 0;
+a = "hello"; // no permitido
+```
 
 En tipificado dinámico, el tipo está limitado al valor, no la variable. Por lo tanto, una variable puede hacer referencia a un valor de un tipo, entonces puede reasignarse posteriormente a un valor de un tipo sin relación. JavaScript y PHP son ejemplos de lenguajes dinámicamente tipificados:
 
-    var a = 0;
-    a = "hello"; // permitido
-    
+```zephir
+var a = 0;
+a = "hello"; // permitido
+```
 
 A pesar de sus ventajas en productividad, los lenguajes dinámicos pueden no ser las mejores opciones para todas las aplicaciones, particularmente para bases de código muy grandes y aplicaciones de alto rendimiento.
 
@@ -70,7 +86,7 @@ Zephir es tanto estática como dinámicamente tipificado, lo que le permite apro
 
 Zephir ofrece la generación nativa de código (actualmente a través de la compilación a C). Un compilador como gcc/clang/vc++ optimiza y compila el código hasta código de máquina. El siguiente gráfico muestra como funciona el proceso:
 
-![esquema de compilación](/images/content/scheme.png)
+![esquema de compilación](/assets/content/scheme.png)
 
 Además de los proporcionados por Zephir, con el tiempo, los compiladores han implementado y madurado una serie de optimizaciones que mejoran el rendimiento de las aplicaciones compiladas:
 
