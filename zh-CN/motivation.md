@@ -1,3 +1,17 @@
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+* text: 'If you are a PHP programmer...' url: '#if-you-are-a-php-programmer'
+* text: 'If you are a C programmer...' url: '#if-you-are-a-c-programmer'
+* text: 'Compilation vs Interpretation' url: '#compilation-vs-interpretation'
+* text: 'Statically typed versus dynamically typed languages' url: '#statically-typed-versus-dynamically-typed-languages'
+* text: 'Compilation scheme' url: '#compilation-scheme'
+* text: 'Code protection' url: '#code-protection'
+* text: 'Conclusion' url: '#conclusion'
+
+* * *
+
 # 为什么选择 Zephir?
 
 今天的 php 应用程序必须平衡许多问题, 包括稳定性、性能和功能。 每个 php 应用程序都基于一组公共组件, 这些组件也是许多其他应用程序的基础。
@@ -44,15 +58,17 @@ Zephir需要编译您的代码，但其功能是从PHP中使用的，PHP是经�
 
 一般来说, 在静态类型化语言中, 变量在其生存期内绑定到特定类型。 它的类型不能更改, 它只能引用与类型兼容的实例和操作。 使用了类似 c/c ++ 等语言的方案:
 
-    int a = 0;
-    a = "hello"; // not allowed
-    
+```zephir
+int a = 0;
+a = "hello"; // not allowed
+```
 
 在动态类型中, 类型绑定到值, 而不是变量。 因此，一个变量可以引用一个类型的值，然后被重新分配到一个不相关类型的值。 Javascript/PHP 是一个动态类型语言的例子:
 
-    var a = 0;
-    a = "hello"; // allowed
-    
+```zephir
+var a = 0;
+a = "hello"; // allowed
+```
 
 尽管动态语言具有生产率优势，但它可能不是所有应用程序的最佳选择，尤其是对于非常大的代码库和高性能应用程序。
 
@@ -70,7 +86,7 @@ Zephir 是静态和动态类型化的, 允许您在可能的情况下利用这�
 
 Zephir提供本机代码生成（目前通过编译到C）。 像gcc/clang/vc++这样的编译器会优化并将代码编译成机器代码。 下图显示了该过程的工作原理:
 
-![编译方案](/images/content/scheme.png)
+![编译方案](/assets/content/scheme.png)
 
 除了Zephir提供的优化之外，随着时间的推移，编译器已经实现并成熟了许多优化，这些优化可以提高编译应用程序的性能:
 
