@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 - text: 'Dynamic Types' url: '#dynamic-types' sub: 
     - text: 'Arrays' url: '#dynamic-types-arrays'
