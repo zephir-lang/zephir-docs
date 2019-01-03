@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 - text: 'Conditionals' url: '#conditionals' sub: 
     - text: 'If Statement' url: '#conditionals-if'
