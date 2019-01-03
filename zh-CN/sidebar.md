@@ -1,24 +1,30 @@
-- [欢迎](/[[language]]/[[version]]/welcome)
-- [为什么选择 Zephir](/[[language]]/[[version]]/motivation)
-- [Zephir 简介](/[[language]]/[[version]]/introduction)
-- [安装](/[[language]]/[[version]]/installation)
-- [教程](/[[language]]/[[version]]/tutorial)
-- [基本语法](/[[language]]/[[version]]/language)
-- [类型](/[[language]]/[[version]]/types)
-- [运算符](/[[language]]/[[version]]/operators)
-- [数组](/[[language]]/[[version]]/arrays)
-- [类与对象](/[[language]]/[[version]]/oop)
-- [内建方法](/[[language]]/[[version]]/builtin-methods)
-- [控制结构](/[[language]]/[[version]]/control-structures)
-- [例外情况](/[[language]]/[[version]]/exceptions)
-- [调用函数](/[[language]]/[[version]]/functions)
-- [闭 包](/[[language]]/[[version]]/closures)
-- [自定义优化器](/[[language]]/[[version]]/optimizers)
-- [配置文件](/[[language]]/[[version]]/config)
-- [生命周期钩子](/[[language]]/[[version]]/lifecycle)
-- [全局扩展](/[[language]]/[[version]]/globals)
-- [phpinfo () 部分](/[[language]]/[[version]]/phpinfo)
-- [静态分析](/[[language]]/[[version]]/static-analysis)
-- [优化](/[[language]]/[[version]]/optimizations)
-- [编译警告](/[[language]]/[[version]]/warnings)
-- [License](/[[language]]/[[version]]/license)
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+- text: 'Welcome' url: 'welcome'
+- text: 'Why Zephir' url: 'motivation'
+- text: 'Introducing Zephir' url: 'introduction'
+- text: 'Installation' url: 'installation'
+- text: 'Tutorial' url: 'tutorial'
+- text: 'Basic Syntax' url: 'language'
+- text: 'Types' url: 'types'
+- text: 'Operators' url: 'operators'
+- text: 'Arrays' url: 'arrays'
+- text: 'Classes and objects' url: 'oop'
+- text: 'Built-in methods' url: 'builtin-methods'
+- text: 'Control structures' url: 'control-structures'
+- text: 'Exceptions' url: 'exceptions'
+- text: 'Calling functions' url: 'functions'
+- text: 'Closures' url: 'closures'
+- text: 'Custom optimizers' url: 'optimizers'
+- text: 'Configuration file' url: 'config'
+- text: 'Lifecycle hooks' url: 'lifecycle'
+- text: 'Extension globals' url: 'globals'
+- text: 'phpinfo() sections' url: 'phpinfo'
+- text: 'Static analysis' url: 'static-analysis'
+- text: 'Optimizations' url: 'optimizations'
+- text: 'Compiler warnings' url: 'warnings'
+- text: 'License'
+
+## url: 'license'
