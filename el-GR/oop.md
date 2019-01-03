@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 * text: 'Classes' url: '#classes' sub: 
     * text: 'Class Modifiers' url: '#classes-modifiers'
