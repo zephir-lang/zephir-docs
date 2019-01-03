@@ -1,3 +1,9 @@
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
 # phpinfo () 部分
 
 与大多数扩展一样, Zephir 扩展能够在 [phpinfo()](http://php.net/manual/en/function.phpinfo.php) 输出中显示信息。 这些信息通常与指令、环境数据等有关。
@@ -6,24 +12,25 @@
 
 通过向 `config.json` 文件中添加以下配置, 可以添加更多指令:
 
-    "info": [
-        {
-            "header": ["Directive", "Value"],
-            "rows": [
-                ["setting1", "value1"],
-                ["setting2", "value2"]
-            ]
-        },
-        {
-            "header": ["Directive", "Value"],
-            "rows": [
-                ["setting3", "value3"],
-                ["setting4", "value4"]
-            ]
-        }
-    ]
-    
+```json
+"info": [
+    {
+        "header": ["Directive", "Value"],
+        "rows": [
+            ["setting1", "value1"],
+            ["setting2", "value2"]
+        ]
+    },
+    {
+        "header": ["Directive", "Value"],
+        "rows": [
+            ["setting3", "value3"],
+            ["setting4", "value4"]
+        ]
+    }
+]
+```
 
 此信息将如下所示:
 
-![](/images/content/info.png)
+![](/assets/content/info.png)
