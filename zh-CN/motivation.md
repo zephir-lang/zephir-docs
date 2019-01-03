@@ -1,3 +1,30 @@
+---
+layout: default
+language: 'zh-CN'
+version: '0.10'
+menu:
+  - text:
+        '如果你是一个 php 程序员...'
+    url: '#if-you-are-a-php-programmer'
+  - text:
+        '如果你是一个 C 程序员...'
+    url: '#if-you-are-a-c-programmer'
+  - text:
+        '编译 vs 解释'
+    url: '#compilation-vs-interpretation'
+  - text:
+        '静态类型化 vs 动态类型化的语言'
+    url: '#statically-typed-versus-dynamically-typed-languages'
+  - text:
+        '编译方案'
+    url: '#compilation-scheme'
+  - text:
+        '代码保护'
+    url: '#code-protection'
+  - text:
+        '结语'
+    url: '#conclusion'
+---
 # 为什么选择 Zephir?
 
 今天的 php 应用程序必须平衡许多问题, 包括稳定性、性能和功能。 每个 php 应用程序都基于一组公共组件, 这些组件也是许多其他应用程序的基础。
@@ -70,7 +97,7 @@ Zephir 是静态和动态类型化的, 允许您在可能的情况下利用这�
 
 Zephir提供本机代码生成（目前通过编译到C）。 像gcc/clang/vc++这样的编译器会优化并将代码编译成机器代码。 下图显示了该过程的工作原理:
 
-![编译方案](/images/content/scheme.png)
+![编译方案](/assets/content/scheme.png)
 
 除了Zephir提供的优化之外，随着时间的推移，编译器已经实现并成熟了许多优化，这些优化可以提高编译应用程序的性能:
 

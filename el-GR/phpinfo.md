@@ -1,3 +1,8 @@
+---
+layout: default
+language: 'el-GR'
+version: '0.10'
+---
 # Phpinfo() sections
 
 Like most extensions, Zephir extensions are able to show information in the [phpinfo()](http://php.net/manual/en/function.phpinfo.php) output. This information is usually related to directives, environment data, etc.
@@ -26,4 +31,4 @@ You can add more directives by adding the following configuration to the `config
 
 This information will be shown as follows:
 
-![](/images/content/info.png)
+![](/assets/content/info.png)

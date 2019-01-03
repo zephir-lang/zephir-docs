@@ -1,3 +1,8 @@
+---
+layout: default
+language: 'es-ES'
+version: '0.10'
+---
 # Extension Globals
 
 PHP extensions provide a way to define globals within an extension. Reading/writing globals should be faster than any other global mechanisms (like static members). You can use extension globals to set up configuration options that change the behavior of your library.

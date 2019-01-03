@@ -1,4 +1,54 @@
-# Tipos
+---
+layout: default
+language: 'es-ES'
+version: '0.10'
+menu:
+  - text:
+      'Tipos Dinámicos'
+    url: '#dynamic-types'
+    sub:
+      - text:
+            'Arrays'
+        url: '#dynamic-types-arrays'
+      - text:
+            'Boolean'
+        url: '#dynamic-types-boolean'
+      - text:
+            'Float/Double'
+        url: '#dynamic-types-float-double'
+      - text:
+            'Integer'
+        url: '#dynamic-types-integer'
+      - text:
+            'Integer sobrecarga'
+        url: '#dynamic-types-integer-overflow'
+      - text:
+            'Objects'
+        url: '#dynamic-types-objects'
+      - text:
+            'String'
+        url: '#dynamic-types-string'
+  - text:
+      'Tipos Estáticos'
+    url: '#static-types'
+    sub:
+      - text:
+            'Boolean'
+        url: '#static-types-boolean'
+      - text:
+            'Char/Unsigned Char'
+        url: '#static-types-char-unsigned'
+      - text:
+            'Integer/Integer sin signo'
+        url: '#static-types-integer-unsigned'
+      - text:
+            'Long/Long sin signo'
+        url: '#static-types-long-unsigned'
+      - text:
+            'String'
+        url: '#static-types-string'
+---
+# Types
 
 Zephir es dinámica y estáticamente tipificado. En este capítulo se destacan los tipos soportados y sus comportamientos.
 
@@ -99,7 +149,7 @@ Son números enteros. El tamaño de un entero es dependiente de la plataforma, a
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Desbordamiento de Enteros
+### Integer sobrecarga
 
 Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como `unsigned long` o `float` para almacenarlos:
 

@@ -1,3 +1,15 @@
+---
+layout: default
+language: 'uk-UA'
+version: '0.10'
+menu:
+  - text:
+        'Hello World!'
+    url: '#hello-world'
+  - text:
+        'A taste of Zephir'
+    url: '#a-taste-of-zephir' 
+---
 # Представляємо Zephir
 
 Zephir is a language that addresses the major needs of a PHP developer trying to write and compile code that can be executed by PHP. It is dynamically/statically typed, and some of its features will be familiar to PHP developers.

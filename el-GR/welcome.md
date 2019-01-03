@@ -1,5 +1,16 @@
+---
+layout: default
+language: 'el-GR'
+version: '0.10'
+menu:
+  - text:
+        'Some features'
+    url: '#some-features'
+  - text:
+        'A small taste'
+    url: '#a-small-taste' 
+---
 # Καλώς ορίσατε!
-
 Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
 
 <a name='some-features'></a>

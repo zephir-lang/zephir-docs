@@ -1,3 +1,15 @@
+---
+layout: default
+language: 'zh-CN'
+version: '0.10'
+menu:
+  - text:
+        '一些特征'
+    url: '#some-features'
+  - text:
+        '一个小尝试'
+    url: '#a-small-taste' 
+---
 # 欢迎!
 
 Zephir，一种开源的高级语言，旨在简化PHP扩展的创建和可维护性，重点关注类型和内存安全性。

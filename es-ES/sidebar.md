@@ -1,24 +1,78 @@
-- [Bienvenido](/[[language]]/[[version]]/welcome)
-- [¿Por qué Zephir?](/[[language]]/[[version]]/motivation)
-- [Introducción a Zephir](/[[language]]/[[version]]/introduction)
-- [Instalación](/[[language]]/[[version]]/installation)
-- [Tutorial](/[[language]]/[[version]]/tutorial)
-- [Sintaxis básica](/[[language]]/[[version]]/language)
-- [Tipos](/[[language]]/[[version]]/types)
-- [Operadores](/[[language]]/[[version]]/operators)
-- [Arrays](/[[language]]/[[version]]/arrays)
-- [Clases y Objetos](/[[language]]/[[version]]/oop)
-- [Métodos integrados](/[[language]]/[[version]]/builtin-methods)
-- [Estructuras de Control](/[[language]]/[[version]]/control-structures)
-- [Excepciones](/[[language]]/[[version]]/exceptions)
-- [Llamando a funciones](/[[language]]/[[version]]/functions)
-- [Closures](/[[language]]/[[version]]/closures)
-- [Optimizadores personalizados](/[[language]]/[[version]]/optimizers)
-- [Archivo de configuración](/[[language]]/[[version]]/config)
-- [Ganchos en el ciclo de vida](/[[language]]/[[version]]/lifecycle)
-- [Globales de Extensión](/[[language]]/[[version]]/globals)
-- [Secciones del phpinfo()](/[[language]]/[[version]]/phpinfo)
-- [Análisis estático](/[[language]]/[[version]]/static-analysis)
-- [Optimizaciones](/[[language]]/[[version]]/optimizations)
-- [Advertencias de Compilación](/[[language]]/[[version]]/warnings)
-- [Licencia](/[[language]]/[[version]]/license)
+---
+layout: default
+language: 'es-ES'
+version: '0.10'
+menu:
+  - text: 
+        'Welcome'
+    url: 'welcome'
+  - text: 
+        'Why Zephir'
+    url: 'motivation'
+  - text: 
+        'Introducing Zephir'
+    url: 'introduction'
+  - text: 
+        'Installation'
+    url: 'installation'
+  - text: 
+        'Tutorial'
+    url: 'tutorial'
+  - text: 
+        'Basic Syntax'
+    url: 'language'
+  - text: 
+        'Types'
+    url: 'types'
+  - text: 
+        'Operators'
+    url: 'operators'
+  - text: 
+        'Arrays'
+    url: 'arrays'
+  - text: 
+        'Classes and objects'
+    url: 'oop'
+  - text: 
+        'Built-in methods'
+    url: 'builtin-methods'
+  - text: 
+        'Control structures'
+    url: 'control-structures'
+  - text: 
+        'Exceptions'
+    url: 'exceptions'
+  - text: 
+        'Calling functions'
+    url: 'functions'
+  - text: 
+        'Closures'
+    url: 'closures'
+  - text: 
+        'Custom optimizers'
+    url: 'optimizers'
+  - text: 
+        'Configuration file'
+    url: 'config'
+  - text: 
+        'Lifecycle hooks'
+    url: 'lifecycle'
+  - text: 
+        'Extension globals'
+    url: 'globals'
+  - text: 
+        'phpinfo() sections'
+    url: 'phpinfo'
+  - text: 
+        'Static analysis'
+    url: 'static-analysis'
+  - text: 
+        'Optimizations'
+    url: 'optimizations'
+  - text: 
+        'Compiler warnings'
+    url: 'warnings'
+  - text: 
+        'License'
+    url: 'license'
+---
