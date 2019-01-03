@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 - text: 'unused-variable' url: '#unused-variable'
 - text: 'unused-variable-external' url: '#unused-variable-external'
