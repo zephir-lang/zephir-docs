@@ -1,3 +1,27 @@
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+menu:
+  - text:
+        'Проверка установки'
+    url: '#checking-the-installation'
+  - text:
+        'Каркас расширения'
+    url: '#extension-skeleton'
+  - text:
+        'Добавление нашего первого класса'
+    url: '#adding-our-first-class'
+  - text:
+        'Первоначальное тестирование'
+    url: '#initial-testing'
+  - text:
+        'Удобные класс'
+    url: '#a-useful-class'
+  - text:
+        'Заключение'
+    url: '#conclusion'
+---
 # Урок
 
 Zephir и это руководство предназначены для разработчиков PHP, которые хотят создавать C-расширения с меньшей сложностью.

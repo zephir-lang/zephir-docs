@@ -1,3 +1,67 @@
+---
+layout: default
+language: 'es-ES'
+version: '0.11'
+menu:
+  - text:
+      'Clases'
+    url: '#classes'
+    sub:
+      - text:
+            'Modificadores de Clase'
+        url: '#classes-modifiers'
+      - text:
+            'Implementación de Interfaces'
+        url: '#classes-interfaces'
+  - text:
+      'Implementación de Métodos'
+    url: '#implementing-methods'
+    sub:
+      - text:
+            'Parámetros opcionales nulos'
+        url: '#implementing-methods-optional-nullable-parameters'
+      - text:
+            'Visibilidades soportadas'
+        url: '#implementing-methods-supported-visibilities'
+      - text:
+            'Modificadores Soportados'
+        url: '#implementing-methods-supported-modifiers'
+      - text:
+            'Métodos abreviados de getter/setter'
+        url: '#implementing-methods-getter-setter-shortcuts'
+      - text:
+            'Tipo de valor devuelto'
+        url: '#implementing-methods-return-type-hints'
+      - text:
+            'Tipo de valor devuelto: void'
+        url: '#implementing-methods-return-type-void'
+      - text:
+            'Tipos de datos de parámetro Estricto/Flexible'
+        url: '#implementing-methods-strict-flexible-parameter-data-types'
+      - text:
+            'Parámetros de sólo lectura'
+        url: '#implementing-methods-read-only-parameters'
+  - text:
+      'Implementación de Propiedades'
+    url: '#implementing-properties'
+    sub:
+      - text:
+            'Actualización de propiedades'
+        url: '#implementing-properties-updating'
+      - text:
+            'Leyendo propiedades'
+        url: '#implementing-properties-reading'
+  - text:
+      'Constante de Clase'
+    url: '#class-constants'
+  - text:
+      'Llamando a métodos'
+    url: '#calling-methods'
+    sub:
+      - text:
+            'Parámetros por Nombre'
+        url: '#calling-methods-parameters-by-name'
+---
 # Clases y Objetos
 
 Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.

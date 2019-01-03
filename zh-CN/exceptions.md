@@ -1,3 +1,8 @@
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+---
 # 例外情况
 
 Zephir以非常低的级别实现异常，为PHP提供类似的行为和功能。

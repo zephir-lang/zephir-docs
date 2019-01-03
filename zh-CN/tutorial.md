@@ -1,3 +1,27 @@
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+menu:
+  - text:
+        '检查安装'
+    url: '#checking-the-installation'
+  - text:
+        '扩展骨架'
+    url: '#extension-skeleton'
+  - text:
+        '添加我们的第一个类'
+    url: '#adding-our-first-class'
+  - text:
+        '初步测试'
+    url: '#initial-testing'
+  - text:
+        '一个有用的类'
+    url: '#a-useful-class'
+  - text:
+        '结语'
+    url: '#conclusion'
+---
 # 教程
 
 Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其复杂性较低。

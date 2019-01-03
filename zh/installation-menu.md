@@ -1,3 +1,0 @@
-- [基础要求](/[[language]]/[[version]]/installation#prerequisites)
-- [安装 Zephir](/[[language]]/[[version]]/installation#installing-zephir)
-- [测试安装](/[[language]]/[[version]]/installation#testing-the-installation)

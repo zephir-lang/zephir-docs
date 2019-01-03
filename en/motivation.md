@@ -1,3 +1,30 @@
+---
+layout: default
+language: 'en'
+version: '0.11'
+menu:
+  - text:
+        'If you are a PHP programmer...'
+    url: '#if-you-are-a-php-programmer'
+  - text:
+        'If you are a C programmer...'
+    url: '#if-you-are-a-c-programmer'
+  - text:
+        'Compilation vs Interpretation'
+    url: '#compilation-vs-interpretation'
+  - text:
+        'Statically typed versus dynamically typed languages'
+    url: '#statically-typed-versus-dynamically-typed-languages'
+  - text:
+        'Compilation scheme'
+    url: '#compilation-scheme'
+  - text:
+        'Code protection'
+    url: '#code-protection'
+  - text:
+        'Conclusion'
+    url: '#conclusion'
+---
 # Why Zephir?
 Today's PHP applications must balance a number of concerns including stability, performance, and functionality. Every PHP application is based on a set of common components, that are also base for many other applications.
 
@@ -35,13 +62,17 @@ Once the code is compiled, it is not necessary to do so again. Interpreted code 
 ## Statically Typed Versus Dynamically Typed Languages
 Generally speaking, in a statically typed language, a variable is bound to a particular type for its lifetime. Its type can't be changed and it can only reference type-compatible instances and operations. Languages like C/C++ were implemented with this scheme:
 
-    int a = 0;
-    a = "hello"; // not allowed
+```zephir
+int a = 0;
+a = "hello"; // not allowed
+```
 
 In dynamic typing, the type is bound to the value, not the variable. So, a variable might refer to a value of one type, then be reassigned later to a value of an unrelated type. Javascript/PHP are examples of a dynamically typed languages:
 
-    var a = 0;
-    a = "hello"; // allowed
+```zephir
+var a = 0;
+a = "hello"; // allowed
+```
 
 Despite their productivity advantages, dynamic languages may not be the best choices for all applications, particularly for very large code bases and high-performance applications.
 
@@ -57,7 +88,7 @@ Zephir is both statically and dynamically typed, allowing you to take advantage 
 ## Compilation Scheme
 Zephir offers native code generation (currently via compilation to C). A compiler like gcc/clang/vc++ optimizes and compiles the code down to machine code. The following graph shows how the process works:
 
-![compilation scheme](/images/content/scheme.png)
+![compilation scheme](/assets/content/scheme.png)
 
 In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that improve the performance of compiled applications:
 

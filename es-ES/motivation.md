@@ -1,3 +1,30 @@
+---
+layout: default
+language: 'es-ES'
+version: '0.11'
+menu:
+  - text:
+        'Si eres un programador PHP...'
+    url: '#if-you-are-a-php-programmer'
+  - text:
+        'Si eres un programador C...'
+    url: '#if-you-are-a-c-programmer'
+  - text:
+        'Compilación vs Interpretación'
+    url: '#compilation-vs-interpretation'
+  - text:
+        'Lenguajes de Tipificado Estático vs Dinámico'
+    url: '#statically-typed-versus-dynamically-typed-languages'
+  - text:
+        'Esquema de compilación'
+    url: '#compilation-scheme'
+  - text:
+        'Protección del código'
+    url: '#code-protection'
+  - text:
+        'Conclusión'
+    url: '#conclusion'
+---
 # ¿Por qué Zephir?
 
 Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, el rendimiento y la funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son la base para muchas otras aplicaciones.
@@ -70,7 +97,7 @@ Zephir es tanto estática como dinámicamente tipificado, lo que le permite apro
 
 Zephir ofrece la generación nativa de código (actualmente a través de la compilación a C). Un compilador como gcc/clang/vc++ optimiza y compila el código hasta código de máquina. El siguiente gráfico muestra como funciona el proceso:
 
-![esquema de compilación](/images/content/scheme.png)
+![esquema de compilación](/assets/content/scheme.png)
 
 Además de los proporcionados por Zephir, con el tiempo, los compiladores han implementado y madurado una serie de optimizaciones que mejoran el rendimiento de las aplicaciones compiladas:
 

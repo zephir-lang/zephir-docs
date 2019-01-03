@@ -1,3 +1,8 @@
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+---
 # Секции phpinfo()
 
 Как и большинство расширений, Zephir расширения могут отображать информацию при выводе [phpinfo()](http://php.net/manual/en/function.phpinfo.php). Обычно эта информация относится к директивам, данным окружения и т.п.
@@ -26,4 +31,4 @@
 
 Эта информация будет отображена следующим образом:
 
-![](/images/content/info.png)
+![](/assets/content/info.png)

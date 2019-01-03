@@ -1,7 +1,0 @@
-- [Si eres un programador PHP...](/[[language]]/[[version]]/motivation#if-you-are-a-php-programmer)
-- [Si eres un programador C...](/[[language]]/[[version]]/motivation#if-you-are-a-c-programmer)
-- [Compilación vs Interpretación](/[[language]]/[[version]]/motivation#compilation-vs-interpretation)
-- [Lenguajes de Tipificado Estático vs Dinámico](/[[language]]/[[version]]/motivation#statically-typed-versus-dynamically-typed-languages)
-- [Esquema de compilación](/[[language]]/[[version]]/motivation#compilation-scheme)
-- [Protección del código](/[[language]]/[[version]]/motivation#code-protection)
-- [Conclusión](/[[language]]/[[version]]/motivation#conclusion)
