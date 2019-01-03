@@ -1,3 +1,12 @@
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+- text: 'Some Features' url: '#some-features'
+- text: 'A small taste' url: '#a-small-taste' 
+
+* * *
+
 # Добро пожаловать!
 
 Встречайте Zephir, открытый, высокоуровневый, специализированный язык разработанный для быстрого и удобного создания расширений для PHP с упором на типизацию и безопасное управление памятью.
@@ -21,40 +30,42 @@
 
 Этот код регистрирует класс с методом, который оставляет в строке только буквы:
 
-    namespace MyLibrary;
-    
+```zephir
+namespace MyLibrary;
+
+/**
+ * Filter
+ */
+class Filter
+{
     /**
-     * Filter
+     * Filters a string, returning its alpha charactersa
+     *
+     * @param string str
      */
-    class Filter
+    public function alpha(string str)
     {
-        /**
-         * Filters a string, returning its alpha charactersa
-         *
-         * @param string str
-         */
-        public function alpha(string str)
-        {
-            char ch; string filtered = "";
-    
-            for ch in str {
-               if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
-                  let filtered .= ch;
-               }
-            }
-    
-            return filtered;
+        char ch; string filtered = "";
+
+        for ch in str {
+           if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+              let filtered .= ch;
+           }
         }
+
+        return filtered;
     }
-    
+}
+```
 
 А теперь используем этот класс в PHP:
 
-    <?php
-    
-    $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01he#l.lo?/1"); // выведет hello
-    
+```php
+<?php
+
+$filter = new MyLibrary\Filter();
+echo $filter->alpha("01he#l.lo?/1"); // выведет hello
+```
 
 <a name='external-links'></a>
 
