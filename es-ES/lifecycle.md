@@ -26,37 +26,38 @@ Each hook in the `config.json` file is an array of objects, which themselves are
 
 ## iniciadores
 
-The `initializers` block looks something like this:
+El bloque de `initializers` se ve algo así:
 
-    {
-        "initializers": [
-            {
-                "globals": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "setup_globals_deps(TSRMLS_C)"
-                    }
-                ],
-                "module": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "setup_module_deps(TSRMLS_C)"
-                    }
-                ],
-                "request": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "some_c_function(TSRMLS_C)"
-                    },
-                    {
-                        "include": "my/awful/library.h",
-                        "code": "some_other_c_function(TSRMLS_C)"
-                    }
-                ]
-            }
-        ]
-    }
-    
+```json
+{
+    "initializers": [
+        {
+            "globals": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "setup_globals_deps(TSRMLS_C)"
+                }
+            ],
+            "module": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "setup_module_deps(TSRMLS_C)"
+                }
+            ],
+            "request": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "some_c_function(TSRMLS_C)"
+                },
+                {
+                    "include": "my/awful/library.h",
+                    "code": "some_other_c_function(TSRMLS_C)"
+                }
+            ]
+        }
+    ]
+}
+```
 
 This block is responsible for defining hooks into the Init events shown in the diagram above. There are three of these: `globals` for setting up the global variable space, `module` for setting up anything the extension itself needs to function, and `request` for setting up the extension to handle a single request.
 

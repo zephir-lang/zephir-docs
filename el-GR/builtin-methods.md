@@ -17,6 +17,7 @@ menu:
     url: '#integer'
 ---
 # Built-In Methods
+
 As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
 
 Compare these two methods:
@@ -33,6 +34,7 @@ public function binaryToHex(string! s) -> string
         } else {
             let o .= n;
         }
+        return o;
     }
     return o;
 }
@@ -52,6 +54,7 @@ public function binaryToHex(string! s) -> string
         } else {
             let o .= n;
         }
+        return o;
     }
     return o;
 }
@@ -60,7 +63,9 @@ public function binaryToHex(string! s) -> string
 They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.
 
 <a name='string'></a>
+
 ## String
+
 The following string built-in methods are available:
 
 | OO                 | Procedural             | Description                                                                    |
@@ -79,7 +84,9 @@ The following string built-in methods are available:
 | `s->upperfirst()`  | `ucfirst(s)`           | Make a string's first character uppercase                                      |
 
 <a name='array'></a>
+
 ## Array
+
 The following array built-in methods are available:
 
 | OO                 | Procedural               | Description                                                              |
@@ -100,7 +107,9 @@ The following array built-in methods are available:
 | `a->walk()`        | `array_walk(a)`          | Apply a user supplied function to every member of an array               |
 
 <a name='char'></a>
+
 ## Char
+
 The following char built-in methods are available:
 
 | OO             | Procedural           |
@@ -108,7 +117,9 @@ The following char built-in methods are available:
 | `ch->toHex()`  | `sprintf("%X", ch)`  |
 
 <a name='integer'></a>
+
 ## Integer
+
 The following integer built-in methods are available:
 
 | OO           | Procedural    |

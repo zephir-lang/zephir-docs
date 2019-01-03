@@ -84,7 +84,7 @@ They can have eight types:
 | Type             | Description                                                                 |
 | ---------------- | --------------------------------------------------------------------------- |
 | `array`          | An array is an ordered map. A map is a type that associates values to keys. |
-| `boolean`        | A boolean expresses a truth value. It can be either `true` or `false`.      |
+| `boolean`        | A boolean expresses a truth value. Він може бути `true` або `false`.        |
 | `float`/`double` | Floating point numbers. The size of a float is platform-dependent.          |
 | `integer`        | Integer numbers. The size of an integer is platform-dependent.              |
 | `null`           | The special NULL value represents a variable with no value.                 |
@@ -142,7 +142,7 @@ Floating point numbers have limited precision. Although it depends on the system
 
 ### Integer
 
-Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
+Цілі числа. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
 
     var a = 5, b = 10050;
     
@@ -204,7 +204,7 @@ In Zephir, strings don't support variable parsing like in PHP; you need to use c
 
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
-| Type               | Description                                                                    |
+| Тип                | Description                                                                    |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `array`            | A structure that can be used as hash, map, dictionary, collection, stack, etc. |
 | `boolean`          | A boolean expresses a truth value. It can be either `true` or `false`.         |
@@ -214,14 +214,14 @@ Static typing allows the developer to declare and use some variable types availa
 | `long`             | Long signed integer type. At least 32 bits in size.                            |
 | `string`           | A string is a series of characters, where a character is the same as a byte.   |
 | `unsigned char`    | Same size as `char`, but guaranteed to be unsigned.                            |
-| `unsigned integer` | Unsigned integers. At least 16 bits in size.                                   |
+| `unsigned integer` | Unsigned integers. Розмір не менше 16 біт.                                     |
 | `unsigned long`    | Same as `long`, but unsigned.                                                  |
 
 <a name='static-types-boolean'></a>
 
 ### Boolean
 
-A `boolean` expresses a truth value. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
+A `boolean` expresses a truth value. Він може бути `true` або `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
     boolean a;
     let a = true;
@@ -288,7 +288,7 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
     let a = false;
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
@@ -305,22 +305,22 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
     let a = -70;
     
 
-##### automatically casted to 100
+##### автоматично перетворюється на 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
@@ -347,22 +347,22 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
         a = -70;
     
 
-##### automatically casted to 100
+##### автоматично перетворюється на 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
@@ -374,34 +374,34 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
     let a = 50;
     
 
-##### automatically casted to 70
+##### автоматично перетворюється на 70
 
     let  a = -70;
     
 
-##### automatically casted to 100
+##### автоматично перетворюється на 100
 
     let a = 100.25;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = null;
     
 
-##### automatically casted to 0
+##### автоматично перетворюється на 0
 
     let a = false;
     
 
-##### throws a compiler exception
+##### кидає виняток компіляції
 
     let a = "hello";
     
 
 `unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
 
-##### potential loss of data for `b`
+##### можлива втрата даних для `b`
 
     ulong a, long b;
     
