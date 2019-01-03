@@ -1,3 +1,13 @@
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+* text: 'Prerequisites' url: '#prerequisites'
+* text: 'Installing Zephir' url: '#installing-zephir'
+* text: 'Testing the installation' url: '#testing-the-installation'
+
+* * *
+
 # 安装
 
 要安装 Zephir, 请按照下列步骤操作:
