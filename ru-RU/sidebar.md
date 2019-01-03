@@ -1,24 +1,30 @@
-- [Добро пожаловать](/[[language]]/[[version]]/welcome)
-- [Почему Zephir](/[[language]]/[[version]]/motivation)
-- [Введение в Zephir](/[[language]]/[[version]]/introduction)
-- [Установка](/[[language]]/[[version]]/installation)
-- [Урок](/[[language]]/[[version]]/tutorial)
-- [Базовый синтаксис](/[[language]]/[[version]]/language)
-- [Типы](/[[language]]/[[version]]/types)
-- [Операторы](/[[language]]/[[version]]/operators)
-- [Arrays](/[[language]]/[[version]]/arrays)
-- [Classes and objects](/[[language]]/[[version]]/oop)
-- [Built-in methods](/[[language]]/[[version]]/builtin-methods)
-- [Control structures](/[[language]]/[[version]]/control-structures)
-- [Exceptions](/[[language]]/[[version]]/exceptions)
-- [Calling functions](/[[language]]/[[version]]/functions)
-- [Closures](/[[language]]/[[version]]/closures)
-- [Custom optimizers](/[[language]]/[[version]]/optimizers)
-- [Configuration file](/[[language]]/[[version]]/config)
-- [Lifecycle hooks](/[[language]]/[[version]]/lifecycle)
-- [Глобальные параметры расширения](/[[language]]/[[version]]/globals)
-- [Секции phpinfo()](/[[language]]/[[version]]/phpinfo)
-- [Static analysis](/[[language]]/[[version]]/static-analysis)
-- [Optimizations](/[[language]]/[[version]]/optimizations)
-- [Compiler warnings](/[[language]]/[[version]]/warnings)
-- [Лицензионное соглашение](/[[language]]/[[version]]/license)
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+- text: 'Welcome' url: 'welcome'
+- text: 'Why Zephir' url: 'motivation'
+- text: 'Introducing Zephir' url: 'introduction'
+- text: 'Installation' url: 'installation'
+- text: 'Tutorial' url: 'tutorial'
+- text: 'Basic Syntax' url: 'language'
+- text: 'Types' url: 'types'
+- text: 'Operators' url: 'operators'
+- text: 'Arrays' url: 'arrays'
+- text: 'Classes and objects' url: 'oop'
+- text: 'Built-in methods' url: 'builtin-methods'
+- text: 'Control structures' url: 'control-structures'
+- text: 'Exceptions' url: 'exceptions'
+- text: 'Calling functions' url: 'functions'
+- text: 'Closures' url: 'closures'
+- text: 'Custom optimizers' url: 'optimizers'
+- text: 'Configuration file' url: 'config'
+- text: 'Lifecycle hooks' url: 'lifecycle'
+- text: 'Extension globals' url: 'globals'
+- text: 'phpinfo() sections' url: 'phpinfo'
+- text: 'Static analysis' url: 'static-analysis'
+- text: 'Optimizations' url: 'optimizations'
+- text: 'Compiler warnings' url: 'warnings'
+- text: 'License'
+
+## url: 'license'
