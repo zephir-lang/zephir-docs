@@ -1,3 +1,15 @@
+---
+layout: default
+language: 'zh-CN'
+version: '0.10'
+menu:
+  - text:
+      '条件未分配的变量'
+    url: '#conditional-unassigned-variables'
+  - text:
+      '死码消除'
+    url: '#dead-code-elimination'
+---
 # 静态分析
 
 Zephir 的编译器提供对已编译代码的静态分析。 此功能背后的想法是在运行时之前帮助开发人员发现潜在的问题, 避免意外的行为 。

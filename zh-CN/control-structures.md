@@ -1,3 +1,44 @@
+---
+layout: default
+language: 'zh-CN'
+version: '0.10'
+menu:
+  - text:
+      '条件'
+    url: '#conditionals'
+    sub:
+      - text:
+            'If 语句'
+        url: '#conditionals-if'
+      - text:
+            'Switch 语句'
+        url: '#conditionals-switch'
+  - text:
+      'Loops'
+    url: '#loops'
+    sub:
+      - text:
+            'While 语句'
+        url: '#loops-while'
+      - text:
+            'Loop 语句'
+        url: '#loops-loop'
+      - text:
+            'For 语句'
+        url: '#loops-for'
+      - text:
+            'Break 语句'
+        url: '#loops-break'
+      - text:
+            'Continue 语句'
+        url: '#loops-continue'
+  - text:
+      'Require'
+    url: '#require'
+  - text:
+      'Let'
+    url: '#let'
+---
 # 控制结构
 
 Zephir实现了一组简化的控制结构，这些结构用类似的语言表示，如C、PHP等。
@@ -72,7 +113,7 @@ Zephir实现了一组简化的控制结构，这些结构用类似的语言表�
 
 ### While 语句
 
-`while` 表示循环, 只要其给定条件的计算结果为 true, 该循环就会迭代到:
+`while` 表示循环, 只要其给定条件的计算结果为 `true`, 该循环就会迭代到:
 
     let counter = 5;
     while counter {

@@ -1,15 +1,24 @@
-* * *
-
-layout: default language: 'en' version: '0.10' menu:
-
-- text: 'Declaring Array Variables' url: '#declaring-array-variables'
-- text: 'Creating Arrays' url: '#creating-arrays'
-- text: 'Updating arrays' url: '#updating-arrays'
-- text: 'Appending elements' url: '#appending-elements'
-- text: 'Reading elements from arrays' url: '#reading-elements-from-arrays'
-
-* * *
-
+---
+layout: default
+language: 'es-ES'
+version: '0.10'
+menu:
+  - text:
+      'Declarar Variables de tipo Array'
+    url: '#declaring-array-variables'
+  - text:
+      'Creación de Arrays'
+    url: '#creating-arrays'
+  - text:
+      'Actualización de arrays'
+    url: '#updating-arrays'
+  - text:
+      'Agregando elementos'
+    url: '#appending-elements'
+  - text:
+      'Leyendo elementos desde arrays'
+    url: '#reading-elements-from-arrays'
+---
 # Arrays
 
 La manipulación de arrays o arreglos en Zephir proporciona una manera de utilizar los [arrays de PHP](http://www.php.net/manual/en/language.types.array.php). Un array es una implementación de una [tabla hash](http://en.wikipedia.org/wiki/Hash_table).

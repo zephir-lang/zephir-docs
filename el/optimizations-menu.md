@@ -1,8 +1,0 @@
-- [call-gatherer-pass](/[[language]]/[[version]]/optimizations#call-gatherer-pass)
-- [check-invalid-reads](/[[language]]/[[version]]/optimizations#check-invalid-reads)
-- [constant-folding](/[[language]]/[[version]]/optimizations#constant-folding)
-- [internal-call-transformation](/[[language]]/[[version]]/optimizations#internal-call-transformation)
-- [local-context-pass](/[[language]]/[[version]]/optimizations#local-context-pass)
-- [static-constant-class-folding](/[[language]]/[[version]]/optimizations#static-constant-class-folding)
-- [static-type-inference](/[[language]]/[[version]]/optimizations#static-type-inference)
-- [static-type-inference-second-pass](/[[language]]/[[version]]/optimizations#static-type-inference-second-pass)

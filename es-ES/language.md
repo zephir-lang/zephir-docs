@@ -1,3 +1,30 @@
+---
+layout: default
+language: 'es-ES'
+version: '0.10'
+menu:
+  - text:
+        'Organización del código en archivos y espacios de nombres'
+    url: '#organizing-code-in-files-and-namespaces'
+  - text:
+        'Separación de instrucciones'
+    url: '#instruction-separation'
+  - text:
+        'Comentarios'
+    url: '#comments'
+  - text:
+        'Declaración de variables'
+    url: '#variable-declarations'
+  - text:
+        'Ámbito de la variable'
+    url: '#variable-scope'
+  - text:
+        'Super globales'
+    url: '#super-globals'
+  - text:
+        'Tabla de símbolos locales'
+    url: '#local-symbol-table'
+---
 # Sintaxis básica
 
 En este capítulo, analizaremos la organización de archivos y espacios de nombres, declaraciones de variables, varios convenios de sintaxis y algunos conceptos generales.

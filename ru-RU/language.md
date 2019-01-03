@@ -1,3 +1,30 @@
+---
+layout: default
+language: 'ru-RU'
+version: '0.10'
+menu:
+  - text:
+        'Организация кода в файлах и пространствах имён'
+    url: '#organizing-code-in-files-and-namespaces'
+  - text:
+        'Разделение инструкций'
+    url: '#instruction-separation'
+  - text:
+        'Комментарии'
+    url: '#comments'
+  - text:
+        'Объявления переменных'
+    url: '#variable-declarations'
+  - text:
+        'Область переменной'
+    url: '#variable-scope'
+  - text:
+        'Супер-глобальные переменные'
+    url: '#super-globals'
+  - text:
+        'Локальная таблица символов'
+    url: '#local-symbol-table'
+---
 # Базовый синтаксис
 
 В этой главе мы обсудим организацию файлов и пространств имен, объявления переменных, разные синтаксические соглашения и несколько других концепций.

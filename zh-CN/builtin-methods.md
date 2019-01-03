@@ -1,14 +1,21 @@
-* * *
-
-layout: default language: 'en' version: '0.10' menu:
-
-- text: 'String' url: '#string'
-- text: 'Array' url: '#array'
-- text: 'Char' url: '#char'
-- text: 'Integer' url: '#integer'
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.10'
+menu:
+  - text:
+      'String'
+    url: '#string'
+  - text:
+      'Array'
+    url: '#array'
+  - text:
+      'Char'
+    url: '#char'
+  - text:
+      'Integer'
+    url: '#integer'
+---
 # 内建方法
 
 如前所述，Zephir提倡面向对象编程。 与静态类型相关的变量也可以作为对象处理。

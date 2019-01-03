@@ -1,54 +1,107 @@
-* * *
-
-layout: default language: 'en' version: '0.10' menu:
-
-- text: 'api' url: '#api'
-- text: 'author' url: '#author'
-- text: 'backend' url: '#backend'
-- text: 'constants-sources' url: '#constants-sources'
-- text: 'description' url: '#description'
-- text: 'destructors' url: '#destructors'
-- text: 'extension-name' url: '#extension-name'
-- text: 'external-dependencies' url: '#external-dependencies'
-- text: 'extra' url: '#extra'
-- text: 'extra-cflags' url: '#extra-cflags'
-- text: 'extra-classes' url: '#extra-classes'
-- text: 'extra-libs' url: '#extra-libs'
-- text: 'extra-sources' url: '#extra-sources'
-- text: 'globals' url: '#globals'
-- text: 'info' url: '#info'
-- text: 'initializers' url: '#initializers'
-- text: 'name' url: '#name'
-- text: 'namespace' url: '#namespace'
-- text: 'optimizations' url: '#optimizations'
-- text: 'optimizer-dirs'  
+---
+layout: default
+language: 'ru-RU'
+version: '0.10'
+menu:
+  - text:
+      'api'
+    url: '#api'
+  - text:
+      'author'
+    url: '#author'
+  - text:
+      'backend'
+    url: '#backend'
+  - text:
+      'constants-sources'
+    url: '#constants-sources'
+  - text:
+      'description'
+    url: '#description'
+  - text:
+      'destructors'
+    url: '#destructors'
+  - text:
+      'extension-name'
+    url: '#extension-name'
+  - text:
+      'external-dependencies'
+    url: '#external-dependencies'
+  - text:
+      'extra'
+    url: '#extra'
+  - text:
+      'extra-cflags'
+    url: '#extra-cflags'
+  - text:
+      'extra-classes'
+    url: '#extra-classes'
+  - text:
+      'extra-libs'
+    url: '#extra-libs'
+  - text:
+      'extra-sources'
+    url: '#extra-sources'
+  - text:
+      'globals'
+    url: '#globals'
+  - text:
+      'info'
+    url: '#info'
+  - text:
+      'initializers'
+    url: '#initializers'
+  - text:
+      'name'
+    url: '#name'
+  - text:
+      'namespace'
+    url: '#namespace'
+  - text:
+      'optimizations'
+    url: '#optimizations'
+  - text:
+      'optimizer-dirs'    
     url: '#optimizer-dirs'
-- text: 'package-dependencies' url: '#package-dependencies'
-- text: 'prototype-dir' url: '#prototype-dir'
-- text: 'requires' url: '#requires'
-- text: 'silent' url: '#silent'
-- text: 'stubs' url: '#stubs'
-- text: 'verbose' url: '#verbose'
-- text: 'version' url: '#version'
-- text: 'warnings' url: '#warnings'
-
-* * *
-
+  - text:
+      'package-dependencies'
+    url: '#package-dependencies'
+  - text:
+      'prototype-dir'
+    url: '#prototype-dir'
+  - text:
+      'requires'
+    url: '#requires'
+  - text:
+      'silent'
+    url: '#silent'
+  - text:
+      'stubs'
+    url: '#stubs'
+  - text:
+      'verbose'
+    url: '#verbose'
+  - text:
+      'version'
+    url: '#version'
+  - text:
+      'warnings'
+    url: '#warnings'
+---
 # Configuration File
 
 Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
 
 This file uses [JSON](http://en.wikipedia.org/wiki/JSON) as its configuration format:
 
-```json
-{
-    "namespace": "test",
-    "name": "Test Extension",
-    "description": "My amazing extension",
-    "author": "Tony Hawk",
-    "version": "1.2.0"
-}
-```
+    {
+        "namespace": "test",
+        "name": "Test Extension",
+        "description": "My amazing extension",
+        "author": "Tony Hawk",
+        "version": "1.2.0"
+    }
+    
 
 Settings defined in this file override any factory default setting provided by Zephir.
 
@@ -60,27 +113,26 @@ The following settings are supported:
 
 Used to configure the automatically generated HTML documentation for your extension. `path` specifies where to create the documentation relative to the project root. `base-url` is used to generate a `sitemap.xml` file for your documentation. `theme` is used to set the theme used for the generated documentation (via the `name` setting), and any options the theme supports passing (via the `options` setting). Finally, `theme-directories` is used to provide additional search paths for finding your desired theme.:
 
-```json
-{
-    "api": {
-        "path": "doc/%version%",
-        "base-url": "http://example.local/api/",
-        "theme": {
-            "name"   : "zephir",
-            "options": {
-                "github":           null,
-                "analytics":        null,
-                "main_color":       "#3E6496",
-                "link_color":       "#3E6496",
-                "link_hover_color": "#5F9AE7"
-            }
-        },
-        "theme-directories": [
-            "my/api/themes"
-        ]
+    {
+        "api": {
+            "path": "doc/%version%",
+            "base-url": "http://example.local/api/",
+            "theme": {
+                "name"   : "zephir",
+                "options": {
+                    "github":           null,
+                    "analytics":        null,
+                    "main_color":       "#3E6496",
+                    "link_color":       "#3E6496",
+                    "link_hover_color": "#5F9AE7"
+                }
+            },
+            "theme-directories": [
+                "my/api/themes"
+            ]
+        }
     }
-}
-```
+    
 
 <a name='author'></a>
 
@@ -100,13 +152,12 @@ Company, developer, institution, etc that developed the extension:
 
 Provides a way to configure the Zend Engine backend used by your extension. At the moment, only the `templatepath`, which lets you select between `ZendEngine2` and `ZendEngine3`, is supported:
 
-```json
-{
-    "backend": {
-        "templatepath": "ZendEngine3"
+    {
+        "backend": {
+            "templatepath": "ZendEngine3"
+        }
     }
-}
-```
+    
 
 <a name='constants-sources'></a>
 
@@ -114,13 +165,12 @@ Provides a way to configure the Zend Engine backend used by your extension. At t
 
 To import just the constants in a C source file into your project, list the file's path in this setting:
 
-```json
-{
-    "constants-sources": [
-        "utils/math_constants.h"
-    ]
-}
-```
+    {
+        "constants-sources": [
+            "utils/math_constants.h"
+        ]
+    }
+    
 
 <a name='description'></a>
 
@@ -128,11 +178,10 @@ To import just the constants in a C source file into your project, list the file
 
 Extension description - any text describing your extension:
 
-```json
-{
-    "description": "My amazing extension"
-}
-```
+    {
+        "description": "My amazing extension"
+    }
+    
 
 <a name='destructors'></a>
 
@@ -140,42 +189,41 @@ Extension description - any text describing your extension:
 
 This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
 
-```json
-{
-    "destructors": [
-        {
-            "request": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "c_function_for_shutting_down(TSRMLS_C)"
-                },
-                {
-                    "include": "my/awful/library.h",
-                    "code": "some_other_c_function_than_the_other_ones(TSRMLS_C)"
-                }
-            ],
-            "post-request": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "c_function_for_cleaning_up_after_the_response_is_sent(TSRMLS_C)"
-                }
-            ],
-            "module": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "release_module_deps(TSRMLS_C)"
-                }
-            ],
-            "globals": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "release_globals_deps(TSRMLS_C)"
-                }
-            ]
-        }
-    ]
-}
-```
+    {
+        "destructors": [
+            {
+                "request": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "c_function_for_shutting_down(TSRMLS_C)"
+                    },
+                    {
+                        "include": "my/awful/library.h",
+                        "code": "some_other_c_function_than_the_other_ones(TSRMLS_C)"
+                    }
+                ],
+                "post-request": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "c_function_for_cleaning_up_after_the_response_is_sent(TSRMLS_C)"
+                    }
+                ],
+                "module": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "release_module_deps(TSRMLS_C)"
+                    }
+                ],
+                "globals": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "release_globals_deps(TSRMLS_C)"
+                    }
+                ]
+            }
+        ]
+    }
+    
 
 <a name='extension-name'></a>
 
@@ -183,11 +231,10 @@ This setting lets you provide one or more C functions to be executed on certain 
 
 The base filename of the extension. It must follow the same rules as the `namespace` setting, which is used as a fallback in case this one isn't given.
 
-```json
-{
-    "extension-name": "test"
-}
-```
+    {
+        "extension-name": "test"
+    }
+    
 
 <a name='external-dependencies'></a>
 
@@ -195,14 +242,13 @@ The base filename of the extension. It must follow the same rules as the `namesp
 
 You can include a class from another namespace/extension directly in your own extension by configuring it here:
 
-```json
-{
-    "external-dependencies": {
-        "My\\Awesome": "my/awesome/class.zep",
-        "My\\Awful": "my/awful/class.zep"
+    {
+        "external-dependencies": {
+            "My\\Awesome": "my/awesome/class.zep",
+            "My\\Awful": "my/awful/class.zep"
+        }
     }
-}
-```
+    
 
 <a name='extra'></a>
 
@@ -210,14 +256,13 @@ You can include a class from another namespace/extension directly in your own ex
 
 Contains extra settings that also can be passed, as is, on the command line. Currently, that's `export-clases` (generate headers for accessing your classes from other C code), and `indent` (select between using `tabs` or `spaces` to indent code in generated files):
 
-```json
-{
-    "extra": {
-        "export-classes": true,
-        "indent": "tabs"
+    {
+        "extra": {
+            "export-classes": true,
+            "indent": "tabs"
+        }
     }
-}
-```
+    
 
 <a name='extra-cflags'></a>
 
@@ -225,11 +270,10 @@ Contains extra settings that also can be passed, as is, on the command line. Cur
 
 Any additional flags you want to add to the compilation process:
 
-```json
-{
-    "extra-cflags": "-I/usr/local/Cellar/libevent/2.0.21_1/include"
-}
-```
+    {
+        "extra-cflags": "-I/usr/local/Cellar/libevent/2.0.21_1/include"
+    }
+    
 
 <a name='extra-classes'></a>
 
@@ -237,18 +281,17 @@ Any additional flags you want to add to the compilation process:
 
 If you already have a PHP class implemented in C, you can include it directly in your extension by configuring it here:
 
-```json
-{
-    "extra-classes": [
-        {
-            "header": "utls/old_c_class/class.h",
-            "source": "utils/old_c_class/class.c",
-            "init": "old_c_class",
-            "entry": "old_c_class_ce"
-        }
-    ]
-}
-```
+    {
+        "extra-classes": [
+            {
+                "header": "utls/old_c_class/class.h",
+                "source": "utils/old_c_class/class.c",
+                "init": "old_c_class",
+                "entry": "old_c_class_ce"
+            }
+        ]
+    }
+    
 
 <a name='extra-libs'></a>
 
@@ -256,11 +299,10 @@ If you already have a PHP class implemented in C, you can include it directly in
 
 Any additional libraries you want to add to the compilation process:
 
-```json
-{
-    "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
-}
-```
+    {
+        "extra-libs": "-L/usr/local/Cellar/libevent/2.0.21_1/lib -levent"
+    }
+    
 
 <a name='extra-sources'></a>
 
@@ -268,13 +310,12 @@ Any additional libraries you want to add to the compilation process:
 
 Any additional files you want to add to the compilation process - the search directory is relative to the `ext` folder of your project:
 
-```json
-{
-    "extra-sources": [
-        "utils/pi.c"
-    ]
-}
-```
+    {
+        "extra-sources": [
+            "utils/pi.c"
+        ]
+    }
+    
 
 <a name='globals'></a>
 
@@ -282,20 +323,19 @@ Any additional files you want to add to the compilation process - the search dir
 
 Extension globals available. Check the [globals](/{{ page.version }}/{{ page.language }}/globals) chapter for more information.
 
-```json
-{
-    "globals": {
-        "my_setting_1": {
-            "type": "bool",
-            "default": true
-        },
-        "my_setting_2": {
-            "type": "int",
-            "default": 10
+    {
+        "globals": {
+            "my_setting_1": {
+                "type": "bool",
+                "default": true
+            },
+            "my_setting_2": {
+                "type": "int",
+                "default": 10
+            }
         }
     }
-}
-```
+    
 
 <a name='info'></a>
 
@@ -303,19 +343,18 @@ Extension globals available. Check the [globals](/{{ page.version }}/{{ page.lan
 
 `phpinfo()` sections. Check the [phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo) chapter for more information.
 
-```json
-{
-    "info": [
-        {
-            "header": ["Directive", "Value"],
-            "rows": [
-                ["setting1", "value1"],
-                ["setting2", "value2"]
-            ]
-        }
-    ]
-}
-```
+    {
+        "info": [
+            {
+                "header": ["Directive", "Value"],
+                "rows": [
+                    ["setting1", "value1"],
+                    ["setting2", "value2"]
+                ]
+            }
+        ]
+    }
+    
 
 <a name='initializers'></a>
 
@@ -323,36 +362,35 @@ Extension globals available. Check the [globals](/{{ page.version }}/{{ page.lan
 
 This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
 
-```json
-{
-    "initializers": [
-        {
-            "globals": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "setup_globals_deps(TSRMLS_C)"
-                }
-            ],
-            "module": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "setup_module_deps(TSRMLS_C)"
-                }
-            ],
-            "request": [
-                {
-                    "include": "my/awesome/library.h",
-                    "code": "some_c_function(TSRMLS_C)"
-                },
-                {
-                    "include": "my/awful/library.h",
-                    "code": "some_other_c_function(TSRMLS_C)"
-                }
-            ]
-        }
-    ]
-}
-```
+    {
+        "initializers": [
+            {
+                "globals": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "setup_globals_deps(TSRMLS_C)"
+                    }
+                ],
+                "module": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "setup_module_deps(TSRMLS_C)"
+                    }
+                ],
+                "request": [
+                    {
+                        "include": "my/awesome/library.h",
+                        "code": "some_c_function(TSRMLS_C)"
+                    },
+                    {
+                        "include": "my/awful/library.h",
+                        "code": "some_other_c_function(TSRMLS_C)"
+                    }
+                ]
+            }
+        ]
+    }
+    
 
 <a name='name'></a>
 
@@ -360,11 +398,10 @@ This setting lets you provide one or more C functions to be executed on certain 
 
 Extension name used in compiled C code - can only contain ascii characters:
 
-```json
-{
-    "name": "test"
-}
-```
+    {
+        "name": "test"
+    }
+    
 
 <a name='namespace'></a>
 
@@ -372,11 +409,10 @@ Extension name used in compiled C code - can only contain ascii characters:
 
 The namespace of the extension - it must be a simple identifier respecting the regular expression `[a-zA-Z0-9\_]+`:
 
-```json
-{
-    "namespace": "test"
-}
-```
+    {
+        "namespace": "test"
+    }
+    
 
 <a name='optimizations'></a>
 
@@ -384,15 +420,14 @@ The namespace of the extension - it must be a simple identifier respecting the r
 
 Compiler optimizations which should be enabled or disabled in the current project:
 
-```json
-{
-    "optimizations": {
-        "static-type-inference": true,
-        "static-type-inference-second-pass": true,
-        "local-context-pass": false
+    {
+        "optimizations": {
+            "static-type-inference": true,
+            "static-type-inference-second-pass": true,
+            "local-context-pass": false
+        }
     }
-}
-```
+    
 
 <a name='optimizer-dirs'></a>
 
@@ -400,13 +435,12 @@ Compiler optimizations which should be enabled or disabled in the current projec
 
 The directories where your own optimizers can be found - the search directory is relative to the root folder of your project:
 
-```json
-{
-    "optimizer-dirs": [
-        "optimizers"
-    ]
-}
-```
+    {
+        "optimizer-dirs": [
+            "optimizers"
+        ]
+    }
+    
 
 <a name='package-dependencies'></a>
 
@@ -414,15 +448,14 @@ The directories where your own optimizers can be found - the search directory is
 
 Declare library dependencies (version constraints will be checked by `pkg-config`, and can use one of the operators `=`, `>=`, `<=`, or `*`):
 
-```json
-{
-    "package-dependencies": {
-        "openssl": "*",
-        "libpng": ">= 0.1.0",
-        "protobuf": "<= 2.6.1"
+    {
+        "package-dependencies": {
+            "openssl": "*",
+            "libpng": ">= 0.1.0",
+            "protobuf": "<= 2.6.1"
+        }
     }
-}
-```
+    
 
 <a name='prototype-dir'></a>
 
@@ -430,14 +463,13 @@ Declare library dependencies (version constraints will be checked by `pkg-config
 
 Allows you to provide prototype files describing other extensions required to build your own, so they don't necessarily need to be installed during the build phase:
 
-```json
-{
-    "prototype-dir": {
-        "igbinary": "prototypes",
-        "session": "prototypes"
+    {
+        "prototype-dir": {
+            "igbinary": "prototypes",
+            "session": "prototypes"
+        }
     }
-}
-```
+    
 
 <a name='requires'></a>
 
@@ -445,16 +477,15 @@ Allows you to provide prototype files describing other extensions required to bu
 
 Allows you to list other extensions as required to build/use your own:
 
-```json
-{
-    "requires": {
-        "extensions": [
-            "igbinary",
-            "session"
-        ]
+    {
+        "requires": {
+            "extensions": [
+                "igbinary",
+                "session"
+            ]
+        }
     }
-}
-```
+    
 
 <a name='silent'></a>
 
@@ -462,11 +493,10 @@ Allows you to list other extensions as required to build/use your own:
 
 Suppresses most/all output from `zephir` commands (same as `-w`):
 
-```json
-{
-    "silent": false
-}
-```
+    {
+        "silent": false
+    }
+    
 
 <a name='stubs'></a>
 
@@ -474,14 +504,13 @@ Suppresses most/all output from `zephir` commands (same as `-w`):
 
 This setting allows adjusting the way IDE documentation stubs are generated. `path` sets where the stubs should be created, while `stubs-run-after-generate` sets whether to automatically (re)build the stubs when your code is compiled to C:
 
-```json
-{
-    "stubs": {
-        "path": "ide/%version%/%namespace%/",
-        "stubs-run-after-generate": false
+    {
+        "stubs": {
+            "path": "ide/%version%/%namespace%/",
+            "stubs-run-after-generate": false
+        }
     }
-}
-```
+    
 
 <a name='verbose'></a>
 
@@ -489,11 +518,10 @@ This setting allows adjusting the way IDE documentation stubs are generated. `pa
 
 Displays more detail in error messages from exceptions generated by `zephir` commands (can also enable with `-v`, or disable with `-V`):
 
-```json
-{
-    "verbose": false
-}
-```
+    {
+        "verbose": false
+    }
+    
 
 <a name='version'></a>
 
@@ -501,11 +529,10 @@ Displays more detail in error messages from exceptions generated by `zephir` com
 
 Extension version - must follow the regular expression `[0-9]+\.[0-9]+\.[0-9]+`:
 
-```json
-{
-    "version": "1.2.0"
-}
-```
+    {
+        "version": "1.2.0"
+    }
+    
 
 <a name='warnings'></a>
 
@@ -513,15 +540,13 @@ Extension version - must follow the regular expression `[0-9]+\.[0-9]+\.[0-9]+`:
 
 Compiler warnings which should be enabled or disabled in the current project:
 
-```json
-{
-    "warnings": {
-        "unused-variable": true,
-        "unused-variable-external": false,
-        "possible-wrong-parameter": true,
-        "possible-wrong-parameter-undefined": false,
-        "nonexistent-function": true,
-        "nonexistent-class": true
+    {
+        "warnings": {
+            "unused-variable": true,
+            "unused-variable-external": false,
+            "possible-wrong-parameter": true,
+            "possible-wrong-parameter-undefined": false,
+            "nonexistent-function": true,
+            "nonexistent-class": true
+        }
     }
-}
-```

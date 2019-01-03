@@ -1,3 +1,15 @@
+---
+layout: default
+language: 'es-ES'
+version: '0.10'
+menu:
+  - text:
+        'Algunas características'
+    url: '#some-features'
+  - text:
+        'Una pequeña prueba'
+    url: '#a-small-taste' 
+---
 # ¡Bienvenido!
 
 Bienvenido a Zephir, un lenguaje de código abierto de alto nivel/dominio específico, diseñado para facilitar la creación y mantenimiento de extensiones para PHP con un enfoque de tipo y cuidado de memoria.

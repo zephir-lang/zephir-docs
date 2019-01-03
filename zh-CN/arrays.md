@@ -1,15 +1,24 @@
-* * *
-
-layout: default language: 'en' version: '0.10' menu:
-
-- text: 'Declaring Array Variables' url: '#declaring-array-variables'
-- text: 'Creating Arrays' url: '#creating-arrays'
-- text: 'Updating arrays' url: '#updating-arrays'
-- text: 'Appending elements' url: '#appending-elements'
-- text: 'Reading elements from arrays' url: '#reading-elements-from-arrays'
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.10'
+menu:
+  - text:
+      '声明数组变量'
+    url: '#declaring-array-variables'
+  - text:
+      '创建数组'
+    url: '#creating-arrays'
+  - text:
+      'Updating arrays'
+    url: '#updating-arrays'
+  - text:
+      '追加元素'
+    url: '#appending-elements'
+  - text:
+      '从数组中读取元素'
+    url: '#reading-elements-from-arrays'
+---
 # 数组
 
 Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/manual/en/language.types.array.php)的方法。 数组是 < 0>hash 表 </0 > 的实现。

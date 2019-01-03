@@ -1,5 +1,0 @@
-- [声明数组变量](/[[language]]/[[version]]/arrays#declaring-array-variables)
-- [创建数组](/[[language]]/[[version]]/arrays#creating-arrays)
-- [Updating arrays](/[[language]]/[[version]]/arrays#updating-arrays)
-- [追加元素](/[[language]]/[[version]]/arrays#appending-elements)
-- [从数组中读取元素](/[[language]]/[[version]]/arrays#reading-elements-from-arrays)

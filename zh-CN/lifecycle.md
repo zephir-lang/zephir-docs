@@ -1,12 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.10' menu:
-
-- text: 'initializers' url: '#initializers'
-- text: 'destructors' url: '#destructors'
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.10'
+menu:
+  - text:
+      'initializers'
+    url: '#initializers'
+  - text:
+      'destructors'
+    url: '#destructors'
+---
 # 生命周期钩子
 
 PHP提供了几个生命周期事件，这些扩展可以用来执行常见的初始化或关闭任务。 通常，Zephir在这些事件中自己的钩子会覆盖所有设置，并删除您需要的扩展，但是如果您发现需要做更多的事情，可以使用一些选项将您自己的代码传递到这些相同的钩子中。

@@ -1,3 +1,53 @@
+---
+layout: default
+language: 'zh-CN'
+version: '0.10'
+menu:
+  - text:
+      '动态类型'
+    url: '#dynamic-types'
+    sub:
+      - text:
+            '数组'
+        url: '#dynamic-types-arrays'
+      - text:
+            'Boolean'
+        url: '#dynamic-types-boolean'
+      - text:
+            '浮点型/双精度浮点'
+        url: '#dynamic-types-float-double'
+      - text:
+            'Integer'
+        url: '#dynamic-types-integer'
+      - text:
+            '整数溢出'
+        url: '#dynamic-types-integer-overflow'
+      - text:
+            '对象'
+        url: '#dynamic-types-objects'
+      - text:
+            'String'
+        url: '#dynamic-types-string'
+  - text:
+      '静态类型'
+    url: '#static-types'
+    sub:
+      - text:
+            'Boolean'
+        url: '#static-types-boolean'
+      - text:
+            '字符/无符号字符'
+        url: '#static-types-char-unsigned'
+      - text:
+            '整数/无符号整数'
+        url: '#static-types-integer-unsigned'
+      - text:
+            '长值/无符号长值'
+        url: '#static-types-long-unsigned'
+      - text:
+            'String'
+        url: '#static-types-string'
+---
 # 类型
 
 Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍支持的类型及其行为。
@@ -99,7 +149,7 @@ Zephir中的数组实现与PHP中的基本相同: 为几种不同用途优化的
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer overflow
+### 整数溢出
 
 与PHP相反，Zephir不会自动检查整数溢出。 像在C中一样，如果你做的操作可能会返回一个大的数字，你应该使用`unsigned long`或`float`来存储它们:
 

@@ -1,3 +1,44 @@
+---
+layout: default
+language: 'uk-UA'
+version: '0.10'
+menu:
+  - text:
+      'Conditionals'
+    url: '#conditionals'
+    sub:
+      - text:
+            'If Statement'
+        url: '#conditionals-if'
+      - text:
+            'Switch Statement'
+        url: '#conditionals-switch'
+  - text:
+      'Loops'
+    url: '#loops'
+    sub:
+      - text:
+            'While Statement'
+        url: '#loops-while'
+      - text:
+            'Loop Statement'
+        url: '#loops-loop'
+      - text:
+            'For Statement'
+        url: '#loops-for'
+      - text:
+            'Break Statement'
+        url: '#loops-break'
+      - text:
+            'Continue Statement'
+        url: '#loops-continue'
+  - text:
+      'Require'
+    url: '#require'
+  - text:
+      'Let'
+    url: '#let'
+---
 # Control Structures
 
 Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
@@ -72,7 +113,7 @@ A `switch` evaluates an expression against a series of predefined literal values
 
 ### While Statement
 
-`while` denotes a loop that iterates as long as its given condition evaluates as true:
+`while` denotes a loop that iterates as long as its given condition evaluates as `true`:
 
     let counter = 5;
     while counter {

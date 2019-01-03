@@ -1,3 +1,30 @@
+---
+layout: default
+language: 'el-GR'
+version: '0.10'
+menu:
+  - text:
+        'Prerequisites'
+    url: '#prerequisites'
+  - text:
+        'Checking the installation'
+    url: '#checking-the-installation'
+  - text:
+        'Extension skeleton'
+    url: '#extension-skeleton'
+  - text:
+        'Adding our first class'
+    url: '#adding-our-first-class'
+  - text:
+        'Initial testing'
+    url: '#initial-testing'
+  - text:
+        'A useful class'
+    url: '#a-useful-class'
+  - text:
+        'Conclusion'
+    url: '#conclusion'
+---
 # Tutorial
 
 Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
@@ -51,7 +78,7 @@ If everything is well, you should see the following help (or something very simi
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-If something went wrong, please return back to the [installation](/[[language]]/[[version]]/installation) page.
+If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
 
 <a name='extension-skeleton'></a>
 
