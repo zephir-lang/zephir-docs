@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
+layout: default language: 'el-GR' version: '0.11' menu:
 
 - text: 'Conditional Unassigned Variables' url: '#conditional-unassigned-variables'
 - text: 'Dead Code Elimination' url: '#dead-code-elimination'
