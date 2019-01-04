@@ -104,16 +104,9 @@ class MyOptions
 
 不能动态访问扩展全局, 因为 `globals_get`/`globals_set` 优化器生成的 c 代码必须在编译时解析:
 
-<<<<<<< Updated upstream
 ```zephir
 let myOption = "someOption";
 
 // 将抛出编译器异常
 let someOption = globals_get(myOption);
 ```
-=======
-    let myOption = "someOption";
-    
-    // 将抛出编译器异常
-    let someOption = globals_get(myOption);
->>>>>>> Stashed changes

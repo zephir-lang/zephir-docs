@@ -210,7 +210,6 @@ public function some(var a)
 
 当编译器检测到一个元素被附加到一个非数组变量时引发:
 
-<<<<<<< Updated upstream
 ```zephir
 public function some()
 {
@@ -218,10 +217,3 @@ public function some()
     let b[] = "some value";
 }
 ```
-=======
-    public function some()
-    {
-        var b = false;
-        let b[] = "some value";
-    }
->>>>>>> Stashed changes

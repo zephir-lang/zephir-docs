@@ -82,7 +82,4 @@ Zephir's exceptions provide the same methods to know where the exception happene
     #0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
     #1 /home/scott/test.php(64): Robots::someMethod()
     #2 {main}
-<<<<<<< Updated upstream
 ```
-=======
->>>>>>> Stashed changes

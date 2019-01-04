@@ -92,15 +92,7 @@ class Encoder
 {
     public function encode(var callback, string text)
     {
-<<<<<<< Updated upstream
         return {callback}(text);
     }
 }
 ```
-=======
-        public function encode(var callback, string text)
-        {
-            return {callback}(text);
-        }
-    }
->>>>>>> Stashed changes

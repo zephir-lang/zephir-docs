@@ -481,10 +481,6 @@ let a = 'A';
 
 ##### automatically casted to ""
 
-<<<<<<< Updated upstream
 ```zephir
 let a = null;
 ```
-=======
-    let a = null;
->>>>>>> Stashed changes

@@ -105,16 +105,9 @@ class MyOptions
 
 Доступ к глобальным переменным расширения не может быть осуществлен с помощью динамически вычисляемого кода. Это связанно с тем, что C-код, сгенерированный оптимизаторами функций `globals_get` и `globals_set`, должен быть вычислен во время компиляции:
 
-<<<<<<< Updated upstream
 ```zephir
 let myOption = "someOption";
 
 // Выбросит ошибку компиляции
 let someOption = globals_get(myOption);
 ```
-=======
-    let myOption = "someOption";
-    
-    // Выбросит ошибку компиляции
-    let someOption = globals_get(myOption);
->>>>>>> Stashed changes

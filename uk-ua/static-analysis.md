@@ -67,8 +67,5 @@ class Utils
             echo "hello";
         }
     }
-<<<<<<< Updated upstream
 }
 ```
-=======
->>>>>>> Stashed changes

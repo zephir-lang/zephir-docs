@@ -135,10 +135,6 @@ let foo = elements["foo"];
 
 ##### Obteniendo un elemento utilizando la clave numérica 0
 
-<<<<<<< Updated upstream
 ```zephir
 let foo = elements[0];
 ```
-=======
-    let foo = elements[0];
->>>>>>> Stashed changes

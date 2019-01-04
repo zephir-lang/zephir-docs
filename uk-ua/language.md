@@ -186,16 +186,7 @@ echo $$a; // prints 100
 // Set variable $name in PHP
 let {"name"} = "hello";
 
-<<<<<<< Updated upstream
 // Set variable $price in PHP
 let name = "price";
 let {name} = 10.2;
 ```
-=======
-    // Set variable $name in PHP
-    let {"name"} = "hello";
-    
-    // Set variable $price in PHP
-    let name = "price";
-    let {name} = 10.2;
->>>>>>> Stashed changes

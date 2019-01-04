@@ -145,8 +145,4 @@ while i < length {
 }
 ```
 
-<<<<<<< Updated upstream
 Оскільки PHP працює лише з динамічними змінними, методи завжди повертають динамічні змінні. Це означає, якщо повернути статичнотипізовану змінну, то з боку PHP ми отримаємо динамічнотипізовану змінну й зможемо використати її в своєму PHP-коді. Зверніть увагу. Компілятор сам керує пам'яттю, так само, як це робить PHP. Тому вам не потрібно хвилюватися про виділення чи звільнення пам'яті, як це є в C.
-=======
-Since PHP only works with dynamic variables, methods always return dynamic variables. This means that if a statically typed variable is returned, in the PHP side you will get a dynamic variable that can be used in PHP code. Note that memory is automatically managed by the compiler, similarly to how PHP does it, so you don't need to allocate or free memory like in C.
->>>>>>> Stashed changes

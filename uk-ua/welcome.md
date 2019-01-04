@@ -78,10 +78,5 @@ echo $filter->alpha("01he#l.lo?/1"); // prints hello
 
 - [Type system](https://en.wikipedia.org/wiki/Type_system)
 - [Memory safety](https://en.wikipedia.org/wiki/Memory_safety)
-<<<<<<< Updated upstream
 - [Ahead-of-time (AOT) компіляція](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
 - [Керування пам’яттю](https://en.wikipedia.org/wiki/Memory_management)
-=======
-- [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
-- [Memory management](https://en.wikipedia.org/wiki/Memory_management)
->>>>>>> Stashed changes

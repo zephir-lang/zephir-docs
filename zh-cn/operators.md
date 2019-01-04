@@ -290,7 +290,6 @@ for path in this->_paths {
 
 上述代码的作者事先知道, 引发异常的条件不太可能发生。 这意味着, 99.9% 的时间, 我们的方法执行该条件, 但它可能永远不会被评估为 true。 对于处理器, 这可能很难知道, 因此我们可以在那里引入一个提示:
 
-<<<<<<< Updated upstream
 ```zephir
 let allPaths = [];
 for path in this->_paths {
@@ -301,13 +300,3 @@ for path in this->_paths {
     }
 }
 ```
-=======
-    let allPaths = [];
-    for path in this->_paths {
-        if unlikely path->isAllowed() == false {
-            throw new App\Exception("Some error message here");
-        } else {
-            let allPaths[] = path;
-        }
-    }
->>>>>>> Stashed changes

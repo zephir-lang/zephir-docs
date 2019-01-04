@@ -49,16 +49,7 @@ class Functional
 
     public function map(array! data)
     {
-<<<<<<< Updated upstream
         return data->map(number => number * number);
     }
 }
 ```
-=======
-    
-        public function map(array! data)
-        {
-            return data->map(number => number * number);
-        }
-    }
->>>>>>> Stashed changes

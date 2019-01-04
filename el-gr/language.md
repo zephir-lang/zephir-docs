@@ -182,7 +182,6 @@ echo $$a; // prints 100
 
 Zephir does not implement this feature, since all variables are compiled down to low-level variables, and there is no way to know which variables exist in a specific context. If you want to create a variable in the current PHP symbol table, you can use the following syntax:
 
-<<<<<<< Updated upstream
 ```zephir
 // Set variable $name in PHP
 let {"name"} = "hello";
@@ -191,11 +190,3 @@ let {"name"} = "hello";
 let name = "price";
 let {name} = 10.2;
 ```
-=======
-    // Set variable $name in PHP
-    let {"name"} = "hello";
-    
-    // Set variable $price in PHP
-    let name = "price";
-    let {name} = 10.2;
->>>>>>> Stashed changes

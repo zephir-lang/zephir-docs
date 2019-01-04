@@ -279,10 +279,6 @@ let this->number--;     // disminuir una propiedad de un objecto
 
 Varias mutaciones pueden ser realizadas en una sola operación `let`:
 
-<<<<<<< Updated upstream
 ```zephir
 let price = 1.00, realPrice = price, status = false;
 ```
-=======
-    let price = 1.00, realPrice = price, status = false;
->>>>>>> Stashed changes

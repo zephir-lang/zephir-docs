@@ -481,10 +481,6 @@ let a = 'A';
 
 ##### 自动转换为""
 
-<<<<<<< Updated upstream
 ```zephir
 let a = null;
 ```
-=======
-    let a = null;
->>>>>>> Stashed changes

@@ -287,7 +287,6 @@ for path in this->_paths {
 
 Авторы кода, приведенного выше, заранее знают, что условие, которое выбрасывает исключение, вряд ли произойдет. Это означает, что в 99.9% случаев наш метод выполняет эту проверку в холостую — условие вероятно не будет оцениваться как истинное. Но для процессора, обычно, это сложно понять, поэтому мы могли бы ввести здесь подсказку:
 
-<<<<<<< Updated upstream
 ```zephir
 let allPaths = [];
 for path in this->_paths {
@@ -298,13 +297,3 @@ for path in this->_paths {
     }
 }
 ```
-=======
-    let allPaths = [];
-    for path in this->_paths {
-        if unlikely path->isAllowed() == false {
-            throw new App\Exception("Некое сообщение об ошибке");
-        } else {
-            let allPaths[] = path;
-        }
-    }
->>>>>>> Stashed changes

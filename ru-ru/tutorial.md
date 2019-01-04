@@ -75,11 +75,7 @@ zephir help
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-<<<<<<< Updated upstream
-Если что-то пошло не так, вернитесь к разделу [установка](/0.11/ru-ru/installation).
-=======
 Если что-то пошло не так, вернитесь к разделу [установка](/0.10/ru-ru/installation).
->>>>>>> Stashed changes
 
 <a name='extension-skeleton'></a>
 

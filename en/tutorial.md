@@ -73,7 +73,7 @@ Options:
     -W([a-z0-9\-]+)     Turns a warning off
 ```
 
-If something went wrong, please return back to the [installation](/0.11/en/installation) page.
+If something went wrong, please return back to the [installation](/0.10/en/installation) page.
 
 <a name='extension-skeleton'></a>
 ## Extension Skeleton

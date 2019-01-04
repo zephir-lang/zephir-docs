@@ -210,7 +210,6 @@ public function some(var a)
 
 Raised when the compiler detects that an element is being appended to a non-array variable:
 
-<<<<<<< Updated upstream
 ```zephir
 public function some()
 {
@@ -218,10 +217,3 @@ public function some()
     let b[] = "some value";
 }
 ```
-=======
-    public function some()
-    {
-        var b = false;
-        let b[] = "some value";
-    }
->>>>>>> Stashed changes

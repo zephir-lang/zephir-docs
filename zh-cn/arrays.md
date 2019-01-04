@@ -135,10 +135,6 @@ let foo = elements["foo"];
 
 ##### 使用数字键0获取元素
 
-<<<<<<< Updated upstream
 ```zephir
 let foo = elements[0];
 ```
-=======
-    let foo = elements[0];
->>>>>>> Stashed changes

@@ -279,10 +279,6 @@ let this->number--;     // decrement object property
 
 Multiple mutations can be performed in a single `let` operation:
 
-<<<<<<< Updated upstream
 ```zephir
 let price = 1.00, realPrice = price, status = false;
 ```
-=======
-    let price = 1.00, realPrice = price, status = false;
->>>>>>> Stashed changes

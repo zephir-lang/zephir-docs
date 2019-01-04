@@ -481,10 +481,6 @@ let a = 'A';
 
 ##### Automáticamente clasificado a ""
 
-<<<<<<< Updated upstream
 ```zephir
 let a = null;
 ```
-=======
-    let a = null;
->>>>>>> Stashed changes

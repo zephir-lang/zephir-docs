@@ -287,7 +287,6 @@ for path in this->_paths {
 
 The authors of the above code know in advance that the condition that throws the exception is unlikely to happen. This means that, 99.9% of the time, our method executes that condition, but it is probably never evaluated as true. For the processor, this could be hard to know, so we could introduce a hint there:
 
-<<<<<<< Updated upstream
 ```zephir
 let allPaths = [];
 for path in this->_paths {
@@ -298,13 +297,3 @@ for path in this->_paths {
     }
 }
 ```
-=======
-    let allPaths = [];
-    for path in this->_paths {
-        if unlikely path->isAllowed() == false {
-            throw new App\Exception("Some error message here");
-        } else {
-            let allPaths[] = path;
-        }
-    }
->>>>>>> Stashed changes

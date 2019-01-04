@@ -182,7 +182,6 @@ echo $$a; // prints 100
 
 Zephir没有实现这个特性，因为所有变量都被编译为低级变量，而且无法知道在特定上下文中存在哪些变量。 如果您想在当前PHP符号表中创建一个变量，您可以使用以下语法:
 
-<<<<<<< Updated upstream
 ```zephir
 // Set variable $name in PHP
 let {"name"} = "hello";
@@ -191,11 +190,3 @@ let {"name"} = "hello";
 let name = "price";
 let {name} = 10.2;
 ```
-=======
-    // Set variable $name in PHP
-    let {"name"} = "hello";
-    
-    // Set variable $price in PHP
-    let name = "price";
-    let {name} = 10.2;
->>>>>>> Stashed changes
