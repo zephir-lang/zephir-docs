@@ -1,3 +1,9 @@
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # 例外情况
 
 Zephir以非常低的级别实现异常，为PHP提供类似的行为和功能。
@@ -6,69 +12,75 @@ Zephir以非常低的级别实现异常，为PHP提供类似的行为和功能�
 
 可以在`try`语句中抛出异常。 和PHP一样，在`catch`中捕获异常并处理
 
-    var e;
-    try {
-    
-        throw new \Exception("This is an exception");
-    
-    } catch \Exception, e {
-    
-        echo e->getMessage();
-    }
-    
+```zephir
+var e;
+try {
+
+    throw new \Exception("This is an exception");
+
+} catch \Exception, e {
+
+    echo e->getMessage();
+}
+```
 
 Zephir 还提供了一个“安静”`try`语句，用来忽略产生的任何异常：
 
-    try {
-        throw new \Exception("This is an exception");
-    }
-    
+```zephir
+try {
+    throw new \Exception("This is an exception");
+}
+```
 
 如果在<0>catch</0>中不处理异常，可以不提供异常变量：
 
-    try {
-    
-        throw new \Exception("This is an exception");
-    
-    } catch \Exception {
-    
-        echo "An exception occur!";
-    }
-    
+```zephir
+try {
+
+    throw new \Exception("This is an exception");
+
+} catch \Exception {
+
+    echo "An exception occur!";
+}
+```
 
 在`catch`中捕获多个异常：
 
-    var e;
-    try {
-    
-        throw new \Exception("This is an exception");
-    
-    } catch \RuntimeException|\Exception, e {
-    
-        echo e->getMessage();
-    }
-    
+```zephir
+var e;
+try {
+
+    throw new \Exception("This is an exception");
+
+} catch \RuntimeException|\Exception, e {
+
+    echo e->getMessage();
+}
+```
 
 Zephir允许您抛出文字或静态类型变量，就像它们是异常的消息一样：
 
-    // throw new \Exception("Test");
-    throw "Test";
-    
-    // throw new \Exception((string) 't');
-    throw 't';
-    
-    // throw new \Exception((string) 123);
-    throw 123;
-    
-    // throw new \Exception((string) 123.123);
-    throw 123.123;
-    
+```zephir
+// throw new \Exception("Test");
+throw "Test";
 
-Zephir的异常提供了相同的方法来知道PHP异常发生的异常发生的位置。 也就是说，` Exception::getFile()</ 0>和<code> Exception::getLine()</ 0>返回抛出异常的Zephir代码中的位置：</p>
+// throw new \Exception((string) 't');
+throw 't';
 
-<pre><code>Exception: The static method 'someMethod' does not exist on model 'Robots'
-File=phalcon/mvc/model.zep Line=4042
-#0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
-#1 /home/scott/test.php(64): Robots::someMethod()
-#2 {main}
-`</pre>
+// throw new \Exception((string) 123);
+throw 123;
+
+// throw new \Exception((string) 123.123);
+throw 123.123;
+```zephir
+
+Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is, `Exception::getFile()` and `Exception::getLine()` return the location in the Zephir code where the exception was thrown:
+
+```bash
+    Exception: The static method 'someMethod' does not exist on model 'Robots'
+    File=phalcon/mvc/model.zep Line=4042
+    #0 /home/scott/test.php(64): Phalcon\Mvc\Model::__callStatic('someMethod', Array)
+    #1 /home/scott/test.php(64): Robots::someMethod()
+    #2 {main}
+```
