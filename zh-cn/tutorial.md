@@ -75,11 +75,7 @@ zephir 帮助
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-<<<<<<< HEAD
-If something went wrong, please return back to the [installation](/0.11/en/installation) page.
-=======
 如果出现问题, 请返回到 [installation](/0.11/zh-cn/installation) 页面。
->>>>>>> 0.11
 
 <a name='extension-skeleton'></a>
 
