@@ -1,3 +1,28 @@
+* * *
+
+layout: default language: 'en' version: '0.10' menu:
+
+* text: 'Classes' url: '#classes' sub: 
+    * text: 'Class Modifiers' url: '#classes-modifiers'
+    * text: 'Implementing Interfaces' url: '#classes-interfaces'
+* text: 'Implementing Methods' url: '#implementing-methods' sub: 
+    * text: 'Optional nullable parameters' url: '#implementing-methods-optional-nullable-parameters'
+    * text: 'Supported Visibilities' url: '#implementing-methods-supported-visibilities'
+    * text: 'Supported Modifiers' url: '#implementing-methods-supported-modifiers'
+    * text: 'Getter/Setter shortcuts' url: '#implementing-methods-getter-setter-shortcuts'
+    * text: 'Return Type Hints' url: '#implementing-methods-return-type-hints'
+    * text: 'Return Type: Void' url: '#implementing-methods-return-type-void'
+    * text: 'Strict/Flexible Parameter Data-Types' url: '#implementing-methods-strict-flexible-parameter-data-types'
+    * text: 'Read-Only Parameters' url: '#implementing-methods-read-only-parameters'
+* text: 'Implementing Properties' url: '#implementing-properties' sub: 
+    * text: 'Updating Properties' url: '#implementing-properties-updating'
+    * text: 'Reading Properties' url: '#implementing-properties-reading'
+* text: 'Class Constants' url: '#class-constants'
+* text: 'Calling Methods' url: '#calling-methods' sub: 
+    * text: 'Parameters by Name' url: '#calling-methods-parameters-by-name'
+
+* * *
+
 # Classes and Objects
 
 Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
