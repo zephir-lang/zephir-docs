@@ -74,7 +74,7 @@ throw 123;
 throw 123.123;
 ```zephir
 
-Zephir的异常提供了相同的方法来知道PHP异常发生的异常发生的位置。 也就是说，` Exception::getFile()</ 0>和<code> Exception::getLine()</ 0>返回抛出异常的Zephir代码中的位置：</p>
+Zephir的异常提供了相同的方法来知道PHP异常发生的异常发生的位置。 也就是说，` `Exception::getFile()`和 `Exception::getLine()`返回抛出异常的Zephir代码中的位置：</p>
 
 ```bash
     Exception: The static method 'someMethod' does not exist on model 'Robots'

@@ -32,7 +32,7 @@ Zephir, і цей посібник, призначені для PHP-розроб
 
 <a name='checking-the-installation'></a>
 
-## Checking the Installation
+## Перевірка встановлення
 
 Якщо ви успішно встановили Zephir, тоді виконайте таку команду в консолі:
 
@@ -79,7 +79,7 @@ If something went wrong, please return back to the [installation](/0.10/en/insta
 
 <a name='extension-skeleton'></a>
 
-## Extension Skeleton
+## Каркас розширення
 
 Перше, що нам потрібно зробити це згенерувати каркас розширення. Це створить базову структуру нашого розширення з якою ми працюватимемо далі. У нашому випадку ми створимо розширення під назвою `utils` (утиліти):
 
@@ -109,7 +109,7 @@ ext/ utils/ config.json
 
 <a name='adding-our-first-class'></a>
 
-## Adding our first class
+## Додавання нашого першого класу
 
 Zephir спроектований створювати об'єктно-орієнтовані розширення. Щоб почати розробку, нам потрібно додати наш перший клас до розширення.
 
@@ -154,7 +154,7 @@ Don't forget to restart your web server
 
 <a name='initial-testing'></a>
 
-## Initial Testing
+## Первинне тестування
 
 Тепер, коли розширення було додано до вашого `php.ini`, перевірте правильність завантаження розширення, виконавши наступну команду:
 
@@ -187,7 +187,7 @@ echo Utils\Greeting::say(), "\n";
 
 <a name='a-useful-class'></a>
 
-## A useful class
+## Корисний клас
 
 Метод `Utils\Greeting::say` хороший для перевірки, чи правильно налаштоване наше середовище. Тепер створімо кілька корисних класів.
 

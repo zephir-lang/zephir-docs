@@ -13,13 +13,13 @@ menu:
         'Testing the installation'
     url: '#testing-the-installation'
 ---
-# Installation
+# Встановлення
 
 Щоб встановити Zephir, будь ласка, слідуйте наступним крокам:
 
 <a name='prerequisites'></a>
 
-## Prerequisites
+## Передумови
 
 Щоб створити PHP-розширення за допомогою Zephir, вам потрібні наступні програми та засоби:
 
@@ -69,11 +69,11 @@ Zend Extension Api No:   320151012
 
 <a name='installing-zephir'></a>
 
-## Installing Zephir
+## Встановлення Zephir
 
 <a name='git-way'></a>
 
-### Git Way
+### З використанням Git
 
 Для початку переконайтеся, що Zephir parser встановлений і активований. За подробицями зверніться до [наступного посібника](https://github.com/phalcon/php-zephir-parser).
 
@@ -100,7 +100,7 @@ composer install
 
 <a name='testing-the-installation'></a>
 
-## Testing the Installation
+## Тестування встановлення
 
 Перевірте, чи доступний Zephir з будь-якого каталогу за допомогою такої команди:
 
