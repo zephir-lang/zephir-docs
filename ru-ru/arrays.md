@@ -1,0 +1,131 @@
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+- text: 'Declaring Array Variables' url: '#declaring-array-variables'
+- text: 'Creating Arrays' url: '#creating-arrays'
+- text: 'Updating arrays' url: '#updating-arrays'
+- text: 'Appending elements' url: '#appending-elements'
+- text: 'Reading elements from arrays' url: '#reading-elements-from-arrays'
+
+* * *
+
+# Массивы
+
+Работа с массивами в Zephir происходит таким же образом как и с [массивами в PHP](http://www.php.net/manual/en/language.types.array.php). По своей сути, массив является реализацией [хеш таблицы](http://en.wikipedia.org/wiki/Hash_table).
+
+<a name='declaring-array-variables'></a>
+
+## Объявление массивов
+
+Массивы могут быть объявлены с помощью ключевых слов 'var' или 'array':
+
+```zephir
+var a = []; // массив, с возможностью переопределения типа
+array b = []; // массив, без возможности переопределения типа
+```
+
+<a name='creating-arrays'></a>
+
+## Создание массивов
+
+Массив создается путём заключения его элементов в квадратные скобки:
+
+##### Создание пустого массива
+
+```zephir
+let elements = [];
+```
+
+##### Создание массива с элементами
+
+```zephir
+let elements = [1, 3, 4];
+```
+
+##### Создание массива с элементами разных типов
+
+```zephir
+let elements = ["first", 2, true];
+```
+
+##### Создание многомерного массива
+
+```zephir
+let elements = [[0, 1], [4, 5], [2, 3]];
+```
+
+Как и в PHP, поддерживаются простые (списки) и ассоциативные массивы:
+
+##### Создание массива с строковыми ключами
+
+```zephir
+let elements = ["foo": "bar", "bar": "foo"];
+```
+
+##### Создание массива с числовыми ключами
+
+```zephir
+let elements = [4: "bar", 8: "foo"];
+```
+
+##### Создание массива со смешанными ключами (строковые и числовые)
+
+```zephir
+let elements = [4: "bar", "foo": 8];
+```
+
+<a name='updating-arrays'></a>
+
+## Обновление массивов
+
+Массивы обновляются так же, как в PHP, используя квадратные скобки:
+
+##### Обновление массива с строковым ключём
+
+```zephir
+let elements["foo"] = "bar";
+```
+
+##### Обновление массива с числовым ключем
+
+```zephir
+let elements[0] = "bar";
+```
+
+##### Обновление многомерного массива
+
+```zephir
+let elements[0]["foo"] = "bar";
+let elements["foo"][0] = "bar";
+```
+
+<a name='appending-elements'></a>
+
+## Добавление элементов
+
+Элементы могут быть добавлены в конце массива следующим образом:
+
+##### Добавление элемента в массив
+
+```zephir
+let elements[] = "bar";
+```
+
+<a name='reading-elements-from-arrays'></a>
+
+## Чтение элементов из массивов
+
+Можно прочитать элементы массива следующим образом:
+
+##### Получение элемента используя строковый ключ `foo`
+
+```zephir
+let foo = elements["foo"];
+```
+
+##### Получение элемента используя числовой ключ 0
+
+```zephir
+let foo = elements[0];
+```
