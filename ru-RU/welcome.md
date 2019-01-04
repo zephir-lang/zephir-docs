@@ -20,7 +20,7 @@ menu:
 
 Основные особенности Zephir:
 
-| Особенность                   | Description                                   |
+| Особенность                   | Описание                                      |
 | ----------------------------- | --------------------------------------------- |
 | Система типов                 | динамическая/статическая                      |
 | Безопасность доступа к памяти | указатели и ручное выделение памяти запрещены |
@@ -33,40 +33,42 @@ menu:
 
 Этот код регистрирует класс с методом, который оставляет в строке только буквы:
 
-    namespace MyLibrary;
-    
+```zephir
+namespace MyLibrary;
+
+/**
+ * Filter
+ */
+class Filter
+{
     /**
-     * Filter
+     * Filters a string, returning its alpha charactersa
+     *
+     * @param string str
      */
-    class Filter
+    public function alpha(string str)
     {
-        /**
-         * Filters a string, returning its alpha charactersa
-         *
-         * @param string str
-         */
-        public function alpha(string str)
-        {
-            char ch; string filtered = "";
-    
-            for ch in str {
-               if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
-                  let filtered .= ch;
-               }
-            }
-    
-            return filtered;
+        char ch; string filtered = "";
+
+        for ch in str {
+           if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+              let filtered .= ch;
+           }
         }
+
+        return filtered;
     }
-    
+}
+```
 
 А теперь используем этот класс в PHP:
 
-    <?php
-    
-    $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01he#l.lo?/1"); // выведет hello
-    
+```php
+<?php
+
+$filter = new MyLibrary\Filter();
+echo $filter->alpha("01he#l.lo?/1"); // выведет hello
+```
 
 <a name='external-links'></a>
 

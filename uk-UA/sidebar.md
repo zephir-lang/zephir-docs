@@ -10,16 +10,16 @@ menu:
         'Why Zephir'
     url: 'motivation'
   - text: 
-        'Introducing Zephir'
+        'Представляємо Zephir'
     url: 'introduction'
   - text: 
-        'Installation'
+        'Встановлення'
     url: 'installation'
   - text: 
         'Tutorial'
     url: 'tutorial'
   - text: 
-        'Basic Syntax'
+        'Базовий синтаксис'
     url: 'language'
   - text: 
         'Types'

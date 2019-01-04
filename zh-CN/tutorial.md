@@ -37,7 +37,7 @@ Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其�
 如果您已成功安装 Zephir, 则可以在控制台中执行以下命令:
 
 ```bash
-zephir 帮助
+zephir help
 ```
 
 如果一切正常, 您应该看到以下帮助 (或非常相似的内容):
@@ -75,7 +75,7 @@ zephir 帮助
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-如果出现问题, 请返回到 [installation](/{{ page.version }}/{{ page.language }}/installation) 页面。
+如果出现问题, 请返回到 [installation](/0.11/zh-cn/installation) 页面。
 
 <a name='extension-skeleton'></a>
 
@@ -89,10 +89,11 @@ zephir init utils
 
 在此之后, 将在当前工作目录上创建一个名为 "utils" 的目录:
 
-    utils/
-       ext/
-       utils/
-    
+```bash
+utils/
+   ext/
+   utils/
+```
 
 目录 `ext/` (内部实用程序) 包含编译器将用于生成扩展的代码。 创建的另一个目录是 `utils`-此目录与我们的扩展具有相同的名称。 我们将把 Zephir 代码放在那里。
 
@@ -116,7 +117,7 @@ Zephir 旨在生成面向对象的扩展。 要开始开发功能, 我们需要�
 
 此类的代码必须放在 `utils/utils/greeting.zep`:
 
-```zep
+```zephir
 namespace Utils;
 
 class Greeting
@@ -138,11 +139,12 @@ zephir build
 
 最初，也只是第一次，执行了许多内部命令，生成必要的代码和配置，以便将该类导出到PHP扩展。 如果一切顺利, 您将在输出的末尾看到以下消息:
 
+```bash
     ...
-    Extension installed!
-    添加 extension=utils.so 到你的 php.ini
-    不要忘记重启你的服务器
-    
+Extension installed!
+添加 extension=utils.so 到你的 php.ini
+不要忘记重启你的服务器
+```
 
 在上述步骤中, 您很可能需要提供根密码才能安装扩展。
 
@@ -193,7 +195,7 @@ echo Utils\Greeting::say(), "\n";
 
 此类的基本框架如下所示:
 
-```zep
+```zephir
 namespace Utils;
 
 class Filter
@@ -204,7 +206,7 @@ class Filter
 
 该类包含筛选方法, 这些方法可帮助用户从字符串中筛选不需要的字符。 第一种方法称为 `alpha`, 其目的是只筛选那些 ASCII 基本字母的字符。 首先, 我们只是遍历字符串, 将每个字节打印到标准输出:
 
-```zep
+```zephir
 namespace Utils;
 
 class Filter
@@ -241,7 +243,7 @@ $f->alpha("hello");
 
 检查字符串中的每个字符很简单。 现在, 我们将使用正确的筛选字符创建另一个字符串:
 
-```zep
+```zephir
 class Filter
 {
 

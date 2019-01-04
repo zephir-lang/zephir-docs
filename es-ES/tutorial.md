@@ -89,10 +89,11 @@ zephir init utils
 
 Después de esto, un directorio llamado "utils" es creado en el directorio actual de trabajo:
 
-    utils/
-       ext/
-       utils/
-    
+```bash
+utils/
+   ext/
+   utils/
+```
 
 El directorio `ext/` (dentro del directorio utils) contiene el código que utilizará el compilador para producir la extensión. Otro directorio creado es `utils` este directorio tiene el mismo nombre que nuestra extensión. Aquí pondremos nuestro código Zephir.
 
@@ -116,7 +117,7 @@ Como en muchos lenguajes y herramientas, lo primero que queremos hacer es ver un
 
 El código para esta clase se debe colocar en `utils/utils/greeting.zep`:
 
-```zep
+```zephir
 namespace Utils;
 
 class Greeting
@@ -138,11 +139,12 @@ zephir build
 
 Inicialmente, y sólo por primera vez, una serie de comandos internos son ejecutados produciendo el código necesario y configuraciones para exportar esta clase a la extensión PHP. Si todo va bien, verá el siguiente mensaje al final de la salida:
 
+```bash
     ...
-    Extension installed!
-    Add extension=utils.so to your php.ini
-    Don't forget to restart your web server
-    
+Extension installed!
+Add extension=utils.so to your php.ini
+Don't forget to restart your web server
+```
 
 En el paso anterior, es probable que necesite suministrar su contraseña de root para poder instalar la extensión.
 
@@ -193,7 +195,7 @@ La primer clase útil que vamos a agregar a esta extensión proveerá facilidade
 
 El esqueleto básico de esta clase es el siguiente:
 
-```zep
+```zephir
 namespace Utils;
 
 class Filter
@@ -204,7 +206,7 @@ class Filter
 
 La clase contiene métodos de filtrado para ayudar a los usuarios a filtrar caracteres no deseados de las cadenas de texto. El primer método es llamado `alpha`, y su propósito es filtrar solo las letras básicas de los caracteres ASCII. Para comenzar, vamos a recorrer la cadena de texto, imprimiendo cada byte en la salida estándar:
 
-```zep
+```zephir
 namespace Utils;
 
 class Filter
@@ -240,7 +242,7 @@ Usted verá:
 
 La comprobación de todos los caracteres de la cadena es sencilla. Ahora crearemos otra cadena con los caracteres filtrados correctos:
 
-```zep
+```zephir
 class Filter
 {
 

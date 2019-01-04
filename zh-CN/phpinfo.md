@@ -11,23 +11,24 @@ version: '0.10'
 
 通过向 `config.json` 文件中添加以下配置, 可以添加更多指令:
 
-    "info": [
-        {
-            "header": ["Directive", "Value"],
-            "rows": [
-                ["setting1", "value1"],
-                ["setting2", "value2"]
-            ]
-        },
-        {
-            "header": ["Directive", "Value"],
-            "rows": [
-                ["setting3", "value3"],
-                ["setting4", "value4"]
-            ]
-        }
-    ]
-    
+```json
+"info": [
+    {
+        "header": ["Directive", "Value"],
+        "rows": [
+            ["setting1", "value1"],
+            ["setting2", "value2"]
+        ]
+    },
+    {
+        "header": ["Directive", "Value"],
+        "rows": [
+            ["setting3", "value3"],
+            ["setting4", "value4"]
+        ]
+    }
+]
+```
 
 此信息将如下所示:
 

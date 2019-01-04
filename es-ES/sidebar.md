@@ -4,75 +4,75 @@ language: 'es-ES'
 version: '0.10'
 menu:
   - text: 
-        'Welcome'
+        'Bienvenido'
     url: 'welcome'
   - text: 
-        'Why Zephir'
+        '¿Por qué Zephir?'
     url: 'motivation'
   - text: 
-        'Introducing Zephir'
+        'Introducción a Zephir'
     url: 'introduction'
   - text: 
-        'Installation'
+        'Instalación'
     url: 'installation'
   - text: 
         'Tutorial'
     url: 'tutorial'
   - text: 
-        'Basic Syntax'
+        'Sintaxis básica'
     url: 'language'
   - text: 
-        'Types'
+        'Tipos'
     url: 'types'
   - text: 
-        'Operators'
+        'Operadores'
     url: 'operators'
   - text: 
         'Arrays'
     url: 'arrays'
   - text: 
-        'Classes and objects'
+        'Clases y Objetos'
     url: 'oop'
   - text: 
-        'Built-in methods'
+        'Métodos integrados'
     url: 'builtin-methods'
   - text: 
-        'Control structures'
+        'Estructuras de Control'
     url: 'control-structures'
   - text: 
-        'Exceptions'
+        'Excepciones'
     url: 'exceptions'
   - text: 
-        'Calling functions'
+        'Llamando a funciones'
     url: 'functions'
   - text: 
         'Closures'
     url: 'closures'
   - text: 
-        'Custom optimizers'
+        'Optimizadores personalizados'
     url: 'optimizers'
   - text: 
-        'Configuration file'
+        'Archivo de configuración'
     url: 'config'
   - text: 
-        'Lifecycle hooks'
+        'Ganchos en el ciclo de vida'
     url: 'lifecycle'
   - text: 
-        'Extension globals'
+        'Globales de Extensión'
     url: 'globals'
   - text: 
-        'phpinfo() sections'
+        'Secciones del phpinfo()'
     url: 'phpinfo'
   - text: 
-        'Static analysis'
+        'Análisis estático'
     url: 'static-analysis'
   - text: 
-        'Optimizations'
+        'Optimizaciones'
     url: 'optimizations'
   - text: 
-        'Compiler warnings'
+        'Advertencias de Compilación'
     url: 'warnings'
   - text: 
-        'License'
+        'Licencia'
     url: 'license'
 ---
