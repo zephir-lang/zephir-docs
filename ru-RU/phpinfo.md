@@ -11,23 +11,24 @@ version: '0.11'
 
 Вы можете добавить больше директив, добавив следующую конфигурацию в файл `config.json`:
 
-    "info": [
-        {
-            "header": ["Directive", "Value"],
-            "rows": [
-                ["setting1", "value1"],
-                ["setting2", "value2"]
-            ]
-        },
-        {
-            "header": ["Directive", "Value"],
-            "rows": [
-                ["setting3", "value3"],
-                ["setting4", "value4"]
-            ]
-        }
-    ]
-    
+```json
+"info": [
+    {
+        "header": ["Directive", "Value"],
+        "rows": [
+            ["setting1", "value1"],
+            ["setting2", "value2"]
+        ]
+    },
+    {
+        "header": ["Directive", "Value"],
+        "rows": [
+            ["setting3", "value3"],
+            ["setting4", "value4"]
+        ]
+    }
+]
+```
 
 Эта информация будет отображена следующим образом:
 

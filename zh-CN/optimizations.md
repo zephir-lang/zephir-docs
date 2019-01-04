@@ -36,13 +36,15 @@ menu:
 
 您可以通过传递 `-f` 前缀的名称来启用优化:
 
-    zephir -fstatic-type-inference -flocal-context-pass
-    
+```bash
+zephir -fstatic-type-inference -flocal-context-pass
+```
 
 可以通过传递 `-fno-` 前缀的名称来禁用优化:
 
-    zephir -fno-static-type-inference -fno-call-gatherer-pass
-    
+```bash
+zephir -fno-static-type-inference -fno-call-gatherer-pass
+```
 
 使用最新版本的zephir解析器，可以在配置文件`config.json`中配置优化。
 
@@ -54,16 +56,17 @@ menu:
 
 这个遍历计算在同一个方法中调用一个函数或方法的次数。 这允许编译器引入内联缓存, 以避免方法或函数查找:
 
-    class MyClass extends OtherClass
+```zephir
+class MyClass extends OtherClass
+{
+
+    public function getValue()
     {
-    
-        public function getValue()
-        {
-            this->someMethod();
-            this->someMethod(); // This method is called faster
-        }
+        this->someMethod();
+        this->someMethod(); // This method is called faster
     }
-    
+}
+```
 
 <a name='check-invalid-reads'></a>
 
@@ -71,7 +74,7 @@ menu:
 
 在编译过程中, 这个标志将强制检查类型来检测无效的读取。 这可确保使用默认值 (以及内部指针) 正确定义和初始化所有变量。 一个例子:
 
-```zep
+```zephir
 namespace Acme;
 
 class ForInRange
@@ -88,7 +91,7 @@ class ForInRange
 
 与之比较：
 
-```zep
+```zephir
 namespace Acme;
 
 class ForInRange
@@ -133,19 +136,21 @@ zephir_fetch_params(1, 1, 0, &n);
 
 常量折叠是在编译时对常量表达式进行简化的过程。 启用此优化时, 将简化以下代码:
 
-    public function getValue()
-    {
-        return (86400 * 30) / 12;
-    }
-    
+```zephir
+public function getValue()
+{
+    return (86400 * 30) / 12;
+}
+```
 
 转换为:
 
-    public function getValue()
-    {
-        return 216000;
-    }
-    
+```zephir
+public function getValue()
+{
+    return 216000;
+}
+```
 
 <a name='internal-call-transformation'></a>
 
@@ -174,31 +179,33 @@ zephir_fetch_params(1, 1, 0, &n);
 
 此优化将替换编译时的类常量值:
 
-    class MyClass
+```zephir
+class MyClass
+{
+
+    const SOME_CONSTANT = 100;
+
+    public function getValue()
     {
-    
-        const SOME_CONSTANT = 100;
-    
-        public function getValue()
-        {
-            return self::SOME_CONSTANT;
-        }
+        return self::SOME_CONSTANT;
     }
-    
+}
+```
 
 转换为:
 
-    class MyClass
+```zephir
+class MyClass
+{
+
+    const SOME_CONSTANT = 100;
+
+    public function getValue()
     {
-    
-        const SOME_CONSTANT = 100;
-    
-        public function getValue()
-        {
-            return 100;
-        }
+        return 100;
     }
-    
+}
+```
 
 <a name='static-type-inference'></a>
 
@@ -208,37 +215,39 @@ zephir_fetch_params(1, 1, 0, &n);
 
 下面的代码使用一组动态变量来执行一些数学计算:
 
-    public function someCalculations(var a, var b)
-    {
-        var i = 0, t = 1;
-    
-        while i < 100 {
-            if i % 3 == 0 {
-                continue;
-            }
-            let t += (a - i), i++;
+```zephir
+public function someCalculations(var a, var b)
+{
+    var i = 0, t = 1;
+
+    while i < 100 {
+        if i % 3 == 0 {
+            continue;
         }
-    
-        return i + b;
+        let t += (a - i), i++;
     }
-    
+
+    return i + b;
+}
+```
 
 变量`a`， `b`， `i`仅用于数学运算，因此可以利用其他编译通道转换为静态变量。 在此传递之后, 编译器会自动将此代码重写为:
 
-    public function someCalculations(int a, int b)
-    {
-        int i = 0, t = 1;
-    
-        while i < 100 {
-            if i % 3 == 0 {
-                continue;
-            }
-            let t += (a - i), i++;
+```zephir
+public function someCalculations(int a, int b)
+{
+    int i = 0, t = 1;
+
+    while i < 100 {
+        if i % 3 == 0 {
+            continue;
         }
-    
-        return i + b;
+        let t += (a - i), i++;
     }
-    
+
+    return i + b;
+}
+```
 
 通过禁用此编译过程, 所有变量都将维护最初声明它们的类型, 而不进行优化。
 

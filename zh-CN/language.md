@@ -37,31 +37,34 @@ menu:
 
 例如, 给定以下结构, 每个文件中的类必须是:
 
-    mylibrary/
-        router/
-            exception.zep # 
-        router.zep # MyLibrary\Router
-    
+```bash
+mylibrary/
+    router/
+        exception.zep # 
+    router.zep # MyLibrary\Router
+```
 
 Class in `mylibrary/router.zep`:
 
-    namespace MyLibrary;
-    
-    class Router
-    {
-    
-    }
-    
+```zephir
+namespace MyLibrary;
+
+class Router
+{
+
+}
+```
 
 Class in `mylibrary/router/exception.zep`:
 
-    namespace MyLibrary\Router;
-    
-    class Exception extends \Exception
-    {
-    
-    }
-    
+```zephir
+namespace MyLibrary\Router;
+
+class Exception extends \Exception
+{
+
+}
+```
 
 如果文件或类不在预期文件中, 则 Zephir 将引发编译器异常, 反之亦然。
 
@@ -71,8 +74,9 @@ Class in `mylibrary/router/exception.zep`:
 
 您可能已经注意到, 前一章中的代码示例中很少有分号。 您可以使用分号分隔语句和表达式, 如 java、c/c ++、php 和类似语言:
 
-    myObject->myMethod(1, 2, 3); echo "world";
-    
+```zephir
+myObject->myMethod(1, 2, 3); echo "world";
+```
 
 <a name='comments'></a>
 
@@ -80,12 +84,13 @@ Class in `mylibrary/router/exception.zep`:
 
 Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `/* ... */`:
 
-    // this is a one line comment
-    
-    /**
-     * multi-line comment
-     */
-    
+```zephir
+// this is a one line comment
+
+/**
+ * multi-line comment
+ */
+```
 
 在大多数语言中，注释只是编译器/解释器忽略的文本。 在Zephir中，多行注释也用作docblock，它们被导出到生成的代码中，因此它们是语言的一部分!
 
@@ -97,27 +102,30 @@ Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `
 
 在Zephir中，必须声明给定范围中使用的所有变量。 这为编译器执行优化和验证提供了重要信息。 变量必须是唯一的标识符，它们不能是保留字。
 
-    // 在同一指令中声明相同类型的变量
-    var a, b, c;
-    
-    // 在单独的行中声明每个变量
-    var a;
-    var b;
-    var c;
-    
+```zephir
+// 在同一指令中声明相同类型的变量
+var a, b, c;
+
+// 在单独的行中声明每个变量
+var a;
+var b;
+var c;
+```
 
 变量可以选择有一个初始兼容的默认值:
 
-    // 使用默认值声明变量
-    var a = "hello", b = 0, c = 1.0;
-    int d = 50; bool some = true;
-    
+```zephir
+// 使用默认值声明变量
+var a = "hello", b = 0, c = 1.0;
+int d = 50; bool some = true;
+```
 
 变量名区分大小写，以下变量不同:
 
-    // 不同的变量
-    var somevalue, someValue, SomeValue;
-    
+```zephir
+// 不同的变量
+var somevalue, someValue, SomeValue;
+```
 
 <a name='variable-scope'></a>
 
@@ -125,25 +133,24 @@ Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `
 
 所有声明的变量都局部作用于声明它们的方法:
 
-    namespace Test;
-    
-    class MyClass
+```zephir
+namespace Test;
+
+class MyClass
+{
+    public function someMethod1()
     {
-    
-        public function someMethod1()
-        {
-            int a = 1, b = 2;
-            return a + b;
-        }
-    
-        public function someMethod2()
-        {
-            int a = 3, b = 4;
-            return a + b;
-        }
-    
+        int a = 1, b = 2;
+        return a + b;
     }
-    
+
+    public function someMethod2()
+    {
+        int a = 3, b = 4;
+        return a + b;
+    }
+}
+```
 
 <a name='super-global'></a>
 
@@ -151,12 +158,13 @@ Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `
 
 Zephir不支持全局变量——不允许从PHP代码块访问全局变量。 然而，您可以访问PHP的超全局变量，如下所示:
 
-    // 从_POST获取值
-    let price = _POST["price"];
-    
-    // 从_SERVER读取值
-    let requestMethod = _SERVER["REQUEST_METHOD"];
-    
+```zephir
+// 从_POST获取值
+let price = _POST["price"];
+
+// 从_SERVER读取值
+let requestMethod = _SERVER["REQUEST_METHOD"];
+```
 
 <a name='local-symbol-table'></a>
 
@@ -164,18 +172,21 @@ Zephir不支持全局变量——不允许从PHP代码块访问全局变量。 �
 
 PHP中的每个方法或上下文都有一个符号表，允许您以非常动态的方式编写变量:
 
-    <?php
-    
-    $b = 100;
-    $a = "b";
-    echo $$a; // prints 100
-    
+```php
+<?php
+
+$b = 100;
+$a = "b";
+echo $$a; // prints 100
+```
 
 Zephir没有实现这个特性，因为所有变量都被编译为低级变量，而且无法知道在特定上下文中存在哪些变量。 如果您想在当前PHP符号表中创建一个变量，您可以使用以下语法:
 
-    // Set variable $name in PHP
-    let {"name"} = "hello";
-    
-    // Set variable $price in PHP
-    let name = "price";
-    let {name} = 10.2;
+```zephir
+// Set variable $name in PHP
+let {"name"} = "hello";
+
+// Set variable $price in PHP
+let name = "price";
+let {name} = 10.2;
+```

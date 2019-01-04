@@ -45,13 +45,15 @@ Warnings can be enabled via command line parameters, or can be added to the `con
 
 You can enable warnings by passing their name prefixed by `-w`:
 
-    zephir -wunused-variable -wnonexistent-function
-    
+```bash
+zephir -wunused-variable -wnonexistent-function
+```
 
 Warnings can be disabled by passing their name prefixed by `-W`:
 
-    zephir -Wunused-variable -Wnonexistent-function
-    
+```bash
+zephir -Wunused-variable -Wnonexistent-function
+```
 
 The following warnings are supported:
 
@@ -61,13 +63,14 @@ The following warnings are supported:
 
 Raised when a variable is declared but it is not used within a method. This warning is enabled by default.
 
-    public function some()
-    {
-        var e; // declared but not used
-    
-        return false;
-    }
-    
+```zephir
+public function some()
+{
+    var e; // declared but not used
+
+    return false;
+}
+```
 
 <a name='unused-variable-external'></a>
 
@@ -75,11 +78,12 @@ Raised when a variable is declared but it is not used within a method. This warn
 
 Raised when a parameter is declared but it is not used within a method.
 
-    public function sum(a, b, c) // c is not used
-    {
-        return a + b;
-    }
-    
+```zephir
+public function sum(a, b, c) // c is not used
+{
+    return a + b;
+}
+```
 
 <a name='possible-wrong-parameter-undefined'></a>
 
@@ -87,16 +91,17 @@ Raised when a parameter is declared but it is not used within a method.
 
 Raised when a method is called with a wrong type for a parameter:
 
-    public function some()
-    {
-        return this->sum("a string", "another");  // wrong parameters passed
-    }
-    
-    public function sum(int a, int b)
-    {
-        return a + b;
-    }
-    
+```zephir
+public function some()
+{
+    return this->sum("a string", "another");  // wrong parameters passed
+}
+
+public function sum(int a, int b)
+{
+    return a + b;
+}
+```
 
 <a name='nonexistent-function'></a>
 
@@ -104,11 +109,12 @@ Raised when a method is called with a wrong type for a parameter:
 
 Raised when a function is called that does not exist at compile time:
 
-    public function some()
-    {
-        someFunction(); // someFunction does not exist
-    }
-    
+```zephir
+public function some()
+{
+    someFunction(); // someFunction does not exist
+}
+```
 
 <a name='nonexistent-class'></a>
 
@@ -116,13 +122,14 @@ Raised when a function is called that does not exist at compile time:
 
 Raised when a class is used that does not exist at compile time:
 
-    public function some()
-    {
-        var a;
-    
-        let a = new \MyClass(); // MyClass does not exist
-    }
-    
+```zephir
+public function some()
+{
+    var a;
+
+    let a = new \MyClass(); // MyClass does not exist
+}
+```
 
 <a name='non-valid-isset'></a>
 
@@ -130,13 +137,14 @@ Raised when a class is used that does not exist at compile time:
 
 Raised when the compiler detects that an 'isset' operation is being made on a non-array or -object value:
 
-    public function some()
-    {
-        var b = 1.2;
-    
-        return isset b[0]; // variable integer 'b' used as array
-    }
-    
+```zephir
+public function some()
+{
+    var b = 1.2;
+
+    return isset b[0]; // variable integer 'b' used as array
+}
+```
 
 <a name='non-array-update'></a>
 
@@ -144,12 +152,13 @@ Raised when the compiler detects that an 'isset' operation is being made on a no
 
 Raised when the compiler detects that an array update operation is being made on a non-array value:
 
-    public function some()
-    {
-        var b = 1.2;
-        let b[0] = true; // variable 'b' cannot be used as array
-    }
-    
+```zephir
+public function some()
+{
+    var b = 1.2;
+    let b[0] = true; // variable 'b' cannot be used as array
+}
+```
 
 <a name='non-valid-objectupdate'></a>
 
@@ -157,12 +166,13 @@ Raised when the compiler detects that an array update operation is being made on
 
 Raised when the compiler detects that an object update operation is being made on a non-object value:
 
-    public function some()
-    {
-        var b = 1.2;
-        let b->name = true; // variable 'b' cannot be used as object
-    }
-    
+```zephir
+public function some()
+{
+    var b = 1.2;
+    let b->name = true; // variable 'b' cannot be used as object
+}
+```
 
 <a name='non-valid-fetch'></a>
 
@@ -172,12 +182,13 @@ Raised when the compiler detects that a 'fetch' operation is being made on a non
 
 ##### variable integer 'b' used as array
 
-    public function some()
-    {
-        var b = 1.2, a;
-        fetch a, b[0];
-    }
-    
+```zephir
+public function some()
+{
+    var b = 1.2, a;
+    fetch a, b[0];
+}
+```
 
 <a name='invalid-array-index'></a>
 
@@ -185,12 +196,13 @@ Raised when the compiler detects that a 'fetch' operation is being made on a non
 
 Raised when the compiler detects that an invalid array index is used:
 
-    public function some(var a)
-    {
-        var b = [];
-        let a[b] = true;
-    }
-    
+```zephir
+public function some(var a)
+{
+    var b = [];
+    let a[b] = true;
+}
+```
 
 <a name='non-array-append'></a>
 
@@ -198,8 +210,10 @@ Raised when the compiler detects that an invalid array index is used:
 
 Raised when the compiler detects that an element is being appended to a non-array variable:
 
-    public function some()
-    {
-        var b = false;
-        let b[] = "some value";
-    }
+```zephir
+public function some()
+{
+    var b = false;
+    let b[] = "some value";
+}
+```

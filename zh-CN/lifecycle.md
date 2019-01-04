@@ -28,35 +28,36 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 
 `initializers` 块如下所示:
 
-    {
-        "initializers": [
-            {
-                "globals": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "setup_globals_deps(TSRMLS_C)"
-                    }
-                ],
-                "module": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "setup_module_deps(TSRMLS_C)"
-                    }
-                ],
-                "request": [
-                    {
-                        "include": "my/awesome/library.h",
-                        "code": "some_c_function(TSRMLS_C)"
-                    },
-                    {
-                        "include": "my/awful/library.h",
-                        "code": "some_other_c_function(TSRMLS_C)"
-                    }
-                ]
-            }
-        ]
-    }
-    
+```json
+{
+    "initializers": [
+        {
+            "globals": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "setup_globals_deps(TSRMLS_C)"
+                }
+            ],
+            "module": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "setup_module_deps(TSRMLS_C)"
+                }
+            ],
+            "request": [
+                {
+                    "include": "my/awesome/library.h",
+                    "code": "some_c_function(TSRMLS_C)"
+                },
+                {
+                    "include": "my/awful/library.h",
+                    "code": "some_other_c_function(TSRMLS_C)"
+                }
+            ]
+        }
+    ]
+}
+```
 
 这个块负责定义到上面图中显示的Init事件的钩子。 其中有三个:`globals`用于设置全局变量空间;`module`用于设置扩展本身需要功能的任何内容;`request`用于设置扩展来处理单个请求。
 

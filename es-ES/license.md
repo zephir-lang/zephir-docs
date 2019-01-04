@@ -3,7 +3,7 @@ layout: default
 language: 'es-ES'
 version: '0.11'
 ---
-# License
+# Licencia
 
 MIT License
 

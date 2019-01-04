@@ -33,40 +33,42 @@ Zephir 的主要特点是:
 
 下面的代码使用筛选变量的方法注册一个类, 返回它们的字母字符:
 
-    namespace MyLibrary;
-    
+```zephir
+namespace MyLibrary;
+
+/**
+ * Filter
+ */
+class Filter
+{
     /**
-     * Filter
+     * 过滤一个字符串，返回它的alpha字符
+     *
+     * @param string str
      */
-    class Filter
+    public function alpha(string str)
     {
-        /**
-         * 过滤一个字符串，返回它的alpha字符
-         *
-         * @param string str
-         */
-        public function alpha(string str)
-        {
-            char ch; string filtered = "";
-    
-            for ch in str {
-               if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
-                  let filtered .= ch;
-               }
-            }
-    
-            return filtered;
+        char ch; string filtered = "";
+
+        for ch in str {
+           if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+              let filtered .= ch;
+           }
         }
+
+        return filtered;
     }
-    
+}
+```
 
 该类可从 php 中使用, 如下所示:
 
-    <?php
-    
-    $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01he#l.lo?/1"); // prints hello
-    
+```php
+<?php
+
+$filter = new MyLibrary\Filter();
+echo $filter->alpha("01he#l.lo?/1"); // prints hello
+```
 
 <a name='external-links'></a>
 
