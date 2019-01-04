@@ -74,10 +74,11 @@ Son soportados los siguientes operadores:
 
 Ejemplo:
 
-    if a & SOME_FLAG {
-        echo "tiene la bandera";
-    }
-    
+```zephir
+if a & SOME_FLAG {
+    echo "tiene la bandera";
+}
+```
 
 Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](http://www.php.net/manual/en/language.operators.comparison.php).
 
@@ -101,16 +102,17 @@ Los operadores de comparación dependen del tipo de variables en comparación. P
 
 Ejemplo:
 
-    if a == b {
-        return 0;
+```zephir
+if a == b {
+    return 0;
+} else {
+    if a < b {
+        return -1;
     } else {
-        if a < b {
-            return -1;
-        } else {
-            return 1;
-        }
+        return 1;
     }
-    
+}
+```
 
 <a name='logical-operators'></a>
 
@@ -126,11 +128,12 @@ Son soportados los siguientes operadores:
 
 Ejemplo:
 
-    if a && b || !c {
-        return -1;
-    }
-    return 1;
-    
+```zephir
+if a && b || !c {
+    return -1;
+}
+return 1;
+```
 
 <a name='tenary-operator'></a>
 
@@ -138,8 +141,9 @@ Ejemplo:
 
 Zephir soporta el operador ternario habilitado en C o PHP:
 
-    let b = a == 1 ? "x" : "y"; // b es igual a "x" si a es igual a 1, en otro caso será igual a "y"
-    
+```zephir
+let b = a == 1 ? "x" : "y"; // b es igual a "x" si a es igual a 1, en otro caso será igual a "y"
+```
 
 <a name='special-operators'></a>
 
@@ -153,16 +157,17 @@ Son soportados los siguientes operadores:
 
 Este operador permite chequear si una expresión esta vacía. 'Empty' significa que la expresión es igual a `null`, a una cadena de texto vacía, o a un array vacío:
 
-    let someVar = "";
-    if empty someVar {
-        echo "¡esta vacía!";
-    }
-    
-    let someVar = "hola";
-    if !empty someVar {
-        echo "¡no esta vacía!";
-    }
-    
+```zephir
+let someVar = "";
+if empty someVar {
+    echo "¡esta vacía!";
+}
+
+let someVar = "hola";
+if !empty someVar {
+    echo "¡no esta vacía!";
+}
+```
 
 <a name='special-operators-fetch'></a>
 
@@ -170,20 +175,22 @@ Este operador permite chequear si una expresión esta vacía. 'Empty' significa 
 
 'Fetch' es un operador que reduce una operación común en PHP a una sola instrucción:
 
-    <?php
-    
-    if (isset($myArray[$key])) {
-        $value = $myArray[$key];
-        echo $value;
-    }
-    
+```php
+<?php
+
+if (isset($myArray[$key])) {
+    $value = $myArray[$key];
+    echo $value;
+}
+```
 
 En Zephir, puedes escribir el mismo código de la siguiente manera:
 
-    if fetch value, myArray[key] {
-        echo value;
-    }
-    
+```zephir
+if fetch value, myArray[key] {
+    echo value;
+}
+```
 
 'Fetch' solo retornará `true` si la clave 'key' es un item válido en el array, y solo si tiene un valor 'value' asignado.
 
@@ -193,16 +200,18 @@ En Zephir, puedes escribir el mismo código de la siguiente manera:
 
 Este operador comprueba que una propiedad o un índice esté definido en un array o en un objecto:
 
-    let someArray = ["a": 1, "b": 2, "c": 3];
-    if isset someArray["b"] { // comprueba que el array tenga el índice "b"
-        echo "si, hay un índice 'b'\n";
-    }
-    
+```zephir
+let someArray = ["a": 1, "b": 2, "c": 3];
+if isset someArray["b"] { // comprueba que el array tenga el índice "b"
+    echo "si, hay un índice 'b'\n";
+}
+```
 
 Utilizando `isset` como una expresión de retorno:
 
-    return isset this->{someProperty};
-    
+```zephir
+return isset this->{someProperty};
+```
 
 Nota: en Zephir `isset` funciona como la función [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php) de PHP, `isset` en Zephir retornará `true` incluso cuando el índice del array o la propiedad del objecto sean nulas.
 
@@ -212,15 +221,17 @@ Nota: en Zephir `isset` funciona como la función [array_key_exists](http://www.
 
 Este operador comprueba el tipo de una variable. `typeof` puede usarse con un operador de comparación:
 
-    if (typeof str == "string") { // o !=
-        echo str;
-    }
-    
+```zephir
+if (typeof str == "string") { // o !=
+    echo str;
+}
+```
 
 También puede trabajar como la función `gettype` de PHP.
 
-    return typeof str;
-    
+```zephir
+return typeof str;
+```
 
 **Cuidado** si desea comprobar que si un objeto es "callable", siempre tienes que usar `typeof` como un operador de comparación, no como una función.
 
@@ -230,27 +241,30 @@ También puede trabajar como la función `gettype` de PHP.
 
 Zephir siempre trata de comprobar si un objeto implementa métodos y propiedades llamado/accedido a una variable, que se infiere que es un objeto:
 
-    let o = new MyObject();
-    
-    // Zephir comprueba si "myMethod" es implementado en MyObject
-    o->myMethod();
-    
+```zephir
+let o = new MyObject();
+
+// Zephir comprueba si "myMethod" es implementado en MyObject
+o->myMethod();
+```
 
 Sin embargo, debido al dinamismo heredado de PHP, a veces no es fácil saber la clase de un objeto, entonces Zephir no puede producir informes de errores con eficacia. Una sugerencia de tipo le indica al compilador que clase se relaciona con una variable dinámica, permitiendo que el compilador hacer más verificaciones de compilación:
 
-    // Decirle al compilador que "o"
-    // es una instancia de la clase MyClass
-    let o = <MyClass> this->_myObject;
-    o->myMethod();
-    
+```zephir
+// Decirle al compilador que "o"
+// es una instancia de la clase MyClass
+let o = <MyClass> this->_myObject;
+o->myMethod();
+```
 
 Estos "consejos de tipo" son débiles. Esto significa que el programa no comprueba si el valor es de hecho una instancia de la clase especificada, ni si implementa la interfaz especificada. Si desea comprobarlo en ejecución cada vez, utilice un tipo estricto:
 
-    // Siempre comprueba si la propiedades es una instancia
-    // de MyClass antes de asignarla
-    let o = <MyClass!> this->_myObject;
-    o->myMethod();
-    
+```zephir
+// Siempre comprueba si la propiedades es una instancia
+// de MyClass antes de asignarla
+let o = <MyClass!> this->_myObject;
+o->myMethod();
+```
 
 <a name='special-operators-branch-prediction-hints'></a>
 
@@ -260,23 +274,26 @@ Estos "consejos de tipo" son débiles. Esto significa que el programa no comprue
 
 Considere el siguiente ejemplo:
 
-    let allPaths = [];
-    for path in this->_paths {
-        if path->isAllowed() == false {
-            throw new App\Exception("Un mensaje de error");
-        } else {
-            let allPaths[] = path;
-        }
+```zephir
+let allPaths = [];
+for path in this->_paths {
+    if path->isAllowed() == false {
+        throw new App\Exception("Un mensaje de error");
+    } else {
+        let allPaths[] = path;
     }
-    
+}
+```
 
 Los autores del código anterior saben, de antemano, que es poco probable que ocurra la condición que produce la excepción. Esto significa que, el 99.9% del tiempo, nuestro método ejecuta esa condición, pero probablemente nunca se evalúe como verdadero. Para el procesador, esto podría ser difícil de saber, pero le podríamos presentar una sugerencia allí:
 
-    let allPaths = [];
-    for path in this->_paths {
-        if unlikely path->isAllowed() == false {
-            throw new App\Exception("Un mensaje de error");
-        } else {
-            let allPaths[] = path;
-        }
+```zephir
+let allPaths = [];
+for path in this->_paths {
+    if unlikely path->isAllowed() == false {
+        throw new App\Exception("Un mensaje de error");
+    } else {
+        let allPaths[] = path;
     }
+}
+```

@@ -33,40 +33,42 @@ Las principales características de Zephir son:
 
 El siguiente código registra una clase con un método que filtra variables, regresando sus caracteres alfabéticos:
 
-    namespace MyLibrary;
-    
+```zephir
+namespace MyLibrary;
+
+/**
+ * Filtro
+ */
+class Filter
+{
     /**
-     * Filtro
+     * Filtra una cadena de texto, retornando solo caracteres alfabéticos
+     *
+     * @param string str
      */
-    class Filter
+    public function alpha(string str)
     {
-        /**
-         * Filtra una cadena de texto, retornando solo caracteres alfabéticos
-         *
-         * @param string str
-         */
-        public function alpha(string str)
-        {
-            char ch; string filtered = "";
-    
-            for ch in str {
-               if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
-                  let filtered .= ch;
-               }
-            }
-    
-            return filtered;
+        char ch; string filtered = "";
+
+        for ch in str {
+           if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+              let filtered .= ch;
+           }
         }
+
+        return filtered;
     }
-    
+}
+```
 
 La clase puede ser utiliza desde PHP de la siguiente manera:
 
-    <?php
-    
-    $filter = new MyLibrary\Filter();
-    echo $filter->alpha("01ho#.la?/1"); // imprime hola
-    
+```php
+<?php
+
+$filter = new MyLibrary\Filter();
+echo $filter->alpha("01ho#.la?/1"); // imprime hola
+```
 
 <a name='external-links'></a>
 
