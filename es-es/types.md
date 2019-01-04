@@ -159,7 +159,7 @@ var a = 5, b = 10050;
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer sobrecarga
+### Desbordamiento de Enteros
 
 Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como `unsigned long` o `float` para almacenarlos:
 

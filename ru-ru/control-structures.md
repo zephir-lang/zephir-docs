@@ -41,7 +41,7 @@ menu:
 ---
 # Control Structures
 
-Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
+Zephir реализует упрощенный набор управляющих структур, присутствующих в подобных ему языках, таких как C, PHP и т.п.
 
 <a name='conditionals'></a>
 
@@ -51,7 +51,7 @@ Zephir implements a simplified set of control structures present in similar lang
 
 ### If Statement
 
-`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
+`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Фигурные скобки обязательны. Оператор `if` может иметь необязательное предложение `else`. При необходимости проверить последовательно несколько условий возможно каскадирование (вложенные конструкции `if`/`else`):
 
 ```zephir
 if false {
@@ -65,7 +65,7 @@ if false {
 }
 ```
 
-`elseif` clauses are also available:
+Вы также можете использовать `elseif`:
 
 ```zephir
 if a > 100 {
@@ -79,7 +79,7 @@ if a > 100 {
 }
 ```
 
-Parentheses in the evaluated expression are optional:
+Скобки в оцениваемом выражении необязательны:
 
 ```zephir
 if a < 0 { return -1; } else { if a > 0 { return 1; } }

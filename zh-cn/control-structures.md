@@ -276,5 +276,6 @@ let this->number--;     // decrement object property
 
 可以在单个` let </ 0>操作中执行多个突变：</p>
 
-<pre><code class="zephir">let price = 1.00, realPrice = price, status = false;
-`</pre>
+```zephir
+let price = 1.00, realPrice = price, status = false;
+```

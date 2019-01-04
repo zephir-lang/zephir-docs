@@ -53,7 +53,6 @@ public function binaryToHex(string! s) -> string
         } else {
             let o .= n;
         }
-        return o;
     }
     return o;
 }
