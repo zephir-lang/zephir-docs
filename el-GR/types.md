@@ -1,3 +1,24 @@
+* * *
+
+layout: default language: 'el-GR' version: '0.10' menu:
+
+- text: 'Dynamic Types' url: '#dynamic-types' sub: 
+    - text: 'Arrays' url: '#dynamic-types-arrays'
+    - text: 'Boolean' url: '#dynamic-types-boolean'
+    - text: 'Float/Double' url: '#dynamic-types-float-double'
+    - text: 'Integer' url: '#dynamic-types-integer'
+    - text: 'Integer overflow' url: '#dynamic-types-integer-overflow'
+    - text: 'Objects' url: '#dynamic-types-objects'
+    - text: 'String' url: '#dynamic-types-string'
+- text: 'Static Types' url: '#static-types' sub: 
+    - text: 'Boolean' url: '#static-types-boolean'
+    - text: 'Char/Unsigned Char' url: '#static-types-char-unsigned'
+    - text: 'Integer/Unsigned Integer' url: '#static-types-integer-unsigned'
+    - text: 'Long/Unsigned Long' url: '#static-types-long-unsigned'
+    - text: 'String' url: '#static-types-string'
+
+* * *
+
 # Types
 
 Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
@@ -10,24 +31,28 @@ Dynamic variables are exactly like the ones in PHP. They can be assigned and rea
 
 A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
 
-    var a, b, c;
-    
+```zephir
+var a, b, c;
+```
 
 ##### Initialize variables
 
-    let a = "hello", b = false;
-    
+```zephir
+let a = "hello", b = false;
+```
 
 ##### Change their values
 
-    let a = "hello", b = false;
-    let a = 10, b = "140";
-    
+```zephir
+let a = "hello", b = false;
+let a = 10, b = "140";
+```
 
 ##### Perform operations
 
-    let c = a + b;
-    
+```zephir
+let c = a + b;
+```
 
 They can have eight types:
 
@@ -54,19 +79,22 @@ The syntax to define arrays is slightly different than in PHP:
 
 ##### Square braces must be used to define arrays
 
-    let myArray = [1, 2, 3];
-    
+```zephir
+let myArray = [1, 2, 3];
+```
 
 ##### Double colon must be used to define hashes' keys
 
-    let myHash = ["first": 1, "second": 2, "third": 3];
-    
+```zephir
+let myHash = ["first": 1, "second": 2, "third": 3];
+```
 
 Only long and string values can be used as keys:
 
-    let myHash = [0: "first", 1: true, 2: null];
-    let myHash = ["first": 7.0, "second": "some string", "third": false];
-    
+```zephir
+let myHash = [0: "first", 1: true, 2: null];
+let myHash = ["first": 7.0, "second": "some string", "third": false];
+```
 
 <a name='dynamic-types-boolean'></a>
 
@@ -74,8 +102,9 @@ Only long and string values can be used as keys:
 
 A boolean expresses a truth value. It can be either `true` or `false`:
 
-    var a = false, b = true;
-    
+```zephir
+var a = false, b = true;
+```
 
 <a name='dynamic-types-float-double'></a>
 
@@ -83,8 +112,9 @@ A boolean expresses a truth value. It can be either `true` or `false`:
 
 Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
-    var number = 5.0, b = 0.014;
-    
+```zephir
+var number = 5.0, b = 0.014;
+```
 
 Floating point numbers have limited precision. Although it depends on the system, Zephir uses the same IEEE 754 double precision format used by PHP, which will give a maximum relative error due to rounding in the order of 1.11e-16.
 
@@ -94,8 +124,9 @@ Floating point numbers have limited precision. Although it depends on the system
 
 Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
 
-    var a = 5, b = 10050;
-    
+```zephir
+var a = 5, b = 10050;
+```
 
 <a name='dynamic-types-integer-overflow'></a>
 
@@ -103,8 +134,9 @@ Integer numbers. The size of an integer is platform-dependent, although a maximu
 
 Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
 
-    unsigned long my_number = 2147483648;
-    
+```zephir
+unsigned long my_number = 2147483648;
+```
 
 <a name='dynamic-types-objects'></a>
 
@@ -112,9 +144,10 @@ Contrary to PHP, Zephir does not automatically check for integer overflows. Like
 
 Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
 
-    let myObject = new \stdClass(),
-        myObject->someProperty = "my value";
-    
+```zephir
+let myObject = new \stdClass(),
+    myObject->someProperty = "my value";
+```
 
 <a name='dynamic-types-string'></a>
 
@@ -122,8 +155,9 @@ Zephir allows to instantiate, manipulate, call methods, read class constants, et
 
 A `string` is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
 
-    var today = "friday";
-    
+```zephir
+var today = "friday";
+```
 
 In Zephir, string literals can only be specified using double quotes (like in C or Go). Single quotes are reserved for `char` data type.
 
@@ -137,16 +171,18 @@ The following escape sequences are supported in strings:
 | `\`   | Backslash       |
 | `\"`    | double-quote    |
 
-    var today    = "\tfriday\n\r",
-        tomorrow = "\tsaturday";
-    
+```zephir
+var today    = "\tfriday\n\r",
+    tomorrow = "\tsaturday";
+```
 
 In Zephir, strings don't support variable parsing like in PHP; you need to use concatenation instead:
 
-    var name = "peter";
-    
-    echo "hello: " . name;
-    
+```zephir
+var name = "peter";
+
+echo "hello: " . name;
+```
 
 <a name='static-types'></a>
 
@@ -173,24 +209,28 @@ Static typing allows the developer to declare and use some variable types availa
 
 A `boolean` expresses a truth value. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
-    boolean a;
-    let a = true;
-    
+```zephir
+boolean a;
+let a = true;
+```
 
 ##### automatically casted to `true`
 
-    let a = 100;
-    
+```zephir
+let a = 100;
+```
 
 ##### automatically casted to `false`
 
-    let a = 0;
-    
+```zephir
+let a = 0;
+```
 
 ##### throws a compiler exception
 
-    let a = "hello";
-    
+```zephir
+let a = "hello";
+```
 
 <a name='static-types-char-unsigned'></a>
 
@@ -198,92 +238,105 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
 
 `char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
 
-    char ch, string name = "peter";
-    
+```zephir
+char ch, string name = "peter";
+```
 
 ##### stores 't'
 
-    let ch = name[2];
-    
+```zephir
+let ch = name[2];
+```
 
 ##### `char` literals must be enclosed in single quotes
 
-    let ch = 'Z';
-    
+```zephir
+let ch = 'Z';
+```zephir
 
 <a name='static-types-integer-unsigned'></a>
-
 ### Integer/Unsigned Integer
-
 `integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
-    int a;
-    
-    let a = 50,
-        a = -70;
-    
+```zephir
+int a;
+
+let a = 50,
+    a = -70;
+```
 
 ##### automatically casted to 100
 
-    let a = 100.25;
-    
+```zephir
+let a = 100.25;
+```
 
 ##### automatically casted to 0
 
-    let a = null;
-    
+```zephir
+let a = null;
+```
 
 ##### automatically casted to 0
 
-    let a = false;
-    
+```zephir
+let a = false;
+```
 
 ##### throws a compiler exception
 
-    let a = "hello";
-    
+```zephir
+let a = "hello";
+```
 
 `unsigned integer` variables are like `integer` but they don't have sign, this means you can't store negative numbers in these sort of variables:
 
-    uint a;
-    
-    let a = 50;
-    
+```zephir
+uint a;
+
+let a = 50;
+```
 
 ##### automatically casted to 70
 
-    let a = -70;
-    
+```zephir
+let a = -70;
+```
 
 ##### automatically casted to 100
 
-    let a = 100.25;
-    
+```zephir
+let a = 100.25;
+```
 
 ##### automatically casted to 0
 
-    let a = null;
-    
+```zephir
+let a = null;
+```
 
 ##### automatically casted to 0
 
-    let a = false;
-    
+```zephir
+let a = false;
+```
 
 ##### throws a compiler exception
 
-    let a = "hello";
-    
+```zephir
+let a = "hello";
+```
 
 `unsigned integer` variables are twice bigger than standard `integer`. Assigning `unsigned integer` to standard (signed) `integer` may result in loss of data:
 
 ##### potential loss of data for `b`
 
-    uint a, int b;
-    
-    let a = 2147483648,
-        b = a;
-    
+```zephir
+uint a, int b;
+
+let a = 2147483648,
+    b = a;
+```
 
 <a name='static-types-long-unsigned'></a>
 
@@ -291,73 +344,85 @@ A `boolean` expresses a truth value. It can be either `true` or `false`. Contrar
 
 `long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
 
-    long a;
-    
-    let a = 50,
-        a = -70;
-    
+```zephir
+long a;
+
+let a = 50,
+    a = -70;
+```
 
 ##### automatically casted to 100
 
-    let a = 100.25;
-    
+```zephir
+let a = 100.25;
+```
 
 ##### automatically casted to 0
 
+```zephir
     let a = null;
-    
+```
 
 ##### automatically casted to 0
 
-    let a = false;
-    
+```zephir
+let a = false;
+```
 
 ##### throws a compiler exception
 
-    let a = "hello";
-    
+```zephir
+let a = "hello";
+```
 
 `unsigned long` are like `long` but they are not signed, this means you can't store negative numbers in these sort of variables:
 
-    ulong a;
-    
-    let a = 50;
-    
+```zephir
+ulong a;
+
+let a = 50;
+```
 
 ##### automatically casted to 70
 
-    let  a = -70;
-    
+```zephir
+let  a = -70;
+```
 
 ##### automatically casted to 100
 
-    let a = 100.25;
-    
+```zephir
+let a = 100.25;
+```
 
 ##### automatically casted to 0
 
-    let a = null;
-    
+```zephir
+let a = null;
+```
 
 ##### automatically casted to 0
 
-    let a = false;
-    
+```zephir
+let a = false;
+```
 
 ##### throws a compiler exception
 
-    let a = "hello";
-    
+```zephir
+let a = "hello";
+```
 
 `unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
 
 ##### potential loss of data for `b`
 
-    ulong a, long b;
-    
-    let a = 4294967296,
-        b = a;
-    
+```zephir
+ulong a, long b;
+
+let a = 4294967296,
+    b = a;
+```
 
 <a name='static-types-string'></a>
 
@@ -367,21 +432,26 @@ A string is series of characters, where a character is the same as a byte. As in
 
 When a variable is declared `string` it never changes its type:
 
-    string a;
-    
-    let a = "";
-    
+```zephir
+string a;
+
+let a = "";
+```
 
 ##### string literals must be enclosed in double quotes
 
-    let  a = "hello";
-    
+```zephir
+let  a = "hello";
+```
 
 ##### converted to string "A"
 
-    let a = 'A';
-    
+```zephir
+let a = 'A';
+```
 
 ##### automatically casted to ""
 
-    let a = null;
+```zephir
+let a = null;
+```
