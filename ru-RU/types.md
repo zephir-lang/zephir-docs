@@ -1,24 +1,53 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Dynamic Types' url: '#dynamic-types' sub: 
-    - text: 'Arrays' url: '#dynamic-types-arrays'
-    - text: 'Boolean' url: '#dynamic-types-boolean'
-    - text: 'Float/Double' url: '#dynamic-types-float-double'
-    - text: 'Integer' url: '#dynamic-types-integer'
-    - text: 'Integer overflow' url: '#dynamic-types-integer-overflow'
-    - text: 'Objects' url: '#dynamic-types-objects'
-    - text: 'String' url: '#dynamic-types-string'
-- text: 'Static Types' url: '#static-types' sub: 
-    - text: 'Boolean' url: '#static-types-boolean'
-    - text: 'Char/Unsigned Char' url: '#static-types-char-unsigned'
-    - text: 'Integer/Unsigned Integer' url: '#static-types-integer-unsigned'
-    - text: 'Long/Unsigned Long' url: '#static-types-long-unsigned'
-    - text: 'String' url: '#static-types-string'
-
-* * *
-
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+menu:
+  - text:
+      'Динамические типы'
+    url: '#dynamic-types'
+    sub:
+      - text:
+            'Arrays'
+        url: '#dynamic-types-arrays'
+      - text:
+            'Boolean'
+        url: '#dynamic-types-boolean'
+      - text:
+            'Float/Double'
+        url: '#dynamic-types-float-double'
+      - text:
+            'Integer'
+        url: '#dynamic-types-integer'
+      - text:
+            'Целочисленное переполнение'
+        url: '#dynamic-types-integer-overflow'
+      - text:
+            'Objects'
+        url: '#dynamic-types-objects'
+      - text:
+            'String'
+        url: '#dynamic-types-string'
+  - text:
+      'Статические типы'
+    url: '#static-types'
+    sub:
+      - text:
+            'Boolean'
+        url: '#static-types-boolean'
+      - text:
+            'Char/Unsigned Char'
+        url: '#static-types-char-unsigned'
+      - text:
+            'Integer/Unsigned Integer'
+        url: '#static-types-integer-unsigned'
+      - text:
+            'Long/Unsigned Long'
+        url: '#static-types-long-unsigned'
+      - text:
+            'String'
+        url: '#static-types-string'
+---
 # Типы
 
 Zephir динамически и статически типизированный. В этой главе мы выделим поддерживаемые типы и их поведение.

@@ -1,12 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Hello World!' url: '#hello-world'
-- text: 'A taste of Zephir' url: '#a-taste-of-zephir' 
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+menu:
+  - text:
+        'Hello World!'
+    url: '#hello-world'
+  - text:
+        '一个 Zephir 的尝试'
+    url: '#a-taste-of-zephir' 
+---
 # Zephir 简介
 
 Zephir 是一种语言, 它能够满足 php 开发人员的主要需求, 他们试图编写和编译可由 php 执行的代码。 它是动态的/静态类型的, 它的一些功能为 php 开发人员所熟悉。

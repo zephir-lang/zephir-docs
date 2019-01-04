@@ -1,21 +1,42 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'unused-variable' url: '#unused-variable'
-- text: 'unused-variable-external' url: '#unused-variable-external'
-- text: 'possible-wrong-parameter-undefined' url: '#possible-wrong-parameter-undefined'
-- text: 'nonexistent-function' url: '#nonexistent-function'
-- text: 'nonexistent-class' url: '#nonexistent-class'
-- text: 'non-valid-isset' url: '#non-valid-isset'
-- text: 'non-array-update' url: '#non-array-update'
-- text: 'non-valid-objectupdate' url: '#non-valid-objectupdate'
-- text: 'non-valid-fetch' url: '#non-valid-fetch'
-- text: 'invalid-array-index' url: '#invalid-array-index'
-- text: 'non-array-append' url: '#non-array-append'
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+menu:
+  - text:
+      'unused-variable'
+    url: '#unused-variable'
+  - text:
+      'unused-variable-external'
+    url: '#unused-variable-external'
+  - text:
+      'possible-wrong-parameter-undefined'
+    url: '#possible-wrong-parameter-undefined'
+  - text:
+      'nonexistent-function'
+    url: '#nonexistent-function'
+  - text:
+      'nonexistent-class'
+    url: '#nonexistent-class'
+  - text:
+      'non-valid-isset'
+    url: '#non-valid-isset'
+  - text:
+      'non-array-update'
+    url: '#non-array-update'
+  - text:
+      'non-valid-objectupdate'
+    url: '#non-valid-objectupdate'
+  - text:
+      'non-valid-fetch'
+    url: '#non-valid-fetch'
+  - text:
+      'invalid-array-index'
+    url: '#invalid-array-index'
+  - text:
+      'non-array-append'
+    url: '#non-array-append'
+---
 # 编译警告
 
 当发现代码可以改进或避免潜在错误的情况时，编译器会发出警告。

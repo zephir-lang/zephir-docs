@@ -1,17 +1,30 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-* text: 'If you are a PHP programmer...' url: '#if-you-are-a-php-programmer'
-* text: 'If you are a C programmer...' url: '#if-you-are-a-c-programmer'
-* text: 'Compilation vs Interpretation' url: '#compilation-vs-interpretation'
-* text: 'Statically typed versus dynamically typed languages' url: '#statically-typed-versus-dynamically-typed-languages'
-* text: 'Compilation scheme' url: '#compilation-scheme'
-* text: 'Code protection' url: '#code-protection'
-* text: 'Conclusion' url: '#conclusion'
-
-* * *
-
+---
+layout: default
+language: 'uk-UA'
+version: '0.11'
+menu:
+  - text:
+        'If you are a PHP programmer...'
+    url: '#if-you-are-a-php-programmer'
+  - text:
+        'If you are a C programmer...'
+    url: '#if-you-are-a-c-programmer'
+  - text:
+        'Compilation vs Interpretation'
+    url: '#compilation-vs-interpretation'
+  - text:
+        'Statically typed versus dynamically typed languages'
+    url: '#statically-typed-versus-dynamically-typed-languages'
+  - text:
+        'Compilation scheme'
+    url: '#compilation-scheme'
+  - text:
+        'Code protection'
+    url: '#code-protection'
+  - text:
+        'Conclusion'
+    url: '#conclusion'
+---
 # Чому Zephir?
 
 Сьогоднішні програми на PHP повинні збалансувати ряд проблем, таких як стабільність, продуктивність та функціональність. Кожна PHP програма базується на збірці загальних компонентів, які також є основою для багатьох інших програм.

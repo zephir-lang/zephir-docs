@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'el-GR'
+version: '0.11'
+---
 # Custom optimizers
 
 Most common functions in Zephir use internal optimizers. An 'optimizer' works like an interceptor for function calls. An 'optimizer' replaces calls to a function normally defined in the PHP userland, by direct C calls, which are faster and have a lower overhead, improving performance.

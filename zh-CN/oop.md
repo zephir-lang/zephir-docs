@@ -1,28 +1,67 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-* text: 'Classes' url: '#classes' sub: 
-    * text: 'Class Modifiers' url: '#classes-modifiers'
-    * text: 'Implementing Interfaces' url: '#classes-interfaces'
-* text: 'Implementing Methods' url: '#implementing-methods' sub: 
-    * text: 'Optional nullable parameters' url: '#implementing-methods-optional-nullable-parameters'
-    * text: 'Supported Visibilities' url: '#implementing-methods-supported-visibilities'
-    * text: 'Supported Modifiers' url: '#implementing-methods-supported-modifiers'
-    * text: 'Getter/Setter shortcuts' url: '#implementing-methods-getter-setter-shortcuts'
-    * text: 'Return Type Hints' url: '#implementing-methods-return-type-hints'
-    * text: 'Return Type: Void' url: '#implementing-methods-return-type-void'
-    * text: 'Strict/Flexible Parameter Data-Types' url: '#implementing-methods-strict-flexible-parameter-data-types'
-    * text: 'Read-Only Parameters' url: '#implementing-methods-read-only-parameters'
-* text: 'Implementing Properties' url: '#implementing-properties' sub: 
-    * text: 'Updating Properties' url: '#implementing-properties-updating'
-    * text: 'Reading Properties' url: '#implementing-properties-reading'
-* text: 'Class Constants' url: '#class-constants'
-* text: 'Calling Methods' url: '#calling-methods' sub: 
-    * text: 'Parameters by Name' url: '#calling-methods-parameters-by-name'
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+menu:
+  - text:
+      '类'
+    url: '#classes'
+    sub:
+      - text:
+            '类修饰符'
+        url: '#classes-modifiers'
+      - text:
+            '实现接口'
+        url: '#classes-interfaces'
+  - text:
+      '实现方法'
+    url: '#implementing-methods'
+    sub:
+      - text:
+            '可选参数可以为空'
+        url: '#implementing-methods-optional-nullable-parameters'
+      - text:
+            '支持可见性'
+        url: '#implementing-methods-supported-visibilities'
+      - text:
+            '支持修改器'
+        url: '#implementing-methods-supported-modifiers'
+      - text:
+            'Getter / Setter 快捷方式'
+        url: '#implementing-methods-getter-setter-shortcuts'
+      - text:
+            '返回类型提示'
+        url: '#implementing-methods-return-type-hints'
+      - text:
+            '返回类型: Void'
+        url: '#implementing-methods-return-type-void'
+      - text:
+            '严格/灵活的参数的数据类型'
+        url: '#implementing-methods-strict-flexible-parameter-data-types'
+      - text:
+            '只读参数'
+        url: '#implementing-methods-read-only-parameters'
+  - text:
+      '实现属性'
+    url: '#implementing-properties'
+    sub:
+      - text:
+            '更新属性'
+        url: '#implementing-properties-updating'
+      - text:
+            '查看属性'
+        url: '#implementing-properties-reading'
+  - text:
+      '类常量'
+    url: '#class-constants'
+  - text:
+      '调用方法'
+    url: '#calling-methods'
+    sub:
+      - text:
+            '参数名'
+        url: '#calling-methods-parameters-by-name'
+---
 # 类与对象
 
 Zephir 提倡面向对象编程。 这就是为什么您只能在扩展中导出方法和类的原因。 您还将看到, 在大多数情况下, 运行时错误会引发异常, 而不是致命错误或警告。

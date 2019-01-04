@@ -1,16 +1,27 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Checking the installation' url: '#checking-the-installation'
-- text: 'Extension skeleton' url: '#extension-skeleton'
-- text: 'Adding our first class' url: '#adding-our-first-class'
-- text: 'Initial testing' url: '#initial-testing'
-- text: 'A useful class' url: '#a-useful-class'
-- text: 'Conclusion' url: '#conclusion'
-
-* * *
-
+---
+layout: default
+language: 'es-ES'
+version: '0.11'
+menu:
+  - text:
+        'Probando la instalación'
+    url: '#checking-the-installation'
+  - text:
+        'Esqueleto de la extensión'
+    url: '#extension-skeleton'
+  - text:
+        'Agregando nuestra primer clase'
+    url: '#adding-our-first-class'
+  - text:
+        'Prueba inicial'
+    url: '#initial-testing'
+  - text:
+        'Una clase útil'
+    url: '#a-useful-class'
+  - text:
+        'Conclusión'
+    url: '#conclusion'
+---
 # Tutorial
 
 Zephir y este manual, están destinados para desarrolladores PHP que desean crear extensiones en C, con una complejidad menor.
@@ -64,7 +75,7 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
         -W([a-z0-9\-]+)     Apaga una advertencia
     
 
-If something went wrong, please return back to the [installation](/0.11/en/installation) page.
+Si algo salió mal, por favor regrese a la [página de instalación](/{{ page.version }}/{{ page.language }}/installation).
 
 <a name='extension-skeleton'></a>
 

@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+---
 # Лицензионное соглашение
 
 Лицензия MIT

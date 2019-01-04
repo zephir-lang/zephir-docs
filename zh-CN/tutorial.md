@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * * *
 
 layout: default language: 'en' version: '0.11' menu:
@@ -11,6 +12,32 @@ layout: default language: 'en' version: '0.11' menu:
 
 * * *
 
+=======
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+menu:
+  - text:
+        '检查安装'
+    url: '#checking-the-installation'
+  - text:
+        '扩展骨架'
+    url: '#extension-skeleton'
+  - text:
+        '添加我们的第一个类'
+    url: '#adding-our-first-class'
+  - text:
+        '初步测试'
+    url: '#initial-testing'
+  - text:
+        '一个有用的类'
+    url: '#a-useful-class'
+  - text:
+        '结语'
+    url: '#conclusion'
+---
+>>>>>>> 0.11
 # 教程
 
 Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其复杂性较低。
@@ -64,7 +91,11 @@ zephir 帮助
         -W([a-z0-9\-]+)     Turns a warning off
     
 
+<<<<<<< HEAD
 If something went wrong, please return back to the [installation](/0.11/en/installation) page.
+=======
+如果出现问题, 请返回到 [installation](/{{ page.version }}/{{ page.language }}/installation) 页面。
+>>>>>>> 0.11
 
 <a name='extension-skeleton'></a>
 

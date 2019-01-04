@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'uk-UA'
+version: '0.11'
+---
 # Розділи в phpinfo()
 
 Як і більшість PHP-розширень, Zephir-розширення здатні показати інформацію у виводі [phpinfo()](http://php.net/manual/en/function.phpinfo.php). Зазвичай ця інформація відноситься до директив, даних оточення і т.д.

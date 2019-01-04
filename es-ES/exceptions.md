@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'es-ES'
+version: '0.11'
+---
 # Exceptions
 
 Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.

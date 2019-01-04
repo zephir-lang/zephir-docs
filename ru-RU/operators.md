@@ -1,21 +1,43 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Arithmetic Operators' url: '#arithmetic-operators'
-- text: 'Bitwise Operators' url: '#bitwise-operators'
-- text: 'Comparison Operators' url: '#comparison-operators'
-- text: 'Logical Operators' url: '#logical-operators'
-- text: 'Ternary Operator' url: '#tenary-operator'
-- text: 'Special Operator' url: '#special-operators' sub: 
-    - text: 'Empty' url: '#special-operators-empty'
-    - text: 'Fetch' url: '#special-operators-fetch'
-    - text: 'Isset' url: '#special-operators-isset'
-    - text: 'Type Hints' url: '#special-operators-type-hints'
-    - text: 'Branch Prediction Hints' url: '#special-operators-branch-prediction-hints'
-
-* * *
-
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+menu:
+  - text:
+      'Арифметические операторы'
+    url: '#arithmetic-operators'
+  - text:
+      'Побитовые операторы'
+    url: '#bitwise-operators'
+  - text:
+      'Операторы сравнения'
+    url: '#comparison-operators'
+  - text:
+      'Логические операторы'
+    url: '#logical-operators'
+  - text:
+      'Тернарный оператор'
+    url: '#tenary-operator'
+  - text:
+      'Специальные операторы'
+    url: '#special-operators'
+    sub:
+      - text:
+            'Empty'
+        url: '#special-operators-empty'
+      - text:
+            'Fetch'
+        url: '#special-operators-fetch'
+      - text:
+            'Isset'
+        url: '#special-operators-isset'
+      - text:
+            'Подсказки типа'
+        url: '#special-operators-type-hints'
+      - text:
+            'Подсказки прогнозирования ветвлений'
+        url: '#special-operators-branch-prediction-hints'
+---
 # Операторы
 
 Операторы в Zephir похожи на их аналоги в PHP и также себя ведут.

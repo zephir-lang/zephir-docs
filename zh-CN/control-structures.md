@@ -1,21 +1,44 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Conditionals' url: '#conditionals' sub: 
-    - text: 'If Statement' url: '#conditionals-if'
-    - text: 'Switch Statement' url: '#conditionals-switch'
-- text: 'Loops' url: '#loops' sub: 
-    - text: 'While Statement' url: '#loops-while'
-    - text: 'Loop Statement' url: '#loops-loop'
-    - text: 'For Statement' url: '#loops-for'
-    - text: 'Break Statement' url: '#loops-break'
-    - text: 'Continue Statement' url: '#loops-continue'
-- text: 'Require' url: '#require'
-- text: 'Let' url: '#let'
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+menu:
+  - text:
+      '条件'
+    url: '#conditionals'
+    sub:
+      - text:
+            'If 语句'
+        url: '#conditionals-if'
+      - text:
+            'Switch 语句'
+        url: '#conditionals-switch'
+  - text:
+      'Loops'
+    url: '#loops'
+    sub:
+      - text:
+            'While 语句'
+        url: '#loops-while'
+      - text:
+            'Loop 语句'
+        url: '#loops-loop'
+      - text:
+            'For 语句'
+        url: '#loops-for'
+      - text:
+            'Break 语句'
+        url: '#loops-break'
+      - text:
+            'Continue 语句'
+        url: '#loops-continue'
+  - text:
+      'Require'
+    url: '#require'
+  - text:
+      'Let'
+    url: '#let'
+---
 # 控制结构
 
 Zephir实现了一组简化的控制结构，这些结构用类似的语言表示，如C、PHP等。

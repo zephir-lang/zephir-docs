@@ -1,13 +1,18 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-* text: 'Prerequisites' url: '#prerequisites'
-* text: 'Installing Zephir' url: '#installing-zephir'
-* text: 'Testing the installation' url: '#testing-the-installation'
-
-* * *
-
+---
+layout: default
+language: 'es-ES'
+version: '0.11'
+menu:
+  - text:
+        'Prerequisitos'
+    url: '#prerequisites'
+  - text:
+        'Instalando Zephir'
+    url: '#installing-zephir'
+  - text:
+        'Probando la Instalación'
+    url: '#testing-the-installation'
+---
 # Instalación
 
 Para instalar el Zephir, siga estos pasos:

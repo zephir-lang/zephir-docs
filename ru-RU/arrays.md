@@ -1,15 +1,24 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Declaring Array Variables' url: '#declaring-array-variables'
-- text: 'Creating Arrays' url: '#creating-arrays'
-- text: 'Updating arrays' url: '#updating-arrays'
-- text: 'Appending elements' url: '#appending-elements'
-- text: 'Reading elements from arrays' url: '#reading-elements-from-arrays'
-
-* * *
-
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+menu:
+  - text:
+      'Declaring Array Variables'
+    url: '#declaring-array-variables'
+  - text:
+      'Creating Arrays'
+    url: '#creating-arrays'
+  - text:
+      'Updating arrays'
+    url: '#updating-arrays'
+  - text:
+      'Appending elements'
+    url: '#appending-elements'
+  - text:
+      'Reading elements from arrays'
+    url: '#reading-elements-from-arrays'
+---
 # Массивы
 
 Работа с массивами в Zephir происходит таким же образом как и с [массивами в PHP](http://www.php.net/manual/en/language.types.array.php). По своей сути, массив является реализацией [хеш таблицы](http://en.wikipedia.org/wiki/Hash_table).

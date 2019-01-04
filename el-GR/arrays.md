@@ -1,15 +1,24 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.11' menu:
-
-- text: 'Declaring Array Variables' url: '#declaring-array-variables'
-- text: 'Creating Arrays' url: '#creating-arrays'
-- text: 'Updating arrays' url: '#updating-arrays'
-- text: 'Appending elements' url: '#appending-elements'
-- text: 'Reading elements from arrays' url: '#reading-elements-from-arrays'
-
-* * *
-
+---
+layout: default
+language: 'el-GR'
+version: '0.11'
+menu:
+  - text:
+      'Declaring Array Variables'
+    url: '#declaring-array-variables'
+  - text:
+      'Creating Arrays'
+    url: '#creating-arrays'
+  - text:
+      'Updating arrays'
+    url: '#updating-arrays'
+  - text:
+      'Appending elements'
+    url: '#appending-elements'
+  - text:
+      'Reading elements from arrays'
+    url: '#reading-elements-from-arrays'
+---
 # Πίνακες
 
 Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).

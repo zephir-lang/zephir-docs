@@ -1,7 +1,0 @@
-- [Если вы PHP программист...](/[[language]]/[[version]]/motivation#if-you-are-a-php-programmer)
-- [Если вы C программист...](/[[language]]/[[version]]/motivation#if-you-are-a-c-programmer)
-- [Компиляция против интерпретации](/[[language]]/[[version]]/motivation#compilation-vs-interpretation)
-- [Статическая типизация против динамической типизации](/[[language]]/[[version]]/motivation#statically-typed-versus-dynamically-typed-languages)
-- [Схема компиляции](/[[language]]/[[version]]/motivation#compilation-scheme)
-- [Защита кода](/[[language]]/[[version]]/motivation#code-protection)
-- [Заключение](/[[language]]/[[version]]/motivation#conclusion)

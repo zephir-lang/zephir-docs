@@ -1,17 +1,30 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-* text: 'If you are a PHP programmer...' url: '#if-you-are-a-php-programmer'
-* text: 'If you are a C programmer...' url: '#if-you-are-a-c-programmer'
-* text: 'Compilation vs Interpretation' url: '#compilation-vs-interpretation'
-* text: 'Statically typed versus dynamically typed languages' url: '#statically-typed-versus-dynamically-typed-languages'
-* text: 'Compilation scheme' url: '#compilation-scheme'
-* text: 'Code protection' url: '#code-protection'
-* text: 'Conclusion' url: '#conclusion'
-
-* * *
-
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+menu:
+  - text:
+        'Если вы PHP программист...'
+    url: '#if-you-are-a-php-programmer'
+  - text:
+        'Если вы C программист...'
+    url: '#if-you-are-a-c-programmer'
+  - text:
+        'Компиляция против интерпретации'
+    url: '#compilation-vs-interpretation'
+  - text:
+        'Статическая типизация против динамической типизации'
+    url: '#statically-typed-versus-dynamically-typed-languages'
+  - text:
+        'Схема компиляции'
+    url: '#compilation-scheme'
+  - text:
+        'Защита кода'
+    url: '#code-protection'
+  - text:
+        'Заключение'
+    url: '#conclusion'
+---
 # Почему Zephir?
 
 Сегодня PHP приложения должны сбалансировать ряд проблем, в том числе стабильности, производительности и функциональности. Каждое РНР приложение основано на наборе общих компонентов, которые также являются базой для большинства приложений.

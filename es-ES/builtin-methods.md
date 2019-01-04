@@ -1,14 +1,21 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'String' url: '#string'
-- text: 'Array' url: '#array'
-- text: 'Char' url: '#char'
-- text: 'Integer' url: '#integer'
-
-* * *
-
+---
+layout: default
+language: 'es-ES'
+version: '0.11'
+menu:
+  - text:
+      'String'
+    url: '#string'
+  - text:
+      'Array'
+    url: '#array'
+  - text:
+      'Char'
+    url: '#char'
+  - text:
+      'Integer'
+    url: '#integer'
+---
 # Métodos integrados
 
 Como se mencionó antes, Zephir promueve la programación orientada a objetos. Las variables relacionadas con los tipos estáticos también se pueden manejar como objetos.
@@ -46,6 +53,7 @@ public function binaryToHex(string! s) -> string
         } else {
             let o .= n;
         }
+        return o;
     }
     return o;
 }

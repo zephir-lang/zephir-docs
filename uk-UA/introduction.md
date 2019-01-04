@@ -1,12 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Hello World!' url: '#hello-world'
-- text: 'A taste of Zephir' url: '#a-taste-of-zephir' 
-
-* * *
-
+---
+layout: default
+language: 'uk-UA'
+version: '0.11'
+menu:
+  - text:
+        'Hello World!'
+    url: '#hello-world'
+  - text:
+        'A taste of Zephir'
+    url: '#a-taste-of-zephir' 
+---
 # Представляємо Zephir
 
 Zephir - мова, яка відповідає основним потребам розробника PHP, який намагається написати та скомпілювати код, який може бути виконаний з-під PHP. Він має динамічну/статичну типізацію і деякі його функції будуть знайомі PHP-розробникам.

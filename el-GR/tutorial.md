@@ -1,16 +1,30 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.11' menu:
-
-- text: 'Checking the installation' url: '#checking-the-installation'
-- text: 'Extension skeleton' url: '#extension-skeleton'
-- text: 'Adding our first class' url: '#adding-our-first-class'
-- text: 'Initial testing' url: '#initial-testing'
-- text: 'A useful class' url: '#a-useful-class'
-- text: 'Conclusion' url: '#conclusion'
-
-* * *
-
+---
+layout: default
+language: 'el-GR'
+version: '0.11'
+menu:
+  - text:
+        'Prerequisites'
+    url: '#prerequisites'
+  - text:
+        'Checking the installation'
+    url: '#checking-the-installation'
+  - text:
+        'Extension skeleton'
+    url: '#extension-skeleton'
+  - text:
+        'Adding our first class'
+    url: '#adding-our-first-class'
+  - text:
+        'Initial testing'
+    url: '#initial-testing'
+  - text:
+        'A useful class'
+    url: '#a-useful-class'
+  - text:
+        'Conclusion'
+    url: '#conclusion'
+---
 # Tutorial
 
 Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.

@@ -1,12 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Some Features' url: '#some-features'
-- text: 'A small taste' url: '#a-small-taste' 
-
-* * *
-
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+menu:
+  - text:
+        'Некоторые особенности'
+    url: '#some-features'
+  - text:
+        'Попробуйте'
+    url: '#a-small-taste' 
+---
 # Добро пожаловать!
 
 Встречайте Zephir, открытый, высокоуровневый, специализированный язык разработанный для быстрого и удобного создания расширений для PHP с упором на типизацию и безопасное управление памятью.

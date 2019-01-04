@@ -1,17 +1,30 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Organizing code in files and namespaces' url: '#organizing-code-in-files-and-namespaces'
-- text: 'Instruction separation' url: '#instruction-separation'
-- text: 'Comments' url: '#comments'
-- text: 'Variable declarations' url: '#variable-declarations'
-- text: 'Variable scope' url: '#variable-scope'
-- text: 'Super globals' url: '#super-globals'
-- text: 'Local symbol table' url: '#local-symbol-table'
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+menu:
+  - text:
+        '在文件和命名空间中组织代码'
+    url: '#organizing-code-in-files-and-namespaces'
+  - text:
+        '指令分离'
+    url: '#instruction-separation'
+  - text:
+        '注释'
+    url: '#comments'
+  - text:
+        '变量声明'
+    url: '#variable-declarations'
+  - text:
+        '变量作用域'
+    url: '#variable-scope'
+  - text:
+        '超全局'
+    url: '#super-globals'
+  - text:
+        '本地符号表'
+    url: '#local-symbol-table'
+---
 # 基本语法
 
 在本章中, 我们将讨论文件和命名空间、变量声明、杂项语法约定以及其他几个一般概念的组织。

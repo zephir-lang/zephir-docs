@@ -1,13 +1,18 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-* text: 'Prerequisites' url: '#prerequisites'
-* text: 'Installing Zephir' url: '#installing-zephir'
-* text: 'Testing the installation' url: '#testing-the-installation'
-
-* * *
-
+---
+layout: default
+language: 'ru-RU'
+version: '0.11'
+menu:
+  - text:
+        'Системные требования'
+    url: '#prerequisites'
+  - text:
+        'Установка Zephir'
+    url: '#installing-zephir'
+  - text:
+        'Протестируйте Zephir'
+    url: '#testing-the-installation'
+---
 # Установка
 
 Следуйте инструкциям ниже, чтобы установить Zephir:

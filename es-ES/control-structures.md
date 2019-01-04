@@ -1,21 +1,44 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Conditionals' url: '#conditionals' sub: 
-    - text: 'If Statement' url: '#conditionals-if'
-    - text: 'Switch Statement' url: '#conditionals-switch'
-- text: 'Loops' url: '#loops' sub: 
-    - text: 'While Statement' url: '#loops-while'
-    - text: 'Loop Statement' url: '#loops-loop'
-    - text: 'For Statement' url: '#loops-for'
-    - text: 'Break Statement' url: '#loops-break'
-    - text: 'Continue Statement' url: '#loops-continue'
-- text: 'Require' url: '#require'
-- text: 'Let' url: '#let'
-
-* * *
-
+---
+layout: default
+language: 'es-ES'
+version: '0.11'
+menu:
+  - text:
+      'Conditionals'
+    url: '#conditionals'
+    sub:
+      - text:
+            'If Statement'
+        url: '#conditionals-if'
+      - text:
+            'Switch Statement'
+        url: '#conditionals-switch'
+  - text:
+      'Loops'
+    url: '#loops'
+    sub:
+      - text:
+            'While Statement'
+        url: '#loops-while'
+      - text:
+            'Loop Statement'
+        url: '#loops-loop'
+      - text:
+            'For Statement'
+        url: '#loops-for'
+      - text:
+            'Break Statement'
+        url: '#loops-break'
+      - text:
+            'Continue Statement'
+        url: '#loops-continue'
+  - text:
+      'Require'
+    url: '#require'
+  - text:
+      'Let'
+    url: '#let'
+---
 # Estructuras de Control
 
 Zephir implementa un conjunto simplificado de estructuras de control presentes en lenguajes similares como C, PHP, etc.

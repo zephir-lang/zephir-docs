@@ -1,12 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Some Features' url: '#some-features'
-- text: 'A small taste' url: '#a-small-taste' 
-
-* * *
-
+---
+layout: default
+language: 'uk-UA'
+version: '0.11'
+menu:
+  - text:
+        'Some Features'
+    url: '#some-features'
+  - text:
+        'A small taste'
+    url: '#a-small-taste' 
+---
 # Вітаємо!
 
 Вас вітає Zephir — проект з відкритим вихідним кодом, високорівнева/предметно-орієнтована мова спроектована для полегшення створення й супроводу розширень для PHP з акцентом на тип та безпеку доступу до пам'яті.

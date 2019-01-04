@@ -1,28 +1,67 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-* text: 'Classes' url: '#classes' sub: 
-    * text: 'Class Modifiers' url: '#classes-modifiers'
-    * text: 'Implementing Interfaces' url: '#classes-interfaces'
-* text: 'Implementing Methods' url: '#implementing-methods' sub: 
-    * text: 'Optional nullable parameters' url: '#implementing-methods-optional-nullable-parameters'
-    * text: 'Supported Visibilities' url: '#implementing-methods-supported-visibilities'
-    * text: 'Supported Modifiers' url: '#implementing-methods-supported-modifiers'
-    * text: 'Getter/Setter shortcuts' url: '#implementing-methods-getter-setter-shortcuts'
-    * text: 'Return Type Hints' url: '#implementing-methods-return-type-hints'
-    * text: 'Return Type: Void' url: '#implementing-methods-return-type-void'
-    * text: 'Strict/Flexible Parameter Data-Types' url: '#implementing-methods-strict-flexible-parameter-data-types'
-    * text: 'Read-Only Parameters' url: '#implementing-methods-read-only-parameters'
-* text: 'Implementing Properties' url: '#implementing-properties' sub: 
-    * text: 'Updating Properties' url: '#implementing-properties-updating'
-    * text: 'Reading Properties' url: '#implementing-properties-reading'
-* text: 'Class Constants' url: '#class-constants'
-* text: 'Calling Methods' url: '#calling-methods' sub: 
-    * text: 'Parameters by Name' url: '#calling-methods-parameters-by-name'
-
-* * *
-
+---
+layout: default
+language: 'es-ES'
+version: '0.11'
+menu:
+  - text:
+      'Clases'
+    url: '#classes'
+    sub:
+      - text:
+            'Modificadores de Clase'
+        url: '#classes-modifiers'
+      - text:
+            'Implementación de Interfaces'
+        url: '#classes-interfaces'
+  - text:
+      'Implementación de Métodos'
+    url: '#implementing-methods'
+    sub:
+      - text:
+            'Parámetros opcionales nulos'
+        url: '#implementing-methods-optional-nullable-parameters'
+      - text:
+            'Visibilidades soportadas'
+        url: '#implementing-methods-supported-visibilities'
+      - text:
+            'Modificadores Soportados'
+        url: '#implementing-methods-supported-modifiers'
+      - text:
+            'Métodos abreviados de getter/setter'
+        url: '#implementing-methods-getter-setter-shortcuts'
+      - text:
+            'Tipo de valor devuelto'
+        url: '#implementing-methods-return-type-hints'
+      - text:
+            'Tipo de valor devuelto: void'
+        url: '#implementing-methods-return-type-void'
+      - text:
+            'Tipos de datos de parámetro Estricto/Flexible'
+        url: '#implementing-methods-strict-flexible-parameter-data-types'
+      - text:
+            'Parámetros de sólo lectura'
+        url: '#implementing-methods-read-only-parameters'
+  - text:
+      'Implementación de Propiedades'
+    url: '#implementing-properties'
+    sub:
+      - text:
+            'Actualización de propiedades'
+        url: '#implementing-properties-updating'
+      - text:
+            'Leyendo propiedades'
+        url: '#implementing-properties-reading'
+  - text:
+      'Constante de Clase'
+    url: '#class-constants'
+  - text:
+      'Llamando a métodos'
+    url: '#calling-methods'
+    sub:
+      - text:
+            'Parámetros por Nombre'
+        url: '#calling-methods-parameters-by-name'
+---
 # Clases y Objetos
 
 Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.

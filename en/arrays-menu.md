@@ -1,5 +1,0 @@
-- [Declaring Array Variables](/[[language]]/[[version]]/arrays#declaring-array-variables)
-- [Creating Arrays](/[[language]]/[[version]]/arrays#creating-arrays)
-- [Updating arrays](/[[language]]/[[version]]/arrays#updating-arrays)
-- [Appending elements](/[[language]]/[[version]]/arrays#appending-elements)
-- [Reading elements from arrays](/[[language]]/[[version]]/arrays#reading-elements-from-arrays)

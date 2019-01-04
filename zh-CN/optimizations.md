@@ -1,18 +1,33 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'call-gatherer-pass' url: 'call-gatherer-pass'
-- text: 'check-invalid-reads' url: 'check-invalid-reads'
-- text: 'constant-folding' url: 'constant-folding'
-- text: 'internal-call-transformation' url: 'internal-call-transformation'
-- text: 'local-context-pass' url: 'local-context-pass'
-- text: 'static-constant-class-folding' url: 'static-constant-class-folding'
-- text: 'static-type-inference' url: 'static-type-inference'
-- text: 'static-type-inference-second-pass' url: 'static-type-inference-second-pass'
-
-* * *
-
+---
+layout: default
+language: 'zh-CN'
+version: '0.11'
+menu:
+  - text:
+      'call-gatherer-pass'
+    url: 'call-gatherer-pass'
+  - text:
+      'check-invalid-reads'
+    url: 'check-invalid-reads'
+  - text:
+      'constant-folding'
+    url: 'constant-folding'
+  - text:
+      'internal-call-transformation'
+    url: 'internal-call-transformation'
+  - text:
+      'local-context-pass'
+    url: 'local-context-pass'
+  - text:
+      'static-constant-class-folding'
+    url: 'static-constant-class-folding'
+  - text:
+      'static-type-inference'
+    url: 'static-type-inference'
+  - text:
+      'static-type-inference-second-pass'
+    url: 'static-type-inference-second-pass'
+---
 # 优化
 
 因为 Zephir 中的代码有时非常高级, 所以 c 编译器可能无法足够地优化此代码。
