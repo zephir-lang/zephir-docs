@@ -64,7 +64,7 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
         -W([a-z0-9\-]+)     Apaga una advertencia
     
 
-If something went wrong, please return back to the [installation](/0.11/en/installation) page.
+If something went wrong, please return back to the [installation](/0.10/en/installation) page.
 
 <a name='extension-skeleton'></a>
 
