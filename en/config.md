@@ -180,7 +180,7 @@ Extension description - any text describing your extension:
 
 <a name='destructors'></a>
 ## destructors
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.10/en/lifecycle) chapter for more information.
 
 ```json
 {
@@ -306,7 +306,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 <a name='globals'></a>
 ## globals
-Extension globals available. Check the [globals](/{{ page.version }}/{{ page.language }}/globals) chapter for more information.
+Extension globals available. Check the [globals](/0.10/en/globals) chapter for more information.
 
 ```json
 {
@@ -325,7 +325,7 @@ Extension globals available. Check the [globals](/{{ page.version }}/{{ page.lan
 
 <a name='info'></a>
 ## info
-`phpinfo()` sections. Check the [phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo) chapter for more information.
+`phpinfo()` sections. Check the [phpinfo()](/0.10/en/phpinfo) chapter for more information.
 
 ```json
 {
@@ -343,7 +343,7 @@ Extension globals available. Check the [globals](/{{ page.version }}/{{ page.lan
 
 <a name='initializers'></a>
 ## initializers
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.10/en/lifecycle) chapter for more information.
 
 ```json
 {

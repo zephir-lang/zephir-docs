@@ -75,7 +75,7 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
         -W([a-z0-9\-]+)     Apaga una advertencia
     
 
-Si algo salió mal, por favor regrese a la [página de instalación](/{{ page.version }}/{{ page.language }}/installation).
+Si algo salió mal, por favor regrese a la [página de instalación](/0.10/es-es/installation).
 
 <a name='extension-skeleton'></a>
 

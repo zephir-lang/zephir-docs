@@ -171,7 +171,7 @@ This file must contain the Zend Engine headers, and the C implementation of the 
     }
     
 
-This file must be added at a special section in the [config.json](/{{ page.version }}/{{ page.language }}/config) file:
+This file must be added at a special section in the [config.json](/0.10/el-gr/config) file:
 
     "extra-sources": [
         "utils/pi.c"

@@ -176,7 +176,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/{{ page.version }}/{{ page.language }}/config) file:
+This file must be added at a special section in the [config.json](/0.10/zh-cn/config) file:
 
 ```json
 "extra-sources": [
