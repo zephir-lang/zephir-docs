@@ -1,3 +1,16 @@
+* * *
+
+layout: default language: 'el-GR' version: '0.10' menu:
+
+- text: 'Checking the installation' url: '#checking-the-installation'
+- text: 'Extension skeleton' url: '#extension-skeleton'
+- text: 'Adding our first class' url: '#adding-our-first-class'
+- text: 'Initial testing' url: '#initial-testing'
+- text: 'A useful class' url: '#a-useful-class'
+- text: 'Conclusion' url: '#conclusion'
+
+* * *
+
 # Tutorial
 
 Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
@@ -51,7 +64,7 @@ If everything is well, you should see the following help (or something very simi
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-If something went wrong, please return back to the [installation](/[[language]]/[[version]]/installation) page.
+If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
 <a name='extension-skeleton'></a>
 
@@ -65,10 +78,11 @@ zephir init utils
 
 After this, a directory called "utils" is created on the current working directory:
 
-    utils/
-       ext/
-       utils/
-    
+```bash
+utils/
+   ext/
+   utils/
+```
 
 The directory `ext/` (inside utils) contains the code that is going to be used by the compiler to produce the extension. Another directory created is `utils` - this directory has the same name as our extension. We will place Zephir code there.
 
@@ -92,7 +106,7 @@ As in many languages/tools, the first thing we want to do is see a `hello world`
 
 The code for this class must be placed in `utils/utils/greeting.zep`:
 
-```zep
+```zephir
 namespace Utils;
 
 class Greeting
@@ -114,11 +128,12 @@ zephir build
 
 Initially, and only for the first time, a number of internal commands are executed producing the necessary code and configurations to export this class to the PHP extension. If everything goes well, you will see the following message at the end of the output:
 
+```bash
     ...
-    Extension installed!
-    Add extension=utils.so to your php.ini
-    Don't forget to restart your web server
-    
+Extension installed!
+Add extension=utils.so to your php.ini
+Don't forget to restart your web server
+```
 
 At the above step, it's likely that you would need to supply your root password in order to install the extension.
 
@@ -169,7 +184,7 @@ The first useful class we are going to add to this extension will provide filter
 
 A basic skeleton for this class is the following:
 
-```zep
+```zephir
 namespace Utils;
 
 class Filter
@@ -180,7 +195,7 @@ class Filter
 
 The class contains filtering methods that help users to filter unwanted characters from strings. The first method is called `alpha`, and its purpose is to filter only those characters that are ASCII basic letters. To begin, we are just going to traverse the string, printing every byte to the standard output:
 
-```zep
+```zephir
 namespace Utils;
 
 class Filter
@@ -217,7 +232,7 @@ You will see:
 
 Checking every character in the string is straightforward. Now we'll create another string with the right filtered characters:
 
-```zep
+```zephir
 class Filter
 {
 
