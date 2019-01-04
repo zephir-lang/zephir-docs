@@ -74,10 +74,11 @@ menu:
 
 Пример:
 
-    if a & SOME_FLAG {
-        echo "Флаг установлен";
-    }
-    
+```zephir
+if a & SOME_FLAG {
+    echo "Флаг установлен";
+}
+```
 
 Узнать больше о сравнении динамических переменных можно из [документации по PHP](http://www.php.net/manual/en/language.operators.comparison.php).
 
@@ -101,16 +102,17 @@ menu:
 
 Пример:
 
-    if a == b {
-        return 0;
+```zephir
+if a == b {
+    return 0;
+} else {
+    if a < b {
+        return -1;
     } else {
-        if a < b {
-            return -1;
-        } else {
-            return 1;
-        }
+        return 1;
     }
-    
+}
+```
 
 <a name='logical-operators'></a>
 
@@ -126,11 +128,12 @@ menu:
 
 Пример:
 
-    if a && b || !c {
-        return -1;
-    }
-    return 1;
-    
+```zephir
+if a && b || !c {
+    return -1;
+}
+return 1;
+```
 
 <a name='tenary-operator'></a>
 
@@ -138,8 +141,9 @@ menu:
 
 Zephir поддерживает тернарный оператор, как в C или PHP:
 
-    let b = a == 1 ? "x" : "y"; // b будет присвоен "x", если a равно 1 в противном случае "y"
-    
+```zephir
+let b = a == 1 ? "x" : "y"; // b будет присвоен "x", если a равно 1 в противном случае "y"
+```
 
 <a name='special-operators'></a>
 
@@ -153,16 +157,17 @@ Zephir поддерживает тернарный оператор, как в C
 
 Этот оператор позволяет узнать пусто ли выражение. Под "пусто" подразумевается выражение равное `null`, пустая строка или пустой массив:
 
-    let someVar = "";
-    if empty someVar {
-        echo "пусто!";
-    }
-    
-    let someVar = "привет";
-    if !empty someVar {
-        echo "не пусто!";
-    }
-    
+```zephir
+let someVar = "";
+if empty someVar {
+    echo "пусто!";
+}
+
+let someVar = "привет";
+if !empty someVar {
+    echo "не пусто!";
+}
+```
 
 <a name='special-operators-fetch'></a>
 
@@ -170,20 +175,22 @@ Zephir поддерживает тернарный оператор, как в C
 
 Оператор "fetch" создан для сокращения популярной в PHP конструкции:
 
-    <?php
-    
-    if (isset($myArray[$key])) {
-        $value = $myArray[$key];
-        echo $value;
-    }
-    
+```php
+<?php
+
+if (isset($myArray[$key])) {
+    $value = $myArray[$key];
+    echo $value;
+}
+```
 
 В Zephir тот же код будет можно написать так:
 
-    if fetch value, myArray[key] {
-        echo value;
-    }
-    
+```zephir
+if fetch value, myArray[key] {
+    echo value;
+}
+```
 
 Оператор "fetch" вернет `true`, если в массиве есть что-то по ключу "key" и тогда переменной "value" будет присвоено значение.
 
@@ -193,16 +200,18 @@ Zephir поддерживает тернарный оператор, как в C
 
 Проверяет, существует ли индекс у массива или свойство у объекта:
 
-    let someArray = ["a": 1, "b": 2, "c": 3];
-    if isset someArray["b"] { // проверим, есть ли у массива индекс "b"
-        echo "Да, переменная имеет индекс 'b'\n";
-    }
-    
+```zephir
+let someArray = ["a": 1, "b": 2, "c": 3];
+if isset someArray["b"] { // проверим, есть ли у массива индекс "b"
+    echo "Да, переменная имеет индекс 'b'\n";
+}
+```
 
 Использование `isset` возможно и в возвращаемых конструкциях:
 
-    return isset this->{someProperty};
-    
+```zephir
+return isset this->{someProperty};
+```
 
 Обратите внимание, `isset` в Zephir работает скорее как [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php) в PHP. Иными словами `isset` в Zephir вернёт true, даже если значение равно null.
 
@@ -212,15 +221,17 @@ Zephir поддерживает тернарный оператор, как в C
 
 This operator checks a variable's type. 'typeof' can be used with a comparison operator:
 
-    if (typeof str == "string") { // or !=
-        echo str;
-    }
-    
+```zephir
+if (typeof str == "string") { // or !=
+    echo str;
+}
+```
 
 It can also work like the PHP function `gettype`.
 
-    return typeof str;
-    
+```zephir
+return typeof str;
+```
 
 **Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
@@ -230,27 +241,30 @@ It can also work like the PHP function `gettype`.
 
 Zephir всегда пытается проверить, реализует ли объект методы и свойства, вызываемые/доступные для переменной, которая выводится как объект:
 
-    let o = new MyObject();
-    
-    // Zephir проверяет, реализован ли "myMethod" в MyObject
-    o->myMethod();
-    
+```zephir
+let o = new MyObject();
+
+// Zephir проверяет, реализован ли "myMethod" в MyObject
+o->myMethod();
+```
 
 Однако из-за динамичной природы, унаследованной от PHP, иногда нелегко узнать класс объекта, поэтому Zephir не может эффективно создавать отчеты об ошибках. Подсказка типа сообщает компилятору, какой класс связан с динамической переменной, позволяющей компилятору выполнять больше проверок компиляции:
 
-    // Сообщает компилятору, что "o"
-    // является экземпляром класса MyClass
-    let o = <MyClass> this->_myObject;
-    o->myMethod();
-    
+```zephir
+// Сообщает компилятору, что "o"
+// является экземпляром класса MyClass
+let o = <MyClass> this->_myObject;
+o->myMethod();
+```
 
 These "type hints" are weak. This means the program does not check if the value is in fact an instance of the specified class, nor whether it implements the specified interface. If you want it to check this every time in execution, use a strict type:
 
-    // Always check if the property is an instance
-    // of MyClass before the assignment
-    let o = <MyClass!> this->_myObject;
-    o->myMethod();
-    
+```zephir
+// Always check if the property is an instance
+// of MyClass before the assignment
+let o = <MyClass!> this->_myObject;
+o->myMethod();
+```
 
 <a name='special-operators-branch-prediction-hints'></a>
 
@@ -260,23 +274,26 @@ These "type hints" are weak. This means the program does not check if the value 
 
 Рассмотрим следующий пример:
 
-    let allPaths = [];
-    for path in this->_paths {
-        if path->isAllowed() == false {
-            throw new App\Exception("Некое сообщение об ошибке");
-        } else {
-            let allPaths[] = path;
-        }
+```zephir
+let allPaths = [];
+for path in this->_paths {
+    if path->isAllowed() == false {
+        throw new App\Exception("Некое сообщение об ошибке");
+    } else {
+        let allPaths[] = path;
     }
-    
+}
+```
 
 Авторы кода, приведенного выше, заранее знают, что условие, которое выбрасывает исключение, вряд ли произойдет. Это означает, что в 99.9% случаев наш метод выполняет эту проверку в холостую — условие вероятно не будет оцениваться как истинное. Но для процессора, обычно, это сложно понять, поэтому мы могли бы ввести здесь подсказку:
 
-    let allPaths = [];
-    for path in this->_paths {
-        if unlikely path->isAllowed() == false {
-            throw new App\Exception("Некое сообщение об ошибке");
-        } else {
-            let allPaths[] = path;
-        }
+```zephir
+let allPaths = [];
+for path in this->_paths {
+    if unlikely path->isAllowed() == false {
+        throw new App\Exception("Некое сообщение об ошибке");
+    } else {
+        let allPaths[] = path;
     }
+}
+```

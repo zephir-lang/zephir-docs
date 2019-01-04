@@ -71,15 +71,17 @@ Una vez que se compila el código, no es necesario hacerlo otra vez. El código 
 
 En general, en un lenguaje estáticamente tipificado, una variable está limitada a un tipo particular durante toda su vida. No se puede cambiar su tipo y sólo puede hacer referencia a las operaciones e instancias de tipo compatible. Los lenguajes como C o C++ fueron implementados con este esquema:
 
-    int a = 0;
-    a = "hello"; // no permitido
-    
+```zephir
+int a = 0;
+a = "hello"; // no permitido
+```
 
 En tipificado dinámico, el tipo está limitado al valor, no la variable. Por lo tanto, una variable puede hacer referencia a un valor de un tipo, entonces puede reasignarse posteriormente a un valor de un tipo sin relación. JavaScript y PHP son ejemplos de lenguajes dinámicamente tipificados:
 
-    var a = 0;
-    a = "hello"; // permitido
-    
+```zephir
+var a = 0;
+a = "hello"; // permitido
+```
 
 A pesar de sus ventajas en productividad, los lenguajes dinámicos pueden no ser las mejores opciones para todas las aplicaciones, particularmente para bases de código muy grandes y aplicaciones de alto rendimiento.
 

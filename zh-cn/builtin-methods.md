@@ -22,39 +22,41 @@ menu:
 
 比较这两种方法:
 
-    public function binaryToHex(string! s) -> string
-    {
-        var o = "", n; char ch;
-    
-        for ch in range(0, strlen(s)) {
-            let n = sprintf("%X", ch);
-            if strlen(n) < 2 {
-                let o .= "0" . n;
-            } else {
-                let o .= n;
-            }
+```zephir
+public function binaryToHex(string! s) -> string
+{
+    var o = "", n; char ch;
+
+    for ch in range(0, strlen(s)) {
+        let n = sprintf("%X", ch);
+        if strlen(n) < 2 {
+            let o .= "0" . n;
+        } else {
+            let o .= n;
         }
-        return o;
     }
-    
+    return o;
+}
+```
 
 与
 
-    public function binaryToHex(string! s) -> string
-    {
-        var o = "", n; char ch;
-    
-        for ch in range(0, s->length()) {
-            let n = ch->toHex();
-            if n->length() < 2 {
-                let o .= "0" . n;
-            } else {
-                let o .= n;
-            }
+```zephir
+public function binaryToHex(string! s) -> string
+{
+    var o = "", n; char ch;
+
+    for ch in range(0, s->length()) {
+        let n = ch->toHex();
+        if n->length() < 2 {
+            let o .= "0" . n;
+        } else {
+            let o .= n;
         }
-        return o;
     }
-    
+    return o;
+}
+```
 
 它们都有相同的功能，但是第二个使用的是面向对象编程。 对静态类型变量调用方法对性能没有任何影响，因为Zephir在内部将代码从面向对象版本转换为过程版本。
 

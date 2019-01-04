@@ -29,9 +29,10 @@ Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/man
 
 数组变量可以使用关键字 "var" 或 "array" 来声明:
 
-    var a   = []; // 数组变量，其类型可以改变
-    array b = []; // 数组变量，其类型不能在执行过程中更改
-    
+```zephir
+var a   = []; // 数组变量，其类型可以改变
+array b = []; // 数组变量，其类型不能在执行过程中更改
+```
 
 <a name='creating-arrays'></a>
 
@@ -41,40 +42,47 @@ Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/man
 
 ##### 创建空数组
 
-    let elements = [];
-    
+```zephir
+let elements = [];
+```
 
 ##### 创建包含元素的数组
 
-    let elements = [1, 3, 4];
-    
+```zephir
+let elements = [1, 3, 4];
+```
 
 ##### 使用不同类型的元素创建数组
 
-    let elements = ["first", 2, true];
-    
+```zephir
+let elements = ["first", 2, true];
+```
 
 ##### 多维数组
 
-    let elements = [[0, 1], [4, 5], [2, 3]];
-    
+```zephir
+let elements = [[0, 1], [4, 5], [2, 3]];
+```
 
 就像 PHP，哈希或字典都支持的:
 
 ##### 使用字符串键创建哈希
 
-    let elements = ["foo": "bar", "bar": "foo"];
-    
+```zephir
+let elements = ["foo": "bar", "bar": "foo"];
+```
 
 ##### 使用数字键创建哈希
 
-    let elements = [4: "bar", 8: "foo"];
-    
+```zephir
+let elements = [4: "bar", 8: "foo"];
+```
 
 ##### 使用字符串和数字键混合创建哈希
 
-    let elements = [4: "bar", "foo": 8];
-    
+```zephir
+let elements = [4: "bar", "foo": 8];
+```
 
 <a name='updating-arrays'></a>
 
@@ -84,19 +92,22 @@ Arrays are updated in the same way as PHP, using square brackets:
 
 ##### 使用字符串键名更新数组
 
-    let elements["foo"] = "bar";
-    
+```zephir
+let elements["foo"] = "bar";
+```
 
 ##### 使用数字键更新数组
 
-    let elements[0] = "bar";
-    
+```zephir
+let elements[0] = "bar";
+```
 
 ##### 多维数组
 
-    let elements[0]["foo"] = "bar";
-    let elements["foo"][0] = "bar";
-    
+```zephir
+let elements[0]["foo"] = "bar";
+let elements["foo"][0] = "bar";
+```
 
 <a name='appending-elements'></a>
 
@@ -106,8 +117,9 @@ Arrays are updated in the same way as PHP, using square brackets:
 
 ##### 向数组追加一个元素
 
-    let elements[] = "bar";
-    
+```zephir
+let elements[] = "bar";
+```
 
 <a name='reading-elements-from-arrays'></a>
 
@@ -117,9 +129,12 @@ Arrays are updated in the same way as PHP, using square brackets:
 
 ##### 使用字符串键获取元素 `foo`
 
-    let foo = elements["foo"];
-    
+```zephir
+let foo = elements["foo"];
+```
 
 ##### 使用数字键0获取元素
 
-    let foo = elements[0];
+```zephir
+let foo = elements[0];
+```
