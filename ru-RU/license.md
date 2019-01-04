@@ -1,3 +1,9 @@
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # Лицензионное соглашение
 
 Лицензия MIT
