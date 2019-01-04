@@ -1,3 +1,13 @@
+* * *
+
+layout: default language: 'el-GR' version: '0.10' menu:
+
+* text: 'Prerequisites' url: '#prerequisites'
+* text: 'Installing Zephir' url: '#installing-zephir'
+* text: 'Testing the installation' url: '#testing-the-installation'
+
+* * *
+
 # Installation
 
 To install Zephir, please follow these steps:
