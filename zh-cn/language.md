@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 基本语法
 
 在本章中, 我们将讨论文件和命名空间、变量声明、杂项语法约定以及其他几个一般概念的组织。

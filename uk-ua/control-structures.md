@@ -1,22 +1,21 @@
-* * *
+---
+layout: default
+language: 'uk-ua'
+version: '0.10'
+---
+# Управляющие структуры
 
-layout: default language: 'en' version: '0.10'
-
-* * *
-
-# Control Structures
-
-Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
+Zephir реализует упрощенный набор управляющих структур, присутствующих в подобных ему языках, таких как C, PHP и т.п.
 
 <a name='conditionals'></a>
 
-## Conditionals
+## Условные
 
 <a name='conditionals-if'></a>
 
-### If Statement
+### Оператор if
 
-`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
+`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Фигурные скобки обязательны. Оператор `if` может иметь необязательное предложение `else`. При необходимости проверить последовательно несколько условий возможно каскадирование (вложенные конструкции `if`/`else`):
 
 ```zephir
 if false {
@@ -30,7 +29,7 @@ if false {
 }
 ```
 
-`elseif` clauses are also available:
+Вы также можете использовать `elseif`:
 
 ```zephir
 if a > 100 {
@@ -44,7 +43,7 @@ if a > 100 {
 }
 ```
 
-Parentheses in the evaluated expression are optional:
+Скобки в оцениваемом выражении необязательны:
 
 ```zephir
 if a < 0 { return -1; } else { if a > 0 { return 1; } }
@@ -52,7 +51,7 @@ if a < 0 { return -1; } else { if a > 0 { return 1; } }
 
 <a name='conditionals-switch'></a>
 
-### Switch Statement
+### Оператор switch
 
 A `switch` evaluates an expression against a series of predefined literal values, executing the corresponding `case` block or falling back to the `default` block case:
 
@@ -76,11 +75,11 @@ switch count(items) {
 
 <a name='loops'></a>
 
-## Loops
+## Циклы
 
 <a name='loops-while'></a>
 
-### While Statement
+### Цикл while
 
 `while` denotes a loop that iterates as long as its given condition evaluates as `true`:
 
@@ -93,7 +92,7 @@ while counter {
 
 <a name='loops-loop'></a>
 
-### Loop Statement
+### Цикл loop
 
 In addition to `while`, `loop` can be used to create infinite loops:
 
@@ -108,7 +107,7 @@ loop {
 
 <a name='loops-for'></a>
 
-### For Statement
+### Цикл for
 
 A `for` is a control structure that allows to traverse arrays or strings:
 
@@ -178,7 +177,7 @@ for key, _ in data {
 
 <a name='loops-break'></a>
 
-### Break Statement
+### Оператор break
 
 `break` ends execution of the current `while`, `for` or `loop` statement:
 
@@ -193,7 +192,7 @@ for item in ["a", "b", "c", "d"] {
 
 <a name='loops-continue'></a>
 
-### Continue Statement
+### Оператор continue
 
 `continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
 
@@ -210,7 +209,7 @@ while a > 0 {
 
 <a name='require'></a>
 
-## Require
+## Оператор require
 
 The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephir code to include other Zephir files at runtime.
 
@@ -222,7 +221,7 @@ if file_exists(path) {
 
 <a name='let'></a>
 
-## Let
+## Оператор let
 
 The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
 

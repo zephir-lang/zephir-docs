@@ -1,7 +1,0 @@
-- [在文件和命名空间中组织代码](/[[language]]/[[version]]/language#organizing-code-in-files-and-namespaces)
-- [指令分离](/[[language]]/[[version]]/language#instruction-separation)
-- [注释](/[[language]]/[[version]]/language#comments)
-- [变量声明](/[[language]]/[[version]]/language#variable-declarations)
-- [变量作用域](/[[language]]/[[version]]/language#variable-scope)
-- [超全局](/[[language]]/[[version]]/language#super-globals)
-- [本地符号表](/[[language]]/[[version]]/language#local-symbol-table)

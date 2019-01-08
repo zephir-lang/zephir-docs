@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+---
 # phpinfo () 部分
 
 与大多数扩展一样, Zephir 扩展能够在 [phpinfo()](http://php.net/manual/en/function.phpinfo.php) 输出中显示信息。 这些信息通常与指令、环境数据等有关。

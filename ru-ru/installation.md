@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
-
+---
+layout: default
+language: 'ru-ru'
+version: '0.11'
+---
 # Установка
 
 Следуйте инструкциям ниже, чтобы установить Zephir:

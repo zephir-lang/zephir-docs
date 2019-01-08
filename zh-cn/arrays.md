@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+---
 # 数组
 
 Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/manual/en/language.types.array.php)的方法。 数组是 < 0>hash 表 </0 > 的实现。

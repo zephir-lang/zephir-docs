@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.10'
-
-* * *
-
+---
+layout: default
+language: 'el-gr'
+version: '0.11'
+---
 # Custom optimizers
 
 Most common functions in Zephir use internal optimizers. An 'optimizer' works like an interceptor for function calls. An 'optimizer' replaces calls to a function normally defined in the PHP userland, by direct C calls, which are faster and have a lower overhead, improving performance.
@@ -177,7 +176,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/0.11/en/config) file:
+This file must be added at a special section in the [config.json](/0.11/el-gr/config) file:
 
 ```json
 "extra-sources": [

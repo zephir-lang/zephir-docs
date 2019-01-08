@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.10'
-
-* * *
-
+---
+layout: default
+language: 'el-gr'
+version: '0.11'
+---
 # Optimizations
 
 Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.

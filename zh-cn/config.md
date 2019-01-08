@@ -1,39 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.10' menu:
-
-- text: 'api' url: '#api'
-- text: 'author' url: '#author'
-- text: 'backend' url: '#backend'
-- text: 'constants-sources' url: '#constants-sources'
-- text: 'description' url: '#description'
-- text: 'destructors' url: '#destructors'
-- text: 'extension-name' url: '#extension-name'
-- text: 'external-dependencies' url: '#external-dependencies'
-- text: 'extra' url: '#extra'
-- text: 'extra-cflags' url: '#extra-cflags'
-- text: 'extra-classes' url: '#extra-classes'
-- text: 'extra-libs' url: '#extra-libs'
-- text: 'extra-sources' url: '#extra-sources'
-- text: 'globals' url: '#globals'
-- text: 'info' url: '#info'
-- text: 'initializers' url: '#initializers'
-- text: 'name' url: '#name'
-- text: 'namespace' url: '#namespace'
-- text: 'optimizations' url: '#optimizations'
-- text: 'optimizer-dirs'  
-    url: '#optimizer-dirs'
-- text: 'package-dependencies' url: '#package-dependencies'
-- text: 'prototype-dir' url: '#prototype-dir'
-- text: 'requires' url: '#requires'
-- text: 'silent' url: '#silent'
-- text: 'stubs' url: '#stubs'
-- text: 'verbose' url: '#verbose'
-- text: 'version' url: '#version'
-- text: 'warnings' url: '#warnings'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+---
 # 配置文件
 
 每个Zephir扩展都有一个名为`config.json`的配置文件。 每当构建或生成扩展时，Zephir都会读取这个文件，它允许开发人员修改扩展或编译器的行为。
@@ -138,7 +107,7 @@ layout: default language: 'en' version: '0.10' menu:
 
 ## destructors
 
-此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 Check the [lifecycle hooks](/0.10/en/lifecycle) chapter for more information.
+此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 Check the [lifecycle hooks](/0.11/zh-cn/lifecycle) chapter for more information.
 
 ```json
 {
@@ -280,7 +249,7 @@ layout: default language: 'en' version: '0.10' menu:
 
 ## globals
 
-扩展全局可用。 Check the [globals](/0.10/en/globals) chapter for more information.
+扩展全局可用。 Check the [globals](/0.11/zh-cn/globals) chapter for more information.
 
 ```json
 {
@@ -301,7 +270,7 @@ layout: default language: 'en' version: '0.10' menu:
 
 ## info
 
-`phpinfo()` 信息. Check the [phpinfo()](/0.10/en/phpinfo) chapter for more information.
+`phpinfo()` 信息. Check the [phpinfo()](/0.11/zh-cn/phpinfo) chapter for more information.
 
 ```json
 {
@@ -321,7 +290,7 @@ layout: default language: 'en' version: '0.10' menu:
 
 ## initializers
 
-这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 Check the [lifecycle hooks](/0.10/en/lifecycle) chapter for more information.
+这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 Check the [lifecycle hooks](/0.11/zh-cn/lifecycle) chapter for more information.
 
 ```json
 {

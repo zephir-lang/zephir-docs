@@ -1,30 +1,78 @@
-* * *
-
-layout: default language: 'en' version: '0.10' menu:
-
-- text: 'Welcome' url: 'welcome'
-- text: 'Why Zephir' url: 'motivation'
-- text: 'Introducing Zephir' url: 'introduction'
-- text: 'Installation' url: 'installation'
-- text: 'Tutorial' url: 'tutorial'
-- text: 'Basic Syntax' url: 'language'
-- text: 'Types' url: 'types'
-- text: 'Operators' url: 'operators'
-- text: 'Arrays' url: 'arrays'
-- text: 'Classes and objects' url: 'oop'
-- text: 'Built-in methods' url: 'builtin-methods'
-- text: 'Control structures' url: 'control-structures'
-- text: 'Exceptions' url: 'exceptions'
-- text: 'Calling functions' url: 'functions'
-- text: 'Closures' url: 'closures'
-- text: 'Custom optimizers' url: 'optimizers'
-- text: 'Configuration file' url: 'config'
-- text: 'Lifecycle hooks' url: 'lifecycle'
-- text: 'Extension globals' url: 'globals'
-- text: 'phpinfo() sections' url: 'phpinfo'
-- text: 'Static analysis' url: 'static-analysis'
-- text: 'Optimizations' url: 'optimizations'
-- text: 'Compiler warnings' url: 'warnings'
-- text: 'License'
-
-## url: 'license'
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+menu:
+  - text: 
+        '欢迎'
+    url: 'welcome'
+  - text: 
+        '为什么选择 Zephir'
+    url: 'motivation'
+  - text: 
+        'Zephir 简介'
+    url: 'introduction'
+  - text: 
+        '安装'
+    url: 'installation'
+  - text: 
+        '教程'
+    url: 'tutorial'
+  - text: 
+        '基本语法'
+    url: 'language'
+  - text: 
+        '类型'
+    url: 'types'
+  - text: 
+        '运算符'
+    url: 'operators'
+  - text: 
+        '数组'
+    url: 'arrays'
+  - text: 
+        '类与对象'
+    url: 'oop'
+  - text: 
+        '内建方法'
+    url: 'builtin-methods'
+  - text: 
+        '控制结构'
+    url: 'control-structures'
+  - text: 
+        '例外情况'
+    url: 'exceptions'
+  - text: 
+        '调用函数'
+    url: 'functions'
+  - text: 
+        '闭 包'
+    url: 'closures'
+  - text: 
+        '自定义优化器'
+    url: 'optimizers'
+  - text: 
+        '配置文件'
+    url: 'config'
+  - text: 
+        '生命周期钩子'
+    url: 'lifecycle'
+  - text: 
+        '全局扩展'
+    url: 'globals'
+  - text: 
+        'phpinfo() 部分'
+    url: 'phpinfo'
+  - text: 
+        '静态分析'
+    url: 'static-analysis'
+  - text: 
+        '优化'
+    url: 'optimizations'
+  - text: 
+        '编译警告'
+    url: 'warnings'
+  - text: 
+        'License'
+    url: 'license'
+---

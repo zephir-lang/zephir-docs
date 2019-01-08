@@ -1,10 +1,9 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
-
-# Tipos
+---
+layout: default
+language: 'es-es'
+version: '0.10'
+---
+# Types
 
 Zephir es dinámica y estáticamente tipificado. En este capítulo se destacan los tipos soportados y sus comportamientos.
 

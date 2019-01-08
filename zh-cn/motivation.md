@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+---
 # 为什么选择 Zephir?
 
 今天的 php 应用程序必须平衡许多问题, 包括稳定性、性能和功能。 每个 php 应用程序都基于一组公共组件, 这些组件也是许多其他应用程序的基础。

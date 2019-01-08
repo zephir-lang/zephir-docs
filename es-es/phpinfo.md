@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
-
+---
+layout: default
+language: 'es-es'
+version: '0.11'
+---
 # Phpinfo() Secciones
 
 Al igual que la mayoria de las extensiones, las extensiones de Zephir pueden mostrar información en la salida de [phpinfo()](http://php.net/manual/en/function.phpinfo.php). Esta información está usualmente relacionada con directivas, datos de entorno, etc.
