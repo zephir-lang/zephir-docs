@@ -1,14 +1,6 @@
 * * *
 
-layout: default language: 'el-GR' version: '0.10' menu:
-
-* text: 'If you are a PHP programmer...' url: '#if-you-are-a-php-programmer'
-* text: 'If you are a C programmer...' url: '#if-you-are-a-c-programmer'
-* text: 'Compilation vs Interpretation' url: '#compilation-vs-interpretation'
-* text: 'Statically typed versus dynamically typed languages' url: '#statically-typed-versus-dynamically-typed-languages'
-* text: 'Compilation scheme' url: '#compilation-scheme'
-* text: 'Code protection' url: '#code-protection'
-* text: 'Conclusion' url: '#conclusion'
+layout: default language: 'el-GR' version: '0.10'
 
 * * *
 
