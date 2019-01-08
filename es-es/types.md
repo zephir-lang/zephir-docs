@@ -2,53 +2,8 @@
 layout: default
 language: 'es-es'
 version: '0.10'
-menu:
-  - text:
-      'Tipos Dinámicos'
-    url: '#dynamic-types'
-    sub:
-      - text:
-            'Arrays'
-        url: '#dynamic-types-arrays'
-      - text:
-            'Boolean'
-        url: '#dynamic-types-boolean'
-      - text:
-            'Float/Double'
-        url: '#dynamic-types-float-double'
-      - text:
-            'Integer'
-        url: '#dynamic-types-integer'
-      - text:
-            'Integer sobrecarga'
-        url: '#dynamic-types-integer-overflow'
-      - text:
-            'Objects'
-        url: '#dynamic-types-objects'
-      - text:
-            'String'
-        url: '#dynamic-types-string'
-  - text:
-      'Tipos Estáticos'
-    url: '#static-types'
-    sub:
-      - text:
-            'Boolean'
-        url: '#static-types-boolean'
-      - text:
-            'Char/Unsigned Char'
-        url: '#static-types-char-unsigned'
-      - text:
-            'Integer/Integer sin signo'
-        url: '#static-types-integer-unsigned'
-      - text:
-            'Long/Long sin signo'
-        url: '#static-types-long-unsigned'
-      - text:
-            'String'
-        url: '#static-types-string'
 ---
-# Tipos
+# Types
 
 Zephir es dinámica y estáticamente tipificado. En este capítulo se destacan los tipos soportados y sus comportamientos.
 

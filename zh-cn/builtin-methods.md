@@ -2,19 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.10'
-menu:
-  - text:
-      'String'
-    url: '#string'
-  - text:
-      'Array'
-    url: '#array'
-  - text:
-      'Char'
-    url: '#char'
-  - text:
-      'Integer'
-    url: '#integer'
 ---
 # 内建方法
 

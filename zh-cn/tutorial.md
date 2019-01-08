@@ -2,25 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.10'
-menu:
-  - text:
-        '检查安装'
-    url: '#checking-the-installation'
-  - text:
-        '扩展骨架'
-    url: '#extension-skeleton'
-  - text:
-        '添加我们的第一个类'
-    url: '#adding-our-first-class'
-  - text:
-        '初步测试'
-    url: '#initial-testing'
-  - text:
-        '一个有用的类'
-    url: '#a-useful-class'
-  - text:
-        '结语'
-    url: '#conclusion'
 ---
 # 教程
 
@@ -75,7 +56,7 @@ zephir help
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-如果出现问题, 请返回到 [installation](/0.10/zh-cn/installation) 页面。
+如果出现问题, 请返回到 [installation](/0.11/zh-cn/installation) 页面。
 
 <a name='extension-skeleton'></a>
 

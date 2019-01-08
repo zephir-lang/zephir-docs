@@ -1,29 +1,7 @@
 ---
 layout: default
 language: 'es-es'
-version: '0.10'
-menu:
-  - text:
-        'Organización del código en archivos y espacios de nombres'
-    url: '#organizing-code-in-files-and-namespaces'
-  - text:
-        'Separación de instrucciones'
-    url: '#instruction-separation'
-  - text:
-        'Comentarios'
-    url: '#comments'
-  - text:
-        'Declaración de variables'
-    url: '#variable-declarations'
-  - text:
-        'Ámbito de la variable'
-    url: '#variable-scope'
-  - text:
-        'Super globales'
-    url: '#super-globals'
-  - text:
-        'Tabla de símbolos locales'
-    url: '#local-symbol-table'
+version: '0.11'
 ---
 # Sintaxis básica
 

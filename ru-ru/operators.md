@@ -1,42 +1,7 @@
 ---
 layout: default
 language: 'ru-ru'
-version: '0.10'
-menu:
-  - text:
-      'Арифметические операторы'
-    url: '#arithmetic-operators'
-  - text:
-      'Побитовые операторы'
-    url: '#bitwise-operators'
-  - text:
-      'Операторы сравнения'
-    url: '#comparison-operators'
-  - text:
-      'Логические операторы'
-    url: '#logical-operators'
-  - text:
-      'Тернарный оператор'
-    url: '#tenary-operator'
-  - text:
-      'Специальные операторы'
-    url: '#special-operators'
-    sub:
-      - text:
-            'Empty'
-        url: '#special-operators-empty'
-      - text:
-            'Fetch'
-        url: '#special-operators-fetch'
-      - text:
-            'Isset'
-        url: '#special-operators-isset'
-      - text:
-            'Подсказки типа'
-        url: '#special-operators-type-hints'
-      - text:
-            'Подсказки прогнозирования ветвлений'
-        url: '#special-operators-branch-prediction-hints'
+version: '0.11'
 ---
 # Операторы
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'el-gr'
-version: '0.10'
+version: '0.11'
 ---
 # Closures
 

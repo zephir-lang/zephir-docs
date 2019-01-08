@@ -1,17 +1,7 @@
 ---
 layout: default
 language: 'ru-ru'
-version: '0.10'
-menu:
-  - text:
-        'Системные требования'
-    url: '#prerequisites'
-  - text:
-        'Установка Zephir'
-    url: '#installing-zephir'
-  - text:
-        'Протестируйте Zephir'
-    url: '#testing-the-installation'
+version: '0.11'
 ---
 # Установка
 

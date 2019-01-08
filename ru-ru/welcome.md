@@ -2,13 +2,6 @@
 layout: default
 language: 'ru-ru'
 version: '0.10'
-menu:
-  - text:
-        'Некоторые особенности'
-    url: '#some-features'
-  - text:
-        'Попробуйте'
-    url: '#a-small-taste' 
 ---
 # Добро пожаловать!
 

@@ -2,42 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.10'
-menu:
-  - text:
-      '条件'
-    url: '#conditionals'
-    sub:
-      - text:
-            'If 语句'
-        url: '#conditionals-if'
-      - text:
-            'Switch 语句'
-        url: '#conditionals-switch'
-  - text:
-      'Loops'
-    url: '#loops'
-    sub:
-      - text:
-            'While 语句'
-        url: '#loops-while'
-      - text:
-            'Loop 语句'
-        url: '#loops-loop'
-      - text:
-            'For 语句'
-        url: '#loops-for'
-      - text:
-            'Break 语句'
-        url: '#loops-break'
-      - text:
-            'Continue 语句'
-        url: '#loops-continue'
-  - text:
-      'Require'
-    url: '#require'
-  - text:
-      'Let'
-    url: '#let'
 ---
 # 控制结构
 

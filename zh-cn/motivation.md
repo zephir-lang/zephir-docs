@@ -2,28 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.10'
-menu:
-  - text:
-        '如果你是一个 php 程序员...'
-    url: '#if-you-are-a-php-programmer'
-  - text:
-        '如果你是一个 C 程序员...'
-    url: '#if-you-are-a-c-programmer'
-  - text:
-        '编译 vs 解释'
-    url: '#compilation-vs-interpretation'
-  - text:
-        '静态类型化 vs 动态类型化的语言'
-    url: '#statically-typed-versus-dynamically-typed-languages'
-  - text:
-        '编译方案'
-    url: '#compilation-scheme'
-  - text:
-        '代码保护'
-    url: '#code-protection'
-  - text:
-        '结语'
-    url: '#conclusion'
 ---
 # 为什么选择 Zephir?
 

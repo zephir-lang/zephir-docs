@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'ru-ru'
-version: '0.10'
+version: '0.11'
 ---
 # Лицензионное соглашение
 

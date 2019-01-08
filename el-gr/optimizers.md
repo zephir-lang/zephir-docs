@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'el-gr'
-version: '0.10'
+version: '0.11'
 ---
 # Custom optimizers
 
@@ -176,7 +176,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/0.10/el-gr/config) file:
+This file must be added at a special section in the [config.json](/0.11/el-gr/config) file:
 
 ```json
 "extra-sources": [

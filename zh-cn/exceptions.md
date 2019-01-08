@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'zh-cn'
-version: '0.10'
+version: '0.11'
 ---
 # 例外情况
 

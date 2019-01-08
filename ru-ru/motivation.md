@@ -2,28 +2,6 @@
 layout: default
 language: 'ru-ru'
 version: '0.10'
-menu:
-  - text:
-        'Если вы PHP программист...'
-    url: '#if-you-are-a-php-programmer'
-  - text:
-        'Если вы C программист...'
-    url: '#if-you-are-a-c-programmer'
-  - text:
-        'Компиляция против интерпретации'
-    url: '#compilation-vs-interpretation'
-  - text:
-        'Статическая типизация против динамической типизации'
-    url: '#statically-typed-versus-dynamically-typed-languages'
-  - text:
-        'Схема компиляции'
-    url: '#compilation-scheme'
-  - text:
-        'Защита кода'
-    url: '#code-protection'
-  - text:
-        'Заключение'
-    url: '#conclusion'
 ---
 # Почему Zephir?
 

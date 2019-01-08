@@ -1,32 +1,7 @@
 ---
 layout: default
 language: 'el-gr'
-version: '0.10'
-menu:
-  - text:
-      'call-gatherer-pass'
-    url: 'call-gatherer-pass'
-  - text:
-      'check-invalid-reads'
-    url: 'check-invalid-reads'
-  - text:
-      'constant-folding'
-    url: 'constant-folding'
-  - text:
-      'internal-call-transformation'
-    url: 'internal-call-transformation'
-  - text:
-      'local-context-pass'
-    url: 'local-context-pass'
-  - text:
-      'static-constant-class-folding'
-    url: 'static-constant-class-folding'
-  - text:
-      'static-type-inference'
-    url: 'static-type-inference'
-  - text:
-      'static-type-inference-second-pass'
-    url: 'static-type-inference-second-pass'
+version: '0.11'
 ---
 # Optimizations
 

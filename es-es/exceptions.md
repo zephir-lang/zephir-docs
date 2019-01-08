@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'es-es'
-version: '0.10'
+version: '0.11'
 ---
 # Exceptions
 

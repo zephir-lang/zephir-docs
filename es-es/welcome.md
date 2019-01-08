@@ -2,13 +2,6 @@
 layout: default
 language: 'es-es'
 version: '0.10'
-menu:
-  - text:
-        'Algunas características'
-    url: '#some-features'
-  - text:
-        'Una pequeña prueba'
-    url: '#a-small-taste' 
 ---
 # ¡Bienvenido!
 

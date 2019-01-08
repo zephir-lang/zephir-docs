@@ -2,25 +2,6 @@
 layout: default
 language: 'ru-ru'
 version: '0.10'
-menu:
-  - text:
-        'Проверка установки'
-    url: '#checking-the-installation'
-  - text:
-        'Каркас расширения'
-    url: '#extension-skeleton'
-  - text:
-        'Добавление нашего первого класса'
-    url: '#adding-our-first-class'
-  - text:
-        'Первоначальное тестирование'
-    url: '#initial-testing'
-  - text:
-        'Удобные класс'
-    url: '#a-useful-class'
-  - text:
-        'Заключение'
-    url: '#conclusion'
 ---
 # Урок
 
@@ -75,7 +56,7 @@ zephir help
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-Если что-то пошло не так, вернитесь к разделу [установка](/0.10/ru-ru/installation).
+Если что-то пошло не так, вернитесь к разделу [установка](/0.11/ru-ru/installation).
 
 <a name='extension-skeleton'></a>
 

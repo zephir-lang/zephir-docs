@@ -2,22 +2,6 @@
 layout: default
 language: 'es-es'
 version: '0.10'
-menu:
-  - text:
-      'Declarar Variables de tipo Array'
-    url: '#declaring-array-variables'
-  - text:
-      'Creación de Arrays'
-    url: '#creating-arrays'
-  - text:
-      'Actualización de arrays'
-    url: '#updating-arrays'
-  - text:
-      'Agregando elementos'
-    url: '#appending-elements'
-  - text:
-      'Leyendo elementos desde arrays'
-    url: '#reading-elements-from-arrays'
 ---
 # Arrays
 

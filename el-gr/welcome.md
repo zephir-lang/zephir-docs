@@ -1,14 +1,7 @@
 ---
 layout: default
 language: 'el-gr'
-version: '0.10'
-menu:
-  - text:
-        'Some features'
-    url: '#some-features'
-  - text:
-        'A small taste'
-    url: '#a-small-taste' 
+version: '0.11'
 ---
 # Καλώς ορίσατε!
 

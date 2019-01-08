@@ -2,13 +2,6 @@
 layout: default
 language: 'ru-ru'
 version: '0.10'
-menu:
-  - text:
-      'Conditional Unassigned Variables'
-    url: '#conditional-unassigned-variables'
-  - text:
-      'Dead Code Elimination'
-    url: '#dead-code-elimination'
 ---
 # Static Analysis
 

@@ -2,13 +2,6 @@
 layout: default
 language: 'es-es'
 version: '0.10'
-menu:
-  - text:
-        '¡Hola Mundo!'
-    url: '#hello-world'
-  - text:
-        'Una prueba de Zephir'
-    url: '#a-taste-of-zephir'
 ---
 # Introducción a Zephir
 

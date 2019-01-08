@@ -1,29 +1,7 @@
 ---
 layout: default
 language: 'zh-cn'
-version: '0.10'
-menu:
-  - text:
-        '在文件和命名空间中组织代码'
-    url: '#organizing-code-in-files-and-namespaces'
-  - text:
-        '指令分离'
-    url: '#instruction-separation'
-  - text:
-        '注释'
-    url: '#comments'
-  - text:
-        '变量声明'
-    url: '#variable-declarations'
-  - text:
-        '变量作用域'
-    url: '#variable-scope'
-  - text:
-        '超全局'
-    url: '#super-globals'
-  - text:
-        '本地符号表'
-    url: '#local-symbol-table'
+version: '0.11'
 ---
 # 基本语法
 

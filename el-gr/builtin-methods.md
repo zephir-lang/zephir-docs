@@ -1,20 +1,7 @@
 ---
 layout: default
 language: 'el-gr'
-version: '0.10'
-menu:
-  - text:
-      'String'
-    url: '#string'
-  - text:
-      'Array'
-    url: '#array'
-  - text:
-      'Char'
-    url: '#char'
-  - text:
-      'Integer'
-    url: '#integer'
+version: '0.11'
 ---
 # Built-In Methods
 

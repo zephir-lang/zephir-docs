@@ -1,23 +1,7 @@
 ---
 layout: default
 language: 'el-gr'
-version: '0.10'
-menu:
-  - text:
-      'Declaring Array Variables'
-    url: '#declaring-array-variables'
-  - text:
-      'Creating Arrays'
-    url: '#creating-arrays'
-  - text:
-      'Updating arrays'
-    url: '#updating-arrays'
-  - text:
-      'Appending elements'
-    url: '#appending-elements'
-  - text:
-      'Reading elements from arrays'
-    url: '#reading-elements-from-arrays'
+version: '0.11'
 ---
 # Πίνακες
 

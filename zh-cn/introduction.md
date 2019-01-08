@@ -2,13 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.10'
-menu:
-  - text:
-        'Hello World!'
-    url: '#hello-world'
-  - text:
-        '一个 Zephir 的尝试'
-    url: '#a-taste-of-zephir' 
 ---
 # Zephir 简介
 

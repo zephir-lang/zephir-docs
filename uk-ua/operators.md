@@ -2,41 +2,6 @@
 layout: default
 language: 'uk-ua'
 version: '0.10'
-menu:
-  - text:
-      'Arithmetic Operators'
-    url: '#arithmetic-operators'
-  - text:
-      'Bitwise Operators'
-    url: '#bitwise-operators'
-  - text:
-      'Comparison Operators'
-    url: '#comparison-operators'
-  - text:
-      'Logical Operators'
-    url: '#logical-operators'
-  - text:
-      'Ternary Operator'
-    url: '#tenary-operator'
-  - text:
-      'Special Operator'
-    url: '#special-operators'
-    sub:
-      - text:
-            'Empty'
-        url: '#special-operators-empty'
-      - text:
-            'Fetch'
-        url: '#special-operators-fetch'
-      - text:
-            'Isset'
-        url: '#special-operators-isset'
-      - text:
-            'Type Hints'
-        url: '#special-operators-type-hints'
-      - text:
-            'Branch Prediction Hints'
-        url: '#special-operators-branch-prediction-hints'
 ---
 # Operators
 

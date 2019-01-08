@@ -2,22 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.10'
-menu:
-  - text:
-      '声明数组变量'
-    url: '#declaring-array-variables'
-  - text:
-      '创建数组'
-    url: '#creating-arrays'
-  - text:
-      'Updating arrays'
-    url: '#updating-arrays'
-  - text:
-      '追加元素'
-    url: '#appending-elements'
-  - text:
-      '从数组中读取元素'
-    url: '#reading-elements-from-arrays'
 ---
 # 数组
 

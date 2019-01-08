@@ -2,16 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.10'
-menu:
-  - text:
-        '基础要求'
-    url: '#prerequisites'
-  - text:
-        '安装 Zephir'
-    url: '#installing-zephir'
-  - text:
-        '测试安装'
-    url: '#testing-the-installation'
 ---
 # 安装
 

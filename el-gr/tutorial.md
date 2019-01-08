@@ -1,29 +1,7 @@
 ---
 layout: default
 language: 'el-gr'
-version: '0.10'
-menu:
-  - text:
-        'Prerequisites'
-    url: '#prerequisites'
-  - text:
-        'Checking the installation'
-    url: '#checking-the-installation'
-  - text:
-        'Extension skeleton'
-    url: '#extension-skeleton'
-  - text:
-        'Adding our first class'
-    url: '#adding-our-first-class'
-  - text:
-        'Initial testing'
-    url: '#initial-testing'
-  - text:
-        'A useful class'
-    url: '#a-useful-class'
-  - text:
-        'Conclusion'
-    url: '#conclusion'
+version: '0.11'
 ---
 # Tutorial
 
@@ -45,40 +23,41 @@ zephir help
 
 If everything is well, you should see the following help (or something very similar):
 
-     _____              __    _
-    /__  /  ___  ____  / /_  (_)____
-      / /  / _ \/ __ \/ __ \/ / ___/
-     / /__/  __/ /_/ / / / / / /
-    /____/\___/ .___/_/ /_/_/_/
-             /_/
-    
-    Zephir version 0.10.9a-dev
-    
-    Usage:
-        command [options]
-    
-    Available commands:
-        stubs               Generates extension PHP stubs
-        install             Installs the extension (requires root password)
-        version             Shows the Zephir version
-        compile             Compile a Zephir extension
-        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
-        init [namespace]    Initializes a Zephir extension
-        fullclean           Cleans the generated object files in compilation
-        builddev            Generate/Compile/Install a Zephir extension in development mode
-        clean               Cleans the generated object files in compilation
-        generate            Generates C code from the Zephir code
-        help                Displays this help
-        build               Generate/Compile/Install a Zephir extension
-    
-    Options:
-        -f([a-z0-9\-]+)     Enables compiler optimizations
-        -fno-([a-z0-9\-]+)  Disables compiler optimizations
-        -w([a-z0-9\-]+)     Turns a warning on
-        -W([a-z0-9\-]+)     Turns a warning off
-    
+```
+ _____              __    _
+/__  /  ___  ____  / /_  (_)____
+  / /  / _ \/ __ \/ __ \/ / ___/
+ / /__/  __/ /_/ / / / / / /
+/____/\___/ .___/_/ /_/_/_/
+         /_/
 
-If something went wrong, please return back to the [installation](/0.10/en/installation) page.
+Zephir version 0.10.9a-dev
+
+Usage:
+    command [options]
+
+Available commands:
+    stubs               Generates extension PHP stubs
+    install             Installs the extension (requires root password)
+    version             Shows the Zephir version
+    compile             Compile a Zephir extension
+    api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
+    init [namespace]    Initializes a Zephir extension
+    fullclean           Cleans the generated object files in compilation
+    builddev            Generate/Compile/Install a Zephir extension in development mode
+    clean               Cleans the generated object files in compilation
+    generate            Generates C code from the Zephir code
+    help                Displays this help
+    build               Generate/Compile/Install a Zephir extension
+
+Options:
+    -f([a-z0-9\-]+)     Enables compiler optimizations
+    -fno-([a-z0-9\-]+)  Disables compiler optimizations
+    -w([a-z0-9\-]+)     Turns a warning on
+    -W([a-z0-9\-]+)     Turns a warning off
+```
+
+If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
 <a name='extension-skeleton'></a>
 
