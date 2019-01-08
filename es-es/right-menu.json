@@ -1,0 +1,748 @@
+{
+    "arrays": [
+        {
+            "text": "Declarar Variables de tipo Array",
+            "level": 1,
+            "url": "#declaring-array-variables"
+        },
+        {
+            "text": "Creación de Arrays",
+            "level": 1,
+            "url": "#creating-arrays"
+        },
+        {
+            "text": "Actualización de arrays",
+            "level": 1,
+            "url": "#updating-arrays"
+        },
+        {
+            "text": "Agregando elementos",
+            "level": 1,
+            "url": "#appending-elements"
+        },
+        {
+            "text": "Leyendo elementos desde arrays",
+            "level": 1,
+            "url": "#reading-elements-from-arrays"
+        }
+    ],
+    "builtin-methods": [
+        {
+            "text": "String",
+            "level": 1,
+            "url": "#string"
+        },
+        {
+            "text": "Array",
+            "level": 1,
+            "url": "#array"
+        },
+        {
+            "text": "Char",
+            "level": 1,
+            "url": "#char"
+        },
+        {
+            "text": "Integer",
+            "level": 1,
+            "url": "#integer"
+        }
+    ],
+    "closures": [],
+    "config": [
+        {
+            "text": "api",
+            "level": 1,
+            "url": "#api"
+        },
+        {
+            "text": "author",
+            "level": 1,
+            "url": "#author"
+        },
+        {
+            "text": "backend",
+            "level": 1,
+            "url": "#backend"
+        },
+        {
+            "text": "constants-sources",
+            "level": 1,
+            "url": "#constants-sources"
+        },
+        {
+            "text": "description",
+            "level": 1,
+            "url": "#description"
+        },
+        {
+            "text": "destructors",
+            "level": 1,
+            "url": "#destructors"
+        },
+        {
+            "text": "extension-name",
+            "level": 1,
+            "url": "#extension-name"
+        },
+        {
+            "text": "external-dependencies",
+            "level": 1,
+            "url": "#external-dependencies"
+        },
+        {
+            "text": "extra",
+            "level": 1,
+            "url": "#extra"
+        },
+        {
+            "text": "extra-cflags",
+            "level": 1,
+            "url": "#extra-cflags"
+        },
+        {
+            "text": "extra-classes",
+            "level": 1,
+            "url": "#extra-classes"
+        },
+        {
+            "text": "extra-libs",
+            "level": 1,
+            "url": "#extra-libs"
+        },
+        {
+            "text": "extra-sources",
+            "level": 1,
+            "url": "#extra-sources"
+        },
+        {
+            "text": "globals",
+            "level": 1,
+            "url": "#globals"
+        },
+        {
+            "text": "info",
+            "level": 1,
+            "url": "#info"
+        },
+        {
+            "text": "initializers",
+            "level": 1,
+            "url": "#initializers"
+        },
+        {
+            "text": "name",
+            "level": 1,
+            "url": "#name"
+        },
+        {
+            "text": "namespace",
+            "level": 1,
+            "url": "#namespace"
+        },
+        {
+            "text": "optimizations",
+            "level": 1,
+            "url": "#optimizations"
+        },
+        {
+            "text": "optimizer-dirs",
+            "level": 1,
+            "url": "#optimizer-dirs"
+        },
+        {
+            "text": "package-dependencies",
+            "level": 1,
+            "url": "#package-dependencies"
+        },
+        {
+            "text": "prototype-dir",
+            "level": 1,
+            "url": "#prototype-dir"
+        },
+        {
+            "text": "requires",
+            "level": 1,
+            "url": "#requires"
+        },
+        {
+            "text": "silent",
+            "level": 1,
+            "url": "#silent"
+        },
+        {
+            "text": "stubs",
+            "level": 1,
+            "url": "#stubs"
+        },
+        {
+            "text": "verbose",
+            "level": 1,
+            "url": "#verbose"
+        },
+        {
+            "text": "version",
+            "level": 1,
+            "url": "#version"
+        },
+        {
+            "text": "warnings",
+            "level": 1,
+            "url": "#warnings"
+        }
+    ],
+    "control-structures": [
+        {
+            "text": "Conditionals",
+            "level": 1,
+            "url": "#conditionals"
+        },
+        {
+            "text": "If Statement",
+            "level": 2,
+            "url": "#conditionals-if"
+        },
+        {
+            "text": "Switch Statement",
+            "level": 2,
+            "url": "#conditionals-switch"
+        },
+        {
+            "text": "Loops",
+            "level": 1,
+            "url": "#loops"
+        },
+        {
+            "text": "While Statement",
+            "level": 2,
+            "url": "#loops-while"
+        },
+        {
+            "text": "Loop Statement",
+            "level": 2,
+            "url": "#loops-loop"
+        },
+        {
+            "text": "For Statement",
+            "level": 2,
+            "url": "#loops-for"
+        },
+        {
+            "text": "Break Statement",
+            "level": 2,
+            "url": "#loops-break"
+        },
+        {
+            "text": "Continue Statement",
+            "level": 2,
+            "url": "#loops-continue"
+        },
+        {
+            "text": "Require",
+            "level": 1,
+            "url": "#require"
+        },
+        {
+            "text": "Let",
+            "level": 1,
+            "url": "#let"
+        }
+    ],
+    "exceptions": [],
+    "functions": [],
+    "globals": [],
+    "installation": [
+        {
+            "text": "Prerequisitos",
+            "level": 1,
+            "url": "#prerequisites"
+        },
+        {
+            "text": "Instalando Zephir",
+            "level": 1,
+            "url": "#installing-zephir"
+        },
+        {
+            "text": "Probando la Instalación",
+            "level": 1,
+            "url": "#testing-the-installation"
+        }
+    ],
+    "introduction": [
+        {
+            "text": "¡Hola Mundo!",
+            "level": 1,
+            "url": "#hello-world"
+        },
+        {
+            "text": "Una prueba de Zephir",
+            "level": 1,
+            "url": "#a-taste-of-zephir"
+        }
+    ],
+    "language": [
+        {
+            "text": "Organización del código en archivos y espacios de nombres",
+            "level": 1,
+            "url": "#organizing-code-in-files-and-namespaces"
+        },
+        {
+            "text": "Separación de instrucciones",
+            "level": 1,
+            "url": "#instruction-separation"
+        },
+        {
+            "text": "Comentarios",
+            "level": 1,
+            "url": "#comments"
+        },
+        {
+            "text": "Declaración de variables",
+            "level": 1,
+            "url": "#variable-declarations"
+        },
+        {
+            "text": "Ámbito de la variable",
+            "level": 1,
+            "url": "#variable-scope"
+        },
+        {
+            "text": "Super globales",
+            "level": 1,
+            "url": "#super-globals"
+        },
+        {
+            "text": "Tabla de símbolos locales",
+            "level": 1,
+            "url": "#local-symbol-table"
+        }
+    ],
+    "license": [],
+    "lifecycle": [
+        {
+            "text": "iniciadores",
+            "level": 1,
+            "url": "#initializers"
+        },
+        {
+            "text": "destructores",
+            "level": 1,
+            "url": "#destructors"
+        }
+    ],
+    "motivation": [
+        {
+            "text": "Si eres un programador PHP...",
+            "level": 1,
+            "url": "#if-you-are-a-php-programmer"
+        },
+        {
+            "text": "Si eres un programador C...",
+            "level": 1,
+            "url": "#if-you-are-a-c-programmer"
+        },
+        {
+            "text": "Compilación vs Interpretación",
+            "level": 1,
+            "url": "#compilation-vs-interpretation"
+        },
+        {
+            "text": "Lenguajes de Tipificado Estático vs Dinámico",
+            "level": 1,
+            "url": "#statically-typed-versus-dynamically-typed-languages"
+        },
+        {
+            "text": "Esquema de compilación",
+            "level": 1,
+            "url": "#compilation-scheme"
+        },
+        {
+            "text": "Protección del código",
+            "level": 1,
+            "url": "#code-protection"
+        },
+        {
+            "text": "Conclusión",
+            "level": 1,
+            "url": "#conclusion"
+        }
+    ],
+    "oop": [
+        {
+            "text": "Classes",
+            "level": 1,
+            "url": "#classes"
+        },
+        {
+            "text": "Modificadores de Clase",
+            "level": 2,
+            "url": "#classes-modifiers"
+        },
+        {
+            "text": "Implementación de Interfaces",
+            "level": 2,
+            "url": "#classes-interfaces"
+        },
+        {
+            "text": "Implementación de Métodos",
+            "level": 1,
+            "url": "#implementing-methods"
+        },
+        {
+            "text": "Parámetros opcionales nulos",
+            "level": 2,
+            "url": "#implementing-methods-optional-nullable-parameters"
+        },
+        {
+            "text": "Visibilidades soportadas",
+            "level": 2,
+            "url": "#implementing-methods-supported-visibilities"
+        },
+        {
+            "text": "Modificadores Soportados",
+            "level": 2,
+            "url": "#implementing-methods-supported-modifiers"
+        },
+        {
+            "text": "Métodos abreviados de getter/setter",
+            "level": 2,
+            "url": "#implementing-methods-getter-setter-shortcuts"
+        },
+        {
+            "text": "Tipo de valor devuelto",
+            "level": 2,
+            "url": "#implementing-methods-return-type-hints"
+        },
+        {
+            "text": "Tipo de valor devuelto: void",
+            "level": 2,
+            "url": "#implementing-methods-return-type-void"
+        },
+        {
+            "text": "Tipos de datos de parámetro Estricto/Flexible",
+            "level": 2,
+            "url": "#implementing-methods-strict-flexible-parameter-data-types"
+        },
+        {
+            "text": "Parámetros de sólo lectura",
+            "level": 2,
+            "url": "#implementing-methods-read-only-parameters"
+        },
+        {
+            "text": "Implementación de Propiedades",
+            "level": 1,
+            "url": "#implementing-properties"
+        },
+        {
+            "text": "Actualización de propiedades",
+            "level": 2,
+            "url": "#implementing-properties-updating"
+        },
+        {
+            "text": "Leyendo propiedades",
+            "level": 2,
+            "url": "#implementing-properties-reading"
+        },
+        {
+            "text": "Constante de Clase",
+            "level": 1,
+            "url": "#class-constants"
+        },
+        {
+            "text": "Llamando a métodos",
+            "level": 1,
+            "url": "#calling-methods"
+        },
+        {
+            "text": "Parámetros por Nombre",
+            "level": 2,
+            "url": "#calling-methods-parameters-by-name"
+        }
+    ],
+    "operators": [
+        {
+            "text": "Operadores Aritméticos",
+            "level": 1,
+            "url": "#arithmetic-operators"
+        },
+        {
+            "text": "Operadores bit a bit",
+            "level": 1,
+            "url": "#bitwise-operators"
+        },
+        {
+            "text": "Comparación de Operadores",
+            "level": 1,
+            "url": "#comparison-operators"
+        },
+        {
+            "text": "Operadores Lógicos",
+            "level": 1,
+            "url": "#logical-operators"
+        },
+        {
+            "text": "Operador Ternario",
+            "level": 1,
+            "url": "#tenary-operator"
+        },
+        {
+            "text": "Operadores Especiales",
+            "level": 1,
+            "url": "#special-operators"
+        },
+        {
+            "text": "Empty",
+            "level": 2,
+            "url": "#special-operators-empty"
+        },
+        {
+            "text": "Fetch",
+            "level": 2,
+            "url": "#special-operators-fetch"
+        },
+        {
+            "text": "Isset",
+            "level": 2,
+            "url": "#special-operators-isset"
+        },
+        {
+            "text": "Sugerencias de Tipos",
+            "level": 2,
+            "url": "#special-operators-type-hints"
+        },
+        {
+            "text": "Consejos de Predicción de Rama",
+            "level": 2,
+            "url": "#special-operators-branch-prediction-hints"
+        }
+    ],
+    "optimizations": [
+        {
+            "text": "call-gatherer-pass",
+            "level": 1,
+            "url": "call-gatherer-pass"
+        },
+        {
+            "text": "check-invalid-reads",
+            "level": 1,
+            "url": "check-invalid-reads"
+        },
+        {
+            "text": "constant-folding",
+            "level": 1,
+            "url": "constant-folding"
+        },
+        {
+            "text": "internal-call-transformation",
+            "level": 1,
+            "url": "internal-call-transformation"
+        },
+        {
+            "text": "local-context-pass",
+            "level": 1,
+            "url": "local-context-pass"
+        },
+        {
+            "text": "static-constant-class-folding",
+            "level": 1,
+            "url": "static-constant-class-folding"
+        },
+        {
+            "text": "static-type-inference",
+            "level": 1,
+            "url": "static-type-inference"
+        },
+        {
+            "text": "static-type-inference-second-pass",
+            "level": 1,
+            "url": "static-type-inference-second-pass"
+        }
+    ],
+    "optimizers": [],
+    "phpinfo": [],
+    "static-analysis": [
+        {
+            "text": "Conditional Unassigned Variables",
+            "level": 1,
+            "url": "#conditional-unassigned-variables"
+        },
+        {
+            "text": "Dead Code Elimination",
+            "level": 1,
+            "url": "#dead-code-elimination"
+        }
+    ],
+    "tutorial": [
+        {
+            "text": "Probando la instalación",
+            "level": 1,
+            "url": "#checking-the-installation"
+        },
+        {
+            "text": "Esqueleto de la extensión",
+            "level": 1,
+            "url": "#extension-skeleton"
+        },
+        {
+            "text": "Agregando nuestra primer clase",
+            "level": 1,
+            "url": "#adding-our-first-class"
+        },
+        {
+            "text": "Prueba inicial",
+            "level": 1,
+            "url": "#initial-testing"
+        },
+        {
+            "text": "Una clase útil",
+            "level": 1,
+            "url": "#a-useful-class"
+        },
+        {
+            "text": "Conclusión",
+            "level": 1,
+            "url": "#conclusion"
+        }
+    ],
+    "types": [
+        {
+            "text": "Tipos Dinámicos",
+            "level": 1,
+            "url": "#dynamic-types"
+        },
+        {
+            "text": "Arrays",
+            "level": 2,
+            "url": "#dynamic-types-arrays"
+        },
+        {
+            "text": "Boolean",
+            "level": 2,
+            "url": "#dynamic-types-boolean"
+        },
+        {
+            "text": "Float/Double",
+            "level": 2,
+            "url": "#dynamic-types-float-double"
+        },
+        {
+            "text": "Integer",
+            "level": 2,
+            "url": "#dynamic-types-integer"
+        },
+        {
+            "text": "Integer overflow",
+            "level": 2,
+            "url": "#dynamic-types-integer-overflow"
+        },
+        {
+            "text": "Objects",
+            "level": 2,
+            "url": "#dynamic-types-objects"
+        },
+        {
+            "text": "String",
+            "level": 2,
+            "url": "#dynamic-types-string"
+        },
+        {
+            "text": "Tipos Estáticos",
+            "level": 1,
+            "url": "#static-types"
+        },
+        {
+            "text": "Boolean",
+            "level": 2,
+            "url": "#static-types-boolean"
+        },
+        {
+            "text": "Char/Unsigned Char",
+            "level": 2,
+            "url": "#static-types-char-unsigned"
+        },
+        {
+            "text": "Integer/Unsigned Integer",
+            "level": 2,
+            "url": "#static-types-integer-unsigned"
+        },
+        {
+            "text": "Long/Unsigned Long",
+            "level": 2,
+            "url": "#static-types-long-unsigned"
+        },
+        {
+            "text": "String",
+            "level": 2,
+            "url": "#static-types-string"
+        }
+    ],
+    "warnings": [
+        {
+            "text": "unused-variable",
+            "level": 1,
+            "url": "#unused-variable"
+        },
+        {
+            "text": "unused-variable-external",
+            "level": 1,
+            "url": "#unused-variable-external"
+        },
+        {
+            "text": "possible-wrong-parameter-undefined",
+            "level": 1,
+            "url": "#possible-wrong-parameter-undefined"
+        },
+        {
+            "text": "nonexistent-function",
+            "level": 1,
+            "url": "#nonexistent-function"
+        },
+        {
+            "text": "nonexistent-class",
+            "level": 1,
+            "url": "#nonexistent-class"
+        },
+        {
+            "text": "non-valid-isset",
+            "level": 1,
+            "url": "#non-valid-isset"
+        },
+        {
+            "text": "non-array-update",
+            "level": 1,
+            "url": "#non-array-update"
+        },
+        {
+            "text": "non-valid-objectupdate",
+            "level": 1,
+            "url": "#non-valid-objectupdate"
+        },
+        {
+            "text": "non-valid-fetch",
+            "level": 1,
+            "url": "#non-valid-fetch"
+        },
+        {
+            "text": "invalid-array-index",
+            "level": 1,
+            "url": "#invalid-array-index"
+        },
+        {
+            "text": "non-array-append",
+            "level": 1,
+            "url": "#non-array-append"
+        }
+    ],
+    "welcome": [
+        {
+            "text": "Algunas características",
+            "level": 1,
+            "url": "#some-features"
+        },
+        {
+            "text": "Una pequeña prueba",
+            "level": 1,
+            "url": "#a-small-taste"
+        }
+    ]
+}

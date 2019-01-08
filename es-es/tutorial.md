@@ -2,25 +2,6 @@
 layout: default
 language: 'es-es'
 version: '0.11'
-menu:
-  - text:
-        'Probando la instalación'
-    url: '#checking-the-installation'
-  - text:
-        'Esqueleto de la extensión'
-    url: '#extension-skeleton'
-  - text:
-        'Agregando nuestra primer clase'
-    url: '#adding-our-first-class'
-  - text:
-        'Prueba inicial'
-    url: '#initial-testing'
-  - text:
-        'Una clase útil'
-    url: '#a-useful-class'
-  - text:
-        'Conclusión'
-    url: '#conclusion'
 ---
 # Tutorial
 

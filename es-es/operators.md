@@ -2,41 +2,6 @@
 layout: default
 language: 'es-es'
 version: '0.11'
-menu:
-  - text:
-      'Operadores Aritméticos'
-    url: '#arithmetic-operators'
-  - text:
-      'Operadores bit a bit'
-    url: '#bitwise-operators'
-  - text:
-      'Comparación de Operadores'
-    url: '#comparison-operators'
-  - text:
-      'Operadores Lógicos'
-    url: '#logical-operators'
-  - text:
-      'Operador Ternario'
-    url: '#tenary-operator'
-  - text:
-      'Operadores Especiales'
-    url: '#special-operators'
-    sub:
-      - text:
-            'Empty'
-        url: '#special-operators-empty'
-      - text:
-            'Fetch'
-        url: '#special-operators-fetch'
-      - text:
-            'Isset'
-        url: '#special-operators-isset'
-      - text:
-            'Sugerencias de Tipos'
-        url: '#special-operators-type-hints'
-      - text:
-            'Consejos de Predicción de Rama'
-        url: '#special-operators-branch-prediction-hints'
 ---
 # Operadores
 

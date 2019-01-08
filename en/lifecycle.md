@@ -2,13 +2,6 @@
 layout: default
 language: 'en'
 version: '0.11'
-menu:
-  - text:
-      'initializers'
-    url: '#initializers'
-  - text:
-      'destructors'
-    url: '#destructors'
 ---
 # Lifecycle hooks
 PHP provides several lifecycle events, which extensions can use to perform common initialization or shutdown tasks. Normally, Zephir's own hooks into these events will cover all the setup and tear down your extension will need, but if you find that you need to do something more, there are a few options you can use to pass your own code into these same hooks.

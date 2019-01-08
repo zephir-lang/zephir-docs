@@ -2,28 +2,6 @@
 layout: default
 language: 'en'
 version: '0.11'
-menu:
-  - text:
-        'If you are a PHP programmer...'
-    url: '#if-you-are-a-php-programmer'
-  - text:
-        'If you are a C programmer...'
-    url: '#if-you-are-a-c-programmer'
-  - text:
-        'Compilation vs Interpretation'
-    url: '#compilation-vs-interpretation'
-  - text:
-        'Statically typed versus dynamically typed languages'
-    url: '#statically-typed-versus-dynamically-typed-languages'
-  - text:
-        'Compilation scheme'
-    url: '#compilation-scheme'
-  - text:
-        'Code protection'
-    url: '#code-protection'
-  - text:
-        'Conclusion'
-    url: '#conclusion'
 ---
 # Why Zephir?
 Today's PHP applications must balance a number of concerns including stability, performance, and functionality. Every PHP application is based on a set of common components, that are also base for many other applications.

@@ -2,13 +2,6 @@
 layout: default
 language: 'ru-ru'
 version: '0.11'
-menu:
-  - text:
-        'Привет мир!'
-    url: '#hello-world'
-  - text:
-        'Понимание Zephir'
-    url: '#a-taste-of-zephir'
 ---
 # Введение в Zephir
 

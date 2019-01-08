@@ -2,22 +2,6 @@
 layout: default
 language: 'uk-ua'
 version: '0.11'
-menu:
-  - text:
-      'Declaring Array Variables'
-    url: '#declaring-array-variables'
-  - text:
-      'Creating Arrays'
-    url: '#creating-arrays'
-  - text:
-      'Updating arrays'
-    url: '#updating-arrays'
-  - text:
-      'Appending elements'
-    url: '#appending-elements'
-  - text:
-      'Reading elements from arrays'
-    url: '#reading-elements-from-arrays'
 ---
 # Массивы
 

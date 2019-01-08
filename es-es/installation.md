@@ -2,16 +2,6 @@
 layout: default
 language: 'es-es'
 version: '0.11'
-menu:
-  - text:
-        'Prerequisitos'
-    url: '#prerequisites'
-  - text:
-        'Instalando Zephir'
-    url: '#installing-zephir'
-  - text:
-        'Probando la Instalación'
-    url: '#testing-the-installation'
 ---
 # Instalación
 

@@ -2,13 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.11'
-menu:
-  - text:
-        '一些特征'
-    url: '#some-features'
-  - text:
-        '一个小尝试'
-    url: '#a-small-taste' 
 ---
 # 欢迎!
 

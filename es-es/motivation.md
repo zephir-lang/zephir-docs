@@ -2,28 +2,6 @@
 layout: default
 language: 'es-es'
 version: '0.11'
-menu:
-  - text:
-        'Si eres un programador PHP...'
-    url: '#if-you-are-a-php-programmer'
-  - text:
-        'Si eres un programador C...'
-    url: '#if-you-are-a-c-programmer'
-  - text:
-        'Compilación vs Interpretación'
-    url: '#compilation-vs-interpretation'
-  - text:
-        'Lenguajes de Tipificado Estático vs Dinámico'
-    url: '#statically-typed-versus-dynamically-typed-languages'
-  - text:
-        'Esquema de compilación'
-    url: '#compilation-scheme'
-  - text:
-        'Protección del código'
-    url: '#code-protection'
-  - text:
-        'Conclusión'
-    url: '#conclusion'
 ---
 # ¿Por qué Zephir?
 

@@ -2,13 +2,6 @@
 layout: default
 language: 'es-es'
 version: '0.11'
-menu:
-  - text:
-      'iniciadores'
-    url: '#initializers'
-  - text:
-      'destructores'
-    url: '#destructors'
 ---
 # Lifecycle hooks
 

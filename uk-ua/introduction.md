@@ -2,13 +2,6 @@
 layout: default
 language: 'uk-ua'
 version: '0.11'
-menu:
-  - text:
-        'Hello World!'
-    url: '#hello-world'
-  - text:
-        'A taste of Zephir'
-    url: '#a-taste-of-zephir' 
 ---
 # Представляємо Zephir
 

@@ -2,13 +2,6 @@
 layout: default
 language: 'el-gr'
 version: '0.11'
-menu:
-  - text:
-        'Hello World!'
-    url: '#hello-world'
-  - text:
-        'A taste of Zephir'
-    url: '#a-taste-of-zephir' 
 ---
 # Introducing Zephir
 

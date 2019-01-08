@@ -2,13 +2,6 @@
 layout: default
 language: 'el-gr'
 version: '0.11'
-menu:
-  - text:
-        'Some features'
-    url: '#some-features'
-  - text:
-        'A small taste'
-    url: '#a-small-taste' 
 ---
 # Καλώς ορίσατε!
 

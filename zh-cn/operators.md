@@ -2,41 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.11'
-menu:
-  - text:
-      '算术运算符'
-    url: '#arithmetic-operators'
-  - text:
-      '按位运算符'
-    url: '#bitwise-operators'
-  - text:
-      '比较运算符'
-    url: '#comparison-operators'
-  - text:
-      '逻辑运算符'
-    url: '#logical-operators'
-  - text:
-      '三元运算符'
-    url: '#tenary-operator'
-  - text:
-      '特殊运算符'
-    url: '#special-operators'
-    sub:
-      - text:
-            'Empty'
-        url: '#special-operators-empty'
-      - text:
-            'Fetch'
-        url: '#special-operators-fetch'
-      - text:
-            'Isset'
-        url: '#special-operators-isset'
-      - text:
-            '类型提示'
-        url: '#special-operators-type-hints'
-      - text:
-            '分支预测提示'
-        url: '#special-operators-branch-prediction-hints'
 ---
 # 运算符
 

@@ -2,13 +2,6 @@
 layout: default
 language: 'en'
 version: '0.11'
-menu:
-  - text:
-      'Conditional Unassigned Variables'
-    url: '#conditional-unassigned-variables'
-  - text:
-      'Dead Code Elimination'
-    url: '#dead-code-elimination'
 ---
 # Static Analysis
 Zephir's compiler provides static analysis of the compiled code. The idea behind this feature is to help the developer to find potential problems and avoid unexpected behaviors, well before runtime.

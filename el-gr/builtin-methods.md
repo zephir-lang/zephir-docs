@@ -2,19 +2,6 @@
 layout: default
 language: 'el-gr'
 version: '0.11'
-menu:
-  - text:
-      'String'
-    url: '#string'
-  - text:
-      'Array'
-    url: '#array'
-  - text:
-      'Char'
-    url: '#char'
-  - text:
-      'Integer'
-    url: '#integer'
 ---
 # Built-In Methods
 

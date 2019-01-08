@@ -2,13 +2,6 @@
 layout: default
 language: 'zh-cn'
 version: '0.11'
-menu:
-  - text:
-      'initializers'
-    url: '#initializers'
-  - text:
-      'destructors'
-    url: '#destructors'
 ---
 # 生命周期钩子
 

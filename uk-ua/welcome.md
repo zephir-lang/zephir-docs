@@ -2,13 +2,6 @@
 layout: default
 language: 'uk-ua'
 version: '0.11'
-menu:
-  - text:
-        'Some Features'
-    url: '#some-features'
-  - text:
-        'A small taste'
-    url: '#a-small-taste' 
 ---
 # Вітаємо!
 
