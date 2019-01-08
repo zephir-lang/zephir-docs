@@ -48,7 +48,9 @@
             "url": "#integer"
         }
     ],
-    "closures": [],
+    "closures": [
+
+    ],
     "config": [
         {
             "text": "api",
@@ -248,9 +250,15 @@
             "url": "#let"
         }
     ],
-    "exceptions": [],
-    "functions": [],
-    "globals": [],
+    "exceptions": [
+
+    ],
+    "functions": [
+
+    ],
+    "globals": [
+
+    ],
     "installation": [
         {
             "text": "基础要求",
@@ -266,6 +274,18 @@
             "text": "测试安装",
             "level": 1,
             "url": "#testing-the-installation"
+        }
+    ],
+    "introduction": [
+        {
+            "text": "Hello World!",
+            "level": 1,
+            "url": "#hello-world"
+        },
+        {
+            "text": "一个 Zephir 的尝试",
+            "level": 1,
+            "url": "#a-taste-of-zephir"
         }
     ],
     "language": [
@@ -305,7 +325,9 @@
             "url": "#local-symbol-table"
         }
     ],
-    "license": [],
+    "license": [
+
+    ],
     "lifecycle": [
         {
             "text": "initializers",
@@ -546,8 +568,12 @@
             "url": "static-type-inference-second-pass"
         }
     ],
-    "optimizers": [],
-    "phpinfo": [],
+    "optimizers": [
+
+    ],
+    "phpinfo": [
+
+    ],
     "static-analysis": [
         {
             "text": "条件未分配的变量",
