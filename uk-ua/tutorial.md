@@ -1,13 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Checking the installation' url: '#checking-the-installation'
-- text: 'Extension skeleton' url: '#extension-skeleton'
-- text: 'Adding our first class' url: '#adding-our-first-class'
-- text: 'Initial testing' url: '#initial-testing'
-- text: 'A useful class' url: '#a-useful-class'
-- text: 'Conclusion' url: '#conclusion'
+layout: default language: 'en' version: '0.11'
 
 * * *
 
