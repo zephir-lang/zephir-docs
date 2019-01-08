@@ -1,11 +1,6 @@
 * * *
 
-layout: default language: 'el-GR' version: '0.10' menu:
-
-- text: 'String' url: '#string'
-- text: 'Array' url: '#array'
-- text: 'Char' url: '#char'
-- text: 'Integer' url: '#integer'
+layout: default language: 'el-GR' version: '0.10'
 
 * * *
 
