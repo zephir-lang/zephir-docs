@@ -1,9 +1,6 @@
 * * *
 
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Some Features' url: '#some-features'
-- text: 'A small taste' url: '#a-small-taste' 
+layout: default language: 'en' version: '0.11'
 
 * * *
 
@@ -73,7 +70,7 @@ echo $filter->alpha("01he#l.lo?/1"); // prints hello
 
 Нижче ми зібрали посилання на зовнішні ресурси, які можуть вас зацікавити:
 
-- [Система типізації](https://en.wikipedia.org/wiki/Type_system)
-- [Безпечний доступ до пам'яті](https://en.wikipedia.org/wiki/Memory_safety)
+- [Type system](https://en.wikipedia.org/wiki/Type_system)
+- [Memory safety](https://en.wikipedia.org/wiki/Memory_safety)
 - [Ahead-of-time (AOT) компіляція](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
 - [Керування пам’яттю](https://en.wikipedia.org/wiki/Memory_management)
