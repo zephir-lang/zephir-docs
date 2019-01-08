@@ -8,11 +8,11 @@
         "url": "motivation"
     },
     {
-        "text": "Introducing Zephir",
+        "text": "Introducción a Zephir",
         "url": "introduction"
     },
     {
-        "text": "Installation",
+        "text": "Instalación",
         "url": "installation"
     },
     {
@@ -20,15 +20,15 @@
         "url": "tutorial"
     },
     {
-        "text": "Basic Syntax",
+        "text": "Sintaxis básica",
         "url": "language"
     },
     {
-        "text": "Types",
+        "text": "Tipos",
         "url": "types"
     },
     {
-        "text": "Operators",
+        "text": "Operadores",
         "url": "operators"
     },
     {
@@ -92,7 +92,7 @@
         "url": "warnings"
     },
     {
-        "text": "License",
+        "text": "Licencia",
         "url": "license"
     }
 ]
