@@ -1,9 +1,6 @@
 * * *
 
-layout: default language: 'el-GR' version: '0.11' menu:
-
-- text: 'initializers' url: '#initializers'
-- text: 'destructors' url: '#destructors'
+layout: default language: 'el-GR' version: '0.11'
 
 * * *
 
