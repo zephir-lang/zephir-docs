@@ -1,13 +1,6 @@
 * * *
 
-layout: default language: 'el-GR' version: '0.10' menu:
-
-- text: 'Checking the installation' url: '#checking-the-installation'
-- text: 'Extension skeleton' url: '#extension-skeleton'
-- text: 'Adding our first class' url: '#adding-our-first-class'
-- text: 'Initial testing' url: '#initial-testing'
-- text: 'A useful class' url: '#a-useful-class'
-- text: 'Conclusion' url: '#conclusion'
+layout: default language: 'el-GR' version: '0.10'
 
 * * *
 
@@ -64,7 +57,7 @@ If everything is well, you should see the following help (or something very simi
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-If something went wrong, please return back to the [installation](/0.10/en/installation) page.
+If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
 <a name='extension-skeleton'></a>
 
