@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 类型
 
 Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍支持的类型及其行为。

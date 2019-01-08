@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'uk-ua'
+version: '0.11'
+---
 # Built-In Methods
 
 As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.

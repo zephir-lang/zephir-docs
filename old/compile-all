@@ -1,8 +1,0 @@
-cd en
-make html
-cd ..
-cd ru
-make html
-cd ..
-cd zh
-make html

@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'ru-ru'
+version: '0.11'
+---
 # Секции phpinfo()
 
 Как и большинство расширений, Zephir расширения могут отображать информацию при выводе [phpinfo()](http://php.net/manual/en/function.phpinfo.php). Обычно эта информация относится к директивам, данным окружения и т.п.

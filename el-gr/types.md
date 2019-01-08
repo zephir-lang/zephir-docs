@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'el-gr'
+version: '0.11'
+---
 # Types
 
 Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.

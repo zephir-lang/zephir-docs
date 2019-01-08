@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 运算符
 
 Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些行为。

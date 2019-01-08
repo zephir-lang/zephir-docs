@@ -1,17 +1,8 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.11' menu:
-
-- text: 'Organizing code in files and namespaces' url: '#organizing-code-in-files-and-namespaces'
-- text: 'Instruction separation' url: '#instruction-separation'
-- text: 'Comments' url: '#comments'
-- text: 'Variable declarations' url: '#variable-declarations'
-- text: 'Variable scope' url: '#variable-scope'
-- text: 'Super globals' url: '#super-globals'
-- text: 'Local symbol table' url: '#local-symbol-table'
-
-* * *
-
+---
+layout: default
+language: 'el-gr'
+version: '0.11'
+---
 # Basic Syntax
 
 In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.

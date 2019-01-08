@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'el-gr'
+version: '0.11'
+---
 # Tutorial
 
 Zephir, and this manual, are intended for PHP developers who want to create C extensions, with a lower complexity.
@@ -24,38 +23,39 @@ zephir help
 
 If everything is well, you should see the following help (or something very similar):
 
-     _____              __    _
-    /__  /  ___  ____  / /_  (_)____
-      / /  / _ \/ __ \/ __ \/ / ___/
-     / /__/  __/ /_/ / / / / / /
-    /____/\___/ .___/_/ /_/_/_/
-             /_/
-    
-    Zephir version 0.10.9a-dev
-    
-    Usage:
-        command [options]
-    
-    Available commands:
-        stubs               Generates extension PHP stubs
-        install             Installs the extension (requires root password)
-        version             Shows the Zephir version
-        compile             Compile a Zephir extension
-        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
-        init [namespace]    Initializes a Zephir extension
-        fullclean           Cleans the generated object files in compilation
-        builddev            Generate/Compile/Install a Zephir extension in development mode
-        clean               Cleans the generated object files in compilation
-        generate            Generates C code from the Zephir code
-        help                Displays this help
-        build               Generate/Compile/Install a Zephir extension
-    
-    Options:
-        -f([a-z0-9\-]+)     Enables compiler optimizations
-        -fno-([a-z0-9\-]+)  Disables compiler optimizations
-        -w([a-z0-9\-]+)     Turns a warning on
-        -W([a-z0-9\-]+)     Turns a warning off
-    
+```
+ _____              __    _
+/__  /  ___  ____  / /_  (_)____
+  / /  / _ \/ __ \/ __ \/ / ___/
+ / /__/  __/ /_/ / / / / / /
+/____/\___/ .___/_/ /_/_/_/
+         /_/
+
+Zephir version 0.10.9a-dev
+
+Usage:
+    command [options]
+
+Available commands:
+    stubs               Generates extension PHP stubs
+    install             Installs the extension (requires root password)
+    version             Shows the Zephir version
+    compile             Compile a Zephir extension
+    api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
+    init [namespace]    Initializes a Zephir extension
+    fullclean           Cleans the generated object files in compilation
+    builddev            Generate/Compile/Install a Zephir extension in development mode
+    clean               Cleans the generated object files in compilation
+    generate            Generates C code from the Zephir code
+    help                Displays this help
+    build               Generate/Compile/Install a Zephir extension
+
+Options:
+    -f([a-z0-9\-]+)     Enables compiler optimizations
+    -fno-([a-z0-9\-]+)  Disables compiler optimizations
+    -w([a-z0-9\-]+)     Turns a warning on
+    -W([a-z0-9\-]+)     Turns a warning off
+```
 
 If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 

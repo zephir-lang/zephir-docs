@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'uk-ua'
+version: '0.11'
+---
 # Configuration File
 
 Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
@@ -108,7 +107,7 @@ Extension description - any text describing your extension:
 
 ## destructors
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.11/uk-ua/lifecycle) chapter for more information.
 
 ```json
 {
@@ -250,7 +249,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 ## globals
 
-Extension globals available. Check the [globals](/0.11/en/globals) chapter for more information.
+Extension globals available. Check the [globals](/0.11/uk-ua/globals) chapter for more information.
 
 ```json
 {
@@ -271,7 +270,7 @@ Extension globals available. Check the [globals](/0.11/en/globals) chapter for m
 
 ## info
 
-`phpinfo()` sections. Check the [phpinfo()](/0.11/en/phpinfo) chapter for more information.
+`phpinfo()` sections. Check the [phpinfo()](/0.11/uk-ua/phpinfo) chapter for more information.
 
 ```json
 {
@@ -291,7 +290,7 @@ Extension globals available. Check the [globals](/0.11/en/globals) chapter for m
 
 ## initializers
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.11/uk-ua/lifecycle) chapter for more information.
 
 ```json
 {

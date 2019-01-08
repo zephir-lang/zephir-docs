@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'ru-ru'
+version: '0.11'
+---
 # Урок
 
 Zephir и это руководство предназначены для разработчиков PHP, которые хотят создавать C-расширения с меньшей сложностью.
@@ -57,7 +56,7 @@ zephir help
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-If something went wrong, please return back to the [installation](/0.11/en/installation) page.
+Если что-то пошло не так, вернитесь к разделу [установка](/0.11/ru-ru/installation).
 
 <a name='extension-skeleton'></a>
 
