@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # 例外情况
 
 Zephir以非常低的级别实现异常，为PHP提供类似的行为和功能。
@@ -74,7 +75,7 @@ throw 123;
 throw 123.123;
 ```zephir
 
-Zephir的异常提供了相同的方法来知道PHP异常发生的异常发生的位置。 也就是说，` `Exception::getFile()`和 `Exception::getLine()`返回抛出异常的Zephir代码中的位置：</p>
+Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is, `Exception::getFile()` and `Exception::getLine()` return the location in the Zephir code where the exception was thrown:
 
 ```bash
     Exception: The static method 'someMethod' does not exist on model 'Robots'
