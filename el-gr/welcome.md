@@ -1,8 +1,9 @@
----
-layout: default
-language: 'el-gr'
-version: '0.11'
----
+* * *
+
+layout: default language: 'el-GR' version: '0.10'
+
+* * *
+
 # Καλώς ορίσατε!
 
 Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
