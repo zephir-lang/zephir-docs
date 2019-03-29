@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.10'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # 教程
 
 Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其复杂性较低。
@@ -56,7 +57,7 @@ zephir help
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-如果出现问题, 请返回到 [installation](/0.11/zh-cn/installation) 页面。
+If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
 <a name='extension-skeleton'></a>
 
