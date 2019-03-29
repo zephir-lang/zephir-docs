@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.10'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # 闭 包
 
 您可以在Zephir中使用闭包(也称为匿名函数);这些是PHP兼容的，可以返回给PHP代码块:
