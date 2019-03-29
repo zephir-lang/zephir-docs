@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.10'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # 控制结构
 
 Zephir实现了一组简化的控制结构，这些结构用类似的语言表示，如C、PHP等。
@@ -240,6 +241,5 @@ let this->number--;     // decrement object property
 
 可以在单个` let </ 0>操作中执行多个突变：</p>
 
-```zephir
-let price = 1.00, realPrice = price, status = false;
-```
+<pre><code class="zephir">let price = 1.00, realPrice = price, status = false;
+`</pre>
