@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.10'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # 类与对象
 
 Zephir 提倡面向对象编程。 这就是为什么您只能在扩展中导出方法和类的原因。 您还将看到, 在大多数情况下, 运行时错误会引发异常, 而不是致命错误或警告。

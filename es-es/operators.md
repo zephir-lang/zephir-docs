@@ -1,8 +1,9 @@
----
-layout: default
-language: 'es-es'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # Operadores
 
 Los operadores en Zephir son similares a los de PHP, y también heredarán algunos de sus comportamientos.

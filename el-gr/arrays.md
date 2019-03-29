@@ -1,8 +1,9 @@
----
-layout: default
-language: 'el-gr'
-version: '0.11'
----
+* * *
+
+layout: default language: 'el-GR' version: '0.10'
+
+* * *
+
 # Πίνακες
 
 Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).

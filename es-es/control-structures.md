@@ -1,8 +1,9 @@
----
-layout: default
-language: 'es-es'
-version: '0.10'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # Estructuras de Control
 
 Zephir implementa un conjunto simplificado de estructuras de control presentes en lenguajes similares como C, PHP, etc.

@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.10'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # 类型
 
 Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍支持的类型及其行为。
@@ -114,7 +115,7 @@ var a = 5, b = 10050;
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### 整数溢出
+### Integer overflow
 
 与PHP相反，Zephir不会自动检查整数溢出。 像在C中一样，如果你做的操作可能会返回一个大的数字，你应该使用`unsigned long`或`float`来存储它们:
 
