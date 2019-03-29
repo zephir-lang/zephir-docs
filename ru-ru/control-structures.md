@@ -1,8 +1,9 @@
----
-layout: default
-language: 'ru-ru'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # Control Structures
 
 Zephir реализует упрощенный набор управляющих структур, присутствующих в подобных ему языках, таких как C, PHP и т.п.
