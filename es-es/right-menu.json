@@ -78,7 +78,7 @@
             "url": "#description"
         },
         {
-            "text": "destructores",
+            "text": "destructors",
             "level": 1,
             "url": "#destructors"
         },
@@ -128,7 +128,7 @@
             "url": "#info"
         },
         {
-            "text": "iniciadores",
+            "text": "initializers",
             "level": 1,
             "url": "#initializers"
         },
@@ -195,47 +195,47 @@
     ],
     "control-structures": [
         {
-            "text": "Condicionales",
+            "text": "Conditionals",
             "level": 1,
             "url": "#conditionals"
         },
         {
-            "text": "Declaración If",
+            "text": "If Statement",
             "level": 2,
             "url": "#conditionals-if"
         },
         {
-            "text": "Declaración Switch",
+            "text": "Switch Statement",
             "level": 2,
             "url": "#conditionals-switch"
         },
         {
-            "text": "Bucles",
+            "text": "Loops",
             "level": 1,
             "url": "#loops"
         },
         {
-            "text": "Declaración While",
+            "text": "While Statement",
             "level": 2,
             "url": "#loops-while"
         },
         {
-            "text": "Declaración Loop",
+            "text": "Loop Statement",
             "level": 2,
             "url": "#loops-loop"
         },
         {
-            "text": "Declaración For",
+            "text": "For Statement",
             "level": 2,
             "url": "#loops-for"
         },
         {
-            "text": "Declaración Break",
+            "text": "Break Statement",
             "level": 2,
             "url": "#loops-break"
         },
         {
-            "text": "Declaración Continue",
+            "text": "Continue Statement",
             "level": 2,
             "url": "#loops-continue"
         },
@@ -645,7 +645,7 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Integer sobrecarga",
+            "text": "Integer overflow",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
@@ -670,17 +670,17 @@
             "url": "#static-types-boolean"
         },
         {
-            "text": "Char/Char sin signo",
+            "text": "Char/Unsigned Char",
             "level": 2,
             "url": "#static-types-char-unsigned"
         },
         {
-            "text": "Integer/Integer sin signo",
+            "text": "Integer/Unsigned Integer",
             "level": 2,
             "url": "#static-types-integer-unsigned"
         },
         {
-            "text": "Long/Long sin signo",
+            "text": "Long/Unsigned Long",
             "level": 2,
             "url": "#static-types-long-unsigned"
         },
