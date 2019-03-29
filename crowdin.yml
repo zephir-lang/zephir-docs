@@ -7,6 +7,7 @@ files:
         el: el-gr
         ru: ru-ru
         es-ES: es-es
+        tr-TR: tr-tr
         uk: uk-ua
   - source: /en/*.json
     translation: /%locale%/%original_file_name%
@@ -16,4 +17,5 @@ files:
         el: el-gr
         ru: ru-ru
         es-ES: es-es
+        tr-TR: tr-tr
         uk: uk-ua
