@@ -1,8 +1,39 @@
----
-layout: default
-language: 'es-es'
-version: '0.10'
----
+* * *
+
+layout: default language: 'en' version: '0.10' menu:
+
+- text: 'api' url: '#api'
+- text: 'author' url: '#author'
+- text: 'backend' url: '#backend'
+- text: 'constants-sources' url: '#constants-sources'
+- text: 'description' url: '#description'
+- text: 'destructors' url: '#destructors'
+- text: 'extension-name' url: '#extension-name'
+- text: 'external-dependencies' url: '#external-dependencies'
+- text: 'extra' url: '#extra'
+- text: 'extra-cflags' url: '#extra-cflags'
+- text: 'extra-classes' url: '#extra-classes'
+- text: 'extra-libs' url: '#extra-libs'
+- text: 'extra-sources' url: '#extra-sources'
+- text: 'globals' url: '#globals'
+- text: 'info' url: '#info'
+- text: 'initializers' url: '#initializers'
+- text: 'name' url: '#name'
+- text: 'namespace' url: '#namespace'
+- text: 'optimizations' url: '#optimizations'
+- text: 'optimizer-dirs'  
+    url: '#optimizer-dirs'
+- text: 'package-dependencies' url: '#package-dependencies'
+- text: 'prototype-dir' url: '#prototype-dir'
+- text: 'requires' url: '#requires'
+- text: 'silent' url: '#silent'
+- text: 'stubs' url: '#stubs'
+- text: 'verbose' url: '#verbose'
+- text: 'version' url: '#version'
+- text: 'warnings' url: '#warnings'
+
+* * *
+
 # Configuration File
 
 Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
@@ -107,7 +138,7 @@ Extension description - any text describing your extension:
 
 ## destructores
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.11/es-es/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.10/en/lifecycle) chapter for more information.
 
 ```json
 {
@@ -249,7 +280,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 ## globals
 
-Extension globals available. Check the [globals](/0.11/es-es/globals) chapter for more information.
+Extension globals available. Check the [globals](/0.10/en/globals) chapter for more information.
 
 ```json
 {
@@ -270,7 +301,7 @@ Extension globals available. Check the [globals](/0.11/es-es/globals) chapter fo
 
 ## info
 
-`phpinfo()` sections. Check the [phpinfo()](/0.11/es-es/phpinfo) chapter for more information.
+`phpinfo()` sections. Check the [phpinfo()](/0.10/en/phpinfo) chapter for more information.
 
 ```json
 {
@@ -290,7 +321,7 @@ Extension globals available. Check the [globals](/0.11/es-es/globals) chapter fo
 
 ## iniciadores
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.11/es-es/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.10/en/lifecycle) chapter for more information.
 
 ```json
 {
