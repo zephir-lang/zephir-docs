@@ -1,27 +1,27 @@
 {
     "arrays": [
         {
-            "text": "Declaring Array Variables",
+            "text": "Declarar Variables de tipo Array",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Creating Arrays",
+            "text": "Creación de Arrays",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Updating arrays",
+            "text": "Actualización de arrays",
             "level": 1,
             "url": "#updating-arrays"
         },
         {
-            "text": "Appending elements",
+            "text": "Agregando elementos",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "Reading elements from arrays",
+            "text": "Leyendo elementos desde arrays",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -261,66 +261,66 @@
     ],
     "installation": [
         {
-            "text": "Prerequisites",
+            "text": "Prerequisitos",
             "level": 1,
             "url": "#prerequisites"
         },
         {
-            "text": "Installing Zephir",
+            "text": "Instalando Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
         {
-            "text": "Testing the installation",
+            "text": "Probando la Instalación",
             "level": 1,
             "url": "#testing-the-installation"
         }
     ],
     "introduction": [
         {
-            "text": "Hello World!",
+            "text": "¡Hola Mundo!",
             "level": 1,
             "url": "#hello-world"
         },
         {
-            "text": "A taste of Zephir",
+            "text": "Una prueba de Zephir",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
     ],
     "language": [
         {
-            "text": "Organizing code in files and namespaces",
+            "text": "Organización del código en archivos y espacios de nombres",
             "level": 1,
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "Instruction separation",
+            "text": "Separación de instrucciones",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "Comments",
+            "text": "Comentarios",
             "level": 1,
             "url": "#comments"
         },
         {
-            "text": "Variable declarations",
+            "text": "Declaración de variables",
             "level": 1,
             "url": "#variable-declarations"
         },
         {
-            "text": "Variable scope",
+            "text": "Ámbito de la variable",
             "level": 1,
             "url": "#variable-scope"
         },
         {
-            "text": "Super globals",
+            "text": "Super globales",
             "level": 1,
             "url": "#super-globals"
         },
         {
-            "text": "Local symbol table",
+            "text": "Tabla de símbolos locales",
             "level": 1,
             "url": "#local-symbol-table"
         }
@@ -330,173 +330,173 @@
     ],
     "lifecycle": [
         {
-            "text": "initializers",
+            "text": "iniciadores",
             "level": 1,
             "url": "#initializers"
         },
         {
-            "text": "destructors",
+            "text": "destructores",
             "level": 1,
             "url": "#destructors"
         }
     ],
     "motivation": [
         {
-            "text": "If you are a PHP programmer...",
+            "text": "Si eres un programador PHP...",
             "level": 1,
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "If you are a C programmer...",
+            "text": "Si eres un programador C...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "Compilation vs Interpretation",
+            "text": "Compilación vs Interpretación",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
         {
-            "text": "Statically typed versus dynamically typed languages",
+            "text": "Lenguajes de Tipificado Estático vs Dinámico",
             "level": 1,
             "url": "#statically-typed-versus-dynamically-typed-languages"
         },
         {
-            "text": "Compilation scheme",
+            "text": "Esquema de compilación",
             "level": 1,
             "url": "#compilation-scheme"
         },
         {
-            "text": "Code protection",
+            "text": "Protección del código",
             "level": 1,
             "url": "#code-protection"
         },
         {
-            "text": "Conclusion",
+            "text": "Conclusión",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "oop": [
         {
-            "text": "Clases",
+            "text": "Classes",
             "level": 1,
             "url": "#classes"
         },
         {
-            "text": "Class Modifiers",
+            "text": "Modificadores de Clase",
             "level": 2,
             "url": "#classes-modifiers"
         },
         {
-            "text": "Implementing Interfaces",
+            "text": "Implementación de Interfaces",
             "level": 2,
             "url": "#classes-interfaces"
         },
         {
-            "text": "Implementing Methods",
+            "text": "Implementación de Métodos",
             "level": 1,
             "url": "#implementing-methods"
         },
         {
-            "text": "Optional nullable parameters",
+            "text": "Parámetros opcionales nulos",
             "level": 2,
             "url": "#implementing-methods-optional-nullable-parameters"
         },
         {
-            "text": "Supported Visibilities",
+            "text": "Visibilidades soportadas",
             "level": 2,
             "url": "#implementing-methods-supported-visibilities"
         },
         {
-            "text": "Supported Modifiers",
+            "text": "Modificadores Soportados",
             "level": 2,
             "url": "#implementing-methods-supported-modifiers"
         },
         {
-            "text": "Getter/Setter shortcuts",
+            "text": "Métodos abreviados de getter/setter",
             "level": 2,
             "url": "#implementing-methods-getter-setter-shortcuts"
         },
         {
-            "text": "Return Type Hints",
+            "text": "Tipo de valor devuelto",
             "level": 2,
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "Return Type: Void",
+            "text": "Tipo de valor devuelto: void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
         {
-            "text": "Strict/Flexible Parameter Data-Types",
+            "text": "Tipos de datos de parámetro Estricto/Flexible",
             "level": 2,
             "url": "#implementing-methods-strict-flexible-parameter-data-types"
         },
         {
-            "text": "Read-Only Parameters",
+            "text": "Parámetros de sólo lectura",
             "level": 2,
             "url": "#implementing-methods-read-only-parameters"
         },
         {
-            "text": "Implementing Properties",
+            "text": "Implementación de Propiedades",
             "level": 1,
             "url": "#implementing-properties"
         },
         {
-            "text": "Updating Properties",
+            "text": "Actualización de propiedades",
             "level": 2,
             "url": "#implementing-properties-updating"
         },
         {
-            "text": "Reading Properties",
+            "text": "Leyendo propiedades",
             "level": 2,
             "url": "#implementing-properties-reading"
         },
         {
-            "text": "Class Constants",
+            "text": "Constante de Clase",
             "level": 1,
             "url": "#class-constants"
         },
         {
-            "text": "Calling Methods",
+            "text": "Llamando a métodos",
             "level": 1,
             "url": "#calling-methods"
         },
         {
-            "text": "Parameters by Name",
+            "text": "Parámetros por Nombre",
             "level": 2,
             "url": "#calling-methods-parameters-by-name"
         }
     ],
     "operators": [
         {
-            "text": "Arithmetic Operators",
+            "text": "Operadores Aritméticos",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "Bitwise Operators",
+            "text": "Operadores bit a bit",
             "level": 1,
             "url": "#bitwise-operators"
         },
         {
-            "text": "Comparison Operators",
+            "text": "Comparación de Operadores",
             "level": 1,
             "url": "#comparison-operators"
         },
         {
-            "text": "Logical Operators",
+            "text": "Operadores Lógicos",
             "level": 1,
             "url": "#logical-operators"
         },
         {
-            "text": "Ternary Operator",
+            "text": "Operador Ternario",
             "level": 1,
             "url": "#tenary-operator"
         },
         {
-            "text": "Special Operator",
+            "text": "Operadores Especiales",
             "level": 1,
             "url": "#special-operators"
         },
@@ -516,12 +516,12 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Type Hints",
+            "text": "Sugerencias de Tipos",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
         {
-            "text": "Branch Prediction Hints",
+            "text": "Consejos de Predicción de Rama",
             "level": 2,
             "url": "#special-operators-branch-prediction-hints"
         }
@@ -588,39 +588,39 @@
     ],
     "tutorial": [
         {
-            "text": "Checking the installation",
+            "text": "Probando la instalación",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Extension skeleton",
+            "text": "Esqueleto de la extensión",
             "level": 1,
             "url": "#extension-skeleton"
         },
         {
-            "text": "Adding our first class",
+            "text": "Agregando nuestra primer clase",
             "level": 1,
             "url": "#adding-our-first-class"
         },
         {
-            "text": "Initial testing",
+            "text": "Prueba inicial",
             "level": 1,
             "url": "#initial-testing"
         },
         {
-            "text": "A useful class",
+            "text": "Una clase útil",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "Conclusion",
+            "text": "Conclusión",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "Dynamic Types",
+            "text": "Tipos Dinámicos",
             "level": 1,
             "url": "#dynamic-types"
         },
@@ -660,7 +660,7 @@
             "url": "#dynamic-types-string"
         },
         {
-            "text": "Static Types",
+            "text": "Tipos Estáticos",
             "level": 1,
             "url": "#static-types"
         },
@@ -749,12 +749,12 @@
     ],
     "welcome": [
         {
-            "text": "Some Features",
+            "text": "Algunas características",
             "level": 1,
             "url": "#some-features"
         },
         {
-            "text": "A small taste",
+            "text": "Una pequeña prueba",
             "level": 1,
             "url": "#a-small-taste"
         }

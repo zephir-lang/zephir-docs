@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 调用函数
 
 PHP有一个丰富的函数库，您可以在扩展中使用它们。 要调用PHP函数，只需在Zephir代码中正常使用它：

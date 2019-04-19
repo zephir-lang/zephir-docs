@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 教程
 
 Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其复杂性较低。
@@ -19,7 +18,7 @@ Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其�
 如果您已成功安装 Zephir, 则可以在控制台中执行以下命令:
 
 ```bash
-zephir 帮助
+zephir help
 ```
 
 如果一切正常, 您应该看到以下帮助 (或非常相似的内容):
@@ -57,7 +56,7 @@ zephir 帮助
         -W([a-z0-9\-]+)     Turns a warning off
     
 
-If something went wrong, please return back to the [installation](/0.11/en/installation) page.
+如果出现问题, 请返回到 [installation](/0.11/zh-cn/installation) 页面。
 
 <a name='extension-skeleton'></a>
 

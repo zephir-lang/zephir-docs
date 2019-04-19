@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 安装
 
 要安装 Zephir, 请按照下列步骤操作:

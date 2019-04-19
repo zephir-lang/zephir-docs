@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'el-gr'
+version: '0.11'
+---
 # Built-In Methods
 
 As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
@@ -54,8 +53,8 @@ They both have the same functionality, but the second one uses object-oriented p
 
 The following string built-in methods are available:
 
-| OO                   | Procedural            | Description                                                                   |
-| -------------------- | --------------------- | ----------------------------------------------------------------------------- |
+| OO                 | Procedural             | Description                                                                    |
+|--------------------|------------------------|--------------------------------------------------------------------------------|
 | `s->format()`     | `sprintf(s, "%s", x)` | Return a formatted string                                                     |
 | `s->index("foo")` | `strpos(s, "foo")`    | Find the position of the first occurrence of a substring in a string          |
 | `s->length()`     | `strlen(s)`           | Get string length                                                             |
@@ -75,8 +74,8 @@ The following string built-in methods are available:
 
 The following array built-in methods are available:
 
-| OO                   | Procedural              | Description                                                             |
-| -------------------- | ----------------------- | ----------------------------------------------------------------------- |
+| OO                 | Procedural               | Description                                                              |
+|--------------------|--------------------------|--------------------------------------------------------------------------|
 | `a->combine(b)`   | `array_combine(a, b)`   | Creates an array by using one array for keys and another for its values |
 | `a->diff()`       | `array_diff(a)`         | Computes the difference of arrays                                       |
 | `a->flip()`       | `array_flip(a)`         | Exchanges all keys with their associated values in an array             |
@@ -98,9 +97,9 @@ The following array built-in methods are available:
 
 The following char built-in methods are available:
 
-| OO               | Procedural          |
-| ---------------- | ------------------- |
-| `ch->toHex()` | `sprintf("%X", ch)` |
+| OO             | Procedural           |
+|----------------|----------------------|
+| `ch->toHex()`  | `sprintf("%X", ch)`  |
 
 <a name='integer'></a>
 
@@ -108,6 +107,6 @@ The following char built-in methods are available:
 
 The following integer built-in methods are available:
 
-| OO            | Procedural |
-| ------------- | ---------- |
-| `i->abs()` | `abs(i)`   |
+| OO           | Procedural    |
+|--------------|---------------|
+| `i->abs()`   | `abs(i)`      |

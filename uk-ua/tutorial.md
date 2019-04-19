@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'uk-ua'
+version: '0.11'
+---
 # Tutorial
 
 Zephir, і цей посібник, призначені для PHP-розробників, які хочуть створити C-розширення, але не знають C.

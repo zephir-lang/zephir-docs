@@ -1,2 +1,0 @@
-- [Conditional Unassigned Variables](/[[language]]/[[version]]/static-analysis#conditional-unassigned-variables)
-- [Dead Code Elimination](/[[language]]/[[version]]/static-analysis#dead-code-elimination)

@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 编译警告
 
 当发现代码可以改进或避免潜在错误的情况时，编译器会发出警告。

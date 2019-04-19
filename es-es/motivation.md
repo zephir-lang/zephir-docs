@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'es-es'
+version: '0.11'
+---
 # ¿Por qué Zephir?
 
 Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, el rendimiento y la funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son la base para muchas otras aplicaciones.

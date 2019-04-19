@@ -1,7 +1,0 @@
-- [如果你是一个 php 程序员..。](/[[language]]/[[version]]/motivation#if-you-are-a-php-programmer)
-- [如果你是一个 C 程序员..。](/[[language]]/[[version]]/motivation#if-you-are-a-c-programmer)
-- [编译 vs 解释](/[[language]]/[[version]]/motivation#compilation-vs-interpretation)
-- [静态类型化 vs 动态类型化的语言](/[[language]]/[[version]]/motivation#statically-typed-versus-dynamically-typed-languages)
-- [编译方案](/[[language]]/[[version]]/motivation#compilation-scheme)
-- [代码保护](/[[language]]/[[version]]/motivation#code-protection)
-- [结语](/[[language]]/[[version]]/motivation#conclusion)

@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'es-es'
+version: '0.11'
+---
 # Tutorial
 
 Zephir y este manual, están destinados para desarrolladores PHP que desean crear extensiones en C, con una complejidad menor.
@@ -57,7 +56,7 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
         -W([a-z0-9\-]+)     Apaga una advertencia
     
 
-If something went wrong, please return back to the [installation](/0.11/en/installation) page.
+Si algo salió mal, por favor regrese a la [página de instalación](/0.11/es-es/installation).
 
 <a name='extension-skeleton'></a>
 

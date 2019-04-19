@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'uk-ua'
+version: '0.11'
+---
 # Types
 
 Zephir поєднує в собі статичну та динамічну типізацію. У цьому розділі ми розглянемо підтримувані типи даних та їхню поведінку.

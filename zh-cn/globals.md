@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 全局扩展
 
 PHP扩展提供了一种在扩展中定义全局变量的方法。 读/写全局变量应该比任何其他全局机制（如静态成员）更快。 您可以使用扩展全局变量来设置更改库行为的配置选项。

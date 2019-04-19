@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # 优化
 
 因为 Zephir 中的代码有时非常高级, 所以 c 编译器可能无法足够地优化此代码。

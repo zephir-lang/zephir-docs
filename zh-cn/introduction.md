@@ -1,14 +1,13 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 # Zephir 简介
 
 Zephir 是一种语言, 它能够满足 php 开发人员的主要需求, 他们试图编写和编译可由 php 执行的代码。 它是动态的/静态类型的, 它的一些功能为 php 开发人员所熟悉。
 
-Zephir 这个名字是单词 z (end) e (ngine)/ph (p)/i (nte) r (mediate) 的收缩。 While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
+Zephir 这个名字是单词 z (end) e (ngine)/ph (p)/i (nte) r (mediate) 的收缩。 这表明 发音应该是“zephyr”，Zephir的创建者实际上是把它发音为[zaefire](http://translate.google.com/#en/en/zaefire)。
 
 <a name='hello-world'></a>
 

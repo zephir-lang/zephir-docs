@@ -1,3 +1,8 @@
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 # Optimizations
 Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
 
@@ -5,11 +10,15 @@ Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code
 
 You can enable optimizations by passing the name prefixed by `-f`:
 
-    zephir -fstatic-type-inference -flocal-context-pass
+```bash
+zephir -fstatic-type-inference -flocal-context-pass
+```
 
 Optimizations can be disabled by passing the name prefixed by `-fno-`:
 
-    zephir -fno-static-type-inference -fno-call-gatherer-pass
+```bash
+zephir -fno-static-type-inference -fno-call-gatherer-pass
+```
 
 With recent versions of zephir-parser, optimizations can be configured in the config file `config.json`.
 
@@ -19,21 +28,23 @@ The following optimizations are supported:
 ## call-gatherer-pass
 This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce inline caches to avoid method or function lookups:
 
-    class MyClass extends OtherClass
+```zephir
+class MyClass extends OtherClass
+{
+
+    public function getValue()
     {
-    
-        public function getValue()
-        {
-            this->someMethod();
-            this->someMethod(); // This method is called faster
-        }
+        this->someMethod();
+        this->someMethod(); // This method is called faster
     }
+}
+```
 
 <a name='check-invalid-reads'></a>
 ## check-invalid-reads
 This flag will force checking types to detect for invalid reads during the compilation process. This ensures that all variables are properly defined and initialized with their default values (as well as the internal pointers). An example is:
 
-```zep
+```zephir
 namespace Acme;
 
 class ForInRange
@@ -51,7 +62,7 @@ class ForInRange
 compared to:
 
 
-```zep
+```zephir
 namespace Acme;
 
 class ForInRange
@@ -94,17 +105,21 @@ More information concerning on why C pointers need to be nullified in Stack over
 ## constant-folding
 Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when this optimization is enabled:
 
-    public function getValue()
-    {
-        return (86400 * 30) / 12;
-    }
+```zephir
+public function getValue()
+{
+    return (86400 * 30) / 12;
+}
+```
 
 Is transformed into:
 
-    public function getValue()
-    {
-        return 216000;
-    }
+```zephir
+public function getValue()
+{
+    return 216000;
+}
+```
 
 <a name='internal-call-transformation'></a>
 ## internal-call-transformation
@@ -127,29 +142,33 @@ This compilation pass moves variables that will be allocated in the heap to the 
 ## static-constant-class-folding
 This optimization replaces values of class constants in compile time:
 
-    class MyClass
+```zephir
+class MyClass
+{
+
+    const SOME_CONSTANT = 100;
+
+    public function getValue()
     {
-    
-        const SOME_CONSTANT = 100;
-    
-        public function getValue()
-        {
-            return self::SOME_CONSTANT;
-        }
+        return self::SOME_CONSTANT;
     }
+}
+```
 
 Is transformed into:
 
-    class MyClass
+```zephir
+class MyClass
+{
+
+    const SOME_CONSTANT = 100;
+
+    public function getValue()
     {
-    
-        const SOME_CONSTANT = 100;
-    
-        public function getValue()
-        {
-            return 100;
-        }
+        return 100;
     }
+}
+```
 
 <a name='static-type-inference'></a>
 ## static-type-inference
@@ -157,35 +176,39 @@ This compilation pass is very important, since it looks for dynamic variables th
 
 The following code uses a set of dynamic variables to perform some mathematical calculations:
 
-    public function someCalculations(var a, var b)
-    {
-        var i = 0, t = 1;
-    
-        while i < 100 {
-            if i % 3 == 0 {
-                continue;
-            }
-            let t += (a - i), i++;
+```zephir
+public function someCalculations(var a, var b)
+{
+    var i = 0, t = 1;
+
+    while i < 100 {
+        if i % 3 == 0 {
+            continue;
         }
-    
-        return i + b;
+        let t += (a - i), i++;
     }
+
+    return i + b;
+}
+```
 
 Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and can thus be transformed into static variables taking advantage of other compilation passes. After this pass, the compiler automatically rewrites this code to:
 
-    public function someCalculations(int a, int b)
-    {
-        int i = 0, t = 1;
-    
-        while i < 100 {
-            if i % 3 == 0 {
-                continue;
-            }
-            let t += (a - i), i++;
+```zephir
+public function someCalculations(int a, int b)
+{
+    int i = 0, t = 1;
+
+    while i < 100 {
+        if i % 3 == 0 {
+            continue;
         }
-    
-        return i + b;
+        let t += (a - i), i++;
     }
+
+    return i + b;
+}
+```
 
 By disabling this compilation pass, all variables will maintain the type with which they were originally declared, without optimization.
 

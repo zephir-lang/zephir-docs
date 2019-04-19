@@ -1,9 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
-
+---
+layout: default
+language: 'uk-ua'
+version: '0.11'
+---
 # Operators
 
 Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.

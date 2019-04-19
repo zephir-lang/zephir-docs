@@ -4,31 +4,31 @@
         "url": "welcome"
     },
     {
-        "text": "Why Zephir",
+        "text": "Почему Zephir",
         "url": "motivation"
     },
     {
-        "text": "Introducing Zephir",
+        "text": "Введение в Zephir",
         "url": "introduction"
     },
     {
-        "text": "Installation",
+        "text": "Установка",
         "url": "installation"
     },
     {
-        "text": "Tutorial",
+        "text": "Урок",
         "url": "tutorial"
     },
     {
-        "text": "Basic Syntax",
+        "text": "Базовый синтаксис",
         "url": "language"
     },
     {
-        "text": "Types",
+        "text": "Типы",
         "url": "types"
     },
     {
-        "text": "Operators",
+        "text": "Операторы",
         "url": "operators"
     },
     {
@@ -72,11 +72,11 @@
         "url": "lifecycle"
     },
     {
-        "text": "Extension globals",
+        "text": "Глобальные параметры расширения",
         "url": "globals"
     },
     {
-        "text": "phpinfo() sections",
+        "text": "Секции phpinfo()",
         "url": "phpinfo"
     },
     {
@@ -88,11 +88,11 @@
         "url": "optimizations"
     },
     {
-        "text": "Compiler warnings",
+        "text": "Лицензионное соглашение",
         "url": "warnings"
     },
     {
-        "text": "Лицензионное соглашение",
+        "text": "License",
         "url": "license"
     }
 ]
