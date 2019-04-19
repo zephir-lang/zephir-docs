@@ -14,7 +14,7 @@ layout: default language: 'en' version: '0.11'
 
 Основними особливостями Zephir-у є:
 
-| Особливість                 | Description                                        |
+| Особливість                 | Опис                                               |
 | --------------------------- | -------------------------------------------------- |
 | Система типізації           | динамічна/статична                                 |
 | Безпечний доступ до пам'яті | вказівники або пряме керування пам'яттю заборонені |
@@ -61,7 +61,7 @@ class Filter
 <?php
 
 $filter = new MyLibrary\Filter();
-echo $filter->alpha("01he#l.lo?/1"); // prints hello
+echo $filter->alpha("01he#l.lo?/1"); // виведе hello
 ```
 
 <a name='external-links'></a>
@@ -70,7 +70,7 @@ echo $filter->alpha("01he#l.lo?/1"); // prints hello
 
 Нижче ми зібрали посилання на зовнішні ресурси, які можуть вас зацікавити:
 
-- [Type system](https://en.wikipedia.org/wiki/Type_system)
-- [Memory safety](https://en.wikipedia.org/wiki/Memory_safety)
+- [Система типізації](https://en.wikipedia.org/wiki/Type_system)
+- [Безпека доступу до пам'яті](https://en.wikipedia.org/wiki/Memory_safety)
 - [Ahead-of-time (AOT) компіляція](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
 - [Керування пам’яттю](https://en.wikipedia.org/wiki/Memory_management)
