@@ -1,8 +1,9 @@
----
-layout: default
-language: 'uk-ua'
-version: '0.10'
----
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
 # Built-In Methods
 
 As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
@@ -53,7 +54,7 @@ They both have the same functionality, but the second one uses object-oriented p
 
 The following string built-in methods are available:
 
-| OO                   | Procedural            | Description                                                                   |
+| OO                   | Procedural            | Опис                                                                          |
 | -------------------- | --------------------- | ----------------------------------------------------------------------------- |
 | `s->format()`     | `sprintf(s, "%s", x)` | Return a formatted string                                                     |
 | `s->index("foo")` | `strpos(s, "foo")`    | Find the position of the first occurrence of a substring in a string          |
@@ -74,7 +75,7 @@ The following string built-in methods are available:
 
 The following array built-in methods are available:
 
-| OO                   | Procedural              | Description                                                             |
+| OO                   | Procedural              | Опис                                                                    |
 | -------------------- | ----------------------- | ----------------------------------------------------------------------- |
 | `a->combine(b)`   | `array_combine(a, b)`   | Creates an array by using one array for keys and another for its values |
 | `a->diff()`       | `array_diff(a)`         | Computes the difference of arrays                                       |
