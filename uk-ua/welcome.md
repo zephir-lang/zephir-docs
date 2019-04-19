@@ -1,28 +1,29 @@
----
-layout: default
-language: 'uk-ua'
-version: '0.11'
----
-# Вітаємо!
+* * *
+
+layout: default language: 'en' version: '0.10'
+
+* * *
+
+# Welcome!
 
 Вас вітає Zephir — проект з відкритим вихідним кодом, високорівнева/предметно-орієнтована мова спроектована для полегшення створення й супроводу розширень для PHP з акцентом на тип та безпеку доступу до пам'яті.
 
 <a name='some-features'></a>
 
-## Деякі особливості
+## Some features
 
 Основними особливостями Zephir-у є:
 
-| Особливість                 | Description                                        |
-| --------------------------- | -------------------------------------------------- |
-| Система типізації           | динамічна/статична                                 |
-| Безпечний доступ до пам'яті | вказівники або пряме керування пам'яттю заборонені |
-| Компіляційна модель         | компіляція виконується заздалегідь                 |
-| Модель пам'яті              | свій збирач сміття                                 |
+| Feature           | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| Система типізації | dynamic/static                                       |
+| Memory safety     | pointers or direct memory management are not allowed |
+| Compilation model | ahead of time                                        |
+| Memory model      | task-local garbage collection                        |
 
 <a name='a-small-taste'></a>
 
-## Скуштуйте
+## A small taste
 
 Наступний код реєструє клас з методом, який фільтрує змінні, повертаючи лише їхні алфавітні символи:
 
@@ -65,11 +66,11 @@ echo $filter->alpha("01he#l.lo?/1"); // prints hello
 
 <a name='external-links'></a>
 
-## Зовнішні посилання
+## External Links
 
 Нижче ми зібрали посилання на зовнішні ресурси, які можуть вас зацікавити:
 
 - [Система типізації](https://en.wikipedia.org/wiki/Type_system)
-- [Безпечний доступ до пам'яті](https://en.wikipedia.org/wiki/Memory_safety)
+- [Memory safety](https://en.wikipedia.org/wiki/Memory_safety)
 - [Ahead-of-time (AOT) компіляція](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
 - [Керування пам’яттю](https://en.wikipedia.org/wiki/Memory_management)
