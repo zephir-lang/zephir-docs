@@ -271,7 +271,7 @@
             "url": "#installing-zephir"
         },
         {
-            "text": "Testing the installation",
+            "text": "Тестування встановлення",
             "level": 1,
             "url": "#testing-the-installation"
         }
@@ -283,7 +283,7 @@
             "url": "#hello-world"
         },
         {
-            "text": "A taste of Zephir",
+            "text": "Смак Зефіру",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
