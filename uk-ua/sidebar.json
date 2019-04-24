@@ -8,11 +8,11 @@
         "url": "motivation"
     },
     {
-        "text": "Представляємо Zephir",
+        "text": "Introducing Zephir",
         "url": "introduction"
     },
     {
-        "text": "Встановлення",
+        "text": "Installation",
         "url": "installation"
     },
     {
@@ -20,11 +20,11 @@
         "url": "tutorial"
     },
     {
-        "text": "Базовий синтаксис",
+        "text": "Basic Syntax",
         "url": "language"
     },
     {
-        "text": "Types",
+        "text": "Типи",
         "url": "types"
     },
     {
@@ -32,7 +32,7 @@
         "url": "operators"
     },
     {
-        "text": "Arrays",
+        "text": "Масиви",
         "url": "arrays"
     },
     {
