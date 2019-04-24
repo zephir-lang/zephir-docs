@@ -4,7 +4,7 @@ layout: default language: 'uk' version: '0.10'
 
 * * *
 
-# Tutorial
+# Навчальний посібник
 
 Zephir, і цей посібник, призначені для PHP-розробників, які хочуть створити C-розширення, але не знають C.
 
@@ -14,7 +14,7 @@ Zephir, і цей посібник, призначені для PHP-розроб
 
 <a name='checking-the-installation'></a>
 
-## Checking the Installation
+## Перевірка встановлення
 
 Якщо ви успішно встановили Zephir, тоді виконайте таку команду в консолі:
 
@@ -61,7 +61,7 @@ If something went wrong, please return back to the [installation](/0.11/en/insta
 
 <a name='extension-skeleton'></a>
 
-## Extension Skeleton
+## Каркас розширення
 
 Перше, що нам потрібно зробити це згенерувати каркас розширення. Це створить базову структуру нашого розширення з якою ми працюватимемо далі. У нашому випадку ми створимо розширення під назвою `utils` (утиліти):
 
@@ -107,7 +107,7 @@ class Greeting
 
     public static function say()
     {
-        echo "hello world!";
+        echo "Привіт світ!";
     }
 
 }
@@ -136,7 +136,7 @@ Don't forget to restart your web server
 
 <a name='initial-testing'></a>
 
-## Initial Testing
+## Первинне тестування
 
 Тепер, коли розширення було додано до вашого `php.ini`, перевірте правильність завантаження розширення, виконавши наступну команду:
 
@@ -211,16 +211,17 @@ class Filter
 <?php
 
 $f = new Utils\Filter();
-$f->alpha("hello");
+$f->alpha("привіт");
 ```
 
 Ви побачите:
 
-    h
-    e
-    l
-    l
-    o
+    п
+    р
+    и
+    в
+    і
+    т
     
 
 Перевірити кожен символ у рядку є доволі просто. Тепер ми створимо інший рядок з правильними відфільтрованими символами:
@@ -234,7 +235,7 @@ class Filter
         char ch; string filtered = "";
 
         for ch in str {
-            if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+            if (ch >= 'а' && ch <= 'я') || (ch >= 'А' && ch <= 'Я') {
                 let filtered .= ch;
             }
         }
@@ -250,7 +251,7 @@ class Filter
 <?php
 
 $f = new Utils\Filter();
-echo $f->alpha("!he#02l3'121lo."); // prints "hello"
+echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
 ```
 
 У цьому скрінкасті ви можете подивитися, як створити розширення, описане в цьому посібнику: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
