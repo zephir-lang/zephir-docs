@@ -12,7 +12,7 @@ Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate)
 
 <a name='hello-world'></a>
 
-## Hello World!
+## Привіт світ!
 
 Кожна мова має власний приклад написання «Привіт світ» програми. У цьому вступі продемонстровано деякі важливі особливості мови.
 
@@ -50,7 +50,7 @@ class Hello
 #include "kernel/main.h"
 
 /**
- * This is a sample class
+ * Це зразок класу
  */
 ZEPHIR_INIT_CLASS(Test_Hello) {
     ZEPHIR_REGISTER_CLASS(Test, Hello, hello, test_hello_method_entry, 0);
@@ -58,10 +58,10 @@ ZEPHIR_INIT_CLASS(Test_Hello) {
 }
 
 /**
- * This is a sample method
+ * Це зразок методу
  */
 PHP_METHOD(Test_Hello, say) {
-    php_printf("%s", "Hello World!");
+    php_printf("%s", "Привіт світ!");
 }
 ```
 
@@ -87,17 +87,17 @@ class MyTest
 {
     public function someMethod()
     {
-        /* Variables must be declared */
+        /* Змінні мають бути оголошені */
         var myArray;
         int i = 0, length;
 
-        /* Create an array */
+        /* Створюємо масив */
         let myArray = ["hello", 0, 100.25, false, null];
 
-        /* Count the array into a 'int' variable */
+        /* Рахуємо довжину масиву в змінні типу 'int' (ціле число) */
         let length = count(myArray);
 
-        /* Print value types */
+        /* Друкуємо значення */
         while i < length {
             echo typeof myArray[i], "\n";
             let i++;
@@ -126,7 +126,7 @@ let myArray = ["hello", 0, 100.25, false, null];
 Початково, масиви є динамічнотипізованими, як в PHP. Вони можуть містити значення різних типів. Функції з PHP можна використовувати у Zephir. У наступному прикладі викликається функція `count`, але компілятор може виконати оптимізацію і взагалі не робити виклику, оскільки він уже знає розмір масиву:
 
 ```zephir
-/* Count the array into a 'int' variable */
+/* Підрахувати розмір масиву в змінну типу 'int */
 let length = count(myArray);
 ```
 
