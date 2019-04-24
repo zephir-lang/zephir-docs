@@ -278,7 +278,7 @@
     ],
     "introduction": [
         {
-            "text": "Hello World!",
+            "text": "Привіт світ!",
             "level": 1,
             "url": "#hello-world"
         },
@@ -352,7 +352,7 @@
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "Compilation vs Interpretation",
+            "text": "Компіляція проти інтерпретації",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
