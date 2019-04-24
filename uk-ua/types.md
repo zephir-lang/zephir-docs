@@ -1,9 +1,10 @@
----
-layout: default
-language: 'uk-ua'
-version: '0.11'
----
-# Types
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
+# Типи
 
 Zephir поєднує в собі статичну та динамічну типізацію. У цьому розділі ми розглянемо підтримувані типи даних та їхню поведінку.
 
@@ -135,7 +136,7 @@ let myObject = new \stdClass(),
 
 <a name='dynamic-types-string'></a>
 
-### String
+### Рядок
 
 Рядок `string` є послідовністю символів, де кожен символ є одним байтом. Як і PHP, Zephir підтримує лише 256-символьний набір, а отже не дає вбудованої підтримки Unicode.
 
@@ -410,7 +411,7 @@ let a = 4294967296,
 
 <a name='static-types-string'></a>
 
-### String
+### Рядок
 
 Рядок є послідовністю символів, де кожен символ є одним байтом. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
 
