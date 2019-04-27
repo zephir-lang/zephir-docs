@@ -1,8 +1,9 @@
----
-layout: default
-language: 'uk-ua'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
 # Вітаємо!
 
 Вас вітає Zephir — проект з відкритим вихідним кодом, високорівнева/предметно-орієнтована мова спроектована для полегшення створення й супроводу розширень для PHP з акцентом на тип та безпеку доступу до пам'яті.
@@ -30,12 +31,12 @@ version: '0.11'
 namespace MyLibrary;
 
 /**
- * Filter
+ * Фільтр
  */
 class Filter
 {
     /**
-     * Filters a string, returning its alpha charactersa
+     * Фільтрує рядок, повертаючи його літерні символи
      *
      * @param string str
      */
