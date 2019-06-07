@@ -1,6 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
+---
+layout: default
+language: 'uk-ua'
+version: '0.11'
+---
 
 - text: 'Welcome' url: 'welcome'
 - text: 'Why Zephir' url: 'motivation'

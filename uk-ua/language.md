@@ -1,6 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
+---
+layout: default
+language: 'uk-ua'
+version: '0.11'
+---
 
 - text: 'Organizing code in files and namespaces' url: '#organizing-code-in-files-and-namespaces'
 - text: 'Instruction separation' url: '#instruction-separation'
