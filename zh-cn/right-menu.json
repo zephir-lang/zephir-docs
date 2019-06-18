@@ -1,12 +1,12 @@
 {
     "arrays": [
         {
-            "text": "声明数组变量",
+            "text": "Declaring Array Variables",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "创建数组",
+            "text": "Creating Arrays",
             "level": 1,
             "url": "#creating-arrays"
         },
@@ -16,12 +16,12 @@
             "url": "#updating-arrays"
         },
         {
-            "text": "追加元素",
+            "text": "Appending elements",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "从数组中读取元素",
+            "text": "Reading elements from arrays",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -50,6 +50,63 @@
     ],
     "closures": [
 
+    ],
+    "command-line": [
+        {
+            "text": "zephir api",
+            "level": 1,
+            "url": "#zephir-api"
+        },
+        {
+            "text": "zephir build",
+            "level": 1,
+            "url": "#zephir-build"
+        },
+        {
+            "text": "zephir clean",
+            "level": 1,
+            "url": "#zephir-clean"
+        },
+        {
+            "text": "zephir compile",
+            "level": 1,
+            "url": "#zephir-compile"
+        },
+        {
+            "text": "zephir fullclean",
+            "level": 1,
+            "url": "#zephir-fullclean"
+        },
+        {
+            "text": "zephir generate",
+            "level": 1,
+            "url": "#zephir-generate"
+        },
+        {
+            "text": "zephir 帮助",
+            "level": 1,
+            "url": "#zephir-help"
+        },
+        {
+            "text": "zephir init",
+            "level": 1,
+            "url": "#zephir-init"
+        },
+        {
+            "text": "zephir install",
+            "level": 1,
+            "url": "#zephir-install"
+        },
+        {
+            "text": "zephir list",
+            "level": 1,
+            "url": "#zephir-list"
+        },
+        {
+            "text": "zephir stubs",
+            "level": 1,
+            "url": "#zephir-stubs"
+        }
     ],
     "config": [
         {
@@ -195,17 +252,17 @@
     ],
     "control-structures": [
         {
-            "text": "条件",
+            "text": "Conditionals",
             "level": 1,
             "url": "#conditionals"
         },
         {
-            "text": "If 语句",
+            "text": "If Statement",
             "level": 2,
             "url": "#conditionals-if"
         },
         {
-            "text": "Switch 语句",
+            "text": "Switch Statement",
             "level": 2,
             "url": "#conditionals-switch"
         },
@@ -215,27 +272,27 @@
             "url": "#loops"
         },
         {
-            "text": "While 语句",
+            "text": "While Statement",
             "level": 2,
             "url": "#loops-while"
         },
         {
-            "text": "Loop 语句",
+            "text": "Loop Statement",
             "level": 2,
             "url": "#loops-loop"
         },
         {
-            "text": "For 语句",
+            "text": "For Statement",
             "level": 2,
             "url": "#loops-for"
         },
         {
-            "text": "Break 语句",
+            "text": "Break Statement",
             "level": 2,
             "url": "#loops-break"
         },
         {
-            "text": "Continue 语句",
+            "text": "Continue Statement",
             "level": 2,
             "url": "#loops-continue"
         },
@@ -261,17 +318,17 @@
     ],
     "installation": [
         {
-            "text": "基础要求",
+            "text": "Prerequisites",
             "level": 1,
             "url": "#prerequisites"
         },
         {
-            "text": "安装 Zephir",
+            "text": "Installing Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
         {
-            "text": "测试安装",
+            "text": "Testing the installation",
             "level": 1,
             "url": "#testing-the-installation"
         }
@@ -290,37 +347,37 @@
     ],
     "language": [
         {
-            "text": "在文件和命名空间中组织代码",
+            "text": "Organizing code in files and namespaces",
             "level": 1,
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "指令分离",
+            "text": "Instruction separation",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "注释",
+            "text": "Comments",
             "level": 1,
             "url": "#comments"
         },
         {
-            "text": "变量声明",
+            "text": "Variable declarations",
             "level": 1,
             "url": "#variable-declarations"
         },
         {
-            "text": "变量作用域",
+            "text": "Variable scope",
             "level": 1,
             "url": "#variable-scope"
         },
         {
-            "text": "超全局",
+            "text": "Super globals",
             "level": 1,
             "url": "#super-globals"
         },
         {
-            "text": "本地符号表",
+            "text": "Local symbol table",
             "level": 1,
             "url": "#local-symbol-table"
         }
@@ -342,161 +399,161 @@
     ],
     "motivation": [
         {
-            "text": "如果你是一个 php 程序员...",
+            "text": "If you are a PHP programmer...",
             "level": 1,
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "如果你是一个 C 程序员...",
+            "text": "If you are a C programmer...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "编译 vs 解释",
+            "text": "Compilation vs Interpretation",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
         {
-            "text": "静态类型化 vs 动态类型化的语言",
+            "text": "Statically typed versus dynamically typed languages",
             "level": 1,
             "url": "#statically-typed-versus-dynamically-typed-languages"
         },
         {
-            "text": "编译方案",
+            "text": "Compilation scheme",
             "level": 1,
             "url": "#compilation-scheme"
         },
         {
-            "text": "代码保护",
+            "text": "Code protection",
             "level": 1,
             "url": "#code-protection"
         },
         {
-            "text": "结语",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "oop": [
         {
-            "text": "类",
+            "text": "Classes",
             "level": 1,
             "url": "#classes"
         },
         {
-            "text": "类修饰符",
+            "text": "Class Modifiers",
             "level": 2,
             "url": "#classes-modifiers"
         },
         {
-            "text": "实现接口",
+            "text": "Implementing Interfaces",
             "level": 2,
             "url": "#classes-interfaces"
         },
         {
-            "text": "实现方法",
+            "text": "Implementing Methods",
             "level": 1,
             "url": "#implementing-methods"
         },
         {
-            "text": "可选参数可以为空",
+            "text": "Optional nullable parameters",
             "level": 2,
             "url": "#implementing-methods-optional-nullable-parameters"
         },
         {
-            "text": "支持可见性",
+            "text": "Supported Visibilities",
             "level": 2,
             "url": "#implementing-methods-supported-visibilities"
         },
         {
-            "text": "支持修改器",
+            "text": "Supported Modifiers",
             "level": 2,
             "url": "#implementing-methods-supported-modifiers"
         },
         {
-            "text": "Getter / Setter 快捷方式",
+            "text": "Getter/Setter shortcuts",
             "level": 2,
             "url": "#implementing-methods-getter-setter-shortcuts"
         },
         {
-            "text": "返回类型提示",
+            "text": "Return Type Hints",
             "level": 2,
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "返回类型: Void",
+            "text": "Return Type: Void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
         {
-            "text": "严格/灵活的参数的数据类型",
+            "text": "Strict/Flexible Parameter Data-Types",
             "level": 2,
             "url": "#implementing-methods-strict-flexible-parameter-data-types"
         },
         {
-            "text": "只读参数",
+            "text": "Read-Only Parameters",
             "level": 2,
             "url": "#implementing-methods-read-only-parameters"
         },
         {
-            "text": "实现属性",
+            "text": "Implementing Properties",
             "level": 1,
             "url": "#implementing-properties"
         },
         {
-            "text": "更新属性",
+            "text": "Updating Properties",
             "level": 2,
             "url": "#implementing-properties-updating"
         },
         {
-            "text": "查看属性",
+            "text": "Reading Properties",
             "level": 2,
             "url": "#implementing-properties-reading"
         },
         {
-            "text": "类常量",
+            "text": "Class Constants",
             "level": 1,
             "url": "#class-constants"
         },
         {
-            "text": "调用方法",
+            "text": "Calling Methods",
             "level": 1,
             "url": "#calling-methods"
         },
         {
-            "text": "参数名",
+            "text": "Parameters by Name",
             "level": 2,
             "url": "#calling-methods-parameters-by-name"
         }
     ],
     "operators": [
         {
-            "text": "算术运算符",
+            "text": "Arithmetic Operators",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "按位运算符",
+            "text": "Bitwise Operators",
             "level": 1,
             "url": "#bitwise-operators"
         },
         {
-            "text": "比较运算符",
+            "text": "Comparison Operators",
             "level": 1,
             "url": "#comparison-operators"
         },
         {
-            "text": "逻辑运算符",
+            "text": "Logical Operators",
             "level": 1,
             "url": "#logical-operators"
         },
         {
-            "text": "三元运算符",
+            "text": "Ternary Operator",
             "level": 1,
             "url": "#tenary-operator"
         },
         {
-            "text": "特殊运算符",
+            "text": "Special Operator",
             "level": 1,
             "url": "#special-operators"
         },
@@ -516,12 +573,12 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "类型提示",
+            "text": "Type Hints",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
         {
-            "text": "分支预测提示",
+            "text": "Branch Prediction Hints",
             "level": 2,
             "url": "#special-operators-branch-prediction-hints"
         }
@@ -576,56 +633,56 @@
     ],
     "static-analysis": [
         {
-            "text": "条件未分配的变量",
+            "text": "Conditional Unassigned Variables",
             "level": 1,
             "url": "#conditional-unassigned-variables"
         },
         {
-            "text": "死码消除",
+            "text": "Dead Code Elimination",
             "level": 1,
             "url": "#dead-code-elimination"
         }
     ],
     "tutorial": [
         {
-            "text": "检查安装",
+            "text": "Checking the installation",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "扩展骨架",
+            "text": "Extension skeleton",
             "level": 1,
             "url": "#extension-skeleton"
         },
         {
-            "text": "添加我们的第一个类",
+            "text": "Adding our first class",
             "level": 1,
             "url": "#adding-our-first-class"
         },
         {
-            "text": "初步测试",
+            "text": "Initial testing",
             "level": 1,
             "url": "#initial-testing"
         },
         {
-            "text": "一个有用的类",
+            "text": "A useful class",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "结语",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "动态类型",
+            "text": "Dynamic Types",
             "level": 1,
             "url": "#dynamic-types"
         },
         {
-            "text": "数组",
+            "text": "Arrays",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -635,7 +692,7 @@
             "url": "#dynamic-types-boolean"
         },
         {
-            "text": "浮点型/双精度浮点",
+            "text": "Float/Double",
             "level": 2,
             "url": "#dynamic-types-float-double"
         },
@@ -645,12 +702,12 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "整数溢出",
+            "text": "Integer overflow",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
         {
-            "text": "对象",
+            "text": "Objects",
             "level": 2,
             "url": "#dynamic-types-objects"
         },
@@ -660,7 +717,7 @@
             "url": "#dynamic-types-string"
         },
         {
-            "text": "静态类型",
+            "text": "Static Types",
             "level": 1,
             "url": "#static-types"
         },
@@ -670,17 +727,17 @@
             "url": "#static-types-boolean"
         },
         {
-            "text": "字符/无符号字符",
+            "text": "Char/Unsigned Char",
             "level": 2,
             "url": "#static-types-char-unsigned"
         },
         {
-            "text": "整数/无符号整数",
+            "text": "Integer/Unsigned Integer",
             "level": 2,
             "url": "#static-types-integer-unsigned"
         },
         {
-            "text": "长值/无符号长值",
+            "text": "Long/Unsigned Long",
             "level": 2,
             "url": "#static-types-long-unsigned"
         },
@@ -749,12 +806,12 @@
     ],
     "welcome": [
         {
-            "text": "一些特征",
+            "text": "Some Features",
             "level": 1,
             "url": "#some-features"
         },
         {
-            "text": "一个小尝试",
+            "text": "A small taste",
             "level": 1,
             "url": "#a-small-taste"
         }
