@@ -1,8 +1,9 @@
----
-layout: default
-language: 'es-es'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
 # Configuration File
 
 Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
@@ -107,7 +108,7 @@ Extension description - any text describing your extension:
 
 ## destructores
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.11/es-es/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
 
 ```json
 {
@@ -177,7 +178,10 @@ You can include a class from another namespace/extension directly in your own ex
 
 ## extra
 
-Contains extra settings that also can be passed, as is, on the command line. Currently, that's `export-clases` (generate headers for accessing your classes from other C code), and `indent` (select between using `tabs` or `spaces` to indent code in generated files):
+Contains extra settings that also can be passed, as is, [on the command line](/0.11/en/command-line). Currently, that's:
+
+- `export-classes` - generate headers for accessing your classes from other C code
+- `indent` - select between using `tabs` or `spaces` to indent code in generated files
 
 ```json
 {
@@ -249,7 +253,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 ## globals
 
-Extension globals available. Check the [globals](/0.11/es-es/globals) chapter for more information.
+Extension globals available. Check the [globals](/0.11/en/globals) chapter for more information.
 
 ```json
 {
@@ -270,7 +274,7 @@ Extension globals available. Check the [globals](/0.11/es-es/globals) chapter fo
 
 ## info
 
-`phpinfo()` sections. Check the [phpinfo()](/0.11/es-es/phpinfo) chapter for more information.
+`phpinfo()` sections. Check the [phpinfo()](/0.11/en/phpinfo) chapter for more information.
 
 ```json
 {
@@ -290,7 +294,7 @@ Extension globals available. Check the [globals](/0.11/es-es/globals) chapter fo
 
 ## iniciadores
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.11/es-es/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
 
 ```json
 {
