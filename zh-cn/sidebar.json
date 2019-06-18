@@ -1,86 +1,90 @@
 [
     {
-        "text": "欢迎",
+        "text": "Welcome",
         "url": "welcome"
     },
     {
-        "text": "为什么选择 Zephir",
+        "text": "Why Zephir",
         "url": "motivation"
     },
     {
-        "text": "Zephir 简介",
+        "text": "Introducing Zephir",
         "url": "introduction"
     },
     {
-        "text": "安装",
+        "text": "Installation",
         "url": "installation"
     },
     {
-        "text": "教程",
+        "text": "Tutorial",
         "url": "tutorial"
     },
     {
-        "text": "基本语法",
+        "text": "Basic Syntax",
         "url": "language"
     },
     {
-        "text": "类型",
+        "text": "Types",
         "url": "types"
     },
     {
-        "text": "运算符",
+        "text": "Operators",
         "url": "operators"
     },
     {
-        "text": "数组",
+        "text": "Arrays",
         "url": "arrays"
     },
     {
-        "text": "类与对象",
+        "text": "Classes and objects",
         "url": "oop"
     },
     {
-        "text": "内建方法",
+        "text": "Built-in methods",
         "url": "builtin-methods"
     },
     {
-        "text": "控制结构",
+        "text": "Control structures",
         "url": "control-structures"
     },
     {
-        "text": "例外情况",
+        "text": "Exceptions",
         "url": "exceptions"
     },
     {
-        "text": "调用函数",
+        "text": "Calling functions",
         "url": "functions"
     },
     {
-        "text": "闭 包",
+        "text": "Closures",
         "url": "closures"
     },
     {
-        "text": "自定义优化器",
+        "text": "Custom optimizers",
         "url": "optimizers"
     },
     {
-        "text": "配置文件",
+        "text": "Configuration file",
         "url": "config"
     },
     {
-        "text": "生命周期钩子",
+        "text": "Lifecycle hooks",
         "url": "lifecycle"
     },
     {
-        "text": "全局扩展",
+        "text": "Extension globals",
         "url": "globals"
     },
     {
-        "text": "phpinfo() 部分",
+        "text": "phpinfo() sections",
         "url": "phpinfo"
     },
     {
-        "text": "静态分析",
+        "text": "Command line",
+        "url": "command-line"
+    },
+    {
+        "text": "Static analysis",
         "url": "static-analysis"
     },
     {
@@ -88,7 +92,7 @@
         "url": "optimizations"
     },
     {
-        "text": "编译警告",
+        "text": "Compiler warnings",
         "url": "warnings"
     },
     {
