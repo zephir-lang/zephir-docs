@@ -1,13 +1,14 @@
----
-layout: default
-language: 'ru-ru'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
 # Введение в Zephir
 
 Zephir — это язык, который обращается к основным потребностям разработчика PHP, пытающегося писать и компилировать код, который может быть выполнен PHP. Он динамически/статически типизирован, некоторые его функции могут быть знакомы разработчикам PHP.
 
-Название Zephir является сокращением слов Z(end) E(ngine)/PH(P)/I(nte)r(mediate). Хотя это говорит о том, что произношение должно быть зефир, создатели Zephir фактически произносят его [zaefire](http://translate.google.com/#en/en/zaefire).
+Название Zephir является сокращением слов Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
 
 <a name='hello-world'></a>
 
