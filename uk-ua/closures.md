@@ -1,8 +1,9 @@
----
-layout: default
-language: 'uk-ua'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
 # Closures
 
 You can use closures (a.k.a. anonymous functions) in Zephir; these are PHP compatible and can be returned to the PHP userland:
