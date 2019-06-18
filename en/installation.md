@@ -86,5 +86,5 @@ This step is optional for version 0.10.x, however, it will become mandatory in f
 Check if Zephir is available from any directory by executing:
 
 ```bash
-zephir help
+zephir list
 ```
