@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
 # 安装
 
 要安装 Zephir, 请按照下列步骤操作:
@@ -40,21 +41,26 @@ version: '0.11'
     
     ```bash
     php -v
-    PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
-    Copyright (c) 1997-2016 The PHP Group
-    Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-            with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
     ```
+    
+        PHP 7.2.17-0ubuntu0.19.04.1 (cli) (built: Apr 18 2019 18:01:25) ( NTS )
+        Copyright (c) 1997-2018 The PHP Group
+        Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+            with Zend OPcache v7.2.17-0ubuntu0.19.04.1, Copyright (c) 1999-2018, by Zend Technologies
+            with Xdebug v2.6.1, Copyright (c) 2002-2018, by Derick Rethans
+        
     
     此外, 请确保您在安装 php 的同时安装了 php 开发库:
     
     ```bash
     phpize -v
-    Configuring for:
-    PHP Api Version:         20151012
-    Zend Module Api No:      20151012
-    Zend Extension Api No:   320151012
     ```
+    
+        Configuring for:
+        PHP Api Version:         20170718
+        Zend Module Api No:      20170718
+        Zend Extension Api No:   320170718
+        
     
     您不必确切看到的以上输出，但是这些命令对于开始使用Zephir进行开发非常重要。
     
@@ -65,35 +71,42 @@ version: '0.11'
     
     ## 安装 Zephir
     
-    
-
-<a name='git-way'></a>
-
-    
-    ### Git 方式
-    
     首先, 确保安装并激活了 Zephir 解析器扩展。 你可以按照这个 [tutorial](https://github.com/phalcon/php-zephir-parser)。
     
-    Zephir 编译器当前必须从 github 克隆:
+    ### Release PHAR
+    
+    The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
+    
+    ### Composer
+    
+    The PHAR isn't available before 0.11.4, so if you need an older version, you can use Composer, in one of two ways:
+    
+    #### Global Composer Application
     
     ```bash
-    git clone https://github.com/phalcon/zephir
+    composer global require phalcon/zephir
     ```
     
-    运行 Zephir 安装程序:
+    There are two approaches to running Zephir at this point. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
+    
+    #### Project Dependency
     
     ```bash
-    cd zephir
-    ./install -c
+    composer require phalcon/zephir
     ```
     
-    最后一件事，你需要确保你有所有必要的依赖和安装额外的PHP库:
+    Use `composer exec zephir` within the project you installed Zephir in, above, to run it. (Alternately, you can still run `vendor/bin/zephir`.)
+    
+    ### Git Clone
+    
+    Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
     
     ```bash
+    git clone --depth 1 -b $(git ls-remote --sort=-v:refname https://github.com/phalcon/zephir 0.11.* | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
     composer install
     ```
     
-    这个步骤对于0.10版本是可选的。 然而，在未来的版本中它将成为强制性的。
+    You'll need to either use the path to `zephir/zephir`, or create a symlink in a directory in your `$PATH`, to run Zephir using this option.
     
     
 
@@ -105,5 +118,5 @@ version: '0.11'
     检查Zephir是否可以从任何目录执行:
     
     ```bash
-    zephir 帮助
+    zephir list
     ```
