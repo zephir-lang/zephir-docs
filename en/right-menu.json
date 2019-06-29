@@ -577,42 +577,42 @@
         {
             "text": "call-gatherer-pass",
             "level": 1,
-            "url": "call-gatherer-pass"
+            "url": "#call-gatherer-pass"
         },
         {
             "text": "check-invalid-reads",
             "level": 1,
-            "url": "check-invalid-reads"
+            "url": "#check-invalid-reads"
         },
         {
             "text": "constant-folding",
             "level": 1,
-            "url": "constant-folding"
+            "url": "#constant-folding"
         },
         {
             "text": "internal-call-transformation",
             "level": 1,
-            "url": "internal-call-transformation"
+            "url": "#internal-call-transformation"
         },
         {
             "text": "local-context-pass",
             "level": 1,
-            "url": "local-context-pass"
+            "url": "#local-context-pass"
         },
         {
             "text": "static-constant-class-folding",
             "level": 1,
-            "url": "static-constant-class-folding"
+            "url": "#static-constant-class-folding"
         },
         {
             "text": "static-type-inference",
             "level": 1,
-            "url": "static-type-inference"
+            "url": "#static-type-inference"
         },
         {
             "text": "static-type-inference-second-pass",
             "level": 1,
-            "url": "static-type-inference-second-pass"
+            "url": "#static-type-inference-second-pass"
         }
     ],
     "optimizers": [],
