@@ -1,6 +1,6 @@
 * * *
 
-layout: default language: 'uk' version: '0.10' menu:
+layout: default language: 'en' version: '0.10' menu:
 
 - text: 'api' url: '#api'
 - text: 'author' url: '#author'
