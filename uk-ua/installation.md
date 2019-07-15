@@ -98,7 +98,7 @@ Use `composer exec zephir` within the project you installed Zephir in, above, to
 Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
 
 ```bash
-git clone --depth 1 -b $(git ls-remote --sort=-v:refname https://github.com/phalcon/zephir 0.11.* | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
+git clone --depth 1 -b $(git ls-remote https://github.com/phalcon/zephir 0.11.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
 composer install
 ```
 
