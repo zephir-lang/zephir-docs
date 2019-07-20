@@ -1,9 +1,10 @@
----
-layout: default
-language: 'es-es'
-version: '0.11'
----
-# Types
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
+# Tipos
 
 Zephir es dinámica y estáticamente tipificado. En este capítulo se destacan los tipos soportados y sus comportamientos.
 
@@ -114,7 +115,7 @@ var a = 5, b = 10050;
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Desbordamiento de Enteros
+### Integer sobrecarga
 
 Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como `unsigned long` o `float` para almacenarlos:
 

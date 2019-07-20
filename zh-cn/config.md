@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
 # 配置文件
 
 每个Zephir扩展都有一个名为`config.json`的配置文件。 每当构建或生成扩展时，Zephir都会读取这个文件，它允许开发人员修改扩展或编译器的行为。
@@ -107,7 +108,7 @@ version: '0.11'
 
 ## destructors
 
-此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 Check the [lifecycle hooks](/0.11/zh-cn/lifecycle) chapter for more information.
+此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
 
 ```json
 {
@@ -177,7 +178,10 @@ version: '0.11'
 
 ## extra
 
-包含额外的设置, 这些设置也可以像在命令行中一样传递。 目前，这是`export-clases`(生成从其他C代码访问类的头文件)，和`indent`(选择使用`tabs`或`spaces`缩进生成的文件中的代码):
+Contains extra settings that also can be passed, as is, [on the command line](/0.11/en/command-line). Currently, that's:
+
+- `export-classes` - generate headers for accessing your classes from other C code
+- `indent` - select between using `tabs` or `spaces` to indent code in generated files
 
 ```json
 {
@@ -249,7 +253,7 @@ version: '0.11'
 
 ## globals
 
-扩展全局可用。 Check the [globals](/0.11/zh-cn/globals) chapter for more information.
+扩展全局可用。 Check the [globals](/0.11/en/globals) chapter for more information.
 
 ```json
 {
@@ -270,7 +274,7 @@ version: '0.11'
 
 ## info
 
-`phpinfo()` 信息. Check the [phpinfo()](/0.11/zh-cn/phpinfo) chapter for more information.
+`phpinfo()` 信息. Check the [phpinfo()](/0.11/en/phpinfo) chapter for more information.
 
 ```json
 {
@@ -290,7 +294,7 @@ version: '0.11'
 
 ## initializers
 
-这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 Check the [lifecycle hooks](/0.11/zh-cn/lifecycle) chapter for more information.
+这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
 
 ```json
 {

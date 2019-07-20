@@ -80,6 +80,10 @@
         "url": "phpinfo"
     },
     {
+        "text": "Command line",
+        "url": "command-line"
+    },
+    {
         "text": "Static analysis",
         "url": "static-analysis"
     },

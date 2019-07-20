@@ -1,8 +1,9 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
+
 # 自定义优化器
 
 Zephir 中最常见的函数使用内部优化器。 "优化器" 的工作方式类似于函数调用的拦截器。 一个“优化器”取代了对PHP代码块中通常定义的函数调用的直接C调用，后者更快，开销更低，从而提高了性能。
@@ -176,7 +177,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/0.11/zh-cn/config) file:
+This file must be added at a special section in the [config.json](/0.11/en/config) file:
 
 ```json
 "extra-sources": [
