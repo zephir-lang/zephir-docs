@@ -41,25 +41,25 @@ Since Zephir is written in PHP, you need to have a recent version of PHP install
 ```bash
 php -v
 ```
-
-    PHP 7.2.17-0ubuntu0.19.04.1 (cli) (built: Apr 18 2019 18:01:25) ( NTS )
-    Copyright (c) 1997-2018 The PHP Group
-    Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
-        with Zend OPcache v7.2.17-0ubuntu0.19.04.1, Copyright (c) 1999-2018, by Zend Technologies
-        with Xdebug v2.6.1, Copyright (c) 2002-2018, by Derick Rethans
-    
+```
+PHP 7.2.17-0ubuntu0.19.04.1 (cli) (built: Apr 18 2019 18:01:25) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.2.17-0ubuntu0.19.04.1, Copyright (c) 1999-2018, by Zend Technologies
+    with Xdebug v2.6.1, Copyright (c) 2002-2018, by Derick Rethans
+```
 
 Also, make sure you have the PHP development libraries installed along with your PHP installation:
 
 ```bash
 phpize -v
-```
 
-    Configuring for:
-    PHP Api Version:         20170718
-    Zend Module Api No:      20170718
-    Zend Extension Api No:   320170718
-    
+```
+Configuring for:
+PHP Api Version:         20170718
+Zend Module Api No:      20170718
+Zend Extension Api No:   320170718
+```
 
 You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
 
