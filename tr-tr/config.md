@@ -178,7 +178,10 @@ You can include a class from another namespace/extension directly in your own ex
 
 ## extra
 
-Contains extra settings that also can be passed, as is, on the command line. Currently, that's `export-clases` (generate headers for accessing your classes from other C code), and `indent` (select between using `tabs` or `spaces` to indent code in generated files):
+Contains extra settings that also can be passed, as is, [on the command line](/0.11/en/command-line). Currently, that's:
+
+- `export-classes` - generate headers for accessing your classes from other C code
+- `indent` - select between using `tabs` or `spaces` to indent code in generated files
 
 ```json
 {

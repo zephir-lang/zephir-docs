@@ -51,6 +51,63 @@
     "closures": [
 
     ],
+    "command-line": [
+        {
+            "text": "zephir api",
+            "level": 1,
+            "url": "#zephir-api"
+        },
+        {
+            "text": "zephir build",
+            "level": 1,
+            "url": "#zephir-build"
+        },
+        {
+            "text": "zephir clean",
+            "level": 1,
+            "url": "#zephir-clean"
+        },
+        {
+            "text": "zephir compile",
+            "level": 1,
+            "url": "#zephir-compile"
+        },
+        {
+            "text": "zephir fullclean",
+            "level": 1,
+            "url": "#zephir-fullclean"
+        },
+        {
+            "text": "zephir generate",
+            "level": 1,
+            "url": "#zephir-generate"
+        },
+        {
+            "text": "zephir help",
+            "level": 1,
+            "url": "#zephir-help"
+        },
+        {
+            "text": "zephir init",
+            "level": 1,
+            "url": "#zephir-init"
+        },
+        {
+            "text": "zephir install",
+            "level": 1,
+            "url": "#zephir-install"
+        },
+        {
+            "text": "zephir list",
+            "level": 1,
+            "url": "#zephir-list"
+        },
+        {
+            "text": "zephir stubs",
+            "level": 1,
+            "url": "#zephir-stubs"
+        }
+    ],
     "config": [
         {
             "text": "api",
@@ -530,42 +587,42 @@
         {
             "text": "call-gatherer-pass",
             "level": 1,
-            "url": "call-gatherer-pass"
+            "url": "#call-gatherer-pass"
         },
         {
             "text": "check-invalid-reads",
             "level": 1,
-            "url": "check-invalid-reads"
+            "url": "#check-invalid-reads"
         },
         {
             "text": "constant-folding",
             "level": 1,
-            "url": "constant-folding"
+            "url": "#constant-folding"
         },
         {
             "text": "internal-call-transformation",
             "level": 1,
-            "url": "internal-call-transformation"
+            "url": "#internal-call-transformation"
         },
         {
             "text": "local-context-pass",
             "level": 1,
-            "url": "local-context-pass"
+            "url": "#local-context-pass"
         },
         {
             "text": "static-constant-class-folding",
             "level": 1,
-            "url": "static-constant-class-folding"
+            "url": "#static-constant-class-folding"
         },
         {
             "text": "static-type-inference",
             "level": 1,
-            "url": "static-type-inference"
+            "url": "#static-type-inference"
         },
         {
             "text": "static-type-inference-second-pass",
             "level": 1,
-            "url": "static-type-inference-second-pass"
+            "url": "#static-type-inference-second-pass"
         }
     ],
     "optimizers": [
