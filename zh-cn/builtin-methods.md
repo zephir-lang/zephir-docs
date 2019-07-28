@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'zh-cn'
+language: 'en'
 version: '0.11'
 ---
+
 # 内建方法
 
 如前所述，Zephir提倡面向对象编程。 与静态类型相关的变量也可以作为对象处理。
