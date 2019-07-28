@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'zh-cn'
+language: 'en'
 version: '0.11'
 ---
+
 # 类型
 
 Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍支持的类型及其行为。
@@ -50,6 +51,7 @@ let c = a + b;
 | `object`         | 对象抽象和PHP的类似。                 |
 | `resource`       | 资源，对外部资源的引用。                 |
 | `string`         | 一个string是一系列字符，其中字符与字节相同。    |
+
 
 查看[PHP手册](http://www.php.net/manual/en/language.types.php)中关于这些类型的更多信息。
 
@@ -154,6 +156,7 @@ var today = "friday";
 | `\r`  | 回车    |
 | `\` | 反斜线   |
 | `\"`  | 双引号   |
+
 
 ```zephir
 var today    = "\tfriday\n\r",
