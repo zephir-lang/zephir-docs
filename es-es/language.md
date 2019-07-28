@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'es-es'
+language: 'en'
 version: '0.11'
 ---
+
 # Sintaxis básica
 
 En este capítulo, analizaremos la organización de archivos y espacios de nombres, declaraciones de variables, varios convenios de sintaxis y algunos conceptos generales.
