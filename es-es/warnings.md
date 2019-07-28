@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'es-es'
+language: 'en'
 version: '0.11'
 ---
+
 # Compiler Warnings
 
 The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
