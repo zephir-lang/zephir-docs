@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'zh-cn'
+language: 'en'
 version: '0.11'
 ---
+
 # 欢迎!
 
 Zephir，一种开源的高级语言，旨在简化PHP扩展的创建和可维护性，重点关注类型和内存安全性。

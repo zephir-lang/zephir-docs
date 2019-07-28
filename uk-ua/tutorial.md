@@ -1,9 +1,10 @@
 ---
 layout: default
-language: 'uk-ua'
+language: 'en'
 version: '0.11'
 ---
-# Tutorial
+
+# Навчальний посібник
 
 Zephir, і цей посібник, призначені для PHP-розробників, які хочуть створити C-розширення, але не знають C.
 
@@ -106,7 +107,7 @@ class Greeting
 
     public static function say()
     {
-        echo "hello world!";
+        echo "Привіт світ!";
     }
 
 }
@@ -210,16 +211,17 @@ class Filter
 <?php
 
 $f = new Utils\Filter();
-$f->alpha("hello");
+$f->alpha("привіт");
 ```
 
 Ви побачите:
 
-    h
-    e
-    l
-    l
-    o
+    п
+    р
+    и
+    в
+    і
+    т
     
 
 Перевірити кожен символ у рядку є доволі просто. Тепер ми створимо інший рядок з правильними відфільтрованими символами:
@@ -233,7 +235,7 @@ class Filter
         char ch; string filtered = "";
 
         for ch in str {
-            if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') {
+            if (ch >= 'а' && ch <= 'я') || (ch >= 'А' && ch <= 'Я') {
                 let filtered .= ch;
             }
         }
@@ -249,7 +251,7 @@ class Filter
 <?php
 
 $f = new Utils\Filter();
-echo $f->alpha("!he#02l3'121lo."); // prints "hello"
+echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
 ```
 
 У цьому скрінкасті ви можете подивитися, як створити розширення, описане в цьому посібнику: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 

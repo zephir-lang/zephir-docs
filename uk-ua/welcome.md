@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'uk-ua'
+language: 'en'
 version: '0.11'
 ---
+
 # Вітаємо!
 
 Вас вітає Zephir — проект з відкритим вихідним кодом, високорівнева/предметно-орієнтована мова спроектована для полегшення створення й супроводу розширень для PHP з акцентом на тип та безпеку доступу до пам'яті.
@@ -13,7 +14,7 @@ version: '0.11'
 
 Основними особливостями Zephir-у є:
 
-| Особливість                 | Description                                        |
+| Особливість                 | Опис                                               |
 | --------------------------- | -------------------------------------------------- |
 | Система типізації           | динамічна/статична                                 |
 | Безпечний доступ до пам'яті | вказівники або пряме керування пам'яттю заборонені |
@@ -30,12 +31,12 @@ version: '0.11'
 namespace MyLibrary;
 
 /**
- * Filter
+ * Фільтр
  */
 class Filter
 {
     /**
-     * Filters a string, returning its alpha charactersa
+     * Фільтрує рядок, повертаючи його альфа-символи
      *
      * @param string str
      */
@@ -60,7 +61,7 @@ class Filter
 <?php
 
 $filter = new MyLibrary\Filter();
-echo $filter->alpha("01he#l.lo?/1"); // prints hello
+echo $filter->alpha("01he#l.lo?/1"); // виведе hello
 ```
 
 <a name='external-links'></a>

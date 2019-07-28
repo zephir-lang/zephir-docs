@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 
 # Operators
 
@@ -38,6 +38,7 @@ The following operators are supported:
 | Shift left         | `a << b` |
 | Shift right        | `a >> b` |
 
+
 Example:
 
 ```zephir
@@ -66,6 +67,7 @@ Comparison operators depend on the type of variables compared. For example, if b
 | `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
 | `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
 
+
 Example:
 
 ```zephir
@@ -91,6 +93,7 @@ The following operators are supported:
 | And       | `a && b` |
 | Or        | `a || b`         |
 | Not       | `!a`             |
+
 
 Example:
 

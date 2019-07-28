@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'es-es'
+language: 'en'
 version: '0.11'
 ---
+
 # Operadores
 
 Los operadores en Zephir son similares a los de PHP, y también heredarán algunos de sus comportamientos.
@@ -37,6 +38,7 @@ Son soportados los siguientes operadores:
 | Mover a la izquierda | `a << b` |
 | Mover a la derecha   | `a >> b` |
 
+
 Ejemplo:
 
 ```zephir
@@ -65,6 +67,7 @@ Los operadores de comparación dependen del tipo de variables en comparación. P
 | `a <= b`    | Menor o igual que | `true` si a es menor o igual que b.                                          |
 | `a >= b`    | Mayor o igual que | `true` si a es mayor o igual que b.                                          |
 
+
 Ejemplo:
 
 ```zephir
@@ -90,6 +93,7 @@ Son soportados los siguientes operadores:
 | And       | `a && b` |
 | Or        | `a || b`         |
 | Not       | `!a`             |
+
 
 Ejemplo:
 

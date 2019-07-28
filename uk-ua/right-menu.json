@@ -28,7 +28,7 @@
     ],
     "builtin-methods": [
         {
-            "text": "String",
+            "text": "Рядок",
             "level": 1,
             "url": "#string"
         },
@@ -261,29 +261,29 @@
     ],
     "installation": [
         {
-            "text": "Prerequisites",
+            "text": "Передумови",
             "level": 1,
             "url": "#prerequisites"
         },
         {
-            "text": "Installing Zephir",
+            "text": "Встановлення Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
         {
-            "text": "Testing the installation",
+            "text": "Тестування встановлення",
             "level": 1,
             "url": "#testing-the-installation"
         }
     ],
     "introduction": [
         {
-            "text": "Hello World!",
+            "text": "Привіт світ!",
             "level": 1,
             "url": "#hello-world"
         },
         {
-            "text": "A taste of Zephir",
+            "text": "Смак Зефіру",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
@@ -295,12 +295,12 @@
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "Instruction separation",
+            "text": "Розділення інструкцій",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "Comments",
+            "text": "Коментарі",
             "level": 1,
             "url": "#comments"
         },
@@ -342,37 +342,37 @@
     ],
     "motivation": [
         {
-            "text": "If you are a PHP programmer...",
+            "text": "Якщо ви PHP-програміст...",
             "level": 1,
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "If you are a C programmer...",
+            "text": "Якщо ви C-програміст...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "Compilation vs Interpretation",
+            "text": "Компіляція проти інтерпретації",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
         {
-            "text": "Statically typed versus dynamically typed languages",
+            "text": "Статичнотипізовані мови проти динамічнотипізованих",
             "level": 1,
             "url": "#statically-typed-versus-dynamically-typed-languages"
         },
         {
-            "text": "Compilation scheme",
+            "text": "Схема компіляції",
             "level": 1,
             "url": "#compilation-scheme"
         },
         {
-            "text": "Code protection",
+            "text": "Захист коду",
             "level": 1,
             "url": "#code-protection"
         },
         {
-            "text": "Conclusion",
+            "text": "Висновок",
             "level": 1,
             "url": "#conclusion"
         }
@@ -588,44 +588,44 @@
     ],
     "tutorial": [
         {
-            "text": "Checking the installation",
+            "text": "Перевірка встановлення",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Extension skeleton",
+            "text": "Каркас розширення",
             "level": 1,
             "url": "#extension-skeleton"
         },
         {
-            "text": "Adding our first class",
+            "text": "Додавання нашого першого класу",
             "level": 1,
             "url": "#adding-our-first-class"
         },
         {
-            "text": "Initial testing",
+            "text": "Первинне тестування",
             "level": 1,
             "url": "#initial-testing"
         },
         {
-            "text": "A useful class",
+            "text": "Корисний клас",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "Conclusion",
+            "text": "Висновок",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "Dynamic Types",
+            "text": "Динамічні типи",
             "level": 1,
             "url": "#dynamic-types"
         },
         {
-            "text": "Arrays",
+            "text": "Масиви",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -655,12 +655,12 @@
             "url": "#dynamic-types-objects"
         },
         {
-            "text": "String",
+            "text": "Рядок",
             "level": 2,
             "url": "#dynamic-types-string"
         },
         {
-            "text": "Static Types",
+            "text": "Статичні типи",
             "level": 1,
             "url": "#static-types"
         },
@@ -685,7 +685,7 @@
             "url": "#static-types-long-unsigned"
         },
         {
-            "text": "String",
+            "text": "Рядок",
             "level": 2,
             "url": "#static-types-string"
         }
@@ -754,7 +754,7 @@
             "url": "#some-features"
         },
         {
-            "text": "A small taste",
+            "text": "Скуштуйте",
             "level": 1,
             "url": "#a-small-taste"
         }

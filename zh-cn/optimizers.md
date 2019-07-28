@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'zh-cn'
+language: 'en'
 version: '0.11'
 ---
+
 # 自定义优化器
 
 Zephir 中最常见的函数使用内部优化器。 "优化器" 的工作方式类似于函数调用的拦截器。 一个“优化器”取代了对PHP代码块中通常定义的函数调用的直接C调用，后者更快，开销更低，从而提高了性能。
@@ -12,6 +13,7 @@ Zephir 中最常见的函数使用内部优化器。 "优化器" 的工作方式
 | 在 Zephir的作用    | 优化器类名                  | 优化器路径                                 | C 中的函数            |
 | -------------- | ---------------------- | ------------------------------------- | ----------------- |
 | `calculate_pi` | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
+
 
 请注意, 优化器是用 PHP 编写的, 而不是 Zephir编写的。 在编译过程中, 它用于以编程方式为您的扩展调用生成适当的 c 代码。 它负责检查参数和返回类型是否与 c 函数实际需要的内容相匹配, 从而防止 Zephir 生成无效的 c 代码。
 
@@ -176,7 +178,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/0.11/zh-cn/config) file:
+This file must be added at a special section in the [config.json](/0.11/en/config) file:
 
 ```json
 "extra-sources": [

@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'el-gr'
+language: 'en'
 version: '0.11'
 ---
+
 # Basic Syntax
 
 In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
