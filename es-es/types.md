@@ -1,9 +1,10 @@
 ---
 layout: default
-language: 'es-es'
+language: 'en'
 version: '0.11'
 ---
-# Types
+
+# Tipos
 
 Zephir es dinámica y estáticamente tipificado. En este capítulo se destacan los tipos soportados y sus comportamientos.
 
@@ -50,6 +51,7 @@ Pueden tener ocho tipos:
 | `object`         | Abstracción de objectos como en PHP.                                                                                    |
 | `resource`       | Un recurso contiene una referencia a un recurso externo.                                                                |
 | `string`         | Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte.                                 |
+
 
 Revisar por más de estos tipos en el [manual de PHP](http://www.php.net/manual/en/language.types.php).
 
@@ -114,7 +116,7 @@ var a = 5, b = 10050;
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Desbordamiento de Enteros
+### Integer sobrecarga
 
 Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como `unsigned long` o `float` para almacenarlos:
 
@@ -154,6 +156,7 @@ Son soportadas las siguientes secuencias de escape en cadenas de texto:
 | `\r`     | Retorno de carro |
 | `\`    | Barra invertida  |
 | `\"`     | Comilla doble    |
+
 
 ```zephir
 var today    = "\tviernes\n\r",
