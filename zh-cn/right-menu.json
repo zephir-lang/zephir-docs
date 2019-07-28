@@ -83,7 +83,7 @@
             "url": "#zephir-generate"
         },
         {
-            "text": "zephir help",
+            "text": "zephir 帮助",
             "level": 1,
             "url": "#zephir-help"
         },
