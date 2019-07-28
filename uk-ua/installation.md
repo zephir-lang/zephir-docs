@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'uk-ua'
+language: 'en'
 version: '0.11'
 ---
+
 # Встановлення
 
 Щоб встановити Zephir, будь ласка, слідуйте наступним крокам:
