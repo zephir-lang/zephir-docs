@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'el-gr'
+language: 'en'
 version: '0.11'
 ---
+
 # Καλώς ορίσατε!
 
 Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
@@ -13,7 +14,7 @@ Welcome to Zephir, an open source, high-level/domain specific language designed 
 
 Κύρια χαρακτηριστικά της Zephir είναι:
 
-| Χαρακτηριστικό    | Περιγραφή                                            |
+| Χαρακτηριστικό    | Description                                          |
 | ----------------- | ---------------------------------------------------- |
 | Type system       | dynamic/static                                       |
 | Memory safety     | pointers or direct memory management are not allowed |
