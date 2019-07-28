@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'el-gr'
+language: 'en'
 version: '0.11'
 ---
+
 # Operators
 
 Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
@@ -30,12 +31,13 @@ The following operators are supported:
 
 | Operation          | Example        |
 | ------------------ | -------------- |
-| And                | `a & b`        |
+| And                | `a & b`    |
 | Or (inclusive or)  | `a | b`        |
 | Xor (exclusive or) | `a ^ b`        |
 | Not                | `~a`           |
-| Shift left         | `a << b`       |
-| Shift right        | `a >> b`       |
+| Shift left         | `a << b` |
+| Shift right        | `a >> b` |
+
 
 Example:
 
@@ -53,17 +55,18 @@ Learn more about comparison of dynamic variables in the [php manual](http://www.
 
 Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
 
-| Example    | Operation                | Description                                                      |
-| ---------- | ------------------------ | ---------------------------------------------------------------- |
-| `a == b`   | Equal                    | `true` if a is equal to b after type juggling.                   |
-| `a === b`  | Identical                | `true` if a is equal to b, and they are of the same type.        |
-| `a != b`   | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a <> b`   | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a !== b`  | Not identical            | `true` if a is not equal to b, or they are not of the same type. |
-| `a < b`    | Less than                | `true` if a is strictly less than b.                             |
-| `a > b`    | Greater than             | `true` if a is strictly greater than b.                          |
-| `a <= b`   | Less than or equal to    | `true` if a is less than or equal to b.                          |
-| `a >= b`   | Greater than or equal to | `true` if a is greater than or equal to b.                       |
+| Example        | Operation                | Description                                                      |
+| -------------- | ------------------------ | ---------------------------------------------------------------- |
+| `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
+| `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
+| `a != b`       | Not equal                | `true` if a is not equal to b after type juggling.               |
+| `a <> b` | Not equal                | `true` if a is not equal to b after type juggling.               |
+| `a !== b`      | Not identical            | `true` if a is not equal to b, or they are not of the same type. |
+| `a < b`     | Less than                | `true` if a is strictly less than b.                             |
+| `a > b`     | Greater than             | `true` if a is strictly greater than b.                          |
+| `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
+| `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
+
 
 Example:
 
@@ -85,11 +88,12 @@ if a == b {
 
 The following operators are supported:
 
-| Operation | Example   |
-| --------- | --------- |
-| And       | `a && b`  |
-| Or        | `a || b`  |
-| Not       | `!a`      |
+| Operation | Example          |
+| --------- | ---------------- |
+| And       | `a && b` |
+| Or        | `a || b`         |
+| Not       | `!a`             |
+
 
 Example:
 
@@ -107,8 +111,7 @@ return 1;
 Zephir supports the ternary operator available in C or PHP:
 
 ```zephir
-// b is set to "x" if a is equal to 1, otherwise "y" is assigned as the value
-let b = a == 1 ? "x" : "y"; 
+let b = a == 1 ? "x" : "y"; // b is set to "x" if a is equal to 1, otherwise "y" is assigned as the value
 ```
 
 <a name='special-operators'></a>
