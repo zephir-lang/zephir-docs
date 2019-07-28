@@ -1,27 +1,27 @@
 {
     "arrays": [
         {
-            "text": "Declaring Array Variables",
+            "text": "Объявление массивов",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Creating Arrays",
+            "text": "Создание массивов",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Updating arrays",
+            "text": "Обновление массивов",
             "level": 1,
             "url": "#updating-arrays"
         },
         {
-            "text": "Appending elements",
+            "text": "Добавление элементов",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "Reading elements from arrays",
+            "text": "Чтение элементов из массивов",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -261,66 +261,66 @@
     ],
     "installation": [
         {
-            "text": "Prerequisites",
+            "text": "Системные требования",
             "level": 1,
             "url": "#prerequisites"
         },
         {
-            "text": "Установка Zephir",
+            "text": "Installing Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
         {
-            "text": "Протестируйте Zephir",
+            "text": "Testing the installation",
             "level": 1,
             "url": "#testing-the-installation"
         }
     ],
     "introduction": [
         {
-            "text": "Привет мир!",
+            "text": "Hello World!",
             "level": 1,
             "url": "#hello-world"
         },
         {
-            "text": "Понимание Zephir",
+            "text": "A taste of Zephir",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
     ],
     "language": [
         {
-            "text": "Организация кода в файлах и пространствах имён",
+            "text": "Organizing code in files and namespaces",
             "level": 1,
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "Разделение инструкций",
+            "text": "Instruction separation",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "Комментарии",
+            "text": "Comments",
             "level": 1,
             "url": "#comments"
         },
         {
-            "text": "Объявления переменных",
+            "text": "Variable declarations",
             "level": 1,
             "url": "#variable-declarations"
         },
         {
-            "text": "Область переменной",
+            "text": "Variable scope",
             "level": 1,
             "url": "#variable-scope"
         },
         {
-            "text": "Супер-глобальные переменные",
+            "text": "Super globals",
             "level": 1,
             "url": "#super-globals"
         },
         {
-            "text": "Локальная таблица символов",
+            "text": "Local symbol table",
             "level": 1,
             "url": "#local-symbol-table"
         }
@@ -342,37 +342,37 @@
     ],
     "motivation": [
         {
-            "text": "Если вы PHP программист...",
+            "text": "If you are a PHP programmer...",
             "level": 1,
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "Если вы C программист...",
+            "text": "If you are a C programmer...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "Компиляция против интерпретации",
+            "text": "Compilation vs Interpretation",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
         {
-            "text": "Статическая типизация против динамической типизации",
+            "text": "Statically typed versus dynamically typed languages",
             "level": 1,
             "url": "#statically-typed-versus-dynamically-typed-languages"
         },
         {
-            "text": "Схема компиляции",
+            "text": "Compilation scheme",
             "level": 1,
             "url": "#compilation-scheme"
         },
         {
-            "text": "Защита кода",
+            "text": "Code protection",
             "level": 1,
             "url": "#code-protection"
         },
         {
-            "text": "Заключение",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
@@ -471,32 +471,32 @@
     ],
     "operators": [
         {
-            "text": "Арифметические операторы",
+            "text": "Arithmetic Operators",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "Побитовые операторы",
+            "text": "Bitwise Operators",
             "level": 1,
             "url": "#bitwise-operators"
         },
         {
-            "text": "Операторы сравнения",
+            "text": "Comparison Operators",
             "level": 1,
             "url": "#comparison-operators"
         },
         {
-            "text": "Логические операторы",
+            "text": "Logical Operators",
             "level": 1,
             "url": "#logical-operators"
         },
         {
-            "text": "Тернарный оператор",
+            "text": "Ternary Operator",
             "level": 1,
             "url": "#tenary-operator"
         },
         {
-            "text": "Специальные операторы",
+            "text": "Special Operator",
             "level": 1,
             "url": "#special-operators"
         },
@@ -516,12 +516,12 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Подсказки типа",
+            "text": "Type Hints",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
         {
-            "text": "Подсказки прогнозирования ветвлений",
+            "text": "Branch Prediction Hints",
             "level": 2,
             "url": "#special-operators-branch-prediction-hints"
         }
@@ -588,44 +588,44 @@
     ],
     "tutorial": [
         {
-            "text": "Проверка установки",
+            "text": "Checking the installation",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Каркас расширения",
+            "text": "Extension skeleton",
             "level": 1,
             "url": "#extension-skeleton"
         },
         {
-            "text": "Добавление нашего первого класса",
+            "text": "Adding our first class",
             "level": 1,
             "url": "#adding-our-first-class"
         },
         {
-            "text": "Первоначальное тестирование",
+            "text": "Initial testing",
             "level": 1,
             "url": "#initial-testing"
         },
         {
-            "text": "Удобные класс",
+            "text": "A useful class",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "Заключение",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "Динамические типы",
+            "text": "Dynamic Types",
             "level": 1,
             "url": "#dynamic-types"
         },
         {
-            "text": "Arrays",
+            "text": "Массивы",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -645,12 +645,12 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Integer overflow",
+            "text": "Целочисленное переполнение",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
         {
-            "text": "Objects",
+            "text": "Object",
             "level": 2,
             "url": "#dynamic-types-objects"
         },
@@ -660,7 +660,7 @@
             "url": "#dynamic-types-string"
         },
         {
-            "text": "Статические типы",
+            "text": "Static Types",
             "level": 1,
             "url": "#static-types"
         },
@@ -749,12 +749,12 @@
     ],
     "welcome": [
         {
-            "text": "Некоторые особенности",
+            "text": "Some Features",
             "level": 1,
             "url": "#some-features"
         },
         {
-            "text": "Попробуйте",
+            "text": "A small taste",
             "level": 1,
             "url": "#a-small-taste"
         }
