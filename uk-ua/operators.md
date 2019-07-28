@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'uk-ua'
+language: 'en'
 version: '0.11'
 ---
+
 # Operators
 
 Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
@@ -37,6 +38,7 @@ The following operators are supported:
 | Shift left         | `a << b` |
 | Shift right        | `a >> b` |
 
+
 Example:
 
 ```zephir
@@ -53,7 +55,7 @@ Learn more about comparison of dynamic variables in the [php manual](http://www.
 
 Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
 
-| Example        | Operation                | Description                                                      |
+| Example        | Operation                | Опис                                                             |
 | -------------- | ------------------------ | ---------------------------------------------------------------- |
 | `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
 | `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
@@ -64,6 +66,7 @@ Comparison operators depend on the type of variables compared. For example, if b
 | `a > b`     | Greater than             | `true` if a is strictly greater than b.                          |
 | `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
 | `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
+
 
 Example:
 
@@ -90,6 +93,7 @@ The following operators are supported:
 | And       | `a && b` |
 | Or        | `a || b`         |
 | Not       | `!a`             |
+
 
 Example:
 
