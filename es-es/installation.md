@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'es-es'
+language: 'en'
 version: '0.11'
 ---
+
 # Instalación
 
 Para instalar el Zephir, siga estos pasos:
