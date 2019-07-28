@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'zh-cn'
+language: 'en'
 version: '0.11'
 ---
+
 # 运算符
 
 Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些行为。
@@ -37,6 +38,7 @@ Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些�
 | 左移                 | `a << b` |
 | 右移                 | `a >> b` |
 
+
 示例︰
 
 ```zephir
@@ -65,6 +67,7 @@ if a & SOME_FLAG {
 | `a <= b`    | 小于或等于 | `true`如果a小于或等于b。          |
 | `a >= b`    | 大于或等于 | `true`如果a大于或等于b。          |
 
+
 示例︰
 
 ```zephir
@@ -90,6 +93,7 @@ if a == b {
 | 与  | `a && b` |
 | 或  | `a || b`         |
 | 非  | `!a`             |
+
 
 示例︰
 
