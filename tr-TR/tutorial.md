@@ -59,6 +59,8 @@ If everything is well, you should see the following help (or something very simi
       install    Installs the extension in the extension directory (may require root password)
       list       Lists commands
       stubs      Generates stubs that can be used in a PHP IDE
+
+    Zephir version 0.10.9a-dev
     
     Usage:
         command [options]

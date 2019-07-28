@@ -1,8 +1,6 @@
----
-layout: default
-language: 'uk-ua'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
 
 
 - text: 'Organizing code in files and namespaces' url: '#organizing-code-in-files-and-namespaces'
