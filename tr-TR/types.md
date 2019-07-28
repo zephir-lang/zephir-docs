@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 
 # Types
 
@@ -51,6 +51,7 @@ They can have eight types:
 | `object`         | Object abstraction like in PHP.                                             |
 | `resource`       | A resource holds a reference to an external resource.                       |
 | `string`         | A string is series of characters, where a character is the same as a byte.  |
+
 
 Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
 
@@ -155,6 +156,7 @@ The following escape sequences are supported in strings:
 | `\r`    | Carriage return |
 | `\`   | Backslash       |
 | `\"`    | double-quote    |
+
 
 ```zephir
 var today    = "\tfriday\n\r",
