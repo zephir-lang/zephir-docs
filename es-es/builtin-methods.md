@@ -1,8 +1,9 @@
 ---
 layout: default
-language: 'es-es'
+language: 'en'
 version: '0.11'
 ---
+
 # Métodos integrados
 
 Como se mencionó antes, Zephir promueve la programación orientada a objetos. Las variables relacionadas con los tipos estáticos también se pueden manejar como objetos.
