@@ -19,7 +19,7 @@ In this guide, we will use the standard Linux terminal commands. If you are a Wi
 If you have successfully installed Zephir, you will be able to execute the following command in your console:
 
 ```bash
-zephir help
+zephir list
 ```
 
 If everything is well, you should see the following help (or something very similar):
@@ -31,13 +31,13 @@ If everything is well, you should see the following help (or something very simi
     /____/\___/ .___/_/ /_/_/_/
              /_/
     
-
     Zephir 0.11.12 by Andres Gutierrez and Serghei Iakovlev (source)
     
     Usage:
       command [options] [arguments]
     
     Options:
+
       -h, --help            Display this help message
       -q, --quiet           Do not output any message
       -V, --version         Display this application version
@@ -59,31 +59,13 @@ If everything is well, you should see the following help (or something very simi
       install    Installs the extension in the extension directory (may require root password)
       list       Lists commands
       stubs      Generates stubs that can be used in a PHP IDE
+    
 
-    Zephir version 0.10.9a-dev
-    
-    Usage:
-        command [options]
-    
-    Available commands:
-        stubs               Generates extension PHP stubs
-        install             Installs the extension (requires root password)
-        version             Shows the Zephir version
-        compile             Compile a Zephir extension
-        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
-        init [namespace]    Initializes a Zephir extension
-        fullclean           Cleans the generated object files in compilation
-        builddev            Generate/Compile/Install a Zephir extension in development mode
-        clean               Cleans the generated object files in compilation
-        generate            Generates C code from the Zephir code
-        help                Displays this help
-        build               Generate/Compile/Install a Zephir extension
-    
-    Options:
         -f([a-z0-9\-]+)     Enables compiler optimizations
         -fno-([a-z0-9\-]+)  Disables compiler optimizations
         -w([a-z0-9\-]+)     Turns a warning on
         -W([a-z0-9\-]+)     Turns a warning off
+
 
 If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
