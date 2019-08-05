@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 # Classes and Objects
 Zephir promotes object-oriented programming. This is why you can only export methods and classes in extensions. Also you will see that, most of the time, runtime errors raise exceptions instead of fatal errors or warnings.
@@ -56,7 +56,7 @@ abstract class MyClass
 
 <a name='classes-interfaces'></a>
 ### Implementing Interfaces
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension. 
+Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
 
 If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
 
@@ -72,7 +72,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-From here we can use the `stub` interface throughout our extension. 
+From here we can use the `stub` interface throughout our extension.
 
 ```php
 /**
@@ -85,7 +85,7 @@ public function shouldExtendMiddlewareInterface()
 			"The psr extension is not loaded"
 		);
 	}
-	
+
 	$this->assertTrue(
 		is_subclass_of(MiddlewareInterfaceEx::class, 'Psr\Http\Server\MiddlewareInterface')
 	);
@@ -152,7 +152,7 @@ class MyClass
 	{
 		return a + b;
 	}
-    
+
 	/**
 	 * Parameters are required and their values must be integer
 	 */
@@ -653,4 +653,4 @@ When the compiler (at compile time) does not know the correct order of these par
 ```zep
 let i = new {someClass}();
 i->chop(y: 30, x: 20);
-```    
+```
