@@ -40,6 +40,7 @@ Since Zephir is written in PHP, you need to have a recent version of PHP install
 
 ```bash
 php -v
+```
 
     PHP 7.2.17-0ubuntu0.19.04.1 (cli) (built: Apr 18 2019 18:01:25) ( NTS )
     Copyright (c) 1997-2018 The PHP Group
@@ -52,6 +53,7 @@ Also, make sure you have the PHP development libraries installed along with your
 
 ```bash
 phpize -v
+```
 
     Configuring for:
     PHP Api Version:         20170718
