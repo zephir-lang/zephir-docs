@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 
 # Встановлення
@@ -14,7 +14,7 @@ version: '0.11'
 
 Щоб створити PHP-розширення за допомогою Zephir, вам потрібні наступні програми та засоби:
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.3.0
 * Один з наступних C компіляторів: [gcc](https://gcc.gnu.org/) >= 4.4, [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 або[Intel C++](https://software.intel.com/en-us/c-compilers). Рекомендується `gcc` 4.4 або старше
 * [re2c](http://re2c.org/) 0.13.6 або старше
 * Заголовки та інструменти розробника PHP
@@ -40,10 +40,11 @@ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-e
 
 ```bash
 php -v
-PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-        with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
+PHP 7.3.7 (cli) (built: Jul 14 2019 17:24:22) ( ZTS DEBUG )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.3.7, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.3.7, Copyright (c) 1999-2018, by Zend Technologies
+    with Xdebug v2.7.2, Copyright (c) 2002-2019, by Derick Rethans
 ```
 
 Також переконайтеся, що у вас встановлені пакунки бібліотек для розробки PHP:
@@ -51,9 +52,9 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
 ```bash
 phpize -v
 Configuring for:
-PHP Api Version:         20151012
-Zend Module Api No:      20151012
-Zend Extension Api No:   320151012
+PHP Api Version:         20180731
+Zend Module Api No:      20180731
+Zend Extension Api No:   320180731
 ```
 
 Вам не обов'язково потрібно отримати такий самий вивід. Однак важливо, щоб ці команди були доступні для початку розробки на Zephir.
