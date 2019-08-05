@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 # Static Analysis
 Zephir's compiler provides static analysis of the compiled code. The idea behind this feature is to help the developer to find potential problems and avoid unexpected behaviors, well before runtime.
