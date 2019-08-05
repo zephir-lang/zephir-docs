@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 
 # Basic Syntax
