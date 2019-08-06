@@ -56,7 +56,7 @@ You don't have to necessarily see the exact above output, but it's important tha
 <a name='installing-zephir'></a>
 ## Installing Zephir
 
-First make sure that the Zephir parser extension is installed and activated. You can follow this [tutorial](https://github.com/phalcon/php-zephir-parser).
+First make sure that the Zephir parser extension is installed and activated. You can find installation instructions in the [Zephir Parser repository](https://github.com/phalcon/php-zephir-parser).
 
 ### Release PHAR
 
