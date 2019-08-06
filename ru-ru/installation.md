@@ -1,7 +1,7 @@
 ---
 layout: default
-language: 'en'
-version: '0.11'
+language: 'ru-ru'
+version: '0.12'
 ---
 
 # Установка
@@ -14,7 +14,7 @@ version: '0.11'
 
 Чтобы собрать расширение под PHP и использовать Zephir нужно:
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.3.0
 * Один из следующих C компиляторов: [gcc](https://gcc.gnu.org/) >= 4.4, [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 или [Intel C++](https://software.intel.com/en-us/c-compilers). Рекомендуется `gcc` 4.4 или старше
 * [re2c](http://re2c.org/) 0.13.6 или старше
 * Заголовочные файлы PHP и инструменты разработчика
@@ -40,10 +40,11 @@ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-e
 
 ```bash
 php -v
-PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-        with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
+PHP 7.3.7 (cli) (built: Jul 14 2019 17:24:22) ( ZTS DEBUG )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.3.7, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.3.7, Copyright (c) 1999-2018, by Zend Technologies
+    with Xdebug v2.7.2, Copyright (c) 2002-2019, by Derick Rethans
 ```
 
 Также проверьте, доступны ли инструменты для сборки расширений:
@@ -51,9 +52,9 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
 ```bash
 phpize -v
 Configuring for:
-PHP Api Version:         20151012
-Zend Module Api No:      20151012
-Zend Extension Api No:   320151012
+PHP Api Version:         20180731
+Zend Module Api No:      20180731
+Zend Extension Api No:   320180731
 ```
 
 Вам не обязательно нужно получить точно такой же вывод. Однако важно, чтобы эти команды были доступны для начала разработки на Zephir.
@@ -62,32 +63,42 @@ Zend Extension Api No:   320151012
 
 ## Установка Zephir
 
-<a name='git-way'></a>
+Для начала убедитесь что Zephir parser установлен и активирован. You can find installation instructions in the [Zephir Parser repository](https://github.com/phalcon/php-zephir-parser).
 
-### С использованием Git
+### Release PHAR
 
-Для начала убедитесь что Zephir parser установлен и активирован. За подробностями обратитесь к [следующему руководству](https://github.com/phalcon/php-zephir-parser).
+The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
 
-Склонируйте репозиторий Zephir с Github:
+### Composer
+
+The PHAR isn't available before 0.11.4, so if you need an older version, you can use Composer, in one of two ways:
+
+#### Global Composer Application
 
 ```bash
-git clone https://github.com/phalcon/zephir
+composer global require phalcon/zephir
 ```
 
-Запустите инсталятор:
+There are two approaches to running Zephir at this point. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
+
+#### Project Dependency
 
 ```bash
-cd zephir
-./install -c
+composer require phalcon/zephir
 ```
 
-Последнее, что вам необходимо сделать, это убедиться, что у вас включены все необходимые расширения и установлены все зависимости:
+Use `composer exec zephir` within the project you installed Zephir in, above, to run it. (Alternately, you can still run `vendor/bin/zephir`.)
+
+### Git Clone
+
+Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
 
 ```bash
+git clone --depth 1 -b $(git ls-remote https://github.com/phalcon/zephir 0.12.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
 composer install
 ```
 
-Этот шаг не является обязательным для версии 0.10.x, однако он станет обязательным для последующих версий.
+You'll need to either use the path to `zephir/zephir`, or create a symlink in a directory in your `$PATH`, to run Zephir using this option.
 
 <a name='testing-the-installation'></a>
 

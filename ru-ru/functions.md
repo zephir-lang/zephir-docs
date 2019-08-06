@@ -1,7 +1,7 @@
 ---
 layout: default
-language: 'en'
-version: '0.11'
+language: 'ru-ru'
+version: '0.12'
 ---
 
 # Calling Functions

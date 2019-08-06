@@ -1,19 +1,16 @@
 ---
 layout: default
-language: 'en'
-version: '0.11'
+language: 'tr-tr'
+version: '0.12'
 ---
-
 # Custom optimizers
-
 Most common functions in Zephir use internal optimizers. An 'optimizer' works like an interceptor for function calls. An 'optimizer' replaces calls to a function normally defined in the PHP userland, by direct C calls, which are faster and have a lower overhead, improving performance.
 
 To create an optimizer, you have to create a class in the 'optimizers' directory (you can configure this directory's name in `config.json`; see below). The following naming convention must be used:
 
-| Function in Zephir | Optimizer Class Name   | Optimizer Path                        | Function in C     |
-| ------------------ | ---------------------- | ------------------------------------- | ----------------- |
-| `calculate_pi`     | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
-
+| Function in Zephir    | Optimizer Class Name    | Optimizer Path                         | Function in C      |
+|-----------------------|-------------------------|----------------------------------------|--------------------|
+| `calculate_pi`        | `CalculatePiOptimizer`  | `optimizers/CalculatePiOptimizer.php`  | `my_calculate_pi`  |
 
 Note that an optimizer is written in PHP, not Zephir. It is used during compilation to programmatically generate the appropriate C code for your extension to call. It is responsible for checking that arguments and return types match what the C function actually requires, preventing Zephir from generating invalid C code.
 
@@ -178,7 +175,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/0.11/en/config) file:
+This file must be added at a special section in the [config.json](/0.12/en/config) file:
 
 ```json
 "extra-sources": [
@@ -194,4 +191,4 @@ Lastly you will have to specify where Zephir can find your optimizer by using th
 ]
 ```
 
-Check the complete source code of this example [here](https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers)
+Check the complete source code of this example [here](https://github.com/zephir-lang/zephir-samples/tree/master/ext-optimizers)

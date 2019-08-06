@@ -1,7 +1,7 @@
 ---
 layout: default
-language: 'en'
-version: '0.11'
+language: 'zh-cn'
+version: '0.12'
 ---
 
 # 闭 包

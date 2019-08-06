@@ -1,7 +1,7 @@
 ---
 layout: default
-language: 'en'
-version: '0.11'
+language: 'zh-cn'
+version: '0.12'
 ---
 
 # 安装
@@ -14,7 +14,7 @@ version: '0.11'
 
 要构建PHP扩展并使用Zephir，您需要满足以下要求：
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.3.0
 * A C编译器，例如 gcc </ 0>> = 4.4或替代方法，例如 clang </ 1>> = 3.0， Visual C ++ </ 2>> = 11或[ Intel C ++](https://software.intel.com/en-us/c-compilers)。 建议使用 `gcc` 4.4 或更高版本</li> 
     
     * [re2c](http://re2c.org/) 0.13.6 或更高版本
@@ -41,10 +41,11 @@ version: '0.11'
     
     ```bash
     php -v
-    PHP 7.0.8 (cli) (built: Jun 26 2016 00:59:31) ( NTS )
-    Copyright (c) 1997-2016 The PHP Group
-    Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-            with Zend OPcache v7.0.8, Copyright (c) 1999-2016, by Zend Technologies
+    PHP 7.3.7 (cli) (built: Jul 14 2019 17:24:22) ( ZTS DEBUG )
+    Copyright (c) 1997-2018 The PHP Group
+    Zend Engine v3.3.7, Copyright (c) 1998-2018 Zend Technologies
+        with Zend OPcache v7.3.7, Copyright (c) 1999-2018, by Zend Technologies
+        with Xdebug v2.7.2, Copyright (c) 2002-2019, by Derick Rethans
     ```
     
     此外, 请确保您在安装 php 的同时安装了 php 开发库:
@@ -52,9 +53,9 @@ version: '0.11'
     ```bash
     phpize -v
     Configuring for:
-    PHP Api Version:         20151012
-    Zend Module Api No:      20151012
-    Zend Extension Api No:   320151012
+    PHP Api Version:         20180731
+    Zend Module Api No:      20180731
+    Zend Extension Api No:   320180731
     ```
     
     您不必确切看到的以上输出，但是这些命令对于开始使用Zephir进行开发非常重要。
@@ -66,35 +67,42 @@ version: '0.11'
     
     ## 安装 Zephir
     
+    首先, 确保安装并激活了 Zephir 解析器扩展。 You can find installation instructions in the [Zephir Parser repository](https://github.com/phalcon/php-zephir-parser).
     
-
-<a name='git-way'></a>
-
+    ### Release PHAR
     
-    ### Git 方式
+    The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
     
-    首先, 确保安装并激活了 Zephir 解析器扩展。 你可以按照这个 [tutorial](https://github.com/phalcon/php-zephir-parser)。
+    ### Composer
     
-    Zephir 编译器当前必须从 github 克隆:
+    The PHAR isn't available before 0.11.4, so if you need an older version, you can use Composer, in one of two ways:
+    
+    #### Global Composer Application
     
     ```bash
-    git clone https://github.com/phalcon/zephir
+    composer global require phalcon/zephir
     ```
     
-    运行 Zephir 安装程序:
+    There are two approaches to running Zephir at this point. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
+    
+    #### Project Dependency
     
     ```bash
-    cd zephir
-    ./install -c
+    composer require phalcon/zephir
     ```
     
-    最后一件事，你需要确保你有所有必要的依赖和安装额外的PHP库:
+    Use `composer exec zephir` within the project you installed Zephir in, above, to run it. (Alternately, you can still run `vendor/bin/zephir`.)
+    
+    ### Git Clone
+    
+    Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
     
     ```bash
+    git clone --depth 1 -b $(git ls-remote https://github.com/phalcon/zephir 0.12.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
     composer install
     ```
     
-    这个步骤对于0.10版本是可选的。 然而，在未来的版本中它将成为强制性的。
+    You'll need to either use the path to `zephir/zephir`, or create a symlink in a directory in your `$PATH`, to run Zephir using this option.
     
     
 

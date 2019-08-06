@@ -1,7 +1,7 @@
 ---
 layout: default
-language: 'en'
-version: '0.11'
+language: 'el-gr'
+version: '0.12'
 ---
 
 # Custom optimizers
@@ -178,7 +178,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/0.11/en/config) file:
+This file must be added at a special section in the [config.json](/{{ version }}/{{ language }}/config) file:
 
 ```json
 "extra-sources": [
@@ -194,4 +194,4 @@ Lastly you will have to specify where Zephir can find your optimizer by using th
 ]
 ```
 
-Check the complete source code of this example [here](https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers)
+Check the complete source code of this example [here](https://github.com/zephir-lang/zephir-samples/tree/master/ext-optimizers)
