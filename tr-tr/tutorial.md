@@ -24,7 +24,7 @@ zephir list
 
 If everything is well, you should see the following help (or something very similar):
 
-     _____              __    _
+```bash     _____              __    _
     /__  /  ___  ____  / /_  (_)____
       / /  / _ \/ __ \/ __ \/ / ___/
      / /__/  __/ /_/ / / / / / /
@@ -60,12 +60,7 @@ If everything is well, you should see the following help (or something very simi
       list       Lists commands
       stubs      Generates stubs that can be used in a PHP IDE
     
-
-        -f([a-z0-9\-]+)     Enables compiler optimizations
-        -fno-([a-z0-9\-]+)  Disables compiler optimizations
-        -w([a-z0-9\-]+)     Turns a warning on
-        -W([a-z0-9\-]+)     Turns a warning off
-
+```
 
 If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
