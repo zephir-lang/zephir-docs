@@ -67,35 +67,42 @@ version: '0.12'
     
     ## 安装 Zephir
     
+    首先, 确保安装并激活了 Zephir 解析器扩展。 You can find installation instructions in the [Zephir Parser repository](https://github.com/phalcon/php-zephir-parser).
     
-
-<a name='git-way'></a>
-
+    ### Release PHAR
     
-    ### Git 方式
+    The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
     
-    首先, 确保安装并激活了 Zephir 解析器扩展。 你可以按照这个 [tutorial](https://github.com/phalcon/php-zephir-parser)。
+    ### Composer
     
-    Zephir 编译器当前必须从 github 克隆:
+    The PHAR isn't available before 0.11.4, so if you need an older version, you can use Composer, in one of two ways:
+    
+    #### Global Composer Application
     
     ```bash
-    git clone https://github.com/phalcon/zephir
+    composer global require phalcon/zephir
     ```
     
-    运行 Zephir 安装程序:
+    There are two approaches to running Zephir at this point. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
+    
+    #### Project Dependency
     
     ```bash
-    cd zephir
-    ./install -c
+    composer require phalcon/zephir
     ```
     
-    最后一件事，你需要确保你有所有必要的依赖和安装额外的PHP库:
+    Use `composer exec zephir` within the project you installed Zephir in, above, to run it. (Alternately, you can still run `vendor/bin/zephir`.)
+    
+    ### Git Clone
+    
+    Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
     
     ```bash
+    git clone --depth 1 -b $(git ls-remote https://github.com/phalcon/zephir 0.12.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
     composer install
     ```
     
-    这个步骤对于0.10版本是可选的。 然而，在未来的版本中它将成为强制性的。
+    You'll need to either use the path to `zephir/zephir`, or create a symlink in a directory in your `$PATH`, to run Zephir using this option.
     
     
 
