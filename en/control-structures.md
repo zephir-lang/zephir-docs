@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 # Control Structures
 Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.

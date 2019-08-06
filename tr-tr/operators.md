@@ -1,43 +1,36 @@
 ---
 layout: default
-language: 'en'
+language: 'tr-tr'
 version: '0.12'
 ---
-
 # Operators
-
 Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
 
 <a name='arithmetic-operators'></a>
-
 ## Arithmetic Operators
-
 The following operators are supported:
 
-| Operation      | Example |
-| -------------- | ------- |
-| Negation       | `-a`    |
-| Addition       | `a + b` |
-| Subtraction    | `a - b` |
-| Multiplication | `a * b` |
-| Division       | `a / b` |
-| Modulus        | `a % b` |
+| Operation       | Example    |
+|-----------------|------------|
+| Negation        | `-a`       |
+| Addition        | `a + b`    |
+| Subtraction     | `a - b`    |
+| Multiplication  | `a * b`    |
+| Division        | `a / b`    |
+| Modulus         | `a % b`    |
 
 <a name='bitwise-operators'></a>
-
 ## Bitwise Operators
-
 The following operators are supported:
 
-| Operation          | Example        |
-| ------------------ | -------------- |
-| And                | `a & b`    |
-| Or (inclusive or)  | `a | b`        |
-| Xor (exclusive or) | `a ^ b`        |
-| Not                | `~a`           |
-| Shift left         | `a << b` |
-| Shift right        | `a >> b` |
-
+| Operation           | Example    |
+|---------------------|------------|
+| And                 | `a & b`    |
+| Or (inclusive or)   | `a | b`    |
+| Xor (exclusive or)  | `a ^ b`    |
+| Not                 | `~a`       |
+| Shift left          | `a << b`   |
+| Shift right         | `a >> b`   |
 
 Example:
 
@@ -50,23 +43,20 @@ if a & SOME_FLAG {
 Learn more about comparison of dynamic variables in the [php manual](http://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
-
 ## Comparison Operators
-
 Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
 
-| Example        | Operation                | Description                                                      |
-| -------------- | ------------------------ | ---------------------------------------------------------------- |
-| `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
-| `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
-| `a != b`       | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a <> b` | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a !== b`      | Not identical            | `true` if a is not equal to b, or they are not of the same type. |
-| `a < b`     | Less than                | `true` if a is strictly less than b.                             |
-| `a > b`     | Greater than             | `true` if a is strictly greater than b.                          |
-| `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
-| `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
-
+| Example    | Operation                 | Description                                                       |
+|------------|---------------------------|-------------------------------------------------------------------|
+| `a == b`   | Equal                     | `true` if a is equal to b after type juggling.                    |
+| `a === b`  | Identical                 | `true` if a is equal to b, and they are of the same type.         |
+| `a != b`   | Not equal                 | `true` if a is not equal to b after type juggling.                |
+| `a <> b`   | Not equal                 | `true` if a is not equal to b after type juggling.                |
+| `a !== b`  | Not identical             | `true` if a is not equal to b, or they are not of the same type.  |
+| `a < b`    | Less than                 | `true` if a is strictly less than b.                              |
+| `a > b`    | Greater than              | `true` if a is strictly greater than b.                           |
+| `a <= b`   | Less than or equal to     | `true` if a is less than or equal to b.                           |
+| `a >= b`   | Greater than or equal to  | `true` if a is greater than or equal to b.                        |
 
 Example:
 
@@ -83,17 +73,14 @@ if a == b {
 ```
 
 <a name='logical-operators'></a>
-
 ## Logical Operators
-
 The following operators are supported:
 
-| Operation | Example          |
-| --------- | ---------------- |
-| And       | `a && b` |
-| Or        | `a || b`         |
-| Not       | `!a`             |
-
+| Operation  | Example    |
+|------------|------------|
+| And        | `a && b`   |
+| Or         | `a || b`   |
+| Not        | `!a`       |
 
 Example:
 
@@ -105,9 +92,7 @@ return 1;
 ```
 
 <a name='tenary-operator'></a>
-
 ## Ternary Operator
-
 Zephir supports the ternary operator available in C or PHP:
 
 ```zephir
@@ -115,15 +100,11 @@ let b = a == 1 ? "x" : "y"; // b is set to "x" if a is equal to 1, otherwise "y"
 ```
 
 <a name='special-operators'></a>
-
 ## Special Operators
-
 The following operators are supported:
 
 <a name='special-operators-empty'></a>
-
 ### Empty
-
 This operator allows checking whether an expression is empty. 'Empty' means the expression is `null`, is an empty string, or an empty array:
 
 ```zephir
@@ -139,9 +120,7 @@ if !empty someVar {
 ```
 
 <a name='special-operators-fetch'></a>
-
 ### Fetch
-
 'Fetch' is an operator that reduces a common operation in PHP into a single instruction:
 
 ```php
@@ -164,9 +143,7 @@ if fetch value, myArray[key] {
 'Fetch' only returns `true` if the 'key' is a valid item in the array, and only in that case is 'value' populated.
 
 <a name='special-operators-isset'></a>
-
 ### Isset
-
 This operator checks whether a property or index has been defined in an array or object:
 
 ```zephir
@@ -185,9 +162,7 @@ return isset this->{someProperty};
 Note that `isset` in Zephir works more like PHP's function [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
 
 <a name='special-operators-typeof'></a>
-
 ### Typeof
-
 This operator checks a variable's type. 'typeof' can be used with a comparison operator:
 
 ```zephir
@@ -205,9 +180,7 @@ return typeof str;
 **Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
 <a name='special-operators-type-hints'></a>
-
 ### Type Hints
-
 Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
 
 ```zephir
@@ -236,9 +209,7 @@ o->myMethod();
 ```
 
 <a name='special-operators-branch-prediction-hints'></a>
-
 ### Branch Prediction Hints
-
 What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
 
 Consider the following example:

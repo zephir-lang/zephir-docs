@@ -1,11 +1,9 @@
 ---
 layout: default
-language: 'en'
+language: 'tr-tr'
 version: '0.12'
 ---
-
 # Calling Functions
-
 PHP has a rich library of functions that you can use within your extensions. To call a PHP function you simply use it as normal within your Zephir code:
 
 ```zephir

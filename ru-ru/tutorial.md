@@ -1,6 +1,6 @@
 ---
 layout: default
-language: 'en'
+language: 'ru-ru'
 version: '0.12'
 ---
 
@@ -55,7 +55,8 @@ zephir help
       stubs      Generates stubs that can be used in a PHP IDE
     
 
-If something went wrong, please return back to the [installation](/0.12/en/installation) page.
+If something went wrong, please return back to the [installation](/{{ version }}/{{ language }}/installation) page.
+Если что-то пошло не так, вернитесь к разделу [установка](/{{ version }}/{{ language }}/installation).
 
 <a name='extension-skeleton'></a>
 

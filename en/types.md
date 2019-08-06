@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 # Types
 Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
@@ -15,22 +15,22 @@ A dynamic variable must be declared with the keyword `var`. The behavior is near
 ```zephir
 var a, b, c;
 ```
-    
+
 ##### Initialize variables
 
 ```zephir
 let a = "hello", b = false;
 ```
-    
+
 ##### Change their values
-    
+
 ```zephir
 let a = "hello", b = false;
 let a = 10, b = "140";
 ```
-    
+
 ##### Perform operations
-    
+
 ```zephir
 let c = a + b;
 ```
@@ -61,7 +61,7 @@ The syntax to define arrays is slightly different than in PHP:
 ```zephir
 let myArray = [1, 2, 3];
 ```
-    
+
 ##### Double colon must be used to define hashes' keys
 
 ```zephir
@@ -182,7 +182,7 @@ let a = true;
 ```zephir
 let a = 100;
 ```
-    
+
 ##### automatically casted to `false`
 
 ```zephir
@@ -190,11 +190,11 @@ let a = 0;
 ```
 
 ##### throws a compiler exception
-    
+
 ```zephir
 let a = "hello";
 ```
-    
+
 <a name='static-types-char-unsigned'></a>
 ### Char/Unsigned Char
 `char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
@@ -202,15 +202,15 @@ let a = "hello";
 ```zephir
 char ch, string name = "peter";
 ```
-    
+
 ##### stores 't'
 
 ```zephir
 let ch = name[2];
 ```
-    
+
 ##### `char` literals must be enclosed in single quotes
-    
+
 ```zephir
 let ch = 'Z';
 ```zephir
@@ -231,19 +231,19 @@ let a = 50,
 ```zephir
 let a = 100.25;
 ```
-    
+
 ##### automatically casted to 0
 
 ```zephir
 let a = null;
 ```
-    
+
 ##### automatically casted to 0
-    
+
 ```zephir
 let a = false;
 ```
-    
+
 ##### throws a compiler exception
 
 ```zephir
@@ -257,25 +257,25 @@ uint a;
 
 let a = 50;
 ```
-    
+
 ##### automatically casted to 70
 
 ```zephir
 let a = -70;
 ```
-    
+
 ##### automatically casted to 100
 
 ```zephir
 let a = 100.25;
 ```
-    
+
 ##### automatically casted to 0
 
 ```zephir
 let a = null;
 ```
-    
+
 ##### automatically casted to 0
 
 ```zephir
@@ -309,25 +309,25 @@ long a;
 let a = 50,
     a = -70;
 ```
-        
+
 ##### automatically casted to 100
-    
+
 ```zephir
 let a = 100.25;
 ```
-    
+
 ##### automatically casted to 0
 
 ```zephir
     let a = null;
 ```
-    
+
 ##### automatically casted to 0
-    
+
 ```zephir
 let a = false;
 ```
-    
+
 ##### throws a compiler exception
 
 ```zephir
@@ -343,29 +343,29 @@ let a = 50;
 ```
 
 ##### automatically casted to 70
-    
+
 ```zephir
 let  a = -70;
 ```
-    
+
 ##### automatically casted to 100
 
 ```zephir
 let a = 100.25;
 ```
-    
+
 ##### automatically casted to 0
 
 ```zephir
 let a = null;
 ```
-    
+
 ##### automatically casted to 0
-    
+
 ```zephir
 let a = false;
 ```
-    
+
 ##### throws a compiler exception
 
 ```zephir
@@ -394,19 +394,19 @@ string a;
 
 let a = "";
 ```
-    
+
 ##### string literals must be enclosed in double quotes
 
 ```zephir
 let  a = "hello";
 ```
-    
+
 ##### converted to string "A"
 
 ```zephir
 let a = 'A';
 ```
-    
+
 ##### automatically casted to ""
 
 ```zephir

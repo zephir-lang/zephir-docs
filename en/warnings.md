@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 # Compiler Warnings
 The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
@@ -94,7 +94,7 @@ Raised when the compiler detects that an 'isset' operation is being made on a no
 public function some()
 {
     var b = 1.2;
-    
+
     return isset b[0]; // variable integer 'b' used as array
 }
 ```
