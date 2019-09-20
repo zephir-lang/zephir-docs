@@ -296,7 +296,7 @@ When the code is compiled, those methods are exported as real methods, but you d
 
 ### Return Type Hints
 
-Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Рассмотрим следующий пример:
+Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Consider the following example:
 
 ```zep
 namespace App;
