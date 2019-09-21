@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'tr-tr'
+version: '0.11'
+---
 
 # Calling Functions
 

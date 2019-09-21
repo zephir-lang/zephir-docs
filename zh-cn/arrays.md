@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'zh-cn'
+version: '0.11'
+---
 
 # 数组
 

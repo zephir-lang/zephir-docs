@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'el-GR' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'el-gr'
+version: '0.10'
+---
 
 # Calling Functions
 
