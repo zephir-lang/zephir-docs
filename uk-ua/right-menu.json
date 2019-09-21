@@ -48,9 +48,7 @@
             "url": "#integer"
         }
     ],
-    "closures": [
-
-    ],
+    "closures": [],
     "config": [
         {
             "text": "api",
@@ -250,15 +248,9 @@
             "url": "#let"
         }
     ],
-    "exceptions": [
-
-    ],
-    "functions": [
-
-    ],
-    "globals": [
-
-    ],
+    "exceptions": [],
+    "functions": [],
+    "globals": [],
     "installation": [
         {
             "text": "Передумови",
@@ -325,9 +317,7 @@
             "url": "#local-symbol-table"
         }
     ],
-    "license": [
-
-    ],
+    "license": [],
     "lifecycle": [
         {
             "text": "initializers",
@@ -568,12 +558,8 @@
             "url": "static-type-inference-second-pass"
         }
     ],
-    "optimizers": [
-
-    ],
-    "phpinfo": [
-
-    ],
+    "optimizers": [],
+    "phpinfo": [],
     "static-analysis": [
         {
             "text": "Conditional Unassigned Variables",
