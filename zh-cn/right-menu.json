@@ -48,9 +48,7 @@
             "url": "#integer"
         }
     ],
-    "closures": [
-
-    ],
+    "closures": [],
     "command-line": [
         {
             "text": "zephir api",
@@ -307,15 +305,9 @@
             "url": "#let"
         }
     ],
-    "exceptions": [
-
-    ],
-    "functions": [
-
-    ],
-    "globals": [
-
-    ],
+    "exceptions": [],
+    "functions": [],
+    "globals": [],
     "installation": [
         {
             "text": "Prerequisites",
@@ -382,9 +374,7 @@
             "url": "#local-symbol-table"
         }
     ],
-    "license": [
-
-    ],
+    "license": [],
     "lifecycle": [
         {
             "text": "initializers",
@@ -625,12 +615,8 @@
             "url": "#static-type-inference-second-pass"
         }
     ],
-    "optimizers": [
-
-    ],
-    "phpinfo": [
-
-    ],
+    "optimizers": [],
+    "phpinfo": [],
     "static-analysis": [
         {
             "text": "Conditional Unassigned Variables",
