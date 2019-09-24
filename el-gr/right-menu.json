@@ -611,7 +611,7 @@
             "url": "#dynamic-types"
         },
         {
-            "text": "Πίνακες",
+            "text": "Arrays",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -740,7 +740,7 @@
             "url": "#some-features"
         },
         {
-            "text": "Μια μικρή γεύση",
+            "text": "A small taste",
             "level": 1,
             "url": "#a-small-taste"
         }
