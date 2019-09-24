@@ -1,21 +1,5 @@
 files:
   - source: /en/*.md
     translation: /%locale%/%original_file_name%
-    languages_mapping:
-      locale:
-        zh-CN: zh-cn
-        el: el-gr
-        ru: ru-ru
-        es-ES: es-es
-        tr-TR: tr-tr
-        uk: uk-ua
   - source: /en/*.json
     translation: /%locale%/%original_file_name%
-    languages_mapping:
-      locale:
-        zh-CN: zh-cn
-        el: el-gr
-        ru: ru-ru
-        es-ES: es-es
-        tr-TR: tr-tr
-        uk: uk-ua
