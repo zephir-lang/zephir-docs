@@ -16,7 +16,7 @@ Zephir реализует упрощенный набор управляющих
 
 ### If Statement
 
-`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Фигурные скобки обязательны. Оператор `if` может иметь необязательное предложение `else`. При необходимости проверить последовательно несколько условий возможно каскадирование (вложенные конструкции `if`/`else`):
+`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Braces are required. Оператор `if` может иметь необязательное предложение `else`. При необходимости проверить последовательно несколько условий возможно каскадирование (вложенные конструкции `if`/`else`):
 
 ```zephir
 if false {
