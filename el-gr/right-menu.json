@@ -48,9 +48,7 @@
             "url": "#integer"
         }
     ],
-    "closures": [
-
-    ],
+    "closures": [],
     "config": [
         {
             "text": "api",
@@ -250,15 +248,9 @@
             "url": "#let"
         }
     ],
-    "exceptions": [
-
-    ],
-    "functions": [
-
-    ],
-    "globals": [
-
-    ],
+    "exceptions": [],
+    "functions": [],
+    "globals": [],
     "installation": [
         {
             "text": "Prerequisites",
@@ -325,9 +317,7 @@
             "url": "#local-symbol-table"
         }
     ],
-    "license": [
-
-    ],
+    "license": [],
     "lifecycle": [
         {
             "text": "initializers",
@@ -568,12 +558,8 @@
             "url": "static-type-inference-second-pass"
         }
     ],
-    "optimizers": [
-
-    ],
-    "phpinfo": [
-
-    ],
+    "optimizers": [],
+    "phpinfo": [],
     "static-analysis": [
         {
             "text": "Conditional Unassigned Variables",
@@ -625,7 +611,7 @@
             "url": "#dynamic-types"
         },
         {
-            "text": "Πίνακες",
+            "text": "Arrays",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -754,7 +740,7 @@
             "url": "#some-features"
         },
         {
-            "text": "Μια μικρή γεύση",
+            "text": "A small taste",
             "level": 1,
             "url": "#a-small-taste"
         }

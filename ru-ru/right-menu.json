@@ -1,27 +1,27 @@
 {
     "arrays": [
         {
-            "text": "Объявление массивов",
+            "text": "Declaring Array Variables",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Создание массивов",
+            "text": "Creating Arrays",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Обновление массивов",
+            "text": "Updating arrays",
             "level": 1,
             "url": "#updating-arrays"
         },
         {
-            "text": "Добавление элементов",
+            "text": "Appending elements",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "Чтение элементов из массивов",
+            "text": "Reading elements from arrays",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -48,9 +48,7 @@
             "url": "#integer"
         }
     ],
-    "closures": [
-
-    ],
+    "closures": [],
     "config": [
         {
             "text": "api",
@@ -250,18 +248,12 @@
             "url": "#let"
         }
     ],
-    "exceptions": [
-
-    ],
-    "functions": [
-
-    ],
-    "globals": [
-
-    ],
+    "exceptions": [],
+    "functions": [],
+    "globals": [],
     "installation": [
         {
-            "text": "Системные требования",
+            "text": "Prerequisites",
             "level": 1,
             "url": "#prerequisites"
         },
@@ -325,9 +317,7 @@
             "url": "#local-symbol-table"
         }
     ],
-    "license": [
-
-    ],
+    "license": [],
     "lifecycle": [
         {
             "text": "initializers",
@@ -568,12 +558,8 @@
             "url": "static-type-inference-second-pass"
         }
     ],
-    "optimizers": [
-
-    ],
-    "phpinfo": [
-
-    ],
+    "optimizers": [],
+    "phpinfo": [],
     "static-analysis": [
         {
             "text": "Conditional Unassigned Variables",
@@ -625,7 +611,7 @@
             "url": "#dynamic-types"
         },
         {
-            "text": "Массивы",
+            "text": "Arrays",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -645,12 +631,12 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Целочисленное переполнение",
+            "text": "Integer overflow",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
         {
-            "text": "Object",
+            "text": "Objects",
             "level": 2,
             "url": "#dynamic-types-objects"
         },

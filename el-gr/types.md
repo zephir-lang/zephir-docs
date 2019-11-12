@@ -239,10 +239,12 @@ let ch = name[2];
 
 ```zephir
 let ch = 'Z';
-```zephir
+```
 
 <a name='static-types-integer-unsigned'></a>
+
 ### Integer/Unsigned Integer
+
 `integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
 ```zephir

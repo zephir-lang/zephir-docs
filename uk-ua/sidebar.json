@@ -16,7 +16,7 @@
         "url": "installation"
     },
     {
-        "text": "Навчальний посібник",
+        "text": "Tutorial",
         "url": "tutorial"
     },
     {
@@ -24,7 +24,7 @@
         "url": "language"
     },
     {
-        "text": "Типи",
+        "text": "Types",
         "url": "types"
     },
     {
@@ -32,7 +32,7 @@
         "url": "operators"
     },
     {
-        "text": "Масиви",
+        "text": "Arrays",
         "url": "arrays"
     },
     {
