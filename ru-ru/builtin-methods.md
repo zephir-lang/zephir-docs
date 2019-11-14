@@ -75,22 +75,22 @@ The following string built-in methods are available:
 
 The following array built-in methods are available:
 
-| OO                   | Procedural              | Описание                                                                |
-| -------------------- | ----------------------- | ----------------------------------------------------------------------- |
-| `a->combine(b)`   | `array_combine(a, b)`   | Creates an array by using one array for keys and another for its values |
-| `a->diff()`       | `array_diff(a)`         | Computes the difference of arrays                                       |
-| `a->flip()`       | `array_flip(a)`         | Exchanges all keys with their associated values in an array             |
-| `a->hasKey()`     | `array_key_exists(a)`   | Checks if the given key or index exists in the array                    |
-| `a->intersect(b)` | `array_intersect(a, b)` | Computes the intersection of arrays                                     |
-| `a->join(" ")`    | `join(" ", a)`          | Join array elements with a string                                       |
-| `a->keys()`       | `array_keys(a)`         | Return all the keys or a subset of the keys of an array                 |
-| `a->merge(b)`     | `array_merge(a, b)`     | Merge one or more arrays                                                |
-| `a->pad()`        | `array_pad(a, b)`       | Pad array to the specified length with a value                          |
-| `a->rev()`        | `array_reverse(a)`      | Return an array with elements in reverse order                          |
-| `a->reversed()`   | `array_reverse(a)`      | Return an array with elements in reverse order                          |
-| `a->split()`      | `array_chunk(a)`        | Split an array into chunks                                              |
-| `a->values()`     | `array_values(a)`       | Return all the values of an array                                       |
-| `a->walk()`       | `array_walk(a)`         | Apply a user supplied function to every member of an array              |
+| OO                   | Procedural              | Описание                                                                    |
+| -------------------- | ----------------------- | --------------------------------------------------------------------------- |
+| `a->combine(b)`   | `array_combine(a, b)`   | Создать массив, используя один массив для ключей, а другой для его значений |
+| `a->diff()`       | `array_diff(a)`         | Вычисляет разницу массивов                                                  |
+| `a->flip()`       | `array_flip(a)`         | Обмен всех ключей со связанными значениями в массиве                        |
+| `a->hasKey()`     | `array_key_exists(a)`   | Проверяет, существует ли данный ключ или индекс в массиве                   |
+| `a->intersect(b)` | `array_intersect(a, b)` | Computes the intersection of arrays                                         |
+| `a->join(" ")`    | `join(" ", a)`          | Join array elements with a string                                           |
+| `a->keys()`       | `array_keys(a)`         | Return all the keys or a subset of the keys of an array                     |
+| `a->merge(b)`     | `array_merge(a, b)`     | Merge one or more arrays                                                    |
+| `a->pad()`        | `array_pad(a, b)`       | Pad array to the specified length with a value                              |
+| `a->rev()`        | `array_reverse(a)`      | Return an array with elements in reverse order                              |
+| `a->reversed()`   | `array_reverse(a)`      | Return an array with elements in reverse order                              |
+| `a->split()`      | `array_chunk(a)`        | Split an array into chunks                                                  |
+| `a->values()`     | `array_values(a)`       | Return all the values of an array                                           |
+| `a->walk()`       | `array_walk(a)`         | Apply a user supplied function to every member of an array                  |
 
 <a name='char'></a>
 
