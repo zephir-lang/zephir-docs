@@ -54,20 +54,20 @@ They both have the same functionality, but the second one uses object-oriented p
 
 The following string built-in methods are available:
 
-| OO                   | Procedural            | Description                                                                   |
-| -------------------- | --------------------- | ----------------------------------------------------------------------------- |
-| `s->format()`     | `sprintf(s, "%s", x)` | Return a formatted string                                                     |
-| `s->index("foo")` | `strpos(s, "foo")`    | Find the position of the first occurrence of a substring in a string          |
-| `s->length()`     | `strlen(s)`           | Get string length                                                             |
-| `s->lower()`      | `strtolower(s)`       | Make a string lowercase                                                       |
-| `s->lowerfirst()` | `lcfirst(s)`          | Make a string's first character lowercase                                     |
-| `s->md5()`        | `md5(s)`              | Calculate the md5 hash of a string                                            |
-| `s->sha1()`       | `sha1(s)`             | Calculate the sha1 hash of a string                                           |
-| `s->trim()`       | `trim(s)`             | Strip whitespace (or other characters) from the beginning and end of a string |
-| `s->trimleft()`   | `ltrim(s)`            | Strip whitespace (or other characters) from the beginning of a string         |
-| `s->trimright()`  | `rtrim(s)`            | Strip whitespace (or other characters) from the end of a string               |
-| `s->upper()`      | `strtoupper(s)`       | Make a string uppercase                                                       |
-| `s->upperfirst()` | `ucfirst(s)`          | Make a string's first character uppercase                                     |
+| OO                   | Procedural            | Описание                                                     |
+| -------------------- | --------------------- | ------------------------------------------------------------ |
+| `s->format()`     | `sprintf(s, "%s", x)` | Отформатировать строку                                       |
+| `s->index("foo")` | `strpos(s, "foo")`    | Найти позицию первого вхождения подстроки в строке           |
+| `s->length()`     | `strlen(s)`           | Получить длину строки                                        |
+| `s->lower()`      | `strtolower(s)`       | Перевести строку в нижний регистр                            |
+| `s->lowerfirst()` | `lcfirst(s)`          | Перевести первый символ строки в нижний регистр              |
+| `s->md5()`        | `md5(s)`              | Вычислить md5 хэш строки                                     |
+| `s->sha1()`       | `sha1(s)`             | Вычислить sha1 хэш строки                                    |
+| `s->trim()`       | `trim(s)`             | Убрать пробелы (или другие символы) из начала и конца строки |
+| `s->trimleft()`   | `ltrim(s)`            | Убрать пробелы (или другие символы) из начала строки         |
+| `s->trimright()`  | `rtrim(s)`            | Убрать пробелы (или другие символы) с конца строки           |
+| `s->upper()`      | `strtoupper(s)`       | Перевести строку в верхний регистр                           |
+| `s->upperfirst()` | `ucfirst(s)`          | Перевести первый символ строки в верхний регистр             |
 
 <a name='array'></a>
 
@@ -75,7 +75,7 @@ The following string built-in methods are available:
 
 The following array built-in methods are available:
 
-| OO                   | Procedural              | Description                                                             |
+| OO                   | Procedural              | Описание                                                                |
 | -------------------- | ----------------------- | ----------------------------------------------------------------------- |
 | `a->combine(b)`   | `array_combine(a, b)`   | Creates an array by using one array for keys and another for its values |
 | `a->diff()`       | `array_diff(a)`         | Computes the difference of arrays                                       |
