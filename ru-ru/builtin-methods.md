@@ -4,11 +4,12 @@ language: 'ru-ru'
 version: '0.10'
 ---
 
-# Built-In Methods
 
-As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
+# Встроенные методы
 
-Compare these two methods:
+Как упоминалось ранее, Zephir способствует объектно-ориентированному программированию. Переменные, относящиеся к статическим типам, также могут обрабатываться как объекты.
+
+Сравните эти два метода:
 
 ```zephir
 public function binaryToHex(string! s) -> string
@@ -27,7 +28,7 @@ public function binaryToHex(string! s) -> string
 }
 ```
 
-And:
+И:
 
 ```zephir
 public function binaryToHex(string! s) -> string
@@ -46,59 +47,59 @@ public function binaryToHex(string! s) -> string
 }
 ```
 
-They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.
+Оба они имеют одинаковую функциональность, но второй использует объектно-ориентированное программирование. Вызывающие методы для статических типизированных переменных не оказывают никакого влияния на производительность, поскольку Zephir внутренне преобразует код из объектно-ориентированной версии в процедурную версию.
 
 <a name='string'></a>
 
 ## String
 
-The following string built-in methods are available:
+Доступны следующие строковые встроенные методы:
 
-| OO                   | Procedural            | Description                                                                   |
-| -------------------- | --------------------- | ----------------------------------------------------------------------------- |
-| `s->format()`     | `sprintf(s, "%s", x)` | Return a formatted string                                                     |
-| `s->index("foo")` | `strpos(s, "foo")`    | Find the position of the first occurrence of a substring in a string          |
-| `s->length()`     | `strlen(s)`           | Get string length                                                             |
-| `s->lower()`      | `strtolower(s)`       | Make a string lowercase                                                       |
-| `s->lowerfirst()` | `lcfirst(s)`          | Make a string's first character lowercase                                     |
-| `s->md5()`        | `md5(s)`              | Calculate the md5 hash of a string                                            |
-| `s->sha1()`       | `sha1(s)`             | Calculate the sha1 hash of a string                                           |
-| `s->trim()`       | `trim(s)`             | Strip whitespace (or other characters) from the beginning and end of a string |
-| `s->trimleft()`   | `ltrim(s)`            | Strip whitespace (or other characters) from the beginning of a string         |
-| `s->trimright()`  | `rtrim(s)`            | Strip whitespace (or other characters) from the end of a string               |
-| `s->upper()`      | `strtoupper(s)`       | Make a string uppercase                                                       |
-| `s->upperfirst()` | `ucfirst(s)`          | Make a string's first character uppercase                                     |
+| ООП                  | Процедурный           | Описание                                                     |
+| -------------------- | --------------------- | ------------------------------------------------------------ |
+| `s->format()`     | `sprintf(s, "%s", x)` | Отформатировать строку                                       |
+| `s->index("foo")` | `strpos(s, "foo")`    | Найти позицию первого вхождения подстроки в строке           |
+| `s->length()`     | `strlen(s)`           | Получить длину строки                                        |
+| `s->lower()`      | `strtolower(s)`       | Перевести строку в нижний регистр                            |
+| `s->lowerfirst()` | `lcfirst(s)`          | Перевести первый символ строки в нижний регистр              |
+| `s->md5()`        | `md5(s)`              | Вычислить md5 хэш строки                                     |
+| `s->sha1()`       | `sha1(s)`             | Вычислить sha1 хэш строки                                    |
+| `s->trim()`       | `trim(s)`             | Убрать пробелы (или другие символы) из начала и конца строки |
+| `s->trimleft()`   | `ltrim(s)`            | Убрать пробелы (или другие символы) из начала строки         |
+| `s->trimright()`  | `rtrim(s)`            | Убрать пробелы (или другие символы) с конца строки           |
+| `s->upper()`      | `strtoupper(s)`       | Перевести строку в верхний регистр                           |
+| `s->upperfirst()` | `ucfirst(s)`          | Перевести первый символ строки в верхний регистр             |
 
 <a name='array'></a>
 
 ## Array
 
-The following array built-in methods are available:
+Доступны следующие встроенные методы массива:
 
-| OO                   | Procedural              | Description                                                             |
-| -------------------- | ----------------------- | ----------------------------------------------------------------------- |
-| `a->combine(b)`   | `array_combine(a, b)`   | Creates an array by using one array for keys and another for its values |
-| `a->diff()`       | `array_diff(a)`         | Computes the difference of arrays                                       |
-| `a->flip()`       | `array_flip(a)`         | Exchanges all keys with their associated values in an array             |
-| `a->hasKey()`     | `array_key_exists(a)`   | Checks if the given key or index exists in the array                    |
-| `a->intersect(b)` | `array_intersect(a, b)` | Computes the intersection of arrays                                     |
-| `a->join(" ")`    | `join(" ", a)`          | Join array elements with a string                                       |
-| `a->keys()`       | `array_keys(a)`         | Return all the keys or a subset of the keys of an array                 |
-| `a->merge(b)`     | `array_merge(a, b)`     | Merge one or more arrays                                                |
-| `a->pad()`        | `array_pad(a, b)`       | Pad array to the specified length with a value                          |
-| `a->rev()`        | `array_reverse(a)`      | Return an array with elements in reverse order                          |
-| `a->reversed()`   | `array_reverse(a)`      | Return an array with elements in reverse order                          |
-| `a->split()`      | `array_chunk(a)`        | Split an array into chunks                                              |
-| `a->values()`     | `array_values(a)`       | Return all the values of an array                                       |
-| `a->walk()`       | `array_walk(a)`         | Apply a user supplied function to every member of an array              |
+| ООП                  | Процедурный             | Описание                                                                    |
+| -------------------- | ----------------------- | --------------------------------------------------------------------------- |
+| `a->combine(b)`   | `array_combine(a, b)`   | Создать массив, используя один массив для ключей, а другой для его значений |
+| `a->diff()`       | `array_diff(a)`         | Вычисляет разницу массивов                                                  |
+| `a->flip()`       | `array_flip(a)`         | Обмен всех ключей со связанными значениями в массиве                        |
+| `a->hasKey()`     | `array_key_exists(a)`   | Проверяет, существует ли данный ключ или индекс в массиве                   |
+| `a->intersect(b)` | `array_intersect(a, b)` | Вычисляет пересечение массивов                                              |
+| `a->join(" ")`    | `join(" ", a)`          | Объединение элементов массива в строку                                      |
+| `a->keys()`       | `array_keys(a)`         | Возвращает все ключи или подмножество ключей массива                        |
+| `a->merge(b)`     | `array_merge(a, b)`     | Объединяет один или большее количество массивов                             |
+| `a->pad()`        | `array_pad(a, b)`       | Расширить массив до указанной длины с указанным значением                   |
+| `a->rev()`        | `array_reverse(a)`      | Возвращает массив с элементами в обратном порядке                           |
+| `a->reversed()`   | `array_reverse(a)`      | Возвращает массив с элементами в обратном порядке                           |
+| `a->split()`      | `array_chunk(a)`        | Разбивает массив на части                                                   |
+| `a->values()`     | `array_values(a)`       | Выбирает все значения массива                                               |
+| `a->walk()`       | `array_walk(a)`         | Применяет заданную пользователем функцию к каждому элементу массива         |
 
 <a name='char'></a>
 
 ## Char
 
-The following char built-in methods are available:
+Доступны следующие встроенные методы char:
 
-| OO               | Procedural          |
+| ООП              | Процедурный         |
 | ---------------- | ------------------- |
 | `ch->toHex()` | `sprintf("%X", ch)` |
 
@@ -106,8 +107,10 @@ The following char built-in methods are available:
 
 ## Integer
 
-The following integer built-in methods are available:
+Доступны следующие встроенные методы целочисленного типа:
 
-| OO            | Procedural |
-| ------------- | ---------- |
-| `i->abs()` | `abs(i)`   |
+
+| ООП           | Процедурный |
+| ------------- | ----------- |
+| `i->abs()` | `abs(i)`    |
+
