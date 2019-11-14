@@ -106,7 +106,7 @@ The following char built-in methods are available:
 
 ## Integer
 
-The following integer built-in methods are available:
+Доступны следующие встроенные методы целочисленного типа:
 
 | ООП           | Процедурный |
 | ------------- | ----------- |
