@@ -1,8 +1,9 @@
-* * *
+---
+layout: default
+language: 'ru-ru'
+version: '0.10'
+---
 
-layout: default language: 'ru-ru' version: '0.10'
-
-* * *
 
 # Встроенные методы
 
@@ -108,6 +109,8 @@ public function binaryToHex(string! s) -> string
 
 Доступны следующие встроенные методы целочисленного типа:
 
+
 | ООП           | Процедурный |
 | ------------- | ----------- |
 | `i->abs()` | `abs(i)`    |
+
