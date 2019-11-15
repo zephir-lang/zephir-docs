@@ -4,17 +4,17 @@ layout: default language: 'ru-ru' version: '0.10'
 
 * * *
 
-# Control Structures
+# Управляющие структуры
 
 Zephir реализует упрощенный набор управляющих структур, присутствующих в подобных ему языках, таких как C, PHP и т.п.
 
 <a name='conditionals'></a>
 
-## Conditionals
+## Условные
 
 <a name='conditionals-if'></a>
 
-### If Statement
+### Оператор if
 
 `if` statements evaluate an expression, executing the following block if the evaluation is `true`. Braces are required. Оператор `if` может иметь необязательное предложение `else`. При необходимости проверить последовательно несколько условий возможно каскадирование (вложенные конструкции `if`/`else`):
 
