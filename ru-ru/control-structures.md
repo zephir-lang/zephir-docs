@@ -16,16 +16,16 @@ Zephir реализует упрощенный набор управляющих
 
 ### Оператор if
 
-`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Braces are required. Оператор `if` может иметь необязательное предложение `else`. При необходимости проверить последовательно несколько условий возможно каскадирование (вложенные конструкции `if`/`else`):
+Условный оператор `if` реализует выполнение своего блока при условии, что некоторое логическое выражение (условие) принимает значение «истина» (`true`). Фигурные скобки обязательны. Оператор `if` может иметь необязательное предложение `else`. При необходимости, несколько конструкций `if`/`else` могут быть соединены вместе:
 
 ```zephir
 if false {
-    echo "false?";
+    echo "ложь?";
 } else {
     if true {
-        echo "true!";
+        echo "истина!";
     } else {
-        echo "neither true nor false";
+        echo "ни истина и ни ложь";
     }
 }
 ```
@@ -34,13 +34,13 @@ if false {
 
 ```zephir
 if a > 100 {
-    echo "to big";
+    echo "Значение a слишком большое";
 } elseif a < 0 {
-    echo "to small";
+    echo "Значение a слишком маленькое";
 } elseif a == 50 {
-    echo "perfect!";
+    echo "Превосходно!";
 } else {
-    echo "ok";
+    echo "Хорошо";
 }
 ```
 
@@ -52,9 +52,9 @@ if a < 0 { return -1; } else { if a > 0 { return 1; } }
 
 <a name='conditionals-switch'></a>
 
-### Switch Statement
+### Оператор switch
 
-A `switch` evaluates an expression against a series of predefined literal values, executing the corresponding `case` block or falling back to the `default` block case:
+`switch` вычисляет выражение по ряду предопределенных литералов (буквальных значений), выполняя соответствующий блок `case` или в случае неудачи, выполняет блок `default`:
 
 ```zephir
 switch count(items) {
@@ -76,13 +76,13 @@ switch count(items) {
 
 <a name='loops'></a>
 
-## Loops
+## Циклы
 
 <a name='loops-while'></a>
 
-### While Statement
+### Цикл while
 
-`while` denotes a loop that iterates as long as its given condition evaluates as `true`:
+`while` обозначает цикл, который повторяется до тех пор, пока его заданное условие оценивается как `true`:
 
 ```zephir
 let counter = 5;
@@ -93,9 +93,9 @@ while counter {
 
 <a name='loops-loop'></a>
 
-### Loop Statement
+### Цикл loop
 
-In addition to `while`, `loop` can be used to create infinite loops:
+В дополнение к `while `, `loop` может использоваться для создания бесконечных циклов:
 
 ```zephir
 let n = 40;
@@ -108,9 +108,9 @@ loop {
 
 <a name='loops-for'></a>
 
-### For Statement
+### Цикл for
 
-A `for` is a control structure that allows to traverse arrays or strings:
+Цикл `for` является управляющей структурой, которая позволяет обходить массивы или строки:
 
 ```zephir
 for item in ["a", "b", "c", "d"] {
@@ -178,7 +178,7 @@ for key, _ in data {
 
 <a name='loops-break'></a>
 
-### Break Statement
+### Оператор break
 
 `break` ends execution of the current `while`, `for` or `loop` statement:
 
@@ -193,7 +193,7 @@ for item in ["a", "b", "c", "d"] {
 
 <a name='loops-continue'></a>
 
-### Continue Statement
+### Оператор continue
 
 `continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
 
@@ -210,7 +210,7 @@ while a > 0 {
 
 <a name='require'></a>
 
-## Require
+## Оператор require
 
 The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephir code to include other Zephir files at runtime.
 
@@ -222,7 +222,7 @@ if file_exists(path) {
 
 <a name='let'></a>
 
-## Let
+## Оператор let
 
 The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
 
