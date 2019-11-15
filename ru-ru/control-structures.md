@@ -212,7 +212,7 @@ while a > 0 {
 
 ## Оператор require
 
-The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephir code to include other Zephir files at runtime.
+Инструкция `require` динамически включает и выполняет указанный PHP-файл. Обратите внимание, что файлы, включенные в Zephir, интерпретируются Zend Engine как обычные PHP-файлы. `require` не позволяет включать другие файлы Zephir во время выполнения.
 
 ```zephir
 if file_exists(path) {
@@ -224,25 +224,25 @@ if file_exists(path) {
 
 ## Оператор let
 
-The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
+Выражение `let` используется для изменения переменных, свойств и массивов. Переменные по умолчанию неизменяемы, и эта инструкция делает их изменяемыми на протяжении всего утверждения:
 
 ```zephir
-let name = "Tony";           // simple variable
-let this->name = "Tony";     // object property
-let data["name"] = "Tony";   // array index
-let self::_name = "Tony";    // static property
+let name = "Tony";           // простая переменная
+let this->name = "Tony";     // свойство объекта
+let data["name"] = "Tony";   // индекс массива
+let self::_name = "Tony";    // статическое свойство
 ```
 
-Also this instruction must be used to increment/decrement variables:
+Также эта инструкция должна использоваться для инкремента и декремента:
 
 ```zephir
-let number++;           // increment simple variable
-let number--;           // decrement simple variable
-let this->number++;     // increment object property
-let this->number--;     // decrement object property
+let number++;           // инкремент простой переменной
+let number--;           // декремент простой переменной
+let this->number++;     // инкремент ствойства объекта
+let this->number--;     // декремент свойства объекта
 ```
 
-Multiple mutations can be performed in a single `let` operation:
+Множественные изменения могут быть выполнены в одной операции `let`:
 
 ```zephir
 let price = 1.00, realPrice = price, status = false;
