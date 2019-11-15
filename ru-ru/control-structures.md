@@ -20,12 +20,12 @@ Zephir реализует упрощенный набор управляющих
 
 ```zephir
 if false {
-    echo "false?";
+    echo "ложь?";
 } else {
     if true {
-        echo "true!";
+        echo "истина!";
     } else {
-        echo "neither true nor false";
+        echo "ни истина и ни ложь";
     }
 }
 ```
@@ -34,13 +34,13 @@ if false {
 
 ```zephir
 if a > 100 {
-    echo "to big";
+    echo "Значение a слишком большое";
 } elseif a < 0 {
-    echo "to small";
+    echo "Значение a слишком маленькое";
 } elseif a == 50 {
-    echo "perfect!";
+    echo "Превосходно!";
 } else {
-    echo "ok";
+    echo "Хорошо";
 }
 ```
 
