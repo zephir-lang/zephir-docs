@@ -4,7 +4,7 @@ layout: default language: 'en' version: '0.11'
 
 * * *
 
-# Closures
+# Замыкания
 
 You can use closures (a.k.a. anonymous functions) in Zephir; these are PHP compatible and can be returned to the PHP userland:
 
