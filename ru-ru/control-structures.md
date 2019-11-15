@@ -168,7 +168,7 @@ for i in range(1, 10) {
 
 To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
 
-##### Use the key but ignore the value
+##### Использование ключа, но игнорирование значения
 
 ```zephir
 for key, _ in data {
