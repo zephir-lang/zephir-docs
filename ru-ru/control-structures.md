@@ -118,7 +118,7 @@ for item in ["a", "b", "c", "d"] {
 }
 ```
 
-Keys in hashes can be obtained by providing a variable for both the key and value:
+Для доступа к ключам хешей, используется дополнительная переменная, как показано ниже:
 
 ```zephir
 let items = ["a": 1, "b": 2, "c": 3, "d": 4];
@@ -128,7 +128,7 @@ for key, value in items {
 }
 ```
 
-A `for` loop can also be instructed to traverse an array or string in reverse order:
+Цикл `for` также может быть использован для перемещения по массиву или строке в обратном порядке:
 
 ```zephir
 let items = [1, 2, 3, 4, 5];
@@ -138,7 +138,7 @@ for value in reverse items {
 }
 ```
 
-A `for` loop can be used to traverse string variables:
+Цикл `for` может использоваться для обхода строковых переменных:
 
 ```zephir
 string language = "zephir"; char ch;
@@ -148,7 +148,7 @@ for ch in language {
 }
 ```
 
-In reverse order:
+В обратный порядке:
 
 ```zephir
 string language = "zephir"; char ch;
@@ -158,7 +158,7 @@ for ch in reverse language {
 }
 ```
 
-A standard `for` that traverses a range of integer values can be written as follows:
+Стандартный цикл `for` для обхода диапазона целых значений может быть записан следующим образом:
 
 ```zephir
 for i in range(1, 10) {
@@ -166,9 +166,9 @@ for i in range(1, 10) {
 }
 ```
 
-To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
+Чтобы избежать предупреждений о неиспользуемых переменных, вы можете использовать анонимные переменные в операторах `for`, заменив имя переменной меткой `_`:
 
-##### Use the key but ignore the value
+##### Использование ключа, но игнорирование значения
 
 ```zephir
 for key, _ in data {
@@ -180,7 +180,7 @@ for key, _ in data {
 
 ### Оператор break
 
-`break` ends execution of the current `while`, `for` or `loop` statement:
+`break` завершает выполнение текущего оператора `while`, `for` или `loop` :
 
 ```zephir
 for item in ["a", "b", "c", "d"] {
@@ -195,7 +195,7 @@ for item in ["a", "b", "c", "d"] {
 
 ### Оператор continue
 
-`continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
+`continue` используется внутри структур цикла для реализации пропуска оставшейся части итерации текущего цикла, продолжения выполнения после оценки состояния и перехода к началу следующей итерации.
 
 ```zephir
 let a = 5;
