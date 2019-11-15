@@ -250,12 +250,12 @@
     ],
     "control-structures": [
         {
-            "text": "Conditionals",
+            "text": "Условные",
             "level": 1,
             "url": "#conditionals"
         },
         {
-            "text": "If Statement",
+            "text": "Оператор if",
             "level": 2,
             "url": "#conditionals-if"
         },
