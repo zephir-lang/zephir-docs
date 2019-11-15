@@ -227,19 +227,19 @@ if file_exists(path) {
 The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
 
 ```zephir
-let name = "Tony";           // simple variable
-let this->name = "Tony";     // object property
-let data["name"] = "Tony";   // array index
-let self::_name = "Tony";    // static property
+let name = "Tony";           // простая переменная
+let this->name = "Tony";     // свойство объекта
+let data["name"] = "Tony";   // индекс массива
+let self::_name = "Tony";    // статическое свойство
 ```
 
 Also this instruction must be used to increment/decrement variables:
 
 ```zephir
-let number++;           // increment simple variable
-let number--;           // decrement simple variable
-let this->number++;     // increment object property
-let this->number--;     // decrement object property
+let number++;           // инкремент простой переменной
+let number--;           // декремент простой переменной
+let this->number++;     // инкремент ствойства объекта
+let this->number--;     // декремент свойства объекта
 ```
 
 Multiple mutations can be performed in a single `let` operation:
