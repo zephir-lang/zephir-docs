@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'es-es'
+version: '0.11'
+---
 
 # Introducción a Zephir
 

@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'tr-tr'
+version: '0.11'
+---
 
 # Tutorial
 
@@ -24,7 +24,7 @@ zephir list
 
 If everything is well, you should see the following help (or something very similar):
 
-     _____              __    _
+```bash     _____              __    _
     /__  /  ___  ____  / /_  (_)____
       / /  / _ \/ __ \/ __ \/ / ___/
      / /__/  __/ /_/ / / / / / /
@@ -37,6 +37,7 @@ If everything is well, you should see the following help (or something very simi
       command [options] [arguments]
     
     Options:
+
       -h, --help            Display this help message
       -q, --quiet           Do not output any message
       -V, --version         Display this application version
@@ -59,6 +60,7 @@ If everything is well, you should see the following help (or something very simi
       list       Lists commands
       stubs      Generates stubs that can be used in a PHP IDE
     
+```
 
 If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
