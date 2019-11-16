@@ -250,57 +250,57 @@
     ],
     "control-structures": [
         {
-            "text": "Conditionals",
+            "text": "Условные",
             "level": 1,
             "url": "#conditionals"
         },
         {
-            "text": "If Statement",
+            "text": "Оператор if",
             "level": 2,
             "url": "#conditionals-if"
         },
         {
-            "text": "Switch Statement",
+            "text": "Оператор switch",
             "level": 2,
             "url": "#conditionals-switch"
         },
         {
-            "text": "Loops",
+            "text": "Циклы",
             "level": 1,
             "url": "#loops"
         },
         {
-            "text": "While Statement",
+            "text": "Цикл while",
             "level": 2,
             "url": "#loops-while"
         },
         {
-            "text": "Loop Statement",
+            "text": "Цикл loop",
             "level": 2,
             "url": "#loops-loop"
         },
         {
-            "text": "For Statement",
+            "text": "Цикл for",
             "level": 2,
             "url": "#loops-for"
         },
         {
-            "text": "Break Statement",
+            "text": "Оператор break",
             "level": 2,
             "url": "#loops-break"
         },
         {
-            "text": "Continue Statement",
+            "text": "Оператор continue",
             "level": 2,
             "url": "#loops-continue"
         },
         {
-            "text": "Require",
+            "text": "Оператор require",
             "level": 1,
             "url": "#require"
         },
         {
-            "text": "Let",
+            "text": "Оператор let",
             "level": 1,
             "url": "#let"
         }

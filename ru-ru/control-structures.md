@@ -20,12 +20,12 @@ Zephir реализует упрощенный набор управляющих
 
 ```zephir
 if false {
-    echo "false?";
+    echo "ложь?";
 } else {
     if true {
-        echo "true!";
+        echo "истина!";
     } else {
-        echo "neither true nor false";
+        echo "ни истина и ни ложь";
     }
 }
 ```
@@ -34,13 +34,13 @@ if false {
 
 ```zephir
 if a > 100 {
-    echo "to big";
+    echo "Значение a слишком большое";
 } elseif a < 0 {
-    echo "to small";
+    echo "Значение a слишком маленькое";
 } elseif a == 50 {
-    echo "perfect!";
+    echo "Превосходно!";
 } else {
-    echo "ok";
+    echo "Хорошо";
 }
 ```
 
@@ -168,7 +168,7 @@ for i in range(1, 10) {
 
 To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
 
-##### Use the key but ignore the value
+##### Использование ключа, но игнорирование значения
 
 ```zephir
 for key, _ in data {
@@ -227,19 +227,19 @@ if file_exists(path) {
 The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
 
 ```zephir
-let name = "Tony";           // simple variable
-let this->name = "Tony";     // object property
-let data["name"] = "Tony";   // array index
-let self::_name = "Tony";    // static property
+let name = "Tony";           // простая переменная
+let this->name = "Tony";     // свойство объекта
+let data["name"] = "Tony";   // индекс массива
+let self::_name = "Tony";    // статическое свойство
 ```
 
 Also this instruction must be used to increment/decrement variables:
 
 ```zephir
-let number++;           // increment simple variable
-let number--;           // decrement simple variable
-let this->number++;     // increment object property
-let this->number--;     // decrement object property
+let number++;           // инкремент простой переменной
+let number--;           // декремент простой переменной
+let this->number++;     // инкремент ствойства объекта
+let this->number--;     // декремент свойства объекта
 ```
 
 Multiple mutations can be performed in a single `let` operation:
