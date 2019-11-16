@@ -275,14 +275,14 @@
             "url": "#hello-world"
         },
         {
-            "text": "A taste of Zephir",
+            "text": "Понимание Zephir",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
     ],
     "language": [
         {
-            "text": "Organizing code in files and namespaces",
+            "text": "Организация кода в файлах и пространствах имён",
             "level": 1,
             "url": "#organizing-code-in-files-and-namespaces"
         },
