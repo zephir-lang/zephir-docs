@@ -1,31 +1,31 @@
----
-layout: default
-language: 'ru-ru'
-version: '0.10'
----
+* * *
 
-# Control Structures
+layout: default language: 'ru-ru' version: '0.10'
+
+* * *
+
+# Управляющие структуры
 
 Zephir реализует упрощенный набор управляющих структур, присутствующих в подобных ему языках, таких как C, PHP и т.п.
 
 <a name='conditionals'></a>
 
-## Conditionals
+## Условные
 
 <a name='conditionals-if'></a>
 
-### If Statement
+### Оператор if
 
-`if` statements evaluate an expression, executing the following block if the evaluation is `true`. Braces are required. Оператор `if` может иметь необязательное предложение `else`. При необходимости проверить последовательно несколько условий возможно каскадирование (вложенные конструкции `if`/`else`):
+Условный оператор `if` реализует выполнение своего блока при условии, что некоторое логическое выражение (условие) принимает значение «истина» (`true`). Фигурные скобки обязательны. Оператор `if` может иметь необязательное предложение `else`. При необходимости, несколько конструкций `if`/`else` могут быть соединены вместе:
 
 ```zephir
 if false {
-    echo "false?";
+    echo "ложь?";
 } else {
     if true {
-        echo "true!";
+        echo "истина!";
     } else {
-        echo "neither true nor false";
+        echo "ни истина и ни ложь";
     }
 }
 ```
@@ -34,13 +34,13 @@ if false {
 
 ```zephir
 if a > 100 {
-    echo "to big";
+    echo "Значение a слишком большое";
 } elseif a < 0 {
-    echo "to small";
+    echo "Значение a слишком маленькое";
 } elseif a == 50 {
-    echo "perfect!";
+    echo "Превосходно!";
 } else {
-    echo "ok";
+    echo "Хорошо";
 }
 ```
 
@@ -52,9 +52,9 @@ if a < 0 { return -1; } else { if a > 0 { return 1; } }
 
 <a name='conditionals-switch'></a>
 
-### Switch Statement
+### Оператор switch
 
-A `switch` evaluates an expression against a series of predefined literal values, executing the corresponding `case` block or falling back to the `default` block case:
+`switch` вычисляет выражение по ряду предопределенных литералов (буквальных значений), выполняя соответствующий блок `case` или в случае неудачи, выполняет блок `default`:
 
 ```zephir
 switch count(items) {
@@ -76,13 +76,13 @@ switch count(items) {
 
 <a name='loops'></a>
 
-## Loops
+## Циклы
 
 <a name='loops-while'></a>
 
-### While Statement
+### Цикл while
 
-`while` denotes a loop that iterates as long as its given condition evaluates as `true`:
+`while` обозначает цикл, который повторяется до тех пор, пока его заданное условие оценивается как `true`:
 
 ```zephir
 let counter = 5;
@@ -93,9 +93,9 @@ while counter {
 
 <a name='loops-loop'></a>
 
-### Loop Statement
+### Цикл loop
 
-In addition to `while`, `loop` can be used to create infinite loops:
+В дополнение к `while `, `loop` может использоваться для создания бесконечных циклов:
 
 ```zephir
 let n = 40;
@@ -108,9 +108,9 @@ loop {
 
 <a name='loops-for'></a>
 
-### For Statement
+### Цикл for
 
-A `for` is a control structure that allows to traverse arrays or strings:
+Цикл `for` является управляющей структурой, которая позволяет обходить массивы или строки:
 
 ```zephir
 for item in ["a", "b", "c", "d"] {
@@ -118,7 +118,7 @@ for item in ["a", "b", "c", "d"] {
 }
 ```
 
-Keys in hashes can be obtained by providing a variable for both the key and value:
+Для доступа к ключам хешей, используется дополнительная переменная, как показано ниже:
 
 ```zephir
 let items = ["a": 1, "b": 2, "c": 3, "d": 4];
@@ -128,7 +128,7 @@ for key, value in items {
 }
 ```
 
-A `for` loop can also be instructed to traverse an array or string in reverse order:
+Цикл `for` также может быть использован для перемещения по массиву или строке в обратном порядке:
 
 ```zephir
 let items = [1, 2, 3, 4, 5];
@@ -138,7 +138,7 @@ for value in reverse items {
 }
 ```
 
-A `for` loop can be used to traverse string variables:
+Цикл `for` может использоваться для обхода строковых переменных:
 
 ```zephir
 string language = "zephir"; char ch;
@@ -148,7 +148,7 @@ for ch in language {
 }
 ```
 
-In reverse order:
+В обратный порядке:
 
 ```zephir
 string language = "zephir"; char ch;
@@ -158,7 +158,7 @@ for ch in reverse language {
 }
 ```
 
-A standard `for` that traverses a range of integer values can be written as follows:
+Стандартный цикл `for` для обхода диапазона целых значений может быть записан следующим образом:
 
 ```zephir
 for i in range(1, 10) {
@@ -166,9 +166,9 @@ for i in range(1, 10) {
 }
 ```
 
-To avoid warnings about unused variables, you can use anonymous variables in `for` statements, by replacing a variable name with the placeholder `_`:
+Чтобы избежать предупреждений о неиспользуемых переменных, вы можете использовать анонимные переменные в операторах `for`, заменив имя переменной меткой `_`:
 
-##### Use the key but ignore the value
+##### Использование ключа, но игнорирование значения
 
 ```zephir
 for key, _ in data {
@@ -178,9 +178,9 @@ for key, _ in data {
 
 <a name='loops-break'></a>
 
-### Break Statement
+### Оператор break
 
-`break` ends execution of the current `while`, `for` or `loop` statement:
+`break` завершает выполнение текущего оператора `while`, `for` или `loop` :
 
 ```zephir
 for item in ["a", "b", "c", "d"] {
@@ -193,9 +193,9 @@ for item in ["a", "b", "c", "d"] {
 
 <a name='loops-continue'></a>
 
-### Continue Statement
+### Оператор continue
 
-`continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
+`continue` используется внутри структур цикла для реализации пропуска оставшейся части итерации текущего цикла, продолжения выполнения после оценки состояния и перехода к началу следующей итерации.
 
 ```zephir
 let a = 5;
@@ -210,9 +210,9 @@ while a > 0 {
 
 <a name='require'></a>
 
-## Require
+## Оператор require
 
-The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephir code to include other Zephir files at runtime.
+Инструкция `require` динамически включает и выполняет указанный PHP-файл. Обратите внимание, что файлы, включенные в Zephir, интерпретируются Zend Engine как обычные PHP-файлы. `require` не позволяет включать другие файлы Zephir во время выполнения.
 
 ```zephir
 if file_exists(path) {
@@ -222,27 +222,27 @@ if file_exists(path) {
 
 <a name='let'></a>
 
-## Let
+## Оператор let
 
-The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
-
-```zephir
-let name = "Tony";           // simple variable
-let this->name = "Tony";     // object property
-let data["name"] = "Tony";   // array index
-let self::_name = "Tony";    // static property
-```
-
-Also this instruction must be used to increment/decrement variables:
+Выражение `let` используется для изменения переменных, свойств и массивов. Переменные по умолчанию неизменяемы, и эта инструкция делает их изменяемыми на протяжении всего утверждения:
 
 ```zephir
-let number++;           // increment simple variable
-let number--;           // decrement simple variable
-let this->number++;     // increment object property
-let this->number--;     // decrement object property
+let name = "Tony";           // простая переменная
+let this->name = "Tony";     // свойство объекта
+let data["name"] = "Tony";   // индекс массива
+let self::_name = "Tony";    // статическое свойство
 ```
 
-Multiple mutations can be performed in a single `let` operation:
+Также эта инструкция должна использоваться для инкремента и декремента:
+
+```zephir
+let number++;           // инкремент простой переменной
+let number--;           // декремент простой переменной
+let this->number++;     // инкремент ствойства объекта
+let this->number--;     // декремент свойства объекта
+```
+
+Множественные изменения могут быть выполнены в одной операции `let`:
 
 ```zephir
 let price = 1.00, realPrice = price, status = false;
