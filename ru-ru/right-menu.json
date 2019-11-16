@@ -1,27 +1,27 @@
 {
     "arrays": [
         {
-            "text": "Declaring Array Variables",
+            "text": "Объявление массивов",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Creating Arrays",
+            "text": "Создание массивов",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Updating arrays",
+            "text": "Обновление массивов",
             "level": 1,
             "url": "#updating-arrays"
         },
         {
-            "text": "Appending elements",
+            "text": "Добавление элементов",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "Reading elements from arrays",
+            "text": "Чтение элементов из массивов",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -253,24 +253,24 @@
     "globals": [],
     "installation": [
         {
-            "text": "Prerequisites",
+            "text": "Системные требования",
             "level": 1,
             "url": "#prerequisites"
         },
         {
-            "text": "Installing Zephir",
+            "text": "Установка Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
         {
-            "text": "Testing the installation",
+            "text": "Протестируйте Zephir",
             "level": 1,
             "url": "#testing-the-installation"
         }
     ],
     "introduction": [
         {
-            "text": "Hello World!",
+            "text": "Привет мир!",
             "level": 1,
             "url": "#hello-world"
         },
@@ -287,12 +287,12 @@
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "Instruction separation",
+            "text": "Разделение инструкций",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "Comments",
+            "text": "Комментарии",
             "level": 1,
             "url": "#comments"
         },
@@ -389,89 +389,89 @@
             "url": "#implementing-methods"
         },
         {
-            "text": "Optional nullable parameters",
+            "text": "Необязательные обнуляемые параметры",
             "level": 2,
             "url": "#implementing-methods-optional-nullable-parameters"
         },
         {
-            "text": "Supported Visibilities",
+            "text": "Поддерживаемые области видимости",
             "level": 2,
             "url": "#implementing-methods-supported-visibilities"
         },
         {
-            "text": "Supported Modifiers",
+            "text": "Поддерживаемые модификаторы доступа",
             "level": 2,
             "url": "#implementing-methods-supported-modifiers"
         },
         {
-            "text": "Getter/Setter shortcuts",
+            "text": "Сокращения для геттеров/сеттеров",
             "level": 2,
             "url": "#implementing-methods-getter-setter-shortcuts"
         },
         {
-            "text": "Return Type Hints",
+            "text": "Тип возвращаемого значения",
             "level": 2,
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "Return Type: Void",
+            "text": "Возвращаемый тип: void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
         {
-            "text": "Strict/Flexible Parameter Data-Types",
+            "text": "Строгие/приводимые типы параметров",
             "level": 2,
             "url": "#implementing-methods-strict-flexible-parameter-data-types"
         },
         {
-            "text": "Read-Only Parameters",
+            "text": "Read-Only параметры",
             "level": 2,
             "url": "#implementing-methods-read-only-parameters"
         },
         {
-            "text": "Implementing Properties",
+            "text": "Реализация свойств",
             "level": 1,
             "url": "#implementing-properties"
         },
         {
-            "text": "Updating Properties",
+            "text": "Обновление свойств",
             "level": 2,
             "url": "#implementing-properties-updating"
         },
         {
-            "text": "Reading Properties",
+            "text": "Чтение свойств",
             "level": 2,
             "url": "#implementing-properties-reading"
         },
         {
-            "text": "Class Constants",
+            "text": "Константы класса",
             "level": 1,
             "url": "#class-constants"
         },
         {
-            "text": "Calling Methods",
+            "text": "Вызов методов",
             "level": 1,
             "url": "#calling-methods"
         },
         {
-            "text": "Parameters by Name",
+            "text": "Доступ к параметрам по имени",
             "level": 2,
             "url": "#calling-methods-parameters-by-name"
         }
     ],
     "operators": [
         {
-            "text": "Arithmetic Operators",
+            "text": "Арифметические операторы",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "Bitwise Operators",
+            "text": "Побитовые операторы",
             "level": 1,
             "url": "#bitwise-operators"
         },
         {
-            "text": "Comparison Operators",
+            "text": "Операторы сравнения",
             "level": 1,
             "url": "#comparison-operators"
         },
@@ -574,44 +574,44 @@
     ],
     "tutorial": [
         {
-            "text": "Checking the installation",
+            "text": "Проверка установки",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Extension skeleton",
+            "text": "Каркас расширения",
             "level": 1,
             "url": "#extension-skeleton"
         },
         {
-            "text": "Adding our first class",
+            "text": "Добавление нашего первого класса",
             "level": 1,
             "url": "#adding-our-first-class"
         },
         {
-            "text": "Initial testing",
+            "text": "Первоначальное тестирование",
             "level": 1,
             "url": "#initial-testing"
         },
         {
-            "text": "A useful class",
+            "text": "Удобные класс",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "Conclusion",
+            "text": "Заключение",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "Dynamic Types",
+            "text": "Динамические типы",
             "level": 1,
             "url": "#dynamic-types"
         },
         {
-            "text": "Arrays",
+            "text": "Массивы",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -631,12 +631,12 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Integer overflow",
+            "text": "Целочисленное переполнение",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
         {
-            "text": "Objects",
+            "text": "Object",
             "level": 2,
             "url": "#dynamic-types-objects"
         },
@@ -646,7 +646,7 @@
             "url": "#dynamic-types-string"
         },
         {
-            "text": "Static Types",
+            "text": "Статические типы",
             "level": 1,
             "url": "#static-types"
         },
@@ -735,12 +735,12 @@
     ],
     "welcome": [
         {
-            "text": "Some Features",
+            "text": "Некоторые особенности",
             "level": 1,
             "url": "#some-features"
         },
         {
-            "text": "A small taste",
+            "text": "Попробуйте",
             "level": 1,
             "url": "#a-small-taste"
         }
