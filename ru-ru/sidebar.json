@@ -1,39 +1,39 @@
 [
     {
-        "text": "Welcome",
+        "text": "Добро пожаловать",
         "url": "welcome"
     },
     {
-        "text": "Why Zephir",
+        "text": "Почему Zephir",
         "url": "motivation"
     },
     {
-        "text": "Introducing Zephir",
+        "text": "Введение в Zephir",
         "url": "introduction"
     },
     {
-        "text": "Installation",
+        "text": "Установка",
         "url": "installation"
     },
     {
-        "text": "Tutorial",
+        "text": "Урок",
         "url": "tutorial"
     },
     {
-        "text": "Basic Syntax",
+        "text": "Базовый синтаксис",
         "url": "language"
     },
     {
-        "text": "Types",
+        "text": "Типы",
         "url": "types"
     },
     {
-        "text": "Operators",
+        "text": "Операторы",
         "url": "operators"
     },
     {
-        "text": "Arrays",
-        "url": "массивы"
+        "text": "Массивы",
+        "url": "arrays"
     },
     {
         "text": "Классы и объекты",
@@ -48,7 +48,7 @@
         "url": "control-structures"
     },
     {
-        "text": "Exceptions",
+        "text": "Исключения",
         "url": "exceptions"
     },
     {
@@ -60,7 +60,7 @@
         "url": "closures"
     },
     {
-        "text": "Custom optimizers",
+        "text": "Настраиваемые оптимизаторы",
         "url": "optimizers"
     },
     {
