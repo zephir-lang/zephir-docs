@@ -33,7 +33,7 @@
     },
     {
         "text": "Arrays",
-        "url": "arrays"
+        "url": "массивы"
     },
     {
         "text": "Классы и объекты",
@@ -44,7 +44,7 @@
         "url": "builtin-methods"
     },
     {
-        "text": "Control structures",
+        "text": "Управляющие структуры",
         "url": "control-structures"
     },
     {
