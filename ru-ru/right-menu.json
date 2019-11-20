@@ -193,7 +193,7 @@
     ],
     "control-structures": [
         {
-            "text": "Условные",
+            "text": "Условные операторы",
             "level": 1,
             "url": "#conditionals"
         },
