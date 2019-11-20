@@ -1,46 +1,46 @@
 [
     {
-        "text": "Welcome",
+        "text": "Добро пожаловать",
         "url": "welcome"
     },
     {
-        "text": "Why Zephir",
+        "text": "Почему Zephir",
         "url": "motivation"
     },
     {
-        "text": "Introducing Zephir",
+        "text": "Введение в Zephir",
         "url": "introduction"
     },
     {
-        "text": "Installation",
+        "text": "Установка",
         "url": "installation"
     },
     {
-        "text": "Tutorial",
+        "text": "Урок",
         "url": "tutorial"
     },
     {
-        "text": "Basic Syntax",
+        "text": "Базовый синтаксис",
         "url": "language"
     },
     {
-        "text": "Types",
+        "text": "Типы",
         "url": "types"
     },
     {
-        "text": "Operators",
+        "text": "Операторы",
         "url": "operators"
     },
     {
-        "text": "Arrays",
+        "text": "Массивы",
         "url": "arrays"
     },
     {
-        "text": "Classes and objects",
+        "text": "Классы и объекты",
         "url": "oop"
     },
     {
-        "text": "Built-in methods",
+        "text": "Встроенные методы",
         "url": "builtin-methods"
     },
     {
@@ -48,7 +48,7 @@
         "url": "control-structures"
     },
     {
-        "text": "Exceptions",
+        "text": "Исключения",
         "url": "exceptions"
     },
     {
@@ -56,15 +56,15 @@
         "url": "functions"
     },
     {
-        "text": "Closures",
+        "text": "Замыкания",
         "url": "closures"
     },
     {
-        "text": "Custom optimizers",
+        "text": "Настраиваемые оптимизаторы",
         "url": "optimizers"
     },
     {
-        "text": "Configuration file",
+        "text": "Файл конфигурации",
         "url": "config"
     },
     {
@@ -72,7 +72,7 @@
         "url": "lifecycle"
     },
     {
-        "text": "Extension globals",
+        "text": "Глобальные параметры расширения",
         "url": "globals"
     },
     {
@@ -80,7 +80,7 @@
         "url": "phpinfo"
     },
     {
-        "text": "Static analysis",
+        "text": "Статический анализ",
         "url": "static-analysis"
     },
     {
@@ -88,11 +88,11 @@
         "url": "optimizations"
     },
     {
-        "text": "Compiler warnings",
+        "text": "Предупреждения компилятора",
         "url": "warnings"
     },
     {
-        "text": "License",
+        "text": "Лицензионное соглашение",
         "url": "license"
     }
 ]
