@@ -68,19 +68,19 @@
         "url": "config"
     },
     {
-        "text": "Lifecycle hooks",
+        "text": "Хуки времени выполнения",
         "url": "lifecycle"
     },
     {
-        "text": "Extension globals",
+        "text": "Глобальные параметры расширения",
         "url": "globals"
     },
     {
-        "text": "phpinfo() sections",
+        "text": "Секции phpinfo()",
         "url": "phpinfo"
     },
     {
-        "text": "Command line",
+        "text": "Командная строка",
         "url": "command-line"
     },
     {
@@ -88,7 +88,7 @@
         "url": "static-analysis"
     },
     {
-        "text": "Optimizations",
+        "text": "Оптимизации",
         "url": "optimizations"
     },
     {
@@ -96,7 +96,7 @@
         "url": "warnings"
     },
     {
-        "text": "License",
+        "text": "Лицензионное соглашение",
         "url": "license"
     }
 ]
