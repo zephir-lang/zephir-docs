@@ -36,11 +36,11 @@
         "url": "arrays"
     },
     {
-        "text": "Classes and objects",
+        "text": "Классы и объекты",
         "url": "oop"
     },
     {
-        "text": "Built-in methods",
+        "text": "Встроенные методы",
         "url": "builtin-methods"
     },
     {
@@ -64,7 +64,7 @@
         "url": "optimizers"
     },
     {
-        "text": "Configuration file",
+        "text": "Файл конфигурации",
         "url": "config"
     },
     {
@@ -84,7 +84,7 @@
         "url": "command-line"
     },
     {
-        "text": "Static analysis",
+        "text": "Статический анализ",
         "url": "static-analysis"
     },
     {
@@ -92,7 +92,7 @@
         "url": "optimizations"
     },
     {
-        "text": "Compiler warnings",
+        "text": "Предупреждения компилятора",
         "url": "warnings"
     },
     {
