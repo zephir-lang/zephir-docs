@@ -33,7 +33,7 @@
     },
     {
         "text": "Массивы",
-        "url": "arrays"
+        "url": "массивы"
     },
     {
         "text": "Классы и объекты",
@@ -44,7 +44,7 @@
         "url": "builtin-methods"
     },
     {
-        "text": "Control structures",
+        "text": "Управляющие структуры",
         "url": "control-structures"
     },
     {
@@ -52,7 +52,7 @@
         "url": "exceptions"
     },
     {
-        "text": "Calling functions",
+        "text": "Вызов функций",
         "url": "functions"
     },
     {
@@ -68,7 +68,7 @@
         "url": "config"
     },
     {
-        "text": "Lifecycle hooks",
+        "text": "Хуки времени выполнения",
         "url": "lifecycle"
     },
     {
@@ -76,7 +76,7 @@
         "url": "globals"
     },
     {
-        "text": "phpinfo() sections",
+        "text": "Секции phpinfo()",
         "url": "phpinfo"
     },
     {
@@ -84,7 +84,7 @@
         "url": "static-analysis"
     },
     {
-        "text": "Optimizations",
+        "text": "Оптимизации",
         "url": "optimizations"
     },
     {
