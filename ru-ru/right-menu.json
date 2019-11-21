@@ -1,17 +1,17 @@
 {
     "arrays": [
         {
-            "text": "Declaring Array Variables",
+            "text": "Объявление массивов",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Creating Arrays",
+            "text": "Создание массивов",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Updating arrays",
+            "text": "Обновление массивов",
             "level": 1,
             "url": "#updating-arrays"
         },
