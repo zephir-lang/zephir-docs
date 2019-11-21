@@ -1,6 +1,6 @@
 ---
 layout: default
-language: 'en'
+language: 'zh-cn'
 version: '0.12'
 ---
 
@@ -56,6 +56,7 @@ zephir 帮助
     
 
 If something went wrong, please return back to the [installation](/0.12/en/installation) page.
+如果出现问题, 请返回到 [installation](/{{ version }}/{{ language }}/installation) 页面。
 
 <a name='extension-skeleton'></a>
 

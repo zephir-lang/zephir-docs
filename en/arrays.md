@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 # Arrays
 Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).
@@ -24,19 +24,19 @@ An array is created by enclosing its elements in square brackets:
 ```zephir
 let elements = [];
 ```
-    
+
 ##### Creating an array with elements
 
 ```zephir
 let elements = [1, 3, 4];
 ```
-    
+
 ##### Creating an array with elements of different types
 
 ```zephir
 let elements = ["first", 2, true];
 ```
-    
+
 ##### A multidimensional array
 
 ```zephir
@@ -50,13 +50,13 @@ As PHP, hashes or dictionaries are supported:
 ```zephir
 let elements = ["foo": "bar", "bar": "foo"];
 ```
-    
+
 ##### Creating a hash with numeric keys
 
 ```zephir
 let elements = [4: "bar", 8: "foo"];
 ```
-    
+
 ##### Creating a hash with mixed string and numeric keys
 
 ```zephir
@@ -72,13 +72,13 @@ Arrays are updated in the same way as PHP, using square brackets:
 ```zephir
 let elements["foo"] = "bar";
 ```
-    
+
 ##### Updating an array with a numeric key
 
 ```zephir
 let elements[0] = "bar";
 ```
-    
+
 ##### Updating multi-dimensional array
 
 ```zephir
@@ -105,7 +105,7 @@ It is possible to read array elements as follows:
 ```zephir
 let foo = elements["foo"];
 ```
-    
+
 ##### Getting an element using the numeric key 0
 
 ```zephir

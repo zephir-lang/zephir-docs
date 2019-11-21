@@ -1,11 +1,9 @@
 ---
 layout: default
-language: 'en'
+language: 'tr-tr'
 version: '0.12'
 ---
-
 # Exceptions
-
 Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.
 
 When an exception is thrown, a `catch` block can be used to capture the exception and allow the developer to provide proper handling:

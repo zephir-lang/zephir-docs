@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'en'
-version: '0.11'
+version: '0.12'
 ---
 # Welcome!
 Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
@@ -56,7 +56,7 @@ The class can be used from PHP as follows:
 
 $filter = new MyLibrary\Filter();
 echo $filter->alpha("01he#l.lo?/1"); // prints hello
-``` 
+```
 
 <a name='external-links'></a>
 ## External Links

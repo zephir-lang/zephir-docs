@@ -1,11 +1,9 @@
 ---
 layout: default
-language: 'en'
+language: 'tr-tr'
 version: '0.12'
 ---
-
 # Extension Globals
-
 PHP extensions provide a way to define globals within an extension. Reading/writing globals should be faster than any other global mechanisms (like static members). You can use extension globals to set up configuration options that change the behavior of your library.
 
 In Zephir, extension globals are restricted to simple scalar types like `int`/`bool`/`double`/`char`, etc. Complex types such as string/array/object/resource are not allowed here.
