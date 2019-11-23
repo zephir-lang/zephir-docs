@@ -6,9 +6,9 @@ version: '0.12'
 
 # Встроенные методы
 
-As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
+Как упоминалось ранее, Zephir способствует объектно-ориентированному программированию. Переменные, относящиеся к статическим типам, также могут обрабатываться как объекты.
 
-Compare these two methods:
+Сравните эти два метода:
 
 ```zephir
 public function binaryToHex(string! s) -> string
@@ -27,7 +27,7 @@ public function binaryToHex(string! s) -> string
 }
 ```
 
-And:
+И:
 
 ```zephir
 public function binaryToHex(string! s) -> string
