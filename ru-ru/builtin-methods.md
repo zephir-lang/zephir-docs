@@ -6,9 +6,9 @@ version: '0.11'
 
 # Встроенные методы
 
-As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
+Как упоминалось ранее, Zephir способствует объектно-ориентированному программированию. Переменные, относящиеся к статическим типам, также могут обрабатываться как объекты.
 
-Compare these two methods:
+Сравните эти два метода:
 
 ```zephir
 public function binaryToHex(string! s) -> string
@@ -27,7 +27,7 @@ public function binaryToHex(string! s) -> string
 }
 ```
 
-And:
+И:
 
 ```zephir
 public function binaryToHex(string! s) -> string
@@ -46,13 +46,13 @@ public function binaryToHex(string! s) -> string
 }
 ```
 
-They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.
+Оба метода имеют одинаковую функциональность, но второй использует объектно-ориентированное подход. Использование методов на статически типизированных переменных не оказывают никакого влияния на производительность, поскольку Zephir внутренне преобразует код из объектно-ориентированной версии в процедурную версию.
 
 <a name='string'></a>
 
 ## String
 
-The following string built-in methods are available:
+Над строковым типом данных определены следующие встроенные методы:
 
 | ООП                  | Процедурный           | Описание                                                     |
 | -------------------- | --------------------- | ------------------------------------------------------------ |
@@ -73,7 +73,7 @@ The following string built-in methods are available:
 
 ## Array
 
-The following array built-in methods are available:
+Над массивами определены следующие встроенные методы:
 
 | ООП                  | Процедурный             | Описание                                                                    |
 | -------------------- | ----------------------- | --------------------------------------------------------------------------- |
@@ -96,7 +96,7 @@ The following array built-in methods are available:
 
 ## Char
 
-The following char built-in methods are available:
+Над символьным типом данных определены следующие встроенные методы:
 
 | ООП              | Процедурный         |
 | ---------------- | ------------------- |
@@ -106,7 +106,7 @@ The following char built-in methods are available:
 
 ## Integer
 
-The following integer built-in methods are available:
+Над целочисленным типом данных определены следующие встроенные методы:
 
 | ООП           | Процедурный |
 | ------------- | ----------- |
