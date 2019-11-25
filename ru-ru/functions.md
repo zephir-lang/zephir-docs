@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'ru-ru' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'ru-ru'
+version: '0.10'
+---
 
 # Calling Functions
 
