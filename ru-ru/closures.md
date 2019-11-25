@@ -6,7 +6,7 @@ version: '0.11'
 
 # Замыкания
 
-You can use closures (a.k.a. anonymous functions) in Zephir; these are PHP compatible and can be returned to the PHP userland:
+В Zephir вы можете использовать анонимные функции (также известные как замыкания); Они совместимы с PHP и могут передаваться в область видимости PHP кода:
 
 ```zephir
 namespace MyLibrary;
@@ -23,7 +23,7 @@ class Functional
 }
 ```
 
-It also can be executed directly within Zephir, and passed as a parameter to other functions/methods:
+Они также могут быть выполнены непосредственно в Zephir, и переданы в качестве параметра другим функциям/методам:
 
 ```zephir
 namespace MyLibrary;
@@ -40,7 +40,7 @@ class Functional
 }
 ```
 
-A short syntax is also available to define closures:
+Для определения замыканий доступен также короткий синтаксис:
 
 ```zephir
 namespace MyLibrary;
