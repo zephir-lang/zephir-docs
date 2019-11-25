@@ -1,8 +1,8 @@
----
-layout: default
-language: 'ru-ru'
-version: '0.11'
----
+* * *
+
+layout: default language: 'ru-ru' version: '0.11'
+
+* * *
 
 # Замыкания
 
@@ -23,7 +23,7 @@ class Functional
 }
 ```
 
-It also can be executed directly within Zephir, and passed as a parameter to other functions/methods:
+Они также могут быть выполнены непосредственно в Zephir, и переданы в качестве параметра другим функциям/методам:
 
 ```zephir
 namespace MyLibrary;
@@ -40,7 +40,7 @@ class Functional
 }
 ```
 
-A short syntax is also available to define closures:
+Для определения замыканий доступен также короткий синтаксис:
 
 ```zephir
 namespace MyLibrary;
