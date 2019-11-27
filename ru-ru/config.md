@@ -6,9 +6,9 @@ layout: default language: 'ru-ru' version: '0.11'
 
 # Конфигурационный файл
 
-Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
+Каждое расширение Zephir имеет файл конфигурации, называемый `config.json`. Этот файл читается Zephir каждый раз, когда вы создаете или создаете расширение, и это позволяет разработчику изменять расширение или поведение компилятора.
 
-This file uses [JSON](http://en.wikipedia.org/wiki/JSON) as its configuration format:
+Этот файл использует формат [JSON](http://en.wikipedia.org/wiki/JSON) в качестве формата конфигурации:
 
 ```json
 {
@@ -20,15 +20,15 @@ This file uses [JSON](http://en.wikipedia.org/wiki/JSON) as its configuration fo
 }
 ```
 
-Settings defined in this file override any factory default setting provided by Zephir.
+Параметры, определенные в этом файле, переопределяют любые заводские настройки, предоставляемые Zephir.
 
-The following settings are supported:
+Поддерживаются следующие параметры:
 
 <a name='api'></a>
 
 ## api
 
-Used to configure the automatically generated HTML documentation for your extension. `path` specifies where to create the documentation relative to the project root. `base-url` is used to generate a `sitemap.xml` file for your documentation. `theme` is used to set the theme used for the generated documentation (via the `name` setting), and any options the theme supports passing (via the `options` setting). Finally, `theme-directories` is used to provide additional search paths for finding your desired theme.:
+Используется для настройки автоматически сгенерированной HTML-документации для вашего расширения. `path` указывает, где создать документацию относительно корня проекта. `base-url` используется для генерации файла `sitemap.xml` для вашей документации. `theme` используется для установки темы, используемой в сгенерированной документации (с помощью настройки `name`), и любые опции, поддерживаемые темой (с помощью настройки `options`). И наконец, `theme-directories` используются для предоставления дополнительных путей поиска вашей темы:
 
 ```json
 {
@@ -56,7 +56,7 @@ Used to configure the automatically generated HTML documentation for your extens
 
 ## author
 
-Company, developer, institution, etc that developed the extension:
+Компания, разработчик, учреждение и т.д., которые разработали расширение:
 
 ```json
 {
@@ -68,7 +68,7 @@ Company, developer, institution, etc that developed the extension:
 
 ## backend
 
-Provides a way to configure the Zend Engine backend used by your extension. At the moment, only the `templatepath`, which lets you select between `ZendEngine2` and `ZendEngine3`, is supported:
+Предоставляет способ настройки бэкэнда Zend Engine, используемого в вашем расширении. На данный момент поддерживается только`templatepath`, который позволяет выбрать между `ZendEngine2` и `ZendEngine3`:
 
 ```json
 {
@@ -82,7 +82,7 @@ Provides a way to configure the Zend Engine backend used by your extension. At t
 
 ## constants-sources
 
-To import just the constants in a C source file into your project, list the file's path in this setting:
+Чтобы импортировать только константы из исходного Си-файла в ваш проект, укажите путь к файлу в этой настройке:
 
 ```json
 {
@@ -96,7 +96,7 @@ To import just the constants in a C source file into your project, list the file
 
 ## description
 
-Extension description - any text describing your extension:
+Описание расширения — любой текст, описывающий ваше расширение:
 
 ```json
 {
@@ -108,7 +108,7 @@ Extension description - any text describing your extension:
 
 ## destructors
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
+Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Для получения более подробной информации обратитесь к главе [Хуки времени выполнения](/0.11/en/lifecycle).
 
 ```json
 {
@@ -151,7 +151,7 @@ This setting lets you provide one or more C functions to be executed on certain 
 
 ## extension-name
 
-The base filename of the extension. It must follow the same rules as the `namespace` setting, which is used as a fallback in case this one isn't given.
+Базовое имя файла расширения. Оно должно следовать тем же правилам, что и настройка `namespace`, которая используется как запасной вариант в случае, если эта не указана.
 
 ```json
 {
@@ -163,7 +163,7 @@ The base filename of the extension. It must follow the same rules as the `namesp
 
 ## external-dependencies
 
-You can include a class from another namespace/extension directly in your own extension by configuring it here:
+Вы можете включить класс из другого пространства имён/расширения непосредственно в вашем собственном расширении, настроив его как показано здесь:
 
 ```json
 {
@@ -178,10 +178,10 @@ You can include a class from another namespace/extension directly in your own ex
 
 ## extra
 
-Contains extra settings that also can be passed, as is, [on the command line](/0.11/en/command-line). Currently, that's:
+Содержит дополнительные параметры, которые также могут быть [ переданы в командной строке](/0.11/en/command-line). В настоящее время это:
 
-- `export-classes` - generate headers for accessing your classes from other C code
-- `indent` - select between using `tabs` or `spaces` to indent code in generated files
+- `export-classes` — генерирует заголовочные файлы для доступа к вашим классам из другого Си-кода
+- `indent` — использование `табуляции` или `пробелов` для отступов в коде генерируемых файлов
 
 ```json
 {
@@ -196,7 +196,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/0
 
 ## extra-cflags
 
-Any additional flags you want to add to the compilation process:
+Любые дополнительные флаги, которые вы хотите добавить в процесс компиляции:
 
 ```json
 {
@@ -208,7 +208,7 @@ Any additional flags you want to add to the compilation process:
 
 ## extra-classes
 
-If you already have a PHP class implemented in C, you can include it directly in your extension by configuring it here:
+Если у вас уже есть PHP-класс, реализованный на Си, Вы можете включить его непосредственно в ваше расширение, как показано ниже:
 
 ```json
 {
@@ -227,7 +227,7 @@ If you already have a PHP class implemented in C, you can include it directly in
 
 ## extra-libs
 
-Any additional libraries you want to add to the compilation process:
+Любые дополнительные библиотеки, которые вы хотите добавить в процесс компиляции:
 
 ```json
 {
@@ -239,7 +239,7 @@ Any additional libraries you want to add to the compilation process:
 
 ## extra-sources
 
-Any additional files you want to add to the compilation process - the search directory is relative to the `ext` folder of your project:
+Любые дополнительные файлы, которые вы хотите добавить в процесс компиляции. Каталог поиска находится относительно папки `ext` вашего проекта:
 
 ```json
 {
@@ -253,7 +253,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 ## globals
 
-Extension globals available. Check the [globals](/0.11/en/globals) chapter for more information.
+Доступные для расширения глобальные параметры. Обратитесь к главе [Глобальные параметры расширения](/0.11/en/globals) для получения дополнительной информации.
 
 ```json
 {
@@ -274,7 +274,7 @@ Extension globals available. Check the [globals](/0.11/en/globals) chapter for m
 
 ## info
 
-`phpinfo()` sections. Check the [phpinfo()](/0.11/en/phpinfo) chapter for more information.
+Секции `phpinfo()`. Обратитесь к главе [Секции phpinfo()](/0.11/en/phpinfo) для получения дополнительной информации.
 
 ```json
 {
@@ -294,7 +294,7 @@ Extension globals available. Check the [globals](/0.11/en/globals) chapter for m
 
 ## initializers
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
+Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Для получения более подробной информации обратитесь к главе [Хуки времени выполнения](/0.11/en/lifecycle).
 
 ```json
 {
@@ -331,7 +331,7 @@ This setting lets you provide one or more C functions to be executed on certain 
 
 ## name
 
-Extension name used in compiled C code - can only contain ascii characters:
+Имя расширения, используемое в скомпилированном Си коде. Может содержать только ASCII-символы:
 
 ```json
 {
@@ -343,7 +343,7 @@ Extension name used in compiled C code - can only contain ascii characters:
 
 ## namespace
 
-The namespace of the extension - it must be a simple identifier respecting the regular expression `[a-zA-Z0-9\_]+`:
+Пространство имён расширения. Это должен быть простой идентификатор, соответствующий регулярному выражению `[a-zA-Z0-9\_]+`:
 
 ```json
 {
@@ -355,7 +355,7 @@ The namespace of the extension - it must be a simple identifier respecting the r
 
 ## optimizations
 
-Compiler optimizations which should be enabled or disabled in the current project:
+Оптимизации компилятора, которые должны быть включены или отключены в текущем проекте:
 
 ```json
 {
@@ -371,7 +371,7 @@ Compiler optimizations which should be enabled or disabled in the current projec
 
 ## optimizer-dirs
 
-The directories where your own optimizers can be found - the search directory is relative to the root folder of your project:
+Каталоги, где находятся ваши собственные оптимизаторы. Каталог поиска находится относительно корневой папки вашего проекта:
 
 ```json
 {
@@ -385,7 +385,7 @@ The directories where your own optimizers can be found - the search directory is
 
 ## package-dependencies
 
-Declare library dependencies (version constraints will be checked by `pkg-config`, and can use one of the operators `=`, `>=`, `<=`, or `*`):
+Определение зависимостей библиотеки (ограничения версии будут проверяться с помощью `pkg-config`, и может использовать один из операторов `=`, `>=`, `<=`, или `*`):
 
 ```json
 {
@@ -401,7 +401,7 @@ Declare library dependencies (version constraints will be checked by `pkg-config
 
 ## prototype-dir
 
-Allows you to provide prototype files describing other extensions required to build your own, so they don't necessarily need to be installed during the build phase:
+Позволяет вам предоставить файлы прототипов, описывающие другие расширения, необходимые для сборки, которые не обязательно устанавливать на этапе сборки:
 
 ```json
 {
@@ -416,7 +416,7 @@ Allows you to provide prototype files describing other extensions required to bu
 
 ## requires
 
-Allows you to list other extensions as required to build/use your own:
+Позволяет вам перечислить другие расширения, необходимые для создания/использования вашего собственного:
 
 ```json
 {
@@ -433,7 +433,7 @@ Allows you to list other extensions as required to build/use your own:
 
 ## silent
 
-Suppresses most/all output from `zephir` commands (same as `-w`):
+Подавляет почти весь вывод `zephir` команд (аналогично `-w`):
 
 ```json
 {
@@ -445,7 +445,7 @@ Suppresses most/all output from `zephir` commands (same as `-w`):
 
 ## stubs
 
-This setting allows adjusting the way IDE documentation stubs are generated. `path` sets where the stubs should be created, while `stubs-run-after-generate` sets whether to automatically (re)build the stubs when your code is compiled to C:
+Эта настройка позволяет настроить способ генерации IDE заглушек. `path` указывает, где должны быть созданы заглушки, а `stubs-run-after-generate` указывает, следует ли автоматически (повторно) создавать заглушки, когда ваш код компилируется в Си:
 
 ```json
 {
@@ -460,7 +460,7 @@ This setting allows adjusting the way IDE documentation stubs are generated. `pa
 
 ## verbose
 
-Displays more detail in error messages from exceptions generated by `zephir` commands (can also enable with `-v`, or disable with `-V`):
+Позволяет выводить более подробную информацию в сообщениях об ошибках при выбрасывании исключений `zephir` командами. Эту настройку также можно включить с помощью `-v`, или отключить с помощью `-V`:
 
 ```json
 {
@@ -472,7 +472,7 @@ Displays more detail in error messages from exceptions generated by `zephir` com
 
 ## version
 
-Extension version - must follow the regular expression `[0-9]+\.[0-9]+\.[0-9]+`:
+Версия расширения. Должна соответствовать регулярному выражению `[0-9]+\.[0-9]+\.[0-9]+`:
 
 ```json
 {
@@ -484,7 +484,7 @@ Extension version - must follow the regular expression `[0-9]+\.[0-9]+\.[0-9]+`:
 
 ## warnings
 
-Compiler warnings which should be enabled or disabled in the current project:
+Предупреждения компилятора, которые должны быть включены или отключены в текущем проекте:
 
 ```json
 {
