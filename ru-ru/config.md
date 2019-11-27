@@ -4,7 +4,7 @@ layout: default language: 'ru-ru' version: '0.11'
 
 * * *
 
-# Configuration File
+# Конфигурационный файл
 
 Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
 
