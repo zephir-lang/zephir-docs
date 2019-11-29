@@ -108,7 +108,7 @@ Extension description - any text describing your extension:
 
 ## destructors
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.12/en/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
 
 ```json
 {
@@ -250,7 +250,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 ## globals
 
-Extension globals available. Check the [globals](/0.12/en/globals) chapter for more information.
+Extension globals available. Check the [globals](/{{ version }}/{{ language }}/globals) chapter for more information.
 
 ```json
 {
@@ -271,7 +271,7 @@ Extension globals available. Check the [globals](/0.12/en/globals) chapter for m
 
 ## info
 
-`phpinfo()` sections. Check the [phpinfo()](/0.12/en/phpinfo) chapter for more information.
+`phpinfo()` sections. Check the [phpinfo()](/{{ version }}/{{ language }}/phpinfo) chapter for more information.
 
 ```json
 {
@@ -291,7 +291,7 @@ Extension globals available. Check the [globals](/0.12/en/globals) chapter for m
 
 ## initializers
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.12/en/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
 
 ```json
 {
