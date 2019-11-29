@@ -55,7 +55,7 @@ If everything is well, you should see the following help (or something very simi
       stubs      Generates stubs that can be used in a PHP IDE
     
 
-If something went wrong, please return back to the [installation](/0.12/el-gr/installation) page.
+If something went wrong, please return back to the [installation]({{ version }}/{{ language }}/installation) page.
 
 <a name='extension-skeleton'></a>
 
