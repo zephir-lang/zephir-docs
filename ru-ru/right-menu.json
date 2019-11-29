@@ -409,7 +409,7 @@
             "url": "#implementing-methods-getter-setter-shortcuts"
         },
         {
-            "text": "Тип возвращаемого значения",
+            "text": "Типы возвращаемых значений",
             "level": 2,
             "url": "#implementing-methods-return-type-hints"
         },
