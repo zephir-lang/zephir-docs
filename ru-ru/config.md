@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'ru-ru' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'ru-ru'
+version: '0.11'
+---
 
 # Конфигурационный файл
 
