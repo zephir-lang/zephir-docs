@@ -1,6 +1,6 @@
 ---
 layout: default
-language: 'el-GR'
+language: 'el-gr'
 version: '0.11'
 ---
 
