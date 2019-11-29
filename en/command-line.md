@@ -60,7 +60,7 @@ In some cases, we would like to get production ready extension even if the PHP b
 compiled in a debug configuration. Use `--no-dev` option to achieve this behavior.
 
 Additionally, any of the options available [under `extra` in the configuration
-file](/0.11/en/config#extra) can also be passed as options, here, such as
+file](/{{ version }}/{{ language }}/config#extra) can also be passed as options, here, such as
 `--export-classes` and `--indent=tabs`.
 
 <a name="zephir-fullclean"></a>
