@@ -68,6 +68,10 @@
         "url": "config"
     },
     {
+        "text": "Command Line",
+        "url": "command-line"
+    },
+    {
         "text": "Lifecycle hooks",
         "url": "lifecycle"
     },
