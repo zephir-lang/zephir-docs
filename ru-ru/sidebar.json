@@ -68,7 +68,11 @@
         "url": "config"
     },
     {
-        "text": "Хуки времени выполнения",
+        "text": "Command Line",
+        "url": "command-line"
+    },
+    {
+        "text": "Lifecycle hooks",
         "url": "lifecycle"
     },
     {
@@ -78,10 +82,6 @@
     {
         "text": "Секции phpinfo()",
         "url": "phpinfo"
-    },
-    {
-        "text": "Командная строка",
-        "url": "command-line"
     },
     {
         "text": "Статический анализ",
