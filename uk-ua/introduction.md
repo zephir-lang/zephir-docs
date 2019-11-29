@@ -1,8 +1,8 @@
-* * *
-
-layout: default language: 'uk' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'uk'
+version: '0.11'
+---
 
 # Представляємо Zephir
 
