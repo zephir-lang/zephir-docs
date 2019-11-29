@@ -108,7 +108,7 @@ version: '0.12'
 
 ## destructors
 
-Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Для получения более подробной информации обратитесь к главе [Хуки времени выполнения](/0.12/en/lifecycle).
+Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
 
 ```json
 {
@@ -250,7 +250,7 @@ version: '0.12'
 
 ## globals
 
-Доступны глобальные расширения Обратитесь к главе [Глобальные параметры расширения](/0.12/en/globals) для получения дополнительной информации.
+Доступны глобальные расширения Check the [globals](/{{ version }}/{{ language }}/globals) chapter for more information.
 
 ```json
 {
@@ -271,7 +271,7 @@ version: '0.12'
 
 ## info
 
-Секции `phpinfo()`. Обратитесь к главе [Секции phpinfo()](/0.12/en/phpinfo) для получения дополнительной информации.
+Секции `phpinfo()`. Check the [phpinfo()](/{{ version }}/{{ language }}/phpinfo) chapter for more information.
 
 ```json
 {
@@ -291,7 +291,7 @@ version: '0.12'
 
 ## initializers
 
-Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Для получения более подробной информации обратитесь к главе [Хуки времени выполнения](/0.12/en/lifecycle).
+Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
 
 ```json
 {
