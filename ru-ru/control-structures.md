@@ -10,7 +10,7 @@ Zephir реализует упрощенный набор управляющих
 
 <a name='conditionals'></a>
 
-## Условные
+## Условные операторы
 
 <a name='conditionals-if'></a>
 
@@ -148,7 +148,7 @@ for ch in language {
 }
 ```
 
-В обратный порядке:
+В обратном порядке:
 
 ```zephir
 string language = "zephir"; char ch;
@@ -180,7 +180,7 @@ for key, _ in data {
 
 ### Оператор break
 
-`break` завершает выполнение текущего оператора `while`, `for` или `loop` :
+`break` завершает выполнение текущего оператора `while`, `for` или `loop`:
 
 ```zephir
 for item in ["a", "b", "c", "d"] {
