@@ -1,6 +1,6 @@
 ---
 layout: default
-language: 'zh-cn'
+language: 'en'
 version: '0.11'
 ---
 
