@@ -1,8 +1,8 @@
----
-layout: default
-language: 'es-es'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11'
+
+* * *
 
 # Custom optimizers
 
@@ -177,7 +177,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/{{ version }}/{{ language }}/config) file:
+This file must be added at a special section in the [config.json](/{{ page.version }}/{{ page.language }}/config) file:
 
 ```json
 "extra-sources": [
