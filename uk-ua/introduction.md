@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'uk'
-version: '0.11'
+version: '0.10'
 ---
 
 # Представляємо Zephir
