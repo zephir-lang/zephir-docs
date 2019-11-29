@@ -108,7 +108,7 @@ layout: default language: 'ru-ru' version: '0.11'
 
 ## destructors
 
-Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
+Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ version }}/{{ language }}/lifecycle)".
 
 ```json
 {
@@ -178,7 +178,7 @@ layout: default language: 'ru-ru' version: '0.11'
 
 ## extra
 
-Contains extra settings that also can be passed, as is, [on the command line](/{{ version }}/{{ language }}/command-line). В настоящее время это:
+Содержит дополнительные параметры, которые также могут быть [ переданы в командной строке](/{{ version }}/{{ language }}/command-line). В настоящее время это:
 
 - `export-classes` — генерирует заголовочные файлы для доступа к вашим классам из другого Си-кода
 - `indent` — использование `табуляции` или `пробелов` для отступов в коде генерируемых файлов
@@ -294,7 +294,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/{
 
 ## initializers
 
-Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
+Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ version }}/{{ language }}/lifecycle)".
 
 ```json
 {
