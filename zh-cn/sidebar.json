@@ -68,7 +68,11 @@
         "url": "config"
     },
     {
-        "text": "Lifecycle hooks",
+        "text": "Command Line",
+        "url": "command-line"
+    },
+    {
+        "text": "生命周期钩子",
         "url": "lifecycle"
     },
     {
@@ -78,10 +82,6 @@
     {
         "text": "phpinfo() sections",
         "url": "phpinfo"
-    },
-    {
-        "text": "Command line",
-        "url": "command-line"
     },
     {
         "text": "Static analysis",
