@@ -631,7 +631,7 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Integer overflow",
+            "text": "Програмне переповнення цілих чисел",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
