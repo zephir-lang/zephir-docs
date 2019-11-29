@@ -253,7 +253,7 @@ layout: default language: 'ru-ru' version: '0.11'
 
 ## globals
 
-Доступные для расширения глобальные параметры. Check the [globals](/{{ version }}/{{ language }}/globals) chapter for more information.
+Доступные для расширения глобальные параметры. Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ version }}/{{ language }}/globals)".
 
 ```json
 {
@@ -274,7 +274,7 @@ layout: default language: 'ru-ru' version: '0.11'
 
 ## info
 
-Секции `phpinfo()`. Check the [phpinfo()](/{{ version }}/{{ language }}/phpinfo) chapter for more information.
+Секции `phpinfo()`. За дополнительной информацией обратитесь к главе "[Секции phpinfo()](/{{ version }}/{{ language }}/phpinfo)".
 
 ```json
 {
