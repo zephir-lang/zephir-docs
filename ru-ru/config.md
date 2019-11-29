@@ -271,7 +271,7 @@ version: '0.12'
 
 ## info
 
-Секции `phpinfo()`. Check the [phpinfo()](/{{ version }}/{{ language }}/phpinfo) chapter for more information.
+Секции `phpinfo()`. За дополнительной информацией обратитесь к главе "[Секции phpinfo()](/{{ version }}/{{ language }}/phpinfo)".
 
 ```json
 {
