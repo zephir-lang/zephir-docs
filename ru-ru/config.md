@@ -1,8 +1,8 @@
----
-layout: default
-language: 'ru-ru'
-version: '0.11'
----
+* * *
+
+layout: default language: 'ru-ru' version: '0.11'
+
+* * *
 
 # Конфигурационный файл
 
@@ -108,7 +108,7 @@ version: '0.11'
 
 ## destructors
 
-Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ version }}/{{ language }}/lifecycle)".
+Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
 
 ```json
 {
@@ -178,7 +178,7 @@ version: '0.11'
 
 ## extra
 
-Содержит дополнительные параметры, которые также могут быть [ переданы в командной строке](/{{ version }}/{{ language }}/command-line). В настоящее время это:
+Contains extra settings that also can be passed, as is, [on the command line](/{{ page.version }}/{{ page.language }}/command-line). В настоящее время это:
 
 - `export-classes` — генерирует заголовочные файлы для доступа к вашим классам из другого Си-кода
 - `indent` — использование `табуляции` или `пробелов` для отступов в коде генерируемых файлов
@@ -253,7 +253,7 @@ version: '0.11'
 
 ## globals
 
-Доступные для расширения глобальные параметры. Обратитесь к главе "[Глобальные параметры расширения](/{{ version }}/{{ language }}/globals)" для получения дополнительной информации.
+Доступные для расширения глобальные параметры. Check the [globals](/{{ page.version }}/{{ page.language }}/globals) chapter for more information.
 
 ```json
 {
@@ -274,7 +274,7 @@ version: '0.11'
 
 ## info
 
-Секции `phpinfo()`. За дополнительной информацией обратитесь к главе "[Секции phpinfo()](/{{ version }}/{{ language }}/phpinfo)".
+Секции `phpinfo()`. Check the [phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo) chapter for more information.
 
 ```json
 {
@@ -294,7 +294,7 @@ version: '0.11'
 
 ## initializers
 
-Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ version }}/{{ language }}/lifecycle)".
+Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
 
 ```json
 {
