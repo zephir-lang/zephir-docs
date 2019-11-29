@@ -1,8 +1,8 @@
----
-layout: default
-language: 'uk-ua'
-version: '0.10'
----
+* * *
+
+layout: default language: 'uk' version: '0.10'
+
+* * *
 
 # Closures
 
