@@ -1,8 +1,8 @@
----
-layout: default
-language: 'ru-ru'
-version: '0.11'
----
+* * *
+
+layout: default language: 'ru-ru' version: '0.11'
+
+* * *
 
 # Типы
 
@@ -243,7 +243,7 @@ let ch = 'Z';
 
 ### Integer/Unsigned Integer
 
-`integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
+значения типа `integer` подобны их аналогам в динамических типах. Значения, присвоенные целочисленным переменным, остаются целыми:
 
 ```zephir
 int a;
