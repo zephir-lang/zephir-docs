@@ -198,52 +198,52 @@
             "url": "#conditionals"
         },
         {
-            "text": "Оператор if",
+            "text": "If Statement",
             "level": 2,
             "url": "#conditionals-if"
         },
         {
-            "text": "Оператор switch",
+            "text": "Switch Statement",
             "level": 2,
             "url": "#conditionals-switch"
         },
         {
-            "text": "Циклы",
+            "text": "Loops",
             "level": 1,
             "url": "#loops"
         },
         {
-            "text": "Цикл while",
+            "text": "While Statement",
             "level": 2,
             "url": "#loops-while"
         },
         {
-            "text": "Цикл loop",
+            "text": "Loop Statement",
             "level": 2,
             "url": "#loops-loop"
         },
         {
-            "text": "Цикл for",
+            "text": "For Statement",
             "level": 2,
             "url": "#loops-for"
         },
         {
-            "text": "Оператор break",
+            "text": "Break Statement",
             "level": 2,
             "url": "#loops-break"
         },
         {
-            "text": "Оператор continue",
+            "text": "Continue Statement",
             "level": 2,
             "url": "#loops-continue"
         },
         {
-            "text": "Оператор require",
+            "text": "Require",
             "level": 1,
             "url": "#require"
         },
         {
-            "text": "Оператор let",
+            "text": "Let",
             "level": 1,
             "url": "#let"
         }
