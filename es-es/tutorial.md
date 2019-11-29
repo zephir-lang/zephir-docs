@@ -55,7 +55,7 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
       stubs      Generates stubs that can be used in a PHP IDE
     
 
-If something went wrong, please return back to the [installation](/0.12/en/installation) page.
+If something went wrong, please return back to the [installation](/{{ version }}/{{ language }}/installation) page.
 
 <a name='extension-skeleton'></a>
 
