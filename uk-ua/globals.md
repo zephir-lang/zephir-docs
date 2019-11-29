@@ -1,6 +1,6 @@
 ---
 layout: default
-language: 'uk'
+language: 'uk-ua'
 version: '0.10'
 ---
 
