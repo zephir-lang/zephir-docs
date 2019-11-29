@@ -108,7 +108,7 @@ version: '0.11'
 
 ## destructors
 
-此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
+此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
 
 ```json
 {
@@ -178,7 +178,7 @@ version: '0.11'
 
 ## extra
 
-Contains extra settings that also can be passed, as is, [on the command line](/0.11/en/command-line). Currently, that's:
+Contains extra settings that also can be passed, as is, [on the command line](/{{ version }}/{{ language }}/command-line). Currently, that's:
 
 - `export-classes` - generate headers for accessing your classes from other C code
 - `indent` - select between using `tabs` or `spaces` to indent code in generated files
@@ -253,7 +253,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/0
 
 ## globals
 
-扩展全局可用。 Check the [globals](/0.11/en/globals) chapter for more information.
+扩展全局可用。 Check the [globals](/{{ version }}/{{ language }}/globals) chapter for more information.
 
 ```json
 {
@@ -274,7 +274,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/0
 
 ## info
 
-`phpinfo()` 信息. Check the [phpinfo()](/0.11/en/phpinfo) chapter for more information.
+`phpinfo()` 信息. Check the [phpinfo()](/{{ version }}/{{ language }}/phpinfo) chapter for more information.
 
 ```json
 {
@@ -294,7 +294,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/0
 
 ## initializers
 
-这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
+这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
 
 ```json
 {
