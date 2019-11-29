@@ -68,7 +68,11 @@
         "url": "config"
     },
     {
-        "text": "Lifecycle hooks",
+        "text": "Command Line",
+        "url": "command-line"
+    },
+    {
+        "text": "生命周期钩子",
         "url": "lifecycle"
     },
     {
@@ -84,7 +88,7 @@
         "url": "static-analysis"
     },
     {
-        "text": "Optimizations",
+        "text": "优化",
         "url": "optimizations"
     },
     {
