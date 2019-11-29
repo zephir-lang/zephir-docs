@@ -49,6 +49,63 @@
         }
     ],
     "closures": [],
+    "command-line": [
+        {
+            "text": "zephir api",
+            "level": 1,
+            "url": "#zephir-api"
+        },
+        {
+            "text": "zephir build",
+            "level": 1,
+            "url": "#zephir-build"
+        },
+        {
+            "text": "zephir clean",
+            "level": 1,
+            "url": "#zephir-clean"
+        },
+        {
+            "text": "zephir compile",
+            "level": 1,
+            "url": "#zephir-compile"
+        },
+        {
+            "text": "zephir fullclean",
+            "level": 1,
+            "url": "#zephir-fullclean"
+        },
+        {
+            "text": "zephir generate",
+            "level": 1,
+            "url": "#zephir-generate"
+        },
+        {
+            "text": "zephir 帮助",
+            "level": 1,
+            "url": "#zephir-help"
+        },
+        {
+            "text": "zephir init",
+            "level": 1,
+            "url": "#zephir-init"
+        },
+        {
+            "text": "zephir install",
+            "level": 1,
+            "url": "#zephir-install"
+        },
+        {
+            "text": "zephir list",
+            "level": 1,
+            "url": "#zephir-list"
+        },
+        {
+            "text": "zephir stubs",
+            "level": 1,
+            "url": "#zephir-stubs"
+        }
+    ],
     "config": [
         {
             "text": "api",
