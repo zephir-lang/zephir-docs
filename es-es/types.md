@@ -116,7 +116,7 @@ var a = 5, b = 10050;
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### Integer sobrecarga
+### Desbordamiento de Enteros
 
 Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Como en C, si haces operaciones que pueden devolver un número grande, usted debe usar tipos como `unsigned long` o `float` para almacenarlos:
 
@@ -243,7 +243,7 @@ let ch = 'Z';
 
 <a name='static-types-integer-unsigned'></a>
 
-### Integer/Integer sin signo
+### Integer/Unsigned Integer
 
 `integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
@@ -329,7 +329,7 @@ let a = 2147483648,
 
 <a name='static-types-long-unsigned'></a>
 
-### Long/Long sin signo
+### Long/Unsigned Long
 
 Las variables `long` son dos veces más grandes que las variables `integer`, por lo que pueden almacenar números más grandes. Al igual que con los `integer`, los valores asignados a variables `long` se convierten automáticamente a este tipo:
 
