@@ -56,7 +56,6 @@ zephir help
     
 
 If something went wrong, please return back to the [installation](/{{ version }}/{{ language }}/installation) page.
-Если что-то пошло не так, вернитесь к разделу [установка](/{{ version }}/{{ language }}/installation).
 
 <a name='extension-skeleton'></a>
 

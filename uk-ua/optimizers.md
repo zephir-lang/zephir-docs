@@ -178,11 +178,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-<<<<<<< HEAD
 This file must be added at a special section in the [config.json](/{{ version }}/{{ language }}/config) file:
-=======
-This file must be added at a special section in the [config.json](/{{ version }}/{{ language }}/config) file:
->>>>>>> 0.12
 
 ```json
 "extra-sources": [
@@ -198,8 +194,4 @@ Lastly you will have to specify where Zephir can find your optimizer by using th
 ]
 ```
 
-<<<<<<< HEAD
 Check the complete source code of this example [here](https://github.com/zephir-lang/zephir-samples/tree/master/ext-optimizers)
-=======
-Check the complete source code of this example [here](https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers)
->>>>>>> 0.12
