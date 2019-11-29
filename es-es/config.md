@@ -108,7 +108,7 @@ Extension description - any text describing your extension:
 
 ## destructores
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), and `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
 
 ```json
 {
@@ -178,7 +178,7 @@ You can include a class from another namespace/extension directly in your own ex
 
 ## extra
 
-Contains extra settings that also can be passed, as is, [on the command line](/0.11/en/command-line). Currently, that's:
+Contains extra settings that also can be passed, as is, [on the command line](/{{ version }}/{{ language }}/command-line). Currently, that's:
 
 - `export-classes` - generate headers for accessing your classes from other C code
 - `indent` - select between using `tabs` or `spaces` to indent code in generated files
@@ -253,7 +253,7 @@ Any additional files you want to add to the compilation process - the search dir
 
 ## globals
 
-Extension globals available. Check the [globals](/0.11/en/globals) chapter for more information.
+Extension globals available. Check the [globals](/{{ version }}/{{ language }}/globals) chapter for more information.
 
 ```json
 {
@@ -274,7 +274,7 @@ Extension globals available. Check the [globals](/0.11/en/globals) chapter for m
 
 ## info
 
-`phpinfo()` sections. Check the [phpinfo()](/0.11/en/phpinfo) chapter for more information.
+`phpinfo()` sections. Check the [phpinfo()](/{{ version }}/{{ language }}/phpinfo) chapter for more information.
 
 ```json
 {
@@ -294,7 +294,7 @@ Extension globals available. Check the [globals](/0.11/en/globals) chapter for m
 
 ## iniciadores
 
-This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/0.11/en/lifecycle) chapter for more information.
+This setting lets you provide one or more C functions to be executed on certain extension lifecycle events - specifically, `GINIT` (`globals`), `MINIT` (`module`), and `RINIT` (`request`). Check the [lifecycle hooks](/{{ version }}/{{ language }}/lifecycle) chapter for more information.
 
 ```json
 {
