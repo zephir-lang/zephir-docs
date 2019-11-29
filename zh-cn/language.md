@@ -1,8 +1,16 @@
----
-layout: default
-language: 'zh-cn'
-version: '0.11'
----
+* * *
+
+layout: default language: 'en' version: '0.11' menu:
+
+- text: 'Organizing code in files and namespaces' url: '#organizing-code-in-files-and-namespaces'
+- text: 'Instruction separation' url: '#instruction-separation'
+- text: 'Comments' url: '#comments'
+- text: 'Variable declarations' url: '#variable-declarations'
+- text: 'Variable scope' url: '#variable-scope'
+- text: 'Super globals' url: '#super-globals'
+- text: 'Local symbol table' url: '#local-symbol-table'
+
+* * *
 
 # 基本语法
 
