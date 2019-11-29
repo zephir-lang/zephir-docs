@@ -4,19 +4,19 @@ layout: default language: 'ru-ru' version: '0.10'
 
 * * *
 
-# Exceptions
+# Исключения
 
-Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.
+Zephir реализует исключения на очень низком уровне, обеспечивая подобное PHP поведение и функциональность.
 
-When an exception is thrown, a `catch` block can be used to capture the exception and allow the developer to provide proper handling:
+Когда генерируется исключение, блок `catch` может быть использован для перехвата исключения и предоставления разработчику возможности обеспечить надлежащую обработку:
 
-Exceptions can be thrown inside the `try` block. Handling happens in the `catch` block, exactly as in PHP:
+Исключения могут быть выброшены внутри блока `try`. Обработка происходит в блоке `catch` точно так же, как в PHP:
 
 ```zephir
 var e;
 try {
 
-    throw new \Exception("This is an exception");
+    throw new \Exception("Это исключение");
 
 } catch \Exception, e {
 
@@ -24,20 +24,20 @@ try {
 }
 ```
 
-Zephir also provides a "silent" `try` block, that simply ignores any exceptions produced within that block:
+Zephir также предоставляет "тихий" блок `try`, который просто игнорирует любые исключения, генерируемые внутри этого блока:
 
 ```zephir
 try {
-    throw new \Exception("This is an exception");
+    throw new \Exception("Это исключение");
 }
 ```
 
-If you don't need an exception variable when 'catch'ing, then you can safely not provide it:
+Если вам не нужна переменная исключения при его перехвате, вы можете не указать её:
 
 ```zephir
 try {
 
-    throw new \Exception("This is an exception");
+    throw new \Exception("Это исключение");
 
 } catch \Exception {
 
@@ -45,13 +45,13 @@ try {
 }
 ```
 
-A single `catch` block can be used to catch multiple types of exception:
+Один `catch` блок может использоваться для перехвата нескольких типов исключений:
 
 ```zephir
 var e;
 try {
 
-    throw new \Exception("This is an exception");
+    throw new \Exception("Это исключение");
 
 } catch \RuntimeException|\Exception, e {
 
@@ -59,11 +59,11 @@ try {
 }
 ```
 
-Zephir allows you to throw literals or static typed variables as if they were the message of the exception:
+Zephir позволяет выбрасывать любые литеры или статически типизированные переменные, как если бы они были сообщением исключения:
 
 ```zephir
-// throw new \Exception("Test");
-throw "Test";
+// throw new \Exception("Тест");
+throw "Тест";
 
 // throw new \Exception((string) 't');
 throw 't';
@@ -75,7 +75,7 @@ throw 123;
 throw 123.123;
 ```
 
-Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is, `Exception::getFile()` and `Exception::getLine()` return the location in the Zephir code where the exception was thrown:
+Исключения Zephir предоставляют те же методы, что и исключения PHP, чтобы узнать, где произошло исключение. Таким образом, `Exception::getFile()` и ` Exception::getLine()` возвращают имя файла и номер строки соотвественно, где в Zephir коде было выброшено исключение:
 
 ```bash
 Exception: The static method 'someMethod' does not exist on model 'Robots'
