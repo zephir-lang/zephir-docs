@@ -1,8 +1,38 @@
----
-layout: default
-language: 'ru-ru'
-version: '0.10'
----
+* * *
+
+layout: default language: 'ru-ru' version: '0.10' menu:
+
+- text: 'api' url: '#api'
+- text: 'author' url: '#author'
+- text: 'backend' url: '#backend'
+- text: 'constants-sources' url: '#constants-sources'
+- text: 'description' url: '#description'
+- text: 'destructors' url: '#destructors'
+- text: 'extension-name' url: '#extension-name'
+- text: 'external-dependencies' url: '#external-dependencies'
+- text: 'extra' url: '#extra'
+- text: 'extra-cflags' url: '#extra-cflags'
+- text: 'extra-classes' url: '#extra-classes'
+- text: 'extra-libs' url: '#extra-libs'
+- text: 'extra-sources' url: '#extra-sources'
+- text: 'globals' url: '#globals'
+- text: 'info' url: '#info'
+- text: 'initializers' url: '#initializers'
+- text: 'name' url: '#name'
+- text: 'namespace' url: '#namespace'
+- text: 'optimizations' url: '#optimizations'
+- text: 'optimizer-dirs'  
+    url: '#optimizer-dirs'
+- text: 'package-dependencies' url: '#package-dependencies'
+- text: 'prototype-dir' url: '#prototype-dir'
+- text: 'requires' url: '#requires'
+- text: 'silent' url: '#silent'
+- text: 'stubs' url: '#stubs'
+- text: 'verbose' url: '#verbose'
+- text: 'version' url: '#version'
+- text: 'warnings' url: '#warnings'
+
+* * *
 
 # Конфигурационный файл
 
@@ -108,7 +138,7 @@ version: '0.10'
 
 ## destructors
 
-Этот параметр позволяет предоставить одну или несколько функций C, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ version }}/{{ language }}/lifecycle)".
+Этот параметр позволяет предоставить одну или несколько функций C, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/0.10/en/lifecycle)".
 
 ```json
 {
@@ -250,7 +280,7 @@ version: '0.10'
 
 ## globals
 
-Доступные для расширения глобальные параметры. За дополнительной информацией обратитесь к главе "[Глобальные параметры расширения](/{{ version }}/{{ language }}/globals)".
+Доступные для расширения глобальные параметры. За дополнительной информацией обратитесь к главе "[Глобальные параметры расширения](/0.10/en/globals)".
 
 ```json
 {
@@ -271,7 +301,7 @@ version: '0.10'
 
 ## info
 
-Секции `phpinfo()`. За дополнительной информацией обратитесь к главе "[Секции phpinfo()](/{{ version }}/{{ language }}/phpinfo)".
+Секции `phpinfo()`. За дополнительной информацией обратитесь к главе "[Секции phpinfo()](/0.10/en/phpinfo)".
 
 ```json
 {
@@ -291,7 +321,7 @@ version: '0.10'
 
 ## initializers
 
-Этот параметр позволяет предоставить одну или несколько функций C для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ version }}/{{ language }}/lifecycle)".
+Этот параметр позволяет предоставить одну или несколько функций C для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/0.10/en/lifecycle)".
 
 ```json
 {
