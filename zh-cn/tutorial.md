@@ -60,7 +60,7 @@ zephir list
       stubs      Generates stubs that can be used in a PHP IDE
     
 
-If something went wrong, please return back to the [installation](/{{ version }}/{{ language }}/installation) page.
+If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
 
 <a name='extension-skeleton'></a>
 
