@@ -243,7 +243,7 @@ let ch = 'Z';
 
 <a name='static-types-integer-unsigned'></a>
 
-### Integer/Unsigned Integer
+### 整数/无符号整数
 
 `integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
@@ -329,7 +329,7 @@ let a = 2147483648,
 
 <a name='static-types-long-unsigned'></a>
 
-### Long/Unsigned Long
+### 长值/无符号长值
 
 `long` 变量比 `integer` 变量大两倍, 因此它们可以存储较大的数字。 与 `integer` 一样, 分配给 `long` 变量的值将自动转换为此类型:
 
