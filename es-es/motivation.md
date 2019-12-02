@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 
 # ¿Por qué Zephir?
-
 Actualmente las aplicaciones PHP deben equilibrar una serie de problemas, la estabilidad, el rendimiento y la funcionalidad. Cada aplicación PHP se basa en un conjunto de componentes comunes, que también son la base para muchas otras aplicaciones.
 
 Estos componentes comunes son librerías, frameworks o una combinación de ellos. Una vez instalados, los frameworks raramente cambian, y siendo la base de la aplicación, deben ser altamente funcionales y también muy rápidos.
@@ -17,7 +16,6 @@ Con Zephir, se pueden implementar bibliotecas/frameworks/aplicaciones orientadas
 <a name='if-you-are-a-php-programmer'></a>
 
 ## Si eres un programador PHP...
-
 PHP es uno de los idiomas más populares en el desarrollo de aplicaciones web. Los lenguajes dinámicamente tipificados e interpretados como PHP ofrecen un productividad muy alta debido a su flexibilidad.
 
 Desde la versión 4, PHP está basado en la implementación del motor Zend. Se trata de una máquina virtual que ejecuta el código PHP desde su representación de código en bytes. El motor Zend está presente en casi todas las instalaciones de PHP en el mundo. Con Zephir, se pueden crear extensiones para PHP que se ejecuten en el motor Zend.
@@ -27,7 +25,6 @@ PHP tiene alojando a Zephir, por lo que obviamente tienen muchas similitudes; si
 <a name='if-you-are-a-c-programmer'></a>
 
 ## Si eres un programador C...
-
 C es una de los lenguajes más poderosos y populares jamás creados. De hecho, PHP está escrito en C, es una de las razones de que las extensiones PHP estén disponibles para él. C le da la libertad de administrar la memoria, usar tipos de bajo nivel e incluso rutinas de ensamblaje en línea.
 
 Sin embargo, desarrollar grandes aplicaciones en C puede tomar mucho más tiempo de lo esperado, comparado con PHP o Zephir, y algunos errores pueden ser difíciles de encontrar si no eres un programador experimentado.
@@ -37,7 +34,6 @@ Zephir fue diseñado para ser seguro, por lo que no implementa punteros o gesti�
 <a name='compilation-vs-interpretation'></a>
 
 ## Compilación vs Interpretación
-
 La compilación generalmente retrasa el desarrollo; necesitará un poco más de paciencia para compilar el código antes de ejecutarlo. Por otro lado, la interpretación tiende a reducir el rendimiento del código a favor de la productividad del desarrollador. Dicho esto, en algunos casos, no hay ninguna diferencia notable entre la velocidad del código interpretado y del compilado.
 
 Zephir requiere la compilación de su código, pero la funcionalidad se utiliza desde PHP, que es interpretado.
@@ -47,7 +43,6 @@ Una vez que se compila el código, no es necesario hacerlo otra vez. El código 
 <a name='statically-typed-versus-dynamically-typed-languages'></a>
 
 ## Lenguajes de Tipificado Estático vs Dinámico
-
 En general, en un lenguaje estáticamente tipificado, una variable está limitada a un tipo particular durante toda su vida. No se puede cambiar su tipo y sólo puede hacer referencia a las operaciones e instancias de tipo compatible. Los lenguajes como C o C++ fueron implementados con este esquema:
 
 ```zephir
@@ -75,7 +70,6 @@ Zephir es tanto estática como dinámicamente tipificado, lo que le permite apro
 <a name='compilation-scheme'></a>
 
 ## Esquema de compilación
-
 Zephir ofrece la generación nativa de código (actualmente a través de la compilación a C). Un compilador como gcc/clang/vc++ optimiza y compila el código hasta código de máquina. El siguiente gráfico muestra como funciona el proceso:
 
 ![esquema de compilación](/assets/content/scheme.png)
@@ -89,11 +83,9 @@ Además de los proporcionados por Zephir, con el tiempo, los compiladores han im
 <a name='code-protection'></a>
 
 ## Protección del código
-
 En algunas circunstancias, la compilación no mejora significativamente el rendimiento. Esto puede deberse a que el cuello de botella se encuentra en la porción o porciones de entrada y salida de la aplicación en lugar del límite de cálculo/memoria. Sin embargo, compilando el código, también podría brindar algún nivel de protección intelectual a su aplicación. Con Zephir, que produce nativos binarios, también tiene la capacidad de "ocultar" el código original a usuarios o clientes.
 
 <a name='conclusion'></a>
 
 ## Conclusión
-
 Zephir no fue creado para reemplazar a PHP o C. En cambio, creemos que es un complemento a ellos, invitando a los desarrolladores PHP a aventurarse en la compilación de código y en el tipificado estático. Zephir es un intento para unirse a las cosas buenas de los mundos C y PHP, buscando oportunidades para hacer a las aplicaciones más rápidas.
