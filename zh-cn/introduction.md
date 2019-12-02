@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 
 # Zephir 简介
-
 Zephir 是一种语言, 它能够满足 php 开发人员的主要需求, 他们试图编写和编译可由 php 执行的代码。 它是动态的/静态类型的, 它的一些功能为 php 开发人员所熟悉。
 
 Zephir 这个名字是单词 z (end) e (ngine)/ph (p)/i (nte) r (mediate) 的收缩。 While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
@@ -13,7 +12,6 @@ Zephir 这个名字是单词 z (end) e (ngine)/ph (p)/i (nte) r (mediate) 的收
 <a name='hello-world'></a>
 
 ## Hello World!
-
 每种语言都有自己的 "Hello World!" 示例。 在 Zephir 中, 这个介绍性示例展示了该语言的一 些重要功能。
 
 Zephir 中的代码必须放在类中。 该语言旨在创建面向对象的库框架, 因此不允许在类之外使用代码。 此外, 还需要命名空间:
@@ -70,8 +68,7 @@ PHP_METHOD(Test_Hello, say) {
 <a name='a-taste-of-zephir'></a>
 
 ## 一个 Zephir 的尝试
-
-在下面的例子中，我们将描述足够多的细节来理解发生了什么。 目标是让您了解Zephir中的编程是什么样子的。 我们将在后面的章节中探索*细节*的特性。
+在下面的例子中，我们将描述足够多的细节来理解发生了什么。 目标是让您了解Zephir中的编程是什么样子的。 We'll explore the *details* of the features in subsequent chapters.
 
 下面的例子很简单; 它实现了一个类和一个方法，以及一个检查数组类型的小程序。
 
