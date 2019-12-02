@@ -1,17 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+---
 
 # 数组
-
 Zephir中的数组操作提供了一种类似PHP [数组](http://www.php.net/manual/en/language.types.array.php)的方法。 数组是 < 0>hash 表 </0 > 的实现。
 
 <a name='declaring-array-variables'></a>
 
 ## 声明数组变量
-
 数组变量可以使用关键字 "var" 或 "array" 来声明:
 
 ```zephir
@@ -22,7 +20,6 @@ array b = []; // 数组变量，其类型不能在执行过程中更改
 <a name='creating-arrays'></a>
 
 ## 创建数组
-
 通过将其元素括在方括号中创建数组:
 
 ##### 创建空数组
@@ -72,7 +69,6 @@ let elements = [4: "bar", "foo": 8];
 <a name='updating-arrays'></a>
 
 ## Updating arrays
-
 Arrays are updated in the same way as PHP, using square brackets:
 
 ##### 使用字符串键名更新数组
@@ -97,7 +93,6 @@ let elements["foo"][0] = "bar";
 <a name='appending-elements'></a>
 
 ## 追加元素
-
 元素可以追加到数组的末尾, 如下所示:
 
 ##### 向数组追加一个元素
@@ -109,7 +104,6 @@ let elements[] = "bar";
 <a name='reading-elements-from-arrays'></a>
 
 ## 从数组中读取元素
-
 可以读取数组元素, 如下所示:
 
 ##### 使用字符串键获取元素 `foo`
