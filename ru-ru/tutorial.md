@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'ru-ru' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'ru-ru'
+version: '0.10'
+---
 
 # Урок
-
 Zephir и это руководство предназначены для разработчиков PHP, которые хотят создавать C-расширения с меньшей сложностью.
 
 Мы предполагаем, что вы знакомы с одним или несколькими языками программирования. Мы проводим параллели с функциями в PHP, C, Javascript и других языках. Мы будем указывать на функции в Zephir, которые схожи с их аналогами в других языках, а также на функции, поведение которых не является похожим или даже является новым. Если вы знаете какой-либо из этих языков, вы будете отмечать эти сходства и различия более быстро.
@@ -15,7 +14,6 @@ Zephir и это руководство предназначены для раз
 <a name='checking-the-installation'></a>
 
 ## Проверка установки
-
 Если вы успешно установили Zephir, вы должны быть в состоянии выполнить следующую команду в своей консоли:
 
 ```bash
@@ -24,45 +22,45 @@ zephir help
 
 Если все в порядке, на вашем экране должна появиться следующая справка (или очень похожая):
 
-     _____              __    _
-    /__  /  ___  ____  / /_  (_)____
-      / /  / _ \/ __ \/ __ \/ / ___/
-     / /__/  __/ /_/ / / / / / /
-    /____/\___/ .___/_/ /_/_/_/
-             /_/
-    
-    Zephir version 0.10.9a-dev
-    
-    Usage:
-        command [options]
-    
-    Available commands:
-        stubs               Generates extension PHP stubs
-        install             Installs the extension (requires root password)
-        version             Shows the Zephir version
-        compile             Compile a Zephir extension
-        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
-        init [namespace]    Initializes a Zephir extension
-        fullclean           Cleans the generated object files in compilation
-        builddev            Generate/Compile/Install a Zephir extension in development mode
-        clean               Cleans the generated object files in compilation
-        generate            Generates C code from the Zephir code
-        help                Displays this help
-        build               Generate/Compile/Install a Zephir extension
-    
-    Options:
-        -f([a-z0-9\-]+)     Enables compiler optimizations
-        -fno-([a-z0-9\-]+)  Disables compiler optimizations
-        -w([a-z0-9\-]+)     Turns a warning on
-        -W([a-z0-9\-]+)     Turns a warning off
-    
+```
+ _____              __    _
+/__  /  ___  ____  / /_  (_)____
+  / /  / _ \/ __ \/ __ \/ / ___/
+ / /__/  __/ /_/ / / / / / /
+/____/\___/ .___/_/ /_/_/_/
+         /_/
+
+Zephir version 0.10.9a-dev
+
+Usage:
+    command [options]
+
+Available commands:
+    stubs               Generates extension PHP stubs
+    install             Installs the extension (requires root password)
+    version             Shows the Zephir version
+    compile             Compile a Zephir extension
+    api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
+    init [namespace]    Initializes a Zephir extension
+    fullclean           Cleans the generated object files in compilation
+    builddev            Generate/Compile/Install a Zephir extension in development mode
+    clean               Cleans the generated object files in compilation
+    generate            Generates C code from the Zephir code
+    help                Displays this help
+    build               Generate/Compile/Install a Zephir extension
+
+Options:
+    -f([a-z0-9\-]+)     Enables compiler optimizations
+    -fno-([a-z0-9\-]+)  Disables compiler optimizations
+    -w([a-z0-9\-]+)     Turns a warning on
+    -W([a-z0-9\-]+)     Turns a warning off
+```
 
 Если что-то пошло не так, вернитесь к главе "[Установка](/0.11/en/installation)".
 
 <a name='extension-skeleton'></a>
 
 ## Каркас расширения
-
 Первое, что нам нужно сделать, это сгенерировать скелет расширения. Это предоставит нашему расширению базовую структуру, которую мы должны начать работать. В нашем случае мы создадим расширение под названием `utils`:
 
 ```bash
@@ -92,7 +90,6 @@ ext/ utils/ config.json
 <a name='adding-our-first-class'></a>
 
 ## Добавление нашего первого класса
-
 Zephir предназначен для создания объектно-ориентированных расширений. Чтобы начать разработку, нам нужно добавить наш первый класс к расширению.
 
 Как и во многих языках/инструментах, первое, что мы хотим сделать, это увидеть `hello world`, сгенерированный Zephir, и проверить, что все в порядке. Итак, наш первый класс будет называться `Utils\Greeting` и он содержит метод печати `hello world!`.
@@ -137,7 +134,6 @@ Don't forget to restart your web server
 <a name='initial-testing'></a>
 
 ## Первоначальное тестирование
-
 Теперь, когда расширение было добавлено в ваш `php.ini`, проверьте, правильно ли загружается расширение, выполнив следующее:
 
 ```bash
@@ -170,7 +166,6 @@ echo Utils\Greeting::say(), "\n";
 <a name='a-useful-class'></a>
 
 ## Удобные класс
-
 Метод `Utils\Greeting::say` был хорош, чтобы проверить, правильно ли сконфигурирована наша среда. А теперь давайте создадим еще несколько полезных классов.
 
 Первый полезный класс, который мы добавим к этому расширению, предоставит пользователям средства фильтрации. Этот класс называется `Utils\Filter`, и его код должен быть помещен в `utils/utils/filter.zep`:
@@ -221,7 +216,6 @@ $f->alpha("hello");
     l
     l
     o
-    
 
 Проверка каждого символа в строке проста. Теперь мы можем просто создать другую строку с правильными отфильтрованными символами:
 
@@ -253,10 +247,9 @@ $f = new Utils\Filter();
 echo $f->alpha("!he#02l3'121lo."); // выведет "hello"
 ```
 
-В следующем скринкасте вы можете посмотреть, как создать расширение, объяснённое в этом уроке: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+В следующем скринкасте вы можете посмотреть, как создать расширение, объяснённое в этом уроке: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe>
 
 <a name='conclusion'></a>
 
 ## Заключение
-
 Это очень простой учебник, и, как вы можете видеть, легко начать создание расширений с помощью Zephir. Мы приглашаем вас продолжить чтение руководства, чтобы вы могли ознакомиться с дополнительными функциями, которые предлагает Zephir!
