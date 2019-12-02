@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'tr-tr'
+version: '0.10'
+---
 
 # Lifecycle hooks
-
 PHP provides several lifecycle events, which extensions can use to perform common initialization or shutdown tasks. Normally, Zephir's own hooks into these events will cover all the setup and tear down your extension will need, but if you find that you need to do something more, there are a few options you can use to pass your own code into these same hooks.
 
 Consider the following diagram:
@@ -14,12 +13,11 @@ Consider the following diagram:
 
 Lifecycle hooks are registered in the `config.json` file. As you can see in the diagram above, there are four types of lifecycle hooks - `globals`, `initializers`, `destructors`, and `info`. Each of these has its own corresponding root-level setting in the configuration, and both [globals](/0.11/en/globals) and [info](/0.11/en/phpinfo) have their own chapters. This chapter covers the other two settings.
 
-Each hook in the `config.json` file is an array of objects, which themselves are essentially `include`/`code` pairs. The `include` value will pull in a given C header file, if it hasn't been already, so that the `code` will have access to its contents. The `code` value is the logic run by the hook itself, and while you can technically put any valid C in here, it is ***strongly*** recommended to put logic longer than one or two lines into a separate C source file (such as the one pulled in along with your `include`d header file), and use a single-line function call here.
+Each hook in the `config.json` file is an array of objects, which themselves are essentially `include`/`code` pairs. The `include` value will pull in a given C header file, if it hasn't been already, so that the `code` will have access to its contents. The `code` value is the logic run by the hook itself, and while you can technically put any valid C in here, it is **_strongly_** recommended to put logic longer than one or two lines into a separate C source file (such as the one pulled in along with your `include`d header file), and use a single-line function call here.
 
 <a name='initializers'></a>
 
 ## initializers
-
 The `initializers` block looks something like this:
 
 ```json
@@ -58,7 +56,6 @@ This block is responsible for defining hooks into the Init events shown in the d
 <a name='desctructors'></a>
 
 ## destructors
-
 The `destructors` block looks something like this:
 
 ```json
@@ -98,4 +95,4 @@ The `destructors` block looks something like this:
 }
 ```
 
-Much as the `initializers` block is responsible for defining hooks into the Init events shown in the diagram above, *this* block is responsible for defining hooks into the Shutdown events. There are four of these: `request` for finalizing any data before a response is sent to the client, `post-request` for cleaning up after a response has been sent, `module` for cleaning up after the extension itself before the PHP process shuts down, and `globals` for cleaning up the global variable space.
+Much as the `initializers` block is responsible for defining hooks into the Init events shown in the diagram above, _this_ block is responsible for defining hooks into the Shutdown events. There are four of these: `request` for finalizing any data before a response is sent to the client, `post-request` for cleaning up after a response has been sent, `module` for cleaning up after the extension itself before the PHP process shuts down, and `globals` for cleaning up the global variable space.
