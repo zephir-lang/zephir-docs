@@ -1,6 +1,6 @@
 ---
 layout: default
-language: 'en'
+language: 'es-es'
 version: '0.11'
 ---
 
@@ -18,7 +18,7 @@ Each hook in the `config.json` file is an array of objects, which themselves are
 <a name='initializers'></a>
 
 ## iniciadores
-The `initializers` block looks something like this:
+El bloque de `initializers` se ve algo así:
 
 ```json
 {
