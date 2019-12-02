@@ -1,6 +1,6 @@
 [
     {
-        "text": "Welcome",
+        "text": "Добро пожаловать",
         "url": "welcome"
     },
     {
@@ -36,15 +36,15 @@
         "url": "arrays"
     },
     {
-        "text": "Classes and objects",
+        "text": "Классы и объекты",
         "url": "oop"
     },
     {
-        "text": "Built-in methods",
+        "text": "Встроенные методы",
         "url": "builtin-methods"
     },
     {
-        "text": "Control structures",
+        "text": "Управляющие структуры",
         "url": "control-structures"
     },
     {
@@ -64,7 +64,7 @@
         "url": "optimizers"
     },
     {
-        "text": "Configuration file",
+        "text": "Конфигурационный файл",
         "url": "config"
     },
     {
@@ -72,15 +72,15 @@
         "url": "lifecycle"
     },
     {
-        "text": "Extension globals",
+        "text": "Глобальные параметры расширения",
         "url": "globals"
     },
     {
-        "text": "phpinfo() sections",
+        "text": "Секции phpinfo()",
         "url": "phpinfo"
     },
     {
-        "text": "Static analysis",
+        "text": "Статический анализ",
         "url": "static-analysis"
     },
     {
@@ -88,7 +88,7 @@
         "url": "optimizations"
     },
     {
-        "text": "Compiler warnings",
+        "text": "Предупреждения компилятора",
         "url": "warnings"
     },
     {
