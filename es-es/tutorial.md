@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'es-es'
+version: '0.10'
+---
 
 # Tutorial
-
 Zephir y este manual, están destinados para desarrolladores PHP que desean crear extensiones en C, con una complejidad menor.
 
 Asumimos que usted tiene experiencia en uno o varios lenguajes de programación. Trazaremos paralelismos entre las funciones de PHP, C, Javascript y otros lenguajes. Señalaremos características de Zephir que son similares a otros lenguajes, como así también, muchas características que son nuevas o diferentes. Si estás familiarizado con estos lenguajes específicos, podrás entender estas comparaciones más rápidamente.
@@ -15,7 +14,6 @@ En esta guía, utilizaremos los comandos estándar de la terminal de Linux. Si e
 <a name='checking-the-installation'></a>
 
 ## Probando la Instalación
-
 Si se ha instalado con éxito Zephir, usted será capaz de ejecutar el siguiente comando en la consola:
 
 ```bash
@@ -24,45 +22,45 @@ zephir help
 
 Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
 
-     _____              __    _
-    /__  /  ___  ____  / /_  (_)____
-      / /  / _ \/ __ \/ __ \/ / ___/
-     / /__/  __/ /_/ / / / / / /
-    /____/\___/ .___/_/ /_/_/_/
-             /_/
-    
-    Zephir version 0.10.9a-dev
-    
-    Usage:
-        command [options]
-    
-    Available commands:
-        stubs               Genera extensiones de apéndices de PHP
-        install             Instalar la extensión (requiere contraseña root)
-        version             Muestra la versión actual de Zephir
-        compile             Compilar un extensión de Zephir
-        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Genera el API en HTML
-        init [namespace]    Inicia una extensión Zephir
-        fullclean           Limpia los archivos de objetos generados en la compilación
-        builddev            Genera/Compila/Instala una extensión Zephir en modo de desarrollo
-        clean               Limpia los archivos de objetos generados en la compilación
-        generate            Genera código C desde código Zephir
-        help                Muestra esta ayuda
-        build               Genera/Compila/Instala una extensión Zephir
-    
-    Options:
-        -f([a-z0-9\-]+)     Habilita las optimizaciones del compilador
-        -fno-([a-z0-9\-]+)  Deshabilita las optimizaciones del compilador
-        -w([a-z0-9\-]+)     Enciende una advertencia
-        -W([a-z0-9\-]+)     Apaga una advertencia
-    
+```
+ _____              __    _
+/__  /  ___  ____  / /_  (_)____
+  / /  / _ \/ __ \/ __ \/ / ___/
+ / /__/  __/ /_/ / / / / / /
+/____/\___/ .___/_/ /_/_/_/
+         /_/
+
+Zephir version 0.10.9a-dev
+
+Usage:
+    command [options]
+
+Available commands:
+    stubs               Genera extensiones de apéndices de PHP
+    install             Instalar la extensión (requiere contraseña root)
+    version             Muestra la versión actual de Zephir
+    compile             Compilar un extensión de Zephir
+    api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Genera el API en HTML
+    init [namespace]    Inicia una extensión Zephir
+    fullclean           Limpia los archivos de objetos generados en la compilación
+    builddev            Genera/Compila/Instala una extensión Zephir en modo de desarrollo
+    clean               Limpia los archivos de objetos generados en la compilación
+    generate            Genera código C desde código Zephir
+    help                Muestra esta ayuda
+    build               Genera/Compila/Instala una extensión Zephir
+
+Options:
+    -f([a-z0-9\-]+)     Habilita las optimizaciones del compilador
+    -fno-([a-z0-9\-]+)  Deshabilita las optimizaciones del compilador
+    -w([a-z0-9\-]+)     Enciende una advertencia
+    -W([a-z0-9\-]+)     Apaga una advertencia
+```
 
 If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
 <a name='extension-skeleton'></a>
 
 ## Esqueleto de la Extensión
-
 Lo primero que tenemos que hacer es generar un esqueleto de extensión. Esto le dará a nuestra extensión la estructura básica que necesitamos para empezar a trabajar. En nuestro caso, vamos a crear una extensión llamada `utils`:
 
 ```bash
@@ -92,7 +90,6 @@ Al listar el directorio, nos mostrará un archivo llamado `config.json`. Este ar
 <a name='adding-our-first-class'></a>
 
 ## Agregando nuestra primer clase
-
 Zephir está diseñado para generar extensiones orientadas a objetos. Para empezar a desarrollar funcionalidades, tenemos que añadir nuestra primera clase de la extensión.
 
 Como en muchos lenguajes y herramientas, lo primero que queremos hacer es ver un `Hola mundo` generado por Zephir, y comprobar que todo este bien. Así que nuestra primera clase se llamará `Utils\Greeting` y contendrá un método que imprima `¡Hola mundo!`.
@@ -137,7 +134,6 @@ Nota: también se puede cargar en la línea de comandos con `-d extension=utils.
 <a name='initial-testing'></a>
 
 ## Prueba Inicial
-
 Ahora que la extensión fue agregada a su `php.ini`, compruebe si la extensión esta cargada correctamente, ejecutando lo siguiente:
 
 ```bash
@@ -170,7 +166,6 @@ echo Utils\Greeting::say(), "\n";
 <a name='a-useful-class'></a>
 
 ## Una clase útil
-
 Este método `Utils\Greeting::say` está bien para comprobar si nuestro entorno esta bien. Ahora, vamos a crear algunas clases más útiles.
 
 La primer clase útil que vamos a agregar a esta extensión proveerá facilidades de filtrado a los usuarios. Esta clase es llamada `Utils\Filter` y su código estará ubicado en el archivo `utils/utils/filter.zep`:
@@ -220,7 +215,6 @@ Usted verá:
     o
     l
     a
-    
 
 La comprobación de todos los caracteres de la cadena es sencilla. Ahora crearemos otra cadena con los caracteres filtrados correctos:
 
@@ -252,10 +246,9 @@ $f = new Utils\Filter();
 echo $f->alpha("!ho#02l3'121a."); // imprime "hola"
 ```
 
-En el siguiente video tutorial puedes ver como crear la extensión explicada en este tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+En el siguiente video tutorial puedes ver como crear la extensión explicada en este tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe>
 
 <a name='conclusion'></a>
 
 ## Conclusión
-
 Este es un tutorial muy simple y como se puede ver, es fácil empezar a construir una extensión usando Zephir. Te invitamos a seguir leyendo el manual para que puedas descubrir algunas funciones adicionales que ofrece Zephir!
