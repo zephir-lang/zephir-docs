@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+---
 
 # 教程
-
 Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其复杂性较低。
 
 我们假设您在一种或多种其他编程语言方面有丰富的经验。 我们与 php、c、javascript 和其他语言中的功能进行了比较。 我们将指出Zephir中与这些其他语言相似的特性，以及许多新的或不同的特性。 如果您熟悉这些特定的语言，您将更快地了解这些比较。
@@ -15,54 +14,53 @@ Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其�
 <a name='checking-the-installation'></a>
 
 ## 检查安装
-
 如果您已成功安装 Zephir, 则可以在控制台中执行以下命令:
 
 ```bash
-zephir help
+zephir 帮助
 ```
 
 如果一切正常, 您应该看到以下帮助 (或非常相似的内容):
 
-     _____              __    _
-    /__  /  ___  ____  / /_  (_)____
-      / /  / _ \/ __ \/ __ \/ / ___/
-     / /__/  __/ /_/ / / / / / /
-    /____/\___/ .___/_/ /_/_/_/
-             /_/
-    
-    Zephir version 0.10.9a-dev
-    
-    Usage:
-        command [options]
-    
-    Available commands:
-        stubs               Generates extension PHP stubs
-        install             Installs the extension (requires root password)
-        version             Shows the Zephir version
-        compile             Compile a Zephir extension
-        api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
-        init [namespace]    Initializes a Zephir extension
-        fullclean           Cleans the generated object files in compilation
-        builddev            Generate/Compile/Install a Zephir extension in development mode
-        clean               Cleans the generated object files in compilation
-        generate            Generates C code from the Zephir code
-        help                Displays this help
-        build               Generate/Compile/Install a Zephir extension
-    
-    Options:
-        -f([a-z0-9\-]+)     Enables compiler optimizations
-        -fno-([a-z0-9\-]+)  Disables compiler optimizations
-        -w([a-z0-9\-]+)     Turns a warning on
-        -W([a-z0-9\-]+)     Turns a warning off
-    
+```
+ _____              __    _
+/__  /  ___  ____  / /_  (_)____
+  / /  / _ \/ __ \/ __ \/ / ___/
+ / /__/  __/ /_/ / / / / / /
+/____/\___/ .___/_/ /_/_/_/
+         /_/
+
+Zephir version 0.10.9a-dev
+
+Usage:
+    command [options]
+
+Available commands:
+    stubs               Generates extension PHP stubs
+    install             Installs the extension (requires root password)
+    version             Shows the Zephir version
+    compile             Compile a Zephir extension
+    api [--theme-path=/path][--output-directory=/path][--theme-options={json}|/path]Generates a HTML API
+    init [namespace]    Initializes a Zephir extension
+    fullclean           Cleans the generated object files in compilation
+    builddev            Generate/Compile/Install a Zephir extension in development mode
+    clean               Cleans the generated object files in compilation
+    generate            Generates C code from the Zephir code
+    help                Displays this help
+    build               Generate/Compile/Install a Zephir extension
+
+Options:
+    -f([a-z0-9\-]+)     Enables compiler optimizations
+    -fno-([a-z0-9\-]+)  Disables compiler optimizations
+    -w([a-z0-9\-]+)     Turns a warning on
+    -W([a-z0-9\-]+)     Turns a warning off
+```
 
 If something went wrong, please return back to the [installation](/0.11/en/installation) page.
 
 <a name='extension-skeleton'></a>
 
 ## 扩展骨架
-
 我们要做的第一件事就是生成扩展骨架。 这将为我们的扩展提供我们开始工作所需的基本结构。 在我们的示例中, 我们将创建一个名为 `utils` 的扩展:
 
 ```bash
@@ -92,7 +90,6 @@ ext/ utils/ config.json
 <a name='adding-our-first-class'></a>
 
 ## 添加我们的第一个类
-
 Zephir 旨在生成面向对象的扩展。 要开始开发功能, 我们需要将我们的第一个类添加到扩展中。
 
 与许多语言工具一样, 我们首先要做的是看到 Zephir 生成的 "0>hello world< a0 > 0", 并检查一切是否正常。 因此, 我们的第一个类将被称为 `Utils\Greeting`, 并包含一个方法打印 < 0>hello world!</0 >。
@@ -137,7 +134,6 @@ Extension installed!
 <a name='initial-testing'></a>
 
 ## 初步测试
-
 现在扩展已经添加到`php.ini`，执行以下操作检查扩展是否正确加载:
 
 ```bash
@@ -170,7 +166,6 @@ echo Utils\Greeting::say(), "\n";
 <a name='a-useful-class'></a>
 
 ## 一个有用的类
-
 `Utils Greeting::say`方法可以检查我们的环境是否正确。 现在, 让我们创建一些更有用的类。
 
 我们要添加到此扩展中的第一个有用的类将为用户提供筛选功能。 此类称为 `Utils\Filter` 其代码必须放在 `utils/utils/filter.zep`:
@@ -221,7 +216,6 @@ $f->alpha("hello");
     l
     l
     o
-    
 
 检查字符串中的每个字符很简单。 现在, 我们将使用正确的筛选字符创建另一个字符串:
 
@@ -253,10 +247,9 @@ $f = new Utils\Filter();
 echo $f->alpha("!he#02l3'121lo."); // prints "hello"
 ```
 
-在下面的屏幕截图中, 您可以观看如何创建本教程中介绍的扩展: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
+在下面的屏幕截图中, 您可以观看如何创建本教程中介绍的扩展: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe>
 
 <a name='conclusion'></a>
 
 ## 结语
-
 这是一个非常简单的教程, 正如您所看到的, 使用 Zephir开始构建扩展很容易。 我们邀请您继续阅读手册, 以便您可以发现 Zephir提供的其他功能!
