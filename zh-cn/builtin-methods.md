@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+---
 
 # 内建方法
-
 如前所述，Zephir提倡面向对象编程。 与静态类型相关的变量也可以作为对象处理。
 
 比较这两种方法:
@@ -51,7 +50,6 @@ public function binaryToHex(string! s) -> string
 <a name='string'></a>
 
 ## String
-
 下面的字符串内置方法可用:
 
 | OO                   | 实际过程                  | 说明                     |
@@ -72,7 +70,6 @@ public function binaryToHex(string! s) -> string
 <a name='array'></a>
 
 ## Array
-
 可用的数组内置方法如下:
 
 | OO                   | 实际过程                    | 说明                      |
@@ -95,7 +92,6 @@ public function binaryToHex(string! s) -> string
 <a name='char'></a>
 
 ## Char
-
 提供了以下字符内置方法:
 
 | OO               | 实际过程                |
@@ -105,7 +101,6 @@ public function binaryToHex(string! s) -> string
 <a name='integer'></a>
 
 ## Integer
-
 以下是可用的整数内置方法:
 
 | OO            | 实际过程     |
