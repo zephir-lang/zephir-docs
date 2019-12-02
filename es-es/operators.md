@@ -1,17 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'es-es'
+version: '0.10'
+---
 
 # Operadores
-
 Los operadores en Zephir son similares a los de PHP, y también heredarán algunos de sus comportamientos.
 
 <a name='arithmetic-operators'></a>
 
 ## Operadores Aritméticos
-
 Son soportados los siguientes operadores:
 
 | Operación      | Ejemplo |
@@ -26,7 +24,6 @@ Son soportados los siguientes operadores:
 <a name='bitwise-operators'></a>
 
 ## Operadores bit a bit
-
 Son soportados los siguientes operadores:
 
 | Operación            | Ejemplo        |
@@ -51,7 +48,6 @@ Para más información sobre la comparación de variables dinámicas vea el [man
 <a name='comparison-operators'></a>
 
 ## Comparación de Operadores
-
 Los operadores de comparación dependen del tipo de variables en comparación. Por ejemplo, si ambos operandos de la comparación son variables dinámicas, el comportamiento es igual que en PHP:
 
 | Ejemplo        | Operación         | Descripción                                                                  |
@@ -83,7 +79,6 @@ if a == b {
 <a name='logical-operators'></a>
 
 ## Operadores Lógicos
-
 Son soportados los siguientes operadores:
 
 | Operación | Ejemplo          |
@@ -104,7 +99,6 @@ return 1;
 <a name='tenary-operator'></a>
 
 ## Operador Ternario
-
 Zephir soporta el operador ternario habilitado en C o PHP:
 
 ```zephir
@@ -114,13 +108,11 @@ let b = a == 1 ? "x" : "y"; // b es igual a "x" si a es igual a 1, en otro caso 
 <a name='special-operators'></a>
 
 ## Operadores Especiales
-
 Son soportados los siguientes operadores:
 
 <a name='special-operators-empty'></a>
 
 ### Empty
-
 Este operador permite chequear si una expresión esta vacía. 'Empty' significa que la expresión es igual a `null`, a una cadena de texto vacía, o a un array vacío:
 
 ```zephir
@@ -138,7 +130,6 @@ if !empty someVar {
 <a name='special-operators-fetch'></a>
 
 ### Fetch
-
 'Fetch' es un operador que reduce una operación común en PHP a una sola instrucción:
 
 ```php
@@ -163,7 +154,6 @@ if fetch value, myArray[key] {
 <a name='special-operators-isset'></a>
 
 ### Isset
-
 Este operador comprueba que una propiedad o un índice esté definido en un array o en un objecto:
 
 ```zephir
@@ -184,7 +174,6 @@ Nota: en Zephir `isset` funciona como la función [array_key_exists](http://www.
 <a name='special-operators-typeof'></a>
 
 ### Typeof
-
 Este operador comprueba el tipo de una variable. `typeof` puede usarse con un operador de comparación:
 
 ```zephir
@@ -199,12 +188,11 @@ También puede trabajar como la función `gettype` de PHP.
 return typeof str;
 ```
 
-**Cuidado** si desea comprobar que si un objeto es "callable", siempre tienes que usar `typeof` como un operador de comparación, no como una función.
+**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
 <a name='special-operators-type-hints'></a>
 
 ### Sugerencias de Tipos
-
 Zephir siempre trata de comprobar si un objeto implementa métodos y propiedades llamado/accedido a una variable, que se infiere que es un objeto:
 
 ```zephir
@@ -235,7 +223,6 @@ o->myMethod();
 <a name='special-operators-branch-prediction-hints'></a>
 
 ### Consejos de Predicción de Rama
-
 ¿Qué es la predicción de rama? Revisa este [artículo](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) o este otro [artículo en la Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). En entornos donde el desempeño es muy importante, puede ser útil introducir estos consejos.
 
 Considere el siguiente ejemplo:
