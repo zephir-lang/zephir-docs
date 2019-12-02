@@ -225,7 +225,7 @@ o->myMethod();
 ### Подсказки прогнозирования ветвлений
 Что такое прогнозирование ветвлений? Для подробного описания это понятия обратитесь к [статье Игоря Островского](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) или [описанию на Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). В окружениях, где производительность является очень важной составляющей, может оказаться полезным использование подсказок при прогнозировании ветвлений.
 
-Рассмотрим следующий пример:
+Consider the following example:
 
 ```zephir
 let allPaths = [];
