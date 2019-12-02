@@ -1,17 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'tr-tr'
+version: '0.10'
+---
 
 # Types
-
 Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
 
 <a name='dynamic-types'></a>
 
 ## Dynamic Types
-
 Dynamic variables are exactly like the ones in PHP. They can be assigned and reassigned to different types without restriction.
 
 A dynamic variable must be declared with the keyword `var`. The behavior is nearly the same as in PHP:
@@ -57,7 +55,6 @@ Check more info about these types in the [PHP manual](http://www.php.net/manual/
 <a name='dynamic-types-arrays'></a>
 
 ### Array
-
 The array implementation in Zephir is basically the same as in PHP: ordered maps optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. As array values can be other arrays, trees and multidimensional arrays are also possible.
 
 The syntax to define arrays is slightly different than in PHP:
@@ -84,7 +81,6 @@ let myHash = ["first": 7.0, "second": "some string", "third": false];
 <a name='dynamic-types-boolean'></a>
 
 ### Boolean
-
 A boolean expresses a truth value. It can be either `true` or `false`:
 
 ```zephir
@@ -94,7 +90,6 @@ var a = false, b = true;
 <a name='dynamic-types-float-double'></a>
 
 ### Float/Double
-
 Floating-point numbers (also known as "floats", "doubles", or "real numbers"). Floating-point literals are expressions with one or more digits, followed by a period (.), followed by one or more digits. The size of a float is platform-dependent, although a maximum of ~1.8e308 with a precision of roughly 14 decimal digits is a common value (the 64 bit IEEE format).
 
 ```zephir
@@ -106,7 +101,6 @@ Floating point numbers have limited precision. Although it depends on the system
 <a name='dynamic-types-integer'></a>
 
 ### Integer
-
 Integer numbers. The size of an integer is platform-dependent, although a maximum value of about two billion is the usual value (that's 32 bits signed). 64-bit platforms usually have a maximum value of about 9E18. PHP does not support unsigned integers so Zephir has this restriction too:
 
 ```zephir
@@ -116,7 +110,6 @@ var a = 5, b = 10050;
 <a name='dynamic-types-integer-overflow'></a>
 
 ### Integer overflow
-
 Contrary to PHP, Zephir does not automatically check for integer overflows. Like in C, if you are doing operations that may return a big number, you should use types such as `unsigned long` or `float` to store them:
 
 ```zephir
@@ -126,7 +119,6 @@ unsigned long my_number = 2147483648;
 <a name='dynamic-types-objects'></a>
 
 ### Object
-
 Zephir allows to instantiate, manipulate, call methods, read class constants, etc from PHP objects:
 
 ```zephir
@@ -137,7 +129,6 @@ let myObject = new \stdClass(),
 <a name='dynamic-types-string'></a>
 
 ### String
-
 A `string` is series of characters, where a character is the same as a byte. As PHP, Zephir only supports a 256-character set, and hence does not offer native Unicode support.
 
 ```zephir
@@ -153,7 +144,7 @@ The following escape sequences are supported in strings:
 | `\t`    | Horizontal tab  |
 | `\n`    | Line feed       |
 | `\r`    | Carriage return |
-| `\`   | Backslash       |
+| `\\` | Backslash       |
 | `\"`    | double-quote    |
 
 ```zephir
@@ -172,7 +163,6 @@ echo "hello: " . name;
 <a name='static-types'></a>
 
 ## Static Types
-
 Static typing allows the developer to declare and use some variable types available in C. Variables can't change their type once they're declared as static types. However, they allow the compiler to do a better optimization job. The following types are supported:
 
 | Type               | Description                                                                    |
@@ -191,7 +181,6 @@ Static typing allows the developer to declare and use some variable types availa
 <a name='static-types-boolean'></a>
 
 ### Boolean
-
 A `boolean` expresses a truth value. It can be either `true` or `false`. Contrary to the dynamic behavior detailed above, static `boolean` types remain `boolean` (`true` or `false`) no mater what value is assigned to them:
 
 ```zephir
@@ -220,7 +209,6 @@ let a = "hello";
 <a name='static-types-char-unsigned'></a>
 
 ### Char/Unsigned Char
-
 `char` variables are the smallest addressable unit of the machine that can contain the basic character set (generally 8 bits). A `char` variable can be used to store any character in a string:
 
 ```zephir
@@ -242,7 +230,6 @@ let ch = 'Z';
 <a name='static-types-integer-unsigned'></a>
 
 ### Integer/Unsigned Integer
-
 `integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
 ```zephir
@@ -328,7 +315,6 @@ let a = 2147483648,
 <a name='static-types-long-unsigned'></a>
 
 ### Long/Unsigned Long
-
 `long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
 
 ```zephir
@@ -414,7 +400,6 @@ let a = 4294967296,
 <a name='static-types-string'></a>
 
 ### String
-
 A string is series of characters, where a character is the same as a byte. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
 
 When a variable is declared `string` it never changes its type:
