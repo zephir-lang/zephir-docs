@@ -15,7 +15,7 @@ Zephir реализует исключения на очень низком ур
 var e;
 try {
 
-    throw new \Exception("Это исключение");
+    throw new \Exception("Это - исключение");
 
 } catch \Exception, e {
 
