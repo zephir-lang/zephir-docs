@@ -5,13 +5,11 @@ version: '0.10'
 ---
 
 # Instalación
-
 Para instalar el Zephir, siga estos pasos:
 
 <a name='prerequisites'></a>
 
 ## Prerequisitos
-
 Para construir una extensión de PHP y usar Zephir necesita los siguientes requisitos:
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
@@ -20,7 +18,6 @@ Para construir una extensión de PHP y usar Zephir necesita los siguientes requi
 * PHP development headers and tools
 
 For Linux based systems you'll need also:
-
 * [GNU make](https://www.gnu.org/software/make/) 3.81 or later
 * [autoconf](https://www.gnu.org/software/autoconf/autoconf.html) 2.31 or later
 * [automake](https://www.gnu.org/software/automake/) 1.14 or later
@@ -33,7 +30,6 @@ If you're using Ubuntu, you can install the required packages this way:
 sudo apt-get update
 sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-essential
 ```
-
 Please note that specific versions of libraries and programs at the time of reading this guide may vary.
 
 Since Zephir is written in PHP, you need to have a recent version of PHP installed, and it must be available in your console:
@@ -92,7 +88,6 @@ This step is optional for version 0.10.x, however, it will become mandatory in f
 <a name='testing-the-installation'></a>
 
 ## Probando la Instalación
-
 Check if Zephir is available from any directory by executing:
 
 ```bash

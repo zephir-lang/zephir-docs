@@ -5,13 +5,11 @@ version: '0.10'
 ---
 
 # 欢迎!
-
 Zephir，一种开源的高级语言，旨在简化PHP扩展的创建和可维护性，重点关注类型和内存安全性。
 
 <a name='some-features'></a>
 
 ## 一些特征
-
 Zephir 的主要特点是:
 
 | 属性   | 说明             |
@@ -24,7 +22,6 @@ Zephir 的主要特点是:
 <a name='a-small-taste'></a>
 
 ## 一个小尝试
-
 下面的代码使用筛选变量的方法注册一个类, 返回它们的字母字符:
 
 ```zephir
@@ -67,7 +64,6 @@ echo $filter->alpha("01he#l.lo?/1"); // prints hello
 <a name='external-links'></a>
 
 ## 外部链接
-
 下面我们收集了您可能感兴趣的外部资源链接:
 
 - [类型系统](https://en.wikipedia.org/wiki/Type_system)

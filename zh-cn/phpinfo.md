@@ -5,7 +5,6 @@ version: '0.10'
 ---
 
 # phpinfo () 部分
-
 与大多数扩展一样, Zephir 扩展能够在 [phpinfo()](http://php.net/manual/en/function.phpinfo.php) 输出中显示信息。 这些信息通常与指令、环境数据等有关。
 
 默认情况下, 每个 Zephir扩展都会自动向显示扩展版本和扩展所支持的任何 ini 选项的 `phpinfo()` 输出中添加一个基本表。

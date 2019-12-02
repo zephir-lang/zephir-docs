@@ -5,7 +5,6 @@ version: '0.10'
 ---
 
 # Lifecycle hooks
-
 PHP provides several lifecycle events, which extensions can use to perform common initialization or shutdown tasks. Normally, Zephir's own hooks into these events will cover all the setup and tear down your extension will need, but if you find that you need to do something more, there are a few options you can use to pass your own code into these same hooks.
 
 Consider the following diagram:
@@ -19,7 +18,6 @@ Each hook in the `config.json` file is an array of objects, which themselves are
 <a name='initializers'></a>
 
 ## initializers
-
 The `initializers` block looks something like this:
 
 ```json
@@ -58,7 +56,6 @@ This block is responsible for defining hooks into the Init events shown in the d
 <a name='desctructors'></a>
 
 ## destructors
-
 The `destructors` block looks something like this:
 
 ```json
@@ -98,4 +95,4 @@ The `destructors` block looks something like this:
 }
 ```
 
-Much as the `initializers` block is responsible for defining hooks into the Init events shown in the diagram above, *this* block is responsible for defining hooks into the Shutdown events. There are four of these: `request` for finalizing any data before a response is sent to the client, `post-request` for cleaning up after a response has been sent, `module` for cleaning up after the extension itself before the PHP process shuts down, and `globals` for cleaning up the global variable space.
+Much as the `initializers` block is responsible for defining hooks into the Init events shown in the diagram above, _this_ block is responsible for defining hooks into the Shutdown events. There are four of these: `request` for finalizing any data before a response is sent to the client, `post-request` for cleaning up after a response has been sent, `module` for cleaning up after the extension itself before the PHP process shuts down, and `globals` for cleaning up the global variable space.

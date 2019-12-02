@@ -33,7 +33,7 @@
     },
     {
         "text": "Массивы",
-        "url": "массивы"
+        "url": "arrays"
     },
     {
         "text": "Классы и объекты",
@@ -52,7 +52,7 @@
         "url": "exceptions"
     },
     {
-        "text": "Вызов функций",
+        "text": "Вызов функции",
         "url": "functions"
     },
     {
@@ -60,7 +60,7 @@
         "url": "closures"
     },
     {
-        "text": "Настраиваемые оптимизаторы",
+        "text": "Custom optimizers",
         "url": "optimizers"
     },
     {
@@ -84,7 +84,7 @@
         "url": "static-analysis"
     },
     {
-        "text": "Оптимизации",
+        "text": "Optimizations",
         "url": "optimizations"
     },
     {

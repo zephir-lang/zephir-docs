@@ -263,7 +263,7 @@
             "url": "#installing-zephir"
         },
         {
-            "text": "Проверка установки",
+            "text": "Testing the installation",
             "level": 1,
             "url": "#testing-the-installation"
         }
@@ -275,14 +275,14 @@
             "url": "#hello-world"
         },
         {
-            "text": "Понимание Zephir",
+            "text": "A taste of Zephir",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
     ],
     "language": [
         {
-            "text": "Организация кода в файлах и пространствах имён",
+            "text": "Organizing code in files and namespaces",
             "level": 1,
             "url": "#organizing-code-in-files-and-namespaces"
         },
@@ -297,22 +297,22 @@
             "url": "#comments"
         },
         {
-            "text": "Объявления переменных",
+            "text": "Variable declarations",
             "level": 1,
             "url": "#variable-declarations"
         },
         {
-            "text": "Область переменной",
+            "text": "Variable scope",
             "level": 1,
             "url": "#variable-scope"
         },
         {
-            "text": "Супер-глобальные переменные",
+            "text": "Super globals",
             "level": 1,
             "url": "#super-globals"
         },
         {
-            "text": "Локальная таблица символов",
+            "text": "Local symbol table",
             "level": 1,
             "url": "#local-symbol-table"
         }
@@ -332,12 +332,12 @@
     ],
     "motivation": [
         {
-            "text": "Если вы PHP программист...",
+            "text": "If you are a PHP programmer...",
             "level": 1,
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "Если вы C программист...",
+            "text": "If you are a C programmer...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
@@ -347,17 +347,17 @@
             "url": "#compilation-vs-interpretation"
         },
         {
-            "text": "Статическая типизация против динамической типизации",
+            "text": "Statically typed versus dynamically typed languages",
             "level": 1,
             "url": "#statically-typed-versus-dynamically-typed-languages"
         },
         {
-            "text": "Схема компиляции",
+            "text": "Compilation scheme",
             "level": 1,
             "url": "#compilation-scheme"
         },
         {
-            "text": "Защита кода",
+            "text": "Code protection",
             "level": 1,
             "url": "#code-protection"
         },
@@ -369,92 +369,92 @@
     ],
     "oop": [
         {
-            "text": "Классы",
+            "text": "Classes",
             "level": 1,
             "url": "#classes"
         },
         {
-            "text": "Модификаторы класса",
+            "text": "Class Modifiers",
             "level": 2,
             "url": "#classes-modifiers"
         },
         {
-            "text": "Реализация интерфейсов",
+            "text": "Implementing Interfaces",
             "level": 2,
             "url": "#classes-interfaces"
         },
         {
-            "text": "Реализация методов",
+            "text": "Implementing Methods",
             "level": 1,
             "url": "#implementing-methods"
         },
         {
-            "text": "Необязательные обнуляемые параметры",
+            "text": "Optional nullable parameters",
             "level": 2,
             "url": "#implementing-methods-optional-nullable-parameters"
         },
         {
-            "text": "Поддерживаемые области видимости",
+            "text": "Supported Visibilities",
             "level": 2,
             "url": "#implementing-methods-supported-visibilities"
         },
         {
-            "text": "Поддерживаемые модификаторы доступа",
+            "text": "Supported Modifiers",
             "level": 2,
             "url": "#implementing-methods-supported-modifiers"
         },
         {
-            "text": "Сокращения для геттеров/сеттеров",
+            "text": "Getter/Setter shortcuts",
             "level": 2,
             "url": "#implementing-methods-getter-setter-shortcuts"
         },
         {
-            "text": "Типы возвращаемых значений",
+            "text": "Return Type Hints",
             "level": 2,
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "Возвращаемый тип: void",
+            "text": "Return Type: Void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
         {
-            "text": "Строгие/приводимые типы параметров",
+            "text": "Strict/Flexible Parameter Data-Types",
             "level": 2,
             "url": "#implementing-methods-strict-flexible-parameter-data-types"
         },
         {
-            "text": "Параметры только для чтения",
+            "text": "Read-Only Parameters",
             "level": 2,
             "url": "#implementing-methods-read-only-parameters"
         },
         {
-            "text": "Реализация свойств",
+            "text": "Implementing Properties",
             "level": 1,
             "url": "#implementing-properties"
         },
         {
-            "text": "Обновление свойств",
+            "text": "Updating Properties",
             "level": 2,
             "url": "#implementing-properties-updating"
         },
         {
-            "text": "Чтение свойств",
+            "text": "Reading Properties",
             "level": 2,
             "url": "#implementing-properties-reading"
         },
         {
-            "text": "Константы класса",
+            "text": "Class Constants",
             "level": 1,
             "url": "#class-constants"
         },
         {
-            "text": "Вызов методов",
+            "text": "Calling Methods",
             "level": 1,
             "url": "#calling-methods"
         },
         {
-            "text": "Доступ к параметрам по имени",
+            "text": "Parameters by Name",
             "level": 2,
             "url": "#calling-methods-parameters-by-name"
         }
@@ -486,7 +486,7 @@
             "url": "#tenary-operator"
         },
         {
-            "text": "Специальные операторы",
+            "text": "Special Operator",
             "level": 1,
             "url": "#special-operators"
         },
@@ -562,24 +562,24 @@
     "phpinfo": [],
     "static-analysis": [
         {
-            "text": "Выявление не инициализированных переменных",
+            "text": "Conditional Unassigned Variables",
             "level": 1,
             "url": "#conditional-unassigned-variables"
         },
         {
-            "text": "Удаление мёртвого кода",
+            "text": "Dead Code Elimination",
             "level": 1,
             "url": "#dead-code-elimination"
         }
     ],
     "tutorial": [
         {
-            "text": "Проверка установки",
+            "text": "Checking the installation",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Каркас расширения",
+            "text": "Extension skeleton",
             "level": 1,
             "url": "#extension-skeleton"
         },
@@ -589,12 +589,12 @@
             "url": "#adding-our-first-class"
         },
         {
-            "text": "Первоначальное тестирование",
+            "text": "Initial testing",
             "level": 1,
             "url": "#initial-testing"
         },
         {
-            "text": "Удобный класс",
+            "text": "Удобные класс",
             "level": 1,
             "url": "#a-useful-class"
         },
@@ -636,7 +636,7 @@
             "url": "#dynamic-types-integer-overflow"
         },
         {
-            "text": "Объекты",
+            "text": "Objects",
             "level": 2,
             "url": "#dynamic-types-objects"
         },
@@ -735,7 +735,7 @@
     ],
     "welcome": [
         {
-            "text": "Некоторые особенности",
+            "text": "Some Features",
             "level": 1,
             "url": "#some-features"
         },
