@@ -1,17 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 
 # 运算符
-
 Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些行为。
 
 <a name='arithmetic-operators'></a>
 
 ## 算术运算符
-
 支持一下操作符
 
 | 操作 | 示例      |
@@ -26,7 +24,6 @@ Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些�
 <a name='bitwise-operators'></a>
 
 ## 按位运算符
-
 支持一下操作符
 
 | 操作                 | 示例             |
@@ -51,7 +48,6 @@ if a & SOME_FLAG {
 <a name='comparison-operators'></a>
 
 ## 比较运算符
-
 比较运算符取决于比较变量的类型。 例如，如果两个比较操作数都是动态变量，其行为与PHP相同:
 
 | 示例             | 操作    | 说明                        |
@@ -83,7 +79,6 @@ if a == b {
 <a name='logical-operators'></a>
 
 ## 逻辑运算符
-
 支持一下操作符
 
 | 操作 | 示例               |
@@ -104,7 +99,6 @@ return 1;
 <a name='tenary-operator'></a>
 
 ## 三元运算符
-
 Zephir支持C或PHP中的三元运算符:
 
 ```zephir
@@ -114,13 +108,11 @@ let b = a == 1 ? “x”:“y”; //如果a = 1， // b设为“x”，否则赋
 <a name='special-operators'></a>
 
 ## 特殊运算符
-
 支持一下操作符
 
 <a name='special-operators-empty'></a>
 
 ### Empty
-
 这个运算符允许检查表达式是否为空。 ‘Empty’表示表达式为`null`，可以是空字符串或空数组:
 
 ```zephir
@@ -138,7 +130,6 @@ if !empty someVar {
 <a name='special-operators-fetch'></a>
 
 ### Fetch
-
 Fetch操作符将PHP中的一个常见操作简化为一条指令:
 
 ```php
@@ -163,7 +154,6 @@ if fetch value, myArray[key] {
 <a name='special-operators-isset'></a>
 
 ### Isset
-
 这个操作符检查是否在数组或对象中定义了属性或索引:
 
 ```zephir
@@ -181,20 +171,16 @@ return isset this->{someProperty};
 
 注意，在Zephir中`isset` </code>更像PHP的函数[array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php)，在Zephir中`isset</0>即使数组索引或属性为空也返回true。</p>
 
-<p>
-
 <a name='special-operators-typeof'></a>
 
-</p>
+<h3 spaces-before="0">Typeof</h3>
 
-<h3>Typeof</h3>
-
-<p>这个操作符检查变量的类型。 'typeof'可与比较运算符一起使用:</p>
+<p spaces-before="0">这个操作符检查变量的类型。 'typeof'可与比较运算符一起使用:</p>
 
 <pre><code class="zephir">if (typeof str == "string") { // or !=
     echo str;
 }
-`</pre> 
+`</pre>
 
 它也可以像PHP函数`gettype`那样工作。
 
@@ -202,12 +188,11 @@ return isset this->{someProperty};
 return typeof str;
 ```
 
-**坑: **，如果你想检查一个对象是否“callable”，你总是必须使用`typeof`作为比较运算符，而不是函数。
+**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
 <a name='special-operators-type-hints'></a>
 
 ### 类型提示
-
 Zephir总是试图检查一个对象是否实现了方法和属性，这些方法和属性在一个被推断为对象的变量上被调用/访问:
 
 ```zephir
@@ -238,7 +223,6 @@ o->myMethod();
 <a name='special-operators-branch-prediction-hints'></a>
 
 ### 分支预测提示
-
 什么是分支预测？ 请检查此 [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) 或参考 "1>Wikipedia 文章 </1 >。 在性能非常重要的环境中, 引入这些提示可能会很有用。
 
 请考虑下面的示例:
