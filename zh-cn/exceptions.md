@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 
 # 例外情况
-
 Zephir以非常低的级别实现异常，为PHP提供类似的行为和功能。
 
 抛出异常时，可以使用` catch `块来捕获异常并允许开发人员提供正确的处理：
