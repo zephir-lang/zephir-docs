@@ -1,17 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 
 # 静态分析
-
 Zephir 的编译器提供对已编译代码的静态分析。 此功能背后的想法是在运行时之前帮助开发人员发现潜在的问题, 避免意外的行为 。
 
 <a name='conditional-unassigned-variables'></a>
 
 ## 条件未分配的变量
-
 工作分配的静态分析尝试确定变量在赋值之前是否已使用:
 
 ```zephir
@@ -49,7 +47,6 @@ class Utils
 <a name='dead-code-elimination'></a>
 
 ## 死码消除
-
 Zephir 通知开发人员代码中无法访问的分支, 并执行死代码消除, 这意味着它将从生成的二进制文件中删除所有代码, 因为它无论如何都无法执行:
 
 ```zephir
