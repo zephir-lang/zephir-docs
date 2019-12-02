@@ -116,7 +116,7 @@ var a = 5, b = 10050;
 
 <a name='dynamic-types-integer-overflow'></a>
 
-### 整数溢出
+### Integer overflow
 
 与PHP相反，Zephir不会自动检查整数溢出。 像在C中一样，如果你做的操作可能会返回一个大的数字，你应该使用`unsigned long`或`float`来存储它们:
 
@@ -243,7 +243,7 @@ let ch = 'Z';
 
 <a name='static-types-integer-unsigned'></a>
 
-### 整数/无符号整数
+### Integer/Unsigned Integer
 
 `integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
 
@@ -329,7 +329,7 @@ let a = 2147483648,
 
 <a name='static-types-long-unsigned'></a>
 
-### 长值/无符号长值
+### Long/Unsigned Long
 
 `long` 变量比 `integer` 变量大两倍, 因此它们可以存储较大的数字。 与 `integer` 一样, 分配给 `long` 变量的值将自动转换为此类型:
 

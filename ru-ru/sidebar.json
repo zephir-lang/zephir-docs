@@ -1,6 +1,6 @@
 [
     {
-        "text": "Добро пожаловать",
+        "text": "Welcome",
         "url": "welcome"
     },
     {
@@ -36,15 +36,15 @@
         "url": "arrays"
     },
     {
-        "text": "Классы и объекты",
+        "text": "Classes and objects",
         "url": "oop"
     },
     {
-        "text": "Встроенные методы",
+        "text": "Built-in methods",
         "url": "builtin-methods"
     },
     {
-        "text": "Управляющие структуры",
+        "text": "Control structures",
         "url": "control-structures"
     },
     {
@@ -56,7 +56,7 @@
         "url": "functions"
     },
     {
-        "text": "Замыкания",
+        "text": "Closures",
         "url": "closures"
     },
     {
@@ -64,7 +64,7 @@
         "url": "optimizers"
     },
     {
-        "text": "Конфигурационный файл",
+        "text": "Configuration file",
         "url": "config"
     },
     {
@@ -72,19 +72,19 @@
         "url": "command-line"
     },
     {
-        "text": "Хуки жизненного цикла",
+        "text": "Lifecycle hooks",
         "url": "lifecycle"
     },
     {
-        "text": "Глобальные параметры расширения",
+        "text": "Extension globals",
         "url": "globals"
     },
     {
-        "text": "Секции phpinfo()",
+        "text": "phpinfo() sections",
         "url": "phpinfo"
     },
     {
-        "text": "Статический анализ",
+        "text": "Static analysis",
         "url": "static-analysis"
     },
     {
@@ -92,11 +92,11 @@
         "url": "optimizations"
     },
     {
-        "text": "Предупреждения компилятора",
+        "text": "Compiler warnings",
         "url": "warnings"
     },
     {
-        "text": "Лицензионное соглашение",
+        "text": "License",
         "url": "license"
     }
 ]
