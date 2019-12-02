@@ -1,25 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.11' menu:
-
-- text: 'Organizing code in files and namespaces' url: '#organizing-code-in-files-and-namespaces'
-- text: 'Instruction separation' url: '#instruction-separation'
-- text: 'Comments' url: '#comments'
-- text: 'Variable declarations' url: '#variable-declarations'
-- text: 'Variable scope' url: '#variable-scope'
-- text: 'Super globals' url: '#super-globals'
-- text: 'Local symbol table' url: '#local-symbol-table'
-
-* * *
+---
+layout: default
+language: 'en'
+version: '0.11'
+---
 
 # Sintaxis básica
-
 En este capítulo, analizaremos la organización de archivos y espacios de nombres, declaraciones de variables, varios convenios de sintaxis y algunos conceptos generales.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
 ## Organización del código en archivos y espacios de nombres
-
 En PHP, usted puede colocar código en cualquier archivo, sin una estructura específica. En Zephir, cada archivo debe contener una sola clase. Cada clase debe tener un espacio de nombres, y la estructura de directorios debe coincidir con los nombres de las clases y espacios de nombres utilizados. (Esto es similar al convenio PSR-4 de carga automática, salvo que se aplica al lenguaje en sí mismo)
 
 Por ejemplo, teniendo en cuenta la siguiente estructura, las clases en cada archivo deben ser:
@@ -58,7 +48,6 @@ Zephir generará una excepción del compilador si un archivo o una clase no se e
 <a name='instruction-separation'></a>
 
 ## Separación de instrucciones
-
 Puede que ya ha notado, que había muy pocos puntos y comas en los ejemplos de código en el capítulo anterior. Usted puede utilizar puntos y comas para separar declaraciones y expresiones, como en Java, C/C++, PHP, y otros lenguajes similares:
 
 ```zephir
@@ -68,7 +57,6 @@ myObject->myMethod(1, 2, 3); echo "mundo";
 <a name='comments'></a>
 
 ## Comentarios
-
 Zephir soporta los comentarios de tipo 'C'/'C++'. Estos son los comentarios de una linea `// ...`, y los comentarios multi linea`/* ... */`:
 
 ```zephir
@@ -86,7 +74,6 @@ Si un bloque de comentarios no esta ubicado donde sea esperado, el compilador la
 <a name='variable-declarations'></a>
 
 ## Declaración de variables
-
 En Zephir, se deben declarar todas las variables utilizadas en un determinado ámbito. Esto proporciona información importante para que el compilador para realizar optimizaciones y validaciones. Las variables deben ser identificadores únicos y no pueden ser palabras reservadas.
 
 ```zephir
@@ -117,7 +104,6 @@ var somevalue, someValue, SomeValue;
 <a name='variable-scope'></a>
 
 ## Ámbito de la variable
-
 Todas las variables declaradas localmente, tienen un ámbito local al método donde se declaró:
 
 ```zephir
@@ -142,7 +128,6 @@ class MyClass
 <a name='super-global'></a>
 
 ## Super globales
-
 Zephir no admite variables globales; no se permite el acceso a variables globales desde la zona de usuario de PHP. Sin embargo, se puede acceder a las super globales de PHP de la siguiente forma:
 
 ```zephir
@@ -156,7 +141,6 @@ let requestMethod = _SERVER["REQUEST_METHOD"];
 <a name='local-symbol-table'></a>
 
 ## Tabla de símbolos locales
-
 Cada método o contexto en PHP tiene una tabla de símbolos que le permite escribir variables de una manera muy dinámica:
 
 ```php
