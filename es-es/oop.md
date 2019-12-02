@@ -1,17 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'es-es'
+version: '0.10'
+---
 
 # Clases y Objetos
-
 Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.
 
 <a name='classes'></a>
 
 ## Clases
-
 Cada archivo de Zephir debe implementar una clase o una interfaz (y sólo una). Una estructura de clase es muy similar a una clase en PHP:
 
 ```zep
@@ -29,7 +27,6 @@ class MyClass
 <a name='classes-modifiers'></a>
 
 ### Modificadores de Clase
-
 Son soportadas los siguientes modificadores de clase:
 
 `final`: Si una clase tiene este modificador no puede ser extendida:
@@ -63,7 +60,6 @@ abstract class MyClass
 <a name='classes-interfaces'></a>
 
 ### Implementación de Interfaces
-
 Las clases de Zephir pueden implementar cualquier cantidad de interfaces, siempre que estas clases sean `visible` para que la clase las utilice. Sin embargo, hay ocasiones en que la clase Zephir (y posteriormente la extensión) puede requerir implementar una interfaz que se construya en una extensión diferente.
 
 Si quieren implementar `MiddlewareInterface` de la extensión `PSR`, deberemos crear una interface `stub`:
@@ -100,12 +96,11 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTA** Es responsabilidad del desarrollador asegurarse de que todas las referencias externas estén presentes antes de que se cargue la extensión. Entonces para el ejemplo anterior, la extensión [PSR](https://pecl.php.net/package/psr) tiene que estar cargada **antes** que la extensión construida en Zephir este cargada.
+**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
 
 <a name='implementing-methods'></a>
 
 ## Implementación de Métodos
-
 La palabra clave `function` introduce un método. Los métodos implementan los modificadores de visibilidad generalmente disponibles en PHP. Establecer explícitamente un modificador de visibilidad es obligatorio en Zephir:
 
 ```zep
@@ -184,7 +179,6 @@ class MyClass
 <a name='implementing-methods-optional-nullable-parameters'></a>
 
 ### Parámetros opcionales nulos
-
 Zephir se asegura que el valor de una variable permanezca del tipo que fue declarada la variable. Esto hace que Zephir convierta el valor `null` al valor más cercado:
 
 ```zep
@@ -212,7 +206,6 @@ public function foo(array a = null)
 <a name='implementing-methods-supported-visibilities'></a>
 
 ### Visibilidades soportadas
-
 * Público: los métodos marcados como `public` se exportan a la extensión PHP; esto significa que métodos públicos son accesibles para el código PHP y para la extensión.
 
 * Protegido: los métodos marcados como `protected` se exportan a la extensión PHP; esto significa que métodos protegidos son accesibles para el código PHP y para la extensión. Sin embargo, sólo se pueden llamar estos métodos protegidos en el ámbito de la clase o en clases que la heredan.
@@ -222,7 +215,6 @@ public function foo(array a = null)
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### Modificadores Soportados
-
 * `static`: los métodos con este modificador sólo se pueden llamar en un contexto estático (de la clase, no de un objeto).
 
 * `final`: si un método tiene este modificador no se puede sobre cargar.
@@ -232,7 +224,6 @@ public function foo(array a = null)
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Métodos abreviados de getter/setter
-
 Al igual que en C#, es posible utilizar en Zephir los atajos `get`/`set`/`toString`. Esta característica le permite escribir fácilmente setters y getters para las propiedades, sin implementar explícitamente los métodos como tales.
 
 Por ejemplo, sin atajos necesitaríamos un código como el siguiente:
@@ -295,7 +286,6 @@ Cuando el código es compilado, estos métodos son exportados como métodos real
 <a name='implementing-methods-return-type-hints'></a>
 
 ### Tipo de valor devuelto
-
 Los métodos en clases e interfaces pueden tener "sugerencias de tipo de retorno". Estos proporcionarán información adicional útil al compilador para informarle sobre los errores en su aplicación. Considere el siguiente ejemplo:
 
 ```zep
@@ -355,7 +345,6 @@ class MyClass
 <a name='implementing-methods-return-type-void'></a>
 
 ### Tipo de valor devuelto: void
-
 Los métodos también se pueden marcar como `void`. Esto significa que un método no puede devolver datos:
 
 ```zep
@@ -375,7 +364,6 @@ myDb->execute("SELECT * FROM robots");
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
 
 ### Tipos de datos de parámetro Estricto/Flexible
-
 En Zephir, puede especificar el tipo de datos de cada parámetro de un método. Por defecto, estos tipos de datos son flexibles; esto significa que si se pasa un valor con un tipo de datos equivocado (pero compatible), Zephir intentará convertir de forma transparente al tipo esperado:
 
 ```zep
@@ -423,7 +411,6 @@ Al especificar qué parámetros son estrictos y cuales pueden ser flexible, un d
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### Parámetros de sólo lectura
-
 Utilizando la palabra clave `const` puede marcar los parámetros como de solo lectura, esto ayuda a respetar la [correctitud de constantes](http://en.wikipedia.org/wiki/Const-correctness). Los parámetros marcados con este atributo no pueden ser modificados dentro del método:
 
 ```zep
@@ -445,7 +432,6 @@ Cuando un parámetro es declarado como solo lectura, el compilador puede hacer s
 <a name='implementing-properties'></a>
 
 ## Implementación de Propiedades
-
 Las variables miembro de la clase se llaman "propiedades". Por defecto, estas actúan igual que las propiedades en PHP. Las propiedades se exportan a la extensión PHP y son accesibles desde el código PHP. Las propiedades implementan los modificadores de visibilidad generalmente disponibles en PHP, configurar explícitamente un modificador de visibilidad es obligatorio en Zephir:
 
 ```zep
@@ -502,7 +488,6 @@ class MyClass
 <a name='implementing-properties-updating'></a>
 
 ## Actualización de propiedades
-
 Las propiedades pueden actualizarse accediendo a ellas mediante el operador `->`:
 
 ```zep
@@ -534,7 +519,6 @@ let this->{someProperty} = 100;
 <a name='implementing-properties-reading'></a>
 
 ## Leyendo propiedades
-
 Las propiedades pueden leerse accediendo a ellas mediante el operador `->`:
 
 ```zep
@@ -555,7 +539,6 @@ echo this->{someProperty}
 <a name='class-constants'></a>
 
 ## Constante de Clase
-
 Las clases pueden contener constantes de clase que siguen siendo las mismas e inmutables una vez compilada la extensión. Las constantes de clase son exportadas a la extensión PHP, lo que les permite ser utilizadas desde PHP.
 
 ```zep
@@ -589,7 +572,6 @@ class MyClass
 <a name='calling-methods'></a>
 
 ## Llamando a métodos
-
 Los métodos pueden ser llamados utilizando el operador de objectos `->` como en PHP:
 
 ```zep
@@ -652,7 +634,6 @@ class MyClass
 <a name='calling-methods-parameters-by-name'></a>
 
 ### Parámetros por Nombre
-
 Zephir admite parámetros de método de llamada por nombre o argumentos de palabras clave. Los parámetros con nombre pueden ser útiles si desea pasar parámetros en un orden arbitrario, documentar el significado de los parámetros o especificar parámetros de una manera más elegante.
 
 Considere el siguiente ejemplo. Una clase llamada `Image` tiene un método que recibe cuatro parámetros:
@@ -690,4 +671,4 @@ Cuando el compilador (en tiempo de compilación) no conoce el orden correcto de 
 ```zep
 let i = new {someClass}();
 i->chop(y: 30, x: 20);
-```
+```    
