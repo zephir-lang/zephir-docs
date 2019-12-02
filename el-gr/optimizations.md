@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'el-gr'
+version: '0.10'
+---
 
 # Optimizations
-
 Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
 
 Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its execution time, or reducing the memory required by the program.
@@ -29,7 +28,6 @@ The following optimizations are supported:
 <a name='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
-
 This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce inline caches to avoid method or function lookups:
 
 ```zephir
@@ -47,7 +45,6 @@ class MyClass extends OtherClass
 <a name='check-invalid-reads'></a>
 
 ## check-invalid-reads
-
 This flag will force checking types to detect for invalid reads during the compilation process. This ensures that all variables are properly defined and initialized with their default values (as well as the internal pointers). An example is:
 
 ```zephir
@@ -66,6 +63,7 @@ class ForInRange
 ```
 
 compared to:
+
 
 ```zephir
 namespace Acme;
@@ -109,7 +107,6 @@ More information concerning on why C pointers need to be nullified in Stack over
 <a name='constant-folding'></a>
 
 ## constant-folding
-
 Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when this optimization is enabled:
 
 ```zephir
@@ -131,7 +128,6 @@ public function getValue()
 <a name='internal-call-transformation'></a>
 
 ## internal-call-transformation
-
 The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. By default, this optimization is turned off.
 
 This optimization generates 2 implementations per method, one that is exposed in PHP and an internal one.
@@ -146,13 +142,11 @@ Exceptions to the above are:
 <a name='local-context-pass'></a>
 
 ## local-context-pass
-
 This compilation pass moves variables that will be allocated in the heap to the stack. This optimization can reduce the number of memory indirections a program has to do.
 
 <a name='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
-
 This optimization replaces values of class constants in compile time:
 
 ```zephir
@@ -186,7 +180,6 @@ class MyClass
 <a name='static-type-inference'></a>
 
 ## static-type-inference
-
 This compilation pass is very important, since it looks for dynamic variables that can potentially be transformed into static/primitive types, which are better optimized by the underlying compiler.
 
 The following code uses a set of dynamic variables to perform some mathematical calculations:
@@ -230,5 +223,4 @@ By disabling this compilation pass, all variables will maintain the type with wh
 <a name='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
-
 This enables a second type inference pass, which improves the work done based on the data gathered by the first static type inference pass.
