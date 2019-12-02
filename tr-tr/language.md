@@ -1,17 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'tr-tr'
+version: '0.10'
+---
 
 # Basic Syntax
-
 In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
 
 <a name='organizing-code-in-files-and-namespaces'></a>
 
 ## Organizing Code in Files and Namespaces
-
 In PHP, you can place code in any file, without a specific structure. In Zephir, every file must contain a class (and just one class). Every class must have a namespace, and the directory structure must match the names of the classes and namespaces used. (This is similar to PSR-4 autoloading conventions, except it's enforced by the language itself.)
 
 For example, given the following structure, the classes in each file must be:
@@ -50,7 +48,6 @@ Zephir will raise a compiler exception if a file or class is not located in the 
 <a name='instruction-separation'></a>
 
 ## Instruction separation
-
 You may have already noticed that there were very few semicolons in the code examples in the previous chapter. You can use semicolons to separate statements and expressions, as in Java, C/C++, PHP, and similar languages:
 
 ```zephir
@@ -60,7 +57,6 @@ myObject->myMethod(1, 2, 3); echo "world";
 <a name='comments'></a>
 
 ## Comments
-
 Zephir supports 'C'/'C++' comments. These are one line comments with `// ...`, and multi line comments with `/* ... */`:
 
 ```zephir
@@ -78,7 +74,6 @@ If a docblock is not located where it is expected, the compiler will throw an ex
 <a name='variable-declarations'></a>
 
 ## Variable Declarations
-
 In Zephir, all variables used in a given scope must be declared. This gives important information to the compiler to perform optimizations and validations. Variables must be unique identifiers, and they cannot be reserved words.
 
 ```zephir
@@ -109,7 +104,6 @@ var somevalue, someValue, SomeValue;
 <a name='variable-scope'></a>
 
 ## Variable Scope
-
 All variables declared are locally scoped to the method where they were declared:
 
 ```zephir
@@ -134,7 +128,6 @@ class MyClass
 <a name='super-global'></a>
 
 ## Super Globals
-
 Zephir does not support global variables - accessing global variables from the PHP userland is not allowed. However, you can access PHP's super-globals as follows:
 
 ```zephir
@@ -148,7 +141,6 @@ let requestMethod = _SERVER["REQUEST_METHOD"];
 <a name='local-symbol-table'></a>
 
 ## Local Symbol Table
-
 Every method or context in PHP has a symbol table that allows you to write variables in a very dynamic way:
 
 ```php
