@@ -1,17 +1,15 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'es-es'
+version: '0.10'
+---
 
 # ¡Bienvenido!
-
 Bienvenido a Zephir, un lenguaje de código abierto de alto nivel/dominio específico, diseñado para facilitar la creación y mantenimiento de extensiones para PHP con un enfoque de tipo y cuidado de memoria.
 
 <a name='some-features'></a>
 
 ## Algunas características
-
 Las principales características de Zephir son:
 
 | Características       | Descripción                                             |
@@ -24,7 +22,6 @@ Las principales características de Zephir son:
 <a name='a-small-taste'></a>
 
 ## Una pequeña prueba
-
 El siguiente código registra una clase con un método que filtra variables, regresando sus caracteres alfabéticos:
 
 ```zephir
@@ -67,7 +64,6 @@ echo $filter->alpha("01ho#.la?/1"); // imprime hola
 <a name='external-links'></a>
 
 ## Enlaces externos
-
 A continuación hemos recopilado enlaces a recursos externos que te pueden interesar:
 
 - [Tipo de sistema](https://en.wikipedia.org/wiki/Type_system)
