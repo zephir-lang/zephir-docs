@@ -198,52 +198,52 @@
             "url": "#conditionals"
         },
         {
-            "text": "If Statement",
+            "text": "Оператор if",
             "level": 2,
             "url": "#conditionals-if"
         },
         {
-            "text": "Switch Statement",
+            "text": "Оператор switch",
             "level": 2,
             "url": "#conditionals-switch"
         },
         {
-            "text": "Loops",
+            "text": "Циклы",
             "level": 1,
             "url": "#loops"
         },
         {
-            "text": "While Statement",
+            "text": "Цикл while",
             "level": 2,
             "url": "#loops-while"
         },
         {
-            "text": "Loop Statement",
+            "text": "Цикл loop",
             "level": 2,
             "url": "#loops-loop"
         },
         {
-            "text": "For Statement",
+            "text": "Цикл for",
             "level": 2,
             "url": "#loops-for"
         },
         {
-            "text": "Break Statement",
+            "text": "Оператор break",
             "level": 2,
             "url": "#loops-break"
         },
         {
-            "text": "Continue Statement",
+            "text": "Оператор continue",
             "level": 2,
             "url": "#loops-continue"
         },
         {
-            "text": "Require",
+            "text": "Оператор require",
             "level": 1,
             "url": "#require"
         },
         {
-            "text": "Let",
+            "text": "Оператор let",
             "level": 1,
             "url": "#let"
         }
@@ -369,92 +369,92 @@
     ],
     "oop": [
         {
-            "text": "Классы",
+            "text": "Classes",
             "level": 1,
             "url": "#classes"
         },
         {
-            "text": "Модификаторы класса",
+            "text": "Class Modifiers",
             "level": 2,
             "url": "#classes-modifiers"
         },
         {
-            "text": "Реализация интерфейсов",
+            "text": "Implementing Interfaces",
             "level": 2,
             "url": "#classes-interfaces"
         },
         {
-            "text": "Реализация методов",
+            "text": "Implementing Methods",
             "level": 1,
             "url": "#implementing-methods"
         },
         {
-            "text": "Необязательные обнуляемые параметры",
+            "text": "Optional nullable parameters",
             "level": 2,
             "url": "#implementing-methods-optional-nullable-parameters"
         },
         {
-            "text": "Поддерживаемые области видимости",
+            "text": "Supported Visibilities",
             "level": 2,
             "url": "#implementing-methods-supported-visibilities"
         },
         {
-            "text": "Поддерживаемые модификаторы доступа",
+            "text": "Supported Modifiers",
             "level": 2,
             "url": "#implementing-methods-supported-modifiers"
         },
         {
-            "text": "Сокращения для геттеров/сеттеров",
+            "text": "Getter/Setter shortcuts",
             "level": 2,
             "url": "#implementing-methods-getter-setter-shortcuts"
         },
         {
-            "text": "Типы возвращаемых значений",
+            "text": "Return Type Hints",
             "level": 2,
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "Возвращаемый тип: void",
+            "text": "Return Type: Void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
         {
-            "text": "Строгие/приводимые типы параметров",
+            "text": "Strict/Flexible Parameter Data-Types",
             "level": 2,
             "url": "#implementing-methods-strict-flexible-parameter-data-types"
         },
         {
-            "text": "Параметры только для чтения",
+            "text": "Read-Only Parameters",
             "level": 2,
             "url": "#implementing-methods-read-only-parameters"
         },
         {
-            "text": "Реализация свойств",
+            "text": "Implementing Properties",
             "level": 1,
             "url": "#implementing-properties"
         },
         {
-            "text": "Обновление свойств",
+            "text": "Updating Properties",
             "level": 2,
             "url": "#implementing-properties-updating"
         },
         {
-            "text": "Чтение свойств",
+            "text": "Reading Properties",
             "level": 2,
             "url": "#implementing-properties-reading"
         },
         {
-            "text": "Константы класса",
+            "text": "Class Constants",
             "level": 1,
             "url": "#class-constants"
         },
         {
-            "text": "Вызов методов",
+            "text": "Calling Methods",
             "level": 1,
             "url": "#calling-methods"
         },
         {
-            "text": "Доступ к параметрам по имени",
+            "text": "Parameters by Name",
             "level": 2,
             "url": "#calling-methods-parameters-by-name"
         }
@@ -562,12 +562,12 @@
     "phpinfo": [],
     "static-analysis": [
         {
-            "text": "Выявление не инициализированных переменных",
+            "text": "Conditional Unassigned Variables",
             "level": 1,
             "url": "#conditional-unassigned-variables"
         },
         {
-            "text": "Удаление мёртвого кода",
+            "text": "Dead Code Elimination",
             "level": 1,
             "url": "#dead-code-elimination"
         }
@@ -594,7 +594,7 @@
             "url": "#initial-testing"
         },
         {
-            "text": "Удобный класс",
+            "text": "Удобные класс",
             "level": 1,
             "url": "#a-useful-class"
         },
