@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.11'
-
-* * *
+---
+layout: default
+language: 'es-es'
+version: '0.11'
+---
 
 # Introducción a Zephir
-
 Zephir es un lenguaje que aborda las principales necesidades de un desarrollador PHP tratando de escribir y compilar código que pueda ser ejecutado por PHP. Es de tipificado dinámico/estático, y algunas de sus características serán familiares para los desarrolladores PHP.
 
 El nombre Zephir es una contracción de las palabras Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](http://translate.google.com/#en/en/zaefire).
@@ -13,7 +12,6 @@ El nombre Zephir es una contracción de las palabras Z(end) E(ngine)/PH(P)/I(nte
 <a name='hello-world'></a>
 
 ## ¡Hola Mundo!
-
 Cada lenguaje tiene su propio ejemplo "¡Hola mundo!". En Zephir, este ejemplo introductorio presenta algunas características importantes del lenguaje.
 
 El código en Zephir se debe colocar en clases. El lenguaje está diseñado para crear librerías de orientadas a objetos y frameworks, por lo que no se permite el código fuera de una clase. Además, se requiere un espacio de nombres:
@@ -70,8 +68,7 @@ Actualmente, no se espera que un desarrollador que utiliza Zephir deba saber o e
 <a name='a-taste-of-zephir'></a>
 
 ## Una prueba de Zephir
-
-En los siguientes ejemplos, describiremos los detalles suficientes para entender lo que está sucediendo. El objetivo es darle un sentido de como es la programación en Zephir. Exploraremos los *detalles* de las características en los capítulos siguientes.
+En los siguientes ejemplos, describiremos los detalles suficientes para entender lo que está sucediendo. El objetivo es darle un sentido de como es la programación en Zephir. We'll explore the *details* of the features in subsequent chapters.
 
 En el siguiente ejemplo es muy simple; implementa una clase y un método, con un pequeño programa que verifica los tipos de datos de una matriz.
 
