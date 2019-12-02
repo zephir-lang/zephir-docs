@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'en' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'zh-cn'
+version: '0.10'
+---
 
 # 优化
-
 因为 Zephir 中的代码有时非常高级, 所以 c 编译器可能无法足够地优化此代码。
 
 由于其 AOT (ahead-of-time) 编译器, Zephir能够在编译时优化代码, 有可能缩短其执行时间, 或减少程序所需的内存。
@@ -29,7 +28,6 @@ zephir -fno-static-type-inference -fno-call-gatherer-pass
 <a name='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
-
 这个遍历计算在同一个方法中调用一个函数或方法的次数。 这允许编译器引入内联缓存, 以避免方法或函数查找:
 
 ```zephir
@@ -47,7 +45,6 @@ class MyClass extends OtherClass
 <a name='check-invalid-reads'></a>
 
 ## check-invalid-reads
-
 在编译过程中, 这个标志将强制检查类型来检测无效的读取。 这可确保使用默认值 (以及内部指针) 正确定义和初始化所有变量。 一个例子:
 
 ```zephir
@@ -66,6 +63,7 @@ class ForInRange
 ```
 
 与之比较：
+
 
 ```zephir
 namespace Acme;
@@ -109,7 +107,6 @@ zephir_fetch_params(1, 1, 0, &n);
 <a name='constant-folding'></a>
 
 ## constant-folding
-
 常量折叠是在编译时对常量表达式进行简化的过程。 启用此优化时, 将简化以下代码:
 
 ```zephir
@@ -131,7 +128,6 @@ public function getValue()
 <a name='internal-call-transformation'></a>
 
 ## internal-call-transformation
-
 `internal-call-transformation` 需要根据其等效的 php 方法生成内部方法, 从而允许绕过这些内部方法调用的 php 用户空间。 默认情况下, 此优化处于关闭状态。
 
 此优化为每个方法生成2个实现, 一个在 php 中公开, 一个在内部公开。
@@ -146,13 +142,11 @@ public function getValue()
 <a name='local-context-pass'></a>
 
 ## local-context-pass
-
 此编译传递将在堆中分配的变量移动到堆栈。 这种优化可以减少程序必须做的内存间接数。
 
 <a name='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
-
 此优化将替换编译时的类常量值:
 
 ```zephir
@@ -186,7 +180,6 @@ class MyClass
 <a name='static-type-inference'></a>
 
 ## static-type-inference
-
 这个编译过程非常重要，因为它寻找的是可能被转换为静态/基本类型的动态变量，底层编译器可以更好地对其进行优化。
 
 下面的代码使用一组动态变量来执行一些数学计算:
@@ -230,5 +223,4 @@ public function someCalculations(int a, int b)
 <a name='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
-
 这将启用第二个类型推断传递, 从而改进基于第一个静态类型推断传递所收集的数据所做的工作。
