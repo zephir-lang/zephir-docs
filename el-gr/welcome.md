@@ -5,13 +5,11 @@ version: '0.11'
 ---
 
 # Καλώς ορίσατε!
-
 Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
 
 <a name='some-features'></a>
 
 ## Μερικά χαρακτηριστικά γνωρίσματα
-
 Κύρια χαρακτηριστικά της Zephir είναι:
 
 | Χαρακτηριστικό    | Description                                          |
@@ -24,7 +22,6 @@ Welcome to Zephir, an open source, high-level/domain specific language designed 
 <a name='a-small-taste'></a>
 
 ## Μια μικρή γεύση
-
 The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
 ```zephir
@@ -67,7 +64,6 @@ echo $filter->alpha("01he#l.lo?/1"); // prints hello
 <a name='external-links'></a>
 
 ## External Links
-
 Below we have collected links to external resources that may interest you:
 
 - [Type system](https://en.wikipedia.org/wiki/Type_system)

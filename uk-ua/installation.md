@@ -41,25 +41,25 @@ sudo apt-get install git gcc make re2c php php-json php-dev libpcre3-dev build-e
 ```bash
 php -v
 ```
-
-    PHP 7.2.17-0ubuntu0.19.04.1 (cli) (built: Apr 18 2019 18:01:25) ( NTS )
-    Copyright (c) 1997-2018 The PHP Group
-    Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
-        with Zend OPcache v7.2.17-0ubuntu0.19.04.1, Copyright (c) 1999-2018, by Zend Technologies
-        with Xdebug v2.6.1, Copyright (c) 2002-2018, by Derick Rethans
-    
+```
+PHP 7.2.17-0ubuntu0.19.04.1 (cli) (built: Apr 18 2019 18:01:25) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.2.17-0ubuntu0.19.04.1, Copyright (c) 1999-2018, by Zend Technologies
+    with Xdebug v2.6.1, Copyright (c) 2002-2018, by Derick Rethans
+```
 
 Також переконайтеся, що у вас встановлені пакунки бібліотек для розробки PHP:
 
 ```bash
 phpize -v
 ```
-
-    Configuring for:
-    PHP Api Version:         20170718
-    Zend Module Api No:      20170718
-    Zend Extension Api No:   320170718
-    
+```
+Configuring for:
+PHP Api Version:         20170718
+Zend Module Api No:      20170718
+Zend Extension Api No:   320170718
+```
 
 Вам не обов'язково потрібно отримати такий самий вивід. Однак важливо, щоб ці команди були доступні для початку розробки на Zephir.
 

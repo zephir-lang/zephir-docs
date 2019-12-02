@@ -5,7 +5,6 @@ version: '0.11'
 ---
 
 # Métodos integrados
-
 Como se mencionó antes, Zephir promueve la programación orientada a objetos. Las variables relacionadas con los tipos estáticos también se pueden manejar como objetos.
 
 Compare estos dos métodos:
@@ -51,7 +50,6 @@ Los tienen la misma funcionalidad, pero el segundo utiliza programación orienta
 <a name='string'></a>
 
 ## String
-
 Los siguientes métodos incorporados de cadena están disponibles:
 
 | OO                   | Procedimientos        | Descripción                                                                        |
@@ -72,7 +70,6 @@ Los siguientes métodos incorporados de cadena están disponibles:
 <a name='array'></a>
 
 ## Array
-
 Los siguientes métodos incorporados de array están disponibles:
 
 | OO                   | Procedimientos          | Descripción                                                               |
@@ -95,7 +92,6 @@ Los siguientes métodos incorporados de array están disponibles:
 <a name='char'></a>
 
 ## Char
-
 Los siguientes métodos incorporados para chars están disponibles:
 
 | OO               | Procedimientos      |
@@ -105,7 +101,6 @@ Los siguientes métodos incorporados para chars están disponibles:
 <a name='integer'></a>
 
 ## Integer
-
 Los siguientes métodos incorporados para enteros están disponibles:
 
 | OO            | Procedimientos |

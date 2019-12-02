@@ -5,7 +5,6 @@ version: '0.11'
 ---
 
 # Estructuras de Control
-
 Zephir implementa un conjunto simplificado de estructuras de control presentes en lenguajes similares como C, PHP, etc.
 
 <a name='conditionals'></a>
@@ -15,7 +14,6 @@ Zephir implementa un conjunto simplificado de estructuras de control presentes e
 <a name='conditionals-if'></a>
 
 ### Declaración If
-
 `if` statements evaluate an expression, executing the following block if the evaluation is `true`. Las llaves son obligatorias. Un `if` puede tener un `else` opcional y múltiples construcciones `if`/`else` se pueden encadenar juntas:
 
 ```zephir
@@ -53,7 +51,6 @@ if a < 0 { return -1; } else { if a > 0 { return 1; } }
 <a name='conditionals-switch'></a>
 
 ### Declaración Switch
-
 Un `switch` evalúa una expresión contra una serie de valores literales predefinidos, ejecutando los correspondientes bloques `case` o en caso contrario, finalizando en `default`:
 
 ```zephir
@@ -81,7 +78,6 @@ switch count(items) {
 <a name='loops-while'></a>
 
 ### Declaración While
-
 `while` denotes a loop that iterates as long as its given condition evaluates as `true`:
 
 ```zephir
@@ -94,7 +90,6 @@ while counter {
 <a name='loops-loop'></a>
 
 ### Declaración Loop
-
 Además de `while`, `loop` puede ser utilizado para crear bucles infinitos:
 
 ```zephir
@@ -109,7 +104,6 @@ loop {
 <a name='loops-for'></a>
 
 ### Declaración For
-
 `for` es una estructura de control que permite recorrer matrices o cadenas de texto:
 
 ```zephir
@@ -179,7 +173,6 @@ for key, _ in data {
 <a name='loops-break'></a>
 
 ### Declaración Break
-
 Un `break` termina con la ejecución actual de una declaración `while`, `for` o `loop`:
 
 ```zephir
@@ -194,7 +187,6 @@ for item in ["a", "b", "c", "d"] {
 <a name='loops-continue'></a>
 
 ### Declaración Continue
-
 El `continue` se usa dentro de las estructuras de bucle para omitir el resto de la iteración del bucle actual y continuar la ejecución en la evaluación de condición, y luego al comienzo de la siguiente iteración.
 
 ```zephir
@@ -211,7 +203,6 @@ while a > 0 {
 <a name='require'></a>
 
 ## Require
-
 La declaración `require` incluye dinámicamente y evalúa un archivo especifico de PHP. Tenga en cuenta que estos archivos incluidos por Zephir son interpretados por el Zend Engine como un archivo normal de PHP. `require` does not allow Zephir code to include other Zephir files at runtime.
 
 ```zephir
@@ -223,7 +214,6 @@ if file_exists(path) {
 <a name='let'></a>
 
 ## Let
-
 La declaración `let` es utilizada para mutar variables, propiedades y arrays. Las variables, por defecto, son inmutables y esta instrucción les hace mutables por la duración de la declaración:
 
 ```zephir

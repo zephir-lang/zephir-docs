@@ -5,13 +5,11 @@ version: '0.11'
 ---
 
 # Arrays
-
 La manipulación de arrays o arreglos en Zephir proporciona una manera de utilizar los [arrays de PHP](http://www.php.net/manual/en/language.types.array.php). Un array es una implementación de una [tabla hash](http://en.wikipedia.org/wiki/Hash_table).
 
 <a name='declaring-array-variables'></a>
 
 ## Declarar Variables de tipo Array
-
 Variables de array pueden ser declaradas usando las palabras clave 'var' o 'array':
 
 ```zephir
@@ -22,7 +20,6 @@ array b = []; // variable array, el tipo no puede ser cambiado durante la ejecuc
 <a name='creating-arrays'></a>
 
 ## Creación de Arrays
-
 Un array se crea encerrando sus elementos entre corchetes:
 
 ##### Crear una arreglo vacío
@@ -72,7 +69,6 @@ let elements = [4: "bar", "foo": 8];
 <a name='updating-arrays'></a>
 
 ## Actualización de arrays
-
 Los arreglos se actualizan en la misma manera que en PHP, utilizando corchetes cuadrados:
 
 ##### Actualización de un array con una llave de texto
@@ -97,7 +93,6 @@ let elements["foo"][0] = "bar";
 <a name='appending-elements'></a>
 
 ## Agregando elementos
-
 Los elementos pueden ser añadidos al final del array de la siguiente manera:
 
 ##### Añadir un nuevo elemento a un array
@@ -109,7 +104,6 @@ let elements[] = "bar";
 <a name='reading-elements-from-arrays'></a>
 
 ## Leyendo elementos desde arrays
-
 Es posible leer los elementos de la matriz de la siguiente forma:
 
 ##### Obteniendo un elemento utilizando la clave de texto `foo`
