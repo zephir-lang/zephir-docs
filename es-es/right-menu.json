@@ -718,12 +718,12 @@
             "url": "#static-types-char-unsigned"
         },
         {
-            "text": "Integer/Unsigned Integer",
+            "text": "Integer/Integer sin signo",
             "level": 2,
             "url": "#static-types-integer-unsigned"
         },
         {
-            "text": "Long/Unsigned Long",
+            "text": "Long/Long sin signo",
             "level": 2,
             "url": "#static-types-long-unsigned"
         },

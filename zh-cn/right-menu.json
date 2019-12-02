@@ -688,7 +688,7 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Integer overflow",
+            "text": "整数溢出",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
@@ -718,12 +718,12 @@
             "url": "#static-types-char-unsigned"
         },
         {
-            "text": "Integer/Unsigned Integer",
+            "text": "整数/无符号整数",
             "level": 2,
             "url": "#static-types-integer-unsigned"
         },
         {
-            "text": "Long/Unsigned Long",
+            "text": "长值/无符号长值",
             "level": 2,
             "url": "#static-types-long-unsigned"
         },
