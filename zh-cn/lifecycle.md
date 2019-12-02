@@ -11,7 +11,7 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 
 ![PHP进程/请求生命周期](/assets/content/lifecycle.png)
 
-生命周期钩子注册在`config.json`。 如上图所示，有四种生命周期钩子 — `globals`， `initializers`，`destructors`，`info`。 Each of these has its own corresponding root-level setting in the configuration, and both [globals](/0.11/en/globals) and [info](/0.11/en/phpinfo) have their own chapters. 本章将介绍另外两种设置。
+生命周期钩子注册在`config.json`。 如上图所示，有四种生命周期钩子 — `globals`， `initializers`，`destructors`，`info`。 Each of these has its own corresponding root-level setting in the configuration, and both [globals](/{{ page.version }}/{{ page.language }}/globals) and [info](/{{ page.version }}/{{ page.language }}/phpinfo) have their own chapters. 本章将介绍另外两种设置。
 
 每个钩子在`config.json`文件是一个对象数组，其本身本质上是`include`/`code`对。 `include`值，如果还没有，则会拉入一个给定的C头文件，这样`code`就可以访问它的内容。 The `code` value is the logic run by the hook itself, and while you can technically put any valid C in here, it is **_strongly_** recommended to put logic longer than one or two lines into a separate C source file (such as the one pulled in along with your `include`d header file), and use a single-line function call here.
 
