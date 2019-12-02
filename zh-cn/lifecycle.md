@@ -5,6 +5,7 @@ version: '0.10'
 ---
 
 # 生命周期钩子
+
 PHP提供了几个生命周期事件，这些扩展可以用来执行常见的初始化或关闭任务。 通常，Zephir在这些事件中自己的钩子会覆盖所有设置，并删除您需要的扩展，但是如果您发现需要做更多的事情，可以使用一些选项将您自己的代码传递到这些相同的钩子中。
 
 考虑下面的图表:
@@ -13,11 +14,12 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 
 生命周期钩子注册在`config.json`。 如上图所示，有四种生命周期钩子 — `globals`， `initializers`，`destructors`，`info`。 Each of these has its own corresponding root-level setting in the configuration, and both [globals](/0.11/en/globals) and [info](/0.11/en/phpinfo) have their own chapters. 本章将介绍另外两种设置。
 
-每个钩子在`config.json`文件是一个对象数组，其本身本质上是`include`/`code`对。 `include`值，如果还没有，则会拉入一个给定的C头文件，这样`code`就可以访问它的内容。 The `code` value is the logic run by the hook itself, and while you can technically put any valid C in here, it is **_strongly_** recommended to put logic longer than one or two lines into a separate C source file (such as the one pulled in along with your `include`d header file), and use a single-line function call here.
+每个钩子在`config.json`文件是一个对象数组，其本身本质上是`include`/`code`对。 `include`值，如果还没有，则会拉入一个给定的C头文件，这样`code`就可以访问它的内容。 `code`值是由钩的逻辑本身, 虽然在技术上你可以把任何有效的C, 它是** 强烈**建议把逻辑超过一个或两个行到一个单独的C源文件(比如一个拉连同你的`include` d头文件), 并使用一个单行的函数调用。
 
 <a name='initializers'></a>
 
 ## initializers
+
 `initializers` 块如下所示:
 
 ```json
@@ -56,6 +58,7 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 <a name='desctructors'></a>
 
 ## destructors
+
 `destructors` 块如下所示:
 
 ```json
@@ -95,4 +98,4 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 }
 ```
 
-Much as the `initializers` block is responsible for defining hooks into the Init events shown in the diagram above, _this_ block is responsible for defining hooks into the Shutdown events. 有四个:`request`响应之前敲定任何数据发送到客户端,`post-request`清理响应被发送后,`module</0 >模块扩展后的清理本身PHP进程关闭之前, 和<code>globals`清理全局变量空间。
+正如 `initializers` 块负责定义上图中显示的 init 事件中的挂钩一样, *this* 块负责定义关机事件中的挂钩。 有四个:`request`响应之前敲定任何数据发送到客户端,`post-request`清理响应被发送后,`module</0 >模块扩展后的清理本身PHP进程关闭之前, 和<code>globals`清理全局变量空间。
