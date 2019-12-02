@@ -1,6 +1,6 @@
 ---
 layout: default
-language: 'en'
+language: 'ru-ru'
 version: '0.11'
 ---
 
@@ -77,7 +77,7 @@ version: '0.11'
 <a name='constants-sources'></a>
 
 ## constants-sources
-Чтобы импортировать только константы из исходного Си-файла в ваш проект, укажите путь к файлу в этой настройке:
+Чтобы импортировать только константы из исходного файла C в ваш проект, укажите путь к файлу в этой настройке:
 
 ```json
 {
@@ -101,7 +101,7 @@ version: '0.11'
 <a name='destructors'></a>
 
 ## destructors
-Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
+Этот параметр позволяет предоставить одну или несколько функций C, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
 
 ```json
 {
@@ -143,7 +143,7 @@ version: '0.11'
 <a name='extension-name'></a>
 
 ## extension-name
-Базовое имя файла расширения. Оно должно следовать тем же правилам, что и настройка `namespace`, которая используется как запасной вариант в случае, если эта не указана.
+Имя базового файла расширения. Оно должно следовать тем же правилам, что и настройка `namespace`, которая используется как запасной вариант в случае, если эта не указана.
 
 ```json
 {
@@ -195,7 +195,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/{
 <a name='extra-classes'></a>
 
 ## extra-classes
-Если у вас уже есть PHP-класс, реализованный на Си, Вы можете включить его непосредственно в ваше расширение, как показано ниже:
+Если у вас уже есть PHP-класс, реализованный в C, Вы можете включить его непосредственно в ваше расширение, как показано ниже:
 
 ```json
 {
@@ -276,7 +276,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/{
 <a name='initializers'></a>
 
 ## initializers
-Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
+Этот параметр позволяет предоставить одну или несколько функций C для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
 
 ```json
 {
@@ -323,7 +323,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/{
 <a name='namespace'></a>
 
 ## namespace
-Пространство имён расширения. Это должен быть простой идентификатор, соответствующий регулярному выражению `[a-zA-Z0-9\_]+`:
+Пространство имен расширения. Это должен быть простой идентификатор, соответствующий регулярному выражению `[a-zA-Z0-9\_]+`:
 
 ```json
 {
@@ -418,7 +418,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/{
 <a name='stubs'></a>
 
 ## stubs
-Эта настройка позволяет настроить способ генерации IDE заглушек. `path` указывает, где должны быть созданы заглушки, а `stubs-run-after-generate` указывает, следует ли автоматически (повторно) создавать заглушки, когда ваш код компилируется в Си:
+Эта настройка позволяет настроить способ генерации IDE заглушек. `path` указывает, где должны быть созданы заглушки, а `stubs-run-after-generate` указывает, следует ли автоматически (повторно) создавать заглушки, когда ваш код компилируется в C:
 
 ```json
 {
@@ -432,7 +432,7 @@ Contains extra settings that also can be passed, as is, [on the command line](/{
 <a name='verbose'></a>
 
 ## verbose
-Позволяет выводить более подробную информацию в сообщениях об ошибках при выбрасывании исключений `zephir` командами. Эту настройку также можно включить с помощью `-v`, или отключить с помощью `-V`:
+Выводит более подробную информацию в сообщениях об ошибках из сгенерированых исключений используя `zephir` команды (также можно включить с помощью `-v`, или отключить с помощью `-V`):
 
 ```json
 {
