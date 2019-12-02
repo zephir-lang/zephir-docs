@@ -1,11 +1,10 @@
-* * *
-
-layout: default language: 'uk' version: '0.10'
-
-* * *
+---
+layout: default
+language: 'uk-ua'
+version: '0.10'
+---
 
 # Built-In Methods
-
 As mentioned before, Zephir promotes object-oriented programming. Variables related to static types can also be handled as objects.
 
 Compare these two methods:
@@ -51,7 +50,6 @@ They both have the same functionality, but the second one uses object-oriented p
 <a name='string'></a>
 
 ## Рядок
-
 The following string built-in methods are available:
 
 | OO                   | Procedural            | Опис                                                                          |
@@ -72,7 +70,6 @@ The following string built-in methods are available:
 <a name='array'></a>
 
 ## Array
-
 The following array built-in methods are available:
 
 | OO                   | Procedural              | Опис                                                                    |
@@ -95,7 +92,6 @@ The following array built-in methods are available:
 <a name='char'></a>
 
 ## Char
-
 The following char built-in methods are available:
 
 | OO               | Procedural          |
@@ -105,7 +101,6 @@ The following char built-in methods are available:
 <a name='integer'></a>
 
 ## Integer
-
 The following integer built-in methods are available:
 
 | OO            | Procedural |
