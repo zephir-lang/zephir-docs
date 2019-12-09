@@ -101,7 +101,7 @@ version: '0.10'
 <a name='destructors'></a>
 
 ## destructors
-Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
+Этот параметр позволяет предоставить одну или несколько Си-функций, которые будут выполняться для определенных событий жизненного цикла расширения, в частности, `RSHUTDOWN` (`request`), `PRSHUTDOWN` (`post-request`), `MSHUTDOWN` (`module`), и `GSHUTDOWN` (`globals`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ page.version }}/{{ page.language }}/lifecycle)".
 
 ```json
 {
@@ -235,7 +235,7 @@ version: '0.10'
 <a name='globals'></a>
 
 ## globals
-Доступны глобальные расширения Check the [globals](/{{ page.version }}/{{ page.language }}/globals) chapter for more information.
+Доступные для расширения глобальные параметры. Для получения более подробной информации обратитесь к главе "[Глобальные параметры расширения](/{{ page.version }}/{{ page.language }}/globals)".
 
 ```json
 {
@@ -255,7 +255,7 @@ version: '0.10'
 <a name='info'></a>
 
 ## info
-Секции `phpinfo()`. Check the [phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo) chapter for more information.
+Секции `phpinfo()`. За дополнительной информацией обратитесь к главе "[Секции phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo)".
 
 ```json
 {
@@ -274,7 +274,7 @@ version: '0.10'
 <a name='initializers'></a>
 
 ## initializers
-Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
+Этот параметр позволяет предоставить одну или несколько Си-функций для выполнения при определенных событиях жизненного цикла расширения - в частности, `GINIT` (`globals`), `MINIT` (`module`), и `RINIT` (`request`). Для получения более подробной информации обратитесь к главе "[Хуки жизненного цикла](/{{ page.version }}/{{ page.language }}/lifecycle)".
 
 ```json
 {
