@@ -72,7 +72,7 @@ The optional `module` key, if present, places that global's initialization proce
 }
 ```
 
-In the example above, `allow_some_feature` is set up only once at startup; `number_times` is set up at the start of each request.
+В примере выше, `allow_some_feature` настраивается только один раз при запуске; `number_times` устанавливается в начале каждого запроса.
 
 Доступ к глобальным переменным может быть осуществлён из любого метода расширения при помощи встроенных функций `globals_get` и `globals_set`:
 
