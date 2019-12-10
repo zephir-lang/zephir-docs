@@ -174,7 +174,7 @@ return isset this->{someProperty};
 <a name='special-operators-typeof'></a>
 
 ### Typeof
-This operator checks a variable's type. 'typeof' can be used with a comparison operator:
+Этот оператор проверяет тип переменной. 'typeof' может использоваться с оператором сравнения:
 
 ```zephir
 if (typeof str == "string") { // or !=
@@ -182,7 +182,7 @@ if (typeof str == "string") { // or !=
 }
 ```
 
-It can also work like the PHP function `gettype`.
+Он также может работать как PHP-функция `gettype`.
 
 ```zephir
 return typeof str;
@@ -211,7 +211,7 @@ let o = <MyClass> this->_myObject;
 o->myMethod();
 ```
 
-These "type hints" are weak. This means the program does not check if the value is in fact an instance of the specified class, nor whether it implements the specified interface. If you want it to check this every time in execution, use a strict type:
+These "type hints" are weak. Это означает, что программа не проверяет, является ли значение экземпляром указанного класса, и не проверяет реализует ли он указанный интерфейс. If you want it to check this every time in execution, use a strict type:
 
 ```zephir
 // Always check if the property is an instance
@@ -225,7 +225,7 @@ o->myMethod();
 ### Подсказки прогнозирования ветвлений
 Что такое прогнозирование ветвлений? Для подробного описания это понятия обратитесь к [статье Игоря Островского](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) или [описанию на Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). В окружениях, где производительность является очень важной составляющей, может оказаться полезным использование подсказок при прогнозировании ветвлений.
 
-Consider the following example:
+Рассмотрим следующий пример:
 
 ```zephir
 let allPaths = [];
