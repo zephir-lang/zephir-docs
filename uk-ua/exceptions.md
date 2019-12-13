@@ -4,12 +4,12 @@ language: 'uk-ua'
 version: '0.10'
 ---
 
-# Exceptions
-Zephir implements exceptions at a very low level, providing similar behavior and functionality to PHP.
+# Винятки
+Zephir реалізує винятки на дуже низькому рівні, забезпечуючи схожу поведінку і функціональність як у PHP.
 
-When an exception is thrown, a `catch` block can be used to capture the exception and allow the developer to provide proper handling:
+Коли генерується виняток, блок `catch` може бути використаний для перехоплення виключення і надання розробнику можливості забезпечити належну обробку:
 
-Exceptions can be thrown inside the `try` block. Handling happens in the `catch` block, exactly as in PHP:
+Винятки можуть бути викинуті всередині блоку `try`. Обробка виконується в блоці `catch`, як і в PHP:
 
 ```zephir
 var e;
@@ -23,7 +23,7 @@ try {
 }
 ```
 
-Zephir also provides a "silent" `try` block, that simply ignores any exceptions produced within that block:
+Zephir також забезпечує "тихий" блок `try`, який просто ігнорує будь-які винятки всередині цього блоку:
 
 ```zephir
 try {
@@ -31,7 +31,7 @@ try {
 }
 ```
 
-If you don't need an exception variable when 'catch'ing, then you can safely not provide it:
+Якщо вам не потрібна змінна виключення в блоці `catch`, ви можете не вказувати її:
 
 ```zephir
 try {
@@ -44,7 +44,7 @@ try {
 }
 ```
 
-A single `catch` block can be used to catch multiple types of exception:
+Один блок `catch` може використовуватися для перехоплення декількох типів винятків:
 
 ```zephir
 var e;
@@ -58,7 +58,7 @@ try {
 }
 ```
 
-Zephir allows you to throw literals or static typed variables as if they were the message of the exception:
+Zephir дозволяє викидати літерали або статичнотипізовані змінні так, ніби вони є повідомленням про виняток:
 
 ```zephir
 // throw new \Exception("Test");
@@ -74,7 +74,7 @@ throw 123;
 throw 123.123;
 ```
 
-Zephir's exceptions provide the same methods to know where the exception happened that PHP's exceptions do. That is, `Exception::getFile()` and `Exception::getLine()` return the location in the Zephir code where the exception was thrown:
+Винятки в Zephir надають ті самі методи, що й методи в PHP, для того, щоб дізнатися де сталася помилка. Тобто, `Exception::getFile()` та `Exception::getLine()` повертають ім'я файлу та номер рядка де в Zephir-коді був згенерований виняток:
 
 ```bash
 Exception: The static method 'someMethod' does not exist on model 'Robots'
