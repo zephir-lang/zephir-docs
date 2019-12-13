@@ -399,7 +399,7 @@ let a = 4294967296,
 
 <a name='static-types-string'></a>
 
-### Рядок
+### String
 Рядок є послідовністю символів, де кожен символ є одним байтом. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
 
 Коли змінна оголошується як `string` вона ніколи не змінить свого типу:
