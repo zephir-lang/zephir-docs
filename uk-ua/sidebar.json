@@ -4,7 +4,7 @@
         "url": "welcome"
     },
     {
-        "text": "Why Zephir",
+        "text": "Чому Zephir",
         "url": "motivation"
     },
     {
@@ -28,7 +28,7 @@
         "url": "types"
     },
     {
-        "text": "Operators",
+        "text": "Оператори",
         "url": "operators"
     },
     {
@@ -36,11 +36,11 @@
         "url": "arrays"
     },
     {
-        "text": "Classes and objects",
+        "text": "Класи та об'єкти",
         "url": "oop"
     },
     {
-        "text": "Built-in methods",
+        "text": "Вбудовані методи",
         "url": "builtin-methods"
     },
     {
@@ -48,7 +48,7 @@
         "url": "control-structures"
     },
     {
-        "text": "Exceptions",
+        "text": "Винятки",
         "url": "exceptions"
     },
     {
