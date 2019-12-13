@@ -56,7 +56,7 @@ Options:
     -W([a-z0-9\-]+)     Turns a warning off
 ```
 
-If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
+Якщо щось пішло не так, будь ласка, поверніться на сторінку [Встановлення](/{{ page.version }}/{{ page.language }}/installation) page.
 
 <a name='extension-skeleton'></a>
 
