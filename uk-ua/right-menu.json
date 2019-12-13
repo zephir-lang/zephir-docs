@@ -320,7 +320,7 @@
             "url": "#installing-zephir"
         },
         {
-            "text": "Testing the installation",
+            "text": "Тестування встановлення",
             "level": 1,
             "url": "#testing-the-installation"
         }
@@ -332,7 +332,7 @@
             "url": "#hello-world"
         },
         {
-            "text": "A taste of Zephir",
+            "text": "Смак Зефіру",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
@@ -389,12 +389,12 @@
     ],
     "motivation": [
         {
-            "text": "If you are a PHP programmer...",
+            "text": "Якщо ви PHP-програміст...",
             "level": 1,
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "If you are a C programmer...",
+            "text": "Якщо ви C-програміст...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
@@ -404,17 +404,17 @@
             "url": "#compilation-vs-interpretation"
         },
         {
-            "text": "Statically typed versus dynamically typed languages",
+            "text": "Статичнотипізовані мови проти динамічнотипізованих",
             "level": 1,
             "url": "#statically-typed-versus-dynamically-typed-languages"
         },
         {
-            "text": "Compilation scheme",
+            "text": "Схема компіляції",
             "level": 1,
             "url": "#compilation-scheme"
         },
         {
-            "text": "Code protection",
+            "text": "Захист коду",
             "level": 1,
             "url": "#code-protection"
         },
@@ -631,12 +631,12 @@
     ],
     "tutorial": [
         {
-            "text": "Checking the installation",
+            "text": "Перевірка встановлення",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Extension skeleton",
+            "text": "Каркас розширення",
             "level": 1,
             "url": "#extension-skeleton"
         },
@@ -646,7 +646,7 @@
             "url": "#adding-our-first-class"
         },
         {
-            "text": "Initial testing",
+            "text": "Первинне тестування",
             "level": 1,
             "url": "#initial-testing"
         },
