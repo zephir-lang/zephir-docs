@@ -71,7 +71,7 @@ Actualmente, no se espera que un desarrollador que utiliza Zephir deba saber o e
 
 ## Una prueba de Zephir
 
-En los siguientes ejemplos, describiremos los detalles suficientes para entender lo que está sucediendo. El objetivo es darle un sentido de como es la programación en Zephir. Exploraremos los *detalles* de las características en los capítulos siguientes.
+En los siguientes ejemplos, describiremos los detalles suficientes para entender lo que está sucediendo. El objetivo es darle un sentido de como es la programación en Zephir. Exploraremos los detalles de las características en los capítulos siguientes.
 
 En el siguiente ejemplo es muy simple; implementa una clase y un método, con un pequeño programa que verifica los tipos de datos de una matriz.
 

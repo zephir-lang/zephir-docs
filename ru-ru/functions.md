@@ -4,9 +4,9 @@ language: 'ru-ru'
 version: '0.12'
 ---
 
-# Calling Functions
+# Вызов функций
 
-PHP has a rich library of functions that you can use within your extensions. To call a PHP function you simply use it as normal within your Zephir code:
+PHP имеет богатую библиотеку функций, которые вы можете использовать в своих расширениях. Чтобы вызвать функцию PHP, вы просто используете её как обычно в своем коде Zephir:
 
 ```zephir
 namespace MyLibrary;
@@ -23,7 +23,7 @@ class Encoder
 }
 ```
 
-You can also call functions that are expected to exist in the PHP userland, but are not necessarily built in to PHP itself:
+Вы также можете вызывать функции, которые, как ожидается, существуют в пользовательском окружении PHP, но не встроены в PHP:
 
 ```zephir
 namespace MyLibrary;
@@ -45,7 +45,7 @@ class Encoder
 }
 ```
 
-Note that all PHP functions only receive and return dynamic variables. If you pass a static typed variable as a parameter, a temporary dynamic variable will automatically be used as a bridge in order to call the function:
+Обратите внимание, что все PHP-функции только получают и возвращают динамические переменные. Если вы передаете статически типизированную переменную в качестве параметра, то в качестве моста для вызова функции будет создана временная динамическая переменная:
 
 ```zephir
 namespace MyLibrary;
@@ -64,7 +64,7 @@ class Encoder
 }
 ```
 
-Similarly, functions return dynamic values, which cannot be directly assigned to static variables without the appropriate explicit cast:
+Аналогично, функции возвращают динамические значения, которые не могут быть напрямую назначены статическим переменным без соответствующего приведения:
 
 ```zephir
 namespace MyLibrary;
@@ -84,7 +84,7 @@ class Encoder
 }
 ```
 
-Zephir also provides a way for you to call functions dynamically, such as:
+Zephir также предоставляет способ для динамического вызова функций, например:
 
 ```zephir
 namespace MyLibrary;
