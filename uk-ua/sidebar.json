@@ -1,10 +1,10 @@
 [
     {
-        "text": "Welcome",
+        "text": "Ласкаво просимо",
         "url": "welcome"
     },
     {
-        "text": "Why Zephir",
+        "text": "Чому Zephir",
         "url": "motivation"
     },
     {
@@ -28,7 +28,7 @@
         "url": "types"
     },
     {
-        "text": "Operators",
+        "text": "Оператори",
         "url": "operators"
     },
     {
@@ -36,35 +36,35 @@
         "url": "arrays"
     },
     {
-        "text": "Classes and objects",
+        "text": "Класи та об'єкти",
         "url": "oop"
     },
     {
-        "text": "Built-in methods",
+        "text": "Вбудовані методи",
         "url": "builtin-methods"
     },
     {
-        "text": "Control structures",
+        "text": "Структури управління",
         "url": "control-structures"
     },
     {
-        "text": "Exceptions",
+        "text": "Винятки",
         "url": "exceptions"
     },
     {
-        "text": "Calling functions",
+        "text": "Виклик функцій",
         "url": "functions"
     },
     {
-        "text": "Closures",
+        "text": "Замикання",
         "url": "closures"
     },
     {
-        "text": "Custom optimizers",
+        "text": "Користувацькі оптимізатори",
         "url": "optimizers"
     },
     {
-        "text": "Configuration file",
+        "text": "Файл конфігурації",
         "url": "config"
     },
     {
@@ -72,27 +72,27 @@
         "url": "lifecycle"
     },
     {
-        "text": "Extension globals",
+        "text": "Глобальні параметри розширення",
         "url": "globals"
     },
     {
-        "text": "phpinfo() sections",
+        "text": "Розділи в phpinfo()",
         "url": "phpinfo"
     },
     {
-        "text": "Static analysis",
+        "text": "Статичний аналіз",
         "url": "static-analysis"
     },
     {
-        "text": "Optimizations",
+        "text": "Оптимізації",
         "url": "optimizations"
     },
     {
-        "text": "Compiler warnings",
+        "text": "Попередження компілятора",
         "url": "warnings"
     },
     {
-        "text": "License",
+        "text": "Ліцензійна угода",
         "url": "license"
     }
 ]
