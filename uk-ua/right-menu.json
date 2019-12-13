@@ -193,22 +193,22 @@
     ],
     "control-structures": [
         {
-            "text": "Conditionals",
+            "text": "Умовні оператори",
             "level": 1,
             "url": "#conditionals"
         },
         {
-            "text": "If Statement",
+            "text": "Оператор if",
             "level": 2,
             "url": "#conditionals-if"
         },
         {
-            "text": "Switch Statement",
+            "text": "Оператор switch",
             "level": 2,
             "url": "#conditionals-switch"
         },
         {
-            "text": "Loops",
+            "text": "Цикли",
             "level": 1,
             "url": "#loops"
         },
