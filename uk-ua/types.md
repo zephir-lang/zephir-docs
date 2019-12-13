@@ -229,7 +229,7 @@ let a = "hello";
 char ch, string name = "peter";
 ```
 
-##### stores 't'
+##### зберігає "t"
 
 ```zephir
 let ch = name[2];
