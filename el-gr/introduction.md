@@ -1,7 +1,7 @@
 ---
 layout: default
 language: 'el-gr'
-version: '0.11'
+version: '0.10'
 ---
 
 # Introducing Zephir
@@ -68,7 +68,7 @@ Actually, it is not expected that a developer that uses Zephir must know or even
 <a name='a-taste-of-zephir'></a>
 
 ## A Taste of Zephir
-In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the *details* of the features in subsequent chapters.
+In the following examples, we'll describe just enough of the details to understand what's going on. The goal is to give you a sense of what programming in Zephir is like. We'll explore the details of the features in subsequent chapters.
 
 The following example is very simple; it implements a class and a method, with a small program that checks the types of an array.
 
