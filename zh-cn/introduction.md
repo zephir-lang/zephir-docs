@@ -71,7 +71,7 @@ PHP_METHOD(Test_Hello, say) {
 
 ## 一个 Zephir 的尝试
 
-在下面的例子中，我们将描述足够多的细节来理解发生了什么。 目标是让您了解Zephir中的编程是什么样子的。 我们将在后面的章节中探索*细节*的特性。
+在下面的例子中，我们将描述足够多的细节来理解发生了什么。 目标是让您了解Zephir中的编程是什么样子的。 We'll explore the details of the features in subsequent chapters.
 
 下面的例子很简单; 它实现了一个类和一个方法，以及一个检查数组类型的小程序。
 
