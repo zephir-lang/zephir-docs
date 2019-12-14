@@ -6,21 +6,21 @@ version: '0.12'
 
 # Хуки жизненного цикла
 
-PHP provides several lifecycle events, which extensions can use to perform common initialization or shutdown tasks. Normally, Zephir's own hooks into these events will cover all the setup and tear down your extension will need, but if you find that you need to do something more, there are a few options you can use to pass your own code into these same hooks.
+PHP предоставляет несколько событий жизненного цикла, которые могу использоваться расширениями для выполнения общих задач инициализации или для выполнения задач по завершению работы. В большинстве случаев, хуки предоставляемые Zephir являются достаточной мерой, чтобы охватить большинство настроек и проделать всю работу, в которой может нуждаться ваше расширение. Однако, если вы обнаружите, что вам нужно сделать что-то большее, есть несколько опций, которые вы можете использовать для того, чтобы передать произвольные инструкции в те же хуки, которые использует Zephir.
 
-Consider the following diagram:
+Рассмотрим следующую диаграмму:
 
-![The PHP Process/Request Lifecycle](/assets/content/lifecycle.png)
+![Жизненный цикл PHP](/assets/content/lifecycle.png)
 
-Lifecycle hooks are registered in the `config.json` file. As you can see in the diagram above, there are four types of lifecycle hooks - `globals`, `initializers`, `destructors`, and `info`. Each of these has its own corresponding root-level setting in the configuration, and both [globals](/{{ page.version }}/{{ page.language }}/globals) and [info](/{{ page.version }}/{{ page.language }}/phpinfo) have their own chapters. This chapter covers the other two settings.
+Хуки жизненного цикла регистрируются в файле `config.json`. Как видно из диаграммы выше, есть четыре типа хуков — `globals`, `initializers`, `destructors` и `info`. Каждый из этих типов имеет свою собственную секцию конфигурации на корневом уровне общих настроек расширения. Типам [globals](/{{ page.version }}/{{ page.language }}/globals) и [info](/{{ page.version }}/{{ page.language }}/phpinfo) посвящены отдельные главы. А в этой главе описывается настройка двух других хуков жизненного цикла.
 
-Each hook in the `config.json` file is an array of objects, which themselves are essentially `include`/`code` pairs. The `include` value will pull in a given C header file, if it hasn't been already, so that the `code` will have access to its contents. The `code` value is the logic run by the hook itself, and while you can technically put any valid C in here, it is ***strongly*** recommended to put logic longer than one or two lines into a separate C source file (such as the one pulled in along with your `include`d header file), and use a single-line function call here.
+Описание каждого хука в файле `config.json` является массивом объектов, каждый из которых, в свою очередь, по существу состоит из пары `include` и `code`. Значение в поле `include` указывает на заголовочный файл, который может использоваться кодом, предоставленным в поле `code`. Содержимое поля `code`, как не трудно догадаться, является Си-кодом, который будет исполняться. Технически вы могли бы поместить сюда более одной строки кода, однако так поступать ***крайне не рекомендуется***. Вместо этого, рекомендуется размещать большие части кода в отдельных файлах (описанных в поле `include`) и использовать однострочный стиль вызова этих функций в поле `code`.
 
 <a name='initializers'></a>
 
 ## initializers
 
-The `initializers` block looks something like this:
+Типичный блок `initializers` выглядит примерно так:
 
 ```json
 {
@@ -53,13 +53,13 @@ The `initializers` block looks something like this:
 }
 ```
 
-This block is responsible for defining hooks into the Init events shown in the diagram above. There are three of these: `globals` for setting up the global variable space, `module` for setting up anything the extension itself needs to function, and `request` for setting up the extension to handle a single request.
+Этот блок отвечает за определение хуков в Init событиях, показанных на диаграмме выше. Вот три из них: `globals` для настройки глобальных переменных, `module` для настройки чего угодно, в чём может нуждаться само расширение, и `request` для настройки обработки расширением одиночного запроса.
 
 <a name='desctructors'></a>
 
 ## destructors
 
-The `destructors` block looks something like this:
+Типичный блок `destructors` выглядит так:
 
 ```json
 {
@@ -98,4 +98,4 @@ The `destructors` block looks something like this:
 }
 ```
 
-Much as the `initializers` block is responsible for defining hooks into the Init events shown in the diagram above, *this* block is responsible for defining hooks into the Shutdown events. There are four of these: `request` for finalizing any data before a response is sent to the client, `post-request` for cleaning up after a response has been sent, `module` for cleaning up after the extension itself before the PHP process shuts down, and `globals` for cleaning up the global variable space.
+Схожим образом, как и блок `initializers`, этот блок отвечает за определение хуков в событиях, предоставленных на диаграмме выше. Однако его предназначение — Shutdown события. Четыре события, которые могут быть описаны в этом блоке: `request` — для финализации любых данных перед отправкой ответа клиенту, `post-request` — для очистки после отправки ответа, `module` — для очистки самого расширения до завершения работы PHP, и `гglobals` — для очистки окружения глобальных переменных.
