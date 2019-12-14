@@ -53,7 +53,7 @@ The `initializers` block looks something like this:
 }
 ```
 
-This block is responsible for defining hooks into the Init events shown in the diagram above. There are three of these: `globals` for setting up the global variable space, `module` for setting up anything the extension itself needs to function, and `request` for setting up the extension to handle a single request.
+Этот блок отвечает за определение хуков в событиях Init, показанных на диаграмме выше. There are three of these: `globals` for setting up the global variable space, `module` for setting up anything the extension itself needs to function, and `request` for setting up the extension to handle a single request.
 
 <a name='desctructors'></a>
 
