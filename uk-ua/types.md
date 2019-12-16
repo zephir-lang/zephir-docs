@@ -245,7 +245,7 @@ let ch = 'Z';
 
 ### Integer/Unsigned Integer
 
-`integer` values are like the `integer` member in dynamic values. Values assigned to integer variables remain integer:
+Значення дійсних чисел подібні аналогам дійсних чисел в динамічних типах. Значення, присвоєні цілим змінним, залишаються цілими:
 
 ```zephir
 int a;
@@ -331,7 +331,7 @@ let a = 2147483648,
 
 ### Long/Unsigned Long
 
-`long` variables are twice bigger than `integer` variables, thus they can store bigger numbers. As with `integer`, values assigned to `long` variables are automatically casted to this type:
+змінні типу `long` удвічі більші, аніж `integer`, тому вони можуть зберігати великі числа. Як і у випадку з `integer`, при присвоєнні значень змінним типу `long`, вони автоматично приводитимуться до цього типу:
 
 ```zephir
 long a;
@@ -364,7 +364,7 @@ let a = false;
 let a = "hello";
 ```
 
-`unsigned long` are like `long` but they are not signed, this means you can't store negative numbers in these sort of variables:
+Тип `unsigned long` схожий на `long`, але не має знаку. Це означає, що ви не можете зберігати від'ємні числа в таких змінних:
 
 ```zephir
 ulong a;
@@ -402,7 +402,7 @@ let a = false;
 let a = "hello";
 ```
 
-`unsigned long` variables are twice bigger than standard `long`; assigning `unsigned long` to standard (signed) `long` may result in loss of data:
+Тип `unsigned long` вдвічі більший стандартного `long`; присвоювання даних типу `unsigned long` стандартному знаковому `long` може привести до втрати даних:
 
 ##### можлива втрата даних для `b`
 
@@ -417,7 +417,7 @@ let a = 4294967296,
 
 ### Рядок
 
-Рядок є послідовністю символів, де кожен символ є одним байтом. As in PHP it only supports a 256-character set, and hence does not offer native Unicode support.
+Рядок є послідовністю символів, де кожен символ є одним байтом. Як і в PHP, цей тип даних підтримує лише 256-символьний набір, а отже, не має підтримки Юнікоду.
 
 Коли змінна оголошується як `string` вона ніколи не змінить свого типу:
 
@@ -427,19 +427,19 @@ string a;
 let a = "";
 ```
 
-##### string literals must be enclosed in double quotes
+##### рядкові літерали повинні бути взяті в подвійні лапки
 
 ```zephir
 let  a = "hello";
 ```
 
-##### converted to string "A"
+##### перетворюється в рядок "A"
 
 ```zephir
 let a = 'A';
 ```
 
-##### automatically casted to ""
+##### автоматично перетворюється на ""
 
 ```zephir
 let a = null;
