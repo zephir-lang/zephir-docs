@@ -55,7 +55,7 @@ zephir help
       stubs      Generates stubs that can be used in a PHP IDE
     
 
-If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
+Якщо щось пішло не так, будь ласка, поверніться на сторінку [Встановлення](/{{ page.version }}/{{ page.language }}/installation).
 
 <a name='extension-skeleton'></a>
 
