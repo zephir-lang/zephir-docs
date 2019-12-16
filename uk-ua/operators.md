@@ -10,21 +10,21 @@ Zephir's operators are similar to the ones in PHP, and also inherit some of thei
 <a name='arithmetic-operators'></a>
 
 ## Arithmetic Operators
-The following operators are supported:
+Підтримуються наступні оператори:
 
-| Operation      | Example |
-| -------------- | ------- |
-| Negation       | `-a`    |
-| Addition       | `a + b` |
-| Subtraction    | `a - b` |
-| Multiplication | `a * b` |
-| Division       | `a / b` |
-| Modulus        | `a % b` |
+| Operation         | Example |
+| ----------------- | ------- |
+| Negation          | `-a`    |
+| Додавання         | `a + b` |
+| Віднімання        | `a - b` |
+| Множення          | `a * b` |
+| Ділення           | `a / b` |
+| Ділення по модулю | `a % b` |
 
 <a name='bitwise-operators'></a>
 
 ## Bitwise Operators
-The following operators are supported:
+Підтримуються наступні оператори:
 
 | Operation          | Example        |
 | ------------------ | -------------- |
@@ -79,7 +79,7 @@ if a == b {
 <a name='logical-operators'></a>
 
 ## Logical Operators
-The following operators are supported:
+Підтримуються наступні оператори:
 
 | Operation | Example          |
 | --------- | ---------------- |
@@ -108,7 +108,7 @@ let b = a == 1 ? "x" : "y"; // b is set to "x" if a is equal to 1, otherwise "y"
 <a name='special-operators'></a>
 
 ## Special Operators
-The following operators are supported:
+Підтримуються наступні оператори:
 
 <a name='special-operators-empty'></a>
 
