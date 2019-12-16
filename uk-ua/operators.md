@@ -12,7 +12,7 @@ Zephir's operators are similar to the ones in PHP, and also inherit some of thei
 ## Arithmetic Operators
 Підтримуються наступні оператори:
 
-| Operation         | Example |
+| Операція          | Приклад |
 | ----------------- | ------- |
 | Negation          | `-a`    |
 | Додавання         | `a + b` |
@@ -26,7 +26,7 @@ Zephir's operators are similar to the ones in PHP, and also inherit some of thei
 ## Bitwise Operators
 Підтримуються наступні оператори:
 
-| Operation          | Example        |
+| Операція           | Приклад        |
 | ------------------ | -------------- |
 | And                | `a & b`    |
 | Or (inclusive or)  | `a | b`        |
@@ -50,7 +50,7 @@ Learn more about comparison of dynamic variables in the [php manual](http://www.
 ## Comparison Operators
 Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
 
-| Example        | Operation                | Опис                                                             |
+| Приклад        | Операція                 | Опис                                                             |
 | -------------- | ------------------------ | ---------------------------------------------------------------- |
 | `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
 | `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
@@ -81,11 +81,11 @@ if a == b {
 ## Logical Operators
 Підтримуються наступні оператори:
 
-| Operation | Example          |
-| --------- | ---------------- |
-| And       | `a && b` |
-| Or        | `a || b`         |
-| Not       | `!a`             |
+| Операція | Приклад          |
+| -------- | ---------------- |
+| And      | `a && b` |
+| Or       | `a || b`         |
+| Not      | `!a`             |
 
 Example:
 
