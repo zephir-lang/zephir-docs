@@ -94,7 +94,7 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
+**Примечание:** Ответственность разработчика — убедиться, что все внешние зависимости присутствуют до загрузки расширения. В примере выше, перед тем как Zephir расширение будет загружено **сначала** необходимо установить и включить расширение [PSR](https://pecl.php.net/package/psr).
 
 <a name='implementing-methods'></a>
 
