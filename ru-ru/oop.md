@@ -204,7 +204,7 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-visibilities'></a>
 
-### Поддерживаемые области видимости
+### Поддерживаемые области видимости (инкапсуляция)
 * Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
 
 * Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
