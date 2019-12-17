@@ -58,9 +58,9 @@ abstract class MyClass
 <a name='classes-interfaces'></a>
 
 ### Реализация интерфейсов
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+Классы в Zephir могут реализовать любое количество интерфейсов, при условии, что эти интерфейсы `видимы` для использования классом. Однако, есть случаи, когда класс Zephir (и впоследствии расширение) может потребоваться для реализации интерфейса, который создан в другом расширении.
 
-If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
+Например, если мы хотим реализовать `MiddlewareInterface` из `PSR` расширения, то нам нужно создать интерфейс-заглушку:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-From here we can use the `stub` interface throughout our extension.
+С этого момента мы можем использовать интерфейс-заглушку в любом месте нашего расширения.
 
 ```php
 /**
@@ -84,7 +84,7 @@ public function shouldExtendMiddlewareInterface()
 {
     if (!extension_loaded('psr')) {
         $this->markTestSkipped(
-            "The psr extension is not loaded"
+            "Psr расширение не загружено"
         );
     }
 
