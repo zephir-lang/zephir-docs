@@ -99,7 +99,7 @@ public function shouldExtendMiddlewareInterface()
 <a name='implementing-methods'></a>
 
 ## Реализация методов
-The `function` keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+Ключевое слово `function` декларирует новый метод. Методы имеют те же модификаторы для разрешения видимости, что и PHP. Однако Zephir требует явно указывать модификаторы видимости:
 
 ```zep
 namespace Test;
@@ -124,7 +124,7 @@ class MyClass
 }
 ```
 
-Methods can receive required and optional parameters:
+Методы могут принимать как обязательные так и необязательные параметры:
 
 ```zep
 namespace Test;
@@ -133,7 +133,7 @@ class MyClass
 {
 
     /**
-     * All parameters are required
+     * Все параметры обязательные
      */
     public function doSum1(a, b)
     {
@@ -141,7 +141,7 @@ class MyClass
     }
 
     /**
-     * Only 'a' is required, 'b' is optional and it has a default value
+     * Обязателен только 'a', 'b' не обязателен и имеет значение по умолчанию
      */
     public function doSum2(a, b = 3)
     {
@@ -149,7 +149,7 @@ class MyClass
     }
 
     /**
-     * Both parameters are optional
+     * Оба параметра не обязательны
      */
     public function doSum3(a = 1, b = 2)
     {
@@ -157,7 +157,7 @@ class MyClass
     }
 
     /**
-     * Parameters are required and their values must be integer
+     * Параметры обязательны, и они должны быть целочисленными
      */
     public function doSum4(int a, int b)
     {
@@ -165,7 +165,8 @@ class MyClass
     }
 
     /**
-     * Static typed with default values
+     * Статически типизированные параметры обязательны,
+     * они целочисленны и имеют значения по умолчанию
      */
     public function doSum4(int a = 4, int b = 2)
     {
