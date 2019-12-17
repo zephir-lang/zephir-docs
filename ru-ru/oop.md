@@ -58,7 +58,7 @@ abstract class MyClass
 <a name='classes-interfaces'></a>
 
 ### Реализация интерфейсов
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. However, there are times that the Zephir class (and subsequently extension) might require to implement an interface that is built in a different extension.
+Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. Однако, есть случаи, когда класс Zephir (и впоследствии расширение) может потребоваться для реализации интерфейса, который создан в другом расширении.
 
 If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
 
