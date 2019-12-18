@@ -205,27 +205,27 @@ public function foo(array a = null)
 <a name='implementing-methods-supported-visibilities'></a>
 
 ### Поддерживаемые области видимости (инкапсуляция)
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
+* Открытый (public): Методы, помеченные как `public`, экспортируются в PHP-расширение; это означает, что публичные методы доступны для PHP-кода, а также для самого расширения.
 
-* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Защищенный (protected): Методы, помеченные как `protected`, экспортируются в PHP-расширение; это означает, что защищенные методы доступны для PHP-кода, а также для самого расширения. Однако, защищенные методы могут быть вызваны либо в пределах класса, либо наследником класса.
 
-* Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Закрытый (private): Методы, помеченные как `private`, не экспортируются в PHP-расширение; это означает, что приватные методы доступны только для класса, где они реализованы.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### Поддерживаемые модификаторы
-* `static`: Methods with this modifier can only be called in a static context (from the class, not an object).
+* Статический (`static`): Методы с этим модификатором могут вызываться только в статическом контексте (из класса, а не объекта).
 
-* `final`: If a method has this modifier it cannot be overriden.
+* Финальный (`final`): Если метод имеет этот модификатор, он не может быть переопределён.
 
-* `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* Устаревший (`deprecated`): Методы, отмеченные как `deprecated` выбрасывают ошибку `E_DEPRECATED` в месте вызова.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Сокращения для геттеров и сеттеров
-Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
+Как и в C#, в Zephir вы можете использовать `get`/`set`/`toString` сокращения. Эта особенность позволяет легко писать геттеры и сеттеры для свойств, без явной реализации этих методов как таковых.
 
-For example, without shortcuts we would need code like:
+Например, без сокращений нам нужен был бы такой код:
 
 ```zep
 namespace Test;
@@ -263,7 +263,7 @@ class MyClass
 }
 ```
 
-You can write the same code using shortcuts as follows:
+Вы можете реализовать ту же самую логику, используя сокращения, как показано ниже:
 
 ```zep
 namespace App;
@@ -280,7 +280,7 @@ class MyClass
 }
 ```
 
-When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
+Когда код скомпилирован, эти методы экспортируются в качестве реальных методов и их не нужно писать вручную.
 
 <a name='implementing-methods-return-type-hints'></a>
 
