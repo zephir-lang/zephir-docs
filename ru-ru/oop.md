@@ -231,7 +231,7 @@ public function foo(array a = null)
 
 ### Getter/Setter shortcuts
 
-Like in C#, you can use `get`/`set`/`toString` shortcuts in Zephir. This feature allows you to easily write setters and getters for properties, without explicitly implementing those methods as such.
+Как и в C#, в Zephir вы можете использовать `get`/`set`/`toString` сокращения. Эта особенность позволяет легко писать геттеры и сеттеры для свойств, без явной реализации этих методов как таковых.
 
 For example, without shortcuts we would need code like:
 
@@ -288,7 +288,7 @@ class MyClass
 }
 ```
 
-When the code is compiled, those methods are exported as real methods, but you don't have to write them manually.
+Когда код скомпилирован, эти методы экспортируются в качестве реальных методов и их не нужно писать вручную.
 
 <a name='implementing-methods-return-type-hints'></a>
 
