@@ -183,27 +183,27 @@ class MyClass
 
 ### Optional nullable parameters
 
-Zephir ensures that the value of a variable remains of the type the variable was declared as. This makes Zephir convert the `null` value to the closest approximate value:
+Zephir гарантирует, что значение переменной останется такого же типа, с которым она была объявлена. This makes Zephir convert the `null` value to the closest approximate value:
 
 ```zep
 public function foo(int a = null)
 {
-    echo a; // if "a" is not passed it prints 0
+    echo a; // Если "a" не передано, выведет 0
 }
 
 public function foo(boolean a = null)
 {
-    echo a; // if "a" is not passed it prints false
+    echo a; //  Если "a" не передано, выведет false
 }
 
 public function foo(string a = null)
 {
-    echo a; // if "a" is not passed it prints an empty string
+    echo a; //  Если "a" не передано, выведет пустую строку
 }
 
 public function foo(array a = null)
 {
-    var_dump(a); // if "a" is not passed it prints an empty array
+    var_dump(a); //  Если "a" не передано, выведет пустой массив
 }
 ```
 
