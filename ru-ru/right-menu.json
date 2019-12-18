@@ -426,22 +426,22 @@
     ],
     "oop": [
         {
-            "text": "Classes",
+            "text": "Классы",
             "level": 1,
             "url": "#classes"
         },
         {
-            "text": "Class Modifiers",
+            "text": "Модификаторы класса",
             "level": 2,
             "url": "#classes-modifiers"
         },
         {
-            "text": "Implementing Interfaces",
+            "text": "Реализация интерфейсов",
             "level": 2,
             "url": "#classes-interfaces"
         },
         {
-            "text": "Implementing Methods",
+            "text": "Реализация методов",
             "level": 1,
             "url": "#implementing-methods"
         },
@@ -456,7 +456,7 @@
             "url": "#implementing-methods-supported-visibilities"
         },
         {
-            "text": "Supported Modifiers",
+            "text": "Поддерживаемые модификаторы",
             "level": 2,
             "url": "#implementing-methods-supported-modifiers"
         },
@@ -471,7 +471,7 @@
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "Return Type: Void",
+            "text": "Возвращаемый тип: Void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
@@ -486,12 +486,12 @@
             "url": "#implementing-methods-read-only-parameters"
         },
         {
-            "text": "Implementing Properties",
+            "text": "Реализация свойств",
             "level": 1,
             "url": "#implementing-properties"
         },
         {
-            "text": "Updating Properties",
+            "text": "Обновление свойств",
             "level": 2,
             "url": "#implementing-properties-updating"
         },
@@ -506,12 +506,12 @@
             "url": "#class-constants"
         },
         {
-            "text": "Calling Methods",
+            "text": "Вызов методов",
             "level": 1,
             "url": "#calling-methods"
         },
         {
-            "text": "Parameters by Name",
+            "text": "Доступ к параметрам по имени",
             "level": 2,
             "url": "#calling-methods-parameters-by-name"
         }

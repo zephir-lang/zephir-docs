@@ -4,38 +4,38 @@ language: 'uk-ua'
 version: '0.11'
 ---
 
-# Operators
-Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
+# Оператори
+Оператори в Zephir схожі на оператори в PHP й поводяться так само.
 
 <a name='arithmetic-operators'></a>
 
-## Arithmetic Operators
+## Арифметичні оператори
 Підтримуються наступні оператори:
 
-| Операція          | Приклад |
-| ----------------- | ------- |
-| Negation          | `-a`    |
-| Додавання         | `a + b` |
-| Віднімання        | `a - b` |
-| Множення          | `a * b` |
-| Ділення           | `a / b` |
-| Ділення по модулю | `a % b` |
+| Операція                  | Приклад |
+| ------------------------- | ------- |
+| Заперечення (зміна знаку) | `-a`    |
+| Додавання                 | `a + b` |
+| Віднімання                | `a - b` |
+| Множення                  | `a * b` |
+| Ділення                   | `a / b` |
+| Ділення по модулю         | `a % b` |
 
 <a name='bitwise-operators'></a>
 
-## Bitwise Operators
+## Бітові оператори
 Підтримуються наступні оператори:
 
-| Операція           | Приклад        |
-| ------------------ | -------------- |
-| And                | `a & b`    |
-| Or (inclusive or)  | `a | b`        |
-| Xor (exclusive or) | `a ^ b`        |
-| Not                | `~a`           |
-| Shift left         | `a << b` |
-| Shift right        | `a >> b` |
+| Операція                           | Приклад        |
+| ---------------------------------- | -------------- |
+| І (кон'юнкція)                     | `a & b`    |
+| Або (диз'юнкція)                   | `a | b`        |
+| Виключне або (виключна диз'юнкція) | `a ^ b`        |
+| Заперечення                        | `~a`           |
+| Shift left                         | `a << b` |
+| Shift right                        | `a >> b` |
 
-Example:
+Приклад:
 
 ```zephir
 if a & SOME_FLAG {
@@ -48,21 +48,22 @@ Learn more about comparison of dynamic variables in the [php manual](http://www.
 <a name='comparison-operators'></a>
 
 ## Comparison Operators
-Comparison operators depend on the type of variables compared. For example, if both compared operands are dynamic variables, the behavior is the same as in PHP:
 
-| Приклад        | Операція                 | Опис                                                             |
-| -------------- | ------------------------ | ---------------------------------------------------------------- |
-| `a == b`       | Equal                    | `true` if a is equal to b after type juggling.                   |
-| `a === b`      | Identical                | `true` if a is equal to b, and they are of the same type.        |
-| `a != b`       | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a <> b` | Not equal                | `true` if a is not equal to b after type juggling.               |
-| `a !== b`      | Not identical            | `true` if a is not equal to b, or they are not of the same type. |
-| `a < b`     | Less than                | `true` if a is strictly less than b.                             |
-| `a > b`     | Greater than             | `true` if a is strictly greater than b.                          |
-| `a <= b`    | Less than or equal to    | `true` if a is less than or equal to b.                          |
-| `a >= b`    | Greater than or equal to | `true` if a is greater than or equal to b.                       |
+Comparison operators depend on the type of variables compared. Наприклад, якщо обидва операнди динамічні, то результат буде таким же як і в PHP:
 
-Example:
+| Приклад        | Операція                  | Опис                                                        |
+| -------------- | ------------------------- | ----------------------------------------------------------- |
+| `a == b`       | Рівність                  | `true`, якщо a дорівнює b після приведення типів.           |
+| `a === b`      | Ідентичність (тотожність) | `true`, якщо a дорівнює b, і операнди одного типу.          |
+| `a != b`       | Нерівність                | `true`, якщо a не дорівнює b після приведення типів.        |
+| `a <> b` | Нерівність                | `true`, якщо a не дорівнює b після приведення типів.        |
+| `a !== b`      | Не ідентичність (різниця) | `true`, якщо a не дорівнює b або коли в операнд різні типи. |
+| `a < b`     | Менше ніж                 | `true`, якщо a строго менше b.                              |
+| `a > b`     | Більше ніж                | `true`, якщо a строго більше b.                             |
+| `a <= b`    | Менше ніж або дорівнює    | `true`, якщо a менше або дорівнює b.                        |
+| `a >= b`    | Більше ніж або дорівнює   | `true`, якщо a більше або дорівнює b.                       |
+
+Приклад:
 
 ```zephir
 if a == b {
@@ -78,16 +79,16 @@ if a == b {
 
 <a name='logical-operators'></a>
 
-## Logical Operators
+## Логічні оператори
 Підтримуються наступні оператори:
 
-| Операція | Приклад          |
-| -------- | ---------------- |
-| And      | `a && b` |
-| Or       | `a || b`         |
-| Not      | `!a`             |
+| Операція       | Приклад          |
+| -------------- | ---------------- |
+| І (кон'юнкція) | `a && b` |
+| Або            | `a || b`         |
+| Заперечення    | `!a`             |
 
-Example:
+Приклад:
 
 ```zephir
 if a && b || !c {
@@ -98,32 +99,33 @@ return 1;
 
 <a name='tenary-operator'></a>
 
-## Ternary Operator
-Zephir supports the ternary operator available in C or PHP:
+## Тернарний оператор
+Zephir підтримує тернарний оператор, як в C або PHP:
 
 ```zephir
-let b = a == 1 ? "x" : "y"; // b is set to "x" if a is equal to 1, otherwise "y" is assigned as the value
+let b = a == 1 ? "x" : "y"; // b буде присвоєно "x", якщо a дорівнює 1, інакше "y"
 ```
 
 <a name='special-operators'></a>
 
-## Special Operators
+## Спеціальні оператори
+
 Підтримуються наступні оператори:
 
 <a name='special-operators-empty'></a>
 
 ### Empty
-This operator allows checking whether an expression is empty. 'Empty' means the expression is `null`, is an empty string, or an empty array:
+Цей оператор дозволяє перевірити вираз на порожнечу. Під "порожнечею" мається на увазі вираз, який дорівнює `null`, порожньому рядку або порожньому масиву:
 
 ```zephir
 let someVar = "";
 if empty someVar {
-    echo "is empty!";
+    echo "порожньо!";
 }
 
 let someVar = "hello";
 if !empty someVar {
-    echo "is not empty!";
+    echo "не порожньо!";
 }
 ```
 
