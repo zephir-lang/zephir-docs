@@ -518,12 +518,12 @@
     ],
     "operators": [
         {
-            "text": "Arithmetic Operators",
+            "text": "Арифметичні оператори",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "Bitwise Operators",
+            "text": "Бітові оператори",
             "level": 1,
             "url": "#bitwise-operators"
         },
@@ -533,12 +533,12 @@
             "url": "#comparison-operators"
         },
         {
-            "text": "Logical Operators",
+            "text": "Логічні оператори",
             "level": 1,
             "url": "#logical-operators"
         },
         {
-            "text": "Ternary Operator",
+            "text": "Тернарний оператор",
             "level": 1,
             "url": "#tenary-operator"
         },
