@@ -294,17 +294,17 @@ class MyClass
 {
     public function getSomeData() -> string
     {
-        // this will throw a compiler exception
-        // since the returned value (boolean) does not match
-        // the expected returned type string
+        // здесь будет выброшено исключение времени компиляции
+        // потому что возвращаемое значение (boolean)
+        // не соответсвует ранее объявленному типу
         return false;
     }
 
     public function getSomeOther() -> <App\MyInterface>
     {
-        // this will throw a compiler exception
-        // if the returned object does not implement
-        // the expected interface App\MyInterface
+        // здесь будет выброшено исключение времени компиляции
+        // если возвращаемый объект не реализует
+        // ожидаемый компилитором интерфейс
         return new App\MyObject;
     }
 
@@ -312,19 +312,19 @@ class MyClass
     {
         var myObject;
 
-        // the type-hint will tell the compiler that
-        // myObject is an instance of a class
-        // that implement App\MyInterface
+        // подсказка типа сообщит компилятору, что
+        // myObject является экземпляром класса,
+        // который реализует App\MyInterface
         let myObject = this->getSomeOther();
 
-        // the compiler will check if App\MyInterface
-        // implements a method called "someMethod"
+        // компилятор проверит, декларирует ли интерфейс
+        // App\MyInterface метод "someMethod"
         echo myObject->someMethod();
     }
 }
 ```
 
-A method can have more than one return type. When multiple types are defined, the operator `|` must be used to separate those types.
+Метод может иметь более одного возвращаемого типа. Когда определены несколько типов, для их разделения используется оператор `|`.
 
 ```zep
 namespace App;
