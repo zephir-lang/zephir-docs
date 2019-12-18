@@ -333,7 +333,7 @@ class MyClass
 }
 ```
 
-A method can have more than one return type. When multiple types are defined, the operator `|` must be used to separate those types.
+Метод может иметь более одного возвращаемого типа. Когда определены несколько типов, для их разделения используется оператор `|`.
 
 ```zep
 namespace App;
