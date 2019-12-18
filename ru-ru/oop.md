@@ -285,7 +285,7 @@ class MyClass
 <a name='implementing-methods-return-type-hints'></a>
 
 ### Подсказки возвращаемого типа
-Methods in classes and interfaces can have "return type hints". These will provide useful extra information to the compiler to inform you about errors in your application. Рассмотрим следующий пример:
+Методы классов и интерфейсов могут иметь «подсказки возвращаемого типа». Это позволит компилятору предоставить полезную дополнительную информацию об ошибках в вашем приложении. Рассмотрим следующий пример:
 
 ```zep
 namespace App;
