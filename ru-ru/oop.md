@@ -354,7 +354,7 @@ class MyClass
 
 ### Возвращаемый тип: Void
 
-Methods can also be marked as `void`. This means that a method is not allowed to return any data:
+Методы могут быть также помечены как `void`. This means that a method is not allowed to return any data:
 
 ```zep
 public function setConnection(connection) -> void
@@ -363,7 +363,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+Why is this useful? Потому что компилятор может определить, ожидает ли программа возврата значения из этих методов, и вызовет исключение компилятора:
 
 ```zep
 let myDb = db->setConnection(connection); // this will produce an exception
@@ -374,7 +374,7 @@ myDb->execute("SELECT * FROM robots");
 
 ### Strict/Flexible Parameter Data-Types
 
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
+В Zephir вы можете указать тип данных каждого параметра метода. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -395,7 +395,7 @@ $o->filterText("some text", true);    // OK
 $o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
-However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
+Однако, передача неправильного типа может часто приводить к ошибкам. Неправильное использование конкретного API может привести к неожиданным результатам. Вы можете запретить автоматическое преобразование, установив параметр со строгим типом данных:
 
 ```zep
 public function filterText(string! text, boolean escape=false)
@@ -404,7 +404,7 @@ public function filterText(string! text, boolean escape=false)
 }
 ```
 
-Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
+Теперь, большинство вызовов с неправильным типом приведет к исключению из-за неправильных типов передаваемых данных:
 
 ```zep
 <?php
