@@ -343,7 +343,7 @@ class MyClass
 <a name='implementing-methods-return-type-void'></a>
 
 ### Возвращаемый тип: Void
-Methods can also be marked as `void`. This means that a method is not allowed to return any data:
+Методы могут быть также помечены как `void`. This means that a method is not allowed to return any data:
 
 ```zep
 public function setConnection(connection) -> void
@@ -352,7 +352,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+Why is this useful? Потому что компилятор может определить, ожидает ли программа возврата значения из этих методов, и вызовет исключение компилятора:
 
 ```zep
 let myDb = db->setConnection(connection); // this will produce an exception
@@ -362,7 +362,7 @@ myDb->execute("SELECT * FROM robots");
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
 
 ### Strict/Flexible Parameter Data-Types
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
+В Zephir вы можете указать тип данных каждого параметра метода. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -383,7 +383,7 @@ $o->filterText("some text", true);    // OK
 $o->filterText(array(1, 2, 3), true); // FAIL
 ```
 
-However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
+Однако, передача неправильного типа может часто приводить к ошибкам. Неправильное использование конкретного API может привести к неожиданным результатам. Вы можете запретить автоматическое преобразование, установив параметр со строгим типом данных:
 
 ```zep
 public function filterText(string! text, boolean escape=false)
@@ -392,7 +392,7 @@ public function filterText(string! text, boolean escape=false)
 }
 ```
 
-Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
+Теперь, большинство вызовов с неправильным типом приведет к исключению из-за неправильных типов передаваемых данных:
 
 ```zep
 <?php
@@ -409,7 +409,7 @@ By specifying what parameters are strict and what can be flexible, a developer c
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### Read-Only Parameters
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
+При помощи ключевого слова `const`, вы можете пометить параметры как «только для чтения», это помогает соблюдать «[const-корректность](https://en.wikipedia.org/wiki/Const_(computer_programming))». Parameters marked with this attribute cannot be modified inside the method:
 
 ```zep
 namespace App;
@@ -425,12 +425,12 @@ class MyClass
 }
 ```
 
-When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over these variables.
+Когда параметр объявлен только для чтения, компилятор может делать безопасные предположения и проводить дальнейшие оптимизации этих переменных.
 
 <a name='implementing-properties'></a>
 
 ## Реализация свойств
-Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
+Class member variables are called "properties". По умолчанию, они действуют так же, как и свойства PHP. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zep
 namespace Test;
