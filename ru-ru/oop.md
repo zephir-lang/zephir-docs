@@ -410,7 +410,7 @@ $o->filterText(array(1, 2, 3), true); // Ошибка
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### Параметры только для чтения
-При помощи ключевого слова `const` вы можете пометить параметры как «только для чтения», это помогает соблюдать [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Параметры, помеченные этим атрибутом, не могут быть изменены внутри метода:
+Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](https://en.wikipedia.org/wiki/Const_(computer_programming)). Параметры, помеченные этим атрибутом, не могут быть изменены внутри метода:
 
 ```zep
 namespace App;
