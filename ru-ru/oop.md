@@ -430,7 +430,7 @@ class MyClass
 <a name='implementing-properties'></a>
 
 ## Реализация свойств
-Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
+Class member variables are called "properties". По умолчанию, они действуют так же, как и свойства PHP. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zep
 namespace Test;
