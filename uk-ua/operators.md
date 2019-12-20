@@ -48,7 +48,6 @@ Learn more about comparison of dynamic variables in the [php manual](http://www.
 <a name='comparison-operators'></a>
 
 ## Comparison Operators
-
 Comparison operators depend on the type of variables compared. Наприклад, якщо обидва операнди динамічні, то результат буде таким же як і в PHP:
 
 | Приклад        | Операція                  | Опис                                                        |
@@ -109,7 +108,6 @@ let b = a == 1 ? "x" : "y"; // b буде присвоєно "x", якщо a д�
 <a name='special-operators'></a>
 
 ## Спеціальні оператори
-
 Підтримуються наступні оператори:
 
 <a name='special-operators-empty'></a>
