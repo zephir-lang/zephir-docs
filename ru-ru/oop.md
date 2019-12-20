@@ -344,7 +344,7 @@ class MyClass
 <a name='implementing-methods-return-type-void'></a>
 
 ### Возвращаемый тип: Void
-Methods can also be marked as `void`. This means that a method is not allowed to return any data:
+Методы могут быть также помечены как `void`. Это значит, что метод не можете вернуть ничего:
 
 ```zep
 public function setConnection(connection) -> void
@@ -353,17 +353,17 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+Когда это может быть полезно? Потому что компилятор может определить, ожидает ли программа возврата значения из этих методов, и вызовет исключение компилятора:
 
 ```zep
-let myDb = db->setConnection(connection); // this will produce an exception
+let myDb = db->setConnection(connection); // тут сгенерируется исключение
 myDb->execute("SELECT * FROM robots");
 ```
 
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
 
-### Strict/Flexible Parameter Data-Types
-In Zephir, you can specify the data type of each parameter of a method. By default, these data-types are flexible; this means that if a value with a wrong (but compatible) data-type is passed, Zephir will try to transparently convert it to the expected one:
+### Строгие и приводимые типы параметров
+В Zephir вы можете указать тип данных каждого параметра метода. По умолчанию все типизированные аргументы приводимы. На практике это означает, что если значение не соответсвует ожидаемому типу (но является совместимым типом), Zephir прозрачно преобразует его в ожидаемый тип:
 
 ```zep
 public function filterText(string text, boolean escape=false)
@@ -372,7 +372,7 @@ public function filterText(string text, boolean escape=false)
 }
 ```
 
-Above method will work with the following calls:
+Метод выше будет работать в следующих ситуациях:
 
 ```zep
 <?php
@@ -381,10 +381,10 @@ $o->filterText(1111, 1);              // OK
 $o->filterText("some text", null);    // OK
 $o->filterText(null, true);           // OK
 $o->filterText("some text", true);    // OK
-$o->filterText(array(1, 2, 3), true); // FAIL
+$o->filterText(array(1, 2, 3), true); // Ошибка
 ```
 
-However, passing a wrong type could often lead to bugs. Improper use of a specific API would produce unexpected results. You can disallow the automatic conversion by setting the parameter with a strict data-type:
+Однако, передача неправильного типа может часто приводить к ошибкам. Неправильное использование конкретного API может привести к неожиданным результатам. Вы можете запретить автоматическое преобразование, установив параметр со строгим типом данных:
 
 ```zep
 public function filterText(string! text, boolean escape=false)
@@ -393,45 +393,45 @@ public function filterText(string! text, boolean escape=false)
 }
 ```
 
-Now, most of the calls with a wrong type will cause an exception due to the invalid data types passed:
+Теперь, большинство вызовов с неправильным типом приведет к исключению из-за неправильных типов передаваемых данных:
 
 ```zep
 <?php
 
-$o->filterText(1111, 1);              // FAIL
+$o->filterText(1111, 1);              // Ошибка
 $o->filterText("some text", null);    // OK
-$o->filterText(null, true);           // FAIL
+$o->filterText(null, true);           // Ошибка
 $o->filterText("some text", true);    // OK
-$o->filterText(array(1, 2, 3), true); // FAIL
+$o->filterText(array(1, 2, 3), true); // Ошибка
 ```
 
-By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
+Указав какие параметры являются строгими, а какие приводимыми, разработчик может установить конкретное желаемое поведение.
 
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### Параметры только для чтения
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
+При помощи ключевого слова `const`, вы можете пометить параметры как «только для чтения», это помогает соблюдать «[const-корректность](https://en.wikipedia.org/wiki/Const_(computer_programming))». Параметры, помеченные этим атрибутом, не могут быть изменены внутри метода:
 
 ```zep
 namespace App;
 
 class MyClass
 {
-    // "a" is read-only
+    // "a" только для чтения
     public function getSomeData(const string a)
     {
-        // this will throw a compiler exception
+        // компилятор сгенерирует ошибку
         let a = "hello";
     }
 }
 ```
 
-When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over these variables.
+Когда параметр объявлен только для чтения, компилятор может делать безопасные предположения и проводить дальнейшие оптимизации этих переменных.
 
 <a name='implementing-properties'></a>
 
 ## Реализация свойств
-Class member variables are called "properties". By default, they act the same as PHP properties. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
+Переменные-члены класса называются «свойства» (properties). По умолчанию, они действуют так же, как и свойства PHP. Свойства экспортируются в PHP-расширение и являются видимыми из кода PHP. Свойства реализуют обычные модификаторы видимости, доступные в PHP, и явная установка модификатора видимости является в Zephir обязательной:
 
 ```zep
 namespace Test;
@@ -446,7 +446,7 @@ class MyClass
 }
 ```
 
-Within class methods, non-static properties may be accessed by using `->` (Object Operator):
+В пределах методов класса нестатические свойства могут быть доступны с помощью `->` (Оператор объекта):
 
 ```zep
 namespace Test;
@@ -468,7 +468,7 @@ class MyClass
 }
 ```
 
-Properties can have literal compatible default values. These values must be able to be evaluated at compile time and must not depend on run-time information in order to be evaluated:
+Свойства могут иметь примитивные значения по умолчанию. Эти значения должны быть доступны для оценки компилятором во время компиляции и не должны зависеть от информации времени выполнения для оценки:
 
 ```zep
 namespace Test;
