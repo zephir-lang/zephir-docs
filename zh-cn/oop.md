@@ -411,7 +411,7 @@ $o->filterText(array(1, 2, 3), true); // FAIL
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### 只读参数
-使用关键字`const`，您可以将参数标记为只读，这有助于尊重[const-correctness](http://en.wikipedia.org/wiki/Const-correctness)。 属性中不能修改标有此属性的参数 方法:
+Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](https://en.wikipedia.org/wiki/Const_(computer_programming)). 属性中不能修改标有此属性的参数 方法:
 
 ```zep
 namespace App;
