@@ -409,7 +409,7 @@ By specifying what parameters are strict and what can be flexible, a developer c
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### Read-Only Parameters
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](https://en.wikipedia.org/wiki/Const_(computer_programming)). Parameters marked with this attribute cannot be modified inside the method:
+При помощи ключевого слова `const`, вы можете пометить параметры как «только для чтения», это помогает соблюдать «[const-корректность](https://en.wikipedia.org/wiki/Const_(computer_programming))». Parameters marked with this attribute cannot be modified inside the method:
 
 ```zep
 namespace App;
