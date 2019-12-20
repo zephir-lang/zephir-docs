@@ -410,23 +410,23 @@ $o->filterText(array(1, 2, 3), true); // Ошибка
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### Параметры только для чтения
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Parameters marked with this attribute cannot be modified inside the method:
+При помощи ключевого слова `const` вы можете пометить параметры как «только для чтения», это помогает соблюдать [const-correctness](http://en.wikipedia.org/wiki/Const-correctness). Параметры, помеченные этим атрибутом, не могут быть изменены внутри метода:
 
 ```zep
 namespace App;
 
 class MyClass
 {
-    // "a" is read-only
+    // "a" только для чтения
     public function getSomeData(const string a)
     {
-        // this will throw a compiler exception
+        // компилятор сгенерирует ошибку
         let a = "hello";
     }
 }
 ```
 
-When a parameter is declared as read-only, the compiler can make safe assumptions and perform further optimizations over these variables.
+Когда параметр объявлен только для чтения, компилятор может делать безопасные предположения и проводить дальнейшие оптимизации этих переменных.
 
 <a name='implementing-properties'></a>
 
