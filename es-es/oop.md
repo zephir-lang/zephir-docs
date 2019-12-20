@@ -411,7 +411,7 @@ Al especificar qué parámetros son estrictos y cuales pueden ser flexible, un d
 <a name='implementing-methods-read-only-parameters'></a>
 
 ### Parámetros de sólo lectura
-Using the keyword `const` you can mark parameters as read-only, this helps to respect [const-correctness](https://en.wikipedia.org/wiki/Const_(computer_programming)). Los parámetros marcados con este atributo no pueden ser modificados dentro del método:
+Utilizando la palabra clave `const` puede marcar los parámetros como de solo lectura, esto ayuda a respetar la[const-correctness](https://en.wikipedia.org/wiki/Const_(computer_programming)). Los parámetros marcados con este atributo no pueden ser modificados dentro del método:
 
 ```zep
 namespace App;
