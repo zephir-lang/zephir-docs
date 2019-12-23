@@ -487,13 +487,13 @@ class MyClass
 <a name='implementing-properties-updating'></a>
 
 ## Обновление свойств
-Properties can be updated by accessing them using the `->` operator:
+Свойства могут быть обновлены, при помощи оператора `->`:
 
 ```zep
 let this->myProperty = 100;
 ```
 
-Zephir checks that properties exist when a program is accessing them. If a property is not declared, you will get a compiler exception:
+Zephir проверяет, что свойства существуют, когда программа обращается к ним. Если свойство не объявлено, вы получите исключение компилятора:
 
 ```bash
 CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/utils/app/myclass.zep on line 62
@@ -502,13 +502,13 @@ CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in
       ------------^
 ```
 
-If you want to avoid this compiler validation, or just create a property dynamically, you can enclose the property name using brackets and string quotes:
+Если вы хотите избежать проверки компилятором или просто создать свойство динамически, вы можете заключить имя свойства в фигурные скобки и кавычки:
 
 ```zep
 let this->{"myProperty"} = 100;
 ```
 
-You can also use a simple variable to update a property; the property name will be taken from the variable:
+Вы также можете использовать простую переменную для обновления свойств; имя свойства будет взято из переменной:
 
 ```zep
 let someProperty = "myProperty";
@@ -518,16 +518,16 @@ let this->{someProperty} = 100;
 <a name='implementing-properties-reading'></a>
 
 ## Чтение свойств
-Properties can be read by accessing them using the `->` operator:
+Свойства могут быть прочитаны при помощи оператора `->`:
 
 ```zep
 echo this->myProperty;
 ```
 
-As when updating, properties can be dynamically read this way:
+Как и при обновлении, свойства могут быть динамически прочитаны следующим образом:
 
 ```zep
-// Avoid compiler check or read a dynamic user defined property
+// Избежание проверки компилятора или чтение динамического пользовательского свойства
 echo this->{"myProperty"};
 
 // Read using a variable name
@@ -538,7 +538,7 @@ echo this->{someProperty}
 <a name='class-constants'></a>
 
 ## Константы класса
-Classes may contain class constants that remain the same and unchangeable once the extension is compiled. Class constants are exported to the PHP extension, allowing them to be used from PHP.
+Классы могут содержать константы классов, которые остаются неизменными после компиляции расширения. Константы класса экспортируются в PHP-расширение, позволяя использовать их из PHP.
 
 ```zep
 namespace Test;
@@ -550,7 +550,7 @@ class MyClass
 }
 ```
 
-Class constants can be accessed using the class name and the static operator `::`:
+К константам класса можно получить доступ, используя имя класса и статический оператор `::`:
 
 ```zep
 namespace Test;
@@ -571,7 +571,7 @@ class MyClass
 <a name='calling-methods'></a>
 
 ## Вызов методов
-Methods can be called using the object operator `->` as in PHP:
+Методы могут выываться с помощью объектного оператора `->` как в PHP:
 
 ```zep
 namespace Test;
@@ -590,7 +590,7 @@ class MyClass
 }
 ```
 
-Static methods must be called using the static operator `::`:
+Статические методы должны вызываться с помощью статического оператора `::`:
 
 ```zep
 namespace Test;
@@ -609,7 +609,7 @@ class MyClass
 }
 ```
 
-You can call methods in a dynamic manner as follows:
+Вы можете вызывать методы динамически следующим образом:
 
 ```zep
 namespace Test;
@@ -633,9 +633,9 @@ class MyClass
 <a name='calling-methods-parameters-by-name'></a>
 
 ### Доступ к параметрам по имени
-Zephir supports calling method parameters by name or keyword arguments. Named parameters can be useful if you want to pass parameters in an arbitrary order, document the meaning of parameters, or specify parameters in a more elegant way.
+Zephir поддерживает вызов параметров метода по имени или аргументам ключевого слова. Именованные параметры могут быть полезны в ситуациях, когда вы хотите передать параметры в произвольном порядке, задокументировать значение параметров, или указать параметры более элегантным способом.
 
-Consider the following example. A class called `Image` has a method that receives four parameters:
+Рассмотрим следующий пример. Класс с именем `Image` имеет метод, который получает четыре параметра:
 
 ```zep
 namespace Test;
@@ -649,14 +649,14 @@ class Image
 }
 ```
 
-Using the standard method calling approach:
+Использование стандартного метода вызова:
 
 ```zep
 i->chop(100);             // width=100, height=400, x=0, y=0
 i->chop(100, 50, 10, 20); // width=100, height=50, x=10, y=20
 ```
 
-Using named parameters, you can:
+Использование именованных параметров:
 
 ```zep
 i->chop(width: 100);              // width=100, height=400, x=0, y=0
@@ -665,7 +665,7 @@ i->chop(height: 200, width: 100); // width=100, height=200, x=0, y=0
 i->chop(x: 20, y: 30);            // width=600, height=400, x=20, y=30
 ```
 
-When the compiler (at compile time) does not know the correct order of these parameters, they must be resolved at runtime. In this case, there could be a minimum additional extra overhead:
+Когда компилятор (во время компиляции) не знает правильного порядка этих параметров, они должны быть определены во время выполнения. В этом случае могут возникнуть минимальные накладные расходы:
 
 ```zep
 let i = new {someClass}();
