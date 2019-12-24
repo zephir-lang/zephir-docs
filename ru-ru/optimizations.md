@@ -151,26 +151,26 @@ public function getValue()
 <a name='internal-call-transformation'></a>
 
 ## internal-call-transformation
-The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. By default, this optimization is turned off.
+Флаг `internal-call-transformation` используется для генерации внутренних методов, на основе их эквивалентов в PHP, что позволяет обойти пространство PHP для этих внутренних методов. По умолчанию, эта оптимизация отключена.
 
-This optimization generates 2 implementations per method, one that is exposed in PHP and an internal one.
+Эта оптимизация генерирует 2 реализации для каждого метода, одна из которых представлена в PHP, другая - внутренняя.
 
-Exceptions to the above are:
+Исключением / ограничением из вышеизложенного являются следующие ситуации:
 
-- Only PHP methods allowed to be replaced (eg. we can't do this for Phalcon's methods)
-- Closures (`__invoke`) and `__construct` are not supported
-- The number of required parameters must exactly match the number of actual parameters
-- Does not work for ZendEngine2 (PHP 5.6)
+- Можно заменить только PHP методы (например, мы не можем сделать это для методов Phalcon)
+- Замыкания (`__invoke`) и `__construct` не поддерживаются
+- Количество требуемых параметров должно точно соответствовать количеству реальных параметров
+- Не работает для ZendEngine2 (PHP 5.6)
 
 <a name='local-context-pass'></a>
 
 ## local-context-pass
-This compilation pass moves variables that will be allocated in the heap to the stack. This optimization can reduce the number of memory indirections a program has to do.
+Этот этап компиляции перемещает переменные, которые размещены в куче, в стек. Эта оптимизация может уменьшить количество косвенных обращений к памяти, которые должна выполнять программа.
 
 <a name='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
-This optimization replaces values of class constants in compile time:
+Эта оптимизация заменяет значения констант класса во время компиляции:
 
 ```zephir
 class MyClass
@@ -203,9 +203,9 @@ class MyClass
 <a name='static-type-inference'></a>
 
 ## static-type-inference
-This compilation pass is very important, since it looks for dynamic variables that can potentially be transformed into static/primitive types, which are better optimized by the underlying compiler.
+Этот этап компиляции очень важен, поскольку он ищет динамические переменные, которые потенциально могут быть преобразованы в статические/примитивные типы, которые лучше оптимизируются базовым компилятором.
 
-The following code uses a set of dynamic variables to perform some mathematical calculations:
+Следующий код использует набор динамических переменных для выполнения некоторых математических вычислений:
 
 ```zephir
 public function someCalculations(var a, var b)
@@ -223,7 +223,7 @@ public function someCalculations(var a, var b)
 }
 ```
 
-Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and can thus be transformed into static variables taking advantage of other compilation passes. After this pass, the compiler automatically rewrites this code to:
+Переменные `a`, `b` и `i` используются исключительно для математических операций, и таким образом их можно преобразовать в статические переменные, используя преимущества других этапов компиляции. После выполнения компилятор автоматически переписывает этот код в:
 
 ```zephir
 public function someCalculations(int a, int b)
@@ -241,7 +241,7 @@ public function someCalculations(int a, int b)
 }
 ```
 
-By disabling this compilation pass, all variables will maintain the type with which they were originally declared, without optimization.
+Отключив этот этап компиляции, все переменные будут поддерживать тип, с которым они были первоначально объявлены, без оптимизации.
 
 <a name='static-type-inference-second-pass'></a>
 
