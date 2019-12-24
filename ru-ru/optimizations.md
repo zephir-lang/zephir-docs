@@ -139,7 +139,7 @@ public function getValue()
 }
 ```
 
-Is transformed into:
+Преобразуется в:
 
 ```zephir
 public function getValue()
@@ -185,7 +185,7 @@ class MyClass
 }
 ```
 
-Is transformed into:
+Преобразуется в:
 
 ```zephir
 class MyClass
