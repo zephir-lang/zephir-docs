@@ -4,7 +4,7 @@ language: 'ru-ru'
 version: '0.11'
 ---
 
-# Optimizations
+# Оптимизации
 Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
 
 Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its execution time, or reducing the memory required by the program.
@@ -21,7 +21,28 @@ Optimizations can be disabled by passing the name prefixed by `-fno-`:
 zephir -fno-static-type-inference -fno-call-gatherer-pass
 ```
 
-With recent versions of zephir-parser, optimizations can be configured in the config file `config.json`.
+Оптимизации также могут настроены в конфигурационном файле `config.json`, как показано ниже:
+```json
+{
+  "namespace": "mae",
+  "name": "My Awesome Extension",
+  "author": "ACME",
+  "version": "1.0.0",
+
+  "optimizations": {
+    "static-type-inference": true,
+    "static-type-inference-second-pass": true,
+    "local-context-pass": true,
+    "constant-folding": true,
+    "static-constant-class-folding": true,
+    "call-gatherer-pass": true,
+    "check-invalid-reads": false,
+    "private-internal-methods": false,
+    "public-internal-methods": false,
+    "public-internal-functions": true
+  }
+}
+```
 
 The following optimizations are supported:
 
@@ -37,7 +58,9 @@ class MyClass extends OtherClass
     public function getValue()
     {
         this->someMethod();
-        this->someMethod(); // This method is called faster
+
+        // Этот метод может быть вызван быстрее
+        this->someMethod();
     }
 }
 ```
@@ -56,13 +79,13 @@ class ForInRange
     {
         var i;
         for i in range(1, n) {
-            // Do something
+            // Здесь происходит полезная работа
         }
     }
 }
 ```
 
-compared to:
+сравнивается с:
 
 
 ```zephir
@@ -74,7 +97,7 @@ class ForInRange
     {
         var i = null;
         for i in range(1, n) {
-            // Do something
+            // Здесь происходит полезная работа
         }
     }
 }
@@ -90,7 +113,7 @@ zval *n;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-compared to:
+сравнивается с:
 
 ```c
 zval *n = NULL;
@@ -100,7 +123,7 @@ zval *n = NULL;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir developers will not see a change in their code. This affects the generated C code.
+It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir-разработчики не увидят изменений в коде. This affects the generated C code.
 
 More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
 
@@ -116,7 +139,7 @@ public function getValue()
 }
 ```
 
-Is transformed into:
+Преобразуется в:
 
 ```zephir
 public function getValue()
@@ -134,20 +157,20 @@ This optimization generates 2 implementations per method, one that is exposed in
 
 Exceptions to the above are:
 
-- Only PHP methods allowed to be replaced (eg. we can't do this for Phalcon's methods)
-- Closures (`__invoke`) and `__construct` are not supported
-- The number of required parameters must exactly match the number of actual parameters
-- Does not work for ZendEngine2 (PHP 5.6)
+- Only PHP methods allowed to be replaced (eg. мы не можем сделать это для методов Phalcon)
+- Замыкания (`__invoke`) и `__construct` не поддерживаются
+- Количество требуемых параметров должно точно соответствовать количеству реальных параметров
+- Не работает для ZendEngine2 (PHP 5.6)
 
 <a name='local-context-pass'></a>
 
 ## local-context-pass
-This compilation pass moves variables that will be allocated in the heap to the stack. This optimization can reduce the number of memory indirections a program has to do.
+Этот этап компиляции перемещает переменные, которые размещены в куче, в стек. Эта оптимизация может уменьшить количество косвенных обращений к памяти, которые должна выполнять программа.
 
 <a name='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
-This optimization replaces values of class constants in compile time:
+Эта оптимизация заменяет значения констант класса во время компиляции:
 
 ```zephir
 class MyClass
@@ -162,7 +185,7 @@ class MyClass
 }
 ```
 
-Is transformed into:
+Преобразуется в:
 
 ```zephir
 class MyClass
@@ -180,9 +203,9 @@ class MyClass
 <a name='static-type-inference'></a>
 
 ## static-type-inference
-This compilation pass is very important, since it looks for dynamic variables that can potentially be transformed into static/primitive types, which are better optimized by the underlying compiler.
+Этот этап компиляции очень важен, поскольку он ищет динамические переменные, которые потенциально могут быть преобразованы в статические/примитивные типы, которые лучше оптимизируются базовым компилятором.
 
-The following code uses a set of dynamic variables to perform some mathematical calculations:
+Следующий код использует набор динамических переменных для выполнения некоторых математических вычислений:
 
 ```zephir
 public function someCalculations(var a, var b)
@@ -200,7 +223,7 @@ public function someCalculations(var a, var b)
 }
 ```
 
-Variables `a`, `b`, and `i` are used exclusively in mathematical operations, and can thus be transformed into static variables taking advantage of other compilation passes. After this pass, the compiler automatically rewrites this code to:
+Переменные `a`, `b` и `i` используются исключительно для математических операций, и таким образом их можно преобразовать в статические переменные, используя преимущества других этапов компиляции. После выполнения компилятор автоматически переписывает этот код в:
 
 ```zephir
 public function someCalculations(int a, int b)
@@ -218,7 +241,7 @@ public function someCalculations(int a, int b)
 }
 ```
 
-By disabling this compilation pass, all variables will maintain the type with which they were originally declared, without optimization.
+Отключив этот этап компиляции, все переменные будут поддерживать тип, с которым они были первоначально объявлены, без оптимизации.
 
 <a name='static-type-inference-second-pass'></a>
 
