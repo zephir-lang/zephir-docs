@@ -143,7 +143,7 @@ public function getValue()
 }
 ```
 
-Is transformed into:
+Преобразуется в:
 
 ```zephir
 public function getValue()
