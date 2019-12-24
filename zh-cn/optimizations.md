@@ -22,7 +22,29 @@ zephir -fstatic-type-inference -flocal-context-pass
 zephir -fno-static-type-inference -fno-call-gatherer-pass
 ```
 
-使用最新版本的zephir解析器，可以在配置文件`config.json`中配置优化。
+Optimizations also can be configured in the config file `config.json` as follows:
+
+```json
+{
+  "namespace": "mae",
+  "name": "My Awesome Extension",
+  "author": "ACME",
+  "version": "1.0.0",
+
+  "optimizations": {
+    "static-type-inference": true,
+    "static-type-inference-second-pass": true,
+    "local-context-pass": true,
+    "constant-folding": true,
+    "static-constant-class-folding": true,
+    "call-gatherer-pass": true,
+    "check-invalid-reads": false,
+    "private-internal-methods": false,
+    "public-internal-methods": false,
+    "public-internal-functions": true
+  }
+}
+```
 
 支持以下优化:
 
