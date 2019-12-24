@@ -20,7 +20,28 @@ Optimizations can be disabled by passing the name prefixed by `-fno-`:
 zephir -fno-static-type-inference -fno-call-gatherer-pass
 ```
 
-With recent versions of zephir-parser, optimizations can be configured in the config file `config.json`.
+Optimizations also can be configured in the config file `config.json` as follows:
+```json
+{
+  "namespace": "mae",
+  "name": "My Awesome Extension",
+  "author": "ACME",
+  "version": "1.0.0",
+
+  "optimizations": {
+    "static-type-inference": true,
+    "static-type-inference-second-pass": true,
+    "local-context-pass": true,
+    "constant-folding": true,
+    "static-constant-class-folding": true,
+    "call-gatherer-pass": true,
+    "check-invalid-reads": false,
+    "private-internal-methods": false,
+    "public-internal-methods": false,
+    "public-internal-functions": true
+  }
+}
+```
 
 The following optimizations are supported:
 
