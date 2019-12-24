@@ -68,7 +68,7 @@ class MyClass extends OtherClass
 <a name='check-invalid-reads'></a>
 
 ## check-invalid-reads
-This flag will force checking types to detect for invalid reads during the compilation process. This ensures that all variables are properly defined and initialized with their default values (as well as the internal pointers). An example is:
+Этот флаг форсирует принудительную проверку типов во время компиляции на выявление неверных операций чтения. Это гарантирует, что все переменные и указатели правильно определены и инициализированы значениями по умолчанию. Например:
 
 ```zephir
 namespace Acme;
@@ -79,13 +79,13 @@ class ForInRange
     {
         var i;
         for i in range(1, n) {
-            // Do something
+            // Здесь происходит полезная работа
         }
     }
 }
 ```
 
-compared to:
+сравнивается с:
 
 
 ```zephir
@@ -97,13 +97,13 @@ class ForInRange
     {
         var i = null;
         for i in range(1, n) {
-            // Do something
+            // Здесь происходит полезная работа
         }
     }
 }
 ```
 
-Both examples are perfectly valid as far as Zephir is concerned. The difference is in the generated C code:
+Оба примера в действительности являются корректными с точки зрения синтаксиса Zephir. Разница проявляется при генерации Си-кода:
 
 ```c
 zval *n;
@@ -113,7 +113,7 @@ zval *n;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-compared to:
+сравнивается с:
 
 ```c
 zval *n = NULL;
@@ -123,9 +123,9 @@ zval *n = NULL;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir developers will not see a change in their code. This affects the generated C code.
+Хорошей практикой для любого языка программирования является инициализация переменных значениями по умолчанию с соблюдением корректности типов. Если не следовать этому принципу, потенциально это может привести к непредвиденным последствиям для приложения, а также может привести к ошибкам, утечкам памяти и т.д. Используя флаг `check-invalid-reads` в `config.json`, мы гарантируем, что указатели правильно инициализированы вместе с соответствующими переменными в Си-коде. Zephir-разработчики не увидят изменений в коде. Эта оптимизация влияет на сгенерированный Си-код.
 
-More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
+Более подробную информацию о том, почему указатели в Си необходимо обнулять при переполнении стека, можно найти [здесь](https://stackoverflow.com/q/12253191/1661465).
 
 <a name='constant-folding'></a>
 
