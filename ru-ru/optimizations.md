@@ -4,7 +4,7 @@ language: 'ru-ru'
 version: '0.11'
 ---
 
-# Optimizations
+# Оптимизации
 Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
 
 Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its execution time, or reducing the memory required by the program.
@@ -21,7 +21,7 @@ Optimizations can be disabled by passing the name prefixed by `-fno-`:
 zephir -fno-static-type-inference -fno-call-gatherer-pass
 ```
 
-Optimizations also can be configured in the config file `config.json` as follows:
+Оптимизации также могут настроены в конфигурационном файле `config.json`, как показано ниже:
 ```json
 {
   "namespace": "mae",
@@ -58,7 +58,9 @@ class MyClass extends OtherClass
     public function getValue()
     {
         this->someMethod();
-        this->someMethod(); // This method is called faster
+
+        // Этот метод может быть вызван быстрее
+        this->someMethod();
     }
 }
 ```
