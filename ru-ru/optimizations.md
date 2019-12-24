@@ -4,24 +4,24 @@ language: 'ru-ru'
 version: '0.10'
 ---
 
-# Optimizations
-Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
+# Оптимизации
+Поскольку код на Zephir иногда очень высокоуровневый, C-компилятор может быть не в состоянии эффективно оптимизировать этот код.
 
-Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its execution time, or reducing the memory required by the program.
+Благодаря AOT-компилятору (ahead-of-time), Zephir способен оптимизировать код во время компиляции, потенциально улучшая время выполнения или уменьшая объем памяти, необходимый программе.
 
-You can enable optimizations by passing the name prefixed by `-f`:
+Вы можете включить оптимизацию, передав её название при помощи ключа `-f`:
 
 ```bash
 zephir -fstatic-type-inference -flocal-context-pass
 ```
 
-Optimizations can be disabled by passing the name prefixed by `-fno-`:
+Оптимизация может быть отключена при помощи ключа `-fno-`:
 
 ```bash
 zephir -fno-static-type-inference -fno-call-gatherer-pass
 ```
 
-Optimizations also can be configured in the config file `config.json` as follows:
+Оптимизации также могут настроены в конфигурационном файле `config.json`, как показано ниже:
 ```json
 {
   "namespace": "mae",
@@ -44,12 +44,12 @@ Optimizations also can be configured in the config file `config.json` as follows
 }
 ```
 
-The following optimizations are supported:
+Поддерживаются следующие типы оптимизаций:
 
 <a name='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
-This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce inline caches to avoid method or function lookups:
+Эта оптимизации учитывает, сколько раз функция или метод вызывается в рамках одного и того же метода. Это позволяет компилятору использовать встроенное кэширование, что позволяет избежать повторного поиска владельца метода или функции:
 
 ```zephir
 class MyClass extends OtherClass
@@ -58,7 +58,9 @@ class MyClass extends OtherClass
     public function getValue()
     {
         this->someMethod();
-        this->someMethod(); // This method is called faster
+
+        // Этот метод может быть вызван быстрее
+        this->someMethod();
     }
 }
 ```
