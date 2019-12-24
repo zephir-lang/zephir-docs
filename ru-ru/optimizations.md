@@ -68,7 +68,7 @@ class MyClass extends OtherClass
 <a name='check-invalid-reads'></a>
 
 ## check-invalid-reads
-Этот флаг форсирует принудительную проверку типов во время компиляции на выявление неверных операций чтения. Это гарантирует, что все переменные и указатели правильно определены и инициализированы значениями по умолчанию. Например:
+Этот флаг форсирует принудительную проверку типов во время компиляции на выявление неверных операций чтения. Это гарантирует, что все переменные и указатели правильно определены и инициализированы значениями по умолчанию. Например, сравните:
 
 ```zephir
 namespace Acme;
@@ -85,7 +85,7 @@ class ForInRange
 }
 ```
 
-сравнивается с:
+со следующим примером:
 
 
 ```zephir
@@ -113,7 +113,7 @@ zval *n;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-сравнивается с:
+сравните с:
 
 ```c
 zval *n = NULL;
@@ -130,7 +130,7 @@ zephir_fetch_params(1, 1, 0, &n);
 <a name='constant-folding'></a>
 
 ## constant-folding
-Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when this optimization is enabled:
+Свертывание констант — это процесс упрощения константных выражений во время компиляции. Следующий код упрощается, когда эта оптимизация включена:
 
 ```zephir
 public function getValue()
@@ -139,7 +139,7 @@ public function getValue()
 }
 ```
 
-Is transformed into:
+Преобразуется в:
 
 ```zephir
 public function getValue()
@@ -185,7 +185,7 @@ class MyClass
 }
 ```
 
-Is transformed into:
+Преобразуется в:
 
 ```zephir
 class MyClass
@@ -246,4 +246,4 @@ By disabling this compilation pass, all variables will maintain the type with wh
 <a name='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
-This enables a second type inference pass, which improves the work done based on the data gathered by the first static type inference pass.
+Эта оптимизация включает повторный вывод типов, что в целом улучшает работу проделанную на основе данных, собранных при первом проходе вывода типов.
