@@ -79,13 +79,13 @@ class ForInRange
     {
         var i;
         for i in range(1, n) {
-            // Do something
+            // Здесь происходит полезная работа
         }
     }
 }
 ```
 
-compared to:
+сравнивается с:
 
 
 ```zephir
@@ -97,7 +97,7 @@ class ForInRange
     {
         var i = null;
         for i in range(1, n) {
-            // Do something
+            // Здесь происходит полезная работа
         }
     }
 }
@@ -113,7 +113,7 @@ zval *n;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-compared to:
+сравнивается с:
 
 ```c
 zval *n = NULL;
@@ -123,7 +123,7 @@ zval *n = NULL;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir developers will not see a change in their code. This affects the generated C code.
+It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir-разработчики не увидят изменений в коде. This affects the generated C code.
 
 More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
 
