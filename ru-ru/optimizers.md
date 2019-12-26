@@ -5,17 +5,17 @@ version: '0.10'
 ---
 
 # Пользовательские оптимизаторы
-Most common functions in Zephir use internal optimizers. An 'optimizer' works like an interceptor for function calls. An 'optimizer' replaces calls to a function normally defined in the PHP userland, by direct C calls, which are faster and have a lower overhead, improving performance.
+В большинстве распространенных функций в Zephir используются внутренние оптимизаторы. Оптимизатор работает как перехватчик для вызовов функций. Оптимизатор заменяет вызов функции в пользовательском пространстве PHP прямыми C-вызовами, которые выполняются быстрее и имеют более низкие накладные расходы, повышающие производительность.
 
-To create an optimizer, you have to create a class in the 'optimizers' directory (you can configure this directory's name in `config.json`; see below). The following naming convention must be used:
+Чтобы создать оптимизатор, вам нужно создать класс в каталоге «optimizers», необходимо использовать следующее соглашение (вы можете настроить название этого каталога в файле `config.json`; см. ниже). Следующие соглашения по именованию являются обязательными:
 
-| Function in Zephir | Optimizer Class Name   | Optimizer Path                        | Function in C     |
-| ------------------ | ---------------------- | ------------------------------------- | ----------------- |
-| `calculate_pi`     | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
+| Функция в Zephir | Название класса оптимизатора | Путь оптимизатора                     | Функция в Си      |
+| ---------------- | ---------------------------- | ------------------------------------- | ----------------- |
+| `calculate_pi`   | `CalculatePiOptimizer`       | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
 
-Note that an optimizer is written in PHP, not Zephir. It is used during compilation to programmatically generate the appropriate C code for your extension to call. It is responsible for checking that arguments and return types match what the C function actually requires, preventing Zephir from generating invalid C code.
+Обратите внимание, что оптимизатор написан на языке PHP, а не Zephir. Он используется во время компиляции для программной генерации соответствующего Си-кода для вызова вашего расширения. Оптимизатор ответственен за проверку, что аргументы и возвращаемые типы соответствуют тому, что необходимо Си-функции, помогая компилятору Zephir генерировать корректный Си-код.
 
-This is the basic structure for an 'optimizer':
+Вот базовая структура для 'оптимизатора':
 
 ```php
 <?php
@@ -32,17 +32,18 @@ class CalculatePiOptimizer extends OptimizerAbstract
     public function optimize(array $expression, Call $call, CompilationContext $context)
     {
         //...
+
     }
 }
 ```
 
-Implementation of optimizers highly depends on the kind of code you want to generate. In our example, we're going to replace the call to this function by a call to a C function. In Zephir, the code used to call this function is:
+Реализация оптимизаторов в значительной степени зависит от типа кода, который вы хотите сгенерировать. В нашем примере мы заменим вызов этой функции вызовом Си-функции. В Zephir, код, используемый для вызова этой функции, выглядит так:
 
 ```zephir
 let pi = calculate_pi(1000);
 ```
 
-So, the optimizer will expect just one parameter, we have to validate that to avoid problems later:
+Таким образом, оптимизатор будет ожидать только один параметр, нам необходимо проверить это, чтобы избежать проблем позже:
 
 ```php
 <?php
@@ -62,7 +63,7 @@ public function optimize(array $expression, Call $call, CompilationContext $cont
 }
 ```
 
-There are functions that are just called and don't return any value. Our function returns a value that is the calculated PI value. So we need to check that the type of the variable used to receive this calculated value is OK:
+Существуют функции, которые вызываются, но не возвращают никакого значения. Однако наша функция возвращает вычисленное число PI. Поэтому нам нужно проверить, что переменная, используемая для вычисления значения представляет допустимый тип данных:
 
 ```php
 <?php
@@ -79,7 +80,7 @@ public function optimize(array $expression, Call $call, CompilationContext $cont
     }
 
     /**
-     * Process the expected symbol to be returned
+     * Обработка возвращаемого символа
      */
     $call->processExpectedReturn($context);
 
@@ -92,7 +93,7 @@ public function optimize(array $expression, Call $call, CompilationContext $cont
 }
 ```
 
-We're checking if the value returned will be stored in a variable of type `double`; if not, a compiler exception is thrown.
+Здесь мы проверяем, будет ли возвращенное значение сохранено в переменной типа `double`; если нет, то компилятором выбрасывается исключение.
 
 The next thing we need to do is process the parameters passed to the function:
 
