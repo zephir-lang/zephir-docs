@@ -9,13 +9,13 @@ Most common functions in Zephir use internal optimizers. An 'optimizer' works li
 
 To create an optimizer, you have to create a class in the 'optimizers' directory (you can configure this directory's name in `config.json`; see below). The following naming convention must be used:
 
-| Function in Zephir | Optimizer Class Name   | Optimizer Path                        | Function in C     |
-| ------------------ | ---------------------- | ------------------------------------- | ----------------- |
-| `calculate_pi`     | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
+| Функция в Zephir | Optimizer Class Name   | Путь оптимизатора                     | Function in C     |
+| ---------------- | ---------------------- | ------------------------------------- | ----------------- |
+| `calculate_pi`   | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
 
 Note that an optimizer is written in PHP, not Zephir. It is used during compilation to programmatically generate the appropriate C code for your extension to call. It is responsible for checking that arguments and return types match what the C function actually requires, preventing Zephir from generating invalid C code.
 
-This is the basic structure for an 'optimizer':
+Вот базовая структура для 'оптимизатора':
 
 ```php
 <?php
@@ -32,11 +32,12 @@ class CalculatePiOptimizer extends OptimizerAbstract
     public function optimize(array $expression, Call $call, CompilationContext $context)
     {
         //...
+
     }
 }
 ```
 
-Implementation of optimizers highly depends on the kind of code you want to generate. In our example, we're going to replace the call to this function by a call to a C function. In Zephir, the code used to call this function is:
+Реализация оптимизаторов в значительной степени зависит от типа кода, который вы хотите сгенерировать. In our example, we're going to replace the call to this function by a call to a C function. В Zephir, код, используемый для вызова этой функции, выглядит так:
 
 ```zephir
 let pi = calculate_pi(1000);
@@ -62,7 +63,7 @@ public function optimize(array $expression, Call $call, CompilationContext $cont
 }
 ```
 
-There are functions that are just called and don't return any value. Our function returns a value that is the calculated PI value. So we need to check that the type of the variable used to receive this calculated value is OK:
+Существуют функции, которые вызываются, но не возвращают никакого значения. Our function returns a value that is the calculated PI value. So we need to check that the type of the variable used to receive this calculated value is OK:
 
 ```php
 <?php
@@ -94,7 +95,7 @@ public function optimize(array $expression, Call $call, CompilationContext $cont
 
 We're checking if the value returned will be stored in a variable of type `double`; if not, a compiler exception is thrown.
 
-The next thing we need to do is process the parameters passed to the function:
+Следующее, что нам нужно сделать, это обработать параметры, переданные функции:
 
 ```php
 <?php
@@ -102,7 +103,7 @@ The next thing we need to do is process the parameters passed to the function:
 $resolvedParams = $call->getReadOnlyResolvedParams($expression['parameters'], $context, $expression);
 ```
 
-A good practice with Zephir is to create functions that don't modify their parameters. If you are changing the parameters passed, Zephir will need to allocate memory for them, and you have to use `getResolvedParams` instead of `getReadOnlyResolvedParams`.
+Хорошей практикой в Zephir считается создание функций, которые не изменяют параметры. If you are changing the parameters passed, Zephir will need to allocate memory for them, and you have to use `getResolvedParams` instead of `getReadOnlyResolvedParams`.
 
 Code returned by these methods is valid C code that can be used in the code printer to generate the C function call:
 
