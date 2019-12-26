@@ -71,7 +71,7 @@ let elements = [4: "bar", "foo": 8];
 
 <a name='updating-arrays'></a>
 
-## Updating arrays
+## Оновлення масивів
 
 Arrays are updated in the same way as PHP, using square brackets:
 
@@ -87,7 +87,7 @@ let elements["foo"] = "bar";
 let elements[0] = "bar";
 ```
 
-##### Updating multi-dimensional array
+##### Оновлення багатовимірного масиву
 
 ```zephir
 let elements[0]["foo"] = "bar";
@@ -96,7 +96,7 @@ let elements["foo"][0] = "bar";
 
 <a name='appending-elements'></a>
 
-## Appending elements
+## Додавання елементів
 
 Elements can be appended at the end of the array as follows:
 
