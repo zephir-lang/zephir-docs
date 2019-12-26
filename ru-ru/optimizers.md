@@ -116,9 +116,9 @@ Code returned by these methods is valid C code that can be used in the code prin
 return new CompiledExpression('double', 'calculate_pi( ' . $resolvedParams[0] . ')', $expression);
 ```
 
-All optimizers must return a CompiledExpression instance. This will tell the compiler the type returned by the code, and its related C-code.
+Все оптимизаторы должны возвращать экземпляр CompiledExpression. This will tell the compiler the type returned by the code, and its related C-code.
 
-The complete optimizer code is:
+Полный код оптимизатора:
 
 ```php
 <?php
@@ -155,9 +155,7 @@ class CalculatePiOptimizer extends OptimizerAbstract
 
         $resolvedParams = $call->getReadOnlyResolvedParams($expression['parameters'], $context, $expression);
 
-        return new CompiledExpression('double', 'my_calculate_pi(' . $resolvedParams[0] . ')', $expression);
-    }
-}
+        return new CompiledExpression('double', 'my_calculate_pi(' . $resolvedParams[0] .  ')', $expression);
 ```
 
 The code that implements the function `my_calculate_pi` is written in C, and must be compiled along with the extension.
@@ -179,7 +177,7 @@ double my_calculate_pi(zval *accuracy) {
 }
 ```
 
-This file must be added at a special section in the [config.json](/{{ page.version }}/{{ page.language }}/config) file:
+Этот файл должен быть добавлен в специальную секцию файла [config.json](/{{ page.version }}/{{ page.language }}/config):
 
 ```json
 "extra-sources": [
@@ -187,7 +185,7 @@ This file must be added at a special section in the [config.json](/{{ page.versi
 ]
 ```
 
-Lastly you will have to specify where Zephir can find your optimizer by using the `optimizer-dirs` configuration option.
+Наконец, вы должны указать, где Zephir может найти ваш оптимизатор при помощи опции конфигурации `optimizer-dirs`.
 
 ```json
 "optimizer-dirs": [
