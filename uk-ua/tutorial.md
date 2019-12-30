@@ -254,6 +254,8 @@ echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
 
 У цьому скрінкасті ви можете подивитися, як створити розширення, описане в цьому посібнику: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
+{: .iframe-wrapper}
+
 <a name='conclusion'></a>
 
 ## Висновок

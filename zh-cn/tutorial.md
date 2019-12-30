@@ -253,6 +253,8 @@ echo $f->alpha("!he#02l3'121lo."); // prints "hello"
 
 在下面的屏幕截图中, 您可以观看如何创建本教程中介绍的扩展: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe> 
 
+{: .iframe-wrapper}
+
 <a name='conclusion'></a>
 
 ## 结语
