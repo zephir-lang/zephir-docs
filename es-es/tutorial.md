@@ -246,7 +246,11 @@ $f = new Utils\Filter();
 echo $f->alpha("!ho#02l3'121a."); // imprime "hola"
 ```
 
-En el siguiente video tutorial puedes ver como crear la extensión explicada en este tutorial: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe>
+En el siguiente video tutorial puedes ver como crear la extensión explicada en este tutorial:
+
+<p class="iframe-wrapper">
+    <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</p>
 
 <a name='conclusion'></a>
 
