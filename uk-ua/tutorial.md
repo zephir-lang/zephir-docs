@@ -248,7 +248,11 @@ $f = new Utils\Filter();
 echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
 ```
 
-У цьому скрінкасті ви можете подивитися, як створити розширення, описане в цьому посібнику: <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen mark="crwd-mark"></iframe>
+У цьому скрінкасті ви можете подивитися, як створити розширення, описане в цьому посібнику:
+
+<p class="iframe-wrapper">
+    <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</p>
 
 <a name='conclusion'></a>
 
