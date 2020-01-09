@@ -87,7 +87,7 @@ composer install
 
 <a name='testing-the-installation'></a>
 
-## Протестируйте Zephir
+## Проверка установки
 Проверьте, доступен ли Zephir из любой директории следующей командой:
 
 ```bash
