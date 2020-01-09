@@ -619,24 +619,24 @@
     "phpinfo": [],
     "static-analysis": [
         {
-            "text": "Conditional Unassigned Variables",
+            "text": "Условные неинициализированные переменные",
             "level": 1,
             "url": "#conditional-unassigned-variables"
         },
         {
-            "text": "Dead Code Elimination",
+            "text": "Удаление мёртвого кода",
             "level": 1,
             "url": "#dead-code-elimination"
         }
     ],
     "tutorial": [
         {
-            "text": "Checking the installation",
+            "text": "Проверка установки",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Extension skeleton",
+            "text": "Каркас расширения",
             "level": 1,
             "url": "#extension-skeleton"
         },
