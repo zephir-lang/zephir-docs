@@ -516,7 +516,7 @@ let this->{someProperty} = 100;
 
 <a name='implementing-properties-reading'></a>
 
-## Reading Properties
+## Чтение свойств
 Свойства могут быть прочитаны при помощи оператора `->`:
 
 ```zep

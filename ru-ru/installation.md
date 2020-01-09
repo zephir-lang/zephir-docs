@@ -106,7 +106,7 @@ You'll need to either use the path to `zephir/zephir`, or create a symlink in a 
 
 <a name='testing-the-installation'></a>
 
-## Протестируйте Zephir
+## Проверка установки
 
 Проверьте, доступен ли Zephir из любой директории следующей командой:
 
