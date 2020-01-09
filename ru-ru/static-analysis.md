@@ -10,7 +10,7 @@ Zephir's compiler provides static analysis of the compiled code. The idea behind
 
 <a name='conditional-unassigned-variables'></a>
 
-## Conditional Unassigned Variables
+## Условные неинициализированные переменные
 
 Static Analysis of assignments tries to identify if a variable is used before it's assigned:
 
@@ -47,7 +47,7 @@ Finding such errors is sometimes tricky, however static analysis helps the progr
 
 <a name='dead-code-elimination'></a>
 
-## Dead Code Elimination
+## Удаление мёртвого кода
 
 Zephir informs the developer about unreachable branches in the code and performs dead code elimination, which means it gets rid of all that code from the generated binary, since it cannot be executed anyway:
 
