@@ -381,7 +381,7 @@ Allows you to list other extensions as required to build/use your own:
 
 <a name='silent'></a>
 ## silent
-Suppresses most/all output from `zephir` commands (same as `-w`):
+Suppresses most/all output from `zephir` commands (same as `-q` or `--quiet`):
 
 ```json
 {
