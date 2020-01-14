@@ -430,7 +430,7 @@ version: '0.12'
 
 ## silent
 
-Suppresses most/all output from `zephir` commands (same as `-q` or `--quiet`):
+Подавляет почти весь вывод `zephir` команд (аналогично `-q` или `--quiet`):
 
 ```json
 {
