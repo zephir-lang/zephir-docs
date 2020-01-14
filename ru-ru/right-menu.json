@@ -426,22 +426,22 @@
     ],
     "oop": [
         {
-            "text": "Классы",
+            "text": "Classes",
             "level": 1,
             "url": "#classes"
         },
         {
-            "text": "Модификаторы класса",
+            "text": "Class Modifiers",
             "level": 2,
             "url": "#classes-modifiers"
         },
         {
-            "text": "Реализация интерфейсов",
+            "text": "Implementing Interfaces",
             "level": 2,
             "url": "#classes-interfaces"
         },
         {
-            "text": "Реализация методов",
+            "text": "Implementing Methods",
             "level": 1,
             "url": "#implementing-methods"
         },
@@ -456,7 +456,7 @@
             "url": "#implementing-methods-supported-visibilities"
         },
         {
-            "text": "Поддерживаемые модификаторы",
+            "text": "Supported Modifiers",
             "level": 2,
             "url": "#implementing-methods-supported-modifiers"
         },
@@ -471,7 +471,7 @@
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "Возвращаемый тип: Void",
+            "text": "Return Type: Void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
@@ -486,17 +486,17 @@
             "url": "#implementing-methods-read-only-parameters"
         },
         {
-            "text": "Реализация свойств",
+            "text": "Implementing Properties",
             "level": 1,
             "url": "#implementing-properties"
         },
         {
-            "text": "Обновление свойств",
+            "text": "Updating Properties",
             "level": 2,
             "url": "#implementing-properties-updating"
         },
         {
-            "text": "Чтение свойств",
+            "text": "Reading Properties",
             "level": 2,
             "url": "#implementing-properties-reading"
         },
@@ -506,12 +506,12 @@
             "url": "#class-constants"
         },
         {
-            "text": "Вызов методов",
+            "text": "Calling Methods",
             "level": 1,
             "url": "#calling-methods"
         },
         {
-            "text": "Доступ к параметрам по имени",
+            "text": "Parameters by Name",
             "level": 2,
             "url": "#calling-methods-parameters-by-name"
         }
@@ -619,12 +619,12 @@
     "phpinfo": [],
     "static-analysis": [
         {
-            "text": "Условные неинициализированные переменные",
+            "text": "Conditional Unassigned Variables",
             "level": 1,
             "url": "#conditional-unassigned-variables"
         },
         {
-            "text": "Удаление мёртвого кода",
+            "text": "Dead Code Elimination",
             "level": 1,
             "url": "#dead-code-elimination"
         }
