@@ -87,7 +87,7 @@ There are two approaches to running Zephir at this point. The first is to ensure
 composer require phalcon/zephir
 ```
 
-Use `composer exec zephir` within the project you installed Zephir in, above, to run it. (Alternately, you can still run `vendor/bin/zephir`.)
+Для запуска Zephir используйте команду `composer exec zephir` в проекте с установленым Zephir как показано выше. (Alternately, you can still run `vendor/bin/zephir`.)
 
 ### Git Clone
 
