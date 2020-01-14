@@ -75,7 +75,7 @@ Zend Extension Api No:   320170718
 
 ### Composer
 
-The PHAR isn't available before 0.11.4, so if you need an older version, you can use Composer, in one of two ways:
+PHAR версия Zephir не доступна до версии 0.11.4. Так что, если вам нужна более ранняя версия компилятора Zephir, вы можете использовать Composer одним из двух способов:
 
 #### Global Composer Application
 
