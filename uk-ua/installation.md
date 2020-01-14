@@ -83,7 +83,7 @@ PHAR не доступний до версії 0.11.4, тому якщо вам 
 composer global require phalcon/zephir
 ```
 
-When using this approach, there are several points that you need to pay attention to. Перший, переконайтеся, що `${COMPOSER_HOME}/vendor/bin` знаходиться у вашому `$PATH`, Zephir повинен бути доступний в командному рядку за допомогою команди `zephir`. Другий, замість цього можна використовувати команду `composer global exec zephir`.
+На даний момент існує два підходи до запуску Zephir. Перший, переконайтеся, що `${COMPOSER_HOME}/vendor/bin` знаходиться у вашому `$PATH`, Zephir повинен бути доступний в командному рядку за допомогою команди `zephir`. Другий, замість цього можна використовувати команду `composer global exec zephir`.
 
 #### As a Project Dependency
 
