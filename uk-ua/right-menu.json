@@ -1,34 +1,34 @@
 {
     "arrays": [
         {
-            "text": "Declaring Array Variables",
+            "text": "Оголошення масивів",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Creating Arrays",
+            "text": "Створення масивів",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Оновлення масивів",
+            "text": "Updating arrays",
             "level": 1,
             "url": "#updating-arrays"
         },
         {
-            "text": "Додавання елементів",
+            "text": "Appending elements",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "Reading elements from arrays",
+            "text": "Читання елементів з масивів",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
     ],
     "builtin-methods": [
         {
-            "text": "Рядок",
+            "text": "String",
             "level": 1,
             "url": "#string"
         },
@@ -310,29 +310,29 @@
     "globals": [],
     "installation": [
         {
-            "text": "Передумови",
+            "text": "Prerequisites",
             "level": 1,
             "url": "#prerequisites"
         },
         {
-            "text": "Встановлення Zephir",
+            "text": "Installing Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
         {
-            "text": "Тестування встановлення",
+            "text": "Testing the installation",
             "level": 1,
             "url": "#testing-the-installation"
         }
     ],
     "introduction": [
         {
-            "text": "Привіт світ!",
+            "text": "Hello World!",
             "level": 1,
             "url": "#hello-world"
         },
         {
-            "text": "Смак Зефіру",
+            "text": "A taste of Zephir",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
@@ -344,12 +344,12 @@
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "Розділення інструкцій",
+            "text": "Instruction separation",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "Коментарі",
+            "text": "Comments",
             "level": 1,
             "url": "#comments"
         },
@@ -389,37 +389,37 @@
     ],
     "motivation": [
         {
-            "text": "Якщо ви PHP-програміст...",
+            "text": "If you are a PHP programmer...",
             "level": 1,
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "Якщо ви C-програміст...",
+            "text": "If you are a C programmer...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "Компіляція проти інтерпретації",
+            "text": "Compilation vs Interpretation",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
         {
-            "text": "Статичнотипізовані мови проти динамічнотипізованих",
+            "text": "Statically typed versus dynamically typed languages",
             "level": 1,
             "url": "#statically-typed-versus-dynamically-typed-languages"
         },
         {
-            "text": "Схема компіляції",
+            "text": "Compilation scheme",
             "level": 1,
             "url": "#compilation-scheme"
         },
         {
-            "text": "Захист коду",
+            "text": "Code protection",
             "level": 1,
             "url": "#code-protection"
         },
         {
-            "text": "Висновок",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
@@ -518,27 +518,27 @@
     ],
     "operators": [
         {
-            "text": "Арифметичні оператори",
+            "text": "Arithmetic Operators",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "Бітові оператори",
+            "text": "Bitwise Operators",
             "level": 1,
             "url": "#bitwise-operators"
         },
         {
-            "text": "Comparison Operators",
+            "text": "Оператори порівняння",
             "level": 1,
             "url": "#comparison-operators"
         },
         {
-            "text": "Логічні оператори",
+            "text": "Logical Operators",
             "level": 1,
             "url": "#logical-operators"
         },
         {
-            "text": "Тернарний оператор",
+            "text": "Ternary Operator",
             "level": 1,
             "url": "#tenary-operator"
         },
@@ -563,7 +563,7 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Type Hints",
+            "text": "Підказка типа",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
@@ -631,44 +631,44 @@
     ],
     "tutorial": [
         {
-            "text": "Перевірка встановлення",
+            "text": "Checking the installation",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Каркас розширення",
+            "text": "Extension skeleton",
             "level": 1,
             "url": "#extension-skeleton"
         },
         {
-            "text": "Додавання нашого першого класу",
+            "text": "Adding our first class",
             "level": 1,
             "url": "#adding-our-first-class"
         },
         {
-            "text": "Первинне тестування",
+            "text": "Initial testing",
             "level": 1,
             "url": "#initial-testing"
         },
         {
-            "text": "Корисний клас",
+            "text": "A useful class",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "Висновок",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "Динамічні типи",
+            "text": "Dynamic Types",
             "level": 1,
             "url": "#dynamic-types"
         },
         {
-            "text": "Масиви",
+            "text": "Arrays",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -688,7 +688,7 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Програмне переповнення цілих чисел",
+            "text": "Integer overflow",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
@@ -698,12 +698,12 @@
             "url": "#dynamic-types-objects"
         },
         {
-            "text": "Рядок",
+            "text": "String",
             "level": 2,
             "url": "#dynamic-types-string"
         },
         {
-            "text": "Статичні типи",
+            "text": "Static Types",
             "level": 1,
             "url": "#static-types"
         },
@@ -728,7 +728,7 @@
             "url": "#static-types-long-unsigned"
         },
         {
-            "text": "Рядок",
+            "text": "String",
             "level": 2,
             "url": "#static-types-string"
         }
@@ -797,7 +797,7 @@
             "url": "#some-features"
         },
         {
-            "text": "Скуштуйте",
+            "text": "A small taste",
             "level": 1,
             "url": "#a-small-taste"
         }
