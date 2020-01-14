@@ -1,27 +1,27 @@
 {
     "arrays": [
         {
-            "text": "Объявление массивов",
+            "text": "Declaring Array Variables",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Создание массивов",
+            "text": "Creating Arrays",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Обновление массивов",
+            "text": "Updating arrays",
             "level": 1,
             "url": "#updating-arrays"
         },
         {
-            "text": "Добавление элементов",
+            "text": "Appending elements",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "Чтение элементов из массивов",
+            "text": "Reading elements from arrays",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -250,57 +250,57 @@
     ],
     "control-structures": [
         {
-            "text": "Условные операторы",
+            "text": "Conditionals",
             "level": 1,
             "url": "#conditionals"
         },
         {
-            "text": "Оператор if",
+            "text": "If Statement",
             "level": 2,
             "url": "#conditionals-if"
         },
         {
-            "text": "Оператор switch",
+            "text": "Switch Statement",
             "level": 2,
             "url": "#conditionals-switch"
         },
         {
-            "text": "Циклы",
+            "text": "Loops",
             "level": 1,
             "url": "#loops"
         },
         {
-            "text": "Цикл while",
+            "text": "While Statement",
             "level": 2,
             "url": "#loops-while"
         },
         {
-            "text": "Цикл loop",
+            "text": "Loop Statement",
             "level": 2,
             "url": "#loops-loop"
         },
         {
-            "text": "Цикл for",
+            "text": "For Statement",
             "level": 2,
             "url": "#loops-for"
         },
         {
-            "text": "Оператор break",
+            "text": "Break Statement",
             "level": 2,
             "url": "#loops-break"
         },
         {
-            "text": "Оператор continue",
+            "text": "Continue Statement",
             "level": 2,
             "url": "#loops-continue"
         },
         {
-            "text": "Оператор require",
+            "text": "Require",
             "level": 1,
             "url": "#require"
         },
         {
-            "text": "Оператор let",
+            "text": "Let",
             "level": 1,
             "url": "#let"
         }
@@ -310,66 +310,66 @@
     "globals": [],
     "installation": [
         {
-            "text": "Системные требования",
+            "text": "Prerequisites",
             "level": 1,
             "url": "#prerequisites"
         },
         {
-            "text": "Установка Zephir",
+            "text": "Installing Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
         {
-            "text": "Проверка установки",
+            "text": "Testing the installation",
             "level": 1,
             "url": "#testing-the-installation"
         }
     ],
     "introduction": [
         {
-            "text": "Привет мир!",
+            "text": "Hello World!",
             "level": 1,
             "url": "#hello-world"
         },
         {
-            "text": "Понимание Zephir",
+            "text": "A taste of Zephir",
             "level": 1,
             "url": "#a-taste-of-zephir"
         }
     ],
     "language": [
         {
-            "text": "Организация кода в файлах и пространствах имён",
+            "text": "Organizing code in files and namespaces",
             "level": 1,
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "Разделение инструкций",
+            "text": "Instruction separation",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "Комментарии",
+            "text": "Comments",
             "level": 1,
             "url": "#comments"
         },
         {
-            "text": "Объявления переменных",
+            "text": "Variable declarations",
             "level": 1,
             "url": "#variable-declarations"
         },
         {
-            "text": "Область переменной",
+            "text": "Variable scope",
             "level": 1,
             "url": "#variable-scope"
         },
         {
-            "text": "Супер-глобальные переменные",
+            "text": "Super globals",
             "level": 1,
             "url": "#super-globals"
         },
         {
-            "text": "Локальная таблица символов",
+            "text": "Local symbol table",
             "level": 1,
             "url": "#local-symbol-table"
         }
@@ -389,7 +389,7 @@
     ],
     "motivation": [
         {
-            "text": "Если вы PHP программист...",
+            "text": "If you are a PHP programmer...",
             "level": 1,
             "url": "#if-you-are-a-php-programmer"
         },
@@ -399,49 +399,49 @@
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "Компиляция против интерпретации",
+            "text": "Compilation vs Interpretation",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
         {
-            "text": "Статическая типизация против динамической типизации",
+            "text": "Statically typed versus dynamically typed languages",
             "level": 1,
             "url": "#statically-typed-versus-dynamically-typed-languages"
         },
         {
-            "text": "Схема компиляции",
+            "text": "Compilation scheme",
             "level": 1,
             "url": "#compilation-scheme"
         },
         {
-            "text": "Защита кода",
+            "text": "Code protection",
             "level": 1,
             "url": "#code-protection"
         },
         {
-            "text": "Заключение",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "oop": [
         {
-            "text": "Классы",
+            "text": "Classes",
             "level": 1,
             "url": "#classes"
         },
         {
-            "text": "Модификаторы класса",
+            "text": "Class Modifiers",
             "level": 2,
             "url": "#classes-modifiers"
         },
         {
-            "text": "Реализация интерфейсов",
+            "text": "Implementing Interfaces",
             "level": 2,
             "url": "#classes-interfaces"
         },
         {
-            "text": "Реализация методов",
+            "text": "Implementing Methods",
             "level": 1,
             "url": "#implementing-methods"
         },
@@ -456,7 +456,7 @@
             "url": "#implementing-methods-supported-visibilities"
         },
         {
-            "text": "Поддерживаемые модификаторы",
+            "text": "Supported Modifiers",
             "level": 2,
             "url": "#implementing-methods-supported-modifiers"
         },
@@ -471,7 +471,7 @@
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "Возвращаемый тип: Void",
+            "text": "Return Type: Void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
@@ -486,17 +486,17 @@
             "url": "#implementing-methods-read-only-parameters"
         },
         {
-            "text": "Реализация свойств",
+            "text": "Implementing Properties",
             "level": 1,
             "url": "#implementing-properties"
         },
         {
-            "text": "Обновление свойств",
+            "text": "Updating Properties",
             "level": 2,
             "url": "#implementing-properties-updating"
         },
         {
-            "text": "Чтение свойств",
+            "text": "Reading Properties",
             "level": 2,
             "url": "#implementing-properties-reading"
         },
@@ -506,44 +506,44 @@
             "url": "#class-constants"
         },
         {
-            "text": "Вызов методов",
+            "text": "Calling Methods",
             "level": 1,
             "url": "#calling-methods"
         },
         {
-            "text": "Доступ к параметрам по имени",
+            "text": "Parameters by Name",
             "level": 2,
             "url": "#calling-methods-parameters-by-name"
         }
     ],
     "operators": [
         {
-            "text": "Арифметические операторы",
+            "text": "Arithmetic Operators",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "Побитовые операторы",
+            "text": "Bitwise Operators",
             "level": 1,
             "url": "#bitwise-operators"
         },
         {
-            "text": "Операторы сравнения",
+            "text": "Comparison Operators",
             "level": 1,
             "url": "#comparison-operators"
         },
         {
-            "text": "Логические операторы",
+            "text": "Logical Operators",
             "level": 1,
             "url": "#logical-operators"
         },
         {
-            "text": "Тернарный оператор",
+            "text": "Ternary Operator",
             "level": 1,
             "url": "#tenary-operator"
         },
         {
-            "text": "Специальные операторы",
+            "text": "Special Operator",
             "level": 1,
             "url": "#special-operators"
         },
@@ -563,12 +563,12 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Подсказки типа",
+            "text": "Type Hints",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
         {
-            "text": "Подсказки прогнозирования ветвлений",
+            "text": "Branch Prediction Hints",
             "level": 2,
             "url": "#special-operators-branch-prediction-hints"
         }
@@ -619,56 +619,56 @@
     "phpinfo": [],
     "static-analysis": [
         {
-            "text": "Условные неинициализированные переменные",
+            "text": "Conditional Unassigned Variables",
             "level": 1,
             "url": "#conditional-unassigned-variables"
         },
         {
-            "text": "Удаление мёртвого кода",
+            "text": "Dead Code Elimination",
             "level": 1,
             "url": "#dead-code-elimination"
         }
     ],
     "tutorial": [
         {
-            "text": "Проверка установки",
+            "text": "Checking the installation",
             "level": 1,
             "url": "#checking-the-installation"
         },
         {
-            "text": "Каркас расширения",
+            "text": "Extension skeleton",
             "level": 1,
             "url": "#extension-skeleton"
         },
         {
-            "text": "Добавление нашего первого класса",
+            "text": "Adding our first class",
             "level": 1,
             "url": "#adding-our-first-class"
         },
         {
-            "text": "Первоначальное тестирование",
+            "text": "Initial testing",
             "level": 1,
             "url": "#initial-testing"
         },
         {
-            "text": "Удобные класс",
+            "text": "A useful class",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "Заключение",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "Динамические типы",
+            "text": "Dynamic Types",
             "level": 1,
             "url": "#dynamic-types"
         },
         {
-            "text": "Массивы",
+            "text": "Arrays",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -688,7 +688,7 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Целочисленное переполнение",
+            "text": "Integer overflow",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
@@ -703,7 +703,7 @@
             "url": "#dynamic-types-string"
         },
         {
-            "text": "Статические типы",
+            "text": "Static Types",
             "level": 1,
             "url": "#static-types"
         },
@@ -792,12 +792,12 @@
     ],
     "welcome": [
         {
-            "text": "Некоторые особенности",
+            "text": "Some Features",
             "level": 1,
             "url": "#some-features"
         },
         {
-            "text": "Попробуйте",
+            "text": "A small taste",
             "level": 1,
             "url": "#a-small-taste"
         }
