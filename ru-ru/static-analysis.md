@@ -4,9 +4,9 @@ language: 'ru-ru'
 version: '0.12'
 ---
 
-# Статический анализ
+# Static Analysis
 
-Zephir's compiler provides static analysis of the compiled code. Идея этой функции заключается в том, чтобы помочь разработчику найти потенциальные проблемы и избежать неожиданного поведения задолго до времени исполнения.
+Zephir's compiler provides static analysis of the compiled code. The idea behind this feature is to help the developer to find potential problems and avoid unexpected behaviors, well before runtime.
 
 <a name='conditional-unassigned-variables'></a>
 
@@ -33,7 +33,7 @@ class Utils
 }
 ```
 
-Приведенный выше пример иллюстрирует общую ситуацию. The variable `a` is assigned only when `b` is equal to 10, then it's required to use the value of this variable - but it could be uninitialized. Zephir detects this, automatically initializes the variable to an empty string, and generates a warning alerting the developer:
+The above example illustrates a common situation. The variable `a` is assigned only when `b` is equal to 10, then it's required to use the value of this variable - but it could be uninitialized. Zephir detects this, automatically initializes the variable to an empty string, and generates a warning alerting the developer:
 
 ```bash
 Warning: Variable 'a' was assigned for the first time in conditional branch,
@@ -43,13 +43,13 @@ consider initialize it in its declaration in
     for c in a {
 ```
 
-Обнаружить такие ошибки иногда сложно, однако статический анализ помогает программисту обнаружить ошибки заранее.
+Finding such errors is sometimes tricky, however static analysis helps the programmer to find bugs in advance.
 
 <a name='dead-code-elimination'></a>
 
 ## Удаление мёртвого кода
 
-Zephir информирует разработчика о недоступных ветвях в коде и выполняет удаление мертвого кода, это означает, что он избавляется от всего этого кода из сгенерированного двоичного файла, поскольку он никогда не сможет быть запущен:
+Zephir informs the developer about unreachable branches in the code and performs dead code elimination, which means it gets rid of all that code from the generated binary, since it cannot be executed anyway:
 
 ```zephir
 class Utils

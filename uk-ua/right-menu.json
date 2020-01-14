@@ -1,27 +1,27 @@
 {
     "arrays": [
         {
-            "text": "Оголошення масивів",
+            "text": "Declaring Array Variables",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Створення масивів",
+            "text": "Creating Arrays",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Updating arrays",
+            "text": "Оновлення масивів",
             "level": 1,
             "url": "#updating-arrays"
         },
         {
-            "text": "Appending elements",
+            "text": "Додавання елементів",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "Читання елементів з масивів",
+            "text": "Reading elements from arrays",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -518,27 +518,27 @@
     ],
     "operators": [
         {
-            "text": "Arithmetic Operators",
+            "text": "Арифметичні оператори",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "Bitwise Operators",
+            "text": "Бітові оператори",
             "level": 1,
             "url": "#bitwise-operators"
         },
         {
-            "text": "Оператори порівняння",
+            "text": "Comparison Operators",
             "level": 1,
             "url": "#comparison-operators"
         },
         {
-            "text": "Logical Operators",
+            "text": "Логічні оператори",
             "level": 1,
             "url": "#logical-operators"
         },
         {
-            "text": "Ternary Operator",
+            "text": "Тернарний оператор",
             "level": 1,
             "url": "#tenary-operator"
         },
@@ -563,7 +563,7 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Підказка типа",
+            "text": "Type Hints",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
@@ -688,7 +688,7 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Integer overflow",
+            "text": "Програмне переповнення цілих чисел",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },

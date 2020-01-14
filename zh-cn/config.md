@@ -430,7 +430,7 @@ version: '0.12'
 
 ## silent
 
-Suppresses most/all output from `zephir` commands (same as `-q` or `--quiet`):
+允许您列出其他扩展所需的建立/使用您自己:
 
 ```json
 {

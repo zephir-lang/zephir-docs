@@ -4,31 +4,31 @@ language: 'ru-ru'
 version: '0.12'
 ---
 
-# Предупреждения компилятора
+# Compiler Warnings
 
-Компилятор выдает предупреждения, когда находит ситуации, в которых можно улучшить код или избежать возможной ошибки.
+The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
 
-Предупреждения могут быть включены через параметры командной строки, или могут быть добавлены в `config.json`, чтобы включить или отключить их на продолжительное время.
+Warnings can be enabled via command line parameters, or can be added to the `config.json` to enable or disable them more permanently.
 
-Вы можете включить предупреждения, передав их имя с префиксом `-w`:
+You can enable warnings by passing their name prefixed by `-w`:
 
 ```bash
 zephir -wunused-variable -wnonexistent-function
 ```
 
-Вы можете включить предупреждения, передав их имя с префиксом `-w`:
+Warnings can be disabled by passing their name prefixed by `-W`:
 
 ```bash
 zephir -Wunused-variable -Wnonexistent-function
 ```
 
-Поддерживаются следующие типы предупреждений:
+The following warnings are supported:
 
 <a name='unused-variable'></a>
 
 ## unused-variable
 
-Вызывается, когда переменная объявлена, но не используется внутри метода. Это предупреждение включено по умолчанию.
+Raised when a variable is declared but it is not used within a method. This warning is enabled by default.
 
 ```zephir
 public function some()
@@ -43,7 +43,7 @@ public function some()
 
 ## unused-variable-external
 
-Вызывается, когда параметр объявлен, но не используется внутри метода.
+Raised when a parameter is declared but it is not used within a method.
 
 ```zephir
 public function sum(a, b, c) // c is not used
@@ -56,7 +56,7 @@ public function sum(a, b, c) // c is not used
 
 ## possible-wrong-parameter-undefined
 
-Вызывается при вызове метода с неправильным типом параметра:
+Raised when a method is called with a wrong type for a parameter:
 
 ```zephir
 public function some()
@@ -74,7 +74,7 @@ public function sum(int a, int b)
 
 ## nonexistent-function
 
-Вызывается при вызове функции, которая не существует в момент компиляции:
+Raised when a function is called that does not exist at compile time:
 
 ```zephir
 public function some()
@@ -87,7 +87,7 @@ public function some()
 
 ## nonexistent-class
 
-Вызывается при использовании класса, который не существует в момент компиляции:
+Raised when a class is used that does not exist at compile time:
 
 ```zephir
 public function some()
@@ -102,7 +102,7 @@ public function some()
 
 ## non-valid-isset
 
-Вызывается, когда компилятор обнаруживает, что операция 'isset' выполняется на значении, не являющимся массивом или объектом:
+Raised when the compiler detects that an 'isset' operation is being made on a non-array or -object value:
 
 ```zephir
 public function some()
@@ -117,7 +117,7 @@ public function some()
 
 ## non-array-update
 
-Возникает, когда компилятор обнаруживает, что операция обновления массива выполняется для значения, не являющегося значением массива:
+Raised when the compiler detects that an array update operation is being made on a non-array value:
 
 ```zephir
 public function some()
@@ -131,7 +131,7 @@ public function some()
 
 ## non-valid-objectupdate
 
-Вызывается когда компилятор обнаруживает, что выполняется операция обновления объекта, не являющегося объектом:
+Raised when the compiler detects that an object update operation is being made on a non-object value:
 
 ```zephir
 public function some()
@@ -145,9 +145,9 @@ public function some()
 
 ## non-valid-fetch
 
-Вызывается, когда компилятор обнаруживает, что выполняется операция 'fetch' над значением, не являющимся массивом или объектом:
+Raised when the compiler detects that a 'fetch' operation is being made on a non-array or -object value:
 
-##### переменная 'b' используется в качестве массива
+##### variable integer 'b' used as array
 
 ```zephir
 public function some()
@@ -161,7 +161,7 @@ public function some()
 
 ## invalid-array-index
 
-Вызывается, когда компилятор обнаруживает, что используется неверный индекс массива:
+Raised when the compiler detects that an invalid array index is used:
 
 ```zephir
 public function some(var a)
@@ -175,7 +175,7 @@ public function some(var a)
 
 ## non-array-append
 
-Вызывается, когда компилятор обнаруживает, что элемент добавляется к переменной, не относящейся к массиву:
+Raised when the compiler detects that an element is being appended to a non-array variable:
 
 ```zephir
 public function some()
