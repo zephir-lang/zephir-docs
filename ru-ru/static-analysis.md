@@ -4,13 +4,13 @@ language: 'ru-ru'
 version: '0.10'
 ---
 
-# Статический анализ
-Компилятор Zephir предоставляет возможность статического анализа компилируемого кода. Идея этой функции заключается в том, чтобы помочь разработчику найти потенциальные проблемы и избежать неожиданного поведения задолго до времени исполнения.
+# Static Analysis
+Zephir's compiler provides static analysis of the compiled code. The idea behind this feature is to help the developer to find potential problems and avoid unexpected behaviors, well before runtime.
 
 <a name='conditional-unassigned-variables'></a>
 
 ## Условные неинициализированные переменные
-При присвоении значения переменно статический анализатор пытается определить, используется ли переменная до ее инициализации:
+Static Analysis of assignments tries to identify if a variable is used before it's assigned:
 
 ```zephir
 class Utils
@@ -20,10 +20,10 @@ class Utils
         string a; char c;
 
         if b == 10 {
-            let a = "привет";
+            let a = "hello";
         }
 
-        // Есть вероятность, что переменная "a" не определена
+        //a could be unitialized here
         for c in a {
             echo c, PHP_EOL;
         }
@@ -31,7 +31,7 @@ class Utils
 }
 ```
 
-Приведенный выше пример иллюстрирует общую ситуацию. Для того, чтобы переменной `a` было присвоено значение и мы могли это значение, переменная `b` должна быть равной 10, но как видно из этого примера, значение проверяемой переменной не абсолютно точно определено. Компилятор Zephir определяет это, автоматически инициализирует переменную в пустую строку и генерирует предупреждение разработчику:
+The above example illustrates a common situation. The variable `a` is assigned only when `b` is equal to 10, then it's required to use the value of this variable - but it could be uninitialized. Zephir detects this, automatically initializes the variable to an empty string, and generates a warning alerting the developer:
 
 ```bash
 Warning: Variable 'a' was assigned for the first time in conditional branch,
@@ -41,20 +41,20 @@ consider initialize it in its declaration in
     for c in a {
 ```
 
-Обнаружить такие ошибки иногда сложно, однако статический анализ помогает программисту обнаружить ошибки заранее.
+Finding such errors is sometimes tricky, however static analysis helps the programmer to find bugs in advance.
 
 <a name='dead-code-elimination'></a>
 
 ## Удаление мёртвого кода
-Zephir информирует разработчика о недоступных ветвях в коде и выполняет удаление мертвого кода, это означает, что он избавляется от всего этого кода из сгенерированного двоичного файла, поскольку он никогда не сможет быть запущен:
+Zephir informs the developer about unreachable branches in the code and performs dead code elimination, which means it gets rid of all that code from the generated binary, since it cannot be executed anyway:
 
 ```zephir
-класс Utils
+class Utils
 {
     public function someMethod(b)
     {
         if false {
-            // Это никогда не выполняется
+            // This is never executed
             echo "hello";
         }
     }

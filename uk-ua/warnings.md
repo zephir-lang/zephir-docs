@@ -4,7 +4,7 @@ language: 'uk-ua'
 version: '0.10'
 ---
 
-# Попередження компілятора
+# Compiler Warnings
 The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
 
 Warnings can be enabled via command line parameters, or can be added to the `config.json` to enable or disable them more permanently.
