@@ -4,7 +4,7 @@ language: 'uk-ua'
 version: '0.12'
 ---
 
-# Compiler Warnings
+# Попередження компілятора
 
 The compiler raises warnings when it finds situations where the code can be improved, or a potential error can be avoided.
 
