@@ -430,7 +430,7 @@ Allows you to list other extensions as required to build/use your own:
 
 ## silent
 
-Suppresses most/all output from `zephir` commands (same as `-q` or `--quiet`):
+Suppresses most/all output from `zephir` commands (same as `-w`):
 
 ```json
 {

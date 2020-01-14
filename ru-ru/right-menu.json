@@ -1,27 +1,27 @@
 {
     "arrays": [
         {
-            "text": "Объявление массивов",
+            "text": "Declaring Array Variables",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Создание массивов",
+            "text": "Creating Arrays",
             "level": 1,
             "url": "#creating-arrays"
         },
         {
-            "text": "Обновление массивов",
+            "text": "Updating arrays",
             "level": 1,
             "url": "#updating-arrays"
         },
         {
-            "text": "Добавление элементов",
+            "text": "Appending elements",
             "level": 1,
             "url": "#appending-elements"
         },
         {
-            "text": "Чтение элементов из массивов",
+            "text": "Reading elements from arrays",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -300,7 +300,7 @@
             "url": "#require"
         },
         {
-            "text": "Оператор let",
+            "text": "Let",
             "level": 1,
             "url": "#let"
         }
@@ -315,7 +315,7 @@
             "url": "#prerequisites"
         },
         {
-            "text": "Установка Zephir",
+            "text": "Installing Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
@@ -327,7 +327,7 @@
     ],
     "introduction": [
         {
-            "text": "Привет мир!",
+            "text": "Hello World!",
             "level": 1,
             "url": "#hello-world"
         },
@@ -344,12 +344,12 @@
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "Разделение инструкций",
+            "text": "Instruction separation",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "Комментарии",
+            "text": "Comments",
             "level": 1,
             "url": "#comments"
         },
@@ -394,12 +394,12 @@
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "Если вы Си программист...",
+            "text": "If you are a C programmer...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "Компиляция против интерпретации",
+            "text": "Compilation vs Interpretation",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
@@ -419,7 +419,7 @@
             "url": "#code-protection"
         },
         {
-            "text": "Заключение",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
@@ -446,12 +446,12 @@
             "url": "#implementing-methods"
         },
         {
-            "text": "Необязательные обнуляемые параметры",
+            "text": "Optional nullable parameters",
             "level": 2,
             "url": "#implementing-methods-optional-nullable-parameters"
         },
         {
-            "text": "Поддерживаемые области видимости",
+            "text": "Supported Visibilities",
             "level": 2,
             "url": "#implementing-methods-supported-visibilities"
         },
@@ -461,12 +461,12 @@
             "url": "#implementing-methods-supported-modifiers"
         },
         {
-            "text": "Сокращения для геттеров/сеттеров",
+            "text": "Getter/Setter shortcuts",
             "level": 2,
             "url": "#implementing-methods-getter-setter-shortcuts"
         },
         {
-            "text": "Типы возвращаемых значений",
+            "text": "Return Type Hints",
             "level": 2,
             "url": "#implementing-methods-return-type-hints"
         },
@@ -476,12 +476,12 @@
             "url": "#implementing-methods-return-type-void"
         },
         {
-            "text": "Строгие/приводимые типы параметров",
+            "text": "Strict/Flexible Parameter Data-Types",
             "level": 2,
             "url": "#implementing-methods-strict-flexible-parameter-data-types"
         },
         {
-            "text": "Параметры только для чтения",
+            "text": "Read-Only Parameters",
             "level": 2,
             "url": "#implementing-methods-read-only-parameters"
         },
@@ -501,7 +501,7 @@
             "url": "#implementing-properties-reading"
         },
         {
-            "text": "Константы класса",
+            "text": "Class Constants",
             "level": 1,
             "url": "#class-constants"
         },
@@ -518,27 +518,27 @@
     ],
     "operators": [
         {
-            "text": "Арифметические операторы",
+            "text": "Arithmetic Operators",
             "level": 1,
             "url": "#arithmetic-operators"
         },
         {
-            "text": "Побитовые операторы",
+            "text": "Bitwise Operators",
             "level": 1,
             "url": "#bitwise-operators"
         },
         {
-            "text": "Операторы сравнения",
+            "text": "Comparison Operators",
             "level": 1,
             "url": "#comparison-operators"
         },
         {
-            "text": "Логические операторы",
+            "text": "Logical Operators",
             "level": 1,
             "url": "#logical-operators"
         },
         {
-            "text": "Тернарный оператор",
+            "text": "Ternary Operator",
             "level": 1,
             "url": "#tenary-operator"
         },
@@ -563,12 +563,12 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Подсказки типа",
+            "text": "Type Hints",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
         {
-            "text": "Подсказки прогнозирования ветвлений",
+            "text": "Branch Prediction Hints",
             "level": 2,
             "url": "#special-operators-branch-prediction-hints"
         }
@@ -641,7 +641,7 @@
             "url": "#extension-skeleton"
         },
         {
-            "text": "Добавление нашего первого класса",
+            "text": "Adding our first class",
             "level": 1,
             "url": "#adding-our-first-class"
         },
@@ -651,24 +651,24 @@
             "url": "#initial-testing"
         },
         {
-            "text": "Удобные класс",
+            "text": "A useful class",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "Заключение",
+            "text": "Conclusion",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "Динамические типы",
+            "text": "Dynamic Types",
             "level": 1,
             "url": "#dynamic-types"
         },
         {
-            "text": "Массивы",
+            "text": "Arrays",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -688,12 +688,12 @@
             "url": "#dynamic-types-integer"
         },
         {
-            "text": "Целочисленное переполнение",
+            "text": "Integer overflow",
             "level": 2,
             "url": "#dynamic-types-integer-overflow"
         },
         {
-            "text": "Объекты",
+            "text": "Objects",
             "level": 2,
             "url": "#dynamic-types-objects"
         },
@@ -703,7 +703,7 @@
             "url": "#dynamic-types-string"
         },
         {
-            "text": "Статические типы",
+            "text": "Static Types",
             "level": 1,
             "url": "#static-types"
         },
@@ -797,7 +797,7 @@
             "url": "#some-features"
         },
         {
-            "text": "Попробуйте",
+            "text": "A small taste",
             "level": 1,
             "url": "#a-small-taste"
         }
