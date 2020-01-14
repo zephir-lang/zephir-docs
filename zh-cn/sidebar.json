@@ -8,31 +8,31 @@
         "url": "motivation"
     },
     {
-        "text": "Zephir 简介",
+        "text": "Introducing Zephir",
         "url": "introduction"
     },
     {
-        "text": "安装",
+        "text": "Installation",
         "url": "installation"
     },
     {
-        "text": "教程",
+        "text": "Tutorial",
         "url": "tutorial"
     },
     {
-        "text": "基本语法",
+        "text": "Basic Syntax",
         "url": "language"
     },
     {
-        "text": "类型",
+        "text": "Types",
         "url": "types"
     },
     {
-        "text": "运算符",
+        "text": "Operators",
         "url": "operators"
     },
     {
-        "text": "数组",
+        "text": "Arrays",
         "url": "arrays"
     },
     {
@@ -48,7 +48,7 @@
         "url": "control-structures"
     },
     {
-        "text": "例外情况",
+        "text": "Exceptions",
         "url": "exceptions"
     },
     {
@@ -56,11 +56,11 @@
         "url": "functions"
     },
     {
-        "text": "闭 包",
+        "text": "Closures",
         "url": "closures"
     },
     {
-        "text": "自定义优化器",
+        "text": "Custom optimizers",
         "url": "optimizers"
     },
     {
@@ -68,7 +68,7 @@
         "url": "config"
     },
     {
-        "text": "生命周期钩子",
+        "text": "Lifecycle hooks",
         "url": "lifecycle"
     },
     {
@@ -84,7 +84,7 @@
         "url": "static-analysis"
     },
     {
-        "text": "优化",
+        "text": "Optimizations",
         "url": "optimizations"
     },
     {
