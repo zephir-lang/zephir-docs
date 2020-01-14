@@ -80,8 +80,7 @@ The PHAR isn't available before 0.11.4, so if you need an older version, you can
 composer global require phalcon/zephir
 ```
 
-When using this approach, there are several points that you need to pay
-attention to. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
+There are two approaches to running Zephir at this point. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
 
 #### As a Project Dependency
 
