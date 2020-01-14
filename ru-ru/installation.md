@@ -67,11 +67,11 @@ Zend Extension Api No:   320170718
 
 ## Установка Zephir
 
-Для начала убедитесь что Zephir parser установлен и активирован. За подробностями обратитесь к [следующему руководству](https://github.com/phalcon/php-zephir-parser).
+Для начала убедитесь что расширение Zephir Parser установлено и активировано. За подробностями обратитесь к [следующему руководству](https://github.com/phalcon/php-zephir-parser).
 
 ### Release PHAR
 
-The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
+Рекомендованный, **официальной поддерживаемый** и простой в использовании способ установки Zephir заключается в скачивании PHAR-файла со страницы [GitHub релизов](https://github.com/phalcon/zephir/releases/latest) и указании пути к нему в переменной окружения `$PATH`. (Вы, вероятно, также захотите избавиться от расширения `.phar`, чтобы запускать его как `zephir`, а не `zephir.phar`.)
 
 ### Composer
 
