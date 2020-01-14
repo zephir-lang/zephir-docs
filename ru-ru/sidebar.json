@@ -1,62 +1,62 @@
 [
     {
-        "text": "Добро пожаловать",
+        "text": "Welcome",
         "url": "welcome"
     },
     {
-        "text": "Почему Zephir",
+        "text": "Why Zephir",
         "url": "motivation"
     },
     {
-        "text": "Введение в Zephir",
+        "text": "Introducing Zephir",
         "url": "introduction"
     },
     {
-        "text": "Установка",
+        "text": "Installation",
         "url": "installation"
     },
     {
-        "text": "Урок",
+        "text": "Tutorial",
         "url": "tutorial"
     },
     {
-        "text": "Базовый синтаксис",
+        "text": "Basic Syntax",
         "url": "language"
     },
     {
-        "text": "Типы",
+        "text": "Types",
         "url": "types"
     },
     {
-        "text": "Операторы",
+        "text": "Operators",
         "url": "operators"
     },
     {
-        "text": "Массивы",
+        "text": "Arrays",
         "url": "arrays"
     },
     {
-        "text": "Классы и объекты",
+        "text": "Classes and objects",
         "url": "oop"
     },
     {
-        "text": "Встроенные методы",
+        "text": "Built-in methods",
         "url": "builtin-methods"
     },
     {
-        "text": "Управляющие структуры",
+        "text": "Control structures",
         "url": "control-structures"
     },
     {
-        "text": "Исключения",
+        "text": "Exceptions",
         "url": "exceptions"
     },
     {
-        "text": "Вызов функции",
+        "text": "Calling functions",
         "url": "functions"
     },
     {
-        "text": "Замыкания",
+        "text": "Closures",
         "url": "closures"
     },
     {
@@ -64,7 +64,7 @@
         "url": "optimizers"
     },
     {
-        "text": "Конфигурационный файл",
+        "text": "Configuration file",
         "url": "config"
     },
     {
@@ -72,31 +72,31 @@
         "url": "command-line"
     },
     {
-        "text": "Хуки жизненного цикла",
+        "text": "Lifecycle hooks",
         "url": "lifecycle"
     },
     {
-        "text": "Глобальные параметры расширения",
+        "text": "Extension globals",
         "url": "globals"
     },
     {
-        "text": "Секции phpinfo()",
+        "text": "phpinfo() sections",
         "url": "phpinfo"
     },
     {
-        "text": "Статический анализ",
+        "text": "Static analysis",
         "url": "static-analysis"
     },
     {
-        "text": "Оптимизации",
+        "text": "Optimizations",
         "url": "optimizations"
     },
     {
-        "text": "Предупреждения компилятора",
+        "text": "Compiler warnings",
         "url": "warnings"
     },
     {
-        "text": "Лицензионное соглашение",
+        "text": "License",
         "url": "license"
     }
 ]
