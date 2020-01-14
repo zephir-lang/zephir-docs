@@ -5,62 +5,62 @@ version: '0.10'
 ---
 
 # Масиви
-Array manipulation in Zephir provides a way to use PHP [array](http://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](http://en.wikipedia.org/wiki/Hash_table).
+Робота з масивами в Zephir здійснюється таким самим чином, [як і в PHP](http://www.php.net/manual/en/language.types.array.php). Масив це реалізація [хеш-таблиці](http://en.wikipedia.org/wiki/Hash_table).
 
 <a name='declaring-array-variables'></a>
 
-## Declaring Array Variables
-Array variables can be declared using the keywords 'var' or 'array':
+## Оголошення масивів
+Масив можна оголосити за допомогою двох ключслів `var` та `array`:
 
 ```zephir
-var a   = []; // array variable, its type can be changed
-array b = []; // array variable, its type cannot be changed across execution
+var a   = []; // масив, з можливістю зміни типу
+array b = []; // масив, без можливості зміни типу
 ```
 
 <a name='creating-arrays'></a>
 
-## Creating Arrays
-An array is created by enclosing its elements in square brackets:
+## Створення масивів
+Масив створюється шляхом укладення його елементів в квадратні дужки:
 
-##### Creating an empty array
+##### Створення порожнього масиву
 
 ```zephir
 let elements = [];
 ```
 
-##### Creating an array with elements
+##### Створення масиву з елементами
 
 ```zephir
 let elements = [1, 3, 4];
 ```
 
-##### Creating an array with elements of different types
+##### Створення масиву з елементами різних типів
 
 ```zephir
 let elements = ["first", 2, true];
 ```
 
-##### A multidimensional array
+##### Створення багатовимірного масиву
 
 ```zephir
 let elements = [[0, 1], [4, 5], [2, 3]];
 ```
 
-As PHP, hashes or dictionaries are supported:
+Як і в PHP, підтримуються прості (списки) і асоціативні масиви:
 
-##### Creating a hash with string keys
+##### Створення масиву з рядковими ключами
 
 ```zephir
 let elements = ["foo": "bar", "bar": "foo"];
 ```
 
-##### Creating a hash with numeric keys
+##### Створення масиву з числовими ключами
 
 ```zephir
 let elements = [4: "bar", 8: "foo"];
 ```
 
-##### Creating a hash with mixed string and numeric keys
+##### Створення масиву з змішаними ключами (рядковими та числовими)
 
 ```zephir
 let elements = [4: "bar", "foo": 8];
@@ -69,15 +69,15 @@ let elements = [4: "bar", "foo": 8];
 <a name='updating-arrays'></a>
 
 ## Оновлення масивів
-Arrays are updated in the same way as PHP, using square brackets:
+Масиви оновлюються таким же чином, як і PHP, використовуючи квадратні дужки:
 
-##### Updating an array with a string key
+##### Оновлення масиву з рядковим ключем
 
 ```zephir
 let elements["foo"] = "bar";
 ```
 
-##### Updating an array with a numeric key
+##### Оновлення масиву з числовим ключем
 
 ```zephir
 let elements[0] = "bar";
@@ -93,9 +93,9 @@ let elements["foo"][0] = "bar";
 <a name='appending-elements'></a>
 
 ## Додавання елементів
-Elements can be appended at the end of the array as follows:
+Елементи можуть бути додані в кінці масиву наступним чином:
 
-##### Append an element to the array
+##### Додавання елемента до масиву
 
 ```zephir
 let elements[] = "bar";
@@ -103,16 +103,16 @@ let elements[] = "bar";
 
 <a name='reading-elements-from-arrays'></a>
 
-## Reading elements from arrays
-It is possible to read array elements as follows:
+## Читання елементів з масивів
+Прочитати елементи масиву можна наступним чином:
 
-##### Getting an element using the string key `foo`
+##### Отримання елемента, використовуючи рядковий ключ `foo`
 
 ```zephir
 let foo = elements["foo"];
 ```
 
-##### Getting an element using the numeric key 0
+##### Отримання елемента за допомогою числового ключа 0
 
 ```zephir
 let foo = elements[0];

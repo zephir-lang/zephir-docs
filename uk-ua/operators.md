@@ -26,29 +26,29 @@ version: '0.10'
 ## Бітові оператори
 Підтримуються наступні оператори:
 
-| Операція                           | Приклад        |
-| ---------------------------------- | -------------- |
-| І (кон'юнкція)                     | `a & b`    |
-| Або (диз'юнкція)                   | `a | b`        |
-| Виключне або (виключна диз'юнкція) | `a ^ b`        |
-| Заперечення                        | `~a`           |
-| Shift left                         | `a << b` |
-| Shift right                        | `a >> b` |
+| Операція                             | Приклад        |
+| ------------------------------------ | -------------- |
+| І (кон'юнкція)                       | `a & b`    |
+| Або (диз'юнкція)                     | `a | b`        |
+| Виключення або (виключна диз'юнкція) | `a ^ b`        |
+| Заперечення                          | `~a`           |
+| Зсув ліворуч                         | `a << b` |
+| Зсув праворуч                        | `a >> b` |
 
 Приклад:
 
 ```zephir
 if a & SOME_FLAG {
-    echo "has some flag";
+    echo "Прапорець встановлений";
 }
 ```
 
-Learn more about comparison of dynamic variables in the [php manual](http://www.php.net/manual/en/language.operators.comparison.php).
+Дізнатися більше про порівняння динамічних змінних можна з [документації по PHP](http://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
-## Comparison Operators
-Comparison operators depend on the type of variables compared. Наприклад, якщо обидва операнди динамічні, то результат буде таким же як і в PHP:
+## Оператори порівняння
+Операції порівняння залежать від типу порівнюваних змінних. Наприклад, якщо обидва операнди динамічні, то результат буде таким же як і в PHP:
 
 | Приклад        | Операція                  | Опис                                                        |
 | -------------- | ------------------------- | ----------------------------------------------------------- |
@@ -130,7 +130,7 @@ if !empty someVar {
 <a name='special-operators-fetch'></a>
 
 ### Fetch
-'Fetch' is an operator that reduces a common operation in PHP into a single instruction:
+Оператор "fetch" створений для скорочення популярної в PHP конструкції:
 
 ```php
 <?php
@@ -141,7 +141,7 @@ if (isset($myArray[$key])) {
 }
 ```
 
-In Zephir, you can write the same code as:
+У Zephir ви можете написати той самий код так:
 
 ```zephir
 if fetch value, myArray[key] {
@@ -149,32 +149,32 @@ if fetch value, myArray[key] {
 }
 ```
 
-'Fetch' only returns `true` if the 'key' is a valid item in the array, and only in that case is 'value' populated.
+Оператор "fetch" поверне `true`, якщо в масиві присутній ключ `key` і присвоїть значення змінній `value`.
 
 <a name='special-operators-isset'></a>
 
 ### Isset
-This operator checks whether a property or index has been defined in an array or object:
+Перевіряє, чи існує індекс у масиву або властивість у об'єкта:
 
 ```zephir
 let someArray = ["a": 1, "b": 2, "c": 3];
-if isset someArray["b"] { // check if the array has an index "b"
+if isset someArray["b"] { // перевіряє чи є в масиву індекс "b"
     echo "yes, it has an index 'b'\n";
 }
 ```
 
-Using `isset` as a return expression:
+Використання `isset` можливе і в конструкціях повернення:
 
 ```zephir
 return isset this->{someProperty};
 ```
 
-Note that `isset` in Zephir works more like PHP's function [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
+Зверніть увагу, що `isset` у Zephir працює швидше як функція [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php) в PHP. Тобто `isset` поверне `true` навіть, якщо значення масиву або властивість об'єкту дорівнює `null`.
 
 <a name='special-operators-typeof'></a>
 
 ### Typeof
-This operator checks a variable's type. 'typeof' can be used with a comparison operator:
+Цей оператор перевіряє тип змінної. Оператор `typeof` можна використовувати з порівняльним оператором:
 
 ```zephir
 if (typeof str == "string") { // or !=
@@ -182,7 +182,7 @@ if (typeof str == "string") { // or !=
 }
 ```
 
-It can also work like the PHP function `gettype`.
+Він також може працювати як PHP-функція `gettype`.
 
 ```zephir
 return typeof str;
@@ -192,21 +192,21 @@ return typeof str;
 
 <a name='special-operators-type-hints'></a>
 
-### Type Hints
-Zephir always tries to check whether an object implements methods and properties called/accessed on a variable that is inferred to be an object:
+### Підказка типа
+Zephir завжди намагається перевірити, чи реалізує об’єкт методи та властивості викликання/доступу до змінної, яка виводиться як об’єкт:
 
 ```zephir
 let o = new MyObject();
 
-// Zephir checks if "myMethod" is implemented on MyObject
+// Zephir перевіряє чи реалізований метод "myMethod" в MyObject
 o->myMethod();
 ```
 
-However, due to the dynamism inherited from PHP, sometimes it is not easy to know the class of an object, so Zephir can't produce error reports effectively. A type hint tells the compiler which class is related to a dynamic variable, allowing the compiler to perform more compilation checks:
+Проте через динамічну природу, яка успадкована від PHP, іноді нелегко дізнатися клас об'єкта, тому Zephir не може ефективно створювати звіти про помилки. Підказка типу повідомляє компілятору, який клас пов'язаний з динамічною змінною, що дозволяє компілятору виконувати більше перевірок компіляції:
 
 ```zephir
-// Tell the compiler that "o"
-// is an instance of class MyClass
+// Повідомляє компілятору, що "o"
+// є екземпляром класу MyClass
 let o = <MyClass> this->_myObject;
 o->myMethod();
 ```
