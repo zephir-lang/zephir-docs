@@ -394,7 +394,7 @@
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "If you are a C programmer...",
+            "text": "Если вы Си программист...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
@@ -693,7 +693,7 @@
             "url": "#dynamic-types-integer-overflow"
         },
         {
-            "text": "Objects",
+            "text": "Объекты",
             "level": 2,
             "url": "#dynamic-types-objects"
         },
