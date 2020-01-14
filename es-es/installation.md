@@ -69,15 +69,15 @@ You don't have to necessarily see the exact above output, but it's important tha
 
 First make sure that the Zephir parser extension is installed and activated. You can follow this [tutorial](https://github.com/phalcon/php-zephir-parser).
 
-### Release PHAR
+### Using PHAR
 
-The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
+The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.
 
-### Composer
+### Using Composer
 
 The PHAR isn't available before 0.11.4, so if you need an older version, you can use Composer, in one of two ways:
 
-#### Global Composer Application
+#### As a Global Composer Application
 
 ```bash
 composer global require phalcon/zephir
@@ -85,7 +85,7 @@ composer global require phalcon/zephir
 
 There are two approaches to running Zephir at this point. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
 
-#### Project Dependency
+#### As a Project Dependency
 
 ```bash
 composer require phalcon/zephir
@@ -93,7 +93,7 @@ composer require phalcon/zephir
 
 Use `composer exec zephir` within the project you installed Zephir in, above, to run it. (Alternately, you can still run `vendor/bin/zephir`.)
 
-### Git Clone
+### Using Git
 
 Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
 

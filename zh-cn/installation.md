@@ -87,19 +87,19 @@ Zend Extension Api No:   320170718
 
 
 
-### Release PHAR
+### Using PHAR
 
-The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
+The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.
 
 
 
-### Composer
+### Using Composer
 
 The PHAR isn't available before 0.11.4, so if you need an older version, you can use Composer, in one of two ways:
 
 
 
-#### Global Composer Application
+#### As a Global Composer Application
 
 
 
@@ -112,7 +112,7 @@ There are two approaches to running Zephir at this point. The first is to ensure
 
 
 
-#### Project Dependency
+#### As a Project Dependency
 
 
 
@@ -125,7 +125,7 @@ Use `composer exec zephir` within the project you installed Zephir in, above, to
 
 
 
-### Git Clone
+### Using Git
 
 Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
 

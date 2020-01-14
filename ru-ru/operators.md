@@ -177,7 +177,7 @@ return isset this->{someProperty};
 Этот оператор проверяет тип переменной. 'typeof' может использоваться с оператором сравнения:
 
 ```zephir
-if (typeof str == "string") { // or !=
+if (typeof str == "string") { // или !=
     echo str;
 }
 ```
@@ -188,7 +188,7 @@ if (typeof str == "string") { // or !=
 return typeof str;
 ```
 
-**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
+**Будьте осторожны**, если вы хотите проверить, является ли объект «вызываемым» (callback-функцией), вы всегда должны использовать `typeof` в качестве оператора сравнения, а не как функцию.
 
 <a name='special-operators-type-hints'></a>
 
@@ -211,11 +211,11 @@ let o = <MyClass> this->_myObject;
 o->myMethod();
 ```
 
-These "type hints" are weak. Это означает, что программа не проверяет, является ли значение экземпляром указанного класса, и не проверяет реализует ли он указанный интерфейс. If you want it to check this every time in execution, use a strict type:
+Эти «подсказки типов» являются слабыми. Это означает, что программа не проверяет, является ли значение экземпляром указанного класса, и не проверяет реализует ли он указанный интерфейс. Если вы хотите, чтобы это проверялось каждый раз при выполнении, используйте строгую типизацию:
 
 ```zephir
-// Always check if the property is an instance
-// of MyClass before the assignment
+// Проверяем, является ли свойство экземпляром
+// класса MyClass перед присваиванием
 let o = <MyClass!> this->_myObject;
 o->myMethod();
 ```

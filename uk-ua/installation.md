@@ -69,15 +69,15 @@ Zend Extension Api No:   320170718
 
 Для початку переконайтеся, що Zephir parser встановлений і активований. За подробицями зверніться до [наступного посібника](https://github.com/phalcon/php-zephir-parser).
 
-### Реліз PHAR
+### Using PHAR
 
-The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (Ви, ймовірно, також захочете позбутися від розширення `.phar`, щоб запускати його як `zephir`, а не `zephir.phar`.)
+The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.
 
-### Composer
+### Using Composer
 
 PHAR не доступний до версії 0.11.4, тому якщо вам потрібна старіша версія, ви можете використовувати Composer одним з двох способів:
 
-#### Composer як глобальна програма
+#### As a Global Composer Application
 
 ```bash
 composer global require phalcon/zephir
@@ -85,7 +85,7 @@ composer global require phalcon/zephir
 
 На даний момент існує два підходи до запуску Zephir. Перший, переконайтеся, що `${COMPOSER_HOME}/vendor/bin` знаходиться у вашому `$PATH`, Zephir повинен бути доступний в командному рядку за допомогою команди `zephir`. Другий, замість цього можна використовувати команду `composer global exec zephir`.
 
-#### Залежність проекту
+#### As a Project Dependency
 
 ```bash
 composer require phalcon/zephir
@@ -93,7 +93,7 @@ composer require phalcon/zephir
 
 Для запуску Zephir використовуйте команду `composer exec zephir` в проекті з встановленим Zephir як показано вище. (Крім того, як альтернативу ви можете запустити `vendor/bin/zephir`
 
-### Git Clone
+### Using Git
 
 На останок, ви можете просто склонувати останні теги з GitHub, встановити залежності й запустити Zephir:
 
