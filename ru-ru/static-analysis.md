@@ -6,13 +6,13 @@ version: '0.12'
 
 # Static Analysis
 
-Zephir's compiler provides static analysis of the compiled code. The idea behind this feature is to help the developer to find potential problems and avoid unexpected behaviors, well before runtime.
+Компилятор Zephir предоставляет возможность статического анализа компилируемого кода. Идея этой функции заключается в том, чтобы помочь разработчику найти потенциальные проблемы и избежать неожиданного поведения задолго до времени исполнения.
 
 <a name='conditional-unassigned-variables'></a>
 
 ## Условные неинициализированные переменные
 
-Static Analysis of assignments tries to identify if a variable is used before it's assigned:
+При присвоении значения переменно статический анализатор пытается определить, используется ли переменная до ее инициализации:
 
 ```zephir
 class Utils
@@ -22,10 +22,10 @@ class Utils
         string a; char c;
 
         if b == 10 {
-            let a = "hello";
+            let a = "привет";
         }
 
-        //a could be unitialized here
+        // Есть вероятность, что переменная "a" не определена
         for c in a {
             echo c, PHP_EOL;
         }
@@ -33,7 +33,7 @@ class Utils
 }
 ```
 
-The above example illustrates a common situation. The variable `a` is assigned only when `b` is equal to 10, then it's required to use the value of this variable - but it could be uninitialized. Zephir detects this, automatically initializes the variable to an empty string, and generates a warning alerting the developer:
+Приведенный выше пример иллюстрирует общую ситуацию. Переменной `a` будет присвоено значение только в том случае, если переменная `b` равна 10, но как видно из этого примера, значение проверяемой переменной не определено в явном виде. Компилятор Zephir определяет это, автоматически инициализирует переменную в пустую строку и генерирует предупреждение разработчику:
 
 ```bash
 Warning: Variable 'a' was assigned for the first time in conditional branch,
@@ -57,7 +57,7 @@ class Utils
     public function someMethod(b)
     {
         if false {
-            // This is never executed
+            // Этот код никогда не выполнится
             echo "hello";
         }
     }
