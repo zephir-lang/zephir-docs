@@ -41,12 +41,12 @@ consider initialize it in its declaration in
     for c in a {
 ```
 
-Обнаружить такие ошибки иногда сложно, однако статический анализ помогает программисту обнаружить ошибки заранее.
+Finding such errors is sometimes tricky, however static analysis helps the programmer to find bugs in advance.
 
 <a name='dead-code-elimination'></a>
 
 ## Удаление мёртвого кода
-Zephir информирует разработчика о недоступных ветвях в коде и выполняет удаление мертвого кода, это означает, что он избавляется от всего этого кода из сгенерированного двоичного файла, поскольку он никогда не сможет быть запущен:
+Zephir informs the developer about unreachable branches in the code and performs dead code elimination, which means it gets rid of all that code from the generated binary, since it cannot be executed anyway:
 
 ```zephir
 class Utils
