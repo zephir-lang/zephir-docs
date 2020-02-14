@@ -352,7 +352,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Потому что компилятор может определить, ожидает ли программа возврата значения из этих методов, и вызовет исключение компилятора:
+Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
 
 ```zep
 let myDb = db->setConnection(connection); // this will produce an exception
