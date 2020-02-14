@@ -530,7 +530,7 @@ echo this->myProperty;
 // Избежание проверки компилятора или чтение динамического пользовательского свойства
 echo this->{"myProperty"};
 
-// Read using a variable name
+// Получение значения переменной с использованием её имени в динамическом контексте
 let someProperty = "myProperty";
 echo this->{someProperty}
 ```
