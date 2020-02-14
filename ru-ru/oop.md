@@ -4,13 +4,13 @@ language: 'ru-ru'
 version: '0.11'
 ---
 
-# Classes and Objects
-Zephir promotes object-oriented programming. Вот почему вы можете экспортировать только методы и классы в расширениях. Также вы увидите, что в большинстве случаев, ошибки времени исполнения порождают исключения вместо фатальных ошибок или предупреждений.
+# Классы и объекты
+Zephir продвигает объектно-ориентированное программирование. Вот почему вы можете экспортировать только методы и классы в расширениях. Также вы увидите, что в большинстве случаев, ошибки времени исполнения порождают исключения вместо фатальных ошибок или предупреждений.
 
 <a name='classes'></a>
 
 ## Классы
-Every Zephir file must implement a class or an interface (and just one). A class structure is very similar to a PHP class:
+Каждый Zephir-файл должен реализовывать класс или интерфейс (причём только один). Структура класса крайне схожа с структурой объявления его в PHP:
 
 ```zep
 /**
@@ -27,13 +27,13 @@ class MyClass
 ### Модификаторы класса
 Поддерживаются следующие модификаторы класса:
 
-`final`: If a class has this modifier it cannot be extended:
+`final`: если класс имеет этот модификатор, он не сможет быть расширен (унаследован):
 
 ```zep
 namespace Test;
 
 /**
- * This class cannot be extended by another class
+ * Этот класс не может быть расширен другим классом
  */
 final class MyClass
 {
@@ -47,7 +47,7 @@ final class MyClass
 namespace Test;
 
 /**
- * This class cannot be instantiated
+ * Экземпляр этого класса не может быть создан
  */
 abstract class MyClass
 {
@@ -58,9 +58,9 @@ abstract class MyClass
 <a name='classes-interfaces'></a>
 
 ### Реализация интерфейсов
-Zephir classes can implement any number of interfaces, provided that these interfaces are `visible` for the class to use. Однако, есть случаи, когда класс Zephir (и впоследствии расширение) может потребоваться для реализации интерфейса, который создан в другом расширении.
+Классы в Zephir могут реализовать любое количество интерфейсов, при условии, что эти интерфейсы `видимы` для использования классом. Однако, есть случаи, когда класс Zephir (и впоследствии расширение) может потребоваться для реализации интерфейса, который создан в другом расширении.
 
-If we want to implement the `MiddlewareInterface` from the `PSR` extension, we will need to create a `stub` interface:
+Например, если мы хотим реализовать `MiddlewareInterface` из `PSR` расширения, то нам нужно создать интерфейс-заглушку:
 
 ```zep
 // middlewareinterfaceex.zep
@@ -74,7 +74,7 @@ interface MiddlewareInterfaceEx extends MiddlewareInterface
 }
 ```
 
-From here we can use the `stub` interface throughout our extension.
+С этого момента мы можем использовать интерфейс-заглушку в любом месте нашего расширения.
 
 ```php
 /**
@@ -84,7 +84,7 @@ public function shouldExtendMiddlewareInterface()
 {
     if (!extension_loaded('psr')) {
         $this->markTestSkipped(
-            "The psr extension is not loaded"
+            "Psr расширение не загружено"
         );
     }
 
@@ -94,12 +94,12 @@ public function shouldExtendMiddlewareInterface()
 }
 ```
 
-**NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
+**Примечание:** Ответственность разработчика — убедиться, что все внешние зависимости присутствуют до загрузки расширения. В примере выше, перед тем как Zephir расширение будет загружено **сначала** необходимо установить и включить расширение [PSR](https://pecl.php.net/package/psr).
 
 <a name='implementing-methods'></a>
 
 ## Реализация методов
-The `function` keyword introduces a method. Methods implement the usual visibility modifiers available in PHP. Explicitly setting a visibility modifier is mandatory in Zephir:
+Ключевое слово `function` декларирует новый метод. Методы имеют те же модификаторы для разрешения видимости, что и PHP. Однако Zephir требует явно указывать модификаторы видимости:
 
 ```zep
 namespace Test;
@@ -124,7 +124,7 @@ class MyClass
 }
 ```
 
-Methods can receive required and optional parameters:
+Методы могут принимать как обязательные так и необязательные параметры:
 
 ```zep
 namespace Test;
@@ -133,7 +133,7 @@ class MyClass
 {
 
     /**
-     * All parameters are required
+     * Все параметры обязательные
      */
     public function doSum1(a, b)
     {
@@ -141,7 +141,7 @@ class MyClass
     }
 
     /**
-     * Only 'a' is required, 'b' is optional and it has a default value
+     * Обязателен только 'a', 'b' не обязателен и имеет значение по умолчанию
      */
     public function doSum2(a, b = 3)
     {
@@ -149,7 +149,7 @@ class MyClass
     }
 
     /**
-     * Both parameters are optional
+     * Оба параметра не обязательны
      */
     public function doSum3(a = 1, b = 2)
     {
@@ -157,7 +157,7 @@ class MyClass
     }
 
     /**
-     * Parameters are required and their values must be integer
+     * Параметры обязательны, и они должны быть целочисленными
      */
     public function doSum4(int a, int b)
     {
@@ -165,7 +165,8 @@ class MyClass
     }
 
     /**
-     * Static typed with default values
+     * Статически типизированные параметры обязательны,
+     * они целочисленны и имеют значения по умолчанию
      */
     public function doSum4(int a = 4, int b = 2)
     {
@@ -176,8 +177,8 @@ class MyClass
 
 <a name='implementing-methods-optional-nullable-parameters'></a>
 
-### Optional nullable parameters
-Zephir гарантирует, что значение переменной останется такого же типа, с которым она была объявлена. This makes Zephir convert the `null` value to the closest approximate value:
+### Необязательные обнуляемые параметры
+Zephir гарантирует, что значение переменной останется такого же типа, с которым она была объявлена. Это заставляет Zephir преобразовать значение `null` в ближайшее соответствующее типу значение:
 
 ```zep
 public function foo(int a = null)
@@ -203,28 +204,28 @@ public function foo(array a = null)
 
 <a name='implementing-methods-supported-visibilities'></a>
 
-### Supported Visibilities
-* Public: Methods marked as `public` are exported to the PHP extension; this means that public methods are visible to the PHP code as well to the extension itself.
+### Поддерживаемые области видимости (инкапсуляция)
+* Открытый (public): Методы, помеченные как `public`, экспортируются в PHP-расширение; это означает, что публичные методы доступны для PHP-кода, а также для самого расширения.
 
-* Protected: Methods marked as `protected` are exported to the PHP extension; this means that protected methods are visible to the PHP code as well to the extension itself. However, protected methods can only be called in the scope of the class or in classes that inherit them.
+* Защищенный (protected): Методы, помеченные как `protected`, экспортируются в расширение; это означает, что защищенные методы доступны для PHP-кода, а также для самого расширения. Однако, защищенные методы могут быть вызваны либо в пределах класса, либо наследником класса.
 
-* Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
+* Закрытый (private): Методы, помеченные как `private`, не экспортируются в PHP-расширение; это означает, что приватные методы доступны только для класса, где они реализованы.
 
 <a name='implementing-methods-supported-modifiers'></a>
 
 ### Поддерживаемые модификаторы
-* `static`: Methods with this modifier can only be called in a static context (from the class, not an object).
+* Статический (`static`): Методы с этим модификатором могут вызываться только в статическом контексте (из класса, а не объекта).
 
-* `final`: If a method has this modifier it cannot be overriden.
+* Финальный (`final`): Если метод имеет этот модификатор, он не может быть переопределён.
 
-* `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
+* Устаревший (`deprecated`): Методы, отмеченные как `deprecated` выбрасывают ошибку `E_DEPRECATED` в месте вызова.
 
 <a name='implementing-methods-getter-setter-shortcuts'></a>
 
-### Getter/Setter shortcuts
+### Сокращения для геттеров и сеттеров
 Как и в C#, в Zephir вы можете использовать `get`/`set`/`toString` сокращения. Эта особенность позволяет легко писать геттеры и сеттеры для свойств, без явной реализации этих методов как таковых.
 
-For example, without shortcuts we would need code like:
+Например, без сокращений нам нужен был бы такой код:
 
 ```zep
 namespace Test;
@@ -262,7 +263,7 @@ class MyClass
 }
 ```
 
-You can write the same code using shortcuts as follows:
+Вы можете реализовать ту же самую логику, используя сокращения, как показано ниже:
 
 ```zep
 namespace App;
@@ -283,8 +284,8 @@ class MyClass
 
 <a name='implementing-methods-return-type-hints'></a>
 
-### Return Type Hints
-Methods in classes and interfaces can have "return type hints". Это позволит компилятору предоставить полезную дополнительную информацию об ошибках в вашем приложении. Рассмотрим следующий пример:
+### Подсказки возвращаемого типа
+Методы классов и интерфейсов могут иметь «подсказки возвращаемого типа». Это позволит компилятору предоставить полезную дополнительную информацию об ошибках в вашем приложении. Рассмотрим следующий пример:
 
 ```zep
 namespace App;
@@ -293,17 +294,17 @@ class MyClass
 {
     public function getSomeData() -> string
     {
-        // this will throw a compiler exception
-        // since the returned value (boolean) does not match
-        // the expected returned type string
+        // здесь будет выброшено исключение времени компиляции
+        // потому что возвращаемое значение (boolean)
+        // не соответствует ранее объявленному типу
         return false;
     }
 
     public function getSomeOther() -> <App\MyInterface>
     {
-        // this will throw a compiler exception
-        // if the returned object does not implement
-        // the expected interface App\MyInterface
+        // здесь будет выброшено исключение времени компиляции
+        // если возвращаемый объект не реализует
+        // ожидаемый компилятором интерфейс
         return new App\MyObject;
     }
 
@@ -311,13 +312,13 @@ class MyClass
     {
         var myObject;
 
-        // the type-hint will tell the compiler that
-        // myObject is an instance of a class
-        // that implement App\MyInterface
+        // подсказка типа сообщит компилятору, что
+        // myObject является экземпляром класса,
+        // который реализует App\MyInterface
         let myObject = this->getSomeOther();
 
-        // the compiler will check if App\MyInterface
-        // implements a method called "someMethod"
+        // компилятор проверит, декларирует ли интерфейс
+        // App\MyInterface метод "someMethod"
         echo myObject->someMethod();
     }
 }
@@ -343,7 +344,7 @@ class MyClass
 <a name='implementing-methods-return-type-void'></a>
 
 ### Возвращаемый тип: Void
-Методы могут быть также помечены как `void`. This means that a method is not allowed to return any data:
+Методы могут быть также помечены как `void`. Это значит, что метод не можете вернуть ничего:
 
 ```zep
 public function setConnection(connection) -> void
@@ -352,7 +353,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Why is this useful? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+Когда это может быть полезно? Компилятор может определить, ожидает ли программа возврата значения из этих методов, и вызовет исключение компилятора:
 
 ```zep
 let myDb = db->setConnection(connection); // this will produce an exception
