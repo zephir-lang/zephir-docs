@@ -353,7 +353,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Когда это может быть полезно? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
+Когда это может быть полезно? Компилятор может определить, ожидает ли программа возврата значения из этих методов, и вызовет исключение компилятора:
 
 ```zep
 let myDb = db->setConnection(connection); // тут сгенерируется исключение
