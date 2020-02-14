@@ -353,7 +353,7 @@ public function setConnection(connection) -> void
 }
 ```
 
-Когда это может быть полезно? Потому что компилятор может определить, ожидает ли программа возврата значения из этих методов, и вызовет исключение компилятора:
+Когда это может быть полезно? Because the compiler can detect if the program is expecting a return value from these methods, and produce a compiler exception:
 
 ```zep
 let myDb = db->setConnection(connection); // тут сгенерируется исключение
@@ -363,7 +363,7 @@ myDb->execute("SELECT * FROM robots");
 <a name='implementing-methods-strict-flexible-parameter-data-types'></a>
 
 ### Строгие и приводимые типы параметров
-В Zephir вы можете указать тип данных каждого параметра метода. По умолчанию все типизированные аргументы приводимы. На практике это означает, что если значение не соответсвует ожидаемому типу (но является совместимым типом), Zephir прозрачно преобразует его в ожидаемый тип:
+В Zephir вы можете указать тип данных каждого параметра метода. По умолчанию все типизированные аргументы приводимы. На практике это означает, что если значение не соответствует ожидаемому типу (но является совместимым типом), Zephir прозрачно преобразует его в ожидаемый тип:
 
 ```zep
 public function filterText(string text, boolean escape=false)
