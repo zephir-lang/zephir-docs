@@ -422,7 +422,7 @@ By specifying what parameters are strict and what can be flexible, a developer c
 
 ### Read-Only Parameters
 
-При помощи ключевого слова `const`, вы можете пометить параметры как «только для чтения», это помогает соблюдать «[const-корректность](https://en.wikipedia.org/wiki/Const_(computer_programming))». Parameters marked with this attribute cannot be modified inside the method:
+При помощи ключевого слова `const`, вы можете пометить параметры как «только для чтения», это помогает соблюдать «[const-корректность](https://en.wikipedia.org/wiki/Const_(computer_programming))». Параметры, помеченные этим атрибутом, не могут быть изменены внутри метода :
 
 ```zep
 namespace App;
@@ -444,7 +444,7 @@ class MyClass
 
 ## Реализация свойств
 
-Class member variables are called "properties". По умолчанию, они действуют так же, как и свойства PHP. Properties are exported to the PHP extension, and are visible from PHP code. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
+Class member variables are called "properties". По умолчанию, они действуют так же, как и свойства PHP. Свойства экспортируются в PHP-расширение и доступны из PHP-кода. Properties implement the usual visibility modifiers available in PHP, and explicitly setting a visibility modifier is mandatory in Zephir:
 
 ```zep
 namespace Test;
@@ -507,7 +507,7 @@ class MyClass
 let this->myProperty = 100;
 ```
 
-Zephir checks that properties exist when a program is accessing them. Если свойство не объявлено, вы получите исключение компилятора:
+Zephir проверяет наличие свойств, доступных ему. Если свойство не объявлено, вы получите исключение компилятора:
 
 ```bash
 CompilerException: Property '_optionsx' is not defined on class 'App\MyClass' in /Users/scott/utils/app/myclass.zep on line 62
