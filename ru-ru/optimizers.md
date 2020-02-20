@@ -10,7 +10,7 @@ Most common functions in Zephir use internal optimizers. An 'optimizer' works li
 
 To create an optimizer, you have to create a class in the 'optimizers' directory (you can configure this directory's name in `config.json`; see below). The following naming convention must be used:
 
-| Функция в Zephir | Optimizer Class Name   | Путь оптимизатора                     | Function in C     |
+| Функция в Zephir | Optimizer Class Name   | Путь оптимизатора                     | Функция в C       |
 | ---------------- | ---------------------- | ------------------------------------- | ----------------- |
 | `calculate_pi`   | `CalculatePiOptimizer` | `optimizers/CalculatePiOptimizer.php` | `my_calculate_pi` |
 
@@ -65,7 +65,7 @@ public function optimize(array $expression, Call $call, CompilationContext $cont
 }
 ```
 
-Существуют функции, которые вызываются, но не возвращают никакого значения. Our function returns a value that is the calculated PI value. So we need to check that the type of the variable used to receive this calculated value is OK:
+Существуют функции, которые вызываются, но не возвращают никакого значения. Наша функция возвращает вычисленное число PI. So we need to check that the type of the variable used to receive this calculated value is OK:
 
 ```php
 <?php
