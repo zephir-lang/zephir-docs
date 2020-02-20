@@ -156,7 +156,7 @@ public function getValue()
 
 ## internal-call-transformation
 
-The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. By default, this optimization is turned off.
+The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. По умолчанию, эта оптимизация отключена.
 
 This optimization generates 2 implementations per method, one that is exposed in PHP and an internal one.
 
