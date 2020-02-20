@@ -394,7 +394,7 @@
             "url": "#if-you-are-a-php-programmer"
         },
         {
-            "text": "If you are a C programmer...",
+            "text": "Если вы Си программист...",
             "level": 1,
             "url": "#if-you-are-a-c-programmer"
         },
@@ -446,12 +446,12 @@
             "url": "#implementing-methods"
         },
         {
-            "text": "Optional nullable parameters",
+            "text": "Необязательные обнуляемые параметры",
             "level": 2,
             "url": "#implementing-methods-optional-nullable-parameters"
         },
         {
-            "text": "Supported Visibilities",
+            "text": "Поддерживаемые области видимости",
             "level": 2,
             "url": "#implementing-methods-supported-visibilities"
         },
@@ -461,27 +461,27 @@
             "url": "#implementing-methods-supported-modifiers"
         },
         {
-            "text": "Getter/Setter shortcuts",
+            "text": "Сокращения для геттеров/сеттеров",
             "level": 2,
             "url": "#implementing-methods-getter-setter-shortcuts"
         },
         {
-            "text": "Return Type Hints",
+            "text": "Типы возвращаемых значений",
             "level": 2,
             "url": "#implementing-methods-return-type-hints"
         },
         {
-            "text": "Возвращаемый тип: Void",
+            "text": "Возвращаемый тип: void",
             "level": 2,
             "url": "#implementing-methods-return-type-void"
         },
         {
-            "text": "Strict/Flexible Parameter Data-Types",
+            "text": "Строгие/приводимые типы параметров",
             "level": 2,
             "url": "#implementing-methods-strict-flexible-parameter-data-types"
         },
         {
-            "text": "Read-Only Parameters",
+            "text": "Параметры только для чтения",
             "level": 2,
             "url": "#implementing-methods-read-only-parameters"
         },
@@ -501,7 +501,7 @@
             "url": "#implementing-properties-reading"
         },
         {
-            "text": "Class Constants",
+            "text": "Константы класса",
             "level": 1,
             "url": "#class-constants"
         },
@@ -651,7 +651,7 @@
             "url": "#initial-testing"
         },
         {
-            "text": "Удобные класс",
+            "text": "Удобный класс",
             "level": 1,
             "url": "#a-useful-class"
         },
@@ -693,7 +693,7 @@
             "url": "#dynamic-types-integer-overflow"
         },
         {
-            "text": "Objects",
+            "text": "Объекты",
             "level": 2,
             "url": "#dynamic-types-objects"
         },
