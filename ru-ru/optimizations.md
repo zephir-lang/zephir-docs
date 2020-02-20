@@ -5,17 +5,17 @@ version: '0.11'
 ---
 
 # Оптимизации
-Because the code in Zephir is sometimes very high-level, a C compiler might not be able to optimize this code enough.
+Поскольку код на Zephir иногда очень высокоуровневый, Си-компилятор может быть не в состоянии эффективно оптимизировать этот код.
 
-Zephir, thanks to its AOT (ahead-of-time) compiler, is able to optimize the code at compile time, potentially improving its execution time, or reducing the memory required by the program.
+Благодаря AOT-компилятору (ahead-of-time), Zephir способен оптимизировать код во время компиляции, потенциально улучшая время выполнения или уменьшая объем памяти, необходимый программе.
 
-You can enable optimizations by passing the name prefixed by `-f`:
+Вы можете включить оптимизацию, передав её название при помощи ключа `-f`:
 
 ```bash
 zephir -fstatic-type-inference -flocal-context-pass
 ```
 
-Optimizations can be disabled by passing the name prefixed by `-fno-`:
+Оптимизация может быть отключена при помощи ключа `-fno-`:
 
 ```bash
 zephir -fno-static-type-inference -fno-call-gatherer-pass
@@ -44,12 +44,12 @@ zephir -fno-static-type-inference -fno-call-gatherer-pass
 }
 ```
 
-The following optimizations are supported:
+Поддерживаются следующие типы оптимизаций:
 
 <a name='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
-This pass counts how many times a function or method is called within the same method. This allows the compiler to introduce inline caches to avoid method or function lookups:
+Эта оптимизации учитывает, сколько раз функция или метод вызывается в рамках одного и того же метода. Это позволяет компилятору использовать встроенное кеширование, что позволяет избежать повторного поиска владельца метода или функции:
 
 ```zephir
 class MyClass extends OtherClass
@@ -68,7 +68,7 @@ class MyClass extends OtherClass
 <a name='check-invalid-reads'></a>
 
 ## check-invalid-reads
-This flag will force checking types to detect for invalid reads during the compilation process. This ensures that all variables are properly defined and initialized with their default values (as well as the internal pointers). An example is:
+Этот флаг форсирует принудительную проверку типов во время компиляции на выявление неверных операций чтения. Это гарантирует, что все переменные и указатели правильно определены и инициализированы значениями по умолчанию. Например, сравните:
 
 ```zephir
 namespace Acme;
@@ -85,7 +85,7 @@ class ForInRange
 }
 ```
 
-сравнивается с:
+со следующим примером:
 
 
 ```zephir
@@ -103,7 +103,7 @@ class ForInRange
 }
 ```
 
-Both examples are perfectly valid as far as Zephir is concerned. The difference is in the generated C code:
+Оба примера в действительности являются корректными с точки зрения синтаксиса Zephir. Разница проявляется при генерации Си-кода:
 
 ```c
 zval *n;
@@ -113,7 +113,7 @@ zval *n;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-сравнивается с:
+сравните с:
 
 ```c
 zval *n = NULL;
@@ -123,14 +123,14 @@ zval *n = NULL;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-It is a good practice to always initialize variables with default values and types for any programming language. Not doing so, could potentially have unintended consequences for the application, and introduce bugs, memory leaks etc. By using the `check-invalid-reads` flag in `config.json` we ensure that pointers are properly initialized along with their respective C variables. Zephir-разработчики не увидят изменений в коде. This affects the generated C code.
+Хорошей практикой для любого языка программирования является инициализация переменных значениями по умолчанию с соблюдением корректности типов. Если не следовать этому принципу, потенциально это может привести к непредвиденным последствиям для приложения, а также может привести к ошибкам, утечкам памяти и т.д. Используя флаг `check-invalid-reads` в `config.json`, мы гарантируем, что указатели правильно инициализированы вместе с соответствующими переменными в Си-коде. Zephir-разработчики не увидят изменений в коде. Эта оптимизация влияет на сгенерированный Си-код.
 
-More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
+Более подробную информацию о том, почему указатели в Си необходимо обнулять, можно найти [здесь](https://stackoverflow.com/q/12253191/1661465).
 
 <a name='constant-folding'></a>
 
 ## constant-folding
-Constant folding is the process of simplifying constant expressions at compile time. The following code is simplified when this optimization is enabled:
+Свертывание констант — это процесс упрощения константных выражений во время компиляции. Следующий код упрощается, когда эта оптимизация включена:
 
 ```zephir
 public function getValue()
@@ -151,13 +151,13 @@ public function getValue()
 <a name='internal-call-transformation'></a>
 
 ## internal-call-transformation
-The `internal-call-transformation` is required to generate internal methods, based on their equivalent PHP ones, allowing for the bypass of the PHP userspace for those internal method calls. By default, this optimization is turned off.
+Флаг `internal-call-transformation` используется для генерации внутренних методов, на основе их эквивалентов в PHP, что позволяет обойти пространство PHP для этих внутренних методов. По умолчанию, эта оптимизация отключена.
 
-This optimization generates 2 implementations per method, one that is exposed in PHP and an internal one.
+Эта оптимизация генерирует 2 реализации для каждого метода, одна из которых представлена в PHP, другая - внутренняя.
 
-Exceptions to the above are:
+Исключением / ограничением из вышеизложенного являются следующие ситуации:
 
-- Only PHP methods allowed to be replaced (eg. мы не можем сделать это для методов Phalcon)
+- Можно заменить только PHP методы (например, мы не можем сделать это для методов Phalcon)
 - Замыкания (`__invoke`) и `__construct` не поддерживаются
 - Количество требуемых параметров должно точно соответствовать количеству реальных параметров
 - Не работает для ZendEngine2 (PHP 5.6)
@@ -246,4 +246,4 @@ public function someCalculations(int a, int b)
 <a name='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
-This enables a second type inference pass, which improves the work done based on the data gathered by the first static type inference pass.
+Эта оптимизация включает повторный вывод типов, что в целом улучшает работу проделанную на основе данных, собранных при первом проходе вывода типов.
