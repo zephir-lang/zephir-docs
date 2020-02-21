@@ -106,4 +106,4 @@ zephir generate 2> errors.log 1> /dev/null
 
 Генерирует заглушки, которые могут использоваться в PHP IDE
 
--   `--backend=BACKEND`:                 Бэкенд, используемый для генерации заглушек (default: `ZendEngine3`)
+-   `--backend=BACKEND`:                 Бэкенд, используемый для генерации заглушек (по умолчанию: `ZendEngine3`)
