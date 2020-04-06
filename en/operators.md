@@ -4,6 +4,8 @@ language: 'en'
 version: '0.12'
 ---
 # Operators
+This chapter is about Zephir's operators. To read about operator pecedence refer to chapter [Operator Precedence](/{{ page.version }}/{{ page.language }}/operator-precedence).
+
 Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
 
 <a name='arithmetic-operators'></a>

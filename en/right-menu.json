@@ -573,6 +573,18 @@
             "url": "#special-operators-branch-prediction-hints"
         }
     ],
+    "operator-precedence": [
+	{
+	    "text": "Associativity",
+	    "level": 2,
+	    "url": "#operator-precedence-associativity"
+	},
+	{
+	    "text": "Precedence Table",
+	    "level": 2,
+	    "url": "#operator-precedence-table"
+	}
+    ],
     "optimizations": [
         {
             "text": "call-gatherer-pass",
