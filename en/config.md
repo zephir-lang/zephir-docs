@@ -6,7 +6,7 @@ version: '0.10'
 # Configuration File
 Every Zephir extension has a configuration file called `config.json`. This file is read by Zephir every time you build or generate the extension, and it allows the developer to modify the extension's or compiler's behavior.
 
-This file uses [JSON](http://en.wikipedia.org/wiki/JSON) as its configuration format:
+This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration format:
 
 ```json
 {
