@@ -76,9 +76,9 @@ Zephir提供本机代码生成（目前通过编译到C）。 像gcc/clang/vc++�
 
 除了Zephir提供的优化之外，随着时间的推移，编译器已经实现并成熟了许多优化，这些优化可以提高编译应用程序的性能:
 
-* [GCC 优化](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
-* [LLVM 传递](http://llvm.org/docs/Passes.html)
-* [Visual C/C++ 优化](http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
+* [GCC 优化](https://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
+* [LLVM 传递](https://llvm.org/docs/Passes.html)
+* [Visual C/C++ 优化](https://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
 <a name='code-protection'></a>
 
