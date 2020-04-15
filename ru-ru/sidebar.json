@@ -88,7 +88,7 @@
         "url": "static-analysis"
     },
     {
-        "text": "Optimizations",
+        "text": "Оптимизации",
         "url": "optimizations"
     },
     {
@@ -96,7 +96,7 @@
         "url": "warnings"
     },
     {
-        "text": "License",
+        "text": "Лицензионное соглашение",
         "url": "license"
     }
 ]
