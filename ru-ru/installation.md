@@ -14,7 +14,7 @@ version: '0.10'
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
 * Один из следующих C компиляторов: [gcc](https://gcc.gnu.org/) >= 4.4, [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 или [Intel C++](https://software.intel.com/en-us/c-compilers). Рекомендуется `gcc` 4.4 или старше
-* [re2c](http://re2c.org/) 0.13.6 или старше
+* [re2c](https://re2c.org/) 0.13.6 or later
 * Заголовочные файлы PHP и инструменты разработчика
 
 Для систем на базе Linux, вам понадобится также:
@@ -62,7 +62,7 @@ Zend Extension Api No:   320151012
 
 ### С использованием Git
 
-Для начала убедитесь что Zephir parser установлен и активирован. За подробностями обратитесь к [следующему руководству](https://github.com/phalcon/php-zephir-parser).
+Для начала убедитесь что Zephir parser установлен и активирован. За подробностями по его установке обратитесь к [соответствующему руководству](https://github.com/phalcon/php-zephir-parser).
 
 Склонируйте репозиторий Zephir с Github:
 
