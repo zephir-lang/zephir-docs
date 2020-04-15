@@ -471,7 +471,7 @@
             "url": "#bitwise-operators"
         },
         {
-            "text": "Comparison Operators",
+            "text": "Оператори порівняння",
             "level": 1,
             "url": "#comparison-operators"
         },
@@ -506,7 +506,7 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Type Hints",
+            "text": "Підказка типа",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
