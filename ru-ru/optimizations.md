@@ -116,7 +116,7 @@ zval *n;
 zephir_fetch_params(1, 1, 0, &n);
 ```
 
-compared to:
+сравнивается с:
 
 ```c
 zval *n = NULL;
@@ -192,7 +192,7 @@ class MyClass
 }
 ```
 
-Is transformed into:
+Преобразуется в:
 
 ```zephir
 class MyClass

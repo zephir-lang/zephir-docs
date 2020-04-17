@@ -1,12 +1,12 @@
 {
     "arrays": [
         {
-            "text": "Declaring Array Variables",
+            "text": "Оголошення масивів",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Creating Arrays",
+            "text": "Створення масивів",
             "level": 1,
             "url": "#creating-arrays"
         },
@@ -21,14 +21,14 @@
             "url": "#appending-elements"
         },
         {
-            "text": "Reading elements from arrays",
+            "text": "Читання елементів з масивів",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
     ],
     "builtin-methods": [
         {
-            "text": "String",
+            "text": "Рядок",
             "level": 1,
             "url": "#string"
         },
@@ -310,12 +310,12 @@
     "globals": [],
     "installation": [
         {
-            "text": "Prerequisites",
+            "text": "Передумови",
             "level": 1,
             "url": "#prerequisites"
         },
         {
-            "text": "Installing Zephir",
+            "text": "Встановлення Zephir",
             "level": 1,
             "url": "#installing-zephir"
         },
@@ -327,7 +327,7 @@
     ],
     "introduction": [
         {
-            "text": "Hello World!",
+            "text": "Привіт світ!",
             "level": 1,
             "url": "#hello-world"
         },
@@ -344,12 +344,12 @@
             "url": "#organizing-code-in-files-and-namespaces"
         },
         {
-            "text": "Instruction separation",
+            "text": "Розділення інструкцій",
             "level": 1,
             "url": "#instruction-separation"
         },
         {
-            "text": "Comments",
+            "text": "Коментарі",
             "level": 1,
             "url": "#comments"
         },
@@ -399,7 +399,7 @@
             "url": "#if-you-are-a-c-programmer"
         },
         {
-            "text": "Compilation vs Interpretation",
+            "text": "Компіляція проти інтерпретації",
             "level": 1,
             "url": "#compilation-vs-interpretation"
         },
@@ -419,7 +419,7 @@
             "url": "#code-protection"
         },
         {
-            "text": "Conclusion",
+            "text": "Висновок",
             "level": 1,
             "url": "#conclusion"
         }
@@ -528,7 +528,7 @@
             "url": "#bitwise-operators"
         },
         {
-            "text": "Comparison Operators",
+            "text": "Оператори порівняння",
             "level": 1,
             "url": "#comparison-operators"
         },
@@ -563,7 +563,7 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Type Hints",
+            "text": "Підказка типа",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
@@ -641,7 +641,7 @@
             "url": "#extension-skeleton"
         },
         {
-            "text": "Adding our first class",
+            "text": "Додавання нашого першого класу",
             "level": 1,
             "url": "#adding-our-first-class"
         },
@@ -651,24 +651,24 @@
             "url": "#initial-testing"
         },
         {
-            "text": "A useful class",
+            "text": "Корисний клас",
             "level": 1,
             "url": "#a-useful-class"
         },
         {
-            "text": "Conclusion",
+            "text": "Висновок",
             "level": 1,
             "url": "#conclusion"
         }
     ],
     "types": [
         {
-            "text": "Dynamic Types",
+            "text": "Динамічні типи",
             "level": 1,
             "url": "#dynamic-types"
         },
         {
-            "text": "Arrays",
+            "text": "Масиви",
             "level": 2,
             "url": "#dynamic-types-arrays"
         },
@@ -698,12 +698,12 @@
             "url": "#dynamic-types-objects"
         },
         {
-            "text": "String",
+            "text": "Рядок",
             "level": 2,
             "url": "#dynamic-types-string"
         },
         {
-            "text": "Static Types",
+            "text": "Статичні типи",
             "level": 1,
             "url": "#static-types"
         },
@@ -728,7 +728,7 @@
             "url": "#static-types-long-unsigned"
         },
         {
-            "text": "String",
+            "text": "Рядок",
             "level": 2,
             "url": "#static-types-string"
         }
@@ -797,7 +797,7 @@
             "url": "#some-features"
         },
         {
-            "text": "A small taste",
+            "text": "Скуштуйте",
             "level": 1,
             "url": "#a-small-taste"
         }
