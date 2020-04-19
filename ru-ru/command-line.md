@@ -4,11 +4,11 @@ language: 'ru-ru'
 version: '0.11'
 ---
 
-# The Zephir Command Line
+# Командная строка Zephir
 
-Once Zephir is installed, you'll use the `zephir` command to manage the Zephir compiler for your projects. This chapter, and the ones following, are about the command itself, how to use it, and how to understand the things it outputs.
+После установки Zephir вы будете использовать команду `zephir` для управления компилятором Zephir для ваших проектов. Эта и некоторые последующие главы — о самой команде и о том, как её использовать, чтобы понять что она выводит.
 
-As of Zephir 0.11.7, the compiler makes use of `stderr` for displaying error messages. This means you can handle error outputs separately from normal ones, like so:
+Начиная с Zephir 0.11.7, компилятор использует `stderr` для отображения сообщений об ошибках. Это означает, что вы можете обрабатывать вывод ошибок отдельно от обычных:
 
 ```bash
 zephir generate 2> errors.log 1> /dev/null
@@ -18,92 +18,92 @@ zephir generate 2> errors.log 1> /dev/null
 
 ## `zephir api`
 
-Generates an HTML API based on the classes exposed in the extension
+Генерирует HTML API на основе классов, доступных в расширении
 
--   `--backend=BACKEND`:                 Backend used to generate HTML API (default: `ZendEngine3`)
--   `--path=PATH` (or `-p PATH`):        The API theme to be used
--   `--output=OUTPUT` (or `-o OUTPUT`):  Output directory to generate theme
--   `--options=OPTIONS`:                 Theme options
--   `--url=URL`:                         The base URL to be used when generating links
+-   `--backend=BACKEND`: Бэкэнд, используемый для генерации HTML API (по умолчанию: `ZendEngine3`)
+-   `--path=PATH` (или `-p PATH`):       Тема API, которая будет использоваться
+-   `--output=OUTPUT` (или `-o OUTPUT`): Директория вывода для генерации темы
+-   `--options=OPTIONS`:                 Настройки темы
+-   `--url=URL`:                         Базовый URL, который будет использоваться при создании ссылок
 
 <a name="zephir-build"></a>
 
 ## `zephir build`
 
-This is a meta command that just calls the [`generate`](#zephir-generate), [`compile`](#zephir-compile), and [`install`](#zephir-install) commands. Check those commands for more information on supported options and behaviors for each.
+Это мета-команда, которая вызывает команды [`generate`](#zephir-generate), [`compile`](#zephir-compile) и [`install`](#zephir-install). Для дополнительной информации по этим командам, о поддерживаемых опциях и поведении каждой см. описание ниже.
 
 <a name="zephir-clean"></a>
 
 ## `zephir clean`
 
-Cleans any object files created by the extension
+Удаляет все объектные файлы, созданные для расширения
 
 <a name="zephir-compile"></a>
 
 ## `zephir compile`
 
-Compile a Zephir extension
+Компиляция Zephir-расширения
 
--   `--backend=BACKEND`:                 Backend used to build extension (default: `ZendEngine3`)
--   `--dev`:                             Build the extension in development mode
--   `--no-dev`:                          Build the extension in production mode
+-   `--backend=BACKEND`:                 Бэкенд, используемый для сборки расширения (по умолчанию: `ZendEngine3`)
+-   `--dev`:                             Сборка расширения в режиме разработки
+-   `--no-dev`:                          Сборка расширения в режиме производства
 
-Using `--dev` option will force building and installing the extension in development mode (debug symbols and no optimizations). An extension compiled with debugging symbols means you can run a program or library through a debugger and the debugger's output will be user friendlier. These debugging symbols also enlarge the program or library significantly.
+Использовании опции `--dev` принудительно соберёт и установит расширение в режиме разработки (отладочные символы, без оптимизации). Расширение, скомпилированное с использованием символов отладки, можно пропускать через через отладчик и вывод отладочной информации будет понятен пользователю. Эти символы отладки также значительно увеличивают размер программы или библиотеки.
 
-NOTE: Zephir development mode will be enabled silently if your PHP binary was compiled in a debug configuration.
+ПРИМЕЧАНИЕ: Режим разработки Zephir будет тихо включен, если ваша версия PHP была скомпилирована с использованием отладочной конфигурации.
 
-In some cases, we would like to get production ready extension even if the PHP binary was compiled in a debug configuration. Use `--no-dev` option to achieve this behavior.
+В некоторых случаях мы хотели бы получить готовое расширение для производства, даже если бинарный PHP-файл был скомпилирован с конфигурацией отладки. Чтобы этого достичь используйте `--no-dev`.
 
-Additionally, any of the options available [under `extra` in the configuration file](/{{ page.version }}/{{ page.language }}/config#extra) can also be passed as options, here, such as `--export-classes` and `--indent=tabs`.
+Кроме того, любая из доступных опций конфигурационного файла [после `extra`](/{}/{}/config#extra) также может быть передана в качестве опции, например `--export-classes` и `--indent=tabs`.
 
 <a name="zephir-fullclean"></a>
 
 ## `zephir fullclean`
 
-Cleans any object files created by the extension (including files generated by phpize)
+Очищает все объектные файлы, созданные для расширения (включая файлы, созданные phpize)
 
 <a name="zephir-generate"></a>
 
 ## `zephir generate`
 
-Generates C code from the Zephir code
+Генерирует Си-код из Zephir-кода
 
--   `--backend=BACKEND`:                 Backend used to build extension (default: `ZendEngine3`)
+-   `--backend=BACKEND`:                 Бэкенд, используемый для сборки расширения (по умолчанию: `ZendEngine3`)
 
 <a name="zephir-help"></a>
 
 ## `zephir help`
 
-Displays help for a command
+Выводит справку для команды
 
 <a name="zephir-init"></a>
 
 ## `zephir init`
 
-Initializes a Zephir extension `zephir init <namespace>`
+Инициализация Zephir-расширения `zephir init <namespace>`
 
--   `namespace`:                         The extension namespace
--   `--backend=BACKEND`:                 Backend used to create extension (default: `ZendEngine3`)
+-   `namespace`:                         Пространство имён расширения
+-   `--backend=BACKEND`:                 Бэкенд, используемый для создания расширения (по умолчанию: `ZendEngine3`)
 
 <a name="zephir-install"></a>
 
 ## `zephir install`
 
-Installs the extension in the extension directory (may require root password)
+Устанавливает расширение в директорию расширений (может потребовать пароль суперпользователя)
 
--   `--dev`:                             Install the extension in development mode
--   `--no-dev`:                          Install the extension in production mode
+-   `--dev`:                             Установка расширения в режиме разработки
+-   `--no-dev`:                          Установка расширения в режиме производства
 
 <a name="zephir-list"></a>
 
 ## `zephir list`
 
-Lists commands
+Список команд
 
 <a name="zephir-stubs"></a>
 
 ## `zephir stubs`
 
-Generates stubs that can be used in a PHP IDE
+Генерирует заглушки, которые могут использоваться в PHP IDE
 
--   `--backend=BACKEND`:                 Backend used to generate stubs (default: `ZendEngine3`)
+-   `--backend=BACKEND`:                 Бэкенд, используемій для генерации заглушек (default: `ZendEngine3`)

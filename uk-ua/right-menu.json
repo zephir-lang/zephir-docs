@@ -1,12 +1,12 @@
 {
     "arrays": [
         {
-            "text": "Declaring Array Variables",
+            "text": "Оголошення масивів",
             "level": 1,
             "url": "#declaring-array-variables"
         },
         {
-            "text": "Creating Arrays",
+            "text": "Створення масивів",
             "level": 1,
             "url": "#creating-arrays"
         },
@@ -21,7 +21,7 @@
             "url": "#appending-elements"
         },
         {
-            "text": "Reading elements from arrays",
+            "text": "Читання елементів з масивів",
             "level": 1,
             "url": "#reading-elements-from-arrays"
         }
@@ -528,7 +528,7 @@
             "url": "#bitwise-operators"
         },
         {
-            "text": "Comparison Operators",
+            "text": "Оператори порівняння",
             "level": 1,
             "url": "#comparison-operators"
         },
@@ -563,7 +563,7 @@
             "url": "#special-operators-isset"
         },
         {
-            "text": "Type Hints",
+            "text": "Підказка типа",
             "level": 2,
             "url": "#special-operators-type-hints"
         },
