@@ -50,7 +50,7 @@ let c = a + b;
 | `resource`       | Ресурс містить посилання на зовнішній ресурс.                                                          |
 | `string`         | Рядок є послідовністю символів, де кожен символ є одним байтом.                                        |
 
-Більше про типи ви можете дізнатися в [Документації PHP](http://www.php.net/manual/en/language.types.php).
+Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
