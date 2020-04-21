@@ -16,7 +16,7 @@ version: '0.11'
 
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
 * Один з наступних C компіляторів: [gcc](https://gcc.gnu.org/) >= 4.4, [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 або[Intel C++](https://software.intel.com/en-us/c-compilers). Рекомендується `gcc` 4.4 або старше
-* [re2c](http://re2c.org/) 0.13.6 або старше
+* [re2c](https://re2c.org/) 0.13.6 or later
 * Заголовки та інструменти розробника PHP
 
 Для систем на базі Linux, вам також знадобиться:
