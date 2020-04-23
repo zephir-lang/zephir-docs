@@ -260,7 +260,7 @@ The authors of the above code know in advance that the condition that throws the
 let allPaths = [];
 for path in this->_paths {
     if unlikely path->isAllowed() == false {
-        throw new App\Exception("Some error message here");
+        throw new App\Exception("Якась помилка");
     } else {
         let allPaths[] = path;
     }
