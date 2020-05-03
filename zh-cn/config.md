@@ -8,7 +8,7 @@ version: '0.12'
 
 每个Zephir扩展都有一个名为`config.json`的配置文件。 每当构建或生成扩展时，Zephir都会读取这个文件，它允许开发人员修改扩展或编译器的行为。
 
-该文件使用[JSON](http://en.wikipedia.org/wiki/JSON)作为配置格式:
+This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration format:
 
 ```json
 {
