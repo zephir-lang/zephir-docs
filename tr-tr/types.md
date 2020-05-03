@@ -53,7 +53,7 @@ They can have eight types:
 | `string`         | A string is series of characters, where a character is the same as a byte.  |
 
 
-Check more info about these types in the [PHP manual](http://www.php.net/manual/en/language.types.php).
+Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
