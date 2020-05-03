@@ -47,7 +47,7 @@ if a & SOME_FLAG {
 }
 ```
 
-Learn more about comparison of dynamic variables in the [php manual](http://www.php.net/manual/en/language.operators.comparison.php).
+Learn more about comparison of dynamic variables in the [php manual](https://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
@@ -182,7 +182,7 @@ Using `isset` as a return expression:
 return isset this->{someProperty};
 ```
 
-Note that `isset` in Zephir works more like PHP's function [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
+Note that `isset` in Zephir works more like PHP's function [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
 
 <a name='special-operators-typeof'></a>
 
@@ -239,7 +239,7 @@ o->myMethod();
 
 ### Branch Prediction Hints
 
-What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
+What is branch prediction? Check this [article](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
 
 Consider the following example:
 
