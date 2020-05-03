@@ -53,7 +53,7 @@ let c = a + b;
 | `string`         | Строка представляет собой последовательность символов, где символ совпадает с байтом.    |
 
 
-Подробнее об этих типах можно узнать в [руководстве PHP](http://www.php.net/manual/en/language.types.php).
+Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
