@@ -5,7 +5,7 @@ version: '0.10'
 ---
 
 # Секции phpinfo()
-Like most extensions, Zephir extensions are able to show information in the [phpinfo()](https://php.net/manual/en/function.phpinfo.php) output. Обычно эта информация относится к директивам, данным окружения и т.п.
+Как и большинство расширений, расширения написанные на Zephir могут отображать информацию при выводе [phpinfo()](https://php.net/manual/en/function.phpinfo.php). Обычно эта информация относится к директивам, данным окружения и т.п.
 
 По умолчанию, каждое Zephir расширение добавляет базовую таблицу в вывод `phpinfo()` отображающую версию расширения.
 
