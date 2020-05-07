@@ -50,7 +50,7 @@ Pueden tener ocho tipos:
 | `resource`       | Un recurso contiene una referencia a un recurso externo.                                                                |
 | `string`         | Es una cadena de texto o una serie de caracteres, donde un caracter es igual a un byte.                                 |
 
-Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
+Revisar por más de estos tipos en el [manual de PHP](https://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
