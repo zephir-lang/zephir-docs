@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir - мова, яка відповідає основним потребам розробника PHP, який намагається написати та скомпілювати код, який може бути виконаний з-під PHP. Він має динамічну/статичну типізацію і деякі його функції будуть знайомі PHP-розробникам.
 
-Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](https://translate.google.com/#en/en/zaefire).
+Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate). Хоча вимова має звучати як "zephyr", творці Zephir насправді вимовляють його [zaefire](https://translate.google.com/#en/en/zaefire).
 
 <a name='hello-world'></a>
 
