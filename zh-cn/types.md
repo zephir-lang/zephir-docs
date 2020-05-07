@@ -53,7 +53,7 @@ let c = a + b;
 | `string`         | 一个string是一系列字符，其中字符与字节相同。    |
 
 
-查看[PHP手册](http://www.php.net/manual/en/language.types.php)中关于这些类型的更多信息。
+Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 

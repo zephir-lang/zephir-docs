@@ -82,9 +82,9 @@ Zephir предлагает генерацию собственного кода
 
 В дополнение к тому, что предоставляет Zephir, Со временем, в компиляторе были реализованы и назрели ряд оптимизаций, которые улучшают производительность скомпилированных приложений:
 
-* [GCC оптимизации](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
-* [LLVM проходы](http://llvm.org/docs/Passes.html)
-* [Visual C/C++ оптимизации](http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
+* [GCC оптимизации](https://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
+* [LLVM проходы](https://llvm.org/docs/Passes.html)
+* [Visual C/C++ оптимизации](https://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
 <a name='code-protection'></a>
 

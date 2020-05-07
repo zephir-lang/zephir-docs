@@ -17,7 +17,7 @@ version: '0.12'
 * [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.3.0
 * A C编译器，例如 gcc </ 0>> = 4.4或替代方法，例如 clang </ 1>> = 3.0， Visual C ++ </ 2>> = 11或[ Intel C ++](https://software.intel.com/en-us/c-compilers)。 建议使用 `gcc` 4.4 或更高版本</li> 
     
-    * [re2c](http://re2c.org/) 0.13.6 或更高版本
+    * [re2c](https://re2c.org/) 0.13.6 or later
     * PHP development headers and tools</ul> 
     
     对于基于 linux 的系统, 您还需要:

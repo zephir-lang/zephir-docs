@@ -47,7 +47,7 @@ if a & SOME_FLAG {
 }
 ```
 
-Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](http://www.php.net/manual/en/language.operators.comparison.php).
+Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](https://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
@@ -182,7 +182,7 @@ Utilizando `isset` como una expresión de retorno:
 return isset this->{someProperty};
 ```
 
-Nota: en Zephir `isset` funciona como la función [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php) de PHP, `isset` en Zephir retornará `true` incluso cuando el índice del array o la propiedad del objecto sean nulas.
+Nota: en Zephir `isset` funciona como la función [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php) de PHP, `isset` en Zephir retornará true incluso cuando el índice del array o la propiedad del objecto sean nulas.
 
 <a name='special-operators-typeof'></a>
 
@@ -239,7 +239,7 @@ o->myMethod();
 
 ### Consejos de Predicción de Rama
 
-¿Qué es la predicción de rama? Revisa este [artículo](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) o este otro [artículo en la Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). En entornos donde el desempeño es muy importante, puede ser útil introducir estos consejos.
+¿Qué es la predicción de rama? Revisa este [artículo](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) o este otro [artículo en la Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). En entornos donde el desempeño es muy importante, puede ser útil introducir estos consejos.
 
 Considere el siguiente ejemplo:
 

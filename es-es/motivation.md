@@ -82,9 +82,9 @@ Zephir ofrece la generación nativa de código (actualmente a través de la comp
 
 Además de los proporcionados por Zephir, con el tiempo, los compiladores han implementado y madurado una serie de optimizaciones que mejoran el rendimiento de las aplicaciones compiladas:
 
-* [GCC optimizaciones](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
-* [LLVM pases](http://llvm.org/docs/Passes.html)
-* [Visual C/C++ optimizaciones](http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
+* [GCC optimizaciones](https://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
+* [LLVM pases](https://llvm.org/docs/Passes.html)
+* [Visual C/C++ optimizaciones](https://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
 <a name='code-protection'></a>
 
