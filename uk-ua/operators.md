@@ -191,7 +191,7 @@ Note that `isset` in Zephir works more like PHP's function [array_key_exists](ht
 Цей оператор перевіряє тип змінної. Оператор `typeof` можна використовувати з порівняльним оператором:
 
 ```zephir
-if (typeof str == "string") { // or !=
+if (typeof str == "string") { // або !=
     echo str;
 }
 ```
@@ -247,7 +247,7 @@ Consider the following example:
 let allPaths = [];
 for path in this->_paths {
     if path->isAllowed() == false {
-        throw new App\Exception("Some error message here");
+        throw new App\Exception("Якась помилка");
     } else {
         let allPaths[] = path;
     }
