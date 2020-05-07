@@ -53,7 +53,7 @@ let c = a + b;
 | `string`         | Рядок є послідовністю символів, де кожен символ є одним байтом.                                       |
 
 
-Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
+Більше про типи ви можете дізнатися в [Документації PHP](https://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 
