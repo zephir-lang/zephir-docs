@@ -188,7 +188,7 @@ if (typeof str == "string") { // або !=
 return typeof str;
 ```
 
-**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
+**Зверніть увагу**, якщо ви хочете перевірити чи є об'єкт "визивним" (`callable`), ви завжди маєте використовувати `typeof` в якості оператора порівняння, а не як функцію.
 
 <a name='special-operators-type-hints'></a>
 
