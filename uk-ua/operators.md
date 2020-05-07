@@ -177,7 +177,7 @@ Note that `isset` in Zephir works more like PHP's function [array_key_exists](ht
 Цей оператор перевіряє тип змінної. Оператор `typeof` можна використовувати з порівняльним оператором:
 
 ```zephir
-if (typeof str == "string") { // or !=
+if (typeof str == "string") { // або !=
     echo str;
 }
 ```
@@ -188,7 +188,7 @@ if (typeof str == "string") { // or !=
 return typeof str;
 ```
 
-**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
+**Зверніть увагу**, якщо ви хочете перевірити чи є об'єкт "визивним" (`callable`), ви завжди маєте використовувати `typeof` в якості оператора порівняння, а не як функцію.
 
 <a name='special-operators-type-hints'></a>
 
@@ -231,7 +231,7 @@ Consider the following example:
 let allPaths = [];
 for path in this->_paths {
     if path->isAllowed() == false {
-        throw new App\Exception("Some error message here");
+        throw new App\Exception("Якась помилка");
     } else {
         let allPaths[] = path;
     }
