@@ -8,7 +8,7 @@ version: '0.12'
 
 每个Zephir扩展都有一个名为`config.json`的配置文件。 每当构建或生成扩展时，Zephir都会读取这个文件，它允许开发人员修改扩展或编译器的行为。
 
-This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration format:
+该文件使用[JSON](https://en.wikipedia.org/wiki/JSON)作为配置格式:
 
 ```json
 {
@@ -108,7 +108,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 
 ## destructors
 
-此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
+此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 查看[lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle)章节了解更多信息。
 
 ```json
 {
@@ -250,7 +250,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 
 ## globals
 
-扩展全局可用。 Check the [globals](/{{ page.version }}/{{ page.language }}/globals) chapter for more information.
+扩展全局可用。 查看[globals](/{{ page.version }}/{{ page.language }}/globals)章节了解更多信息。
 
 ```json
 {
@@ -271,7 +271,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 
 ## info
 
-`phpinfo()` 信息. Check the [phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo) chapter for more information.
+`phpinfo()` 信息. 查看[phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo)章节了解更多信息。
 
 ```json
 {
@@ -291,7 +291,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 
 ## initializers
 
-这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 Check the [lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle) chapter for more information.
+这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 查看[lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle)章节了解更多信息。
 
 ```json
 {
