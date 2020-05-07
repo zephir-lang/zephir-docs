@@ -4,27 +4,31 @@ language: 'en'
 version: '0.12'
 ---
 # Operator Precedence
-**Operator precedence** determines how operators are parsed concerning each
-other. Operators with higher precedence become the operands of operators with
-lower precedence. For example, in the expression `1 + 5 * 3`, the answer is 16
-and not 18 because the multiplication (`*`) operator has a higher precedence
-than the addition (`+`) operator. Parentheses may be used to force precedence,
-if necessary. For instance: `(1 + 5) * 3` evaluates to 18.
+**Operator precedence** determines how operators are parsed. Operators with
+higher precedence become the operands of operators with lower precedence. For
+example, in the expression `1 + 5 * 3`, the answer is 16 and not 18 because
+the multiplication (`*`) operator has a higher precedence than the addition
+(`+`) operator. Parentheses may be used to force precedence, if necessary.
+For instance: `(1 + 5) * 3` evaluates to 18.
 
 <a name='operator-precedence-associativity'></a>
 ## Associativity
-When operators have equal precedence their **associativity** decides how the
+When operators have equal precedence their **associativity** determines how the
 operators are grouped. For example `-` is _left-associative_, so `1 - 2 - 3` is
 grouped as `(1 - 2) - 3` and evaluates to `-4`. `=` on the other hand is
 _right-associative_, so `let a = b = c` is grouped as `let a = (b = c)`.
 
 Operators of equal precedence that are _non-associative_ cannot be used next to
-each other, for example `new new Foo();` is illegal in Zephir, because the `new`
-is non-associative. Presently it is only non-associative operator in Zephir.
+one another. For example:  
+```zep
+new new Foo();
+```
+is illegal in Zephir, because the `new` is non-associative. At the moment, `new`
+is the only non-associative operator in Zephir.
 
 Use of parentheses, even when not strictly necessary, can often increase
-readability of the code by making grouping explicit rather than relying on the
-implicit operator precedence and associativity.
+readability of the code, by making grouping explicit, rather than relying on
+the implicit operator precedence and associativity.
 
 <a name='operator-precedence-table'></a>
 ## Precedence Table
