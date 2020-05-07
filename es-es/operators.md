@@ -43,7 +43,7 @@ if a & SOME_FLAG {
 }
 ```
 
-Learn more about comparison of dynamic variables in the [php manual](https://www.php.net/manual/en/language.operators.comparison.php).
+Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](https://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
