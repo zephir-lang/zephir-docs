@@ -50,7 +50,7 @@ let c = a + b;
 | `resource`       | Ресурс содержит ссылку на внешний ресурс.                                                |
 | `string`         | Строка представляет собой последовательность символов, где символ совпадает с байтом.    |
 
-Подробнее об этих типах можно узнать в [руководстве PHP](http://www.php.net/manual/en/language.types.php).
+Подробнее об этих типах можно узнать в [руководстве PHP](https://www.php.net/manual/en/language.types.php).
 
 <a name='dynamic-types-arrays'></a>
 

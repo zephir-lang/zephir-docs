@@ -43,7 +43,7 @@ if a & SOME_FLAG {
 }
 ```
 
-了解[php手册](http://www.php.net/manual/en/language.operators.comparison.php)中动态变量的比较。
+了解[php手册](https://www.php.net/manual/en/language.operators.comparison.php)中动态变量的比较。
 
 <a name='comparison-operators'></a>
 
@@ -169,18 +169,18 @@ if isset someArray["b"] { // check if the array has an index "b"
 return isset this->{someProperty};
 ```
 
-注意，在Zephir中`isset` </code>更像PHP的函数[array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php)，在Zephir中`isset</0>即使数组索引或属性为空也返回true。</p>
+注意，在Zephir中`isset` 更像PHP的函数[array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php)，在Zephir中`isset`即使数组索引或属性为空也返回true。
 
 <a name='special-operators-typeof'></a>
 
-<h3 spaces-before="0">Typeof</h3>
+### Typeof
+这个操作符检查变量的类型。 'typeof'可与比较运算符一起使用:
 
-<p spaces-before="0">这个操作符检查变量的类型。 'typeof'可与比较运算符一起使用:</p>
-
-<pre><code class="zephir">if (typeof str == "string") { // or !=
+```zephir
+if (typeof str == "string") { // or !=
     echo str;
 }
-`</pre>
+```
 
 它也可以像PHP函数`gettype`那样工作。
 
@@ -223,7 +223,7 @@ o->myMethod();
 <a name='special-operators-branch-prediction-hints'></a>
 
 ### 分支预测提示
-什么是分支预测？ 请检查此 [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) 或参考 "1>Wikipedia 文章 </1 >。 在性能非常重要的环境中, 引入这些提示可能会很有用。
+什么是分支预测？ 请检查此 [article](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) 或参考 [Wikipedia 文章 ](https://en.wikipedia.org/wiki/Branch_predictor)。 在性能非常重要的环境中, 引入这些提示可能会很有用。
 
 请考虑下面的示例:
 

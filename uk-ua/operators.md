@@ -43,7 +43,7 @@ if a & SOME_FLAG {
 }
 ```
 
-Дізнатися більше про порівняння динамічних змінних можна з [документації по PHP](http://www.php.net/manual/en/language.operators.comparison.php).
+Дізнатися більше про порівняння динамічних змінних можна з [документації по PHP](https://www.php.net/manual/en/language.operators.comparison.php).
 
 <a name='comparison-operators'></a>
 
@@ -169,7 +169,7 @@ if isset someArray["b"] { // перевіряє чи є в масиву інде
 return isset this->{someProperty};
 ```
 
-Зверніть увагу, що `isset` у Zephir працює швидше як функція [array_key_exists](http://www.php.net/manual/en/function.array-key-exists.php) в PHP. Тобто `isset` поверне `true` навіть, якщо значення масиву або властивість об'єкту дорівнює `null`.
+Зверніть увагу, що `isset` у Zephir працює швидше як функція [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php) в PHP. Тобто `isset` поверне `true` навіть, якщо значення масиву або властивість об'єкту дорівнює `null`.
 
 <a name='special-operators-typeof'></a>
 
@@ -177,7 +177,7 @@ return isset this->{someProperty};
 Цей оператор перевіряє тип змінної. Оператор `typeof` можна використовувати з порівняльним оператором:
 
 ```zephir
-if (typeof str == "string") { // or !=
+if (typeof str == "string") { // або !=
     echo str;
 }
 ```
@@ -188,7 +188,7 @@ if (typeof str == "string") { // or !=
 return typeof str;
 ```
 
-**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
+**Зверніть увагу**, якщо ви хочете перевірити чи є об'єкт "визивним" (`callable`), ви завжди маєте використовувати `typeof` в якості оператора порівняння, а не як функцію.
 
 <a name='special-operators-type-hints'></a>
 
@@ -223,7 +223,7 @@ o->myMethod();
 <a name='special-operators-branch-prediction-hints'></a>
 
 ### Branch Prediction Hints
-What is branch prediction? Check this [article](http://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
+What is branch prediction? Для опису цього поняття можете прочитати [цю статтю](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) або [опис на Вікіпедії](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
 
 Consider the following example:
 
@@ -231,7 +231,7 @@ Consider the following example:
 let allPaths = [];
 for path in this->_paths {
     if path->isAllowed() == false {
-        throw new App\Exception("Some error message here");
+        throw new App\Exception("Якась помилка");
     } else {
         let allPaths[] = path;
     }
@@ -244,7 +244,7 @@ The authors of the above code know in advance that the condition that throws the
 let allPaths = [];
 for path in this->_paths {
     if unlikely path->isAllowed() == false {
-        throw new App\Exception("Some error message here");
+        throw new App\Exception("Якась помилка");
     } else {
         let allPaths[] = path;
     }

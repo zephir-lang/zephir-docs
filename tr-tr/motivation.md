@@ -76,9 +76,9 @@ Zephir offers native code generation (currently via compilation to C). A compile
 
 In addition to the ones provided by Zephir, over time, compilers have implemented and matured a number of optimizations that improve the performance of compiled applications:
 
-* [GCC optimizations](http://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
-* [LLVM passes](http://llvm.org/docs/Passes.html)
-* [Visual C/C++ optimizations](http://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
+* [GCC optimizations](https://gcc.gnu.org/onlinedocs/gcc-4.1.0/gcc/Optimize-Options.html)
+* [LLVM passes](https://llvm.org/docs/Passes.html)
+* [Visual C/C++ optimizations](https://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
 <a name='code-protection'></a>
 
