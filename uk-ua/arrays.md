@@ -6,7 +6,7 @@ version: '0.12'
 
 # Масиви
 
-Array manipulation in Zephir provides a way to use PHP [array](https://www.php.net/manual/en/language.types.array.php). Масив це реалізація [хеш-таблиці](http://en.wikipedia.org/wiki/Hash_table).
+Робота з масивами в Zephir здійснюється таким самим чином, [як і в PHP](https://www.php.net/manual/en/language.types.array.php). Масив це реалізація [хеш-таблиці](http://en.wikipedia.org/wiki/Hash_table).
 
 <a name='declaring-array-variables'></a>
 
