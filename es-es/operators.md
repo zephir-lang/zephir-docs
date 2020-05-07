@@ -188,7 +188,7 @@ También puede trabajar como la función `gettype` de PHP.
 return typeof str;
 ```
 
-**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
+**Cuidado** si desea comprobar que si un objeto es "callable", siempre tienes que usar `typeof` como un operador de comparación, no como una función.
 
 <a name='special-operators-type-hints'></a>
 
