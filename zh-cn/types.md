@@ -50,7 +50,7 @@ let c = a + b;
 | `resource`       | 资源，对外部资源的引用。                 |
 | `string`         | 一个string是一系列字符，其中字符与字节相同。    |
 
-Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
+查看[PHP手册](https://www.php.net/manual/en/language.types.php)中关于这些类型的更多信息。
 
 <a name='dynamic-types-arrays'></a>
 
