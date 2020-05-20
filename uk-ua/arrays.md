@@ -7,7 +7,7 @@ version: '0.10'
 # Масиви
 Array manipulation in Zephir provides a way to use PHP [array](https://www.php.net/manual/en/language.types.array.php). Масив це реалізація [хеш-таблиці](http://en.wikipedia.org/wiki/Hash_table).
 
-<a name='declaring-array-variables'></a>
+<a id='declaring-array-variables'></a>
 
 ## Оголошення масивів
 Масив можна оголосити за допомогою двох ключслів `var` та `array`:
@@ -17,7 +17,7 @@ var a   = []; // масив, з можливістю зміни типу
 array b = []; // масив, без можливості зміни типу
 ```
 
-<a name='creating-arrays'></a>
+<a id='creating-arrays'></a>
 
 ## Створення масивів
 Масив створюється шляхом укладення його елементів в квадратні дужки:
@@ -66,7 +66,7 @@ let elements = [4: "bar", 8: "foo"];
 let elements = [4: "bar", "foo": 8];
 ```
 
-<a name='updating-arrays'></a>
+<a id='updating-arrays'></a>
 
 ## Оновлення масивів
 Масиви оновлюються таким же чином, як і PHP, використовуючи квадратні дужки:
@@ -90,7 +90,7 @@ let elements[0]["foo"] = "bar";
 let elements["foo"][0] = "bar";
 ```
 
-<a name='appending-elements'></a>
+<a id='appending-elements'></a>
 
 ## Додавання елементів
 Елементи можуть бути додані в кінці масиву наступним чином:
@@ -101,7 +101,7 @@ let elements["foo"][0] = "bar";
 let elements[] = "bar";
 ```
 
-<a name='reading-elements-from-arrays'></a>
+<a id='reading-elements-from-arrays'></a>
 
 ## Читання елементів з масивів
 Прочитати елементи масиву можна наступним чином:
