@@ -7,7 +7,7 @@ version: '0.10'
 # Instalación
 Para instalar el Zephir, siga estos pasos:
 
-<a name='prerequisites'></a>
+<a id='prerequisites'></a>
 
 ## Prerequisitos
 Para construir una extensión de PHP y usar Zephir necesita los siguientes requisitos:
@@ -54,11 +54,11 @@ Zend Extension Api No:   320151012
 
 You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
 
-<a name='installing-zephir'></a>
+<a id='installing-zephir'></a>
 
 ## Instalando Zephir
 
-<a name='git-way'></a>
+<a id='git-way'></a>
 
 ### Git Way
 
@@ -85,7 +85,7 @@ composer install
 
 This step is optional for version 0.10.x, however, it will become mandatory in future versions.
 
-<a name='testing-the-installation'></a>
+<a id='testing-the-installation'></a>
 
 ## Probando la Instalación
 Check if Zephir is available from any directory by executing:
