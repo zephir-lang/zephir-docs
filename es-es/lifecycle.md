@@ -15,7 +15,7 @@ Lifecycle hooks are registered in the `config.json` file. As you can see in the 
 
 Each hook in the `config.json` file is an array of objects, which themselves are essentially `include`/`code` pairs. The `include` value will pull in a given C header file, if it hasn't been already, so that the `code` will have access to its contents. The `code` value is the logic run by the hook itself, and while you can technically put any valid C in here, it is **_strongly_** recommended to put logic longer than one or two lines into a separate C source file (such as the one pulled in along with your `include`d header file), and use a single-line function call here.
 
-<a name='initializers'></a>
+<a id='initializers'></a>
 
 ## iniciadores
 El bloque de `initializers` se ve algo así:
@@ -53,7 +53,7 @@ El bloque de `initializers` se ve algo así:
 
 This block is responsible for defining hooks into the Init events shown in the diagram above. There are three of these: `globals` for setting up the global variable space, `module` for setting up anything the extension itself needs to function, and `request` for setting up the extension to handle a single request.
 
-<a name='desctructors'></a>
+<a id='desctructors'></a>
 
 ## destructores
 The `destructors` block looks something like this:

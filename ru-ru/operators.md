@@ -7,7 +7,7 @@ version: '0.10'
 # Операторы
 Операторы в Zephir похожи на их аналоги в PHP и также себя ведут.
 
-<a name='arithmetic-operators'></a>
+<a id='arithmetic-operators'></a>
 
 ## Арифметические операторы
 Поддерживаются следующие операторы:
@@ -21,7 +21,7 @@ version: '0.10'
 | Деление                     | `a / b` |
 | Деление по модулю           | `a % b` |
 
-<a name='bitwise-operators'></a>
+<a id='bitwise-operators'></a>
 
 ## Побитовые операторы
 Поддерживаются следующие операторы:
@@ -45,7 +45,7 @@ if a & SOME_FLAG {
 
 Узнать больше о сравнении динамических переменных можно из [документации по PHP](https://www.php.net/manual/en/language.operators.comparison.php).
 
-<a name='comparison-operators'></a>
+<a id='comparison-operators'></a>
 
 ## Операторы сравнения
 Операции сравнения зависят от типа сравниваемых переменных. Например если оба операнда динамические, то результат будет таким же как и в PHP:
@@ -76,7 +76,7 @@ if a == b {
 }
 ```
 
-<a name='logical-operators'></a>
+<a id='logical-operators'></a>
 
 ## Логические операторы
 Поддерживаются следующие операторы:
@@ -96,7 +96,7 @@ if a && b || !c {
 return 1;
 ```
 
-<a name='tenary-operator'></a>
+<a id='tenary-operator'></a>
 
 ## Тернарный оператор
 Zephir поддерживает тернарный оператор, как в C или PHP:
@@ -105,12 +105,12 @@ Zephir поддерживает тернарный оператор, как в C
 let b = a == 1 ? "x" : "y"; // b будет присвоен "x", если a равно 1 в противном случае "y"
 ```
 
-<a name='special-operators'></a>
+<a id='special-operators'></a>
 
 ## Специальные операторы
 Поддерживаются следующие операторы:
 
-<a name='special-operators-empty'></a>
+<a id='special-operators-empty'></a>
 
 ### Empty
 Этот оператор позволяет узнать пусто ли выражение. Под "пусто" подразумевается выражение равное `null`, пустая строка или пустой массив:
@@ -127,7 +127,7 @@ if !empty someVar {
 }
 ```
 
-<a name='special-operators-fetch'></a>
+<a id='special-operators-fetch'></a>
 
 ### Fetch
 Оператор "fetch" создан для сокращения популярной в PHP конструкции:
@@ -151,7 +151,7 @@ if fetch value, myArray[key] {
 
 Оператор "fetch" вернет `true`, если в массиве есть что-то по ключу "key" и тогда переменной "value" будет присвоено значение.
 
-<a name='special-operators-isset'></a>
+<a id='special-operators-isset'></a>
 
 ### Isset
 Проверяет, существует ли индекс у массива или свойство у объекта:
@@ -171,7 +171,7 @@ return isset this->{someProperty};
 
 Обратите внимание, `isset` в Zephir работает скорее как [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php) в PHP. Иными словами `isset` в Zephir вернёт true, даже если значение равно null.
 
-<a name='special-operators-typeof'></a>
+<a id='special-operators-typeof'></a>
 
 ### Typeof
 Этот оператор проверяет тип переменной. 'typeof' может использоваться с оператором сравнения:
@@ -190,7 +190,7 @@ return typeof str;
 
 **Будьте осторожны**, если вы хотите проверить, является ли объект «вызываемым» (callback-функцией), вы всегда должны использовать `typeof` в качестве оператора сравнения, а не как функцию.
 
-<a name='special-operators-type-hints'></a>
+<a id='special-operators-type-hints'></a>
 
 ### Подсказки типа
 Zephir всегда пытается проверить, реализует ли объект методы и свойства, вызываемые/доступные для переменной, которая выводится как объект:
@@ -220,7 +220,7 @@ let o = <MyClass!> this->_myObject;
 o->myMethod();
 ```
 
-<a name='special-operators-branch-prediction-hints'></a>
+<a id='special-operators-branch-prediction-hints'></a>
 
 ### Подсказки прогнозирования ветвлений
 Что такое прогнозирование ветвлений? Для подробного описания это понятия обратитесь к [статье Игоря Островского](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) или [описанию на Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). В окружениях, где производительность является очень важной составляющей, может оказаться полезным использование подсказок при прогнозировании ветвлений.

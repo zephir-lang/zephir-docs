@@ -47,7 +47,7 @@ public function binaryToHex(string! s) -> string
 
 They both have the same functionality, but the second one uses object-oriented programming. Calling methods on static-typed variables does not have any impact on performance since Zephir internally transforms the code from the object-oriented version to the procedural version.
 
-<a name='string'></a>
+<a id='string'></a>
 
 ## String
 The following string built-in methods are available:
@@ -67,7 +67,7 @@ The following string built-in methods are available:
 | `s->upper()`      | `strtoupper(s)`       | Make a string uppercase                                                       |
 | `s->upperfirst()` | `ucfirst(s)`          | Make a string's first character uppercase                                     |
 
-<a name='array'></a>
+<a id='array'></a>
 
 ## Array
 The following array built-in methods are available:
@@ -89,7 +89,7 @@ The following array built-in methods are available:
 | `a->values()`     | `array_values(a)`       | Return all the values of an array                                       |
 | `a->walk()`       | `array_walk(a)`         | Apply a user supplied function to every member of an array              |
 
-<a name='char'></a>
+<a id='char'></a>
 
 ## Char
 The following char built-in methods are available:
@@ -98,7 +98,7 @@ The following char built-in methods are available:
 | ---------------- | ------------------- |
 | `ch->toHex()` | `sprintf("%X", ch)` |
 
-<a name='integer'></a>
+<a id='integer'></a>
 
 ## Integer
 The following integer built-in methods are available:

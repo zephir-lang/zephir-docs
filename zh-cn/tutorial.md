@@ -11,7 +11,7 @@ Zephir和本手册是为希望创建 c 扩展的 php 开发人员准备的, 其�
 
 在本指南中, 我们将使用标准的 linux 终端命令。 如果您是 windows 用户, 则需要将这些命令替换为对应命令。
 
-<a name='checking-the-installation'></a>
+<a id='checking-the-installation'></a>
 
 ## 检查安装
 如果您已成功安装 Zephir, 则可以在控制台中执行以下命令:
@@ -58,7 +58,7 @@ Options:
 
 If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
 
-<a name='extension-skeleton'></a>
+<a id='extension-skeleton'></a>
 
 ## 扩展骨架
 我们要做的第一件事就是生成扩展骨架。 这将为我们的扩展提供我们开始工作所需的基本结构。 在我们的示例中, 我们将创建一个名为 `utils` 的扩展:
@@ -87,7 +87,7 @@ ext/ utils/ config.json
 
 目录列表还将向我们显示一个名为 `config.json` 的文件。 此文件包含配置设置, 我们可以使用这些设置来更改 Zephir 和/或扩展本身的行为。
 
-<a name='adding-our-first-class'></a>
+<a id='adding-our-first-class'></a>
 
 ## 添加我们的第一个类
 Zephir 旨在生成面向对象的扩展。 要开始开发功能, 我们需要将我们的第一个类添加到扩展中。
@@ -131,7 +131,7 @@ Extension installed!
 
 注意:您还可以在命令行上使用`-d extension=utils.so `来加载它。 因此，但它只会为那个请求加载，所以每次在CLI中测试扩展时都需要包含它。 将指令添加到 `php.ini` 将确保从此以后为每个请求加载它。
 
-<a name='initial-testing'></a>
+<a id='initial-testing'></a>
 
 ## 初步测试
 现在扩展已经添加到`php.ini`，执行以下操作检查扩展是否正确加载:
@@ -163,7 +163,7 @@ echo Utils\Greeting::say(), "\n";
 
 祝贺您！ 在PHP运行你的第一个扩展。
 
-<a name='a-useful-class'></a>
+<a id='a-useful-class'></a>
 
 ## 一个有用的类
 `Utils Greeting::say`方法可以检查我们的环境是否正确。 现在, 让我们创建一些更有用的类。
@@ -253,7 +253,7 @@ echo $f->alpha("!he#02l3'121lo."); // prints "hello"
     <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
 </p>
 
-<a name='conclusion'></a>
+<a id='conclusion'></a>
 
 ## 结语
 这是一个非常简单的教程, 正如您所看到的, 使用 Zephir开始构建扩展很容易。 我们邀请您继续阅读手册, 以便您可以发现 Zephir提供的其他功能!

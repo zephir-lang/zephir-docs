@@ -23,7 +23,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 
 支持以下设置:
 
-<a name='api'></a>
+<a id='api'></a>
 
 ## api
 用于为您的扩展配置自动生成的HTML文档。 `path`指定在何处创建与项目根相关的文档。 使用`base-url`生成`sitemap.xml`文件为您的文档。 `theme`用于设置用于生成文档的主题(通过`name`设置)，以及主题支持传递的任何选项(通过`options`设置)。 最后，`theme-directories`被用来提供额外的搜索路径，以找到你想要的主题。
@@ -50,7 +50,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='author'></a>
+<a id='author'></a>
 
 ## author
 开发扩展的公司、开发商、机构等:
@@ -61,7 +61,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='backend'></a>
+<a id='backend'></a>
 
 ## backend
 提供一种配置扩展所使用的Zend引擎后端的方法。 目前，仅支持`templatepath`，允许您在`ZendEngine2` </code> ZendEngine3</0>之间进行选择:
@@ -74,7 +74,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='constants-sources'></a>
+<a id='constants-sources'></a>
 
 ## constants-sources
 要将C源文件中的常量导入到项目中，请在此设置中列出文件的路径:
@@ -87,7 +87,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='description'></a>
+<a id='description'></a>
 
 ## description
 扩展描述-任何文字描述您的扩展:
@@ -98,7 +98,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='destructors'></a>
+<a id='destructors'></a>
 
 ## destructors
 此设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`RSHUTDOWN`(`请求`)，`PRSHUTDOWN` (`post请求`)，`MSHUTDOWN` (<0 >0 module</0 >1)， <0 >2 GSHUTDOWN</0 >3 (<0 >4 globals</0 >5)。 查看[lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle)章节了解更多信息。
@@ -140,7 +140,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='extension-name'></a>
+<a id='extension-name'></a>
 
 ## extension-name
 扩展的基本文件名。 它必须遵循与`namespace`设置相同的规则，如果没有给出>设置，则将其用作后备。
@@ -151,7 +151,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='external-dependencies'></a>
+<a id='external-dependencies'></a>
 
 ## external-dependencies
 您可以在自己的扩展中直接包含来自另一个名称空间/扩展的类，在这里进行配置:
@@ -165,7 +165,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='extra'></a>
+<a id='extra'></a>
 
 ## extra
 包含额外的设置, 这些设置也可以像在命令行中一样传递。 目前，这是`export-clases`(生成从其他C代码访问类的头文件)，和`indent`(选择使用`tabs`或`spaces`缩进生成的文件中的代码):
@@ -179,7 +179,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='extra-cflags'></a>
+<a id='extra-cflags'></a>
 
 ## extra-cflags
 您想要添加到编译过程中的任何附加标志:
@@ -190,7 +190,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='extra-classes'></a>
+<a id='extra-classes'></a>
 
 ## extra-classes
 如果你已经在C语言中实现了一个PHP类，你可以直接将它包含在你的扩展中，在这里进行配置:
@@ -208,7 +208,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='extra-libs'></a>
+<a id='extra-libs'></a>
 
 ## extra-libs
 您想要添加到编译过程中的任何其他库:
@@ -219,7 +219,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='extra-sources'></a>
+<a id='extra-sources'></a>
 
 ## extra-sources
 任何其他文件，你想添加到编译过程-搜索目录是相对于`ext`文件夹您的项目:
@@ -232,7 +232,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='globals'></a>
+<a id='globals'></a>
 
 ## globals
 扩展全局可用。 查看[globals](/{{ page.version }}/{{ page.language }}/globals)章节了解更多信息。
@@ -252,7 +252,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='info'></a>
+<a id='info'></a>
 
 ## info
 `phpinfo()` 信息. 查看[phpinfo()](/{{ page.version }}/{{ page.language }}/phpinfo)章节了解更多信息。
@@ -271,7 +271,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='initializers'></a>
+<a id='initializers'></a>
 
 ## initializers
 这个设置允许您提供一个或多个C函数在某些扩展生命周期事件上执行——具体来说，`GINIT` (`globals`)， `MINIT` (`module`)， `RINIT` (<0 >0 request</0 >1)。 查看[lifecycle hooks](/{{ page.version }}/{{ page.language }}/lifecycle)章节了解更多信息。
@@ -307,7 +307,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='name'></a>
+<a id='name'></a>
 
 ## name
 在编译后的C代码中使用的扩展名-只能包含ascii字符:
@@ -318,7 +318,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='namespace'></a>
+<a id='namespace'></a>
 
 ## namespace
 扩展的名称空间-它必须是一个简单的标识符，对应于正则表达式`[a- za - z0 -9\_]+`:
@@ -329,7 +329,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='optimizations'></a>
+<a id='optimizations'></a>
 
 ## optimizations
 在当前项目中应该启用或禁用的编译器优化:
@@ -344,7 +344,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='optimizer-dirs'></a>
+<a id='optimizer-dirs'></a>
 
 ## optimizer-dirs
 你自己的优化器可以找到的目录-搜索目录是相对于根文件夹的项目:
@@ -357,7 +357,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='package-dependencies'></a>
+<a id='package-dependencies'></a>
 
 ## package-dependencies
 声明库依赖关系(版本约束将被`pkg-config`检查，可以使用`=`，`>=`， `<=`，或`*`):
@@ -372,7 +372,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='prototype-dir'></a>
+<a id='prototype-dir'></a>
 
 ## prototype-dir
 允许您提供描述构建自己的扩展所需的其他扩展的原型文件，因此它们不需要在构建阶段安装:
@@ -386,7 +386,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='requires'></a>
+<a id='requires'></a>
 
 ## requires
 允许您列出其他扩展所需的建立/使用您自己:
@@ -402,7 +402,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='silent'></a>
+<a id='silent'></a>
 
 ## silent
 允许您列出其他扩展所需的建立/使用您自己:
@@ -413,7 +413,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='stubs'></a>
+<a id='stubs'></a>
 
 ## stubs
 此设置允许调整IDE文档存根生成的方式。 `path`集，其中应该创建存根，而`stubs-run-after-generate`集，当您的代码被编译为C时，是否自动(重新)构建存根:
@@ -427,7 +427,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='verbose'></a>
+<a id='verbose'></a>
 
 ## verbose
 在错误消息中显示由`zephir`命令生成的异常的更多细节(也可以启用`-v`，或禁用`-V`):
@@ -438,7 +438,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='version'></a>
+<a id='version'></a>
 
 ## version
 扩展版本-必须遵循正则表达式`[0-9]+\.[0-9]+\.[0-9]+`:
@@ -449,7 +449,7 @@ This file uses [JSON](https://en.wikipedia.org/wiki/JSON) as its configuration f
 }
 ```
 
-<a name='warnings'></a>
+<a id='warnings'></a>
 
 ## warnings
 在当前项目中应该启用或禁用的编译器警告:

@@ -46,7 +46,7 @@ Optimizations also can be configured in the config file `config.json` as follows
 
 支持以下优化:
 
-<a name='call-gatherer-pass'></a>
+<a id='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
 这个遍历计算在同一个方法中调用一个函数或方法的次数。 这允许编译器引入内联缓存, 以避免方法或函数查找:
@@ -63,7 +63,7 @@ class MyClass extends OtherClass
 }
 ```
 
-<a name='check-invalid-reads'></a>
+<a id='check-invalid-reads'></a>
 
 ## check-invalid-reads
 在编译过程中, 这个标志将强制检查类型来检测无效的读取。 这可确保使用默认值 (以及内部指针) 正确定义和初始化所有变量。 一个例子:
@@ -125,7 +125,7 @@ zephir_fetch_params(1, 1, 0, &n);
 
 关于为什么C指针需要在Stack overflow [here ](https://stackoverflow.com/q/12253191/1661465)中无效的更多信息。
 
-<a name='constant-folding'></a>
+<a id='constant-folding'></a>
 
 ## constant-folding
 常量折叠是在编译时对常量表达式进行简化的过程。 启用此优化时, 将简化以下代码:
@@ -146,7 +146,7 @@ public function getValue()
 }
 ```
 
-<a name='internal-call-transformation'></a>
+<a id='internal-call-transformation'></a>
 
 ## internal-call-transformation
 `internal-call-transformation` 需要根据其等效的 php 方法生成内部方法, 从而允许绕过这些内部方法调用的 php 用户空间。 默认情况下, 此优化处于关闭状态。
@@ -160,12 +160,12 @@ public function getValue()
 - 所需参数的数量必须与实际参数的数量完全匹配
 - 不能在 ZendEngine2中起作用的 (PHP 5.6)
 
-<a name='local-context-pass'></a>
+<a id='local-context-pass'></a>
 
 ## local-context-pass
 此编译传递将在堆中分配的变量移动到堆栈。 这种优化可以减少程序必须做的内存间接数。
 
-<a name='static-constant-class-folding'></a>
+<a id='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
 此优化将替换编译时的类常量值:
@@ -198,7 +198,7 @@ class MyClass
 }
 ```
 
-<a name='static-type-inference'></a>
+<a id='static-type-inference'></a>
 
 ## static-type-inference
 这个编译过程非常重要，因为它寻找的是可能被转换为静态/基本类型的动态变量，底层编译器可以更好地对其进行优化。
@@ -241,7 +241,7 @@ public function someCalculations(int a, int b)
 
 通过禁用此编译过程, 所有变量都将维护最初声明它们的类型, 而不进行优化。
 
-<a name='static-type-inference-second-pass'></a>
+<a id='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
 这将启用第二个类型推断传递, 从而改进基于第一个静态类型推断传递所收集的数据所做的工作。

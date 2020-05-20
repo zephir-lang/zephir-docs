@@ -7,7 +7,7 @@ version: '0.10'
 # Arrays
 Array manipulation in Zephir provides a way to use PHP [array](https://www.php.net/manual/en/language.types.array.php). Un array es una implementación de una [tabla hash](http://en.wikipedia.org/wiki/Hash_table).
 
-<a name='declaring-array-variables'></a>
+<a id='declaring-array-variables'></a>
 
 ## Declarar Variables de tipo Array
 Variables de array pueden ser declaradas usando las palabras clave 'var' o 'array':
@@ -17,7 +17,7 @@ var a   = []; // variable array, el tipo puede ser cambiado
 array b = []; // variable array, el tipo no puede ser cambiado durante la ejecución
 ```
 
-<a name='creating-arrays'></a>
+<a id='creating-arrays'></a>
 
 ## Creación de Arrays
 Un array se crea encerrando sus elementos entre corchetes:
@@ -66,7 +66,7 @@ let elements = [4: "bar", 8: "foo"];
 let elements = [4: "bar", "foo": 8];
 ```
 
-<a name='updating-arrays'></a>
+<a id='updating-arrays'></a>
 
 ## Actualización de arrays
 Los arreglos se actualizan en la misma manera que en PHP, utilizando corchetes cuadrados:
@@ -90,7 +90,7 @@ let elements[0]["foo"] = "bar";
 let elements["foo"][0] = "bar";
 ```
 
-<a name='appending-elements'></a>
+<a id='appending-elements'></a>
 
 ## Agregando elementos
 Los elementos pueden ser añadidos al final del array de la siguiente manera:
@@ -101,7 +101,7 @@ Los elementos pueden ser añadidos al final del array de la siguiente manera:
 let elements[] = "bar";
 ```
 
-<a name='reading-elements-from-arrays'></a>
+<a id='reading-elements-from-arrays'></a>
 
 ## Leyendo elementos desde arrays
 Es posible leer los elementos de la matriz de la siguiente forma:
