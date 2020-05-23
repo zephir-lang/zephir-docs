@@ -3,10 +3,11 @@ layout: default
 language: 'en'
 version: '0.11'
 ---
+
 # Welcome!
 Welcome to Zephir, an open source, high-level/domain specific language designed to ease the creation and maintainability of extensions for PHP, with a focus on type and memory safety.
 
-<a name='some-features'></a>
+<a id='some-features'></a>
 ## Some features
 Zephir's main features are:
 
@@ -17,7 +18,7 @@ Zephir's main features are:
 | Compilation model  | ahead of time                                         |
 | Memory model       | task-local garbage collection                         |
 
-<a name='a-small-taste'></a>
+<a id='a-small-taste'></a>
 ## A small taste
 The following code registers a class with a method that filters variables, returning their alphabetic characters:
 
@@ -58,7 +59,7 @@ $filter = new MyLibrary\Filter();
 echo $filter->alpha("01he#l.lo?/1"); // prints hello
 ``` 
 
-<a name='external-links'></a>
+<a id='external-links'></a>
 ## External Links
 Below we have collected links to external resources that may interest you:
 
