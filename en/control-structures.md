@@ -3,13 +3,14 @@ layout: default
 language: 'en'
 version: '0.11'
 ---
+
 # Control Structures
 Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
 
-<a name='conditionals'></a>
+<a id='conditionals'></a>
 ## Conditionals
 
-<a name='conditionals-if'></a>
+<a id='conditionals-if'></a>
 ### If Statement
 `if` statements evaluate an expression, executing the following block if the evaluation is `true`. Braces are required. An `if` can have an optional `else` clause, and multiple `if`/`else` constructs can be chained together:
 
@@ -45,7 +46,7 @@ Parentheses in the evaluated expression are optional:
 if a < 0 { return -1; } else { if a > 0 { return 1; } }
 ```
 
-<a name='conditionals-switch'></a>
+<a id='conditionals-switch'></a>
 ### Switch Statement
 A `switch` evaluates an expression against a series of predefined literal values, executing the corresponding `case` block or falling back to the `default` block case:
 
@@ -67,10 +68,10 @@ switch count(items) {
 }
 ```
 
-<a name='loops'></a>
+<a id='loops'></a>
 ## Loops
 
-<a name='loops-while'></a>
+<a id='loops-while'></a>
 ### While Statement
 `while` denotes a loop that iterates as long as its given condition evaluates as `true`:
 
@@ -81,7 +82,7 @@ while counter {
 }
 ```
 
-<a name='loops-loop'></a>
+<a id='loops-loop'></a>
 ### Loop Statement
 In addition to `while`, `loop` can be used to create infinite loops:
 
@@ -94,7 +95,7 @@ loop {
 }
 ```
 
-<a name='loops-for'></a>
+<a id='loops-for'></a>
 ### For Statement
 A `for` is a control structure that allows to traverse arrays or strings:
 
@@ -162,7 +163,7 @@ for key, _ in data {
 }
 ```
 
-<a name='loops-break'></a>
+<a id='loops-break'></a>
 ### Break Statement
 `break` ends execution of the current `while`, `for` or `loop` statement:
 
@@ -175,7 +176,7 @@ for item in ["a", "b", "c", "d"] {
 }
 ```
 
-<a name='loops-continue'></a>
+<a id='loops-continue'></a>
 ### Continue Statement
 `continue` is used within looping structures to skip the rest of the current loop iteration and continue execution at the condition evaluation, and then the beginning of the next iteration.
 
@@ -190,7 +191,7 @@ while a > 0 {
 }
 ```
 
-<a name='require'></a>
+<a id='require'></a>
 ## Require
 The `require` statement dynamically includes and evaluates a specified PHP file. Note that files included via Zephir are interpreted by Zend Engine as normal PHP files. `require` does not allow Zephir code to include other Zephir files at runtime.
 
@@ -200,7 +201,7 @@ if file_exists(path) {
 }
 ```
 
-<a name='let'></a>
+<a id='let'></a>
 ## Let
 The `let` statement is used to mutate variables, properties and arrays. Variables are by default immutable and this instruction makes them mutable for the duration of the statement:
 
