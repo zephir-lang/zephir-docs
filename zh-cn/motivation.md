@@ -13,7 +13,7 @@ version: '0.11'
 
 使用 Zephir, 您可以实现可从 php 使用的面向对象的库/框架/应用程序, 使您的应用程序更快, 同时改善用户体验。
 
-<a name='if-you-are-a-php-programmer'></a>
+<a id='if-you-are-a-php-programmer'></a>
 
 ## 如果你是一个 php 程序员...
 PHP是web应用程序开发中最流行的语言之一。 像PHP这样的动态类型和解释语言由于其灵活性提供了非常高的生产力。
@@ -22,7 +22,7 @@ PHP是web应用程序开发中最流行的语言之一。 像PHP这样的动态�
 
 PHP是Zephir的宿主，显然它们有很多相似之处; 然而，它们有重要的区别，使得Zephir有了自己的个性。 例如，Zephir更加严格，由于编译步骤的原因，它可能使您的生产率低于PHP。
 
-<a name='if-you-are-a-c-programmer'></a>
+<a id='if-you-are-a-c-programmer'></a>
 
 ## 如果你是一个 C 程序员..。
 C语言是有史以来最强大、最流行的语言之一。 实际上，PHP是用C编写的，这也是PHP扩展可用的原因之一。 C允许您自由地管理内存，使用低级类型，甚至内联程序集例程。
@@ -31,7 +31,7 @@ C语言是有史以来最强大、最流行的语言之一。 实际上，PHP是
 
 Zephir是为了安全而设计的，因此它不实现指针或手动内存管理，因此如果您是C程序员，您会觉得Zephir不如C程序员强大，但比C程序员更友好。
 
-<a name='compilation-vs-interpretation'></a>
+<a id='compilation-vs-interpretation'></a>
 
 ## 编译 vs 解释
 编译通常会减慢开发速度; 在运行代码之前，您需要更多的耐心来编译代码。 另一方面，解释倾向于降低代码性能，以提高开发人员的工作效率。 也就是说，在某些情况下，解释代码和编译代码的速度没有明显的区别。
@@ -40,7 +40,7 @@ Zephir需要编译您的代码，但其功能是从PHP中使用的，PHP是经�
 
 一旦编译了代码，就不需要再这样做了。 每次运行解释代码时都会对其进行解释。 开发人员可以决定其应用程序的哪些部分应位于 Zephir 中, 而哪些部分不应该在 Zephir 中。
 
-<a name='statically-typed-versus-dynamically-typed-languages'></a>
+<a id='statically-typed-versus-dynamically-typed-languages'></a>
 
 ## 静态类型化 vs 动态类型化的语言
 一般来说, 在静态类型化语言中, 变量在其生存期内绑定到特定类型。 它的类型不能更改, 它只能引用与类型兼容的实例和操作。 使用了类似 c/c ++ 等语言的方案:
@@ -67,7 +67,7 @@ a = "hello"; // allowed
 
 Zephir 是静态和动态类型化的, 允许您在可能的情况下利用这两种方法。
 
-<a name='compilation-scheme'></a>
+<a id='compilation-scheme'></a>
 
 ## 编译方案
 Zephir提供本机代码生成（目前通过编译到C）。 像gcc/clang/vc++这样的编译器会优化并将代码编译成机器代码。 下图显示了该过程的工作原理:
@@ -80,12 +80,12 @@ Zephir提供本机代码生成（目前通过编译到C）。 像gcc/clang/vc++�
 * [LLVM 传递](https://llvm.org/docs/Passes.html)
 * [Visual C/C++ 优化](https://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
-<a name='code-protection'></a>
+<a id='code-protection'></a>
 
 ## 代码保护
 在某些情况下，编译不会显著提高性能。 这可能是因为瓶颈位于应用程序的I/O绑定部分(很可能)，而不是计算/内存绑定。 然而，编译代码也可以为您的应用程序带来一定程度的知识保护。 使用Zephir，生成本地二进制文件，您还可以将原始代码“隐藏”给用户或客户。
 
-<a name='conclusion'></a>
+<a id='conclusion'></a>
 
 ## 结语
 Zephir的创建不是为了替代PHP或C. 相反，我们认为它是对它们的补充，允许PHP开发人员尝试进行代码编译和静态类型。 Zephir试图将C和PHP世界的优点结合起来，寻找使应用程序更快的机会。
