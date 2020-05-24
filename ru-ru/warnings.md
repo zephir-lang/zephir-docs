@@ -23,7 +23,7 @@ zephir -Wunused-variable -Wnonexistent-function
 
 Поддерживаются следующие типы предупреждений:
 
-<a name='unused-variable'></a>
+<a id='unused-variable'></a>
 
 ## unused-variable
 Вызывается, когда переменная объявлена, но не используется внутри метода. Это предупреждение включено по умолчанию.
@@ -37,7 +37,7 @@ public function some()
 }
 ```
 
-<a name='unused-variable-external'></a>
+<a id='unused-variable-external'></a>
 
 ## unused-variable-external
 Вызывается, когда параметр объявлен, но не используется внутри метода.
@@ -49,7 +49,7 @@ public function sum(a, b, c) // c is not used
 }
 ```
 
-<a name='possible-wrong-parameter-undefined'></a>
+<a id='possible-wrong-parameter-undefined'></a>
 
 ## possible-wrong-parameter-undefined
 Вызывается при вызове метода с неправильным типом параметра:
@@ -66,7 +66,7 @@ public function sum(int a, int b)
 }
 ```
 
-<a name='nonexistent-function'></a>
+<a id='nonexistent-function'></a>
 
 ## nonexistent-function
 Вызывается при вызове функции, которая не существует в момент компиляции:
@@ -78,7 +78,7 @@ public function some()
 }
 ```
 
-<a name='nonexistent-class'></a>
+<a id='nonexistent-class'></a>
 
 ## nonexistent-class
 Вызывается при использовании класса, который не существует в момент компиляции:
@@ -92,7 +92,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-isset'></a>
+<a id='non-valid-isset'></a>
 
 ## non-valid-isset
 Вызывается, когда компилятор обнаруживает, что операция 'isset' выполняется на значении, не являющимся массивом или объектом:
@@ -106,7 +106,7 @@ public function some()
 }
 ```
 
-<a name='non-array-update'></a>
+<a id='non-array-update'></a>
 
 ## non-array-update
 Возникает, когда компилятор обнаруживает, что операция обновления массива выполняется для значения, не являющегося значением массива:
@@ -119,7 +119,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-objectupdate'></a>
+<a id='non-valid-objectupdate'></a>
 
 ## non-valid-objectupdate
 Вызывается когда компилятор обнаруживает, что выполняется операция обновления объекта, не являющегося объектом:
@@ -132,7 +132,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-fetch'></a>
+<a id='non-valid-fetch'></a>
 
 ## non-valid-fetch
 Вызывается, когда компилятор обнаруживает, что выполняется операция 'fetch' над значением, не являющимся массивом или объектом:
@@ -147,7 +147,7 @@ public function some()
 }
 ```
 
-<a name='invalid-array-index'></a>
+<a id='invalid-array-index'></a>
 
 ## invalid-array-index
 Вызывается, когда компилятор обнаруживает, что используется неверный индекс массива:
@@ -160,7 +160,7 @@ public function some(var a)
 }
 ```
 
-<a name='non-array-append'></a>
+<a id='non-array-append'></a>
 
 ## non-array-append
 Вызывается, когда компилятор обнаруживает, что элемент добавляется к переменной, не относящейся к массиву:
