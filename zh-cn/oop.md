@@ -7,7 +7,7 @@ version: '0.11'
 # 类与对象
 Zephir 提倡面向对象编程。 这就是为什么您只能在扩展中导出方法和类的原因。 您还将看到, 在大多数情况下, 运行时错误会引发异常, 而不是致命错误或警告。
 
-<a name='classes'></a>
+<a id='classes'></a>
 
 ## 类
 每个 Zephir 文件都必须实现一个类或接口 (并且只有一个)。 类结构与 php 类非常相似:
@@ -24,7 +24,7 @@ class MyClass
 }
 ```
 
-<a name='classes-modifiers'></a>
+<a id='classes-modifiers'></a>
 
 ### 类修饰符
 支持以下类修饰符:
@@ -57,7 +57,7 @@ abstract class MyClass
 }
 ```
 
-<a name='classes-interfaces'></a>
+<a id='classes-interfaces'></a>
 
 ### 实现接口
 Zephir 类可以实现任意数量的接口, 前提是这些接口 `显性` 的引用(使用use)。 但是, 有时 Zephir 类 (以及随后的扩展) 可能需要实现在不同扩展中构建的接口。
@@ -98,7 +98,7 @@ public function shouldExtendMiddlewareInterface()
 
 **NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
 
-<a name='implementing-methods'></a>
+<a id='implementing-methods'></a>
 
 ## 实现方法
 `function`关键字引入了一个方法。 方法实现PHP中常用的可见性修饰符。 在 Zephir中, 必须明确设置可见性修改器:
@@ -176,7 +176,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-methods-optional-nullable-parameters'></a>
+<a id='implementing-methods-optional-nullable-parameters'></a>
 
 ### 可选参数可以为空
 Zephir确保变量的值保持声明的类型不变。 这使得Zephir将 `null`值转换为最近的近似值:
@@ -203,7 +203,7 @@ public function foo(array a = null)
 }
 ```
 
-<a name='implementing-methods-supported-visibilities'></a>
+<a id='implementing-methods-supported-visibilities'></a>
 
 ### 支持可见性
 * Public: 将标记为` public`的方法导出到PHP扩展; 这意味着公共方法对PHP代码和扩展本身都是可见的。
@@ -212,7 +212,7 @@ public function foo(array a = null)
 
 * Private: 标记为 `private` 的方法不会导出到PHP扩展; 这意味着私有方法只对实现它们的类可见。
 
-<a name='implementing-methods-supported-modifiers'></a>
+<a id='implementing-methods-supported-modifiers'></a>
 
 ### 支持修改器
 * `static`: 使用此修饰符的方法只能在静态上下文(来自类，而不是对象) 中调用。
@@ -221,7 +221,7 @@ public function foo(array a = null)
 
 * `deprecated`: 被标记为`deprecated`的方法在被调用时抛出一个`E_DEPRECATED`错误。
 
-<a name='implementing-methods-getter-setter-shortcuts'></a>
+<a id='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Getter / Setter 快捷方式
 和C#一样，在Zephir中可以使用`get`/`set`/`toString`快捷方式。 该特性允许您轻松编写属性的setter和getter，而无需显式地实现这些方法。
@@ -283,7 +283,7 @@ class MyClass
 
 在编译代码时，这些方法作为实际方法导出，但您不必手动编写它们。
 
-<a name='implementing-methods-return-type-hints'></a>
+<a id='implementing-methods-return-type-hints'></a>
 
 ### 返回类型提示
 类和接口中的方法可以有“返回类型提示”。 这些将为编译器提供有用的额外信息，以告知您应用程序中的错误。 请考虑下面的示例:
@@ -342,7 +342,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-methods-return-type-void'></a>
+<a id='implementing-methods-return-type-void'></a>
 
 ### 返回类型: Void
 方法也可以标记为 `void`。 这意味着不允许方法返回任何数据:
@@ -361,7 +361,7 @@ let myDb = db->setConnection(connection); // 这将产生一个异常
 myDb->execute("SELECT * FROM robots");
 ```
 
-<a name='implementing-methods-strict-flexible-parameter-data-types'></a>
+<a id='implementing-methods-strict-flexible-parameter-data-types'></a>
 
 ### 严格/灵活的参数的数据类型
 在 Zephir中, 可以指定方法的每个参数的数据类型。 默认情况下, 这些数据类型是灵活的。这意味着, 如果传递了具有错误 (但兼容) 数据类型的值, 则 Zephir 将尝试以透明方式将其转换为预期的数据类型:
@@ -408,7 +408,7 @@ $o->filterText(array(1, 2, 3), true); // FAIL
 
 通过指定严格的参数和灵活的参数，开发人员可以设置他/她真正想要的特定行为。
 
-<a name='implementing-methods-read-only-parameters'></a>
+<a id='implementing-methods-read-only-parameters'></a>
 
 ### 只读参数
 使用关键字`const`，您可以将参数标记为只读，这有助于尊重[const-correctness](https://en.wikipedia.org/wiki/Const_(computer_programming))。 属性中不能修改标有此属性的参数 方法:
@@ -429,7 +429,7 @@ class MyClass
 
 当一个参数被声明为只读时，编译器可以做出安全的假设，并对这些变量进行进一步的优化。
 
-<a name='implementing-properties'></a>
+<a id='implementing-properties'></a>
 
 ## 实现属性
 类成员变量称为 "属性"。 默认情况下, 它们的作用与 php 属性相同。 属性被导出到PHP扩展中，并从PHP代码中可见。 属性实现 php 中可用的常规可见性修饰符, 并且在 Zephir中必须显式设置可见性修饰符:
@@ -485,7 +485,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-properties-updating'></a>
+<a id='implementing-properties-updating'></a>
 
 ## 更新属性
 属性可以通过使用 "->" 运算符访问来更新:
@@ -516,7 +516,7 @@ let someProperty = "myProperty";
 let this->{someProperty} = 100;
 ```
 
-<a name='implementing-properties-reading'></a>
+<a id='implementing-properties-reading'></a>
 
 ## 查看属性
 属性可以通过使用 "->" 运算符访问来查看:
@@ -536,7 +536,7 @@ let someProperty = "myProperty";
 echo this->{someProperty}
 ```
 
-<a name='class-constants'></a>
+<a id='class-constants'></a>
 
 ## 类常量
 类可能包含类常量, 这些常量在编译扩展后保持不变和不可更改。 类常量导出到 php 扩展, 允许从 php 中使用它们。
@@ -569,7 +569,7 @@ class MyClass
 }
 ```
 
-<a name='calling-methods'></a>
+<a id='calling-methods'></a>
 
 ## 调用方法
 方法可以使用对象操作符 `->` 调用，就像在PHP中:
@@ -631,7 +631,7 @@ class MyClass
 }
 ```
 
-<a name='calling-methods-parameters-by-name'></a>
+<a id='calling-methods-parameters-by-name'></a>
 
 ### 参数名
 Zephir 支持按名称或关键字参数调用方法参数。 如果您希望以任意顺序传递参数、记录参数的含义或以更优雅的方式指定参数，那么命名参数可能非常有用。
