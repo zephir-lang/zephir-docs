@@ -11,7 +11,7 @@ Asumimos que usted tiene experiencia en uno o varios lenguajes de programación.
 
 En esta guía, utilizaremos los comandos estándar de la terminal de Linux. Si eres un usuario de Windows, necesitas reemplazar estos comandos por sus homólogos.
 
-<a name='checking-the-installation'></a>
+<a id='checking-the-installation'></a>
 
 ## Probando la Instalación
 Si se ha instalado con éxito Zephir, usted será capaz de ejecutar el siguiente comando en la consola:
@@ -61,7 +61,7 @@ Available commands:
 
 If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
 
-<a name='extension-skeleton'></a>
+<a id='extension-skeleton'></a>
 
 ## Esqueleto de la Extensión
 Lo primero que tenemos que hacer es generar un esqueleto de extensión. Esto le dará a nuestra extensión la estructura básica que necesitamos para empezar a trabajar. En nuestro caso, vamos a crear una extensión llamada `utils`:
@@ -90,7 +90,7 @@ ext/ utils/ config.json
 
 Al listar el directorio, nos mostrará un archivo llamado `config.json`. Este archivo contiene los ajustes de configuración que podemos usar para alterar el comportamiento de Zephir y/o la extensión en sí.
 
-<a name='adding-our-first-class'></a>
+<a id='adding-our-first-class'></a>
 
 ## Agregando nuestra primer clase
 Zephir está diseñado para generar extensiones orientadas a objetos. Para empezar a desarrollar funcionalidades, tenemos que añadir nuestra primera clase de la extensión.
@@ -134,7 +134,7 @@ Finalmente, hay que añadir la extensión al archivo `php.ini` para ser cargado 
 
 Nota: también se puede cargar en la línea de comandos con `-d extension=utils.so`, pero se cargará sólo para esa única solicitud, por lo que tendría que incluir cada vez que desea probar su extensión en el CLI. Agregando la directiva en el `php.ini` se asegurará que está cargada para cada solicitud de ahí en adelante.
 
-<a name='initial-testing'></a>
+<a id='initial-testing'></a>
 
 ## Prueba Inicial
 Ahora que la extensión fue agregada a su `php.ini`, compruebe si la extensión esta cargada correctamente, ejecutando lo siguiente:
@@ -166,7 +166,7 @@ echo Utils\Greeting::say(), "\n";
 
 ¡Felicitaciones! Tienes tu primer extensión corriendo en PHP.
 
-<a name='a-useful-class'></a>
+<a id='a-useful-class'></a>
 
 ## Una clase útil
 Este método `Utils\Greeting::say` está bien para comprobar si nuestro entorno esta bien. Ahora, vamos a crear algunas clases más útiles.
@@ -255,7 +255,7 @@ En el siguiente video tutorial puedes ver como crear la extensión explicada en 
     <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
 </p>
 
-<a name='conclusion'></a>
+<a id='conclusion'></a>
 
 ## Conclusión
 Este es un tutorial muy simple y como se puede ver, es fácil empezar a construir una extensión usando Zephir. Te invitamos a seguir leyendo el manual para que puedas descubrir algunas funciones adicionales que ofrece Zephir!
