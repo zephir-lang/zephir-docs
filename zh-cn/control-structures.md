@@ -7,11 +7,11 @@ version: '0.11'
 # 控制结构
 Zephir实现了一组简化的控制结构，这些结构用类似的语言表示，如C、PHP等。
 
-<a name='conditionals'></a>
+<a id='conditionals'></a>
 
 ## 条件
 
-<a name='conditionals-if'></a>
+<a id='conditionals-if'></a>
 
 ### If 语句
 `if` statements evaluate an expression, executing the following block if the evaluation is `true`. 括号是必需的。 一个`如果`可以有一个可选的`else`子句, 而且多个`if`/`else`构造可以放在一起
@@ -48,7 +48,7 @@ if a > 100 {
 if a < 0 { return -1; } else { if a > 0 { return 1; } }
 ```
 
-<a name='conditionals-switch'></a>
+<a id='conditionals-switch'></a>
 
 ### Switch 语句
 一个`switch`根据一系列预定义的文字值计算表达式，执行相应的`case`块或回落到`default`块:
@@ -71,11 +71,11 @@ switch count(items) {
 }
 ```
 
-<a name='loops'></a>
+<a id='loops'></a>
 
 ## Loops
 
-<a name='loops-while'></a>
+<a id='loops-while'></a>
 
 ### While 语句
 `while` denotes a loop that iterates as long as its given condition evaluates as `true`:
@@ -87,7 +87,7 @@ while counter {
 }
 ```
 
-<a name='loops-loop'></a>
+<a id='loops-loop'></a>
 
 ### Loop 语句
 除了 `while`, `loop` 还可用于创建无限循环:
@@ -101,7 +101,7 @@ loop {
 }
 ```
 
-<a name='loops-for'></a>
+<a id='loops-for'></a>
 
 ### For 语句
 `for` 是一种控制结构, 允许遍历数组或字符串:
@@ -167,7 +167,7 @@ for i in range(1, 10) {
 }
 `</pre>
 
-<a name='loops-break'></a>
+<a id='loops-break'></a>
 
 ### Break 语句
 `break` 结束当前 `while`、`for` 或 `loop` 语句的执行:
@@ -181,7 +181,7 @@ for item in ["a", "b", "c", "d"] {
 }
 ```
 
-<a name='loops-continue'></a>
+<a id='loops-continue'></a>
 
 ### Continue 语句
 在循环结构中使用 `continue` 跳过当前循环迭代的其余部分, 并在条件计算时继续执行, 然后在下一次迭代的开始时继续执行。
@@ -197,7 +197,7 @@ while a > 0 {
 }
 ```
 
-<a name='require'></a>
+<a id='require'></a>
 
 ## Require
 ` require </ 0>语句动态地包含和执行指定的PHP文件。 请注意，Zend Engine将Zephir包含的文件解释为普通的PHP文件。 <code>require` does not allow Zephir code to include other Zephir files at runtime.
@@ -208,7 +208,7 @@ if file_exists(path) {
 }
 ```
 
-<a name='let'></a>
+<a id='let'></a>
 
 ## Let
 `let` 语句用于可变变量、属性和数组。 变量默认是不可变的，并且该指令使它们在语句的作用域内是可变的：

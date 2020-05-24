@@ -14,7 +14,7 @@ version: '0.11'
 zephir generate 2> errors.log 1> /dev/null
 ```
 
-<a name="zephir-api"></a>
+<a id="zephir-api"></a>
 
 ## `zephir api`
 
@@ -26,19 +26,19 @@ zephir generate 2> errors.log 1> /dev/null
 -   `--options=OPTIONS`:                 Настройки темы
 -   `--url=URL`:                         Базовый URL, который будет использоваться при создании ссылок
 
-<a name="zephir-build"></a>
+<a id="zephir-build"></a>
 
 ## `zephir build`
 
 Это мета-команда, которая вызывает команды [`generate`](#zephir-generate), [`compile`](#zephir-compile) и [`install`](#zephir-install). Для дополнительной информации по этим командам, о поддерживаемых опциях и поведении каждой см. описание ниже.
 
-<a name="zephir-clean"></a>
+<a id="zephir-clean"></a>
 
 ## `zephir clean`
 
 Удаляет все объектные файлы, созданные для расширения
 
-<a name="zephir-compile"></a>
+<a id="zephir-compile"></a>
 
 ## `zephir compile`
 
@@ -56,13 +56,13 @@ zephir generate 2> errors.log 1> /dev/null
 
 Кроме того, любая из доступных опций конфигурационного файла [после `extra`](/{}/{}/config#extra) также может быть передана в качестве опции, например `--export-classes` и `--indent=tabs`.
 
-<a name="zephir-fullclean"></a>
+<a id="zephir-fullclean"></a>
 
 ## `zephir fullclean`
 
 Очищает все объектные файлы, созданные для расширения (включая файлы, созданные phpize)
 
-<a name="zephir-generate"></a>
+<a id="zephir-generate"></a>
 
 ## `zephir generate`
 
@@ -70,13 +70,13 @@ zephir generate 2> errors.log 1> /dev/null
 
 -   `--backend=BACKEND`:                 Бэкенд, используемый для сборки расширения (по умолчанию: `ZendEngine3`)
 
-<a name="zephir-help"></a>
+<a id="zephir-help"></a>
 
 ## `zephir help`
 
 Выводит справку для команды
 
-<a name="zephir-init"></a>
+<a id="zephir-init"></a>
 
 ## `zephir init`
 
@@ -85,7 +85,7 @@ zephir generate 2> errors.log 1> /dev/null
 -   `namespace`:                         Пространство имён расширения
 -   `--backend=BACKEND`:                 Бэкенд, используемый для создания расширения (по умолчанию: `ZendEngine3`)
 
-<a name="zephir-install"></a>
+<a id="zephir-install"></a>
 
 ## `zephir install`
 
@@ -94,13 +94,13 @@ zephir generate 2> errors.log 1> /dev/null
 -   `--dev`:                             Установка расширения в режиме разработки
 -   `--no-dev`:                          Установка расширения в режиме производства
 
-<a name="zephir-list"></a>
+<a id="zephir-list"></a>
 
 ## `zephir list`
 
 Список команд
 
-<a name="zephir-stubs"></a>
+<a id="zephir-stubs"></a>
 
 ## `zephir stubs`
 

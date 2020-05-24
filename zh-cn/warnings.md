@@ -23,7 +23,7 @@ zephir -Wunused-variable -Wnonexistent-function
 
 支持以下警告:
 
-<a name='unused-variable'></a>
+<a id='unused-variable'></a>
 
 ## unused-variable
 在声明变量但在方法中未使用时引发。 此警告默认启用。
@@ -37,7 +37,7 @@ public function some()
 }
 ```
 
-<a name='unused-variable-external'></a>
+<a id='unused-variable-external'></a>
 
 ## unused-variable-external
 当一个参数被声明但在方法中没有使用时引发。
@@ -49,7 +49,7 @@ public function sum(a, b, c) // c is not used
 }
 ```
 
-<a name='possible-wrong-parameter-undefined'></a>
+<a id='possible-wrong-parameter-undefined'></a>
 
 ## possible-wrong-parameter-undefined
 当一个方法以错误的类型调用参数时引发:
@@ -66,7 +66,7 @@ public function sum(int a, int b)
 }
 ```
 
-<a name='nonexistent-function'></a>
+<a id='nonexistent-function'></a>
 
 ## nonexistent-function
 调用编译时不存在的函数时引发:
@@ -78,7 +78,7 @@ public function some()
 }
 ```
 
-<a name='nonexistent-class'></a>
+<a id='nonexistent-class'></a>
 
 ## nonexistent-class
 当使用编译时不存在的类时引发:
@@ -92,7 +92,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-isset'></a>
+<a id='non-valid-isset'></a>
 
 ## non-valid-isset
 当编译器检测到正在对非数组或-对象值执行“isset”操作时引发:
@@ -106,7 +106,7 @@ public function some()
 }
 ```
 
-<a name='non-array-update'></a>
+<a id='non-array-update'></a>
 
 ## non-array-update
 当编译器检测到正在对非数组值执行数组更新操作时引发:
@@ -119,7 +119,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-objectupdate'></a>
+<a id='non-valid-objectupdate'></a>
 
 ## non-valid-objectupdate
 当编译器检测到正在对非对象值进行对象更新操作时引发:
@@ -132,7 +132,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-fetch'></a>
+<a id='non-valid-fetch'></a>
 
 ## non-valid-fetch
 当编译器检测到正在对非数组或-对象值进行'fetch'操作时引发:
@@ -147,7 +147,7 @@ public function some()
 }
 ```
 
-<a name='invalid-array-index'></a>
+<a id='invalid-array-index'></a>
 
 ## invalid-array-index
 当编译器检测到使用了无效的数组索引时引发:
@@ -160,7 +160,7 @@ public function some(var a)
 }
 ```
 
-<a name='non-array-append'></a>
+<a id='non-array-append'></a>
 
 ## non-array-append
 当编译器检测到一个元素被附加到一个非数组变量时引发:
