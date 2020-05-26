@@ -8,7 +8,7 @@ version: '0.12'
 
 Робота з масивами в Zephir здійснюється таким самим чином, [як і в PHP](https://www.php.net/manual/en/language.types.array.php). Масив це реалізація [хеш-таблиці](http://en.wikipedia.org/wiki/Hash_table).
 
-<a name='declaring-array-variables'></a>
+<a id='declaring-array-variables'></a>
 
 ## Оголошення масивів
 
@@ -19,7 +19,7 @@ var a   = []; // масив, з можливістю зміни типу
 array b = []; // масив, без можливості зміни типу
 ```
 
-<a name='creating-arrays'></a>
+<a id='creating-arrays'></a>
 
 ## Створення масивів
 
@@ -69,7 +69,7 @@ let elements = [4: "bar", 8: "foo"];
 let elements = [4: "bar", "foo": 8];
 ```
 
-<a name='updating-arrays'></a>
+<a id='updating-arrays'></a>
 
 ## Оновлення масивів
 
@@ -94,7 +94,7 @@ let elements[0]["foo"] = "bar";
 let elements["foo"][0] = "bar";
 ```
 
-<a name='appending-elements'></a>
+<a id='appending-elements'></a>
 
 ## Додавання елементів
 
@@ -106,7 +106,7 @@ let elements["foo"][0] = "bar";
 let elements[] = "bar";
 ```
 
-<a name='reading-elements-from-arrays'></a>
+<a id='reading-elements-from-arrays'></a>
 
 ## Читання елементів з масивів
 
