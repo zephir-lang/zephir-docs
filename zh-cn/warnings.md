@@ -24,7 +24,7 @@ zephir -Wunused-variable -Wnonexistent-function
 
 支持以下警告:
 
-<a name='unused-variable'></a>
+<a id='unused-variable'></a>
 
 ## unused-variable
 
@@ -39,7 +39,7 @@ public function some()
 }
 ```
 
-<a name='unused-variable-external'></a>
+<a id='unused-variable-external'></a>
 
 ## unused-variable-external
 
@@ -52,7 +52,7 @@ public function sum(a, b, c) // c is not used
 }
 ```
 
-<a name='possible-wrong-parameter-undefined'></a>
+<a id='possible-wrong-parameter-undefined'></a>
 
 ## possible-wrong-parameter-undefined
 
@@ -70,7 +70,7 @@ public function sum(int a, int b)
 }
 ```
 
-<a name='nonexistent-function'></a>
+<a id='nonexistent-function'></a>
 
 ## nonexistent-function
 
@@ -83,7 +83,7 @@ public function some()
 }
 ```
 
-<a name='nonexistent-class'></a>
+<a id='nonexistent-class'></a>
 
 ## nonexistent-class
 
@@ -98,7 +98,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-isset'></a>
+<a id='non-valid-isset'></a>
 
 ## non-valid-isset
 
@@ -113,7 +113,7 @@ public function some()
 }
 ```
 
-<a name='non-array-update'></a>
+<a id='non-array-update'></a>
 
 ## non-array-update
 
@@ -127,7 +127,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-objectupdate'></a>
+<a id='non-valid-objectupdate'></a>
 
 ## non-valid-objectupdate
 
@@ -141,7 +141,7 @@ public function some()
 }
 ```
 
-<a name='non-valid-fetch'></a>
+<a id='non-valid-fetch'></a>
 
 ## non-valid-fetch
 
@@ -157,7 +157,7 @@ public function some()
 }
 ```
 
-<a name='invalid-array-index'></a>
+<a id='invalid-array-index'></a>
 
 ## invalid-array-index
 
@@ -171,7 +171,7 @@ public function some(var a)
 }
 ```
 
-<a name='non-array-append'></a>
+<a id='non-array-append'></a>
 
 ## non-array-append
 
