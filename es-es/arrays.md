@@ -8,7 +8,7 @@ version: '0.12'
 
 La manipulación de arrays o arreglos en Zephir proporciona una manera de utilizar los [arrays de PHP](https://www.php.net/manual/en/language.types.array.php). Un array es una implementación de una [tabla hash](http://en.wikipedia.org/wiki/Hash_table).
 
-<a name='declaring-array-variables'></a>
+<a id='declaring-array-variables'></a>
 
 ## Declarar Variables de tipo Array
 
@@ -19,7 +19,7 @@ var a   = []; // variable array, el tipo puede ser cambiado
 array b = []; // variable array, el tipo no puede ser cambiado durante la ejecución
 ```
 
-<a name='creating-arrays'></a>
+<a id='creating-arrays'></a>
 
 ## Creación de Arrays
 
@@ -69,7 +69,7 @@ let elements = [4: "bar", 8: "foo"];
 let elements = [4: "bar", "foo": 8];
 ```
 
-<a name='updating-arrays'></a>
+<a id='updating-arrays'></a>
 
 ## Actualización de arrays
 
@@ -94,7 +94,7 @@ let elements[0]["foo"] = "bar";
 let elements["foo"][0] = "bar";
 ```
 
-<a name='appending-elements'></a>
+<a id='appending-elements'></a>
 
 ## Agregando elementos
 
@@ -106,7 +106,7 @@ Los elementos pueden ser añadidos al final del array de la siguiente manera:
 let elements[] = "bar";
 ```
 
-<a name='reading-elements-from-arrays'></a>
+<a id='reading-elements-from-arrays'></a>
 
 ## Leyendo elementos desde arrays
 
