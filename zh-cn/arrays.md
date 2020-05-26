@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir中的数组操作提供了一种类似PHP [数组](https://www.php.net/manual/en/language.types.array.php)的方法。 数组是 < 0>hash 表 </0 > 的实现。
 
-<a name='declaring-array-variables'></a>
+<a id='declaring-array-variables'></a>
 
 ## 声明数组变量
 
@@ -19,7 +19,7 @@ var a   = []; // 数组变量，其类型可以改变
 array b = []; // 数组变量，其类型不能在执行过程中更改
 ```
 
-<a name='creating-arrays'></a>
+<a id='creating-arrays'></a>
 
 ## 创建数组
 
@@ -69,7 +69,7 @@ let elements = [4: "bar", 8: "foo"];
 let elements = [4: "bar", "foo": 8];
 ```
 
-<a name='updating-arrays'></a>
+<a id='updating-arrays'></a>
 
 ## Updating arrays
 
@@ -94,7 +94,7 @@ let elements[0]["foo"] = "bar";
 let elements["foo"][0] = "bar";
 ```
 
-<a name='appending-elements'></a>
+<a id='appending-elements'></a>
 
 ## 追加元素
 
@@ -106,7 +106,7 @@ let elements["foo"][0] = "bar";
 let elements[] = "bar";
 ```
 
-<a name='reading-elements-from-arrays'></a>
+<a id='reading-elements-from-arrays'></a>
 
 ## 从数组中读取元素
 
