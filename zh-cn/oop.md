@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir 提倡面向对象编程。 这就是为什么您只能在扩展中导出方法和类的原因。 您还将看到, 在大多数情况下, 运行时错误会引发异常, 而不是致命错误或警告。
 
-<a name='classes'></a>
+<a id='classes'></a>
 
 ## 类
 
@@ -26,7 +26,7 @@ class MyClass
 }
 ```
 
-<a name='classes-modifiers'></a>
+<a id='classes-modifiers'></a>
 
 ### 类修饰符
 
@@ -60,7 +60,7 @@ abstract class MyClass
 }
 ```
 
-<a name='classes-interfaces'></a>
+<a id='classes-interfaces'></a>
 
 ### 实现接口
 
@@ -102,7 +102,7 @@ public function shouldExtendMiddlewareInterface()
 
 **NOTE**开发人员有责任确保在加载扩展之前存在所有外部引用。 因此，对于上面的示例，在加载Zephir构建的扩展之前，必须先加载[PSR](https://pecl.php.net/package/psr)扩展。
 
-<a name='implementing-methods'></a>
+<a id='implementing-methods'></a>
 
 ## 实现方法
 
@@ -181,7 +181,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-methods-optional-nullable-parameters'></a>
+<a id='implementing-methods-optional-nullable-parameters'></a>
 
 ### 可选参数可以为空
 
@@ -209,7 +209,7 @@ public function foo(array a = null)
 }
 ```
 
-<a name='implementing-methods-supported-visibilities'></a>
+<a id='implementing-methods-supported-visibilities'></a>
 
 ### 支持可见性
 
@@ -219,7 +219,7 @@ public function foo(array a = null)
 
 * Private: 标记为 `private` 的方法不会导出到PHP扩展; 这意味着私有方法只对实现它们的类可见。
 
-<a name='implementing-methods-supported-modifiers'></a>
+<a id='implementing-methods-supported-modifiers'></a>
 
 ### 支持修改器
 
@@ -229,7 +229,7 @@ public function foo(array a = null)
 
 * `deprecated`: 被标记为`deprecated`的方法在被调用时抛出一个`E_DEPRECATED`错误。
 
-<a name='implementing-methods-getter-setter-shortcuts'></a>
+<a id='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Getter / Setter 快捷方式
 
@@ -292,7 +292,7 @@ class MyClass
 
 在编译代码时，这些方法作为实际方法导出，但您不必手动编写它们。
 
-<a name='implementing-methods-return-type-hints'></a>
+<a id='implementing-methods-return-type-hints'></a>
 
 ### 返回类型提示
 
@@ -352,7 +352,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-methods-return-type-void'></a>
+<a id='implementing-methods-return-type-void'></a>
 
 ### 返回类型: Void
 
@@ -372,7 +372,7 @@ let myDb = db->setConnection(connection); // 这将产生一个异常
 myDb->execute("SELECT * FROM robots");
 ```
 
-<a name='implementing-methods-strict-flexible-parameter-data-types'></a>
+<a id='implementing-methods-strict-flexible-parameter-data-types'></a>
 
 ### 严格/灵活的参数的数据类型
 
@@ -420,7 +420,7 @@ $o->filterText(array(1, 2, 3), true); // FAIL
 
 通过指定严格的参数和灵活的参数，开发人员可以设置他/她真正想要的特定行为。
 
-<a name='implementing-methods-read-only-parameters'></a>
+<a id='implementing-methods-read-only-parameters'></a>
 
 ### 只读参数
 
@@ -442,7 +442,7 @@ class MyClass
 
 当一个参数被声明为只读时，编译器可以做出安全的假设，并对这些变量进行进一步的优化。
 
-<a name='implementing-properties'></a>
+<a id='implementing-properties'></a>
 
 ## 实现属性
 
@@ -499,7 +499,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-properties-updating'></a>
+<a id='implementing-properties-updating'></a>
 
 ## 更新属性
 
@@ -531,7 +531,7 @@ let someProperty = "myProperty";
 let this->{someProperty} = 100;
 ```
 
-<a name='implementing-properties-reading'></a>
+<a id='implementing-properties-reading'></a>
 
 ## 查看属性
 
@@ -552,7 +552,7 @@ let someProperty = "myProperty";
 echo this->{someProperty}
 ```
 
-<a name='class-constants'></a>
+<a id='class-constants'></a>
 
 ## 类常量
 
@@ -586,7 +586,7 @@ class MyClass
 }
 ```
 
-<a name='calling-methods'></a>
+<a id='calling-methods'></a>
 
 ## 调用方法
 
@@ -649,7 +649,7 @@ class MyClass
 }
 ```
 
-<a name='calling-methods-parameters-by-name'></a>
+<a id='calling-methods-parameters-by-name'></a>
 
 ### 参数名
 
