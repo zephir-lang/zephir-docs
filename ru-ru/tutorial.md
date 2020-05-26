@@ -12,7 +12,7 @@ Zephir и это руководство предназначены для раз
 
 В этом руководстве мы будем использовать стандартные команды терминала Linux. Если вы являетесь пользователем Windows, вам нужно заменить эти команды их аналогами.
 
-<a name='checking-the-installation'></a>
+<a id='checking-the-installation'></a>
 
 ## Проверка установки
 
@@ -57,7 +57,7 @@ zephir help
 
 If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
 
-<a name='extension-skeleton'></a>
+<a id='extension-skeleton'></a>
 
 ## Каркас расширения
 
@@ -87,7 +87,7 @@ ext/ utils/ config.json
 
 В листинге каталога также будет отображаться файл с именем `config.json`. Этот файл содержит параметры конфигурации, которые мы можем использовать для изменения поведения Zephir и/или этого расширения.
 
-<a name='adding-our-first-class'></a>
+<a id='adding-our-first-class'></a>
 
 ## Добавление нашего первого класса
 
@@ -132,7 +132,7 @@ Don't forget to restart your web server
 
 Замечание: Вы так же можете запускать PHP передавая ему в качестве опции `-d extension=utils.so`. Однако это одноразовый «трюк», вам необходимо будет поступать так каждый раз, тестируя ваше расширение в терминале. Добавление директивы в `php.ini` будет гарантировать, что расширение загружается для каждого запроса.
 
-<a name='initial-testing'></a>
+<a id='initial-testing'></a>
 
 ## Первоначальное тестирование
 
@@ -165,7 +165,7 @@ echo Utils\Greeting::say(), "\n";
 
 Поздравляем! У вас есть первое расширение, работающее с PHP.
 
-<a name='a-useful-class'></a>
+<a id='a-useful-class'></a>
 
 ## Удобные класс
 
@@ -257,7 +257,7 @@ echo $f->alpha("!he#02l3'121lo."); // выведет "hello"
     <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
 </p>
 
-<a name='conclusion'></a>
+<a id='conclusion'></a>
 
 ## Заключение
 
