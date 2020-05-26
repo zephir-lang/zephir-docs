@@ -8,7 +8,7 @@ version: '0.12'
 
 要安装 Zephir, 请按照下列步骤操作:
 
-<a name='prerequisites'></a>
+<a id='prerequisites'></a>
 
 ## 基础要求
 
@@ -62,7 +62,7 @@ version: '0.12'
     
     
 
-<a name='installing-zephir'></a>
+<a id='installing-zephir'></a>
 
     
     ## 安装 Zephir
@@ -106,7 +106,7 @@ version: '0.12'
     
     
 
-<a name='testing-the-installation'></a>
+<a id='testing-the-installation'></a>
 
     
     ## 测试安装
