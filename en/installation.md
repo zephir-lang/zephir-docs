@@ -3,10 +3,11 @@ layout: default
 language: 'en'
 version: '0.12'
 ---
+
 # Installation
 To install Zephir, please follow these steps:
 
-<a name='prerequisites'></a>
+<a id='prerequisites'></a>
 ## Prerequisites
 To build a PHP extension and use Zephir you need the following requirements:
 
@@ -53,7 +54,7 @@ Zend Extension Api No:   320180731
 
 You don't have to necessarily see the exact above output, but it's important that these commands are available to start developing with Zephir.
 
-<a name='installing-zephir'></a>
+<a id='installing-zephir'></a>
 ## Installing Zephir
 
 First make sure that the Zephir parser extension is installed and activated. You can find installation instructions in the [Zephir Parser repository](https://github.com/phalcon/php-zephir-parser).
@@ -93,7 +94,7 @@ composer install
 
 You'll need to either use the path to `zephir/zephir`, or create a symlink in a directory in your `$PATH`, to run Zephir using this option.
 
-<a name='testing-the-installation'></a>
+<a id='testing-the-installation'></a>
 ## Testing the Installation
 
 Check if Zephir is available from any directory by executing:
