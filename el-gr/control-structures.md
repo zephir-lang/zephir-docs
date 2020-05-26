@@ -8,11 +8,11 @@ version: '0.12'
 
 Zephir implements a simplified set of control structures present in similar languages like C, PHP etc.
 
-<a name='conditionals'></a>
+<a id='conditionals'></a>
 
 ## Conditionals
 
-<a name='conditionals-if'></a>
+<a id='conditionals-if'></a>
 
 ### If Statement
 
@@ -50,7 +50,7 @@ Parentheses in the evaluated expression are optional:
 if a < 0 { return -1; } else { if a > 0 { return 1; } }
 ```
 
-<a name='conditionals-switch'></a>
+<a id='conditionals-switch'></a>
 
 ### Switch Statement
 
@@ -74,11 +74,11 @@ switch count(items) {
 }
 ```
 
-<a name='loops'></a>
+<a id='loops'></a>
 
 ## Loops
 
-<a name='loops-while'></a>
+<a id='loops-while'></a>
 
 ### While Statement
 
@@ -91,7 +91,7 @@ while counter {
 }
 ```
 
-<a name='loops-loop'></a>
+<a id='loops-loop'></a>
 
 ### Loop Statement
 
@@ -106,7 +106,7 @@ loop {
 }
 ```
 
-<a name='loops-for'></a>
+<a id='loops-for'></a>
 
 ### For Statement
 
@@ -176,7 +176,7 @@ for key, _ in data {
 }
 ```
 
-<a name='loops-break'></a>
+<a id='loops-break'></a>
 
 ### Break Statement
 
@@ -191,7 +191,7 @@ for item in ["a", "b", "c", "d"] {
 }
 ```
 
-<a name='loops-continue'></a>
+<a id='loops-continue'></a>
 
 ### Continue Statement
 
@@ -208,7 +208,7 @@ while a > 0 {
 }
 ```
 
-<a name='require'></a>
+<a id='require'></a>
 
 ## Require
 
@@ -220,7 +220,7 @@ if file_exists(path) {
 }
 ```
 
-<a name='let'></a>
+<a id='let'></a>
 
 ## Let
 
