@@ -10,7 +10,7 @@ Zephir is a language that addresses the major needs of a PHP developer trying to
 
 The name Zephir is a contraction of the words Z(end) E(ngine)/PH(P)/I(nte)r(mediate). While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](https://translate.google.com/#en/en/zaefire).
 
-<a name='hello-world'></a>
+<a id='hello-world'></a>
 
 ## Hello World!
 
@@ -67,7 +67,7 @@ PHP_METHOD(Test_Hello, say) {
 
 Actually, it is not expected that a developer that uses Zephir must know or even understand C. However, if you have any experience with compilers, PHP internals, or the C language itself, that will provide a clearer understanding of what's going on internally when working with Zephir.
 
-<a name='a-taste-of-zephir'></a>
+<a id='a-taste-of-zephir'></a>
 
 ## A Taste of Zephir
 
