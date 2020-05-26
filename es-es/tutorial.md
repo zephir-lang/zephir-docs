@@ -12,7 +12,7 @@ Asumimos que usted tiene experiencia en uno o varios lenguajes de programación.
 
 En esta guía, utilizaremos los comandos estándar de la terminal de Linux. Si eres un usuario de Windows, necesitas reemplazar estos comandos por sus homólogos.
 
-<a name='checking-the-installation'></a>
+<a id='checking-the-installation'></a>
 
 ## Probando la Instalación
 
@@ -57,7 +57,7 @@ Si todo está bien, debería ver la siguiente ayuda (o algo muy similar):
 
 If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
 
-<a name='extension-skeleton'></a>
+<a id='extension-skeleton'></a>
 
 ## Esqueleto de la Extensión
 
@@ -87,7 +87,7 @@ ext/ utils/ config.json
 
 Al listar el directorio, nos mostrará un archivo llamado `config.json`. Este archivo contiene los ajustes de configuración que podemos usar para alterar el comportamiento de Zephir y/o la extensión en sí.
 
-<a name='adding-our-first-class'></a>
+<a id='adding-our-first-class'></a>
 
 ## Agregando nuestra primer clase
 
@@ -132,7 +132,7 @@ Finalmente, hay que añadir la extensión al archivo `php.ini` para ser cargado 
 
 Nota: también se puede cargar en la línea de comandos con `-d extension=utils.so`, pero se cargará sólo para esa única solicitud, por lo que tendría que incluir cada vez que desea probar su extensión en el CLI. Agregando la directiva en el `php.ini` se asegurará que está cargada para cada solicitud de ahí en adelante.
 
-<a name='initial-testing'></a>
+<a id='initial-testing'></a>
 
 ## Prueba Inicial
 
@@ -165,7 +165,7 @@ echo Utils\Greeting::say(), "\n";
 
 ¡Felicitaciones! Tienes tu primer extensión corriendo en PHP.
 
-<a name='a-useful-class'></a>
+<a id='a-useful-class'></a>
 
 ## Una clase útil
 
@@ -256,7 +256,7 @@ En el siguiente video tutorial puedes ver como crear la extensión explicada en 
     <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
 </p>
 
-<a name='conclusion'></a>
+<a id='conclusion'></a>
 
 ## Conclusión
 
