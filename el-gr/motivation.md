@@ -14,7 +14,7 @@ Getting fast and robust libraries can be complicated, due to high levels of abst
 
 With Zephir, you can implement object-oriented libraries/frameworks/applications that can be used from PHP, gaining important seconds that can make your application faster while improving the user experience.
 
-<a name='if-you-are-a-php-programmer'></a>
+<a id='if-you-are-a-php-programmer'></a>
 
 ## If You Are a PHP Programmer...
 
@@ -24,7 +24,7 @@ Since version 4, PHP is based on the Zend Engine implementation. This is a virtu
 
 PHP is hosting Zephir, so they obviously have a lot of similarities; however, they have important differences that give Zephir its own personality. For example, Zephir is more strict, and it could make you less productive compared to PHP due to the compilation step.
 
-<a name='if-you-are-a-c-programmer'></a>
+<a id='if-you-are-a-c-programmer'></a>
 
 ## If You Are a C Programmer...
 
@@ -34,7 +34,7 @@ However, developing big applications in C can take much longer than expected com
 
 Zephir was designed to be safe, so it does not implement pointers or manual memory management, so if you're a C programmer, you will feel Zephir less powerful, but more friendly, than C.
 
-<a name='compilation-vs-interpretation'></a>
+<a id='compilation-vs-interpretation'></a>
 
 ## Compilation vs Interpretation
 
@@ -44,7 +44,7 @@ Zephir requires compilation of your code, but functionality is used from PHP, wh
 
 Once the code is compiled, it is not necessary to do so again. Interpreted code is interpreted each time it is run. A developer can decide which parts of their application should be in Zephir and which not.
 
-<a name='statically-typed-versus-dynamically-typed-languages'></a>
+<a id='statically-typed-versus-dynamically-typed-languages'></a>
 
 ## Statically Typed Versus Dynamically Typed Languages
 
@@ -72,7 +72,7 @@ Another small benefit of static languages is the extra checking the compiler per
 
 Zephir is both statically and dynamically typed, allowing you to take advantage of both approaches where possible.
 
-<a name='compilation-scheme'></a>
+<a id='compilation-scheme'></a>
 
 ## Compilation Scheme
 
@@ -86,13 +86,13 @@ In addition to the ones provided by Zephir, over time, compilers have implemente
 * [LLVM passes](https://llvm.org/docs/Passes.html)
 * [Visual C/C++ optimizations](https://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
-<a name='code-protection'></a>
+<a id='code-protection'></a>
 
 ## Code Protection
 
 In some circumstances, the compilation does not significantly improve performance. This may be because the bottleneck is located in the I/O bound portion(s) of the application (quite likely) rather than compute/memory bound. However, compiling code could also bring some level of intellectual protection to your application. With Zephir, producing native binaries, you also get the ability to "hide" the original code to users or customers.
 
-<a name='conclusion'></a>
+<a id='conclusion'></a>
 
 ## Conclusion
 
