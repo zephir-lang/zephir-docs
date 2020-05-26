@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir 的编译器提供对已编译代码的静态分析。 此功能背后的想法是在运行时之前帮助开发人员发现潜在的问题, 避免意外的行为 。
 
-<a name='conditional-unassigned-variables'></a>
+<a id='conditional-unassigned-variables'></a>
 
 ## 条件未分配的变量
 
@@ -46,7 +46,7 @@ class Utils
 
 发现这样的错误有时是很棘手的, 但是静态分析可以帮助程序员提前发现错误。
 
-<a name='dead-code-elimination'></a>
+<a id='dead-code-elimination'></a>
 
 ## 死码消除
 
