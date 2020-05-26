@@ -24,7 +24,7 @@ version: '0.12'
 
 支持以下设置:
 
-<a name='api'></a>
+<a id='api'></a>
 
 ## api
 
@@ -52,7 +52,7 @@ version: '0.12'
 }
 ```
 
-<a name='author'></a>
+<a id='author'></a>
 
 ## author
 
@@ -64,7 +64,7 @@ version: '0.12'
 }
 ```
 
-<a name='backend'></a>
+<a id='backend'></a>
 
 ## backend
 
@@ -78,7 +78,7 @@ version: '0.12'
 }
 ```
 
-<a name='constants-sources'></a>
+<a id='constants-sources'></a>
 
 ## constants-sources
 
@@ -92,7 +92,7 @@ version: '0.12'
 }
 ```
 
-<a name='description'></a>
+<a id='description'></a>
 
 ## description
 
@@ -104,7 +104,7 @@ version: '0.12'
 }
 ```
 
-<a name='destructors'></a>
+<a id='destructors'></a>
 
 ## destructors
 
@@ -147,7 +147,7 @@ version: '0.12'
 }
 ```
 
-<a name='extension-name'></a>
+<a id='extension-name'></a>
 
 ## extension-name
 
@@ -159,7 +159,7 @@ version: '0.12'
 }
 ```
 
-<a name='external-dependencies'></a>
+<a id='external-dependencies'></a>
 
 ## external-dependencies
 
@@ -174,7 +174,7 @@ version: '0.12'
 }
 ```
 
-<a name='extra'></a>
+<a id='extra'></a>
 
 ## extra
 
@@ -189,7 +189,7 @@ version: '0.12'
 }
 ```
 
-<a name='extra-cflags'></a>
+<a id='extra-cflags'></a>
 
 ## extra-cflags
 
@@ -201,7 +201,7 @@ version: '0.12'
 }
 ```
 
-<a name='extra-classes'></a>
+<a id='extra-classes'></a>
 
 ## extra-classes
 
@@ -220,7 +220,7 @@ version: '0.12'
 }
 ```
 
-<a name='extra-libs'></a>
+<a id='extra-libs'></a>
 
 ## extra-libs
 
@@ -232,7 +232,7 @@ version: '0.12'
 }
 ```
 
-<a name='extra-sources'></a>
+<a id='extra-sources'></a>
 
 ## extra-sources
 
@@ -246,7 +246,7 @@ version: '0.12'
 }
 ```
 
-<a name='globals'></a>
+<a id='globals'></a>
 
 ## globals
 
@@ -267,7 +267,7 @@ version: '0.12'
 }
 ```
 
-<a name='info'></a>
+<a id='info'></a>
 
 ## info
 
@@ -287,7 +287,7 @@ version: '0.12'
 }
 ```
 
-<a name='initializers'></a>
+<a id='initializers'></a>
 
 ## initializers
 
@@ -324,7 +324,7 @@ version: '0.12'
 }
 ```
 
-<a name='name'></a>
+<a id='name'></a>
 
 ## name
 
@@ -336,7 +336,7 @@ version: '0.12'
 }
 ```
 
-<a name='namespace'></a>
+<a id='namespace'></a>
 
 ## namespace
 
@@ -348,7 +348,7 @@ version: '0.12'
 }
 ```
 
-<a name='optimizations'></a>
+<a id='optimizations'></a>
 
 ## optimizations
 
@@ -364,7 +364,7 @@ version: '0.12'
 }
 ```
 
-<a name='optimizer-dirs'></a>
+<a id='optimizer-dirs'></a>
 
 ## optimizer-dirs
 
@@ -378,7 +378,7 @@ version: '0.12'
 }
 ```
 
-<a name='package-dependencies'></a>
+<a id='package-dependencies'></a>
 
 ## package-dependencies
 
@@ -394,7 +394,7 @@ version: '0.12'
 }
 ```
 
-<a name='prototype-dir'></a>
+<a id='prototype-dir'></a>
 
 ## prototype-dir
 
@@ -409,7 +409,7 @@ version: '0.12'
 }
 ```
 
-<a name='requires'></a>
+<a id='requires'></a>
 
 ## requires
 
@@ -426,7 +426,7 @@ version: '0.12'
 }
 ```
 
-<a name='silent'></a>
+<a id='silent'></a>
 
 ## silent
 
@@ -438,7 +438,7 @@ Suppresses most/all output from `zephir` commands (same as `-q` or `--quiet`):
 }
 ```
 
-<a name='stubs'></a>
+<a id='stubs'></a>
 
 ## stubs
 
@@ -453,7 +453,7 @@ Suppresses most/all output from `zephir` commands (same as `-q` or `--quiet`):
 }
 ```
 
-<a name='verbose'></a>
+<a id='verbose'></a>
 
 ## verbose
 
@@ -465,7 +465,7 @@ Suppresses most/all output from `zephir` commands (same as `-q` or `--quiet`):
 }
 ```
 
-<a name='version'></a>
+<a id='version'></a>
 
 ## version
 
@@ -477,7 +477,7 @@ Suppresses most/all output from `zephir` commands (same as `-q` or `--quiet`):
 }
 ```
 
-<a name='warnings'></a>
+<a id='warnings'></a>
 
 ## warnings
 
