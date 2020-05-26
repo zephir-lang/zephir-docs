@@ -48,7 +48,7 @@ Optimizations also can be configured in the config file `config.json` as follows
 
 The following optimizations are supported:
 
-<a name='call-gatherer-pass'></a>
+<a id='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
 
@@ -66,7 +66,7 @@ class MyClass extends OtherClass
 }
 ```
 
-<a name='check-invalid-reads'></a>
+<a id='check-invalid-reads'></a>
 
 ## check-invalid-reads
 
@@ -128,7 +128,7 @@ It is a good practice to always initialize variables with default values and typ
 
 More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
 
-<a name='constant-folding'></a>
+<a id='constant-folding'></a>
 
 ## constant-folding
 
@@ -150,7 +150,7 @@ public function getValue()
 }
 ```
 
-<a name='internal-call-transformation'></a>
+<a id='internal-call-transformation'></a>
 
 ## internal-call-transformation
 
@@ -165,13 +165,13 @@ Exceptions to the above are:
 - The number of required parameters must exactly match the number of actual parameters
 - Does not work for ZendEngine2 (PHP 5.6)
 
-<a name='local-context-pass'></a>
+<a id='local-context-pass'></a>
 
 ## local-context-pass
 
 This compilation pass moves variables that will be allocated in the heap to the stack. This optimization can reduce the number of memory indirections a program has to do.
 
-<a name='static-constant-class-folding'></a>
+<a id='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
 
@@ -205,7 +205,7 @@ class MyClass
 }
 ```
 
-<a name='static-type-inference'></a>
+<a id='static-type-inference'></a>
 
 ## static-type-inference
 
@@ -249,7 +249,7 @@ public function someCalculations(int a, int b)
 
 By disabling this compilation pass, all variables will maintain the type with which they were originally declared, without optimization.
 
-<a name='static-type-inference-second-pass'></a>
+<a id='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
 
