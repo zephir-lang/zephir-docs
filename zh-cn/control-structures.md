@@ -8,11 +8,11 @@ version: '0.12'
 
 Zephir实现了一组简化的控制结构，这些结构用类似的语言表示，如C、PHP等。
 
-<a name='conditionals'></a>
+<a id='conditionals'></a>
 
 ## 条件
 
-<a name='conditionals-if'></a>
+<a id='conditionals-if'></a>
 
 ### If 语句
 
@@ -50,7 +50,7 @@ if a > 100 {
 if a < 0 { return -1; } else { if a > 0 { return 1; } }
 ```
 
-<a name='conditionals-switch'></a>
+<a id='conditionals-switch'></a>
 
 ### Switch 语句
 
@@ -74,11 +74,11 @@ switch count(items) {
 }
 ```
 
-<a name='loops'></a>
+<a id='loops'></a>
 
 ## Loops
 
-<a name='loops-while'></a>
+<a id='loops-while'></a>
 
 ### While 语句
 
@@ -91,7 +91,7 @@ while counter {
 }
 ```
 
-<a name='loops-loop'></a>
+<a id='loops-loop'></a>
 
 ### Loop 语句
 
@@ -106,7 +106,7 @@ loop {
 }
 ```
 
-<a name='loops-for'></a>
+<a id='loops-for'></a>
 
 ### For 语句
 
@@ -173,7 +173,7 @@ for i in range(1, 10) {
 }
 `</pre> 
 
-<a name='loops-break'></a>
+<a id='loops-break'></a>
 
 ### Break 语句
 
@@ -188,7 +188,7 @@ for item in ["a", "b", "c", "d"] {
 }
 ```
 
-<a name='loops-continue'></a>
+<a id='loops-continue'></a>
 
 ### Continue 语句
 
@@ -205,7 +205,7 @@ while a > 0 {
 }
 ```
 
-<a name='require'></a>
+<a id='require'></a>
 
 ## Require
 
@@ -217,7 +217,7 @@ if file_exists(path) {
 }
 ```
 
-<a name='let'></a>
+<a id='let'></a>
 
 ## Let
 
