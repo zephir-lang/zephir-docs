@@ -48,7 +48,7 @@ public function binaryToHex(string! s) -> string
 
 Los tienen la misma funcionalidad, pero el segundo utiliza programación orientada a objecto. Los métodos de llamada en variables de tipo estático no tienen ningún impacto en el rendimiento, ya que Zephir transforma internamente el código de la versión orientada a objetos a la versión de procedimiento.
 
-<a name='string'></a>
+<a id='string'></a>
 
 ## String
 
@@ -69,7 +69,7 @@ Los siguientes métodos incorporados de cadena están disponibles:
 | `s->upper()`      | `strtoupper(s)`       | Convierte a mayúsculas una cadena de texto                                         |
 | `s->upperfirst()` | `ucfirst(s)`          | Convierte en mayúscula la primera letra de la cadena de texto                      |
 
-<a name='array'></a>
+<a id='array'></a>
 
 ## Array
 
@@ -92,7 +92,7 @@ Los siguientes métodos incorporados de array están disponibles:
 | `a->values()`     | `array_values(a)`       | Regresa todos los valores de un array                                     |
 | `a->walk()`       | `array_walk(a)`         | Aplica una función definida por el usuario a cada elemento de un array    |
 
-<a name='char'></a>
+<a id='char'></a>
 
 ## Char
 
@@ -102,7 +102,7 @@ Los siguientes métodos incorporados para chars están disponibles:
 | ---------------- | ------------------- |
 | `ch->toHex()` | `sprintf("%X", ch)` |
 
-<a name='integer'></a>
+<a id='integer'></a>
 
 ## Integer
 
