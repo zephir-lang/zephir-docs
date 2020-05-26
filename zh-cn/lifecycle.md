@@ -16,7 +16,7 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 
 每个钩子在`config.json`文件是一个对象数组，其本身本质上是`include`/`code`对。 `include`值，如果还没有，则会拉入一个给定的C头文件，这样`code`就可以访问它的内容。 `code`值是由钩的逻辑本身, 虽然在技术上你可以把任何有效的C, 它是*** 强烈***建议把逻辑超过一个或两个行到一个单独的C源文件(比如一个拉连同你的`include` d头文件), 并使用一个单行的函数调用。
 
-<a name='initializers'></a>
+<a id='initializers'></a>
 
 ## initializers
 
@@ -55,7 +55,7 @@ PHP提供了几个生命周期事件，这些扩展可以用来执行常见的�
 
 这个块负责定义到上面图中显示的Init事件的钩子。 其中有三个:`globals`用于设置全局变量空间;`module`用于设置扩展本身需要功能的任何内容;`request`用于设置扩展来处理单个请求。
 
-<a name='desctructors'></a>
+<a id='desctructors'></a>
 
 ## destructors
 
