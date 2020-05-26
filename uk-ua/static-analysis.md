@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir's compiler provides static analysis of the compiled code. The idea behind this feature is to help the developer to find potential problems and avoid unexpected behaviors, well before runtime.
 
-<a name='conditional-unassigned-variables'></a>
+<a id='conditional-unassigned-variables'></a>
 
 ## Conditional Unassigned Variables
 
@@ -45,7 +45,7 @@ consider initialize it in its declaration in
 
 Finding such errors is sometimes tricky, however static analysis helps the programmer to find bugs in advance.
 
-<a name='dead-code-elimination'></a>
+<a id='dead-code-elimination'></a>
 
 ## Dead Code Elimination
 
