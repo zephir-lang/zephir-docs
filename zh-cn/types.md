@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir是动态类型和静态类型的。 在本章中，我们将重点介绍支持的类型及其行为。
 
-<a name='dynamic-types'></a>
+<a id='dynamic-types'></a>
 
 ## 动态类型
 
@@ -55,7 +55,7 @@ let c = a + b;
 
 查看[PHP手册](https://www.php.net/manual/en/language.types.php)中关于这些类型的更多信息。
 
-<a name='dynamic-types-arrays'></a>
+<a id='dynamic-types-arrays'></a>
 
 ### Array
 
@@ -82,7 +82,7 @@ let myHash = [0: "first", 1: true, 2: null];
 let myHash = ["first": 7.0, "second": "some string", "third": false];
 ```
 
-<a name='dynamic-types-boolean'></a>
+<a id='dynamic-types-boolean'></a>
 
 ### Boolean
 
@@ -92,7 +92,7 @@ let myHash = ["first": 7.0, "second": "some string", "third": false];
 var a = false, b = true;
 ```
 
-<a name='dynamic-types-float-double'></a>
+<a id='dynamic-types-float-double'></a>
 
 ### 浮点型/双精度浮点
 
@@ -104,7 +104,7 @@ var number = 5.0, b = 0.014;
 
 浮点数的精度有限。 虽然这取决于系统, 但 Zephir 使用 php 使用的相同 IEEE 754 双精度格式, 这将由于舍入的1.11e-16 的顺序而产生最大的相对误差。
 
-<a name='dynamic-types-integer'></a>
+<a id='dynamic-types-integer'></a>
 
 ### Integer
 
@@ -114,7 +114,7 @@ var number = 5.0, b = 0.014;
 var a = 5, b = 10050;
 ```
 
-<a name='dynamic-types-integer-overflow'></a>
+<a id='dynamic-types-integer-overflow'></a>
 
 ### Integer overflow
 
@@ -124,7 +124,7 @@ var a = 5, b = 10050;
 unsigned long my_number = 2147483648;
 ```
 
-<a name='dynamic-types-objects'></a>
+<a id='dynamic-types-objects'></a>
 
 ### 对象
 
@@ -135,7 +135,7 @@ let myObject = new \stdClass(),
     myObject->someProperty = "my value";
 ```
 
-<a name='dynamic-types-string'></a>
+<a id='dynamic-types-string'></a>
 
 ### String
 
@@ -171,7 +171,7 @@ var name = "peter";
 echo "hello: " . name;
 ```
 
-<a name='static-types'></a>
+<a id='static-types'></a>
 
 ## 静态类型
 
@@ -190,7 +190,7 @@ echo "hello: " . name;
 | `unsigned integer` | 无符号整数 至少16位的大小。              |
 | `unsigned long`    | 与`long`相同，但无符号。              |
 
-<a name='static-types-boolean'></a>
+<a id='static-types-boolean'></a>
 
 ### Boolean
 
@@ -219,7 +219,7 @@ let a = 0;
 let a = "hello";
 ```
 
-<a name='static-types-char-unsigned'></a>
+<a id='static-types-char-unsigned'></a>
 
 ### 字符/无符号字符
 
@@ -241,7 +241,7 @@ let ch = name[2];
 let ch = 'Z';
 ```
 
-<a name='static-types-integer-unsigned'></a>
+<a id='static-types-integer-unsigned'></a>
 
 ### 整数/无符号整数
 
@@ -327,7 +327,7 @@ let a = 2147483648,
     b = a;
 ```
 
-<a name='static-types-long-unsigned'></a>
+<a id='static-types-long-unsigned'></a>
 
 ### 长值/无符号长值
 
@@ -413,7 +413,7 @@ let a = 4294967296,
     b = a;
 ```
 
-<a name='static-types-string'></a>
+<a id='static-types-string'></a>
 
 ### String
 
