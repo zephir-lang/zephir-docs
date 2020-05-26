@@ -10,7 +10,7 @@ Zephir - мова, яка відповідає основним потребам
 
 Zephir це скорочення слів Z(end) E(ngine)/PH(P)/I(nte)r(mediate). Хоча вимова має звучати як "zephyr", творці Zephir насправді вимовляють його [zaefire](https://translate.google.com/#en/en/zaefire).
 
-<a name='hello-world'></a>
+<a id='hello-world'></a>
 
 ## Привіт світ!
 
@@ -67,7 +67,7 @@ PHP_METHOD(Test_Hello, say) {
 
 Насправді, розробник, який використовує Zephir, не повинен знати або навіть зрозуміти C. Однак, якщо у вас є досвід роботи з компіляторами, мовою С або ж знання внутрішньої будови PHP - це дасть змогу чіткіше зрозуміти, як працює Zephir з середини.
 
-<a name='a-taste-of-zephir'></a>
+<a id='a-taste-of-zephir'></a>
 
 ## Смак Зефіру
 
