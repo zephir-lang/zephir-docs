@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
 
-<a name='arithmetic-operators'></a>
+<a id='arithmetic-operators'></a>
 
 ## Arithmetic Operators
 
@@ -23,7 +23,7 @@ The following operators are supported:
 | Division       | `a / b` |
 | Modulus        | `a % b` |
 
-<a name='bitwise-operators'></a>
+<a id='bitwise-operators'></a>
 
 ## Bitwise Operators
 
@@ -49,7 +49,7 @@ if a & SOME_FLAG {
 
 Learn more about comparison of dynamic variables in the [php manual](https://www.php.net/manual/en/language.operators.comparison.php).
 
-<a name='comparison-operators'></a>
+<a id='comparison-operators'></a>
 
 ## Comparison Operators
 
@@ -82,7 +82,7 @@ if a == b {
 }
 ```
 
-<a name='logical-operators'></a>
+<a id='logical-operators'></a>
 
 ## Logical Operators
 
@@ -104,7 +104,7 @@ if a && b || !c {
 return 1;
 ```
 
-<a name='tenary-operator'></a>
+<a id='tenary-operator'></a>
 
 ## Ternary Operator
 
@@ -114,13 +114,13 @@ Zephir supports the ternary operator available in C or PHP:
 let b = a == 1 ? "x" : "y"; // b is set to "x" if a is equal to 1, otherwise "y" is assigned as the value
 ```
 
-<a name='special-operators'></a>
+<a id='special-operators'></a>
 
 ## Special Operators
 
 The following operators are supported:
 
-<a name='special-operators-empty'></a>
+<a id='special-operators-empty'></a>
 
 ### Empty
 
@@ -138,7 +138,7 @@ if !empty someVar {
 }
 ```
 
-<a name='special-operators-fetch'></a>
+<a id='special-operators-fetch'></a>
 
 ### Fetch
 
@@ -163,7 +163,7 @@ if fetch value, myArray[key] {
 
 'Fetch' only returns `true` if the 'key' is a valid item in the array, and only in that case is 'value' populated.
 
-<a name='special-operators-isset'></a>
+<a id='special-operators-isset'></a>
 
 ### Isset
 
@@ -184,7 +184,7 @@ return isset this->{someProperty};
 
 Note that `isset` in Zephir works more like PHP's function [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
 
-<a name='special-operators-typeof'></a>
+<a id='special-operators-typeof'></a>
 
 ### Typeof
 
@@ -204,7 +204,7 @@ return typeof str;
 
 **Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
-<a name='special-operators-type-hints'></a>
+<a id='special-operators-type-hints'></a>
 
 ### Type Hints
 
@@ -235,7 +235,7 @@ let o = <MyClass!> this->_myObject;
 o->myMethod();
 ```
 
-<a name='special-operators-branch-prediction-hints'></a>
+<a id='special-operators-branch-prediction-hints'></a>
 
 ### Branch Prediction Hints
 
