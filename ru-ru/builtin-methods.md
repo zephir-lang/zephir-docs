@@ -48,7 +48,7 @@ public function binaryToHex(string! s) -> string
 
 Оба метода имеют одинаковую функциональность, но второй использует объектно-ориентированное подход. Использование методов на статически типизированных переменных не оказывают никакого влияния на производительность, поскольку Zephir внутренне преобразует код из объектно-ориентированной версии в процедурную версию.
 
-<a name='string'></a>
+<a id='string'></a>
 
 ## String
 
@@ -69,7 +69,7 @@ public function binaryToHex(string! s) -> string
 | `s->upper()`      | `strtoupper(s)`       | Перевести строку в верхний регистр                           |
 | `s->upperfirst()` | `ucfirst(s)`          | Перевести первый символ строки в верхний регистр             |
 
-<a name='array'></a>
+<a id='array'></a>
 
 ## Array
 
@@ -92,7 +92,7 @@ public function binaryToHex(string! s) -> string
 | `a->values()`     | `array_values(a)`       | Выбирает все значения массива                                               |
 | `a->walk()`       | `array_walk(a)`         | Применяет заданную пользователем функцию к каждому элементу массива         |
 
-<a name='char'></a>
+<a id='char'></a>
 
 ## Char
 
@@ -102,7 +102,7 @@ public function binaryToHex(string! s) -> string
 | ---------------- | ------------------- |
 | `ch->toHex()` | `sprintf("%X", ch)` |
 
-<a name='integer'></a>
+<a id='integer'></a>
 
 ## Integer
 
