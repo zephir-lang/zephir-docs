@@ -8,7 +8,7 @@ version: '0.12'
 
 Bienvenido a Zephir, un lenguaje de código abierto de alto nivel/dominio específico, diseñado para facilitar la creación y mantenimiento de extensiones para PHP con un enfoque de tipo y cuidado de memoria.
 
-<a name='some-features'></a>
+<a id='some-features'></a>
 
 ## Algunas características
 
@@ -21,7 +21,7 @@ Las principales características de Zephir son:
 | Modelo de compilación | adelantado                                              |
 | Modelo de memoria     | recolección local de basura                             |
 
-<a name='a-small-taste'></a>
+<a id='a-small-taste'></a>
 
 ## Una pequeña prueba
 
@@ -64,7 +64,7 @@ $filter = new MyLibrary\Filter();
 echo $filter->alpha("01ho#.la?/1"); // imprime hola
 ```
 
-<a name='external-links'></a>
+<a id='external-links'></a>
 
 ## Enlaces externos
 
