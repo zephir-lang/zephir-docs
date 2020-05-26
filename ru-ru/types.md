@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir динамически и статически типизированный. В этой главе мы выделим поддерживаемые типы и их поведение.
 
-<a name='dynamic-types'></a>
+<a id='dynamic-types'></a>
 
 ## Динамические типы
 
@@ -55,7 +55,7 @@ let c = a + b;
 
 Подробнее об этих типах можно узнать в [руководстве PHP](https://www.php.net/manual/en/language.types.php).
 
-<a name='dynamic-types-arrays'></a>
+<a id='dynamic-types-arrays'></a>
 
 ### Array
 
@@ -82,7 +82,7 @@ let myHash = [0: "раз", 1: true, 2: null];
 let myHash = ["раз": 7.0, "два": "некоторая строка", "три": false];
 ```
 
-<a name='dynamic-types-boolean'></a>
+<a id='dynamic-types-boolean'></a>
 
 ### Boolean
 
@@ -92,7 +92,7 @@ let myHash = ["раз": 7.0, "два": "некоторая строка", "тр�
 var a = false, b = true;
 ```
 
-<a name='dynamic-types-float-double'></a>
+<a id='dynamic-types-float-double'></a>
 
 ### Float/Double
 
@@ -104,7 +104,7 @@ var number = 5.0, b = 0.014;
 
 Числа с плавающей точкой имеют ограниченную точность. Хотя это зависит от системы, как и в PHP, Zephir использует формат двойной точности IEEE 754, который даст максимальную относительную ошибку из-за округления порядка 1.11e-16.
 
-<a name='dynamic-types-integer'></a>
+<a id='dynamic-types-integer'></a>
 
 ### Integer
 
@@ -114,7 +114,7 @@ var number = 5.0, b = 0.014;
 var a = 5, b = 10050;
 ```
 
-<a name='dynamic-types-integer-overflow'></a>
+<a id='dynamic-types-integer-overflow'></a>
 
 ### Целочисленное переполнение
 
@@ -124,7 +124,7 @@ var a = 5, b = 10050;
 unsigned long my_number = 2147483648;
 ```
 
-<a name='dynamic-types-objects'></a>
+<a id='dynamic-types-objects'></a>
 
 ### Object
 
@@ -135,7 +135,7 @@ let myObject = new \stdClass(),
     myObject->someProperty = "некоторое значение";
 ```
 
-<a name='dynamic-types-string'></a>
+<a id='dynamic-types-string'></a>
 
 ### String
 
@@ -171,7 +171,7 @@ var name = "peter";
 echo "hello: " . name;
 ```
 
-<a name='static-types'></a>
+<a id='static-types'></a>
 
 ## Статические типы
 
@@ -190,7 +190,7 @@ echo "hello: " . name;
 | `unsigned integer` | Беззнаковое целое. Размер по крайней мере 16 бит.                                                 |
 | `unsigned long`    | То же, что и `long`, но без знака.                                                                |
 
-<a name='static-types-boolean'></a>
+<a id='static-types-boolean'></a>
 
 ### Boolean
 
@@ -219,7 +219,7 @@ let a = 0;
 let a = "hello";
 ```
 
-<a name='static-types-char-unsigned'></a>
+<a id='static-types-char-unsigned'></a>
 
 ### Char/Unsigned Char
 
@@ -241,7 +241,7 @@ let ch = name[2];
 let ch = 'Z';
 ```
 
-<a name='static-types-integer-unsigned'></a>
+<a id='static-types-integer-unsigned'></a>
 
 ### Integer/Unsigned Integer
 
@@ -327,7 +327,7 @@ let a = 2147483648,
     b = a;
 ```
 
-<a name='static-types-long-unsigned'></a>
+<a id='static-types-long-unsigned'></a>
 
 ### Long/Unsigned Long
 
@@ -413,7 +413,7 @@ let a = 4294967296,
     b = a;
 ```
 
-<a name='static-types-string'></a>
+<a id='static-types-string'></a>
 
 ### String
 
