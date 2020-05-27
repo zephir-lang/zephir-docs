@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir es dinámica y estáticamente tipificado. En este capítulo se destacan los tipos soportados y sus comportamientos.
 
-<a name='dynamic-types'></a>
+<a id='dynamic-types'></a>
 
 ## Tipos Dinámicos
 
@@ -55,7 +55,7 @@ Pueden tener ocho tipos:
 
 Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
 
-<a name='dynamic-types-arrays'></a>
+<a id='dynamic-types-arrays'></a>
 
 ### Array
 
@@ -82,7 +82,7 @@ let myHash = [0: "primero", 1: true, 2: null];
 let myHash = ["primero": 7.0, "segundo": "una cadena", "tercero": false];
 ```
 
-<a name='dynamic-types-boolean'></a>
+<a id='dynamic-types-boolean'></a>
 
 ### Boolean
 
@@ -92,7 +92,7 @@ Un valor booleano expresa un valor de verdad. Puede ser `true` o `false`:
 var a = false, b = true;
 ```
 
-<a name='dynamic-types-float-double'></a>
+<a id='dynamic-types-float-double'></a>
 
 ### Float/Double
 
@@ -104,7 +104,7 @@ var number = 5.0, b = 0.014;
 
 Los números de punto flotante tienen una precisión limitada. Aunque depende del sistema, Zephir utiliza el mismo formato de doble precisión de IEEE 754 usado por PHP, que le dará un máximo error relativo por redondeo en el orden de 1.11e-16.
 
-<a name='dynamic-types-integer'></a>
+<a id='dynamic-types-integer'></a>
 
 ### Integer
 
@@ -114,7 +114,7 @@ Son números enteros. El tamaño de un entero es dependiente de la plataforma, a
 var a = 5, b = 10050;
 ```
 
-<a name='dynamic-types-integer-overflow'></a>
+<a id='dynamic-types-integer-overflow'></a>
 
 ### Desbordamiento de Enteros
 
@@ -124,7 +124,7 @@ Contrario a PHP, Zephir no comprueba automáticamente el desborde de enteros. Co
 unsigned long my_number = 2147483648;
 ```
 
-<a name='dynamic-types-objects'></a>
+<a id='dynamic-types-objects'></a>
 
 ### Object
 
@@ -135,7 +135,7 @@ let myObject = new \stdClass(),
     myObject->someProperty = "mi valor";
 ```
 
-<a name='dynamic-types-string'></a>
+<a id='dynamic-types-string'></a>
 
 ### String
 
@@ -171,7 +171,7 @@ var name = "Pedro";
 echo "hola: " . name;
 ```
 
-<a name='static-types'></a>
+<a id='static-types'></a>
 
 ## Tipos Estáticos
 
@@ -190,7 +190,7 @@ El tipificado estático permite al programador declarar y utilizar algunos tipos
 | `unsigned integer` | Enteros sin signo. Al menos 16 bits de tamaño.                                                  |
 | `unsigned long`    | Igual que `long`, pero sin signo.                                                               |
 
-<a name='static-types-boolean'></a>
+<a id='static-types-boolean'></a>
 
 ### Boolean
 
@@ -219,7 +219,7 @@ let a = 0;
 let a = "hola";
 ```
 
-<a name='static-types-char-unsigned'></a>
+<a id='static-types-char-unsigned'></a>
 
 ### Char/Char sin signo
 
@@ -241,7 +241,7 @@ let ch = name[2];
 let ch = 'Z';
 ```
 
-<a name='static-types-integer-unsigned'></a>
+<a id='static-types-integer-unsigned'></a>
 
 ### Integer/Integer sin signo
 
@@ -327,7 +327,7 @@ let a = 2147483648,
     b = a;
 ```
 
-<a name='static-types-long-unsigned'></a>
+<a id='static-types-long-unsigned'></a>
 
 ### Long/Long sin signo
 
@@ -413,7 +413,7 @@ let a = 4294967296,
     b = a;
 ```
 
-<a name='static-types-string'></a>
+<a id='static-types-string'></a>
 
 ### String
 

@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir promotes object-oriented programming. Вот почему вы можете экспортировать только методы и классы в расширениях. Также вы увидите, что в большинстве случаев, ошибки времени исполнения порождают исключения вместо фатальных ошибок или предупреждений.
 
-<a name='classes'></a>
+<a id='classes'></a>
 
 ## Классы
 
@@ -24,7 +24,7 @@ class MyClass
 }
 ```
 
-<a name='classes-modifiers'></a>
+<a id='classes-modifiers'></a>
 
 ### Модификаторы класса
 
@@ -58,7 +58,7 @@ abstract class MyClass
 }
 ```
 
-<a name='classes-interfaces'></a>
+<a id='classes-interfaces'></a>
 
 ### Реализация интерфейсов
 
@@ -100,7 +100,7 @@ public function shouldExtendMiddlewareInterface()
 
 **NOTE** It is the developer's responsibility to ensure that all external references are present before the extension is loaded. So for the example above, one has to load the [PSR](https://pecl.php.net/package/psr) extension **first** before the Zephir built extension is loaded.
 
-<a name='implementing-methods'></a>
+<a id='implementing-methods'></a>
 
 ## Реализация методов
 
@@ -179,7 +179,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-methods-optional-nullable-parameters'></a>
+<a id='implementing-methods-optional-nullable-parameters'></a>
 
 ### Optional nullable parameters
 
@@ -207,7 +207,7 @@ public function foo(array a = null)
 }
 ```
 
-<a name='implementing-methods-supported-visibilities'></a>
+<a id='implementing-methods-supported-visibilities'></a>
 
 ### Supported Visibilities
 
@@ -217,7 +217,7 @@ public function foo(array a = null)
 
 * Private: Methods marked as `private` are not exported to the PHP extension; this means that private methods are only visible to the class where they're implemented.
 
-<a name='implementing-methods-supported-modifiers'></a>
+<a id='implementing-methods-supported-modifiers'></a>
 
 ### Поддерживаемые модификаторы
 
@@ -227,7 +227,7 @@ public function foo(array a = null)
 
 * `deprecated`: Methods marked as `deprecated` throw an `E_DEPRECATED` error when they are called.
 
-<a name='implementing-methods-getter-setter-shortcuts'></a>
+<a id='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Getter/Setter shortcuts
 
@@ -290,7 +290,7 @@ class MyClass
 
 Когда код скомпилирован, эти методы экспортируются в качестве реальных методов и их не нужно писать вручную.
 
-<a name='implementing-methods-return-type-hints'></a>
+<a id='implementing-methods-return-type-hints'></a>
 
 ### Return Type Hints
 
@@ -350,7 +350,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-methods-return-type-void'></a>
+<a id='implementing-methods-return-type-void'></a>
 
 ### Возвращаемый тип: Void
 
@@ -370,7 +370,7 @@ let myDb = db->setConnection(connection); // this will produce an exception
 myDb->execute("SELECT * FROM robots");
 ```
 
-<a name='implementing-methods-strict-flexible-parameter-data-types'></a>
+<a id='implementing-methods-strict-flexible-parameter-data-types'></a>
 
 ### Strict/Flexible Parameter Data-Types
 
@@ -418,7 +418,7 @@ $o->filterText(array(1, 2, 3), true); // FAIL
 
 By specifying what parameters are strict and what can be flexible, a developer can set the specific behavior he/she really wants.
 
-<a name='implementing-methods-read-only-parameters'></a>
+<a id='implementing-methods-read-only-parameters'></a>
 
 ### Read-Only Parameters
 
@@ -440,7 +440,7 @@ class MyClass
 
 Когда параметр объявлен только для чтения, компилятор может делать безопасные предположения и проводить дальнейшие оптимизации этих переменных.
 
-<a name='implementing-properties'></a>
+<a id='implementing-properties'></a>
 
 ## Реализация свойств
 
@@ -497,7 +497,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-properties-updating'></a>
+<a id='implementing-properties-updating'></a>
 
 ## Обновление свойств
 
@@ -529,7 +529,7 @@ let someProperty = "myProperty";
 let this->{someProperty} = 100;
 ```
 
-<a name='implementing-properties-reading'></a>
+<a id='implementing-properties-reading'></a>
 
 ## Чтение свойств
 
@@ -550,7 +550,7 @@ let someProperty = "myProperty";
 echo this->{someProperty}
 ```
 
-<a name='class-constants'></a>
+<a id='class-constants'></a>
 
 ## Class Constants
 
@@ -584,7 +584,7 @@ class MyClass
 }
 ```
 
-<a name='calling-methods'></a>
+<a id='calling-methods'></a>
 
 ## Вызов методов
 
@@ -647,7 +647,7 @@ class MyClass
 }
 ```
 
-<a name='calling-methods-parameters-by-name'></a>
+<a id='calling-methods-parameters-by-name'></a>
 
 ### Доступ к параметрам по имени
 

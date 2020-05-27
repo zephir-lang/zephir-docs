@@ -12,7 +12,7 @@ We assume that you are experienced in one or more other programming languages. W
 
 In this guide, we will use the standard Linux terminal commands. If you are a Windows user, you need to replace these commands with their counterparts.
 
-<a name='checking-the-installation'></a>
+<a id='checking-the-installation'></a>
 
 ## Checking the Installation
 
@@ -57,7 +57,7 @@ If everything is well, you should see the following help (or something very simi
 
 If something went wrong, please return back to the [installation](/{{ page.version }}/{{ page.language }}/installation) page.
 
-<a name='extension-skeleton'></a>
+<a id='extension-skeleton'></a>
 
 ## Extension Skeleton
 
@@ -87,7 +87,7 @@ ext/ utils/ config.json
 
 The directory listing will also show us a file called `config.json`. This file contains configuration settings we can use to alter the behavior of Zephir and/or the extension itself.
 
-<a name='adding-our-first-class'></a>
+<a id='adding-our-first-class'></a>
 
 ## Adding our first class
 
@@ -132,7 +132,7 @@ Finally, the extension must be added to the `php.ini` in order to be loaded by P
 
 NOTE: You can also load it on the command line with `-d extension=utils.so`, but it will only load for that single request, so you'd need to include it every time you want to test your extension in the CLI. Adding the directive to the `php.ini` will ensure it is loaded for every request from then on.
 
-<a name='initial-testing'></a>
+<a id='initial-testing'></a>
 
 ## Initial Testing
 
@@ -165,7 +165,7 @@ echo Utils\Greeting::say(), "\n";
 
 Congratulations! Уou have your first extension running in PHP.
 
-<a name='a-useful-class'></a>
+<a id='a-useful-class'></a>
 
 ## A useful class
 
@@ -257,7 +257,7 @@ In the following screencast you can watch how to create the extension explained 
     <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
 </p>
 
-<a name='conclusion'></a>
+<a id='conclusion'></a>
 
 ## Conclusion
 

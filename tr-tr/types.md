@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir is both dynamically and statically typed. In this chapter we highlight the supported types and their behaviors.
 
-<a name='dynamic-types'></a>
+<a id='dynamic-types'></a>
 
 ## Dynamic Types
 
@@ -55,7 +55,7 @@ They can have eight types:
 
 Check more info about these types in the [PHP manual](https://www.php.net/manual/en/language.types.php).
 
-<a name='dynamic-types-arrays'></a>
+<a id='dynamic-types-arrays'></a>
 
 ### Array
 
@@ -82,7 +82,7 @@ let myHash = [0: "first", 1: true, 2: null];
 let myHash = ["first": 7.0, "second": "some string", "third": false];
 ```
 
-<a name='dynamic-types-boolean'></a>
+<a id='dynamic-types-boolean'></a>
 
 ### Boolean
 
@@ -92,7 +92,7 @@ A boolean expresses a truth value. It can be either `true` or `false`:
 var a = false, b = true;
 ```
 
-<a name='dynamic-types-float-double'></a>
+<a id='dynamic-types-float-double'></a>
 
 ### Float/Double
 
@@ -104,7 +104,7 @@ var number = 5.0, b = 0.014;
 
 Floating point numbers have limited precision. Although it depends on the system, Zephir uses the same IEEE 754 double precision format used by PHP, which will give a maximum relative error due to rounding in the order of 1.11e-16.
 
-<a name='dynamic-types-integer'></a>
+<a id='dynamic-types-integer'></a>
 
 ### Integer
 
@@ -114,7 +114,7 @@ Integer numbers. The size of an integer is platform-dependent, although a maximu
 var a = 5, b = 10050;
 ```
 
-<a name='dynamic-types-integer-overflow'></a>
+<a id='dynamic-types-integer-overflow'></a>
 
 ### Integer overflow
 
@@ -124,7 +124,7 @@ Contrary to PHP, Zephir does not automatically check for integer overflows. Like
 unsigned long my_number = 2147483648;
 ```
 
-<a name='dynamic-types-objects'></a>
+<a id='dynamic-types-objects'></a>
 
 ### Object
 
@@ -135,7 +135,7 @@ let myObject = new \stdClass(),
     myObject->someProperty = "my value";
 ```
 
-<a name='dynamic-types-string'></a>
+<a id='dynamic-types-string'></a>
 
 ### String
 
@@ -171,7 +171,7 @@ var name = "peter";
 echo "hello: " . name;
 ```
 
-<a name='static-types'></a>
+<a id='static-types'></a>
 
 ## Static Types
 
@@ -190,7 +190,7 @@ Static typing allows the developer to declare and use some variable types availa
 | `unsigned integer` | Unsigned integers. At least 16 bits in size.                                   |
 | `unsigned long`    | Same as `long`, but unsigned.                                                  |
 
-<a name='static-types-boolean'></a>
+<a id='static-types-boolean'></a>
 
 ### Boolean
 
@@ -219,7 +219,7 @@ let a = 0;
 let a = "hello";
 ```
 
-<a name='static-types-char-unsigned'></a>
+<a id='static-types-char-unsigned'></a>
 
 ### Char/Unsigned Char
 
@@ -241,7 +241,7 @@ let ch = name[2];
 let ch = 'Z';
 ```
 
-<a name='static-types-integer-unsigned'></a>
+<a id='static-types-integer-unsigned'></a>
 
 ### Integer/Unsigned Integer
 
@@ -327,7 +327,7 @@ let a = 2147483648,
     b = a;
 ```
 
-<a name='static-types-long-unsigned'></a>
+<a id='static-types-long-unsigned'></a>
 
 ### Long/Unsigned Long
 
@@ -413,7 +413,7 @@ let a = 4294967296,
     b = a;
 ```
 
-<a name='static-types-string'></a>
+<a id='static-types-string'></a>
 
 ### String
 

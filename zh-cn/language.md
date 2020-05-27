@@ -8,7 +8,7 @@ version: '0.12'
 
 在本章中, 我们将讨论文件和命名空间、变量声明、杂项语法约定以及其他几个一般概念的组织。
 
-<a name='organizing-code-in-files-and-namespaces'></a>
+<a id='organizing-code-in-files-and-namespaces'></a>
 
 ## 在文件和命名空间中组织代码
 
@@ -47,7 +47,7 @@ class Exception extends \Exception
 
 如果文件或类不在预期文件中, 则 Zephir 将引发编译器异常, 反之亦然。
 
-<a name='instruction-separation'></a>
+<a id='instruction-separation'></a>
 
 ## 指令分离
 
@@ -57,7 +57,7 @@ class Exception extends \Exception
 myObject->myMethod(1, 2, 3); echo "world";
 ```
 
-<a name='comments'></a>
+<a id='comments'></a>
 
 ## 注释
 
@@ -75,7 +75,7 @@ Zephir 支持 "c"/"c++" 注释。 这是行注释 `// ...`, 这是多行注释 `
 
 如果docblock不在预期的位置，编译器将抛出异常。
 
-<a name='variable-declarations'></a>
+<a id='variable-declarations'></a>
 
 ## 变量声明
 
@@ -106,7 +106,7 @@ int d = 50; bool some = true;
 var somevalue, someValue, SomeValue;
 ```
 
-<a name='variable-scope'></a>
+<a id='variable-scope'></a>
 
 ## 变量作用域
 
@@ -131,7 +131,7 @@ class MyClass
 }
 ```
 
-<a name='super-global'></a>
+<a id='super-global'></a>
 
 ## 超全局
 
@@ -145,7 +145,7 @@ let price = _POST["price"];
 let requestMethod = _SERVER["REQUEST_METHOD"];
 ```
 
-<a name='local-symbol-table'></a>
+<a id='local-symbol-table'></a>
 
 ## 本地符号表
 

@@ -8,7 +8,7 @@ version: '0.12'
 
 Операторы в Zephir похожи на их аналоги в PHP и также себя ведут.
 
-<a name='arithmetic-operators'></a>
+<a id='arithmetic-operators'></a>
 
 ## Арифметические операторы
 
@@ -23,7 +23,7 @@ version: '0.12'
 | Деление                     | `a / b` |
 | Деление по модулю           | `a % b` |
 
-<a name='bitwise-operators'></a>
+<a id='bitwise-operators'></a>
 
 ## Побитовые операторы
 
@@ -49,7 +49,7 @@ if a & SOME_FLAG {
 
 Узнать больше о сравнении динамических переменных можно из [документации по PHP](https://www.php.net/manual/en/language.operators.comparison.php).
 
-<a name='comparison-operators'></a>
+<a id='comparison-operators'></a>
 
 ## Операторы сравнения
 
@@ -82,7 +82,7 @@ if a == b {
 }
 ```
 
-<a name='logical-operators'></a>
+<a id='logical-operators'></a>
 
 ## Логические операторы
 
@@ -104,7 +104,7 @@ if a && b || !c {
 return 1;
 ```
 
-<a name='tenary-operator'></a>
+<a id='tenary-operator'></a>
 
 ## Тернарный оператор
 
@@ -114,13 +114,13 @@ Zephir поддерживает тернарный оператор, как в C
 let b = a == 1 ? "x" : "y"; // b будет присвоен "x", если a равно 1 в противном случае "y"
 ```
 
-<a name='special-operators'></a>
+<a id='special-operators'></a>
 
 ## Специальные операторы
 
 Поддерживаются следующие операторы:
 
-<a name='special-operators-empty'></a>
+<a id='special-operators-empty'></a>
 
 ### Empty
 
@@ -138,7 +138,7 @@ if !empty someVar {
 }
 ```
 
-<a name='special-operators-fetch'></a>
+<a id='special-operators-fetch'></a>
 
 ### Fetch
 
@@ -163,7 +163,7 @@ if fetch value, myArray[key] {
 
 Оператор "fetch" вернет `true`, если в массиве есть что-то по ключу "key" и тогда переменной "value" будет присвоено значение.
 
-<a name='special-operators-isset'></a>
+<a id='special-operators-isset'></a>
 
 ### Isset
 
@@ -184,7 +184,7 @@ return isset this->{someProperty};
 
 Обратите внимание, `isset` в Zephir работает скорее как [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php) в PHP. Иными словами `isset` в Zephir вернёт true, даже если значение равно null.
 
-<a name='special-operators-typeof'></a>
+<a id='special-operators-typeof'></a>
 
 ### Typeof
 
@@ -204,7 +204,7 @@ return typeof str;
 
 **Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
-<a name='special-operators-type-hints'></a>
+<a id='special-operators-type-hints'></a>
 
 ### Подсказки типа
 
@@ -235,7 +235,7 @@ let o = <MyClass!> this->_myObject;
 o->myMethod();
 ```
 
-<a name='special-operators-branch-prediction-hints'></a>
+<a id='special-operators-branch-prediction-hints'></a>
 
 ### Подсказки прогнозирования ветвлений
 

@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir，一种开源的高级语言，旨在简化PHP扩展的创建和可维护性，重点关注类型和内存安全性。
 
-<a name='some-features'></a>
+<a id='some-features'></a>
 
 ## 一些特征
 
@@ -21,7 +21,7 @@ Zephir 的主要特点是:
 | 编译模型 | 预编译            |
 | 内存模型 | 任务本地垃圾回收       |
 
-<a name='a-small-taste'></a>
+<a id='a-small-taste'></a>
 
 ## 一个小尝试
 
@@ -64,7 +64,7 @@ $filter = new MyLibrary\Filter();
 echo $filter->alpha("01he#l.lo?/1"); // prints hello
 ```
 
-<a name='external-links'></a>
+<a id='external-links'></a>
 
 ## 外部链接
 

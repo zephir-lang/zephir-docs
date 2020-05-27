@@ -8,7 +8,7 @@ version: '0.12'
 
 En este capítulo, analizaremos la organización de archivos y espacios de nombres, declaraciones de variables, varios convenios de sintaxis y algunos conceptos generales.
 
-<a name='organizing-code-in-files-and-namespaces'></a>
+<a id='organizing-code-in-files-and-namespaces'></a>
 
 ## Organización del código en archivos y espacios de nombres
 
@@ -47,7 +47,7 @@ class Exception extends \Exception
 
 Zephir generará una excepción del compilador si un archivo o una clase no se encuentra en el archivo esperado, o viceversa.
 
-<a name='instruction-separation'></a>
+<a id='instruction-separation'></a>
 
 ## Separación de instrucciones
 
@@ -57,7 +57,7 @@ Puede que ya ha notado, que había muy pocos puntos y comas en los ejemplos de c
 myObject->myMethod(1, 2, 3); echo "mundo";
 ```
 
-<a name='comments'></a>
+<a id='comments'></a>
 
 ## Comentarios
 
@@ -75,7 +75,7 @@ En la mayoría de los lenguajes, los comentarios son simplemente ignorados por e
 
 Si un bloque de comentarios no esta ubicado donde sea esperado, el compilador lanzará una excepción.
 
-<a name='variable-declarations'></a>
+<a id='variable-declarations'></a>
 
 ## Declaración de variables
 
@@ -106,7 +106,7 @@ Los nombres de variables son sensibles a mayúsculas y minúsculas, las siguient
 var somevalue, someValue, SomeValue;
 ```
 
-<a name='variable-scope'></a>
+<a id='variable-scope'></a>
 
 ## Ámbito de la variable
 
@@ -131,7 +131,7 @@ class MyClass
 }
 ```
 
-<a name='super-global'></a>
+<a id='super-global'></a>
 
 ## Super globales
 
@@ -145,7 +145,7 @@ let price = _POST["price"];
 let requestMethod = _SERVER["REQUEST_METHOD"];
 ```
 
-<a name='local-symbol-table'></a>
+<a id='local-symbol-table'></a>
 
 ## Tabla de símbolos locales
 

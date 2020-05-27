@@ -8,7 +8,7 @@ version: '0.12'
 
 In this chapter, we'll discuss the organization of files and namespaces, variable declarations, miscellaneous syntax conventions, and a few other general concepts.
 
-<a name='organizing-code-in-files-and-namespaces'></a>
+<a id='organizing-code-in-files-and-namespaces'></a>
 
 ## Organizing Code in Files and Namespaces
 
@@ -47,7 +47,7 @@ class Exception extends \Exception
 
 Zephir will raise a compiler exception if a file or class is not located in the expected file, or vice versa.
 
-<a name='instruction-separation'></a>
+<a id='instruction-separation'></a>
 
 ## Instruction separation
 
@@ -57,7 +57,7 @@ You may have already noticed that there were very few semicolons in the code exa
 myObject->myMethod(1, 2, 3); echo "world";
 ```
 
-<a name='comments'></a>
+<a id='comments'></a>
 
 ## Comments
 
@@ -75,7 +75,7 @@ In most languages, comments are simply text ignored by the compiler/interpreter.
 
 If a docblock is not located where it is expected, the compiler will throw an exception.
 
-<a name='variable-declarations'></a>
+<a id='variable-declarations'></a>
 
 ## Variable Declarations
 
@@ -106,7 +106,7 @@ Variable names are case-sensitive, the following variables are different:
 var somevalue, someValue, SomeValue;
 ```
 
-<a name='variable-scope'></a>
+<a id='variable-scope'></a>
 
 ## Variable Scope
 
@@ -131,7 +131,7 @@ class MyClass
 }
 ```
 
-<a name='super-global'></a>
+<a id='super-global'></a>
 
 ## Super Globals
 
@@ -145,7 +145,7 @@ let price = _POST["price"];
 let requestMethod = _SERVER["REQUEST_METHOD"];
 ```
 
-<a name='local-symbol-table'></a>
+<a id='local-symbol-table'></a>
 
 ## Local Symbol Table
 

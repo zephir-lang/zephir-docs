@@ -8,7 +8,7 @@ version: '0.12'
 
 Zephir promueve la programación orientada a objetos. Por esta razón sólo puedes exportar métodos y clases en las extensiones. También verá que la mayoría de las veces, los errores de tiempo de ejecución arrojan excepciones en lugar de errores fatales o advertencias.
 
-<a name='classes'></a>
+<a id='classes'></a>
 
 ## Clases
 
@@ -26,7 +26,7 @@ class MyClass
 }
 ```
 
-<a name='classes-modifiers'></a>
+<a id='classes-modifiers'></a>
 
 ### Modificadores de Clase
 
@@ -60,7 +60,7 @@ abstract class MyClass
 }
 ```
 
-<a name='classes-interfaces'></a>
+<a id='classes-interfaces'></a>
 
 ### Implementación de Interfaces
 
@@ -102,7 +102,7 @@ public function shouldExtendMiddlewareInterface()
 
 **NOTA** Es responsabilidad del desarrollador asegurarse de que todas las referencias externas estén presentes antes de que se cargue la extensión. Entonces para el ejemplo anterior, la extensión [PSR](https://pecl.php.net/package/psr) tiene que estar cargada **antes** que la extensión construida en Zephir este cargada.
 
-<a name='implementing-methods'></a>
+<a id='implementing-methods'></a>
 
 ## Implementación de Métodos
 
@@ -181,7 +181,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-methods-optional-nullable-parameters'></a>
+<a id='implementing-methods-optional-nullable-parameters'></a>
 
 ### Parámetros opcionales nulos
 
@@ -209,7 +209,7 @@ public function foo(array a = null)
 }
 ```
 
-<a name='implementing-methods-supported-visibilities'></a>
+<a id='implementing-methods-supported-visibilities'></a>
 
 ### Visibilidades soportadas
 
@@ -219,7 +219,7 @@ public function foo(array a = null)
 
 * Privado: los métodos marcados como `private` no se exportan a la extensión PHP; esto significa que métodos privados sólo son accesibles a la clase donde está implementados.
 
-<a name='implementing-methods-supported-modifiers'></a>
+<a id='implementing-methods-supported-modifiers'></a>
 
 ### Modificadores Soportados
 
@@ -229,7 +229,7 @@ public function foo(array a = null)
 
 * `deprecated`: los métodos que se marcan como `deprecated` arrojan un error `E_DEPRECATED` cuando se les llama.
 
-<a name='implementing-methods-getter-setter-shortcuts'></a>
+<a id='implementing-methods-getter-setter-shortcuts'></a>
 
 ### Métodos abreviados de getter/setter
 
@@ -292,7 +292,7 @@ class MyClass
 
 Cuando el código es compilado, estos métodos son exportados como métodos reales, pero usted no tiene que escribirlos manualmente.
 
-<a name='implementing-methods-return-type-hints'></a>
+<a id='implementing-methods-return-type-hints'></a>
 
 ### Tipo de valor devuelto
 
@@ -352,7 +352,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-methods-return-type-void'></a>
+<a id='implementing-methods-return-type-void'></a>
 
 ### Tipo de valor devuelto: void
 
@@ -372,7 +372,7 @@ let myDb = db->setConnection(connection); // esto producirá una excepción
 myDb->execute("SELECT * FROM robots");
 ```
 
-<a name='implementing-methods-strict-flexible-parameter-data-types'></a>
+<a id='implementing-methods-strict-flexible-parameter-data-types'></a>
 
 ### Tipos de datos de parámetro Estricto/Flexible
 
@@ -420,7 +420,7 @@ $o->filterText(array(1, 2, 3), true); // FALLO
 
 Al especificar qué parámetros son estrictos y cuales pueden ser flexible, un desarrollador puede establecer el comportamiento específico que realmente desea.
 
-<a name='implementing-methods-read-only-parameters'></a>
+<a id='implementing-methods-read-only-parameters'></a>
 
 ### Parámetros de sólo lectura
 
@@ -442,7 +442,7 @@ class MyClass
 
 Cuando un parámetro es declarado como solo lectura, el compilador puede hacer suposiciones seguras y realizar futuras optimizaciones sobre estas variables.
 
-<a name='implementing-properties'></a>
+<a id='implementing-properties'></a>
 
 ## Implementación de Propiedades
 
@@ -499,7 +499,7 @@ class MyClass
 }
 ```
 
-<a name='implementing-properties-updating'></a>
+<a id='implementing-properties-updating'></a>
 
 ## Actualización de propiedades
 
@@ -531,7 +531,7 @@ let someProperty = "myProperty";
 let this->{someProperty} = 100;
 ```
 
-<a name='implementing-properties-reading'></a>
+<a id='implementing-properties-reading'></a>
 
 ## Leyendo propiedades
 
@@ -552,7 +552,7 @@ let someProperty = "myProperty";
 echo this->{someProperty}
 ```
 
-<a name='class-constants'></a>
+<a id='class-constants'></a>
 
 ## Constante de Clase
 
@@ -586,7 +586,7 @@ class MyClass
 }
 ```
 
-<a name='calling-methods'></a>
+<a id='calling-methods'></a>
 
 ## Llamando a métodos
 
@@ -649,7 +649,7 @@ class MyClass
 }
 ```
 
-<a name='calling-methods-parameters-by-name'></a>
+<a id='calling-methods-parameters-by-name'></a>
 
 ### Parámetros por Nombre
 

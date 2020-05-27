@@ -48,7 +48,7 @@ Optimizations also can be configured in the config file `config.json` as follows
 
 支持以下优化:
 
-<a name='call-gatherer-pass'></a>
+<a id='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
 
@@ -66,7 +66,7 @@ class MyClass extends OtherClass
 }
 ```
 
-<a name='check-invalid-reads'></a>
+<a id='check-invalid-reads'></a>
 
 ## check-invalid-reads
 
@@ -128,7 +128,7 @@ zephir_fetch_params(1, 1, 0, &n);
 
 关于为什么C指针需要在Stack overflow [here ](https://stackoverflow.com/q/12253191/1661465)中无效的更多信息。
 
-<a name='constant-folding'></a>
+<a id='constant-folding'></a>
 
 ## constant-folding
 
@@ -150,7 +150,7 @@ public function getValue()
 }
 ```
 
-<a name='internal-call-transformation'></a>
+<a id='internal-call-transformation'></a>
 
 ## internal-call-transformation
 
@@ -165,13 +165,13 @@ public function getValue()
 - 所需参数的数量必须与实际参数的数量完全匹配
 - 不能在 ZendEngine2中起作用的 (PHP 5.6)
 
-<a name='local-context-pass'></a>
+<a id='local-context-pass'></a>
 
 ## local-context-pass
 
 此编译传递将在堆中分配的变量移动到堆栈。 这种优化可以减少程序必须做的内存间接数。
 
-<a name='static-constant-class-folding'></a>
+<a id='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
 
@@ -205,7 +205,7 @@ class MyClass
 }
 ```
 
-<a name='static-type-inference'></a>
+<a id='static-type-inference'></a>
 
 ## static-type-inference
 
@@ -249,7 +249,7 @@ public function someCalculations(int a, int b)
 
 通过禁用此编译过程, 所有变量都将维护最初声明它们的类型, 而不进行优化。
 
-<a name='static-type-inference-second-pass'></a>
+<a id='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
 

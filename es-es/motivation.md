@@ -14,7 +14,7 @@ Conseguir bibliotecas rápidas y robustas puede ser complicado, debido a los alt
 
 Con Zephir, se pueden implementar bibliotecas/frameworks/aplicaciones orientadas a objetos que se puedan utilizar desde PHP, ganando segundos importantes, los cuales pueden hacer a la aplicación más rápida, mejorando la experiencia del usuario.
 
-<a name='if-you-are-a-php-programmer'></a>
+<a id='if-you-are-a-php-programmer'></a>
 
 ## Si eres un programador PHP...
 
@@ -24,7 +24,7 @@ Desde la versión 4, PHP está basado en la implementación del motor Zend. Se t
 
 PHP tiene alojando a Zephir, por lo que obviamente tienen muchas similitudes; sin embargo, tienen diferencias importantes ya que Zephir tiene personalidad propia. Por ejemplo, Zephir es más estricto, y podría hacerte menos productivo en comparación con PHP por el paso en compilación.
 
-<a name='if-you-are-a-c-programmer'></a>
+<a id='if-you-are-a-c-programmer'></a>
 
 ## Si eres un programador C...
 
@@ -34,7 +34,7 @@ Sin embargo, desarrollar grandes aplicaciones en C puede tomar mucho más tiempo
 
 Zephir fue diseñado para ser seguro, por lo que no implementa punteros o gestión de memoria manual, así que si eres un programador C, sentirá que Zephir es menos potente pero más amigable, que C.
 
-<a name='compilation-vs-interpretation'></a>
+<a id='compilation-vs-interpretation'></a>
 
 ## Compilación vs Interpretación
 
@@ -44,7 +44,7 @@ Zephir requiere la compilación de su código, pero la funcionalidad se utiliza 
 
 Una vez que se compila el código, no es necesario hacerlo otra vez. El código interpretado, se interpreta cada vez que se ejecuta. Un desarrollador, puede decidir cuales partes de su aplicación deben estar en Zephir y cuales no.
 
-<a name='statically-typed-versus-dynamically-typed-languages'></a>
+<a id='statically-typed-versus-dynamically-typed-languages'></a>
 
 ## Lenguajes de Tipificado Estático vs Dinámico
 
@@ -72,7 +72,7 @@ Otro pequeño beneficio de los lenguajes estáticos es la comprobación extra qu
 
 Zephir es tanto estática como dinámicamente tipificado, lo que le permite aprovechar ambos enfoques, siempre que sea posible.
 
-<a name='compilation-scheme'></a>
+<a id='compilation-scheme'></a>
 
 ## Esquema de compilación
 
@@ -86,13 +86,13 @@ Además de los proporcionados por Zephir, con el tiempo, los compiladores han im
 * [LLVM pases](https://llvm.org/docs/Passes.html)
 * [Visual C/C++ optimizaciones](https://msdn.microsoft.com/en-us/library/k1ack8f1.aspx)
 
-<a name='code-protection'></a>
+<a id='code-protection'></a>
 
 ## Protección del código
 
 En algunas circunstancias, la compilación no mejora significativamente el rendimiento. Esto puede deberse a que el cuello de botella se encuentra en la porción o porciones de entrada y salida de la aplicación en lugar del límite de cálculo/memoria. Sin embargo, compilando el código, también podría brindar algún nivel de protección intelectual a su aplicación. Con Zephir, que produce nativos binarios, también tiene la capacidad de "ocultar" el código original a usuarios o clientes.
 
-<a name='conclusion'></a>
+<a id='conclusion'></a>
 
 ## Conclusión
 

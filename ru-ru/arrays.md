@@ -8,7 +8,7 @@ version: '0.12'
 
 Работа с массивами в Zephir происходит таким же образом как и с [массивами в PHP](https://www.php.net/manual/en/language.types.array.php). По своей сути, массив является реализацией [хеш таблицы](http://en.wikipedia.org/wiki/Hash_table).
 
-<a name='declaring-array-variables'></a>
+<a id='declaring-array-variables'></a>
 
 ## Объявление массивов
 
@@ -19,7 +19,7 @@ var a = []; // массив, с возможностью переопредел�
 array b = []; // массив, без возможности переопределения типа
 ```
 
-<a name='creating-arrays'></a>
+<a id='creating-arrays'></a>
 
 ## Создание массивов
 
@@ -69,7 +69,7 @@ let elements = [4: "bar", 8: "foo"];
 let elements = [4: "bar", "foo": 8];
 ```
 
-<a name='updating-arrays'></a>
+<a id='updating-arrays'></a>
 
 ## Обновление массивов
 
@@ -94,7 +94,7 @@ let elements[0]["foo"] = "bar";
 let elements["foo"][0] = "bar";
 ```
 
-<a name='appending-elements'></a>
+<a id='appending-elements'></a>
 
 ## Добавление элементов
 
@@ -106,7 +106,7 @@ let elements["foo"][0] = "bar";
 let elements[] = "bar";
 ```
 
-<a name='reading-elements-from-arrays'></a>
+<a id='reading-elements-from-arrays'></a>
 
 ## Чтение элементов из массивов
 

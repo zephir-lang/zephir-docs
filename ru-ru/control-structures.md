@@ -8,11 +8,11 @@ version: '0.12'
 
 Zephir реализует упрощенный набор управляющих структур, присутствующих в подобных ему языках, таких как C, PHP и т.п.
 
-<a name='conditionals'></a>
+<a id='conditionals'></a>
 
 ## Условные операторы
 
-<a name='conditionals-if'></a>
+<a id='conditionals-if'></a>
 
 ### Оператор if
 
@@ -50,7 +50,7 @@ if a > 100 {
 if a < 0 { return -1; } else { if a > 0 { return 1; } }
 ```
 
-<a name='conditionals-switch'></a>
+<a id='conditionals-switch'></a>
 
 ### Оператор switch
 
@@ -74,11 +74,11 @@ switch count(items) {
 }
 ```
 
-<a name='loops'></a>
+<a id='loops'></a>
 
 ## Циклы
 
-<a name='loops-while'></a>
+<a id='loops-while'></a>
 
 ### Цикл while
 
@@ -92,7 +92,7 @@ while counter {
 
 ```
 
-<a name='loops-loop'></a>
+<a id='loops-loop'></a>
 
 ### Цикл loop
 
@@ -107,7 +107,7 @@ loop {
 }
 ```
 
-<a name='loops-for'></a>
+<a id='loops-for'></a>
 
 ### Цикл for
 
@@ -177,7 +177,7 @@ for key, _ in data {
 }
 ```
 
-<a name='loops-break'></a>
+<a id='loops-break'></a>
 
 ### Оператор break
 
@@ -192,7 +192,7 @@ for item in ["a", "b", "c", "d"] {
 }
 ```
 
-<a name='loops-continue'></a>
+<a id='loops-continue'></a>
 
 ### Оператор continue
 
@@ -209,7 +209,7 @@ while a > 0 {
 }
 ```
 
-<a name='require'></a>
+<a id='require'></a>
 
 ## Оператор require
 
@@ -221,7 +221,7 @@ if file_exists(path) {
 }
 ```
 
-<a name='let'></a>
+<a id='let'></a>
 
 ## Оператор let
 

@@ -48,7 +48,7 @@ zephir -fno-static-type-inference -fno-call-gatherer-pass
 
 The following optimizations are supported:
 
-<a name='call-gatherer-pass'></a>
+<a id='call-gatherer-pass'></a>
 
 ## call-gatherer-pass
 
@@ -68,7 +68,7 @@ class MyClass extends OtherClass
 }
 ```
 
-<a name='check-invalid-reads'></a>
+<a id='check-invalid-reads'></a>
 
 ## check-invalid-reads
 
@@ -130,7 +130,7 @@ It is a good practice to always initialize variables with default values and typ
 
 More information concerning on why C pointers need to be nullified in Stack overflow [here](https://stackoverflow.com/q/12253191/1661465).
 
-<a name='constant-folding'></a>
+<a id='constant-folding'></a>
 
 ## constant-folding
 
@@ -152,7 +152,7 @@ public function getValue()
 }
 ```
 
-<a name='internal-call-transformation'></a>
+<a id='internal-call-transformation'></a>
 
 ## internal-call-transformation
 
@@ -167,13 +167,13 @@ Exceptions to the above are:
 - Количество требуемых параметров должно точно соответствовать количеству реальных параметров
 - Не работает для ZendEngine2 (PHP 5.6)
 
-<a name='local-context-pass'></a>
+<a id='local-context-pass'></a>
 
 ## local-context-pass
 
 Этот этап компиляции перемещает переменные, которые размещены в куче, в стек. Эта оптимизация может уменьшить количество косвенных обращений к памяти, которые должна выполнять программа.
 
-<a name='static-constant-class-folding'></a>
+<a id='static-constant-class-folding'></a>
 
 ## static-constant-class-folding
 
@@ -207,7 +207,7 @@ class MyClass
 }
 ```
 
-<a name='static-type-inference'></a>
+<a id='static-type-inference'></a>
 
 ## static-type-inference
 
@@ -251,7 +251,7 @@ public function someCalculations(int a, int b)
 
 Отключив этот этап компиляции, все переменные будут поддерживать тип, с которым они были первоначально объявлены, без оптимизации.
 
-<a name='static-type-inference-second-pass'></a>
+<a id='static-type-inference-second-pass'></a>
 
 ## static-type-inference-second-pass
 

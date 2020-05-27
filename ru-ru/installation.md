@@ -8,7 +8,7 @@ version: '0.12'
 
 Следуйте инструкциям ниже, чтобы установить Zephir:
 
-<a name='prerequisites'></a>
+<a id='prerequisites'></a>
 
 ## Системные требования
 
@@ -59,7 +59,7 @@ Zend Extension Api No:   320180731
 
 Вам не обязательно нужно получить точно такой же вывод. Однако важно, чтобы эти команды были доступны для начала разработки на Zephir.
 
-<a name='installing-zephir'></a>
+<a id='installing-zephir'></a>
 
 ## Установка Zephir
 
@@ -100,7 +100,7 @@ composer install
 
 You'll need to either use the path to `zephir/zephir`, or create a symlink in a directory in your `$PATH`, to run Zephir using this option.
 
-<a name='testing-the-installation'></a>
+<a id='testing-the-installation'></a>
 
 ## Проверка установки
 

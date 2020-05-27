@@ -10,7 +10,7 @@ Zephir 是一种语言, 它能够满足 php 开发人员的主要需求, 他们�
 
 Zephir 这个名字是单词 z (end) e (ngine)/ph (p)/i (nte) r (mediate) 的收缩。 While this suggests that the pronunciation should be "zephyr", the creators of Zephir actually pronounce it [zaefire](https://translate.google.com/#en/en/zaefire).
 
-<a name='hello-world'></a>
+<a id='hello-world'></a>
 
 ## Hello World!
 
@@ -67,7 +67,7 @@ PHP_METHOD(Test_Hello, say) {
 
 实际上, 使用 Zephir 的开发人员必须知道甚至理解 c, 这是不希望的。但是, 如果您对编译器、php 内部或 c 语言本身有任何经验, 这将使您更清楚地了解在使用 Zephir 时内部发生的情况。
 
-<a name='a-taste-of-zephir'></a>
+<a id='a-taste-of-zephir'></a>
 
 ## 一个 Zephir 的尝试
 

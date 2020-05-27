@@ -48,7 +48,7 @@ public function binaryToHex(string! s) -> string
 
 它们都有相同的功能，但是第二个使用的是面向对象编程。 对静态类型变量调用方法对性能没有任何影响，因为Zephir在内部将代码从面向对象版本转换为过程版本。
 
-<a name='string'></a>
+<a id='string'></a>
 
 ## String
 
@@ -69,7 +69,7 @@ public function binaryToHex(string! s) -> string
 | `s->upper()`      | `strtoupper(s)`       | 使字符串大写                 |
 | `s->upperfirst()` | `ucfirst(s)`          | 使字符串的第一个字符大写           |
 
-<a name='array'></a>
+<a id='array'></a>
 
 ## Array
 
@@ -92,7 +92,7 @@ public function binaryToHex(string! s) -> string
 | `a->values()`     | `array_values(a)`       | 返回数组的所有值                |
 | `a->walk()`       | `array_walk(a)`         | 使用用户自定义函数对数组中的每个元素做回调处理 |
 
-<a name='char'></a>
+<a id='char'></a>
 
 ## Char
 
@@ -102,7 +102,7 @@ public function binaryToHex(string! s) -> string
 | ---------------- | ------------------- |
 | `ch->toHex()` | `sprintf("%X", ch)` |
 
-<a name='integer'></a>
+<a id='integer'></a>
 
 ## Integer
 

@@ -8,7 +8,7 @@ version: '0.12'
 
 Los operadores en Zephir son similares a los de PHP, y también heredarán algunos de sus comportamientos.
 
-<a name='arithmetic-operators'></a>
+<a id='arithmetic-operators'></a>
 
 ## Operadores Aritméticos
 
@@ -23,7 +23,7 @@ Son soportados los siguientes operadores:
 | División       | `a / b` |
 | Módulo         | `a % b` |
 
-<a name='bitwise-operators'></a>
+<a id='bitwise-operators'></a>
 
 ## Operadores bit a bit
 
@@ -49,7 +49,7 @@ if a & SOME_FLAG {
 
 Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](https://www.php.net/manual/en/language.operators.comparison.php).
 
-<a name='comparison-operators'></a>
+<a id='comparison-operators'></a>
 
 ## Comparación de Operadores
 
@@ -82,7 +82,7 @@ if a == b {
 }
 ```
 
-<a name='logical-operators'></a>
+<a id='logical-operators'></a>
 
 ## Operadores Lógicos
 
@@ -104,7 +104,7 @@ if a && b || !c {
 return 1;
 ```
 
-<a name='tenary-operator'></a>
+<a id='tenary-operator'></a>
 
 ## Operador Ternario
 
@@ -114,13 +114,13 @@ Zephir soporta el operador ternario habilitado en C o PHP:
 let b = a == 1 ? "x" : "y"; // b es igual a "x" si a es igual a 1, en otro caso será igual a "y"
 ```
 
-<a name='special-operators'></a>
+<a id='special-operators'></a>
 
 ## Operadores Especiales
 
 Son soportados los siguientes operadores:
 
-<a name='special-operators-empty'></a>
+<a id='special-operators-empty'></a>
 
 ### Empty
 
@@ -138,7 +138,7 @@ if !empty someVar {
 }
 ```
 
-<a name='special-operators-fetch'></a>
+<a id='special-operators-fetch'></a>
 
 ### Fetch
 
@@ -163,7 +163,7 @@ if fetch value, myArray[key] {
 
 'Fetch' solo retornará `true` si la clave 'key' es un item válido en el array, y solo si tiene un valor 'value' asignado.
 
-<a name='special-operators-isset'></a>
+<a id='special-operators-isset'></a>
 
 ### Isset
 
@@ -184,7 +184,7 @@ return isset this->{someProperty};
 
 Nota: en Zephir `isset` funciona como la función [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php) de PHP, `isset` en Zephir retornará true incluso cuando el índice del array o la propiedad del objecto sean nulas.
 
-<a name='special-operators-typeof'></a>
+<a id='special-operators-typeof'></a>
 
 ### Typeof
 
@@ -204,7 +204,7 @@ return typeof str;
 
 **Cuidado** si desea comprobar que si un objeto es "callable", siempre tienes que usar `typeof` como un operador de comparación, no como una función.
 
-<a name='special-operators-type-hints'></a>
+<a id='special-operators-type-hints'></a>
 
 ### Sugerencias de Tipos
 
@@ -235,7 +235,7 @@ let o = <MyClass!> this->_myObject;
 o->myMethod();
 ```
 
-<a name='special-operators-branch-prediction-hints'></a>
+<a id='special-operators-branch-prediction-hints'></a>
 
 ### Consejos de Predicción de Rama
 
