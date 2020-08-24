@@ -251,9 +251,11 @@ echo $f->alpha("!ho#02l3'121a."); // imprime "hola"
 
 En el siguiente video tutorial puedes ver como crear la extensión explicada en este tutorial:
 
-<p class="iframe-wrapper">
-    <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
-</p>
+<div class="video-iframe-wrapper">
+    <div class="video-iframe-item">
+        <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
+    </div>
+</div>
 
 <a id='conclusion'></a>
 
