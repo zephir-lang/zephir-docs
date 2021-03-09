@@ -12,7 +12,7 @@ To install Zephir, please follow these steps:
 ## Prerequisites
 To build a PHP extension and use Zephir you need the following requirements:
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/zephir-lang/php-zephir-parser) >= 1.1.0
 * A C compiler such as [gcc](https://gcc.gnu.org/) >= 4.4 or an alternative such as [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 or [Intel C++](https://software.intel.com/en-us/c-compilers). It is recommended to use `gcc` 4.4 or later
 * [re2c](https://re2c.org/) 0.13.6 or later
 * PHP development headers and tools
@@ -62,12 +62,12 @@ You don't have to necessarily see the exact above output, but it's important tha
 
 ### Git Way
 
-First make sure that the Zephir parser extension is installed and activated. You can follow this [tutorial](https://github.com/phalcon/php-zephir-parser).
+First make sure that the Zephir parser extension is installed and activated. You can follow this [tutorial](https://github.com/zephir-lang/php-zephir-parser).
 
 The Zephir compiler currently must be cloned from Github:
 
 ```bash
-git clone https://github.com/phalcon/zephir
+git clone https://github.com/zephir-lang/zephir
 ```
 
 Run the Zephir installer:
