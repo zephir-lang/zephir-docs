@@ -12,7 +12,7 @@ version: '0.10'
 ## 基础要求
 要构建PHP扩展并使用Zephir，您需要满足以下要求：
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/zephir-lang/php-zephir-parser) >= 1.1.0
 * A C编译器，例如 gcc </ 0>> = 4.4或替代方法，例如 clang </ 1>> = 3.0， Visual C ++ </ 2>> = 11或[ Intel C ++](https://software.intel.com/en-us/c-compilers)。 建议使用 `gcc` 4.4 或更高版本</li> 
   
   * [re2c](https://re2c.org/) 0.13.6 or later
@@ -74,14 +74,14 @@ Zend Extension Api No:   320151012
 
 ### Git 方式
 
-首先, 确保安装并激活了 Zephir 解析器扩展。 你可以按照这个 [tutorial](https://github.com/phalcon/php-zephir-parser)。
+首先, 确保安装并激活了 Zephir 解析器扩展。 You can follow this [tutorial](https://github.com/zephir-lang/php-zephir-parser).
 
 Zephir 编译器当前必须从 github 克隆:
 
 
 
 ```bash
-git clone https://github.com/phalcon/zephir
+git clone https://github.com/zephir-lang/zephir
 ```
 
 
