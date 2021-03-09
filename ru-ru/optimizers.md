@@ -191,4 +191,4 @@ double my_calculate_pi(zval *accuracy) {
 ]
 ```
 
-Полный пример рабочего кода, рассмотренного в этой главе, можно найти [по следующему адресу](https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers).
+Check the complete source code of this example [here](https://github.com/zephir-lang/zephir-samples/tree/master/ext-optimizers)

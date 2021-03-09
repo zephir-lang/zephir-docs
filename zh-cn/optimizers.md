@@ -192,4 +192,4 @@ This file must be added at a special section in the [config.json](/{{ page.versi
 ]
 ```
 
-检查此示例的完整源代码 [here](https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers)
+Check the complete source code of this example [here](https://github.com/zephir-lang/zephir-samples/tree/master/ext-optimizers)

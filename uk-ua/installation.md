@@ -12,7 +12,7 @@ version: '0.10'
 ## Передумови
 Щоб створити PHP-розширення за допомогою Zephir, вам потрібні наступні програми та засоби:
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/zephir-lang/php-zephir-parser) >= 1.1.0
 * Один з наступних C компіляторів: [gcc](https://gcc.gnu.org/) >= 4.4, [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 або[Intel C++](https://software.intel.com/en-us/c-compilers). Рекомендується `gcc` 4.4 або старше
 * [re2c](https://re2c.org/) 0.13.6 or later
 * Заголовки та інструменти розробника PHP
@@ -62,12 +62,12 @@ Zend Extension Api No:   320151012
 
 ### З використанням Git
 
-Для початку переконайтеся, що Zephir parser встановлений і активований. За подробицями зверніться до [наступного посібника](https://github.com/phalcon/php-zephir-parser).
+Для початку переконайтеся, що Zephir parser встановлений і активований. You can follow this [tutorial](https://github.com/zephir-lang/php-zephir-parser).
 
 Склонуюйте репозиторій Zephir з Github:
 
 ```bash
-git clone https://github.com/phalcon/zephir
+git clone https://github.com/zephir-lang/zephir
 ```
 
 Запустіть інсталятор Zephir:
