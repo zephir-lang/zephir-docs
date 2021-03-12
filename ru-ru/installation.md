@@ -14,7 +14,7 @@ version: '0.11'
 
 Чтобы собрать расширение под PHP и использовать Zephir нужно:
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/zephir-lang/php-zephir-parser) >= 1.1.0
 * Один из следующих C компиляторов: [gcc](https://gcc.gnu.org/) >= 4.4, [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 или [Intel C++](https://software.intel.com/en-us/c-compilers). Рекомендуется `gcc` 4.4 или старше
 * [re2c](https://re2c.org/) 0.13.6 или старше
 * Заголовочные файлы PHP и инструменты разработчика
@@ -67,11 +67,11 @@ Zend Extension Api No:   320170718
 
 ## Установка Zephir
 
-Для начала убедитесь, что расширение Zephir Parser установлено и активировано. За подробностями по его установке обратитесь к [соответствующему руководству](https://github.com/phalcon/php-zephir-parser).
+Для начала убедитесь, что расширение Zephir Parser установлено и активировано. You can follow this [tutorial](https://github.com/zephir-lang/php-zephir-parser).
 
 ### Используя PHAR
 
-Рекомендованный, **официальной поддерживаемый** и простой в использовании способ установки Zephir заключается в скачивании PHAR-файла со страницы [GitHub релизов](https://github.com/phalcon/zephir/releases/latest) и указании пути к нему в переменной окружения `$PATH`. Вы, вероятно, также захотите избавиться от расширения `.phar`, чтобы запускать его как `zephir`, а не `zephir.phar`.
+The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/zephir-lang/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. Вы, вероятно, также захотите избавиться от расширения `.phar`, чтобы запускать его как `zephir`, а не `zephir.phar`.
 
 ### Используя Composer
 
@@ -98,7 +98,7 @@ composer require phalcon/zephir
 Наконец, вы можете склонировать последнюю версию из GitHub, установить зависимости и запустить Zephir как показано ниже:
 
 ```bash
-git clone --depth 1 -b $(git ls-remote https://github.com/phalcon/zephir 0.11.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
+git clone --depth 1 -b $(git ls-remote https://github.com/zephir-lang/zephir 0.11.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
 composer install
 ```
 
