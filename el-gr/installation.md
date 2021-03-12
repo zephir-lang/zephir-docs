@@ -14,7 +14,7 @@ To install Zephir, please follow these steps:
 
 To build a PHP extension and use Zephir you need the following requirements:
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/zephir-lang/php-zephir-parser) >= 1.1.0
 * A C compiler such as [gcc](https://gcc.gnu.org/) >= 4.4 or an alternative such as [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 or [Intel C++](https://software.intel.com/en-us/c-compilers). It is recommended to use `gcc` 4.4 or later
 * [re2c](https://re2c.org/) 0.13.6 or later
 * PHP development headers and tools
@@ -67,11 +67,11 @@ You don't have to necessarily see the exact above output, but it's important tha
 
 ## Installing Zephir
 
-First make sure that the Zephir parser extension is installed and activated. You can follow this [tutorial](https://github.com/phalcon/php-zephir-parser).
+First make sure that the Zephir parser extension is installed and activated. You can follow this [tutorial](https://github.com/zephir-lang/php-zephir-parser).
 
 ### Using PHAR
 
-The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.
+The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/zephir-lang/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.
 
 ### Using Composer
 
@@ -98,7 +98,7 @@ Use `composer exec zephir` within the project you installed Zephir in, above, to
 Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
 
 ```bash
-git clone --depth 1 -b $(git ls-remote https://github.com/phalcon/zephir 0.11.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
+git clone --depth 1 -b $(git ls-remote https://github.com/zephir-lang/zephir 0.11.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
 composer install
 ```
 
