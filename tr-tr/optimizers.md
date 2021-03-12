@@ -192,4 +192,4 @@ Lastly you will have to specify where Zephir can find your optimizer by using th
 ]
 ```
 
-Check the complete source code of this example [here](https://github.com/phalcon/zephir-samples/tree/master/ext-optimizers)
+Check the complete source code of this example [here](https://github.com/zephir-lang/zephir-samples/tree/master/ext-optimizers)
