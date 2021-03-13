@@ -14,7 +14,7 @@ version: '0.11'
 
 要构建PHP扩展并使用Zephir，您需要满足以下要求：
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.1.0
+* [Zephir parser](https://github.com/zephir-lang/php-zephir-parser) >= 1.1.0
 * A C编译器，例如 gcc </ 0>> = 4.4或替代方法，例如 clang </ 1>> = 3.0， Visual C ++ </ 2>> = 11或[ Intel C ++](https://software.intel.com/en-us/c-compilers)。 建议使用 `gcc` 4.4 或更高版本</li> 
   
   * [re2c](https://re2c.org/) 0.13.6 或更高版本
@@ -83,13 +83,13 @@ Zend Extension Api No:   320170718
 
 ## 安装 Zephir
 
-首先, 确保安装并激活了 Zephir 解析器扩展。 你可以按照这个 [tutorial](https://github.com/phalcon/php-zephir-parser)。
+首先, 确保安装并激活了 Zephir 解析器扩展。 You can follow this [tutorial](https://github.com/zephir-lang/php-zephir-parser).
 
 
 
 ### Using PHAR
 
-The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.
+The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/zephir-lang/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.
 
 
 
@@ -132,7 +132,7 @@ Finally, you can also simply clone the latest tag from GitHub, install the depen
 
 
 ```bash
-git clone --depth 1 -b $(git ls-remote https://github.com/phalcon/zephir 0.11.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
+git clone --depth 1 -b $(git ls-remote https://github.com/zephir-lang/zephir 0.11.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
 composer install
 ```
 
