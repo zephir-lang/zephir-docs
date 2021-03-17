@@ -6,7 +6,9 @@ version: '0.12'
 
 # 运算符
 
-Zephir的操作符与PHP中的操作符类似，并且继承了它们的一些行为。
+This article describes Zephir's operators. For precedence, you can check the [Operator Precedence](/{{ page.version }}/{{ page.language }}/operator-precedence) article.
+
+Zephir's operators are similar to the ones in PHP, and inherit some of their behaviors.
 
 <a id='arithmetic-operators'></a>
 
@@ -47,7 +49,7 @@ if a & SOME_FLAG {
 }
 ```
 
-了解[php手册](https://www.php.net/manual/en/language.operators.comparison.php)中动态变量的比较。
+Learn more about comparison of dynamic variables in the [php manual](https://www.php.net/manual/en/language.operators.comparison.php).
 
 <a id='comparison-operators'></a>
 
@@ -182,7 +184,7 @@ if isset someArray["b"] { // check if the array has an index "b"
 return isset this->{someProperty};
 ```
 
-注意，在Zephir中`isset` 更像PHP的函数[array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php)，在Zephir中`isset`即使数组索引或属性为空也返回true。
+Note that `isset` in Zephir works more like PHP's function [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
 
 <a id='special-operators-typeof'></a>
 
@@ -202,7 +204,7 @@ if (typeof str == "string") { // or !=
 return typeof str;
 ```
 
-**坑: **，如果你想检查一个对象是否“callable”，你总是必须使用`typeof`作为比较运算符，而不是函数。
+**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
 <a id='special-operators-type-hints'></a>
 
@@ -239,7 +241,7 @@ o->myMethod();
 
 ### 分支预测提示
 
-什么是分支预测？ 请检查此 [article](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) 或参考 [Wikipedia 文章 ](https://en.wikipedia.org/wiki/Branch_predictor)。 在性能非常重要的环境中, 引入这些提示可能会很有用。
+什么是分支预测？ Check this [article](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). 在性能非常重要的环境中, 引入这些提示可能会很有用。
 
 请考虑下面的示例:
 
