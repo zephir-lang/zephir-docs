@@ -6,7 +6,9 @@ version: '0.12'
 
 # Operadores
 
-Los operadores en Zephir son similares a los de PHP, y también heredarán algunos de sus comportamientos.
+This article describes Zephir's operators. For precedence, you can check the [Operator Precedence](/{{ page.version }}/{{ page.language }}/operator-precedence) article.
+
+Zephir's operators are similar to the ones in PHP, and inherit some of their behaviors.
 
 <a id='arithmetic-operators'></a>
 
@@ -47,7 +49,7 @@ if a & SOME_FLAG {
 }
 ```
 
-Para más información sobre la comparación de variables dinámicas vea el [manual de PHP](https://www.php.net/manual/en/language.operators.comparison.php).
+Learn more about comparison of dynamic variables in the [php manual](https://www.php.net/manual/en/language.operators.comparison.php).
 
 <a id='comparison-operators'></a>
 
@@ -182,7 +184,7 @@ Utilizando `isset` como una expresión de retorno:
 return isset this->{someProperty};
 ```
 
-Nota: en Zephir `isset` funciona como la función [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php) de PHP, `isset` en Zephir retornará true incluso cuando el índice del array o la propiedad del objecto sean nulas.
+Note that `isset` in Zephir works more like PHP's function [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
 
 <a id='special-operators-typeof'></a>
 
@@ -202,7 +204,7 @@ También puede trabajar como la función `gettype` de PHP.
 return typeof str;
 ```
 
-**Cuidado** si desea comprobar que si un objeto es "callable", siempre tienes que usar `typeof` como un operador de comparación, no como una función.
+**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
 <a id='special-operators-type-hints'></a>
 
@@ -239,7 +241,7 @@ o->myMethod();
 
 ### Consejos de Predicción de Rama
 
-¿Qué es la predicción de rama? Revisa este [artículo](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) o este otro [artículo en la Wikipedia](https://en.wikipedia.org/wiki/Branch_predictor). En entornos donde el desempeño es muy importante, puede ser útil introducir estos consejos.
+¿Qué es la predicción de rama? Check this [article](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). En entornos donde el desempeño es muy importante, puede ser útil introducir estos consejos.
 
 Considere el siguiente ejemplo:
 
