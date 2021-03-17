@@ -6,7 +6,9 @@ version: '0.12'
 
 # Оператори
 
-Оператори в Zephir схожі на оператори в PHP й поводяться так само.
+This article describes Zephir's operators. For precedence, you can check the [Operator Precedence](/{{ page.version }}/{{ page.language }}/operator-precedence) article.
+
+Zephir's operators are similar to the ones in PHP, and inherit some of their behaviors.
 
 <a id='arithmetic-operators'></a>
 
@@ -47,7 +49,7 @@ if a & SOME_FLAG {
 }
 ```
 
-Дізнатися більше про порівняння динамічних змінних можна з [документації по PHP](https://www.php.net/manual/en/language.operators.comparison.php).
+Learn more about comparison of dynamic variables in the [php manual](https://www.php.net/manual/en/language.operators.comparison.php).
 
 <a id='comparison-operators'></a>
 
@@ -182,7 +184,7 @@ if isset someArray["b"] { // перевіряє чи є в масиву інде
 return isset this->{someProperty};
 ```
 
-Зверніть увагу, що `isset` у Zephir працює швидше як функція [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php) в PHP. Тобто `isset` поверне true навіть, якщо значення масиву або властивість об'єкту дорівнює null.
+Note that `isset` in Zephir works more like PHP's function [array_key_exists](https://www.php.net/manual/en/function.array-key-exists.php), `isset` in Zephir returns true even if the array index or property is null.
 
 <a id='special-operators-typeof'></a>
 
@@ -202,7 +204,7 @@ if (typeof str == "string") { // або !=
 return typeof str;
 ```
 
-**Зверніть увагу**, якщо ви хочете перевірити чи є об'єкт "визивним" (`callable`), ви завжди маєте використовувати `typeof` в якості оператора порівняння, а не як функцію.
+**Be careful**, if you want to check whether an object is 'callable', you always have to use `typeof` as a comparison operator, not a function.
 
 <a id='special-operators-type-hints'></a>
 
@@ -239,7 +241,7 @@ o->myMethod();
 
 ### Branch Prediction Hints
 
-What is branch prediction? Для опису цього поняття можете прочитати [цю статтю](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) або [опис на Вікіпедії](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
+What is branch prediction? Check this [article](https://igoro.com/archive/fast-and-slow-if-statements-branch-prediction-in-modern-processors/) or refer to the [Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor). In environments where performance is very important, it may be useful to introduce these hints.
 
 Consider the following example:
 

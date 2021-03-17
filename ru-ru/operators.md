@@ -6,7 +6,9 @@ version: '0.12'
 
 # Операторы
 
-Операторы в Zephir похожи на их аналоги в PHP и также себя ведут.
+This article describes Zephir's operators. For precedence, you can check the [Operator Precedence](/{{ page.version }}/{{ page.language }}/operator-precedence) article.
+
+Zephir's operators are similar to the ones in PHP, and inherit some of their behaviors.
 
 <a id='arithmetic-operators'></a>
 
@@ -226,7 +228,7 @@ let o = <MyClass> this->_myObject;
 o->myMethod();
 ```
 
-These "type hints" are weak. Это означает, что программа не проверяет, является ли значение экземпляром указанного класса, и не проверяет реализует ли он указанный интерфейс. If you want it to check this every time in execution, use a strict type:
+Эти «подсказки типов» являются слабыми. Это означает, что программа не проверяет, является ли значение экземпляром указанного класса, и не проверяет реализует ли он указанный интерфейс. Если вы хотите, чтобы это проверялось каждый раз при выполнении, используйте строгую типизацию:
 
 ```zephir
 // Always check if the property is an instance
