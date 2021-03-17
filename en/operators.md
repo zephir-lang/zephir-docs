@@ -5,7 +5,9 @@ version: '0.12'
 ---
 
 # Operators
-Zephir's operators are similar to the ones in PHP, and also inherit some of their behaviors.
+This article describes Zephir's operators. For precedence, you can check the [Operator Precedence](/{{ page.version }}/{{ page.language }}/operator-precedence) article.
+
+Zephir's operators are similar to the ones in PHP, and inherit some of their behaviors.
 
 <a id='arithmetic-operators'></a>
 ## Arithmetic Operators

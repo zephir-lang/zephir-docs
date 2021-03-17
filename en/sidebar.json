@@ -32,6 +32,10 @@
         "url": "operators"
     },
     {
+        "text": "Operator Precedence",
+        "url": "operator-precedence"
+    },
+    {
         "text": "Arrays",
         "url": "arrays"
     },
