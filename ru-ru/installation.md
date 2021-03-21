@@ -14,7 +14,7 @@ version: '0.12'
 
 Чтобы собрать расширение под PHP и использовать Zephir нужно:
 
-* [Zephir parser](https://github.com/phalcon/php-zephir-parser) >= 1.3.0
+* [Zephir parser](https://github.com/zephir-lang/php-zephir-parser) >= 1.3.0
 * Один из следующих C компиляторов: [gcc](https://gcc.gnu.org/) >= 4.4, [clang](https://clang.llvm.org/) >= 3.0, [Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) >= 11 или [Intel C++](https://software.intel.com/en-us/c-compilers). Рекомендуется `gcc` 4.4 или старше
 * [re2c](https://re2c.org/) 0.13.6 или старше
 * Заголовочные файлы PHP и инструменты разработчика
@@ -63,11 +63,11 @@ Zend Extension Api No:   320180731
 
 ## Установка Zephir
 
-Для начала убедитесь что Zephir parser установлен и активирован. You can find installation instructions in the [Zephir Parser repository](https://github.com/phalcon/php-zephir-parser).
+Для начала убедитесь что Zephir parser установлен и активирован. You can find installation instructions in the [Zephir Parser repository](https://github.com/zephir-lang/php-zephir-parser).
 
 ### Release PHAR
 
-The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/phalcon/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
+The recommended, **officially supported**, and easiest-to-use way to install Zephir is to simply grab the latest release PHAR [from GitHub](https://github.com/zephir-lang/zephir/releases/latest), and download/move it to somewhere in your `$PATH`. (You'll probably also want to rename it to drop the `.phar` extension, so you can run it as `zephir` instead of `zephir.phar`.)
 
 ### Composer
 
@@ -76,7 +76,7 @@ The PHAR isn't available before 0.11.4, so if you need an older version, you can
 #### Global Composer Application
 
 ```bash
-composer global require phalcon/zephir
+composer global require zephir-lang/zephir
 ```
 
 There are two approaches to running Zephir at this point. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
@@ -84,7 +84,7 @@ There are two approaches to running Zephir at this point. The first is to ensure
 #### Project Dependency
 
 ```bash
-composer require phalcon/zephir
+composer require zephir-lang/zephir
 ```
 
 Для запуска Zephir используйте команду `composer exec zephir` в проекте с установленым Zephir как показано выше. (Alternately, you can still run `vendor/bin/zephir`.)
@@ -94,7 +94,7 @@ composer require phalcon/zephir
 Finally, you can also simply clone the latest tag from GitHub, install the dependencies, and run Zephir from there:
 
 ```bash
-git clone --depth 1 -b $(git ls-remote https://github.com/phalcon/zephir 0.12.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/phalcon/zephir
+git clone --depth 1 -b $(git ls-remote https://github.com/zephir-lang/zephir 0.12.* | sort -t/ -k3 -Vr | head -n1 | awk -F/ '{ print $NF }') https://github.com/zephir-lang/zephir
 composer install
 ```
 
