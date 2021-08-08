@@ -252,7 +252,7 @@ echo $f->alpha("!пр#02и3'121віт."); // надрукує "привіт"
 
 <div class="video-iframe-wrapper">
     <div class="video-iframe-item">
-        <iframe src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
+        <iframe title="video" src="//player.vimeo.com/video/84180223" width="500" height="313" allowfullscreen></iframe>
     </div>
 </div>
 
