@@ -6,7 +6,7 @@ version: '0.12'
 
 # 数组
 
-Zephir中的数组操作提供了一种类似PHP [数组](https://www.php.net/manual/en/language.types.array.php)的方法。 数组是 < 0>hash 表 </0 > 的实现。
+Zephir中的数组操作提供了一种类似PHP [数组](https://www.php.net/manual/en/language.types.array.php)的方法。 An array is an implementation of a [hash table](https://en.wikipedia.org/wiki/Hash_table).
 
 <a id='declaring-array-variables'></a>
 
