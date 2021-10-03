@@ -5,7 +5,7 @@ version: '0.11'
 ---
 
 # Arrays
-La manipulación de arrays o arreglos en Zephir proporciona una manera de utilizar los [arrays de PHP](https://www.php.net/manual/en/language.types.array.php). Un array es una implementación de una [tabla hash](http://en.wikipedia.org/wiki/Hash_table).
+La manipulación de arrays o arreglos en Zephir proporciona una manera de utilizar los [arrays de PHP](https://www.php.net/manual/en/language.types.array.php). Un array es una implementación de una [tabla hash](https://en.wikipedia.org/wiki/Hash_table).
 
 <a id='declaring-array-variables'></a>
 
