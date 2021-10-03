@@ -5,7 +5,7 @@ version: '0.11'
 ---
 
 # Массивы
-Работа с массивами в Zephir происходит таким же образом как и с [массивами в PHP](https://www.php.net/manual/en/language.types.array.php). По своей сути, массив является реализацией [хеш таблицы](http://en.wikipedia.org/wiki/Hash_table).
+Работа с массивами в Zephir происходит таким же образом как и с [массивами в PHP](https://www.php.net/manual/en/language.types.array.php). An array is an implementation of a [hash table](https://en.wikipedia.org/wiki/Hash_table).
 
 <a id='declaring-array-variables'></a>
 
