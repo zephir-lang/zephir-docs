@@ -80,7 +80,7 @@ version: '0.12'
     #### Global Composer Application
     
     ```bash
-    composer global require zephir-lang/zephir
+    composer global require phalcon/zephir
     ```
     
     There are two approaches to running Zephir at this point. The first is to ensure that `${COMPOSER_HOME}/vendor/bin` is in your `$PATH`, then Zephir should be available as `zephir` on the command line. The second is to simply use `composer global exec zephir` instead.
@@ -88,7 +88,7 @@ version: '0.12'
     #### Project Dependency
     
     ```bash
-    composer require zephir-lang/zephir
+    composer require phalcon/zephir
     ```
     
     Use `composer exec zephir` within the project you installed Zephir in, above, to run it. (Alternately, you can still run `vendor/bin/zephir`.)
